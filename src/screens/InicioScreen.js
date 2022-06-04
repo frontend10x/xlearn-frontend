@@ -80,7 +80,7 @@ export const InicioScreen = () => {
       </div>
 
       <div className="Mockups">
-        <h1>Lo que necesito es espaciar para ver los tamaños y ya</h1>
+        <h1>Separador de secciones</h1>
       </div>
     </div>
   );
