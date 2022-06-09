@@ -5,6 +5,7 @@ import { CursosScreen } from "../screens/CursosScreen";
 import { PlanesScreen } from "../screens/PlanesScreen";
 import { EmpresaScreen } from "../screens/EmpresaScreen";
 import { ContactoScreen } from "../screens/ContactoScreen";
+import {LoginScreen} from '../screens/LoginScreen';
 
 export const AppRouter = () => {
   return (
@@ -14,6 +15,7 @@ export const AppRouter = () => {
         <Route exact path="/courses" element={<CursosScreen />} />
         <Route exact path="/plans" element={<PlanesScreen />} />
         <Route exact path="/enterprises" element={<EmpresaScreen />} />
+        <Route exact path="/login" element={<LoginScreen />} />
         <Route exact path="/contact" element={<ContactoScreen />} />
       </Routes>
     </Router>
