@@ -147,6 +147,8 @@ html, body {
     visibility: hidden;
     opacity: 0;
     margin-top: -2em;
+    position: relative;
+    left: 200px;
 }
 
 .menu-full ul li ul li {
@@ -943,6 +945,227 @@ html, body {
 }
 
 /* Footer Fin */
+
+/* Login Screen */
+    .login {
+        background-color: var(--blueDark);
+        height: 100vh;
+    }
+
+    .login__container {
+        display: flex;
+        background-color: var(--white);
+        width: 60%;
+        position: relative;
+        left: 300px;
+        top: 60px;
+    }
+
+    .login__content-inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--whiteOff);
+        height: 450px;
+    }
+
+    .login__content-header {
+        text-align: center;
+        height: 130px;
+    }
+
+    .login__content-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .login__register {
+        border-top: 1px solid var(--black);
+        position: relative;
+        top: 100px;
+    }
+
+    .login__register-button {
+        text-decoration: none;
+        border: none;
+        background-color: transparent;
+        position: relative;
+        color: var(--blueDark);
+        font-weight: bold;
+    }
+
+    .login__button-entrar {
+        border-radius: 5px;
+        background-color: var(--green);
+        text-decoration: none;
+        border: none;
+        padding: 5px;
+        width: 80%;
+        position: relative;
+        left: 50px;
+        color: var(--blueDark);
+        font-weight: bold;
+    }
+
+    .login__button-entrar:hover {
+        color: var(--white);
+    }
+
+    .login__email {
+        border: none;
+        text-decoration: none;
+        border-radius: 5px;
+        left: 50px;
+        margin-bottom: 20px;
+        position: relative; 
+        width: 80%;
+        padding: 10px;
+    }
+
+    .login__password {
+        border: none;
+        text-decoration: none;
+        border-radius: 5px;
+        left: 50px;
+        position: relative; 
+        width: 80%;
+        padding: 10px;
+    }
+
+    .login__content-title {
+        color: var(--blueDark);
+        font-weight: bold;
+        position: relative;
+        bottom: 50px;
+    }
+
+    .login__content-remind {
+        display: flex;
+        position: relative;
+        column-gap: 8rem;
+        left: 75px;
+    }
+
+    .login__input-reminder {
+        position: relative;
+        top: 20px;
+        left: 55px;
+    }
+
+    .login__remind-button {
+        border: none;
+        background-color: var(--whiteOff);
+        padding: 0;
+        position: relative;
+        bottom: 7px;
+    }
+
+    .login__header-logo-title {
+        margin-top: 20px;
+    }
+
+    .login__header-logo-title p {
+        font-size: 14px;
+        color: var(--blueDark);
+        font-weight: bold;
+    }
+
+    .header__register {
+        background-color: var(--blueDark);
+        transition: all 0.5s;
+        z-index: 997;
+        padding: 20px 0;
+        position: absolute;
+    }
+
+/* Login Screen Fin */
+
+/* Empresas */
+.empresas__banner-content {
+    position: relative;
+    bottom: 400px;
+    left: 50px;
+    width: 40%;
+    color: var(--white);
+}
+
+.empresas__form-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blueAlternative);
+    width: 35%;
+    height: 580px;
+    border-radius: 10px;
+    position: absolute;
+    left: 820px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    top: 400px;
+}
+
+.empresas__form-container h3 {
+    color: var(--white);
+}
+
+.empresas__content-info {
+    position: relative;
+    left: 50px;
+    width: 50%;
+}
+
+.empresas__content h1 {
+    position: relative;
+    left: 50px;
+    width: 50%;
+}
+
+.empresas__text-area {
+    width: 100%;
+}
+
+.empresas__form {
+    display: flex;
+    flex-direction: column;
+}
+.empresas__banner-image {
+    width: 100%;
+}
+
+.empresas__promo {
+    background-color: var(--white);
+    height: 200px;
+}
+
+.empresas__promo-content {
+    top: 20px;
+    position: relative;
+    left: 50px;
+    width: 30%;
+}
+
+.empresas__form-content {
+    position: relative;
+    bottom: 70px;
+}
+
+.empresas__button {
+    text-decoration: none;
+    border: none;
+    background-color: var(--green);
+    color: var(--blueDark);
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 5px;
+    width: 50%;
+    position: relative;
+    left: 100px;
+    border-radius: 5px;
+}
+
+/* Empresas Fin */
 
 /* Responsive */
 @media (max-width: 1440px) {

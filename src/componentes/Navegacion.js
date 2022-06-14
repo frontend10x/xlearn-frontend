@@ -15,7 +15,7 @@ export const Navegacion = () => {
                 <NavLink className="nav-link " to="/plans">
                     Planes
                 </NavLink>
-                <NavLink className="nav-link " to="/enterprise">
+                <NavLink className="nav-link " to="/enterprises/register">
                     Empresa
                 </NavLink>
                 <NavLink className="nav-link " to="/contact">

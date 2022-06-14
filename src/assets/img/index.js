@@ -16,5 +16,6 @@ export {default as facebook} from './facebook.png';
 export {default as twitter} from './signo-de-twitter.png';
 export {default as linkedin} from './logotipo-de-linkedin.png';
 export {default as youtube} from './youtube.png';
-export {default as aboutUs} from './about.jpg'
-// export {default as logo10x} from './'
+export {default as aboutUs} from './about.jpg';
+export {default as logologin} from './login/Logo_Ingreso.png';
+export {default as imagenlogin} from './login/Imagen_Ingreso.jpg';

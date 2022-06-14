@@ -12,8 +12,8 @@ export const Header = () => {
           </a>
 
           <img src={XlearnLogo} alt="logo" className="header__logo" />
-
-          <div className="menu-full" id="menu-full">
+        
+        <div className="menu-full" id="menu-full">
             <a className="close-button" href="#">
               <span></span>
             </a>
@@ -101,6 +101,7 @@ export const Header = () => {
               </div>
             </div>
           </div>
+          
 
           <a href="index.html" className="logo d-flex align-items-center">
             <img src="assets/img/logo.png" alt="" />
@@ -108,9 +109,8 @@ export const Header = () => {
 
           <Navegacion />
           {/* <!-- .navbar --> */}
-        </div>
+        </div>{/* Fin de Burg Toogle */}
       </header>
-      <section></section>
     </div>
   );
 };
