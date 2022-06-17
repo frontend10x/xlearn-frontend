@@ -1,27 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
 import { imagenlogin, logologin } from "../assets/img";
 import { useForm } from "../hooks/useForm";
 import { NavLink } from "react-router-dom";
+import { baseURL } from "../utils/route";
+import axios from "axios";
 
 export const LoginScreen = () => {
+    
     const [formValues, handleInputChange] = useForm({
-        email: "",
-        password: "",
+        email:'',
+        password:''
     });
 
     const { email, password } = formValues;
 
     const handleLogin = (e) => {
         e.preventDefault();
-        console.log(email);
-        console.log(password);
+        axios.post(baseURL + '/api/v1/login' , {
+            email,
+            password
+        })
+        .then(res => console.log(res, 'con token'))
+        .catch(err => console.log(err))
     };
+
 
     return (
         <div className="Login-Screen">
             <div className="login">
-                <div className="login__container">
+                <div className="login__container animate__animated animate__bounce animate__delay-2s">
                     <div>
                         <Image src={imagenlogin} alt="imagen-login" />
                     </div>
@@ -60,7 +68,7 @@ export const LoginScreen = () => {
                                     className='login__password'
                                 />
 
-                                    <input type="checkbox" checked={true} className="login__input-reminder" />
+                                    <input type="checkbox" checked={false} className="login__input-reminder" />
                                 <div className="d-flex login__content-remind ">
                                     <p>Recordarme</p>
                                     <button className="login__remind-button" > ¿Olvidaste Tu Contraseña?</button>
@@ -70,7 +78,7 @@ export const LoginScreen = () => {
                             </form>
                             <div className="d-flex login__register">
                                 <p>¿Aun no estas Registrado?</p>
-                                <NavLink to="/enterprises/register" className="login__register-button" >Crea una cuenta</NavLink>
+                                <NavLink to="/plans/register" className="login__register-button" >Crea una cuenta</NavLink>
                             </div>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ export const CarouselCourses = ({title, image}) => {
                     type="button"
                     className="carousel__button"
                   >
-                    Ingresar
+                    Conocer
                   </button>
                 </div>
               </div>

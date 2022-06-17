@@ -19,3 +19,7 @@ export {default as youtube} from './youtube.png';
 export {default as aboutUs} from './about.jpg';
 export {default as logologin} from './login/Logo_Ingreso.png';
 export {default as imagenlogin} from './login/Imagen_Ingreso.jpg';
+export {default as buttonprev } from '../Breakpoints/1920/Icon_Back_Default.jpg';
+export {default as buttonnext} from '../Breakpoints/1920/Icon_Next_Default.jpg';
+export {default as hoverprev} from '../Breakpoints/1920/Icon_Back_Hover.jpg';
+export {default as registerbanner} from '../Image/AdobeStock_302471776.jpeg';

@@ -11,9 +11,8 @@ export const PreguntasFrecuentes = () => {
         Preguntas Frecuentes y Tutoriales
       </h2>
       <p className="preguntas__frecuentes-subtitle">
-        Feugiat pretium nib ipsum consequa vida trum quisque non tellus orci ac
-        strud ctor <br />
-        tellus mauris Feugiat pretium nib ipsum consequa vida trum
+        ¿Tienes dudas? tenemos el espacio perfecto para ti; en esta seccion podras <br />
+        resolver tus preguntas y encontrar contenido de valor
       </p>
       </div>
 

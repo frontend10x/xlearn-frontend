@@ -1,5 +1,6 @@
 import React from "react";
 import { Image } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import { empresa, Image_01, Image_02 } from "../assets/img";
 
 export const CarouselEnterprises = () => {
@@ -80,8 +81,9 @@ export const CarouselEnterprises = () => {
             </div>
             <div className="enterprise__carousel-content" >
                 <h3 className="enterprise__carousel-content_title" >Empresa. </h3>
-                <h1 className="enterprise__carousel-content_subtitle" >Ut wisi enim ad minim <br /> veniam, quis exerci</h1>
-                <h4 className="enterprise__carousel-content_info" >Sed diam nonummy nibh euismod tincidunt laoreet <br/> dolore magna aliquam erat volutpat.</h4>
+                <h1 className="enterprise__carousel-content_subtitle" >Asume nuevos retos y lleva <br /> tu negocio a otro nivel</h1>
+                <h4 className="enterprise__carousel-content_info" >Atrevete a ingresar al mundo de la innovacion a traves <br/>del entrenamineto de tu equipo </h4>
+                <NavLink to='/' className='enterprise__button' > Conoce mas </NavLink>
             </div>
         </div>
     );

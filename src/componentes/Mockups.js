@@ -16,33 +16,33 @@ export const Mockups = () => {
         <Col>
           <div className="mockups__content">
             <div className="mockups__content-title" >
-              <h1>Sed diam non <br /> ummy nibh euis?</h1>
+              <h1>Conviertete en un <br /> caso de exito y <br/> apuestale a la <br /> innovacion con <br /> Xlearn </h1>
             </div>
             <p>
-              Sed diam nonummy nibh euismod <br />
-              tincidunt laoreet dolore magna aliquam <br />
-              erat volutpat. Ut wisi enim ad minim <br />
-              veniam, quis exerci
+              Conoce las empresas que se han<br />
+              formado con nosotros y han asumido<br />
+              los retos y oportunidades del mercado a<br />
+              traves de su capital humano
             </p>
             <button className="mockups__button" >
-              Conocer
+              Conoce mas
             </button>
           </div>
         </Col>
       </div>
       <div className="mockups_sec">
-        <div className="d-flex">
+        <div className="d-flex mockups__sec-container">
           <Col>
             <div className="mockups__sec-content">
               <div>
-                <h1 className="mockups__sec-title" >Ut wisi enim ad minim <br /> veniam, quis exerci</h1>
+                <h1 className="mockups__sec-title" >Conoce las novedades <br />que tenemos para ti y <br /> para tu equipo </h1>
               </div>
               <p>
-              Sed diam nonummy nibh euismod tincidunt laoreet <br/> 
-              dolore magna aliquam erat volutpat.
+              Nuevos cursos, nuevos retos y nuevas <br/> 
+              oportunidades para aprender
               </p>
               <button className="mockups__button" >
-              Conocer
+              Conoce mas
             </button>
             </div>
           </Col>

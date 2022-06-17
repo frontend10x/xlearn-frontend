@@ -57,15 +57,12 @@ export const InicioScreen = () => {
 
       <div className="carousel-section">
         <div className="carousel__section-content">
-          <h1>Elige tu area o tu curso de especialidad</h1>
+          <h1>Elige los cursos de tu interes</h1>
 
           <ul className=" carousel__lista ">
-            <button>Todas las Areas</button>
-            <button>Corporativo</button>
             <button>Innovacion</button>
-            <button>Transformacion</button>
-            <button>Diseño de Productos</button>
             <button>Sostenibilidad</button>
+            <button>Transformacion Digital</button>
           </ul>
 
           <div className="d-flex carousel__container">

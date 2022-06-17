@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'GT Walsheim Pro'; /*this is what you put on your font family*/
+    src: url('../GTWalsheimPro/GTWalsheimPro-Light.ttf'); /*Link to the font*/
+    /* font-family: 'GT Walsheim Pro';
+    src: url('../GTWalsheimPro/GTWalsheimPro-Bold.ttf'); */
+}
+
 :root {
     --black: #19191C;
     --blueAlternative: #270BC4 ;
@@ -12,6 +19,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: var(--whiteOff);
+    font-family:'GT Walsheim Pro';
 }
 
 /* Inicio Header */
@@ -56,8 +64,10 @@ html, body {
 
 .burg-toggle {
     background: transparent;
-    padding: 20px 0;
     display: block;
+    left: -200px;
+    padding: 20px 0;
+    position: relative;
 }
 
 .burg-toggle span {
@@ -353,47 +363,40 @@ html, body {
 
 /* Banner */
 
+.banner {
+    height: 1100px;
+}
+
 .carousel-indicators {
-    bottom: 198px;
-    justify-content: end;
+    bottom: 630px;
+    left: 442px;
+    width: 60%;
 }
 
 .banner .carousel-indicators [data-bs-target] {
-    width: 15%;
+    width: 20%;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-    width: 10%;
+    width: 5%;
 }
 
 .banner__carousel-prev{
-    background-color: var(--white);
     position: relative;
-    left: 1093px;
-    font-size: 4rem;
-    top: 400px;
-    color: var(--black);
-    transform: rotate(-90deg);
-    width: 43%;
-    height: 9%;
+    left: 1450px;
+    top: 287px;
     transition: background-color .3s ease;
 } 
 
 .banner__carousel-next{
-    background-color: var(--white);
     position: relative;
-    font-size: 4rem;
-    top: 400px;
-    right: 195px;
-    color: var(--black);
-    transform: rotate(90deg);
-    width: 43%;
-    height: 9%;
+    top: 287px;
+    right: 255px;
 } 
 
 .banner__carousel-prev:hover {
-    color: var(--green);
+    background-image: url('../Breakpoints/1920/Icon_Back_Hover.jpg');
 }
 
 .banner__carousel-next:hover {
@@ -401,22 +404,24 @@ html, body {
 }
 
 .slides {
-    bottom: -20px;
     color: var(--white);
     display: flex;
     position: relative;
-    bottom: 210px;
-    left: 800px;
+    bottom: 630px;
+    left: 955px;
     width: 40%;
 }
 
+.slides__content {
+    width: 31%;
+}
+
 .slides h3{
-    font-size:1rem ;
+    font-size:2rem ;
 }
 
 .slides p {
-    font-size: 13px;
-    margin-right: 20px;
+    font-size: 20px;
 }
 
 .content__banner{
@@ -428,13 +433,17 @@ html, body {
     width: 41%;
 }
 
+.content__banner-info p {
+    font-size: 25px;
+}
+
 .content__banner-block {
     position: absolute;
     height: 227px;
     background-color: var(--blueDark);
     width: 565px;
-    right: 40px;
-    top: 470px;
+    right: 140px;
+    top: 688px;
     text-align: left;
 }
 
@@ -450,10 +459,17 @@ html, body {
     margin-top: 15px;
     margin-left: 15px ;
     font-weight: bold;
+    margin-right: 15px;
 }
 
 .content__banner-info{
+    color: var(--white);
     border-top: 2px solid var(--white);
+    position: relative;
+    bottom: 835px;
+    left: 950px;
+    height: 430px;
+    width: 25%;
 }
 
 .content__banner-info h1 {
@@ -472,17 +488,17 @@ html, body {
     background-color: var(--whiteOff);
     color: var(--blueDark);
     height: 110px;
-    left: 950px;
+    left: 1250px;
     opacity: 0.8;
     position: absolute;
-    top: 0;
-    width: 185px;
+    top: 80px;
+    width: 230px;
 }
 
 .content__banner-info_block h3 {
     font-size: 1rem;
     margin-top: 15px;
-    margin-left: 20px;
+    margin-left: 40px;
     font-weight: bold;
 }
 
@@ -497,16 +513,18 @@ html, body {
 /* Inicio Carousel */
 
 .carousel__section-content {
-    width: 70%;
+    width: 71.9%;
 }
 
 .carousel__lista {
-    list-style: none;
-    display: flex;
-    position: relative;
-    left: 400px;
     column-gap: 2rem;
+    display: flex;
+    font-size: 20px;
     font-weight: bold;
+    left: 590px;
+    list-style: none;
+    position: relative;
+    width: 45%;
 }
 
 .carousel__lista button {
@@ -530,11 +548,10 @@ html, body {
 
 .carousel__container{
     position: relative;
-    left: 400px;
+    left: 520px;
     column-gap: 1rem;
-    overflow-x: auto;
+    overflow-x: scroll;
     width: 100%;
-    /* height: 255px; */
 }
 
 .carousel__image {
@@ -562,17 +579,19 @@ html, body {
 
 .carousel__title {
     text-align: center;
-    font-size: 0.75rem;
-
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--blueDark);
 }
 
 .carousel__button {
-    position: relative;
-    border: 1px solid var(--black);
     background-color: transparent;
+    border: 1px solid var(--black);
     border-radius: 5px;
-    left: 77px;
     color: var(--blueDark);
+    font-weight: bold;
+    left: 115px;
+    position: relative;
     width: 100px;
 }
 
@@ -584,10 +603,6 @@ html, body {
 /* Carousel Fin */
 
 /* Inicio de Enterprise */
-
-.enterprise .active {
-    background-color: var(--green);
-}
 
 .enterprise {
     margin-top:100px;
@@ -604,8 +619,8 @@ html, body {
     -webkit-border-radius: 50%;
     border-radius: 50%;
     position: relative;
-    top: 185px;
-    right: 498px;
+    top: 620px;
+    right: 290px;
 }
 
 .enterprise__carousel-prev {
@@ -617,22 +632,22 @@ html, body {
     font-size: 2rem;
     transform: rotate(-90deg);
     position:relative;
-    top: 220px;
-    left: 620px;
+    top: 304px;
+    left: 890px;
 }
 
 
 .enterprise__carousel-next {
-    height: 40px;
-    width: 40px;
-    border-radius: 2rem;
     background-color: white;
+    border-radius: 2rem;
     color: var(--black);
     font-size: 2rem;
-    transform: rotate(90deg);
+    height: 40px;
     position:relative;
-    top: 220px;
-    right: 620px;
+    right: 780px;
+    transform: rotate(90deg);
+    top: 304px;
+    width: 40px;
 }
 
 .enterprise__carousel-image {
@@ -642,8 +657,8 @@ html, body {
 
 .enterprise__carousel-content {
     position: relative;
-    bottom: 400px;
-    left: 130px;
+    bottom: 520px;
+    left: 160px;
     color: var(--white);
     width: 90%;
 }
@@ -661,7 +676,25 @@ html, body {
     font-size: 1.3rem;
 }
 
+.enterprise__button {
+    margin-top: 10px;
+    text-decoration: none;
+    border: none;
+    color:var(--blueDark) ;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    position: relative;
+    top: 30px;
+}
 
+.enterprise__button:hover {
+    color: var(--white);
+}
+
+.enterprise .active {
+    background-color: var(--green);
+}
 
 /* Enterprise Fin */
 
@@ -696,11 +729,18 @@ html, body {
 
 .mockups__content{
     position: relative;
-    left: 80px;
-    top: 50px;
+    left: 260px;
+    width: 85%;
+
 }
 
 .mockups__content-title {
+    color: var(--blueDark);
+    font-weight: 700;
+}
+
+.mockups__content-title h1 {
+    color: var(--blueDark);
     font-weight: 700;
 }
 
@@ -710,11 +750,18 @@ html, body {
     left: 100px;
 }
 
+.mockups__sec-title {
+    color: var(--blueDark);
+    font-weight: bold;
+    font-size: 55px;
+}
+
 .mockups__button {
     background-color: transparent;
     border-radius: 5px;
     width: 15%;
     height: 35px;
+    width: 20%;
 }
 
 .mockups__button:hover {
@@ -723,18 +770,24 @@ html, body {
     border: none;
 }
 
+.mockups__sec-container {
+    width: 60%;
+}
+
 .mockups__sec-favicon {
     height: 700px;
+    position: relative;
+    left: 700px;
 }
 
 .tablet {
-    width: 70%;
+    width: 100%;
 }
 .telf {
-    bottom: 530px;
     position: relative;
-    right: 150px;
-    width: 50%;
+    bottom: 630px;
+    right: 190px;
+    width: 80%;
 }
 
 /* Mockups Final */
@@ -769,7 +822,7 @@ html, body {
 
 .preguntas__carousel-slides {
     position: relative;
-    left: 220px;
+    left: 280px;
     width: 85%;
 }
 
@@ -792,7 +845,7 @@ html, body {
     font-size: 2.5rem;
     position: relative;
     top: 330px;
-    left: 550px;
+    left: 750px;
     transform: rotate(-90deg);
     background-color: var(--whiteOff);
     width: 50px;
@@ -805,11 +858,11 @@ html, body {
     font-size: 2.5rem;
     position: relative;
     border-radius: 50px;
-    height: 55px;
+    height: 50px;
     transform: rotate(90deg);
-    width: 60px;
+    width: 50px;
     top: 330px;
-    right: 550px;
+    right: 750px;
     background-color: var(--whiteOff);
 }
 
@@ -820,8 +873,8 @@ html, body {
     -webkit-border-radius: 50%;
     border-radius: 50%;
     position: relative;
-    right: 500px;
-    top: 75px;
+    right: 350px;
+    top: 440px;
     background-color: var(--neutroText);
 }
 
@@ -831,6 +884,12 @@ html, body {
 
 .preguntas__carousel-next:hover {
     color: var(--green);
+}
+
+.preguntas__content-box {
+    bottom: 70px;
+    left: 100px;
+    position: relative;
 }
 
 .preguntas__slides-content{
@@ -873,7 +932,7 @@ html, body {
 
 .footer{
     background-color: var(--blueDark);
-   height: 50vh;
+   height: 45vh;
 }
 
 .footer__container {
@@ -881,9 +940,9 @@ html, body {
     display: flex;
     flex-direction: column;
     position: relative;
-    left: 65px;
+    left: 180px;
     top: 65px;
-    width: 90%;
+    width: 80%;
 }
 
 .footer__content {
@@ -895,11 +954,15 @@ html, body {
 .footer__group-container {
     display: flex;
     column-gap: 5rem;
+    font-size: 20px;
+    position: relative;
+    top: 10px;
 }
 
 .footer__group h5 {
     position: relative;
     bottom: 25px;
+    font-size: 30px;
 }
 
 .footer__content-email_logo {
@@ -907,6 +970,7 @@ html, body {
     flex-direction: column;
     position: relative;
     bottom: 20px;
+    width: 20%;
 }
 
 .footer__image {
@@ -944,6 +1008,16 @@ html, body {
     color: var(--white);
 }
 
+.footer__email {
+    margin-top: 25px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.footer__image-email {
+    width: 70%;
+}
+
 /* Footer Fin */
 
 /* Login Screen */
@@ -955,10 +1029,10 @@ html, body {
     .login__container {
         display: flex;
         background-color: var(--white);
-        width: 60%;
+        width: 50%;
         position: relative;
-        left: 300px;
-        top: 60px;
+        left: 500px;
+        top: 150px;
     }
 
     .login__content-inputs {
@@ -1082,94 +1156,62 @@ html, body {
 
 /* Login Screen Fin */
 
-/* Empresas */
-.empresas__banner-content {
-    position: relative;
-    bottom: 400px;
-    left: 50px;
-    width: 40%;
-    color: var(--white);
-}
+/* Register*/
+    .register__banner-image {
+        height: 70vh;
+        width: 100%;
+    }
 
-.empresas__form-container {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--blueAlternative);
-    width: 35%;
-    height: 580px;
-    border-radius: 10px;
-    position: absolute;
-    left: 820px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    top: 400px;
-}
+    .planes__register-content {
+        bottom: 350px;
+        color: var(--white);
+        height: 50px;
+        left: 100px;
+        position: relative;
+        width: 30%;
+    }
 
-.empresas__form-container h3 {
-    color: var(--white);
-}
+    .planes__register-information {
+        height: 50vh;
+    }
 
-.empresas__content-info {
-    position: relative;
-    left: 50px;
-    width: 50%;
-}
+    .planes__register-container_option {
+        height: 60vh;
+    }
 
-.empresas__content h1 {
-    position: relative;
-    left: 50px;
-    width: 50%;
-}
+    .planes__register-option {
+        column-gap: 2rem;
+        display: flex;
+        flex-flow: wrap;
+        height: 50vh;
+        position: relative;
+        left: 100px;
+        width: 45%;
+    }
 
-.empresas__text-area {
-    width: 100%;
-}
+    .planes__container-about {
+        background-color: var(--white);
+        height: 50vh;
+    }
 
-.empresas__form {
-    display: flex;
-    flex-direction: column;
-}
-.empresas__banner-image {
-    width: 100%;
-}
+    .planes__register-about {
+        left: 130px;
+        position: relative;
+        top: 130px;
+        width: 35%;
+    }
 
-.empresas__promo {
-    background-color: var(--white);
-    height: 200px;
-}
-
-.empresas__promo-content {
-    top: 20px;
-    position: relative;
-    left: 50px;
-    width: 30%;
-}
-
-.empresas__form-content {
-    position: relative;
-    bottom: 70px;
-}
-
-.empresas__button {
-    text-decoration: none;
-    border: none;
-    background-color: var(--green);
-    color: var(--blueDark);
-    font-weight: bold;
-    margin-top: 20px;
-    padding: 5px;
-    width: 50%;
-    position: relative;
-    left: 100px;
-    border-radius: 5px;
-}
-
-/* Empresas Fin */
+/* Register Fin */
 
 /* Responsive */
 @media (max-width: 1440px) {
     
+    /* Header inicio */
+    .burg-toggle {
+        left: 50px;
+    }
+    /* Header fin */
+
    /* Navegacion */
     .navegacion{
         right: 100px;
@@ -1178,13 +1220,41 @@ html, body {
     /* Navegacion Fin */
 
     /* Banner */
+
+    .banner {
+        height: 810px;
+    }
+
+    .carousel-indicators {
+        left: 430px;
+        width: 55%;
+    }
+
+    .banner .carousel-indicators [data-bs-target] {
+        width: 25%;
+    }
+
+    .content__banner-info {
+        bottom: 630px;
+        left: 745px;
+    }
+
+    .content__banner-info span {
+        font-size: 35.6px;
+    }
+
     .content__banner-block {
         top: 425px;
     }
 
     .slides {
-        bottom: 220px;
-        left: 760px;
+        bottom: 630px;
+        left: 745px;
+        gap: 1.8rem;
+    }
+
+    .slides__content {
+        width: 35%;
     }
 
     .slides p {
@@ -1192,28 +1262,44 @@ html, body {
     }
 
     .banner__carousel-prev {
-        top: 380px;
-        left: 1036px;
+        top: 155px;
+        left: 1135px;
     }
 
     .banner__carousel-next {
-        top: 380px;
-        right: 185px;
+        top: 155px;
+        right: 130px;
     }
 
     .content__banner-info_block {
-        left: 900px;
+        left: 930px;
+        top: 20px;
+        width: 200px;
     }
 
     /* Banner Final */
 
     /* Carousel */
+
+    .carousel__section-content {
+        width:78.9%;
+    }
+
+    .carousel__container {
+        left: 290px;
+    }
+
+    .carousel__lista {
+        left: 420px;
+        width: 50%;
+    }
+
     .carousel__section-content h1 {
         left: 298px;
     }
 
     .carousel__button {
-        left: 143px;
+        left: 117px;
         width: 100px;
     }
     /* Carousel Fin */
@@ -1223,17 +1309,22 @@ html, body {
         height: 60vh;
     }
 
+    .enterprise__carousel-content {
+        bottom: 410px;
+        width: 80%;
+    }
+
     .enterprise .carousel-indicators [data-bs-target] {
-        right: 450px;
+        right: 295px;
     }
 
     .enterprise__carousel-prev {
-        top: 276px;
-        left: 610px;
+        top: 231px;
+        left: 630px;
     }
 
     .enterprise__carousel-next {
-        top: 276px;
+        top: 231px;
         right: 566px;
     }
 
@@ -1247,6 +1338,32 @@ html, body {
 
     .mockups__content {
         left: 100px;
+        top: 20px;
+    }
+
+    .mockups__content p {
+        font-size: 20px;
+    }
+
+    .mockups__content-title h1 {
+        font-size: 30px;
+    }
+
+    .mockups__button {
+        width: 25%;
+    }
+
+    .mockups__sec-title {
+        font-size: 35px;
+    }
+
+    .mockups__sec-content p {
+        font-size: 20px;
+    }
+
+    .mockups__sec-favicon {
+        left: 440px;
+        top: 50px;
     }
     
     .tablet {
@@ -1255,6 +1372,7 @@ html, body {
     }
 
     .telf {
+        bottom: 450px;
         position: relative;
         left: 20px;
     }
@@ -1263,21 +1381,55 @@ html, body {
 
     /* Preguntas Frecuentes */
     .preguntas__carousel-slides {
-        width: 84%;
+        width: 80%;
+    }
+
+    .preguntas__carousel-image {
+        width: 40%;
+    }
+
+    .preguntas__slides-content {
+        bottom: 170px;
+        left: 420px;
+    }
+
+    .preguntas__slides-content_info {
+        font-size: 20px;
+    }
+
+    .preguntas__carousel-prev {
+        left: 550px;
+    }
+
+    .preguntas__carousel-next {
+        right: 490px;
     }
 
     .preguntas__frecuentes .carousel-indicators [data-bs-target] {
-        top: 90px;
-        right: 465px;
+        top: 500px;
+        right: 290px;
     }
 
     /* Preguntas Frecuentes Fin */
 
     /* Footer Inicio */
     .footer {
-        height: 36vh;
+        height: 45vh;
     }
+
+    .footer__container {
+        left: 80px;
+        width: 90%;
+    }
+
     /* Footer Fin */
+
+    /* Login Screen */
+    .login__container {
+        left: 260px;
+        width: 66%;
+    }
+    /* Login Screen fin */
 }
 
 @media (max-width: 1024px) {

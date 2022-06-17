@@ -1,6 +1,6 @@
 import React from "react";
-import { Carousel, Col, Image } from "react-bootstrap";
-import { Slider_01, Slider_02, Slider_03, playButton } from "../assets/img";
+import { Col, Image } from "react-bootstrap";
+import { Slider_01, Slider_02, Slider_03, playButton,buttonprev,buttonnext } from "../assets/img";
 
 export const 
 Banner = () => {
@@ -36,12 +36,48 @@ Banner = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <Image src={Slider_01} className="d-block w-100" alt="..." />
+            <div className="content__banner-info">
+            <p>
+              Competencias y Proyectos
+            </p>
+            <h1>
+              Xlearn:
+              <span>
+                <br />
+                Haz de la innovacion el motor de transformacion
+              </span>
+            </h1>
+          </div>
           </div>
           <div className="carousel-item">
             <Image src={Slider_02} className="d-block w-100" alt="..." />
+            <div className="content__banner-info">
+            <p>
+              Competencias y Proyectos
+            </p>
+            <h1>
+              Xlearn:
+              <span>
+                <br />
+                Involucra a tus empleados en los procesos de formacion
+              </span>
+            </h1>
+          </div>
           </div>
           <div className="carousel-item">
             <Image src={Slider_03} className="d-block w-100" alt="..." />
+            <div className="content__banner-info">
+            <p>
+              Competencias y Proyectos
+            </p>
+            <h1>
+              Xlearn:
+              <span>
+                <br />
+                Crea y diseña nuevos negocios con Xlearn
+              </span>
+            </h1>
+          </div>
           </div>
         </div>
         <button
@@ -51,7 +87,7 @@ Banner = () => {
           data-bs-slide="prev"
         >
           <span className="banner__carousel-prev" aria-hidden="true">
-            ^
+            <img src={buttonprev} alt='prev'  />
           </span>
           <span className="visually-hidden">Previous</span>
         </button>
@@ -62,26 +98,26 @@ Banner = () => {
           data-bs-slide="next"
         >
           <span className="banner__carousel-next" aria-hidden="true">
-            ^
+            <img src={buttonnext} alt='next' />
           </span>
           <span className="visually-hidden">Next</span>
         </button>
       </div>
       <div className="slides">
-        <div>
+        <div className="slides__content" >
           <h3>02</h3>
-          <p>Innova en todas las areas</p>
+          <p>Innova</p>
         </div>
-        <div>
+        <div className="slides__content" >
           <h3>03</h3>
           <p>
-            Desarrolla Proyectos para <br /> Innovar
+            Desarrolla
           </p>
         </div>
-        <div>
+        <div className="slides__content" >
           <h3>04</h3>
           <p>
-            Logra exito empresarial <br /> paso a paso
+            Crea
           </p>
         </div>
       </div>
@@ -101,24 +137,11 @@ Banner = () => {
           <div className="content__banner-block">
             <h3>PROPUESTA DE VALOR</h3>
             <p>
-              Logra desarrollar competencias y proyectos en las áreas de la
-              innovación, el intraemprendimiento, diseño y desarrollo de
-              productos, transformación digital, sostenibilidad y más…
+              Somos una plataforma pensada para empresas,corporativa, y con enfasis en el entrenamiento de equipos de trabajo para el desarrollo de proyectos en temas como innovacion, sostenibilidad,transformacion digital, etc
             </p>
           </div>
         </Col>
         <Col className="h-75" md={6}>
-          <div className="content__banner-info">
-            <p>
-              Competencias y Proyectos
-            </p>
-            <h1>
-              Xlearn:
-              <span>
-                la  innovacion se hace realidad
-              </span>
-            </h1>
-          </div>
           <div className="content__banner-info_block  ms-3">
             <h3>
               2022 <br /> Innovacion <br /> Sostenibilidad <br /> Transformación

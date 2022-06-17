@@ -12,37 +12,37 @@ export const Footer = () => {
 
             <Image src={XlearnLogo} alt="logo" className="footer__image" />
             <p className="footer__logo-info_title" >
-              Lorem ipsum dolor sit amet, consectetuer
-              <br /> adipiscing elit, sed diam nonummy nibh <br /> euismod
-              tincidunt ut laoreet dolore magna <br /> aliquam erat volutpat.
+              Somos una plataforma pensada para <br />
+              empresas,coorporativa, y con enfasis en el <br /> 
+              entrenamiento de equipos de trabajo para <br /> 
+              el desarrollo de proyectos en temas como: <br/>
+              innovacion, sostenibilidad, transformacion, <br/>
+              digital, etc
             </p>
           </div>
 
           <div className="footer__group-container">
 
           <div className="footer__group">
-            <h5>Lorem ipsum</h5>
-            <p>Erat volutpat</p>
-            <p>Sed diam</p>
-            <p>Dolor sit amet</p>
+            <h5>Compañia</h5>
+            <p>Nosotros</p>
+            <p>Casos</p>
           </div>
           <div className="footer__group">
-            <h5>Lorem ipsum</h5>
-            <p>Erat volutpat</p>
-            <p>Sed diam</p>
-            <p>Dolor sit amet</p>
+            <h5>Comunidad</h5>
+            <p>Planes por equipo</p>
+            <p>Blog</p>
           </div>
           <div className="footer__group">
-            <h5>Lorem ipsum</h5>
-            <p>Erat volutpat</p>
-            <p>Sed diam</p>
-            <p>Dolor sit amet</p>
+            <h5>Contactanos</h5>
+            <p>Preguntas frecuentes</p>
+            <p>Soporte</p>
           </div>
           </div>
 
           <div className="footer__content-email_logo ">
             <Image src={XlearnLogo} alt="logo" className="footer__image-email" />
-            <input type="email" placeholder="Enter Your Email" />
+            <input type="email" placeholder="Enter Your Email" className="footer__email" />
           </div>
         </div>
         {/* Footer Content */}
