@@ -1,1 +1,1 @@
-export const baseURL = 'https://servicios.asstiseguridadsocial.com';
+export const baseURL = 'http://servicios.10xconsultores.org';

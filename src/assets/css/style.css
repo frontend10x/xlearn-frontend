@@ -62,178 +62,39 @@ html, body {
 
 /* Inicio Menu izquierda */
 
-.burg-toggle {
-    background: transparent;
-    display: block;
-    left: -200px;
-    padding: 20px 0;
+.modal-content {
+    background-color: var(--blueDark);
+    height: 100vh;
+    color: var(--white);
+}
+
+.header__menu {
+    width: 50%;
+}
+
+.header__menu-lista .link {
+    color: var(--white);
+}
+
+.header__menu-item {
+    display: flex;
+    font-size: 30px;
+}
+
+.header__menu-item:hover {
     position: relative;
+    left: 15px;
 }
 
-.burg-toggle span {
+.header__menu-item .header__menu-lista {
+    display: none;
+}
+
+.header__menu-item:hover .header__menu-lista {
     display: block;
-    height: 3px;
-    width: 30px;
-    background: #ffffff;
-    position: relative;
 }
 
-.burg-toggle span:before,
-.burg-toggle span:after {
-    content: "";
-    position: absolute;
-    width: 30px;
-    height: 3px;
-    background: #ffffff;
-}
 
-.burg-toggle span:before {
-    top: -10px;
-}
-
-.burg-toggle span:after {
-    top: 10px;
-}
-
-.menu-full {
-    visibility: hidden;
-    opacity: 0;
-    margin-top: -100%;
-    color: #FFF;
-    background: #012231e0;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: all 0.3s ease-in-out;
-    z-index: 9999999999999999999!important;
-}
-
-.menu-full>div {
-    display: table;
-    width: 100%;
-    height: 100%;
-}
-
-.menu-full>div>div {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.menu-full>div>div>div {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 90%;
-    text-align: left;
-}
-
-.menu-full ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.menu-full ul li {
-    list-style: none;
-}
-
-.menu-full ul li a {
-    display: inline-block;
-    font-family: 'GT Walsheim Pro';
-    text-decoration: none;
-    color: #FFF;
-    font-size: 38px;
-    line-height: 1em;
-    padding: 5px 0;
-}
-
-.menu-full ul li a:hover {
-    color: #666;
-}
-
-.menu-full ul li ul {
-    transition: all 0.3s ease-in-out;
-    visibility: hidden;
-    opacity: 0;
-    margin-top: -2em;
-    position: relative;
-    left: 200px;
-}
-
-.menu-full ul li ul li {
-    display: inline-block;
-}
-
-.menu-full ul li ul li a {
-    color: #BBB;
-    font-size: 18px;
-    text-transform: lowercase;
-    line-height: 1em;
-    padding: 0 20px 10px;
-}
-
-.menu-full ul li ul li a:hover {
-    color: #666;
-}
-
-.menu-full ul li a:hover+ul,
-.menu-full ul li ul:hover {
-    transition: all 0.3s ease-in-out;
-    visibility: visible;
-    opacity: 1;
-    margin-top: 0em;
-    width: 230px;
-}
-
-.menu-full .close-button {
-    width: 34px;
-    height: 34px;
-    position: absolute;
-    top: 20px;
-    left: 60px;
-}
-
-.menu-full .close-button span {
-    position: absolute;
-    margin: 0 auto;
-    background: transparent;
-    border-radius: 299px;
-    padding: 25px 25px 25px;
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    transition: all 0.3s ease-in-out;
-    background: #011720;
-}
-
-.menu-full .close-button span:after,
-.menu-full .close-button span:before {
-    position: absolute;
-    top: 17px;
-    right: 3px;
-    bottom: 0;
-    left: 50%;
-    transform: rotate(45deg) translateX(0) translateY(0);
-    height: 15px;
-    width: 2px;
-    background: white;
-    content: "";
-    display: block;
-    margin: 0 0 0 -1px;
-    transition: all 0.3s ease-in-out;
-}
-
-.menu-full .close-button span:before {
-    transform: rotate(-45deg) translateX(0) translateY(0);
-}
-
-.menu-full:target {
-    transition: all 0.3s ease-in-out;
-    visibility: visible;
-    opacity: 1;
-    margin-top: 0;
-}
 /* Fin de Menu */
 
 /* Inicio Navegacion */
@@ -1081,6 +942,7 @@ html, body {
         left: 50px;
         color: var(--blueDark);
         font-weight: bold;
+        text-align: center;
     }
 
     .login__button-entrar:hover {
@@ -1201,7 +1063,98 @@ html, body {
         width: 35%;
     }
 
+    .planes__form-container {
+        background-color: var(--blueAlternative);
+        border-radius: 5px;
+        color: var(--white);
+        position: absolute;
+        left: 900px;
+        top: 495px;
+        height: 112vh;
+        width: 30%;
+    }
+    
+    .planes__formulario-content{
+        display: flex;
+        flex-flow: wrap;
+        column-gap: 4rem;
+        width: 77%;
+        position: relative;
+        left: 40px;
+    }
+
+    .form__group {
+        width: 40%;
+    }
+
+    .form__group input {
+        border: none;
+        border-radius: 5px;
+        padding: 5px;
+        width: 100%;
+    }
+
+    .form__group select {
+        border-radius: 5px;
+        padding: 7px;
+        width: 100%;
+    }
+
+    .form__container-country_content {
+        width: 100%;
+    }
+
+    .form__container-country_content select {
+        width: 418px;
+    }
+    
+    .form__group span{
+        color: red;
+    }
+
+    textarea {
+        border-radius: 5px;
+        resize: none;
+    }
+
+    .planes__formulario-button {
+        background-color: var(--green);
+        border: none;
+        border-radius: 10px;
+        left: 100px;
+        position: relative;
+        padding: 10px;
+        top: 30px;
+        width: 50%;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
 /* Register Fin */
+
+/* Vista Empresa */
+.dashboard__banner {
+    color: var(--white);
+    position: relative;
+    left: 350px;
+    top: 150px;
+    width: 100%;
+}
+
+.dashboard__image {
+    border-radius: 20px;
+    height: 50vh;
+    width: 80%;
+}
+
+.dashboard__banner-content{
+    position: relative;
+    bottom: 200px;
+}
+
+
+
+/* Vista Empresa Fin*/
 
 /* Responsive */
 @media (max-width: 1440px) {

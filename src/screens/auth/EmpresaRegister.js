@@ -1,12 +1,12 @@
 import React from "react";
-import { Form, Image } from "react-bootstrap";
-import { registerbanner } from "../assets/img";
-import { HeaderRegister } from "../componentes/HeaderRegister";
-import { Footer } from "../componentes/Footer";
+import { registerbanner } from "../../assets/img";
+import { HeaderRegister } from "../../componentes/HeaderRegister";
+import { Footer } from "../../componentes/Footer";
+import { EmpresaFormulario } from "../../componentes/EmpresaFormulario";
 
 export const EmpresasRegister = () => {
+  
   return (
-
     <div className="planes-register">
       <HeaderRegister />
       <div className="planes__register-banner">
@@ -72,18 +72,11 @@ export const EmpresasRegister = () => {
             </h4>
           </div>
         </div>
-        <div className="planes__form-container" >
-            <div className="planes__form-content" >
-                <form>
-                  <div>
-                    
-                  </div>
-                </form>
-            </div>
+        <div className="planes__form-container">
+         <EmpresaFormulario />
         </div>
-      <Footer />
+        <Footer />
       </div>
     </div>
-
   );
 };

@@ -52,10 +52,10 @@ export const InicioScreen = () => {
     <div className="inicioScreen">
       <div className="Inicio banner&header ">
         <Header />
-        <Banner />
+        {/* <Banner /> */}
       </div> 
 
-      <div className="carousel-section">
+      {/* <div className="carousel-section">
         <div className="carousel__section-content">
           <h1>Elige los cursos de tu interes</h1>
 
@@ -87,7 +87,7 @@ export const InicioScreen = () => {
 
       <div className="footer-section">
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 };

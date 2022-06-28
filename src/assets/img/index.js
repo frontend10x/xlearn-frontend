@@ -23,3 +23,4 @@ export {default as buttonprev } from '../Breakpoints/1920/Icon_Back_Default.jpg'
 export {default as buttonnext} from '../Breakpoints/1920/Icon_Next_Default.jpg';
 export {default as hoverprev} from '../Breakpoints/1920/Icon_Back_Hover.jpg';
 export {default as registerbanner} from '../Image/AdobeStock_302471776.jpeg';
+export {default as vistaEmpresa} from '../Image/banner_vista-empresa.jpeg';
