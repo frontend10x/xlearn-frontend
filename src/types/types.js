@@ -1,5 +1,11 @@
 
 export const types = {
-    login: '[auth] LOGIN',
-    logout: '[auth] LOGOUT',
+    /* AUTH */
+    login: '[AUTH] LOGIN',
+    logout: '[AUTH] LOGOUT',
+    register: '[AUTH] REGISTER',
+
+    /* Diagnostico */
+    proyectoRoute: '[ROUTE] PROYECTO',
+    entrenamientoRoute: '[ROUTE] ENTRENAMIENTO'
 }

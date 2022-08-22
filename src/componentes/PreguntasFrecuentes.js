@@ -99,7 +99,7 @@ export const PreguntasFrecuentes = () => {
           </div>
 
           </div>
-          <div class="carousel-item">
+          <div className="carousel-item">
             <Image
               src={Image_04}
               alt="preguntas frecuentes 3"

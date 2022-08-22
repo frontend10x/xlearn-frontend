@@ -1,8 +1,6 @@
 @font-face {
     font-family: 'GT Walsheim Pro'; /*this is what you put on your font family*/
     src: url('../GTWalsheimPro/GTWalsheimPro-Light.ttf'); /*Link to the font*/
-    /* font-family: 'GT Walsheim Pro';
-    src: url('../GTWalsheimPro/GTWalsheimPro-Bold.ttf'); */
 }
 
 :root {
@@ -23,6 +21,19 @@ html, body {
 }
 
 /* Inicio Header */
+
+.burg-toggle {
+    border: none;
+    background-color: transparent;
+    position: relative;
+    top: 10px;
+    left: 125px;
+}
+
+.header__button-list {
+    height: 50px;
+    width: 100%;
+}
 
 .fixed_top {
     top: 0;
@@ -58,9 +69,9 @@ html, body {
     margin-top: 3px;
 }
 
-/* Header Fin */
-
-/* Inicio Menu izquierda */
+.modal__container {
+    position: absolute;
+}
 
 .modal-content {
     background-color: var(--blueDark);
@@ -69,6 +80,9 @@ html, body {
 }
 
 .header__menu {
+    position: relative;
+    left: 30px;
+    top: 180px;
     width: 50%;
 }
 
@@ -76,14 +90,20 @@ html, body {
     color: var(--white);
 }
 
+.header__menu-lista .link:hover {
+    color: var(--green);
+}
+
 .header__menu-item {
     display: flex;
-    font-size: 30px;
+    font-size: 40px;
+    padding: 5px 0px;
 }
 
 .header__menu-item:hover {
     position: relative;
     left: 15px;
+    color: var(--green);
 }
 
 .header__menu-item .header__menu-lista {
@@ -94,6 +114,50 @@ html, body {
     display: block;
 }
 
+.ingresar {
+    position: relative;
+    left: 105px;
+    height: 50px;
+    bottom: 40px;
+}
+
+.planes {
+    position: relative;
+    left: 130px;
+    height: 50px;
+    bottom: 120px;
+}
+
+.categoria {
+    position: relative;
+    left: 50px;
+    height: 50px;
+    bottom: 270px;
+}
+
+.acerca{
+    position: relative;
+    left: 125px;
+    height: 50px;
+    bottom: 120px;
+}
+
+.header__menu-button {
+    background-color: var(--neutroText);
+    border: none;
+    border-radius: 100px;
+    color: var(--white);
+    height: 50px;
+    left: 60px;
+    top: 50px;
+    position: relative;
+    width: 50px;
+}
+
+.background {
+    background-color: var(--blueDark);
+    position: relative !important ;
+}
 
 /* Fin de Menu */
 
@@ -102,8 +166,10 @@ html, body {
 .navegacion {
     display: flex;
     column-gap: 2rem;
+    left: 1100px;
+    width: 40%;
     position: relative;
-    right: 50px ;
+    top: -20px;
 }
 
 .navbar {
@@ -385,7 +451,7 @@ html, body {
     left: 590px;
     list-style: none;
     position: relative;
-    width: 45%;
+    width: 80%;
 }
 
 .carousel__lista button {
@@ -881,6 +947,171 @@ html, body {
 
 /* Footer Fin */
 
+/* Cursos Screen */
+
+.cursos__filter-content {
+    position: relative;
+    left: 100px;
+    top: 50px;
+    height: 65vh;
+}
+
+.cursos__filter-title  {
+    background-color: var(--blueDark);
+    border-radius: 5px;
+    color: var(--white);
+    width: 30%;
+}
+
+.cursos__filter-title h3 {
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.cursos__filter-buttons h4 {
+    border-bottom: 1px solid var(--black);
+    margin-bottom: 15px;
+    margin-top: 15px;
+    width: 28%;
+    position: relative;
+    left: 10px;
+    font-weight: bold;
+}
+
+/* .cursos__filter-button {
+    display: flex;
+    flex-direction: column;
+} */
+
+.cursos__filter-buttons input{
+    display: flex;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    position: relative;
+    left: 9px;
+}
+
+.cursos__section-recently{
+    position: relative;
+    left: 555px;
+    bottom: 260px;
+    font-weight: bold;
+    font-size: 33px;
+}
+
+.map_content {
+    position: relative;
+    bottom: 240px;
+    left: 550px;
+    display: flex;
+    gap: 1rem;
+}
+
+.cursos__section-populars {
+    position: relative;
+    left: 555px;
+    bottom: 150px;
+    font-weight: bold;
+    font-size: 33px;
+}
+
+.map_content2 {
+    position: relative;
+    bottom: 120px;
+    left: 550px;
+    display: flex;
+    gap: 1rem;
+}
+
+.cursos__card-body {
+    border-radius: 10px;
+    
+}
+
+.cursos__card-content {
+    background-color: var(--white);
+    height: 15vh;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.cursos__card-content h5 {
+    font-weight: bold;
+    color: var(--blueDark);
+    position: relative;
+    text-align: left;
+    margin-left: 30px;
+    top: 15px
+}
+
+.cursos__card-titles {
+    position: relative;
+    top: 20px;
+}
+
+.cursos__card-information {
+    display: flex;
+    justify-content: space-around;
+    column-gap: 10rem;
+}
+
+.cursos__card-logo {
+    position: relative;
+    left: 25px;
+    top: 40px;
+    width: 20%;
+}
+
+.cursos__banner {
+    position: relative;
+    top: 50px;
+    right: 385px;
+    height: 0px;
+}
+
+.cursos__banner-content {
+    color: var(--white);
+    position: relative;
+    bottom: 180px;
+    left: 20px;
+}
+
+.cursos__banner-content h3 {
+    font-weight: bold;
+}
+
+.cursos__banner-button {
+    background-color: var(--green);
+    border: none;
+    color: var(--blueDark);
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    height: 4vh;
+    width: 35%;
+}
+
+.cursos__button-expand {
+    border: none;
+    background-color: transparent;
+    border: 1px solid var(--black);
+    font-size: 20px;
+    color: var(--blueDark);
+    font-weight: bold;
+    border-radius: 5px;
+    width: 15%;
+    position: relative;
+    left: 1050px;
+    bottom: 50px;
+}
+
+.cursos__button-expand:hover {
+    background-color: var(--green);
+    border: none;
+}
+
+/* Cursos Screen Fin */
+
 /* Login Screen */
     .login {
         background-color: var(--blueDark);
@@ -1003,7 +1234,7 @@ html, body {
     }
 
     .login__header-logo-title p {
-        font-size: 14px;
+        font-size: 20px;
         color: var(--blueDark);
         font-weight: bold;
     }
@@ -1051,6 +1282,12 @@ html, body {
         width: 45%;
     }
 
+    .planes__register-option h1 {
+        font-weight: bold;
+        font-size: 40px;
+        width: 75%;
+    }
+
     .planes__container-about {
         background-color: var(--white);
         height: 50vh;
@@ -1063,17 +1300,27 @@ html, body {
         width: 35%;
     }
 
+    .planes__register-about h1 {
+        font-weight: bold;
+    }
+
     .planes__form-container {
         background-color: var(--blueAlternative);
         border-radius: 5px;
         color: var(--white);
         position: absolute;
-        left: 900px;
+        left: 980px;
         top: 495px;
         height: 112vh;
         width: 30%;
     }
     
+    .planes__form-content {
+        position: relative;
+        top: 30px;
+        left: 40px;
+    }
+
     .planes__formulario-content{
         display: flex;
         flex-flow: wrap;
@@ -1085,6 +1332,11 @@ html, body {
 
     .form__group {
         width: 40%;
+    }
+
+    .form__group p {
+        position: relative;
+        top: 10px;
     }
 
     .form__group input {
@@ -1130,44 +1382,1120 @@ html, body {
         font-weight: bold;
     }
 
+    .planes__formulario h1 {
+        font-weight: bold;
+    }
+
+    .planes__option-group ul li::marker {
+        color: var(--green);
+    } 
+
 /* Register Fin */
 
-/* Vista Empresa */
-.dashboard__banner {
-    color: var(--white);
-    position: relative;
-    left: 350px;
-    top: 150px;
+/* Empresas section */
+.empresas__section {
+    background-color: var(--white);
     width: 100%;
 }
 
-.dashboard__image {
-    border-radius: 20px;
+.empresas__banner-image {
+    width: 100%;
+}
+
+.empresas__banner-content {
+    position: relative;
+    bottom: 400px;
+    left: 100px;
+    width: 40%;
+    height: 0px;
+}
+
+.empresas__banner-content h1 {
+    color: var(--white);
+    font-weight: bold;
+}
+
+.empresas__banner-content p {
+    color: var(--white);
+}
+
+.empresas__banner-button {
+    border: none;
+    background-color: var(--green);
+    border-radius: 5px;
+    color: var(--blueDark);
+    font-weight: bold;
+    font-size: 25px;
+    width: 50%;
+}
+
+.empresas__innovacion-container {
+    height: 65vh;
+}
+
+.empresas__innovacion-information_container {
+    display: flex;
+}
+
+.empresas__innovacion-redirection {
+    position: relative;
+    left: 50px;
+    top: 95px;
+    width: 50%;
+}
+
+.empresas__innovacion-title {
+    border-bottom: 1px solid var(--black) ;
+    position: relative;
+    left: 50px;
+    top: 150px;
+    width: 35%;
+}
+
+.empresas__innovacion-content {
+    font-weight: bold;
+    position: relative;
+    left: 50px;
+    top: 150px;
+    width: 50%;
+}
+
+.empresas__innovacion-content h1{
+    color: var(--blueDark);
+    font-size: 40px;
+    width: 50%;
+    font-weight: bold;
+}
+
+.empresas__innovacion-information {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 120px;
+    width: 50%;
+}
+
+.empresas__innovacion-information_group {
+    width: 45%;
+}
+
+.empresas__innovacion-information_group-title {
+    border-bottom: 1px solid var(--black);
+    width: 75%;
+    padding-bottom: 20px ;
+}
+
+.empresas__banner-image_content {
+    height: 75vh;
+    width: 50%;
+}
+
+.empresas__banner-image_section {
+    position: relative;
+    left: 400px;
+    width: 100%;
+}
+
+.empresas__section-information_content {
+    position: relative;
+    left: 150px;
+    width: 30%;
+    height: 35vh;
+}
+
+.empresas__section-information_content h4 {
+    font-size: 20px;
+}
+
+.empresas__section-information_content h1 {
+    font-weight: bold;
+    color: var(--blueDark);
+}
+
+.empresas__section-information_content span {
+    border-bottom: 6px solid var(--blueAlternative);
+}
+
+.empresas__platform-container {
+    display: flex;
+    height: 75vh;
+}
+
+.empresas__platform-container_image {
+    width: 50%;
+}
+
+.empresas__platform-image {
+    width: 100%;
+}
+
+.empresas__platform-container_options {
+    background-color: #F4F4F4;
+    width: 50%;
+    height: 80vh;
+    position: relative;
+    bottom: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.empresas__platform-video {
+    display: flex;
+    position: relative;
+    left: 350px;
+    top: 70px;
+    width: 50%;
+}
+
+.empresas__platform-video p {
+    position: relative;
+    left: 25px;
+    top: 20px;
+}
+
+.empresas__platform-options_content {
+    position: relative;
+    left: 300px;
+    top: 110px;
+    width: 40%;
+}
+
+.empresas__platform-options_content h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--blueDark);
+    
+}
+
+.empresas__platform-options_content h4 {
+    font-weight: bold;
+    color: var(--blueDark);
+}
+
+.empresas__colaboration-container {
+    display: flex;
+}
+
+.empresas__colaboration-content {
+    position: relative;
+    left: 150px;
+    top: 50px;
+    width: 50%;
+}
+
+.empresas__colaboration-content h1 {
+    font-weight: bold;
+    color: var(--blueDark);
+    width: 45%;
+    height: 35vh;
+}
+
+.empresas__colaboration-content span {
+    border-bottom: 3px solid var(--blueAlternative);
+}
+
+.empresas__colaboration-information-content {
+    position: relative;
+    top: 50px;
+} 
+
+.empresas__colaboration-information-content p {
+    font-size: 20px;
+    width: 60%;
+}
+
+.empresas__banner-contacto_content {
+    position: relative;
+    bottom: 550px;
+    left: 100px;
+    color: var(--white);
+    height: 0px;
+}
+
+.empresas__banner-contacto_content p {
+    font-size: 35px;
+}
+
+.empresas__banner-contacto_content h1 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.empresas__banner-button_container {
+    display: flex;
+    column-gap: 50px;
+    position: relative;
+    top: 35px;
+}
+
+.empresas__banner-contacto_button {
+    border: none;
+    background-color: var(--green);
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--blueDark);
+    width: 20%;
+}
+
+.empresas__banner-proyecto_button {
+    border: 1px solid var(--green);
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    width: 20%;
+    color: var(--green);
+}
+
+/* Empresas section Fin */
+
+/* Vista Empresa */
+
+.dashboard__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard__navegacion-container {
+    width: 11%;
+}
+
+.dashboard__nav-section {
+ max-width: 100%;
+}
+
+.dashboard__nav {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+.dashboard__nav-link {
+    position: relative;
+    left: 5px;
+    top: 25px;
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+    color: var(--neutroText);
+}
+
+.dashboard__banner {
+    width: 100%;
+}
+
+.dashboard__banner-content {
+    width: 90%;
+    left: 40px;
+    top: 30px;
+    height: 27vh;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.dashboard__banner-image {
+    height: 70vh;
+    position: relative;
+    width: 100%;
+    bottom: 180px;
+
+}
+
+.dashboard__banner-title {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+    bottom: 140px;
+    left: 50px;
+    font-weight: bold;
+    width: 30%;
+}
+
+.gradient {
+    position: relative;
+    width: 30%;
+    height: 27vh;
+    border-radius: 10px 0px 0px 10px;
+    bottom: 317px;
+    left: 30px;
+}
+
+.dashboard__container-nav_banner {
+    display: flex;
+}
+
+.dashboard__management {
+    bottom: 490px;
+    position: relative;
+    left: 220px;
+    width: 80%;
+} 
+
+.dashboard__block-container {
+    display: flex;
+    column-gap: 2rem;
+    position: relative;
+    top: 20px;
+}
+
+.dashboard__block {
+    background-color: var(--white);
+    border: 1px solid var(--blueDark);
+    border-radius: 5px;
+    height: 35vh;
+}
+
+.dashboard__block-content {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 45px;
+    right: 90px;
+}
+
+.dashboard__title {
+    position: relative;
+    top: 150px;
+    left: 40px;
+}
+
+.dashboard__block-button {
+    background-color: var(--green);
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 20%;
+    position: relative;
+    left: 130px;
+    font-weight: bold;
+}
+
+.dashboard__card-info {
+    position: relative;
+    bottom: 420px;
+    text-align: center;
+}
+
+.dashboard__card-info h1 {
+    position: relative;
+    left: 570px;
+    width: 43%;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--blueDark);
+}
+
+.dashboard__info-container {
+    display: flex;
     height: 50vh;
     width: 80%;
 }
 
-.dashboard__banner-content{
+.dashboard__card-content {
     position: relative;
-    bottom: 200px;
+    top: 50px;
+    left: 280px;
+    width: 100%;
+}
+
+.dashboard__card-body {
+    width: 80%;
+    height: 42vh;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.dashboard__card-image {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;   
+}
+
+.dashboard__card-title {
+    text-align: center;
+    position: relative;
+    top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--blueDark);
 }
 
 
+.dashboard__card-button {
+    border: 1px solid var(--blueDark);
+    background-color: transparent;
+    width: 30%;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.dashboard__card-button:hover {
+    border: 1.5px solid var(--blueAlternative);
+    color: var(--blueAlternative);
+    width: 35%;
+}
+
+.dashboard__novedades-section {
+   height: 50vh;
+}
+
+.dashboard__novedades-container {
+    display: flex;
+    width: 100%;
+    background-color: var(--blueDark);
+    height: 70vh;
+    position: relative;
+    bottom: 320px;
+}
+
+.dashboard__novedades-content {
+    color: var(--white);
+    font-weight: bold;
+    position: relative;
+    top: 200px;
+    left: 200px;
+}
+
+.dashboard__novedades-content h1 {
+    font-size: 48px;
+    width: 40%;
+}
+
+.dashboard__novedades-content p {
+    font-size: 20px;
+    width: 50%;
+}
+
+.dashboard__novedades-container_image {
+    display: flex;
+    column-gap: 2rem;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    top: 140px;
+}
+
+.dashboard__novedades-image {
+    height: 40vh;
+    width: 80%;
+    position: relative;
+}
+
+.dashboard__novedades-titles {
+    color: var(--white);
+    position: relative;
+    bottom: 80px;
+    font-weight: bold;
+    left: 30px;
+    width: 50%;
+}
+
+.dashboard__novedades-titles h5 {
+    font-weight: bold;
+}
+
+.dashboard__support-container {
+    text-align: center;
+    height: 50vh;
+}
+
+.dashboard__support-content {
+    position: relative;
+    top: 160px;
+    font-weight: bold;
+}
+
+.dashboard__support-content h1 {
+    font-weight: bold;
+    font-size: 48px;
+    position: relative;
+    bottom:80px;
+}
+
+.dashboard__support-content p {
+    width: 35%;
+    position: relative;
+    left: 600px;
+    bottom: 50px;
+}
+
+.dashboard__support-button {
+    background-color: var(--green);
+    border-radius: 5px;
+    color: var(--blueDark);
+    border: none;
+    padding: 5px;
+    height: 40px;
+    width: 10%;
+    font-weight: bold;
+    font-size: 20px;
+}
 
 /* Vista Empresa Fin*/
+
+/* Diagnostico Lider */
+
+.diagnostico__lider-content {
+    left: 450px;
+    position: relative;
+    top: 250px;
+    width: 50%;
+    text-align: center;
+}
+
+.diagnostico__lider-content h1 {
+    margin-bottom: 20px;
+    color: var(--blueDark);
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.diagnostico__lider-content h4 {
+    color: var(--green);
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.diagnostico__lider-footer {
+    background-color: var(--white);
+    position: relative;
+    height: 20vh;
+    top: 503px;
+    display: flex;
+    justify-content: end;
+}
+
+.diagnostico__lider-button {
+    background-color: var(--green);
+    position: relative;
+    top: 50px;
+    height: 6vh;
+    width: 8%;
+    text-align: center;
+    color: var(--blueDark);
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    right: 75px;
+}
+
+/* Diagnostico Lider Fin */
+
+/* Seleccion diagnostico */
+
+.selection__process-content {
+    position: relative;
+    top: 350px;
+    display: flex;
+    column-gap: 1rem;
+    width: 60%;
+    left: 630px;
+}
+
+.selection__button-container {
+    background-color: var(--white);
+    height: 15vh;
+    width: 20%;
+    text-align: center;
+}
+
+.selection__process-button {
+    border: 2px solid var(--neutroText);
+    border-radius: 10px;
+    color: var(--neutroText);
+    padding: 28px;
+    font-weight: bold;
+    width: 25%;
+    position: relative;
+    right: 60px;
+    font-size: 20px;
+}
+
+.selection__icon {
+    height: 35px;
+    position: relative;
+    left: 15px;
+    top: 30px;
+    z-index: 1;
+}
+
+.selection__process-button:focus {
+    border: 3px solid var(--green);
+    color: var(--green);
+}
+
+.folder {
+    position: relative;
+    left: 35px;
+}
+
+.selection__process-footer {
+    background-color: var(--white);
+    position: relative;
+    top: 534px;
+    height: 20vh;
+    text-align: end;
+}
+
+.selection__footer-button {
+    background-color: var(--green);
+    top: 50px;
+    height: 6vh;
+    width: 8%;
+    text-align: center;
+    color: var(--blueDark);
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 5px;
+    left: 1650px;
+    border: none;
+}
+
+/* Seleccion diagnostico Fin */
+
+/* Seleccion de areas */
+
+.selection__buttons-container {
+    height: 25vh;
+}
+
+.selection__buttons-content {
+    display: flex;
+    flex-wrap: wrap;
+    /* column-gap: 1rem; */
+    position: relative;
+    left: 450px;
+    top: 150px;
+    width: 70%;
+}
+
+.selection__area-buttons {
+    border: 2px solid var(--neutroText);
+    border-radius: 10px;
+    color: var(--neutroText);
+    padding: 28px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    width: 75%;
+    position: relative;
+    right: 60px;
+    font-size: 20px;
+}
+
+.selection__area-buttons:focus {
+    border: 4px solid var(--green);
+    color: var(--green);
+}
+
+.selection__areas-footer_container {
+    background-color: var(--white);
+    position: relative;
+    top: 393px;
+    height: 20vh;
+}
+
+.selection__areas-buttons_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__button-back {
+    background-color: var(--whiteOff);
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    left: 150px;
+    color: var(--blueDark);
+    font-weight: bold;
+    width: 8%;
+    top: 50px;
+    font-size: 25px;
+    height: 6vh;
+}
+
+.footer__button-next {
+    background-color: var(--green);
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    right: 150px;
+    color: var(--blueDark);
+    font-weight: bold;
+    width: 8%;
+    top: 50px;
+    font-size: 25px;
+    height: 6vh;
+    text-align: center;
+}
+
+/* Seleccion de areas Fin*/
+
+/* Preguntas Diagnostico */
+
+.preguntas__diagnostico-content {
+    position: relative;
+    left: 450px;
+    top: 170px;
+    width: 70%;
+}
+
+.preguntas__diagnostico-content h3 {
+    bottom: 50px;
+    position: relative;
+    left: 260px;
+    width: 50%;
+}
+
+.preguntas__diagnostico-list {
+    position: relative;
+    width: 70%;
+    background-color: var(--white);
+    border-radius: 10px;
+    height: 30vh;
+}
+
+.preguntas__diagnostico-respuesta {
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    height: 5vh;
+    background-color: var(--white);
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    right: 20px;
+    top: 60px;
+}
+
+.preguntas__diagnostico-respuesta li {
+    list-style: none;
+  
+}
+
+.preguntas__footer {
+    background-color: var(--white);
+    height: 20vh;
+    position: relative;
+    top: 290px;
+}
+
+.preguntas__footer-button_prev {
+    background-color: var(--whiteOff);
+    top: 50px;
+    height: 6vh;
+    width: 8%;
+    text-align: center;
+    color: var(--blueDark);
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 5px;
+    left: 50px;
+    border: none;
+}
+
+.preguntas__footer-button_next {
+    background-color: var(--green);
+    top: 50px;
+    height: 6vh;
+    width: 8%;
+    text-align: center;
+    color: var(--blueDark);
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 5px;
+    left: 1500px;
+    border: none;
+}
+
+/* Preguntas Diagnostico Fin */
+
+/* Dashboard Lider */
+.dashboard__lider-banner {
+    position: relative;
+    left: 150px;
+    top: 30px;
+    width: 85%;
+}
+
+.dashboard__lider-banner_image {
+    height: 35vh;
+    width: 80%;
+}
+
+.dashboard__lider-banner_content {
+    color: var(--white);
+    position: relative;
+    bottom: 220px;
+    left: 100px;
+    height: 0px;
+    width: 50%;
+}
+
+.dashboard__lider-banner_content h1 {
+    font-weight: bold;
+}
+
+.dashboard__lider-banner_content p {
+    font-size: 20px;
+}
+
+.dashboard__lider-banner_content p span {
+    font-weight: bold;
+}
+
+/* Dashboard Lider Fin */
+
+/* Cursos Entrenamiento  */
+
+.cursos__entrenamiento-container p {
+    text-align: center;
+}
+
+.cursos__entrenamiento-content {
+    text-align: center;
+}
+
+.cursos__entrenamiento-filter {
+    width: 100%;
+    display: flex;
+}
+
+.cursos__entrenamiento-filter-content {
+    width: 20%;
+}
+
+.cursos__entrenamiento-filter-content h1 {
+    position: relative;
+    left: 35px;
+}
+
+.cursos__entrenamiento-filter_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.cursos__entrenamiento-filter_list h5 {
+    color: var(--blueDark);
+    font-weight: bold;
+}
+
+.cursos__entrenamiento-filter_list input {
+    text-decoration: none;
+    color: var(--black);
+    width: 75%;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+}
+
+.cursos__entrenamiento-filter_button:hover {
+    color: var(--blueAlternative);
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.cursos__entrenamiento-filter_button:focus {
+    color: var(--blueAlternative);
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.cursos__entrenamiento-card {
+    display: flex;
+    column-gap: 2rem;
+}
+
+/* Cursos Entrenamiento Fin  */
+
+/* Confirmar Ruta */
+.confirm_route-title {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.confirm_route-title h1 {
+    color: var(--blueDark);
+    font-weight: bold;
+}
+
+.confirm_route-add_course {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 100px;
+    left: 150px;
+    border-bottom: 1px solid var(--neutroText);
+    padding-bottom: 10px;
+    width: 80%;
+}
+
+.confirm_route-add_course button {
+    background-color: transparent;
+    border: 1px solid var(--blueDark);
+    border-radius: 5px;
+    font-weight: bold;
+    width: 13%;
+}
+
+.confirm_route-add_course button:hover {
+    background-color: var(--green);
+    border: none;
+}
+
+.confirm_route-add_course h3 {
+    font-weight: bold;
+}
+
+.confirm_route-container_route {
+    position: relative;
+    top: 150px;
+    left: 150px;
+    width: 80%;
+}
+
+.confirm_route-card {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.confirm_route-card_content {
+    margin-left: 25px;
+    color: var(--blueDark);
+    font-weight: bold;
+}
+
+.confirm_route-card_content h3 {
+    font-weight: bold;
+}
+
+.confirm_route-image {
+    width: 15%;
+}
+
+
+/* Confirmar Ruta Fin*/
+
+/* Gestion de cupos */
+
+.gestion__usuario-container {
+    display: flex;
+}
+
+.gestion__usuario-navegacion {
+    width: 10%;
+}
+
+.gestion__usuario-content {
+    width: 80%;
+}
+
+.gestion__usuario-title {
+    color: var(--blueDark);
+    font-weight: bold;
+    position: relative;
+    left: 85px;
+    top: 30px;
+}
+
+
+.gestion__usuario-title h1 {
+    font-weight: bold;
+    color: var(--blueDark);
+}
+
+.gestion__usuario-banner {
+    background-color: var(--white);
+    height: 45vh;
+    width: 100%;
+    position: relative;
+    left: 85px;
+    top: 50px;
+    border-radius: 5px;
+}
+
+.gestion__usuario-banner_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 80px;
+}
+
+.gestion__usuario-banner_content h3 {
+    font-weight: bold;
+    color: var(--blueDark);
+}
+
+.gestion__usuario-banner_content p {
+    color: var(--blueDark);
+    font-size: 20px;
+}
+
+.gestion__usuario-banner_button-add {
+    background-color: transparent;
+    border: 2px solid var(--neutroText);
+    border-radius: 200px;
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    color: var(--neutroText);
+}
+
+.gestion__usuario-banner_button {
+    background-color: var(--green);
+    border:none;
+    border-radius: 5px;
+    color: var(--blueDark);
+    font-weight: bold;
+    font-size: 20px;
+    height: 5vh;
+    position: relative;
+    top: 20px;
+    text-align: center;
+    width: 8%;
+}
+
+/* Gestion de cupos Fin */
+
+/* Gestion de Equipos */
+
+.crear__equipos-container {
+    display: flex;
+}
+
+.crear__equipos-navegacion {
+    width: 10%;
+}
+
+.crear__equipos-banner_container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+/* Gestion de Equipos Fin*/
 
 /* Responsive */
 @media (max-width: 1440px) {
     
     /* Header inicio */
     .burg-toggle {
-        left: 50px;
+        left: 130px;
     }
     /* Header fin */
 
    /* Navegacion */
     .navegacion{
-        right: 100px;
+        left: 690px;
     }
 
     /* Navegacion Fin */
@@ -2103,5 +3431,4 @@ html, body {
     }
     
 }
-
 /* Responsive Fin */

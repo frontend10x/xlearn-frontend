@@ -12,10 +12,10 @@ export const Navegacion = () => {
                 <NavLink className="nav-link " to="/courses">
                     Cursos
                 </NavLink>
-                <NavLink className="nav-link " to="/plans">
+                <NavLink className="nav-link " to="/plans/register">
                     Planes
                 </NavLink>
-                <NavLink className="nav-link " to="/enterprises/register">
+                <NavLink className="nav-link " to="/enterprises">
                     Empresa
                 </NavLink>
                 <NavLink className="nav-link " to="/contact">

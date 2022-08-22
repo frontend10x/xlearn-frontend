@@ -1,7 +1,7 @@
 import React from "react";
 import { Image } from "react-bootstrap";
 // import { Link } from "react-router-dom";
-import { XlearnLogo, facebook, twitter, linkedin, youtube } from "../assets/img";
+import { XlearnLogo, facebook, twitter, linkedin, youtube, logo10X } from "../assets/img";
 
 export const Footer = () => {
   return (
@@ -41,7 +41,7 @@ export const Footer = () => {
           </div>
 
           <div className="footer__content-email_logo ">
-            <Image src={XlearnLogo} alt="logo" className="footer__image-email" />
+            <Image src={logo10X} alt="logo" className="footer__image-email" />
             <input type="email" placeholder="Enter Your Email" className="footer__email" />
           </div>
         </div>

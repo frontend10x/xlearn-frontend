@@ -18,19 +18,18 @@ export const EmpresaFormulario = () => {
   const [courses, setCourses] = useState();
   const [sizes, setSizes] = useState();
   const [places, setPlaces] = useState([
-    {label: 1 , value: 1},
-    {label: 2 , value: 2},
-    {label: 3 , value: 3},
-    {label: 4 , value: 4},
-    {label: 5 , value: 5},
-    {label: 6 , value: 6},
-    {label: 7 , value: 7},
-    {label: 8 , value: 8},
-    {label: 9 , value: 9},
-    {label: 10 , value: 10},
+    { label: 1, value: 1 },
+    { label: 2, value: 2 },
+    { label: 3, value: 3 },
+    { label: 4, value: 4 },
+    { label: 5, value: 5 },
+    { label: 6, value: 6 },
+    { label: 7, value: 7 },
+    { label: 8, value: 8 },
+    { label: 9, value: 9 },
+    { label: 10, value: 10 },
   ]);
   const dispatch = useDispatch();
-
 
   useEffect(() => {
     async function countries() {
@@ -55,7 +54,7 @@ export const EmpresaFormulario = () => {
       try {
         const data = await getContent();
         setCourses(data);
-        console.log(data, 'content')
+        console.log(data, "content");
       } catch (error) {
         console.error(error);
       }
@@ -87,6 +86,8 @@ export const EmpresaFormulario = () => {
     content: "",
     plan_id: "",
     quotas: "",
+    password:"",
+    password_confirmation:"",
     observation: "",
   });
 
@@ -121,24 +122,32 @@ export const EmpresaFormulario = () => {
         plan_id,
         quotas,
         password,
-        observation);
-        dispatch(register(
-          data.name,
-          data.lastname,
-          data.company,
-          data.email,
-          data.website,
-          data.size,
-          data.country,
-          data.content,
-          data.plan_id,
-          data.quotas,
-          data.password,
-          data.observation))
-      } catch (error) {
-        console.error(error, 'error de peticion')
-      }
-      console.log(formValues, 'values')
+        password_confirmation,
+        observation
+      );
+      dispatch(
+        register(
+          name,
+          lastname,
+          company,
+          email,
+          website,
+          size,
+          country,
+          content,
+          plan_id,
+          quotas,
+          password,
+          password_confirmation,
+          observation
+        )
+      );
+      alert(data.message);
+    } catch (error) {
+      console.error(error, "error de peticion");
+    }
+    console.log(formValues, "values");
+    console.log(password_confirmation, 'value')
   };
 
   return (
@@ -165,7 +174,7 @@ export const EmpresaFormulario = () => {
               name="lastname"
               value={lastname}
               onChange={handleInputChange}
-              placeholder="Nombre"
+              placeholder="Apellido"
             />
           </div>
           <div className="form__group">
@@ -213,7 +222,7 @@ export const EmpresaFormulario = () => {
             >
               <option value="...">select</option>
               {sizes &&
-                sizes.map((item , index) => (
+                sizes.map((item, index) => (
                   <option key={index} value={item.id}>
                     {item.range_size}
                   </option>
@@ -261,81 +270,81 @@ export const EmpresaFormulario = () => {
             </div>
           </div>
           <div className="form__group">
-              <p>
-                Selecciona tu plan de interes<span>*</span>
-              </p>
-              <select
-                name="plan_id"
-                value={plan_id}
-                onChange={handleInputChange}
-                placeholder="Planes"
-              >
-                <option value="...">select</option>
-                {plans &&
-                  plans.map((item, index) => (
-                    <option key={index} value={item.id}>
-                      {item.name}
-                    </option>
-                  ))}
-              </select>
-            </div>
-            <div className="form__group">
-              <p>
-                Selecciona tu plan de interes<span>*</span>
-              </p>
-              <select
-                name="quotas"
-                value={quotas}
-                onChange={handleInputChange}
-                placeholder="Cupos"
-              >
-                <option value="...">select</option>
-                {places &&
-                  places.map((item, index) => (
-                    <option key={index} value={item.value}>
-                      {item.label}
-                    </option>
-                  ))}
-              </select>
-            </div>
-            <div className="form__group">
-              <p>
-                Contraseña<span>*</span>
-              </p>
-              <input
-                name="password"
-                type='password'
-                value={password}
-                onChange={handleInputChange}
-                placeholder="Password"
-              />
-            </div>
-            <div className="form__group">
-              <p>
-                Confirmacion <span>*</span>
-              </p>
-              <input
-                name="password_confirmation"
-                type='password'
-                placeholder="Confirm Password"
-                value={password_confirmation}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="form__group">
-              <p>
-              Cuentanos mas sobre tus necesidades  <span>*</span>
-              </p>
-              <textarea
-                name="observation"
-                type='password'
-                value={observation}
-                onChange={handleInputChange}
-                cols='53'
-                rows='4'
-                placeholder="Cuentanos mas"
-              />
-            </div>
+            <p>
+              Selecciona tu plan de interes<span>*</span>
+            </p>
+            <select
+              name="plan_id"
+              value={plan_id}
+              onChange={handleInputChange}
+              placeholder="Planes"
+            >
+              <option value="...">select</option>
+              {plans &&
+                plans.map((item, index) => (
+                  <option key={index} value={item.id}>
+                    {item.name}
+                  </option>
+                ))}
+            </select>
+          </div>
+          <div className="form__group">
+            <p>
+              Selecciona tu plan de interes<span>*</span>
+            </p>
+            <select
+              name="quotas"
+              value={quotas}
+              onChange={handleInputChange}
+              placeholder="Cupos"
+            >
+              <option value="...">select</option>
+              {places &&
+                places.map((item, index) => (
+                  <option key={index} value={item.value}>
+                    {item.label}
+                  </option>
+                ))}
+            </select>
+          </div>
+          <div className="form__group">
+            <p>
+              Contraseña<span>*</span>
+            </p>
+            <input
+              name="password"
+              type="password"
+              value={password}
+              onChange={handleInputChange}
+              placeholder="Password"
+            />
+          </div>
+          <div className="form__group">
+            <p>
+              Confirmacion <span>*</span>
+            </p>
+            <input
+              name="password_confirmation"
+              type="password"
+              placeholder="Confirm Password"
+              value={password_confirmation}
+              onChange={handleInputChange}
+            />
+          </div>
+          <div className="form__group">
+            <p>
+              Cuentanos mas sobre tus necesidades <span>*</span>
+            </p>
+            <textarea
+              name="observation"
+              type="password"
+              value={observation}
+              onChange={handleInputChange}
+              cols="53"
+              rows="4"
+              placeholder="Cuentanos mas"
+            />
+          </div>
           <button className="planes__formulario-button">Registrarme</button>
         </div>
       </form>

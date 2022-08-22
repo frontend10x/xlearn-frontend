@@ -1,9 +1,10 @@
 import React from "react";
-import { XlearnLogo } from "../assets/img";
-import { Navegacion } from "./Navegacion";
 import { NavLink } from "react-bootstrap";
+import { XlearnLogo } from "../../assets/img";
+import { NavegacionDashboardHeader } from "../dashboards/NavegacionDashboardHeader";
 
-export const HeaderRegister = () => {
+
+export const HeaderDashboard = () => {
   return (
     <div className="header__container background ">
       <header id="header" className="header fixed_top background">
@@ -17,7 +18,7 @@ export const HeaderRegister = () => {
           <i className="fa-solid fa-bars fa-2xl"></i>
         </button>
         <img src={XlearnLogo} alt="header__logo" className="header__logo" />
-        <Navegacion />
+        <NavegacionDashboardHeader />
       </header>
 
       {/* <!-- Modal --> */}

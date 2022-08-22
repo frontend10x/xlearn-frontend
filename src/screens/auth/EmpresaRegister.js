@@ -27,48 +27,42 @@ export const EmpresasRegister = () => {
       <div className="planes__register-information">
         <div className="planes__register-container_option">
           <div className="planes__register-option">
-            <h1>Lorem Ipsum dolor sit amet, consectetuer</h1>
-            <div className="planes__option-group">
-              <h4>Lorem ipsum dolor sit amet</h4>
+            <h1>Registrate y comienza a desarrollar tus proyectos e innovacion</h1>
+            <div className="planes__option-group me-5">
+              <h4>Monitorea tus equipos</h4>
               <ul>
-                <li>Nibh euismod tincidunt</li>
-                <li>Nibh euismod tincidunt</li>
-                <li>Nibh euismod tincidunt</li>
+                <li>Evalua el rendimiento</li>
+                <li>Desarrolla proyectos</li>
+              </ul>
+            </div>
+            <div className="planes__option-group ms-5">
+              <h4>Accede a contenido de valor</h4>
+              <ul>
+                <li>contenido exclusivo y espacializado</li>
+                <li>Acompañamiento de consultores</li>
               </ul>
             </div>
             <div className="planes__option-group">
-              <h4>Lorem ipsum dolor sit amet</h4>
+              <h4 className="w-75">Haz seguimiento a tus proyectos</h4>
               <ul>
-                <li>Nibh euismod tincidunt</li>
-                <li>Nibh euismod tincidunt</li>
-                <li>Nibh euismod tincidunt</li>
+                <li>Genera nuevas ideas</li>
+                <li>Estrategias de mejora</li>
               </ul>
             </div>
             <div className="planes__option-group">
-              <h4>Lorem ipsum dolor sit amet</h4>
+              <h4>Genera reportes de progreso</h4>
               <ul>
-                <li>Nibh euismod tincidunt</li>
-                <li>Nibh euismod tincidunt</li>
-                <li>Nibh euismod tincidunt</li>
-              </ul>
-            </div>
-            <div className="planes__option-group">
-              <h4>Lorem ipsum dolor sit amet</h4>
-              <ul>
-                <li>Nibh euismod tincidunt</li>
-                <li>Nibh euismod tincidunt</li>
-                <li>Nibh euismod tincidunt</li>
+                <li>Evalua el progreso</li>
+                <li>Revisa las dinamicas de los equipos</li>
               </ul>
             </div>
           </div>
         </div>
         <div className="planes__container-about">
           <div className="planes__register-about">
-            <h1>Lorem ipsum dolor sit amet</h1>
+            <h1>¿Necesitas asesoria?</h1>
             <h4>
-              Ut wisi enim ad minim veniam quis nostrued exerci tation
-              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-              consequat Duis autem vel eum iriure dolor
+              Dejanos tus datos y registrate en nuestra plataforma; pronto nos pondremos en contacto
             </h4>
           </div>
         </div>

@@ -1,9 +1,15 @@
 import React from "react";
 import { Col, Image } from "react-bootstrap";
-import { Slider_01, Slider_02, Slider_03, playButton,buttonprev,buttonnext } from "../assets/img";
+import {
+  Slider_01,
+  Slider_02,
+  Slider_03,
+  playButton,
+  buttonprev,
+  buttonnext,
+} from "../assets/img";
 
-export const 
-Banner = () => {
+export const Banner = () => {
   return (
     <div className="banner">
       <div
@@ -37,47 +43,41 @@ Banner = () => {
           <div className="carousel-item active">
             <Image src={Slider_01} className="d-block w-100" alt="..." />
             <div className="content__banner-info">
-            <p>
-              Competencias y Proyectos
-            </p>
-            <h1>
-              Xlearn:
-              <span>
-                <br />
-                Haz de la innovacion el motor de transformacion
-              </span>
-            </h1>
-          </div>
+              <p>Competencias y Proyectos</p>
+              <h1>
+                Xlearn:
+                <span>
+                  <br />
+                  Haz de la innovacion el motor de transformacion
+                </span>
+              </h1>
+            </div>
           </div>
           <div className="carousel-item">
             <Image src={Slider_02} className="d-block w-100" alt="..." />
             <div className="content__banner-info">
-            <p>
-              Competencias y Proyectos
-            </p>
-            <h1>
-              Xlearn:
-              <span>
-                <br />
-                Involucra a tus empleados en los procesos de formacion
-              </span>
-            </h1>
-          </div>
+              <p>Competencias y Proyectos</p>
+              <h1>
+                Xlearn:
+                <span>
+                  <br />
+                  Involucra a tus empleados en los procesos de formacion
+                </span>
+              </h1>
+            </div>
           </div>
           <div className="carousel-item">
             <Image src={Slider_03} className="d-block w-100" alt="..." />
             <div className="content__banner-info">
-            <p>
-              Competencias y Proyectos
-            </p>
-            <h1>
-              Xlearn:
-              <span>
-                <br />
-                Crea y diseña nuevos negocios con Xlearn
-              </span>
-            </h1>
-          </div>
+              <p>Competencias y Proyectos</p>
+              <h1>
+                Xlearn:
+                <span>
+                  <br />
+                  Crea y diseña nuevos negocios con Xlearn
+                </span>
+              </h1>
+            </div>
           </div>
         </div>
         <button
@@ -87,7 +87,7 @@ Banner = () => {
           data-bs-slide="prev"
         >
           <span className="banner__carousel-prev" aria-hidden="true">
-            <img src={buttonprev} alt='prev'  />
+            <img src={buttonprev} alt="prev" />
           </span>
           <span className="visually-hidden">Previous</span>
         </button>
@@ -98,27 +98,23 @@ Banner = () => {
           data-bs-slide="next"
         >
           <span className="banner__carousel-next" aria-hidden="true">
-            <img src={buttonnext} alt='next' />
+            <img src={buttonnext} alt="next" />
           </span>
           <span className="visually-hidden">Next</span>
         </button>
       </div>
       <div className="slides">
-        <div className="slides__content" >
+        <div className="slides__content">
           <h3>02</h3>
           <p>Innova</p>
         </div>
-        <div className="slides__content" >
+        <div className="slides__content">
           <h3>03</h3>
-          <p>
-            Desarrolla
-          </p>
+          <p>Desarrolla</p>
         </div>
-        <div className="slides__content" >
+        <div className="slides__content">
           <h3>04</h3>
-          <p>
-            Crea
-          </p>
+          <p>Crea</p>
         </div>
       </div>
 
@@ -130,14 +126,17 @@ Banner = () => {
             data-bs-toggle="modal"
             data-bs-target="#staticBackdrop"
           >
-            <Image src={playButton} className='banner__content-button_image' />
+            <Image src={playButton} className="banner__content-button_image" />
             <p className="mt-4 ms-3 ">Play Demo</p>
           </button>
 
           <div className="content__banner-block">
             <h3>PROPUESTA DE VALOR</h3>
             <p>
-              Somos una plataforma pensada para empresas,corporativa, y con enfasis en el entrenamiento de equipos de trabajo para el desarrollo de proyectos en temas como innovacion, sostenibilidad,transformacion digital, etc
+              Somos una plataforma pensada para empresas,corporativa, y con
+              enfasis en el entrenamiento de equipos de trabajo para el
+              desarrollo de proyectos en temas como innovacion,
+              sostenibilidad,transformacion digital, etc
             </p>
           </div>
         </Col>
@@ -150,25 +149,25 @@ Banner = () => {
         </Col>
       </div>
       <div
-        class="modal fade"
+        className="modal fade"
         id="staticBackdrop"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
-          <div class="modal-content bg-dark">
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            
-            <div class="modal-body">
-              <Image src={Slider_01} className='w-100' />
+        <div className="modal-dialog">
+          <div className="modal-content bg-dark">
+            <button
+              type="button"
+              className="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+
+            <div className="modal-body">
+              <Image src={Slider_01} className="w-100" />
             </div>
           </div>
         </div>

@@ -9,6 +9,7 @@ import { Footer } from "../componentes/Footer";
 import { PreguntasFrecuentes } from "../componentes/PreguntasFrecuentes";
 
 export const InicioScreen = () => {
+
   const [data, setData] = useState([
     {
       title: "Presentaciones efectivas de Negocios",
@@ -52,17 +53,20 @@ export const InicioScreen = () => {
     <div className="inicioScreen">
       <div className="Inicio banner&header ">
         <Header />
-        {/* <Banner /> */}
+        <Banner />
       </div> 
 
-      {/* <div className="carousel-section">
+      <div className="carousel-section">
         <div className="carousel__section-content">
           <h1>Elige los cursos de tu interes</h1>
 
           <ul className=" carousel__lista ">
+            <button>Todas las Areas</button>
+            <button>Corporativo</button>
             <button>Innovacion</button>
+            <button>Transformacion</button>
+            <button>Diseño de productos</button>
             <button>Sostenibilidad</button>
-            <button>Transformacion Digital</button>
           </ul>
 
           <div className="d-flex carousel__container">
@@ -87,7 +91,7 @@ export const InicioScreen = () => {
 
       <div className="footer-section">
         <Footer />
-      </div> */}
+      </div>
     </div>
   );
 };

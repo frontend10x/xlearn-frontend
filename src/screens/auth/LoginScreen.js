@@ -5,28 +5,35 @@ import { useForm } from "../../hooks/useForm";
 import { NavLink } from "react-router-dom";
 import { loginPost } from "../../services/services";
 import { login } from "../../actions/loginactions";
-import { useDispatch} from "react-redux/es/exports";
+import { useDispatch, useSelector} from "react-redux/es/exports";
 import { useNavigate } from "react-router-dom";
 
 export const LoginScreen = () => {
   
+  const {roles} = useSelector(state => state.auth);
   const [formValues, handleInputChange] = useForm({
     email: "",
     password: "",
   });
   const { email, password } = formValues;
   const dispatch = useDispatch();
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
+  console.log(roles, 'roles');
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const data = await loginPost(email, password);
-      dispatch(login(email, password, data.token, data.datosUsuario.name));
-      navigate('/dashboard/enterprise')
+      dispatch(login(email, password, data.token, data.datosUsuario.name, data.datosUsuario.roles.id, data.datosUsuario.id ));
+      console.log(data);
     } catch (error) {
       console.error(error);
     }
+    if (roles === 1) {
+      navigate('/dashboard/empresa');
+    }else if (roles === 2 ) {
+      navigate('/inicia/diagnostico');
+    } /* Logica de redireccion */
   };
 
   return (
@@ -39,14 +46,16 @@ export const LoginScreen = () => {
           <div className="login__container-content">
             <div className="login__content-header">
               <div className="login__header-logo-title">
+                <NavLink to='/'>
+
                 <Image
                   src={logologin}
                   className="login__logo"
                   alt="imagen-login"
-                />
+                  />
+                  </NavLink>
                 <p>
-                  Feugiat pretium nib ipsum consequa vida tru quisque non tellus
-                  orci ac strud ctor tellus mauris.
+                  Sumate a la experiencia Xlearn y desarrolla tu proyecto empresarial
                 </p>
               </div>
             </div>

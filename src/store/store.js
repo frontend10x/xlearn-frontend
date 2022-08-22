@@ -2,6 +2,7 @@ import { legacy_createStore as createStore, combineReducers, applyMiddleware, co
 import thunk from "redux-thunk";
 import { authReducer } from "../reducers/authReducer";
 import {persistStore,persistReducer} from "redux-persist";
+import { diagnosticReducer } from "../reducers/diagnosticReducer";
 
 import storage from "redux-persist/lib/storage";
 
@@ -15,6 +16,7 @@ const persistConfig = {
 
 const reducers = combineReducers({
     auth: authReducer,
+    questions: diagnosticReducer,
 });
 const persistedReducer = persistReducer(persistConfig, reducers)
 
@@ -22,7 +24,6 @@ const persistedReducer = persistReducer(persistConfig, reducers)
 export const store = createStore(
     persistedReducer,
     composeEnhancers(
-
         applyMiddleware(thunk)
         )
     );
