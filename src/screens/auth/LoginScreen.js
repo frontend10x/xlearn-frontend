@@ -24,7 +24,7 @@ export const LoginScreen = () => {
     e.preventDefault();
     try {
       const data = await loginPost(email, password);
-      dispatch(login(email, password, data.token, data.datosUsuario.name, data.datosUsuario.roles.id, data.datosUsuario.id ));
+      dispatch(login(email, password, data.token, data.datosUsuario.name, data.datosUsuario.roles.id, data.datosUsuario.id, data.datosUsuario.subcompanies_id ));
       console.log(data);
     } catch (error) {
       console.error(error);
@@ -40,7 +40,7 @@ export const LoginScreen = () => {
     <div className="Login-Screen">
       <div className="login">
         <div className="login__container animate__animated animate__bounce animate__delay-2s">
-          <div>
+          <div className="xln-contentImage-login">
             <Image src={imagenlogin} alt="imagen-login" />
           </div>
           <div className="login__container-content">
@@ -60,7 +60,7 @@ export const LoginScreen = () => {
               </div>
             </div>
             <div className="login__content-inputs">
-              <p className="login__content-title">Bienvenido a Xlearn</p>
+              {/* <p className="login__content-title">Bienvenido a Xlearn</p> */}
               <form 
                 className="login__content-form" 
                 onSubmit={handleLogin}
@@ -68,7 +68,7 @@ export const LoginScreen = () => {
                 <input
                   type="text"
                   name="email"
-                  placeholder="email"
+                  placeholder="Email"
                   value={email}
                   onChange={handleInputChange}
                   className="login__email"
@@ -76,15 +76,16 @@ export const LoginScreen = () => {
                 <input
                   type="password"
                   name="password"
-                  placeholder="password"
+                  placeholder="Contraseña"
                   value={password}
                   onChange={handleInputChange}
                   className="login__password"
                 />
 
-                <input type="checkbox" className="login__input-reminder" />
+                
                 <div className="d-flex login__content-remind ">
-                  <p>Recordarme</p>
+                  <input type="checkbox" className="login__input-reminder" />
+                  <p className="xln-textRecordarme-aling">Recordarme</p>
                   <button className="login__remind-button">
                     {" "}
                     ¿Olvidaste Tu Contraseña?
@@ -98,12 +99,12 @@ export const LoginScreen = () => {
                 </button>
               </form>
               <div className="d-flex login__register">
-                <p>¿Aun no estas Registrado?</p>
+                <p className="xln_loginText_bottom">¿Aun no tienes cuenta? </p>
                 <NavLink
                   to="/plans/register"
                   className="login__register-button"
                 >
-                  Crea una cuenta
+                  Registrate
                 </NavLink>
               </div>
             </div>

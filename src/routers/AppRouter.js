@@ -20,6 +20,7 @@ import { SeleccionDeAreas } from "../screens/dashboards/SeleccionDeAreas";
 import { ConfirmarRuta } from "../screens/dashboards/ConfirmarRuta";
 import { GestionDeUsuario } from "../screens/dashboards/GestionDeUsuarios";
 import { CrearEquipos } from "../screens/dashboards/CrearEquipos";
+import { CompraUsuarios } from "../screens/dashboards/CompraUsuarios";
 
 export const AppRouter = () => {
   const { token, roles } = useSelector((state) => state.auth);
@@ -45,6 +46,7 @@ export const AppRouter = () => {
           />
           <Route exact path="/gestion/cupos" element={<GestionDeUsuario />} />
           <Route exact path="/gestion/equipo" element={<CrearEquipos />} />
+          <Route exact path="/compra/cupos" element={<CompraUsuarios />} />
         </Route>
         <Route element={<LiderRoute token={token} roles={roles} />}>
           <Route
@@ -78,6 +80,7 @@ export const AppRouter = () => {
             element={<SeleccionDeAreas />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
+          <Route exact path="/comprar/cupos" element={<CompraUsuarios />} />
         </Route>
       </Routes>
     </Router>

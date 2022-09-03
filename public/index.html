@@ -22,14 +22,12 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-
+  <script type="text/javascript" src="https://checkout.wompi.co/widget.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <!-- BootStrap5 -->
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script> -->
+  <script type="text/javascript" src="https://checkout.wompi.co/widget.js"></script>
 
   <title>Welcome to Xlearn</title>
 </head>
@@ -40,17 +38,70 @@
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
-
+      
       You can add webfonts, meta tags, or analytics to this file.
       The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+        
+        To begin the development, run `npm start` or `yarn start`.
+        To create a production bundle, use `npm run build` or `yarn build`.
+      -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script> 
+    crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/19bfb45417.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://checkout.wompi.co/widget.js"></script>
+  <script>
+
+    //Para esta prueba realizamos la ejecución del widget de manera inmediata
+    document.addEventListener("DOMContentLoaded", (event) => {
+
+        //Seteo de variables
+        var checkout = new WidgetCheckout({
+            currency: 'COP',
+            amountInCents: 2490000,
+            reference: 'AD002901221XLEARNTEST',
+            publicKey: 'pub_test_QHBX5bW09CtqK3gFnGzMswxlYhSTfc2F',
+            redirectUrl: 'https://transaction-redirect.wompi.co/check', // Opcional
+            ignature:integrityzz=integrationSignatureGeneration(),
+            taxInCents: { // Opcional
+                vat: 1900,
+                consumption: 800
+            },
+            customerData: { // Opcional
+                email:'lola@gmail.com',
+                fullName: 'Lola Flores',
+                phoneNumber: '3040777777',
+                phoneNumberPrefix: '+57',
+                    legalId: '123456789',
+                    legalIdType: 'CC'
+                },
+            shippingAddress: { // Opcional
+                addressLine1: "Calle 123 # 4-5",
+                city: "Bogota",
+                phoneNumber: '3019444444',
+                region: "Cundinamarca",
+                country: "CO"
+            }
+        })
+
+        //Apertura del widget
+        checkout.open(function ( result ) {
+            var transaction = result.transaction
+            console.log('Transaction ID: ', transaction.id)
+            console.log('Transaction object: ', transaction)
+        })
+    });
+
+    //Metodo utilizado para generar la firma de integridad
+    const integrationSignatureGeneration = async () => {
+        var cadenaConcatenada = "AD002901221XLEARNTEST" + "2490000" + "COP" + "test_integrity_tAUVKmZtHVX2InQPpyMFBIHs9jtY2Fjy"
+        //Ejemplo
+        const encondedText = new TextEncoder().encode(cadenaConcatenada);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', encondedText);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
+    }
+</script>
 </body>
 
 </html>

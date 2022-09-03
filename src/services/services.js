@@ -165,3 +165,19 @@ export const createGroup = async (token, name, description) => {
   );
   return response.data;
 };
+
+export const makePayment = async (token, name, email, amount_user, amount_time, subcompanie_id) => {
+
+  const body = {
+    token, name, email, amount_user, amount_time, subcompanie_id
+  };
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const response = await axios.post(baseURL + '/api/v1/payment/requests', body, config)
+  return response.data;
+}
