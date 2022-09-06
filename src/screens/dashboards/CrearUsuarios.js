@@ -1,61 +1,95 @@
-import React from "react";
+import React, { useState ,useEffect } from "react";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDashboard";
 import { Footer } from "../../componentes/Footer";
-import { useForm } from "../../hooks/useForm";
-import { createGroup } from "../../services/services";
+import { Image } from "react-bootstrap";
+import { equiposIcon } from "../../assets/img";
+import { useForm } from "../../hooks/useForm"
+import { creationUser, typeOfUsers } from "../../services/services";
 import { useSelector } from "react-redux";
 
-export const CrearEquipos = () => {
-  const { token } = useSelector((state) => state.auth);
-  const [formValues, handleInputChange] = useForm([]);
-  const { name, description } = formValues;
+export const CrearUsuarios = () => {
+    
+    const {token, roles} = useSelector(state => state.auth)
+    const [formValues, handleInputChange] = useForm({
+        name: '',
+        email: '',
+        phone: '',
+        type_id: roles,
+        rol_id:'',
+        password:'',
+        password_confirmation:''
+    });
 
+    const [users, setUsers] = useState();
 
-  const createUser = async (e) => {
-    e.preventDefault();
-    const data = await createGroup(token, name, description);
-    console.log(data, "respuesta");
-  };
+    const {name, email, phone, type_id, rol_id, password, password_confirmation} = formValues;
 
-  return (
-    <div className="crear__equipos-section">
-      <HeaderDashboard />
-      <div className="crear__equipos-container">
-        <div className="crear__equipos-navegacion">
-          <NavegacionDashboard />
+    useEffect(() => {
+        async function typeUsers() {
+            const data = await typeOfUsers(token)
+            setUsers(data.types_users);
+        }
+
+        typeUsers()
+    },[])
+
+    const createUser = async () => {
+        try {
+            const data = await creationUser( token,name, email, phone, type_id, rol_id, password, password_confirmation);
+            alert(data.message)
+        } catch (error) {
+            alert(`${error.response.data.message}`)      
+        }
+    }
+
+    return (
+        <div className="xlrn__crear-suarios__section" >
+            <HeaderDashboard />
+            <div className="xlrn__crear-usuarios__container" >
+                <div className="xlrn__crear-usuarios__nav" >
+                    <NavegacionDashboard />
+                </div>
+                <div className="xlrn__crear-usuarios__content-titles" >
+                    <h1>Gestion de cupos</h1>
+                    <p>Gestiona y administra tus cupos</p>
+                </div>
+                <div className="xlrn__crear-usuarios__container-form" >
+                    <div className="xlrn__crear-usuarios__container-form-content" >
+                        <Image src={equiposIcon} />
+                        <h1>Crear usuarios</h1>
+                        <h3>Crea los usuarios, entrena tus equipos y desarrolla tu proyecto</h3>
+                    </div>
+                    <div className="xlrn__crear-usuarios__form" >
+                        <div className="xlrn__crear-usuarios__form-content">
+                            <input onChange={handleInputChange} name="name" placeholder="Nombre y Apellido" />
+                            <input onChange={handleInputChange} name="email" placeholder="Correo" />
+                            <div className="d-flex gap-2" >
+                                <input onChange={handleInputChange} name="phone" placeholder="Telefono" className="input__phone" />
+                                <select onChange={handleInputChange} name="rol_id" className="input__rol" >
+                                    <option value="..." >selecciona</option>
+                                    {users&&
+                                        users.map((item, index) => (
+                                            <option key={index} value={item.id} >{item.name}</option>
+                                        ))
+                                    }
+                                </select>
+                            </div>
+                            <div className="xlrn__crear-usuario__input-password">
+                                <input placeholder="Contraseña" onChange={handleInputChange} type='text' name="password"/>
+                                <input placeholder="Confirmar Contraseña" onChange={handleInputChange} type='text' name="password_confirmation" />
+                            </div>
+                            {/* O
+                            <div className="xlrn__crear-usuarios__massive-charge" >
+                                <input type='file' className="xlrn__crear-usuarios__massive-charge__input"/>
+                            </div> */}
+                        </div>
+
+                        <button onClick={createUser} >Confirmar</button>
+                    </div>
+                </div>
+            </div>
+            <Footer />
         </div>
-        <div className="crear__equipos-banner_container">
-          <div className="crear__equipos-banner_content">
-            <h1>Crear Equipos</h1>
-            <p>
-              Feugiat pretium nib ipsum consequa vida trum quisque non tellus
-              orci ac strud ctor tellus mauris Feugiat pretium nib ipsum
-              consequa vida trum
-            </p>
-            <form className="crear__equipos-banner_form" onSubmit={createTeams}>
-              <div>
-                <input
-                  placeholder="nombre"
-                  name="name"
-                  value={name}
-                  onChange={handleInputChange}
-                />
-                <input
-                  placeholder="description"
-                  name="description"
-                  value={description}
-                  onChange={handleInputChange}
-                />
-                <input placeholder="" />
-                <input placeholder="" />
-              </div>
-              <button>send</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <Footer />
-    </div>
-  );
-};
+    )
+}

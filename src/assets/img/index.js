@@ -38,3 +38,7 @@ export {default as cuposIcon } from '../Image/Icon_Cupos.png';
 export {default as equiposIcon } from '../Image/Icon_Equipos.png';
 export {default as entrenamientoIcon } from '../Image/Proyecto_Entrenamiento_Default.png';
 export {default as proyectoIcon } from '../Image/Proyecto_Default.png';
+export {default as imagenUser} from '../Image/imagen_user.png';
+export {default as construccion} from '../Image/construccion.webp';
+export {default as iconoChat} from '../Image/iconoChat.jpg';
+export {default as iconoChat2} from '../Image/charla.png';

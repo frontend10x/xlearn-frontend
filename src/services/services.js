@@ -92,6 +92,7 @@ export const registerDiagnostic = async (
   user_id,
   _rel,
   answers,
+  group_id,
   token
 ) => {
   const body = {
@@ -99,6 +100,8 @@ export const registerDiagnostic = async (
     user_id,
     _rel,
     answers,
+    group_id,
+    token
   };
 
   const config = {
@@ -137,13 +140,19 @@ export const getCoursesById = async (token, filter_id) => {
   return response.data;
 };
 
-export const confirmRoute = async (token, id) => {
-  const response = await axios.patch(baseURL + `/api/v1/confirm_route/${id}`, {
+export const confirmRoute = async (token, diagnostic_id) => {
+
+  const config = {
     headers: {
       Authorization: `Bearer ${token}`,
-    },
-  });
-  return response;
+    }
+  }
+
+  const body = {}
+
+  const response = await axios.patch(baseURL + `/api/v1/diagnostic/confirm_route/${diagnostic_id}`,body, config);
+
+  return response.data;
 };
 
 export const createGroup = async (token, name, description) => {
@@ -175,9 +184,48 @@ export const makePayment = async (token, name, email, amount_user, amount_time, 
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
-    },
+    }
   };
 
   const response = await axios.post(baseURL + '/api/v1/payment/requests', body, config)
   return response.data;
+}
+
+export const typeOfUsers = async (token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = await axios.get(baseURL + '/api/v1/types_users/list', config)
+  return response.data;
+
+}
+
+export const creationUser = async (token, name, email, phone, type_id, rol_id, password, password_confirmation) => {
+
+  const body = { name, email, phone, type_id, rol_id, password, password_confirmation }
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+  const response = await axios.post(baseURL + '/api/v1/user/store', body, config);
+  return response.data;
+}
+
+export const getRegisteredUsers = async (token) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = await axios.get(baseURL + '/api/v1/user/list', config)
+  return response.data;
+
+
 }

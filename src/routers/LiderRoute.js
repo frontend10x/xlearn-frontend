@@ -4,5 +4,5 @@ import { DashboardLider } from '../screens/dashboards/DashboardLider';
 
 
 export const LiderRoute = ({token, roles}) => {
-    return token && roles === 2 ? <Outlet/> : <Navigate to='/login' />
+    return token && roles === 3 ? <Outlet/> : <Navigate to='/login' />
 }

@@ -5,6 +5,8 @@ import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDash
 import { Footer } from "../../componentes/Footer";
 
 export const GestionDeUsuario = () => {
+
+
   return (
     <div className="gestion__usuario-section">
       <HeaderDashboard />
@@ -18,7 +20,7 @@ export const GestionDeUsuario = () => {
             <p>Dolore magna aliquam erat volutpat.</p>
           </div>
           <div className="gestion__usuario-banner">
-            <div className="gestion__usuario-banner_content">
+              <div className="gestion__usuario-banner_content">
               <h3>Aun no tienes cupos para registrar usuarios</h3>
               <p>Aquiere tus cupos y registra tus usuarios.</p>
               <button className="gestion__usuario-banner_button-add">+</button>

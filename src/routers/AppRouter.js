@@ -21,6 +21,9 @@ import { ConfirmarRuta } from "../screens/dashboards/ConfirmarRuta";
 import { GestionDeUsuario } from "../screens/dashboards/GestionDeUsuarios";
 import { CrearEquipos } from "../screens/dashboards/CrearEquipos";
 import { CompraUsuarios } from "../screens/dashboards/CompraUsuarios";
+import { UsoCupos } from "../screens/dashboards/UsoCupos";
+import { CrearUsuarios } from "../screens/dashboards/CrearUsuarios";
+import { ReproduccionDeCursos } from "../screens/dashboards/ReproduccionDeCursos";
 
 export const AppRouter = () => {
   const { token, roles } = useSelector((state) => state.auth);
@@ -37,7 +40,8 @@ export const AppRouter = () => {
         <Route exact path="/enterprises" element={<EmpresaScreen />} />
         <Route exact path="/login" element={<LoginScreen />} />
         <Route exact path="/contact" element={<ContactoScreen />} />
-        {/* Empresa Route */}
+        
+        {/* RUTA DE EMPRESA */}
         <Route element={<EmpresasRoute token={token} roles={roles} />}>
           <Route
             exact
@@ -45,9 +49,13 @@ export const AppRouter = () => {
             element={<DashboardEmpresa />}
           />
           <Route exact path="/gestion/cupos" element={<GestionDeUsuario />} />
-          <Route exact path="/gestion/equipo" element={<CrearEquipos />} />
           <Route exact path="/compra/cupos" element={<CompraUsuarios />} />
+          <Route exact path="/asignacion/cupos" element={<UsoCupos/>} />
+          <Route exact path="/creacion/usuarios" element={<CrearUsuarios/>} />
+          <Route exact path="/gestion/equipo" element={<CrearEquipos />} />
         </Route>
+        
+        {/* RUTA DEL LIDER */}
         <Route element={<LiderRoute token={token} roles={roles} />}>
           <Route
             exact
@@ -79,8 +87,12 @@ export const AppRouter = () => {
             path="/project/diagnostic/training/areas"
             element={<SeleccionDeAreas />}
           />
+          <Route
+            exact
+            path="/dashboard/lider/course/videoplayer"
+            element={<ReproduccionDeCursos />}
+          />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
-          <Route exact path="/comprar/cupos" element={<CompraUsuarios />} />
         </Route>
       </Routes>
     </Router>

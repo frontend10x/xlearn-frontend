@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { confirmRoute, quizDiagnostic, registerDiagnostic } from "../../services/services";
+import { quizDiagnostic, registerDiagnostic } from "../../services/services";
 import { useSelector } from "react-redux/es/exports";
 import { HeaderDashboard } from "./HeaderDashboard";
 import { useNavigate } from "react-router-dom";
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { diagnosticQuestions } from "../../actions/diagnostico";
 
 export const PreguntasDiagnostico = () => {
-  const { token, id } = useSelector((state) => state.auth);
+  const { token, id, groups } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [question, setQuestion] = useState();
   const [page, setPage] = useState();
   const [perPage, setPerpage] = useState(1);
   const [max, setMax] = useState();
   const navigate = useNavigate();
-  
 
   const [schema, setSchema] = useState({
     target: "Proyecto",
     user_id: id,
     _rel: 'questions',
-    answers:[],
+    answers: [],
+    group_id: groups
   });
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export const PreguntasDiagnostico = () => {
         const data = await quizDiagnostic(token);
         setQuestion(data.response._embedded.questions);
         setPage(data.response["hc:offset"]);
-        setMax(data.response["hc:limit"]);    
+        setMax(data.response["hc:limit"]);
       } catch (error) {
         console.error(error);
       }
@@ -37,7 +37,7 @@ export const PreguntasDiagnostico = () => {
     quiz();
   }, []);
 
-  const {target, user_id, _rel, answers} =schema;
+  const { target, user_id, _rel, answers, group_id } = schema;
 
   const respuesta = (items) => {
     const answers = {
@@ -45,8 +45,7 @@ export const PreguntasDiagnostico = () => {
       "course": `${items.course_id}`,
       "answer": `${items.response}`,
     }
-    setSchema({...schema, answers:[...schema.answers,answers]});
-    console.log(items.id,'items')
+    setSchema({ ...schema, answers: [...schema.answers, answers] });
   };
 
   const previousPage = () => {
@@ -59,13 +58,13 @@ export const PreguntasDiagnostico = () => {
 
   const nextPage = async () => {
     if (page === 4) {
-    try {
-      const data = await registerDiagnostic(target, user_id, _rel, answers, token);
-      dispatch(diagnosticQuestions(answers, data.diagnostic_id));
-      navigate("/project/diagnostic/confirm_route");
-    } catch (error) {
-      console.error(error);
-    }
+      try {
+        const data = await registerDiagnostic(target, user_id, _rel, answers, group_id, token);
+        dispatch(diagnosticQuestions(answers, data.diagnostic_id, _rel));
+        navigate("/project/diagnostic/confirm_route");
+      } catch (error) {
+        console.error(error);
+      }
     }
     setPage(page + 1);
   };
@@ -94,7 +93,7 @@ export const PreguntasDiagnostico = () => {
                         name="course"
                       ></input>
                       <li>{items.response}</li>
-                    </div> /* , console.log(item, 'segundo map') */
+                    </div>
                   ))}
                 </ul>
               </div>

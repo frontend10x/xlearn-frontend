@@ -8,12 +8,14 @@ export const diagnosticReducer = (state = initialState, action) => {
         case types.proyectoRoute:
             return {
                 answers: action.payload.answers,
-                id: action.payload.diagnostic_id
+                id: action.payload.diagnostic_id,
+                _rel:action.payload._rel
             }
 
         case types.entrenamientoRoute:
             return {
-                filter_id: action.payload.filter_id
+                filter_id: action.payload.filter_id,
+                _rel: action.payload._rel
             }
 
         default:

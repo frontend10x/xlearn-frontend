@@ -24,14 +24,15 @@ export const LoginScreen = () => {
     e.preventDefault();
     try {
       const data = await loginPost(email, password);
-      dispatch(login(email, password, data.token, data.datosUsuario.name, data.datosUsuario.roles.id, data.datosUsuario.id, data.datosUsuario.subcompanies_id ));
-      console.log(data);
+      dispatch(login(email, password, data.token, data.datosUsuario.name, data.datosUsuario.roles.id, data.datosUsuario.id, data.datosUsuario.subcompanies_id, data.datosUsuario.groups['0'].group_id));
+      alert(data.message);
     } catch (error) {
-      console.error(error);
+      alert(`${error.response.data.message}`)      
     }
     if (roles === 1) {
       navigate('/dashboard/empresa');
-    }else if (roles === 2 ) {
+    // }else if (roles === 2 ) {
+    }else if (roles === 3 ) {
       navigate('/inicia/diagnostico');
     } /* Logica de redireccion */
   };
