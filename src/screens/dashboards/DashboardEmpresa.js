@@ -102,7 +102,7 @@ export const DashboardEmpresa = () => {
                     <div className="dashboard__block-content">
                       <Image src={equiposIcon} />
                       <button className="dashboard__block-button">
-                        Administrar Cupos
+                        Administrar tus equipos
                       </button>
                     </div>
                     <div className="dashboard__title">

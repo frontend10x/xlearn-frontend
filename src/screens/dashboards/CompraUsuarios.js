@@ -11,53 +11,53 @@ export const CompraUsuarios = () => {
   const { token, name, email, subcompanie_id } = useSelector(state => state.auth)
 
   const [places, setPlaces] = useState([
-    { label: 1, value: 1 },
-    { label: 2, value: 2 },
-    { label: 3, value: 3 },
+    // { label: 1, value: 1 },
+    // { label: 2, value: 2 },
+    // { label: 3, value: 3 },
     { label: 4, value: 4 },
-    { label: 5, value: 5 },
-    { label: 6, value: 6 },
-    { label: 7, value: 7 },
-    { label: 8, value: 8 },
-    { label: 9, value: 9 },
-    { label: 10, value: 10 },
-    { label: 11, value: 11 },
-    { label: 12, value: 12 },
-    { label: 13, value: 13 },
-    { label: 14, value: 14 },
-    { label: 15, value: 15 },
-    { label: 16, value: 16 },
-    { label: 17, value: 17 },
-    { label: 18, value: 18 },
-    { label: 19, value: 19 },
-    { label: 20, value: 20 },
+    // { label: 5, value: 5 },
+    // { label: 6, value: 6 },
+    // { label: 7, value: 7 },
+    // { label: 8, value: 8 },
+    // { label: 9, value: 9 },
+    // { label: 10, value: 10 },
+    // { label: 11, value: 11 },
+    // { label: 12, value: 12 },
+    // { label: 13, value: 13 },
+    // { label: 14, value: 14 },
+    // { label: 15, value: 15 },
+    // { label: 16, value: 16 },
+    // { label: 17, value: 17 },
+    // { label: 18, value: 18 },
+    // { label: 19, value: 19 },
+    // { label: 20, value: 20 },
   ]);
 
   const [time, setTime] = useState([
-    { label: "1 Mes", value: 1 },
-    { label: "2 Meses", value: 2 },
+    // { label: "1 Mes", value: 1 },
+    // { label: "2 Meses", value: 2 },
     { label: "3 Meses", value: 3 },
-    { label: "4 Meses", value: 4 },
-    { label: "5 Meses", value: 5 },
-    { label: "6 Meses", value: 6 },
-    { label: "7 Meses", value: 7 },
-    { label: "8 Meses", value: 8 },
-    { label: "9 Meses", value: 9 },
-    { label: "10 Meses", value: 10 },
-    { label: "11 Meses", value: 11 },
-    { label: "12 Meses", value: 12 },
-    { label: "13 Meses", value: 13 },
-    { label: "14 Meses", value: 14 },
-    { label: "15 Meses", value: 15 },
-    { label: "16 Meses", value: 16 },
-    { label: "17 Meses", value: 17 },
-    { label: "18 Meses", value: 18 },
-    { label: "19 Meses", value: 19 },
-    { label: "20 Meses", value: 20 },
-    { label: "21 Meses", value: 21 },
-    { label: "22 Meses", value: 22 },
-    { label: "23 Meses", value: 23 },
-    { label: "24 Meses", value: 24 },
+    // { label: "4 Meses", value: 4 },
+    // { label: "5 Meses", value: 5 },
+    // { label: "6 Meses", value: 6 },
+    // { label: "7 Meses", value: 7 },
+    // { label: "8 Meses", value: 8 },
+    // { label: "9 Meses", value: 9 },
+    // { label: "10 Meses", value: 10 },
+    // { label: "11 Meses", value: 11 },
+    // { label: "12 Meses", value: 12 },
+    // { label: "13 Meses", value: 13 },
+    // { label: "14 Meses", value: 14 },
+    // { label: "15 Meses", value: 15 },
+    // { label: "16 Meses", value: 16 },
+    // { label: "17 Meses", value: 17 },
+    // { label: "18 Meses", value: 18 },
+    // { label: "19 Meses", value: 19 },
+    // { label: "20 Meses", value: 20 },
+    // { label: "21 Meses", value: 21 },
+    // { label: "22 Meses", value: 22 },
+    // { label: "23 Meses", value: 23 },
+    // { label: "24 Meses", value: 24 },
   ]);
 
   const [price, setPrice] = useState();
@@ -72,11 +72,11 @@ export const CompraUsuarios = () => {
     subcompanie_id: subcompanie_id
   });
 
-  let { amount_user, amount_time } = formValues
+  let { amount_user, amount_time, coupon } = formValues
 
   const calculatePrice = async (e) => {
     e.preventDefault();
-    const data = await makePayment(token, name, email, amount_user, amount_time, subcompanie_id)
+    const data = await makePayment(token, name, email, amount_user, amount_time, coupon, subcompanie_id)
     setPrice(data.payment_details);
   }
 
@@ -184,8 +184,8 @@ export const CompraUsuarios = () => {
                   />
                 </div>
                 <div className="compra-usuarios__form-inputs__data-container" >
-                  <label>Codigo De Descuento</label>
-                  <input type='text' placeholder="Ingresa Codigo"
+                  <label>Cupon De Descuento</label>
+                  <input type='text' placeholder="Ingresa tu cupon si tienes uno"
                     name="coupon"
                     onChange={handleInputChange}
                   />
@@ -207,12 +207,12 @@ export const CompraUsuarios = () => {
 
           </div>
           <div className="compra-usuarios__container-price__content-total" >
-            <div className="container__price-total" >
+            {/* <div className="container__price-total" >
               <p>Pago total</p>
               <p>
                 COP 0.00
               </p>
-            </div>
+            </div> */}
             <button className="compra-usuarios__container-price__content-total__button" onClick={buyConfirm} >
               Confirmar compra
             </button>

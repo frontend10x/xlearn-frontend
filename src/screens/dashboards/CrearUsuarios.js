@@ -63,7 +63,7 @@ export const CrearUsuarios = () => {
                     <div className="xlrn__crear-usuarios__form" >
                         <div className="xlrn__crear-usuarios__form-content">
                             <input onChange={handleInputChange} name="name" placeholder="Nombre y Apellido" />
-                            <input onChange={handleInputChange} name="email" placeholder="Correo" />
+                            <input onChange={handleInputChange} name="email" placeholder="Correo (Usuario)" />
                             <div className="d-flex gap-2" >
                                 <input onChange={handleInputChange} name="phone" placeholder="Telefono" className="input__phone" />
                                 <select onChange={handleInputChange} name="rol_id" className="input__rol" >

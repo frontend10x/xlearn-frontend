@@ -18,7 +18,6 @@ export const LoginScreen = () => {
   const { email, password } = formValues;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(roles, 'roles');
   
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -69,8 +68,8 @@ export const LoginScreen = () => {
                 <input
                   type="text"
                   name="email"
-                  placeholder="Email"
                   value={email}
+                  placeholder="Email"
                   onChange={handleInputChange}
                   className="login__email"
                 />

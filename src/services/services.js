@@ -175,10 +175,10 @@ export const createGroup = async (token, name, description) => {
   return response.data;
 };
 
-export const makePayment = async (token, name, email, amount_user, amount_time, subcompanie_id) => {
+export const makePayment = async (token, name, email, amount_user, amount_time, coupon, subcompanie_id) => {
 
   const body = {
-    token, name, email, amount_user, amount_time, subcompanie_id
+    token, name, email, amount_user, amount_time, coupon, subcompanie_id
   };
 
   const config = {

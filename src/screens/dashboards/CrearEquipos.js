@@ -20,7 +20,7 @@ export const CrearEquipos = () => {
   });
   const { name, description } = formValues;
 
-
+  
 
   const createTeams = async (e) => {
     try {
@@ -54,7 +54,7 @@ export const CrearEquipos = () => {
 
           <div className="xlrn__crear-equipos__form" id="form" >
             <input onChange={handleInputChange} name="name" type="text" placeholder="Nombre del equipo" />
-            <input onChange={handleInputChange} name="description" type="text" placeholder="Descripcion"/>
+            {/* <input onChange={handleInputChange} name="description" type="text" placeholder="Descripcion"/> */}
             <button className="xlrn__crear-equipos__form-button" onClick={createTeams} >Crear equipo</button>
           </div>
 

@@ -88,7 +88,7 @@ export const CursosScreen = () => {
                 onClick={filterCourses}
                 value="Oportunidades, retos y Priorizacion"
               />
-              <h4>Transformacion Digital</h4>
+              {/* <h4>Transformacion Digital</h4>
               <input
                 className="text-start"
                 type="button"
@@ -156,7 +156,7 @@ export const CursosScreen = () => {
                 type="button"
                 onClick={filterCourses}
                 value="Vigilancia"
-              />
+              /> */}
             </ul>
           </div>
           <h4 className="cursos__section-recently" >Agregados recientemente</h4>

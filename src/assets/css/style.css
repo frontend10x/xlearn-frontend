@@ -1691,6 +1691,13 @@ textarea {
 
 /* Empresas section Fin */
 
+/* Contacto Screen Inicio */
+.xlrn-contacto__section-banner__button {
+    background-color: var(--green);
+    color: var(--blueDark);
+    font-weight: bold;
+}
+/* Contacto Screen Fin */
 
 /* Vista Empresa */
 
@@ -2276,11 +2283,13 @@ textarea {
     left: 410px;
     top: 30px;
     width: 78%;
+    /* background-image: url('../Image/banner_cursos01.png');
+    background-repeat: no-repeat; */
 }
 
 .dashboard__lider-banner_image {
     height: 35vh;
-    width: 80%;
+    width: 82%;
 }
 
 .dashboard__lider-banner_content {
@@ -2425,7 +2434,54 @@ textarea {
 
 .dashboar__lider-construction-content p {
     font-size: 25px;
-  }
+}
+
+.xlrn__dashboard__lider-course__route {
+    position: relative;
+    top: 90px;
+    height: 40vh;
+    left: 250px;
+    width: 80%;
+}
+
+.xlrn__dashboard__lider-course__route-selection {
+    display: flex;
+    column-gap: 20px;
+}
+
+.xlrn__dashboard__lider-course__route-selection-input {
+    border: none;
+    background-color: transparent;
+    font-size: 28px;
+    color: var(--blueDark);
+    font-weight: bold;
+}
+
+.xlrn__dashboard__lider-block-button {
+    background-color: var(--green);
+    border: none;
+    border-radius: 5px;
+    color: var(--blueDark);
+    font-size: 16px;
+    height: 41px;
+    width: 128px;
+    position: relative;
+}
+
+.xlrn__dashboard__lider-block-content-titles {
+    position: relative;
+    top: 10px;
+    width: 50%;
+}
+
+.xlrn__dashboard__lider-block-image {
+    height: 205px;
+    width: 184px;
+}
+
+.xlrn__dashboard__lider-content-info h4 {
+    font-size: 15px;
+}
 
 /* Dashboard Lider Fin */
 
@@ -3090,6 +3146,13 @@ textarea {
     border-radius: 10px;
 }
 
+.videoplayer__playbutton {
+    position: relative;
+    bottom: 390px;
+    left: 520px;
+    width: 8%;
+}
+
 .video__reproduccion-content {
     color: var(--white);
     margin-bottom: 100px;
@@ -3141,6 +3204,17 @@ textarea {
 }
 
 /* Reproductor de video Fin */
+
+/* InfoPlayer Component Inicio Fin*/
+
+.xlrn__infovideo-nav {
+    background-color: var(--whiteOff);
+    height: 15vh;
+}
+
+.xlrn__infovideoplayer-container-content {
+    background-color: var(--white);
+}
 
 /* Responsive */
 

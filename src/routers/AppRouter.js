@@ -25,6 +25,7 @@ import { UsoCupos } from "../screens/dashboards/UsoCupos";
 import { CrearUsuarios } from "../screens/dashboards/CrearUsuarios";
 import { ReproduccionDeCursos } from "../screens/dashboards/ReproduccionDeCursos";
 
+
 export const AppRouter = () => {
   const { token, roles } = useSelector((state) => state.auth);
   
@@ -89,7 +90,7 @@ export const AppRouter = () => {
           />
           <Route
             exact
-            path="/dashboard/lider/course/videoplayer"
+            path="/course/videoplayer"
             element={<ReproduccionDeCursos />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
