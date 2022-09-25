@@ -3,10 +3,7 @@ import { useEffect } from "react"
 const WebCheckout = ({dataPayment, onSubmit}) => {
 
     const data = dataPayment
-
-    //Wompi, requiere el valor en centabos, por eso se hace la conversión 
-    const amount = data?.amount * 100
-
+    
     useEffect(() =>{
         const btnSubmit = document.getElementById('btn-checkout-wompi')
         btnSubmit.click();
@@ -17,7 +14,7 @@ const WebCheckout = ({dataPayment, onSubmit}) => {
         <form action="https://checkout.wompi.co/p/" method="GET">
             <input type="hidden" name="public-key" defaultValue={data?.public_key} />
             <input type="hidden" name="currency" defaultValue={data?.currency} />
-            <input type="hidden" name="amount-in-cents" defaultValue={amount} />
+            <input type="hidden" name="amount-in-cents" defaultValue={data?.amount} />
             <input type="hidden" name="reference" defaultValue={data?.reference} />
             <input type="hidden" name="signature:integrity" defaultValue={data?.signature}/>
             <button type="submit" id="btn-checkout-wompi"></button>
