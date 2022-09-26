@@ -27,9 +27,7 @@ import { ReproduccionDeCursos } from "../screens/dashboards/ReproduccionDeCursos
 
 
 export const AppRouter = () => {
-  const { token, roles } = useSelector((state) => state.auth);
-  
-  console.log(roles, "roles");
+  const { token, type } = useSelector((state) => state.auth);
   
   return (
     <Router>
@@ -43,7 +41,7 @@ export const AppRouter = () => {
         <Route exact path="/contact" element={<ContactoScreen />} />
         
         {/* RUTA DE EMPRESA */}
-        <Route element={<EmpresasRoute token={token} roles={roles} />}>
+        <Route element={<EmpresasRoute token={token} type={type} />}>
           <Route
             exact
             path="/dashboard/empresa"
@@ -57,7 +55,7 @@ export const AppRouter = () => {
         </Route>
         
         {/* RUTA DEL LIDER */}
-        <Route element={<LiderRoute token={token} roles={roles} />}>
+        <Route element={<LiderRoute token={token} type={type} />}>
           <Route
             exact
             path="/inicia/diagnostico"
@@ -88,13 +86,13 @@ export const AppRouter = () => {
             path="/project/diagnostic/training/areas"
             element={<SeleccionDeAreas />}
           />
+        </Route>
           <Route
             exact
-            path="/course/videoplayer"
+            path= "/course/videoplayer/:id"
             element={<ReproduccionDeCursos />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
-        </Route>
       </Routes>
     </Router>
   );

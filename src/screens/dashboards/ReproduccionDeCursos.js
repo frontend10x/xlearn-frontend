@@ -11,7 +11,7 @@ export const ReproduccionDeCursos = () => {
             <HeaderDashboard />
             <div className="video__reproduccion-container" >
                 <div className="video__reproduccion-content" >
-                    <h2>Prototipado</h2>
+                    <h2>Presentacion Efectiva De Negocios</h2>
                     <button>Comunidad</button>
                 </div>
                 <div className="d-flex">

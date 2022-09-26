@@ -142,7 +142,7 @@ export const EmpresaFormulario = () => {
           observation
         )
       );
-      alert(data.message);
+      alert(data.message , 'revisa tu correo para validar el registro');
     } catch (error) {
       console.error(error, "error de peticion");
     }
@@ -271,7 +271,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group">
             <p>
-              Selecciona tu plan de interes<span>*</span>
+              Elige tu plan de interes<span>*</span>
             </p>
             <select
               name="plan_id"
@@ -290,7 +290,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group">
             <p>
-              Selecciona tu plan de interes<span>*</span>
+              Selecciona tus cupos<span>*</span>
             </p>
             <select
               name="quotas"

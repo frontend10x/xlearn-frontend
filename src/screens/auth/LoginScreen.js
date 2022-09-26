@@ -5,12 +5,14 @@ import { useForm } from "../../hooks/useForm";
 import { NavLink } from "react-router-dom";
 import { loginPost } from "../../services/services";
 import { login } from "../../actions/loginactions";
-import { useDispatch, useSelector} from "react-redux/es/exports";
+import { useDispatch, useSelector } from "react-redux/es/exports";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+
 
 export const LoginScreen = () => {
-  
-  const {roles} = useSelector(state => state.auth);
+
+  const { type } = useSelector(state => state.auth);
   const [formValues, handleInputChange] = useForm({
     email: "",
     password: "",
@@ -18,22 +20,34 @@ export const LoginScreen = () => {
   const { email, password } = formValues;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       const data = await loginPost(email, password);
-      dispatch(login(email, password, data.token, data.datosUsuario.name, data.datosUsuario.roles.id, data.datosUsuario.id, data.datosUsuario.subcompanies_id, data.datosUsuario.groups['0'].group_id));
-      alert(data.message);
+      Swal.fire({
+        icon: 'success',
+        title: 'Bienvenido',
+        text: `${data.message}`,
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
+      dispatch(login(email, password, data.token, data.datosUsuario.name, data.datosUsuario.roles.id, data.datosUsuario.id, data.datosUsuario.subcompanies_id, data.datosUsuario.groups['0'].group_id, data.datosUsuario.roles.name));
+      if (type === "Empresa") {
+        navigate('/dashboard/empresa');
+      } else if (type === "Lider") {
+        navigate('/inicia/diagnostico');
+      }
     } catch (error) {
-      alert(`${error.response.data.message}`)      
+      alert(`${error.response.data.message}`)
+      Swal.fire({
+        icon: 'error',
+        title: 'Revisa que los datos sean correctos',
+        text: `${error.response.data.message}`,
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
     }
-    if (roles === 1) {
-      navigate('/dashboard/empresa');
-    // }else if (roles === 2 ) {
-    }else if (roles === 3 ) {
-      navigate('/inicia/diagnostico');
-    } /* Logica de redireccion */
+
+    
   };
 
   return (
@@ -48,12 +62,12 @@ export const LoginScreen = () => {
               <div className="login__header-logo-title">
                 <NavLink to='/'>
 
-                <Image
-                  src={logologin}
-                  className="login__logo"
-                  alt="imagen-login"
+                  <Image
+                    src={logologin}
+                    className="login__logo"
+                    alt="imagen-login"
                   />
-                  </NavLink>
+                </NavLink>
                 <p>
                   Sumate a la experiencia Xlearn y desarrolla tu proyecto empresarial
                 </p>
@@ -61,8 +75,8 @@ export const LoginScreen = () => {
             </div>
             <div className="login__content-inputs">
               {/* <p className="login__content-title">Bienvenido a Xlearn</p> */}
-              <form 
-                className="login__content-form" 
+              <form
+                className="login__content-form"
                 onSubmit={handleLogin}
               >
                 <input
@@ -82,7 +96,7 @@ export const LoginScreen = () => {
                   className="login__password"
                 />
 
-                
+
                 <div className="d-flex login__content-remind ">
                   <input type="checkbox" className="login__input-reminder" />
                   <p className="xln-textRecordarme-aling">Recordarme</p>

@@ -2,6 +2,6 @@ import React from 'react';
 import { Navigate, Outlet} from "react-router-dom";
 
 
-export const EmpresasRoute = ({token, roles}) => {
-    return token && roles === 1 ? <Outlet /> : <Navigate to='/login' />
+export const EmpresasRoute = ({token, type}) => {
+    return token && type === "Empresa" ? <Outlet /> : <Navigate to='/login' />
 }

@@ -13,7 +13,8 @@ export const authReducer = (state = initialState, action) => {
                 roles: action.payload.roles,
                 id: action.payload.id,
                 subcompanie_id: action.payload.subcompanie_id,
-                groups: action.payload.groups
+                groups: action.payload.groups,
+                type: action.payload.type
             }
 
         case types.logout:

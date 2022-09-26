@@ -19,7 +19,7 @@ export const DashboardLider = () => {
   ]);
 
   const redirect = () => {
-    navigate('/course/videoplayer')
+    navigate('/course/videoplayer/1');
   }
 
   return (
@@ -36,10 +36,10 @@ export const DashboardLider = () => {
       <div className="xlrn__dashboard__lider-course__route" >
         <div className="xlrn__dashboard__lider-course__route-selection">
           <input type="button" value="Mi Ruta" className="xlrn__dashboard__lider-course__route-selection-input" />
-          <span className="h-25 fs-1" >
+          {/* <span className="h-25 fs-1" >
             |
-            </span>
-          <input type="button" value="Mis Cursos" className="xlrn__dashboard__lider-course__route-selection-input" />
+            </span> */}
+          {/* <input type="button" value="Mis Cursos" className="xlrn__dashboard__lider-course__route-selection-input" /> */}
         </div>
 
         <div className="xlrn__dashborad__lider-container-block">
@@ -52,7 +52,7 @@ export const DashboardLider = () => {
                 <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
                   <h4>Progreso: <span>40%</span></h4> | <h4> Lecciones: 6 </h4>
                 </div>
-                <button onClick={redirect} className="xlrn__dashboard__lider-block-button" >Ingresar</button>
+                <button onClick={redirect} className="xlrn__dashboard__lider-block-button" >Ver curso</button>
               </div>
             </div>
             <div className="xlrn__dashboard__lider-block-content d-flex gap-4" >
@@ -63,7 +63,7 @@ export const DashboardLider = () => {
                 <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
                   <h4>Progreso: <span>40%</span></h4> | <h4> Lecciones: 6 </h4>
                 </div>
-                <button onClick={redirect} className="xlrn__dashboard__lider-block-button" >Ingresar</button>
+                <button onClick={redirect} className="xlrn__dashboard__lider-block-button" >Ver curso</button>
               </div>
             </div>
           </div>
