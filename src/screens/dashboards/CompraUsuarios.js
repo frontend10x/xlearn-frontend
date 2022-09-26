@@ -5,6 +5,7 @@ import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDash
 import { useForm } from "../../hooks/useForm";
 import { makePayment } from "../../services/services";
 import { Footer } from "../../componentes/Footer";
+import WebCheckout from "../../componentes/Commons/Wompi/WebCheckout";
 // import {WidgetCheckout} from "../../Wompi/wompi";
 
 export const CompraUsuarios = () => {
@@ -80,7 +81,8 @@ export const CompraUsuarios = () => {
     setPrice(data.payment_details);
   }
 
-  const buyConfirm = ("DOMContentLoaded", (event) => {
+  /*const buyConfirm = ("DOMContentLoaded", (event) => {
+    console.log('price', price)
 
       // //Seteo de variables
       // var checkout = new WidgetCheckout({
@@ -117,7 +119,7 @@ export const CompraUsuarios = () => {
       //     console.log('Transaction ID: ', transaction.id)
       //     console.log('Transaction object: ', transaction)
       // })
-  });
+  });*/
 
   //Metodo utilizado para generar la firma de integridad
   // const integrationSignatureGeneration = async () => {
@@ -129,7 +131,15 @@ export const CompraUsuarios = () => {
   //     return hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
   // }
 
+  const [buyConfirm, setBuyConfirm] = useState(false)
+
+  const toPay = () => setBuyConfirm(true)  
+
   return (
+    <>
+    {buyConfirm && (
+      <WebCheckout dataPayment={price} onSubmit={buyConfirm}/>
+    )}
     <div className="compra-usuarios__section">
       <HeaderDashboard />
       <div className="compra-usuarios__container-nav">
@@ -213,7 +223,7 @@ export const CompraUsuarios = () => {
                 COP 0.00
               </p>
             </div> */}
-            <button className="compra-usuarios__container-price__content-total__button" onClick={buyConfirm} >
+            <button className="compra-usuarios__container-price__content-total__button" onClick={toPay} >
               Confirmar compra
             </button>
             <p className="container__price-total__terms" >
@@ -224,5 +234,6 @@ export const CompraUsuarios = () => {
       </div>
       <Footer />
     </div>
+    </>
   );
 }
