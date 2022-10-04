@@ -81,56 +81,6 @@ export const CompraUsuarios = () => {
     setPrice(data.payment_details);
   }
 
-  /*const buyConfirm = ("DOMContentLoaded", (event) => {
-    console.log('price', price)
-
-      // //Seteo de variables
-      // var checkout = new WidgetCheckout({
-      //     currency: 'COP',
-      //     amountInCents: 2490000,
-      //     reference: 'AD002901221XLEARNTEST',
-      //     publicKey: 'pub_test_QHBX5bW09CtqK3gFnGzMswxlYhSTfc2F',
-      //     redirectUrl: 'https://transaction-redirect.wompi.co/check', // Opcional
-      //     // ignature:integrityzz=integrationSignatureGeneration(),
-      //     taxInCents: { // Opcional
-      //         vat: 1900,
-      //         consumption: 800
-      //     },
-      //     customerData: { // Opcional
-      //         email:'lola@gmail.com',
-      //         fullName: 'Lola Flores',
-      //         phoneNumber: '3040777777',
-      //         phoneNumberPrefix: '+57',
-      //             legalId: '123456789',
-      //             legalIdType: 'CC'
-      //         },
-      //     shippingAddress: { // Opcional
-      //         addressLine1: "Calle 123 # 4-5",
-      //         city: "Bogota",
-      //         phoneNumber: '3019444444',
-      //         region: "Cundinamarca",
-      //         country: "CO"
-      //     }
-      // })
-
-      //Apertura del widget
-      // checkout.open(function ( result ) {
-      //     var transaction = result.transaction
-      //     console.log('Transaction ID: ', transaction.id)
-      //     console.log('Transaction object: ', transaction)
-      // })
-  });*/
-
-  //Metodo utilizado para generar la firma de integridad
-  // const integrationSignatureGeneration = async () => {
-  //     var cadenaConcatenada = "AD002901221XLEARNTEST" + "2490000" + "COP" + "test_integrity_tAUVKmZtHVX2InQPpyMFBIHs9jtY2Fjy"
-  //     //Ejemplo
-  //     const encondedText = new TextEncoder().encode(cadenaConcatenada);
-  //     const hashBuffer = await crypto.subtle.digest('SHA-256', encondedText);
-  //     const hashArray = Array.from(new Uint8Array(hashBuffer));
-  //     return hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
-  // }
-
   const [buyConfirm, setBuyConfirm] = useState(false)
 
   const toPay = () => setBuyConfirm(true)  

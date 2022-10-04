@@ -1,3 +1,3 @@
 import WebCheckout from "./WebCheckout";
 
-export default WebCheckout
+export default WebCheckout;

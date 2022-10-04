@@ -7,6 +7,7 @@ import { equiposIcon } from "../../assets/img";
 import { useForm } from "../../hooks/useForm"
 import { creationUser, typeOfUsers } from "../../services/services";
 import { useSelector } from "react-redux";
+import Swal from "sweetalert2";
 
 export const CrearUsuarios = () => {
     
@@ -22,8 +23,12 @@ export const CrearUsuarios = () => {
     });
 
     const [users, setUsers] = useState();
+    const [areaTelf, setAreaTelf] = useState([
+        {label:"+57", value:1}
+    ]);
 
     const {name, email, phone, type_id, rol_id, password, password_confirmation} = formValues;
+
 
     useEffect(() => {
         async function typeUsers() {
@@ -37,9 +42,19 @@ export const CrearUsuarios = () => {
     const createUser = async () => {
         try {
             const data = await creationUser( token,name, email, phone, type_id, rol_id, password, password_confirmation);
-            alert(data.message)
+            Swal.fire({
+                icon: 'success',
+                title: 'Usuario creado con exito',
+                text: `${data.message}`,
+                // footer: '<a href="">Why do I have this issue?</a>'
+              })
         } catch (error) {
-            alert(`${error.response.data.message}`)      
+            Swal.fire({
+                icon: 'success',
+                title: 'Felicidades',
+                text: `${error.response.data.message}`,
+                // footer: '<a href="">Why do I have this issue?</a>'
+              })   
         }
     }
 
@@ -68,9 +83,9 @@ export const CrearUsuarios = () => {
                                 <input onChange={handleInputChange} name="phone" placeholder="Telefono" className="input__phone" />
                                 <select onChange={handleInputChange} name="rol_id" className="input__rol" >
                                     <option value="..." >selecciona</option>
-                                    {users&&
-                                        users.map((item, index) => (
-                                            <option key={index} value={item.id} >{item.name}</option>
+                                    {areaTelf&&
+                                        areaTelf.map((item, index) => (
+                                            <option key={index} value={item.value} >{item.label}</option>
                                         ))
                                     }
                                 </select>

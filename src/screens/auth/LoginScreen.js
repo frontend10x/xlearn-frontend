@@ -24,7 +24,7 @@ export const LoginScreen = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const data = await loginPost(email, password);
+      const data = await loginPost(email, password).catch(error => alert(`${error}`));
       Swal.fire({
         icon: 'success',
         title: 'Bienvenido',
@@ -38,13 +38,12 @@ export const LoginScreen = () => {
         navigate('/inicia/diagnostico');
       }
     } catch (error) {
-      alert(`${error.response.data.message}`)
-      Swal.fire({
-        icon: 'error',
-        title: 'Revisa que los datos sean correctos',
-        text: `${error.response.data.message}`,
-        // footer: '<a href="">Why do I have this issue?</a>'
-      })
+          Swal.fire({
+            icon: 'error',
+            title: 'Revisa que los datos sean correctos',
+            text: `${error?.response?.data?.message}`,
+            // footer: '<a href="">Why do I have this issue?</a>'
+          })
     }
 
     

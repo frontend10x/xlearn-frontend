@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { Alert, Image } from "react-bootstrap";
 import { equiposIcon } from "../../assets/img";
 import { Axios } from "axios";
+import Swal from "sweetalert2";
 
 
 
@@ -25,10 +26,21 @@ export const CrearEquipos = () => {
   const createTeams = async (e) => {
     try {
       const data = await createGroup(token, name, description);
-      alert(data.message);
       document.getElementById('form').reset();
+      Swal.fire({
+        icon: 'success',
+        title: 'Felicidades',
+        text: `${data.message}`,
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
+
     } catch (error) {
-      alert(`${error.response.data.message}`)      
+      Swal.fire({
+        icon: 'success',
+        title: 'Bienvenido',
+        text: `${error.response.data.message}`,
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
     }
   };
 

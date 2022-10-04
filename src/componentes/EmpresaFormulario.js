@@ -9,8 +9,7 @@ import {
   getSize,
   registerPost,
 } from "../services/services";
-
-const countries = [{ label: "Argentina", value: "argentina" }];
+import Swal from "sweetalert2";
 
 export const EmpresaFormulario = () => {
   const [countries, setCountries] = useState();
@@ -125,6 +124,12 @@ export const EmpresaFormulario = () => {
         password_confirmation,
         observation
       );
+      Swal.fire({
+        icon: 'success',
+        title: 'Registro Hecho',
+        text: `${data.message}`,
+        // footer: '<a href="">Why do I have this issue?</a>'
+      });
       dispatch(
         register(
           name,
@@ -142,12 +147,15 @@ export const EmpresaFormulario = () => {
           observation
         )
       );
-      alert(data.message , 'revisa tu correo para validar el registro');
+      
     } catch (error) {
-      console.error(error, "error de peticion");
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops Algo salio mal',
+        text: `${error.response.data.message}`,
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
     }
-    console.log(formValues, "values");
-    console.log(password_confirmation, 'value')
   };
 
   return (

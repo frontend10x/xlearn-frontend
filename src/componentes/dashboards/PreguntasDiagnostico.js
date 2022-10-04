@@ -48,6 +48,8 @@ export const PreguntasDiagnostico = () => {
     setSchema({ ...schema, answers: [...schema.answers, answers] });
   };
 
+  // console.log(schema, 'payload');
+
   const previousPage = () => {
     if (page === 1) {
       navigate("/selection/process");
@@ -61,7 +63,8 @@ export const PreguntasDiagnostico = () => {
       try {
         const data = await registerDiagnostic(target, user_id, _rel, answers, group_id, token);
         dispatch(diagnosticQuestions(answers, data.diagnostic_id, _rel));
-        navigate("/project/diagnostic/confirm_route");
+        // navigate("/project/diagnostic/confirm_route");
+        console.log(data,'data')
       } catch (error) {
         console.error(error);
       }

@@ -1,6 +1,4 @@
 import axios from "axios";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
 import { baseURL } from "../utils/route";
 
 export const loginPost = async (email, password) => {
