@@ -24,14 +24,27 @@ export const LoginScreen = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const data = await loginPost(email, password).catch(error => alert(`${error}`));
+      const data = await loginPost(email, password);
       Swal.fire({
         icon: 'success',
         title: 'Bienvenido',
         text: `${data.message}`,
         // footer: '<a href="">Why do I have this issue?</a>'
       })
-      dispatch(login(email, password, data.token, data.datosUsuario.name, data.datosUsuario.roles.id, data.datosUsuario.id, data.datosUsuario.subcompanies_id, data.datosUsuario.groups['0'].group_id, data.datosUsuario.roles.name));
+          console.log(data,'structure')
+          console.log(data.datosUsuario.roles.name,'structure2')
+      
+      dispatch(login(
+        email, 
+        password, 
+        data.token, 
+        data.datosUsuario.name, 
+        data.datosUsuario.roles.id, 
+        data.datosUsuario.id, 
+        data.datosUsuario.subcompanies_id, 
+        data.datosUsuario.groups['0'].group_id, 
+        data.datosUsuario.roles.name));
+
       if (type === "Empresa") {
         navigate('/dashboard/empresa');
       } else if (type === "Lider") {
@@ -45,9 +58,8 @@ export const LoginScreen = () => {
             // footer: '<a href="">Why do I have this issue?</a>'
           })
     }
-
-    
   };
+
 
   return (
     <div className="Login-Screen">

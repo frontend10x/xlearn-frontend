@@ -1,1 +1,1 @@
-export const baseURL = 'http://servicios.10xconsultores.org';
+export const baseURL = 'https://servicios.10xconsultores.org';
