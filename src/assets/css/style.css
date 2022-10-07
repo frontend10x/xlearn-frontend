@@ -198,7 +198,7 @@ body {
     justify-content: space-between;
     padding: 10px 0 10px 30px;
     font-family: 'GT Walsheim Pro';
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 700;
     color: var(--white);
     white-space: nowrap;
@@ -1287,58 +1287,83 @@ body {
 
 
 /* Register*/
+.planes__register-banner{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    height: 500px;
 
+}
 .register__banner-image {
     height: 70vh;
     width: 100%;
 }
 
 .planes__register-content {
-    bottom: 350px;
     color: var(--white);
-    height: 50px;
     left: 100px;
     position: relative;
-    width: 30%;
+    width: 41%;
+    top: 160px;
 }
-
+.planes__register-content h1 {
+    font-weight: bold;
+}
 .planes__register-information {
-    height: 50vh;
+    height: 100vh;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 .planes__register-container_option {
-    height: 60vh;
+    height: 100vh;
 }
 
 .planes__register-option {
-    column-gap: 2rem;
-    display: flex;
-    flex-flow: wrap;
     height: 50vh;
     position: relative;
     left: 100px;
-    width: 45%;
+    width: 40%;
 }
 
-.planes__register-option h1 {
+.planes__register-option h2 {
     font-weight: bold;
-    font-size: 40px;
-    width: 75%;
+    font-size: 30px;
+    width: 100%;
 }
-
+.xln__separator__subtitle {
+    width: 100px;
+    height: 8px;
+    background: #270bc4;
+    border-radius: 10px;
+    margin-bottom: 10%;
+}
+.planes__option-group {
+    float: left!important;
+    display: block!important;
+    width: 50%;
+}
+.planes__option-group ul {
+    margin-bottom: 2rem!important;
+    padding-left: 1rem;
+}
+.planes__option-group h4 {
+    font-size: 20px;
+    height: 60px;
+}
 .planes__container-about {
     background-color: var(--white);
     height: 50vh;
 }
 
 .planes__register-about {
-    left: 130px;
+    left: 100px;
     position: relative;
-    top: 130px;
-    width: 35%;
+    top: 42px;
+    width: 40%;
 }
 
-.planes__register-about h1 {
+.planes__register-about h2 {
     font-weight: bold;
 }
 
@@ -1347,29 +1372,31 @@ body {
     border-radius: 5px;
     color: var(--white);
     position: absolute;
-    left: 980px;
-    top: 495px;
-    height: 112vh;
-    width: 30%;
+    left: 700px;
+    top: 400px;
+    height: auto;
+    width: 45%;
+    padding: 5%;
+    padding-top: 2%;
+    padding-bottom: 6%;
 }
 
 .planes__form-content {
     position: relative;
     top: 30px;
-    left: 40px;
 }
 
 .planes__formulario-content {
     display: flex;
     flex-flow: wrap;
-    column-gap: 4rem;
-    width: 77%;
+    width: 100%;
     position: relative;
-    left: 40px;
+    left: 0px;
 }
 
 .form__group {
-    width: 40%;
+    width: 50%;
+    padding: 8px;
 }
 
 .form__group p {
@@ -1389,17 +1416,26 @@ body {
     padding: 7px;
     width: 100%;
 }
-
+.form__container-country_content .form__group {
+    width: 100%;
+}
 .form__container-country_content {
     width: 100%;
 }
 
 .form__container-country_content select {
-    width: 418px;
+    width: 100%;
 }
 
 .form__group span {
     color: red;
+}
+.form__group.form__group__xln {
+    width: 100%;
+}
+
+.form__group.form__group__xln textarea{
+    width: 100%;
 }
 
 textarea {
@@ -1419,9 +1455,12 @@ textarea {
     font-size: 20px;
     font-weight: bold;
 }
-
+p.xln__register_text_TyC {
+    margin-top: 13%;
+}
 .planes__formulario h1 {
     font-weight: bold;
+    font-size: 30px;
 }
 
 .planes__option-group ul li::marker {
@@ -4230,6 +4269,48 @@ textarea {
         left: 30px;
     }
     /* Footer Fin*/
+
+    /*Estilos ventana registro*/
+    .navegacion {
+        display: inline-flex;
+        column-gap: normal;
+        left: 32%;
+        width: 59%;
+        position: relative;
+        top: 0px;
+    }
+    .planes__form-container {
+        background-color: var(--blueAlternative);
+        border-radius: 5px;
+        color: var(--white);
+        position: absolute;
+        left: 0;
+        top: 130%;
+        height: auto;
+        width: 100%;
+        padding: 5%;
+        padding-top: 2%;
+        padding-bottom: 6%;
+    }    
+    .planes__register-option {
+        height: 50vh;
+        position: relative;
+        left: 0px;
+        width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .planes__register-container_option {
+        height: 190vh;
+    }
+    .planes__container-about {
+        background-color: var(--white);
+        height: 30vh;
+    }
+    .planes__formulario-button {
+        left: 25%;
+    }
+    /*Fin Estilos ventana registro*/
 }
 
 @media (max-width:425px) {
@@ -4516,6 +4597,18 @@ textarea {
         height: 100%;
         padding-top: 30%;
     }
+
+    /*Estilos ventana registro*/
+    .planes__register-about {
+        left: 10%;
+        position: relative;
+        top: 42px;
+        width: 80%;
+    }
+    .planes__form-container {
+        padding-bottom: 17%;
+    }
+    /*Fin Estilos ventana registro*/
     
 }
 

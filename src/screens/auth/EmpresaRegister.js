@@ -9,36 +9,33 @@ export const EmpresasRegister = () => {
   return (
     <div className="planes-register">
       <HeaderRegister />
-      <div className="planes__register-banner">
-        <img
-          src={registerbanner}
-          alt="register__banner"
-          className="register__banner-image"
-        />
+      <div className="planes__register-banner"  style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.675)), url("${registerbanner}")` }}>
+
         <div className="planes__register-content">
           <h1>Requerimientos para el registro</h1>
-          <h4>
+          <p>
             Registrate y escoge el plan adecuado para lo que tu organizacion
             necesita; podras gestionar los cupos, equipos y usuarios en los
             respectivos procesos de formacion
-          </h4>
+          </p>
         </div>
       </div>
       <div className="planes__register-information">
         <div className="planes__register-container_option">
           <div className="planes__register-option">
-            <h1>Registrate y comienza a desarrollar tus proyectos e innovacion</h1>
-            <div className="planes__option-group me-5">
+            <h2>Registrate y comienza a desarrollar tus proyectos e innovacion</h2>
+            <div className="xln__separator__subtitle"></div>
+            <div className="planes__option-group">
               <h4>Monitorea tus equipos</h4>
               <ul>
                 <li>Evalua el rendimiento</li>
                 <li>Desarrolla proyectos</li>
               </ul>
             </div>
-            <div className="planes__option-group ms-5">
+            <div className="planes__option-group">
               <h4>Accede a contenido de valor</h4>
               <ul>
-                <li>contenido exclusivo y espacializado</li>
+                <li>contenido exclusivo y especializado</li>
                 <li>Acompañamiento de consultores</li>
               </ul>
             </div>
@@ -60,10 +57,11 @@ export const EmpresasRegister = () => {
         </div>
         <div className="planes__container-about">
           <div className="planes__register-about">
-            <h1>¿Necesitas asesoria?</h1>
-            <h4>
+            <h2>¿Necesitas asesoria?</h2>
+            <div className="xln__separator__subtitle"></div>
+            <p>
               Dejanos tus datos y registrate en nuestra plataforma; pronto nos pondremos en contacto
-            </h4>
+            </p>
           </div>
         </div>
         <div className="planes__form-container">

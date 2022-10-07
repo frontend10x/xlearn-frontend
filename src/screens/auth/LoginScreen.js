@@ -37,13 +37,13 @@ export const LoginScreen = () => {
       dispatch(login(
         email, 
         password, 
-        data.token, 
-        data.datosUsuario.name, 
-        data.datosUsuario.roles.id, 
-        data.datosUsuario.id, 
-        data.datosUsuario.subcompanies_id, 
-        data.datosUsuario.groups['0'].group_id, 
-        data.datosUsuario.roles.name));
+        data?.token, 
+        data?.datosUsuario?.name, 
+        data?.datosUsuario?.roles.id, 
+        data?.datosUsuario?.id, 
+        data?.datosUsuario?.subcompanies_id, 
+        data?.datosUsuario?.groups['0']?.group_id, 
+        data?.datosUsuario?.roles?.name));
 
       if (type === "Empresa") {
         navigate('/dashboard/empresa');

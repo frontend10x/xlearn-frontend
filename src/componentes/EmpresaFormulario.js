@@ -17,16 +17,16 @@ export const EmpresaFormulario = () => {
   const [courses, setCourses] = useState();
   const [sizes, setSizes] = useState();
   const [places, setPlaces] = useState([
-    { label: 1, value: 1 },
-    { label: 2, value: 2 },
-    { label: 3, value: 3 },
+    // { label: 1, value: 1 },
+    // { label: 2, value: 2 },
+    // { label: 3, value: 3 },
     { label: 4, value: 4 },
-    { label: 5, value: 5 },
-    { label: 6, value: 6 },
-    { label: 7, value: 7 },
-    { label: 8, value: 8 },
-    { label: 9, value: 9 },
-    { label: 10, value: 10 },
+    // { label: 5, value: 5 },
+    // { label: 6, value: 6 },
+    // { label: 7, value: 7 },
+    // { label: 8, value: 8 },
+    // { label: 9, value: 9 },
+    // { label: 10, value: 10 },
   ]);
   const dispatch = useDispatch();
 
@@ -43,6 +43,7 @@ export const EmpresaFormulario = () => {
     async function plans() {
       try {
         const data = await getPlans();
+        console.log(data)
         setPlans(data);
       } catch (error) {
         console.error(error);
@@ -62,6 +63,7 @@ export const EmpresaFormulario = () => {
     async function size() {
       try {
         const data = await getSize();
+        console.log(data)
         setSizes(data);
       } catch (error) {
         console.error(error);
@@ -127,8 +129,8 @@ export const EmpresaFormulario = () => {
       Swal.fire({
         icon: 'success',
         title: 'Registro Hecho',
-        text: `${data.message}`,
-        // footer: '<a href="">Why do I have this issue?</a>'
+        text: `${data.message}, Revisa tu correo para confirmar la cuenta`,
+        // footer: 'Revisa tu correo para confirmar la cuenta'
       });
       dispatch(
         register(
@@ -232,7 +234,7 @@ export const EmpresaFormulario = () => {
               {sizes &&
                 sizes.map((item, index) => (
                   <option key={index} value={item.id}>
-                    {item.range_size}
+                    {item.tag}
                   </option>
                 ))}
             </select>
@@ -259,7 +261,7 @@ export const EmpresaFormulario = () => {
             </div>
             <div className="form__group">
               <p>
-                Tamaño de la Empresa<span>*</span>
+                Área de la Empresa<span>*</span>
               </p>
               <select
                 name="content"
@@ -339,8 +341,8 @@ export const EmpresaFormulario = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="form__group">
-            <p>
+          <div className="form__group form__group__xln">
+            <p className="form__group__text">
               Cuentanos mas sobre tus necesidades <span>*</span>
             </p>
             <textarea
@@ -354,6 +356,7 @@ export const EmpresaFormulario = () => {
             />
           </div>
           <button className="planes__formulario-button">Registrarme</button>
+          <p className="xln__register_text_TyC">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
         </div>
       </form>
     </div>
