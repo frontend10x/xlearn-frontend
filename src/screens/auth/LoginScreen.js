@@ -39,6 +39,13 @@ export const LoginScreen = () => {
         text: `${data.message}`,
         // footer: '<a href="">Why do I have this issue?</a>'
       })
+
+
+      localStorage.setItem('user_is_login', JSON.stringify({
+        login: true, 
+        user_name: data?.datosUsuario?.name
+      }))
+      
           console.log(data,'structure')
           console.log(data.datosUsuario.roles.name,'structure2')
       
