@@ -1,8 +1,14 @@
 @font-face {
-    font-family: 'GT Walsheim Pro';
-    /*this is what you put on your font family*/
-    src: url('../GTWalsheimPro/GTWalsheimPro-Light.ttf');
-    /*Link to the font*/
+    font-family: 'GTWalsheimPro-Regular';
+    src: url('../GTWalsheimPro/GTWalsheimPro-Regular.ttf');
+}
+@font-face {
+    font-family: 'GTWalsheimPro-Bold';
+    src: url('../GTWalsheimPro/GTWalsheimPro-Bold.ttf');
+}
+@font-face {
+    font-family: 'GTWalsheimPro-Medium';
+    src: url('../GTWalsheimPro/GTWalsheimPro-Medium.ttf');
 }
 
 :root {
@@ -20,7 +26,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--whiteOff);
-    font-family: 'GT Walsheim Pro';
+    font-family: 'GTWalsheimPro-Regular';
 }
 
 
@@ -31,7 +37,10 @@ body {
     background-color: transparent;
     position: relative;
     top: 10px;
-    left: 125px;
+    left: 60px;
+}
+button.burg-toggle i {
+    color: #fff;
 }
 
 .header__button-list {
@@ -55,9 +64,10 @@ body {
 
 .header__logo {
     position: absolute;
-    left: 180px;
+    left: 130px;
     top: 20px;
 }
+
 
 .header .logo img {
     max-height: 40px;
@@ -69,7 +79,7 @@ body {
     font-weight: 700;
     letter-spacing: 1px;
     color: #012970;
-    font-family: 'GT Walsheim Pro';
+    font-family: 'GTWalsheimPro-Regular';
     margin-top: 3px;
 }
 
@@ -197,7 +207,7 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 0 10px 30px;
-    font-family: 'GT Walsheim Pro';
+    font-family: 'GTWalsheimPro-Regular';
     font-size: 14px;
     font-weight: 700;
     color: var(--white);
@@ -308,7 +318,15 @@ body {
     left: 442px;
     width: 60%;
 }
-
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh!important;
+}
+.xln-btn-banners {
+    width: 100%;
+}
 .banner .carousel-indicators [data-bs-target] {
     width: 20%;
 }
@@ -375,27 +393,25 @@ body {
 
 .content__banner-block {
     position: absolute;
-    height: 227px;
     background-color: var(--blueDark);
     width: 565px;
     right: 140px;
     top: 688px;
     text-align: left;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 .content__banner-block h3 {
     font-size: 16px;
-    margin-top: 25px;
-    margin-left: 15px;
+    padding-left: 6%;
+    padding-right: 6%;
     font-weight: bold;
-    font-family: var(--principalF);
 }
 
 .content__banner-block p {
-    margin-top: 15px;
-    margin-left: 15px;
-    font-weight: bold;
-    margin-right: 15px;
+    padding-left: 6%;
+    padding-right: 6%;
 }
 
 .content__banner-info {
@@ -450,8 +466,11 @@ body {
 
 /* Inicio Carousel */
 
+
 .carousel__section-content {
-    width: 71.9%;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .carousel__lista {
@@ -477,7 +496,7 @@ body {
 }
 
 .carousel__section-content h1 {
-    margin-top: 100px;
+    margin-top: 0;
     text-align: center;
     font-weight: bold;
     position: relative;
@@ -543,13 +562,26 @@ body {
 
 
 /* Inicio de Enterprise */
-
+.enterprise-section {
+    height: 100vh;
+}
 .enterprise {
     margin-top: 100px;
 }
 
 .enterprise__carousel {
     width: 100%;
+}
+.xln-btn-banners-dos {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    margin-top: -46%;
+}
+
+.xln-btn-banners-puntos {
+    position: absolute;
+    margin-top: -44%;
 }
 
 .enterprise .carousel-indicators [data-bs-target] {
@@ -668,7 +700,13 @@ body {
     top: 115px;
     opacity: 0.2;
 }
-
+.xln_iconLine_title {
+    width: 150px;
+    height: 8px;
+    border-radius: 10px;
+    background: var(--green);
+    margin-bottom: 13px;
+}
 .mockups__content {
     position: relative;
     left: 260px;
@@ -737,7 +775,15 @@ body {
 
 
 /* Inicio Preguntas y respuestas */
-
+.carousel-indicators.xln_preguntas_NavPuntos {
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin-right: 0;
+    margin-left: 0;
+    margin: 0 auto;
+    bottom: 252px;
+}
 .preguntas_frecuentes .active {
     background-color: var(--green);
 }
@@ -761,7 +807,7 @@ body {
 }
 
 .preguntas__carousel {
-    top: 150px
+    top: 150px;
 }
 
 .preguntas__carousel-slides {
@@ -777,11 +823,13 @@ body {
 .preguntas__frecuentes .carousel-control-prev {
     width: 10%;
     height: 100px;
+    z-index: 2;
 }
 
 .preguntas__frecuentes .carousel-control-next {
     width: 10%;
     height: 100px;
+    z-index: 2;
 }
 
 .preguntas__carousel-prev {
@@ -813,12 +861,9 @@ body {
 .preguntas__frecuentes .carousel-indicators [data-bs-target] {
     width: 20px;
     height: 20px;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
     border-radius: 50%;
     position: relative;
-    right: 350px;
-    top: 440px;
+    top: 0;
     background-color: var(--neutroText);
 }
 
@@ -877,7 +922,7 @@ body {
 
 .footer {
     background-color: var(--blueDark);
-    height: 45vh;
+    height: 60vh;
 }
 
 .footer__container {
@@ -906,16 +951,16 @@ body {
 
 .footer__group h5 {
     position: relative;
-    bottom: 25px;
-    font-size: 30px;
+    bottom: 24px;
+    font-size: 20px;
+}
+.footer__group p {
+    font-size: 15px!important;
 }
 
 .footer__content-email_logo {
-    display: flex;
-    flex-direction: column;
     position: relative;
-    bottom: 20px;
-    width: 20%;
+    width: 100%;
 }
 
 .footer__image {
@@ -3259,9 +3304,6 @@ p.xln__register_text_TyC {
 
 @media (max-width: 1440px) {
     /* Header inicio */
-    .burg-toggle {
-        left: 130px;
-    }
     /* Header fin */
     /* Navegacion */
     .navegacion {
@@ -3273,7 +3315,7 @@ p.xln__register_text_TyC {
         height: 810px;
     }
     .carousel-indicators {
-        left: 430px;
+        left: 380px;
         width: 55%;
     }
     .banner .carousel-indicators [data-bs-target] {
@@ -3323,7 +3365,7 @@ p.xln__register_text_TyC {
     }
     .carousel__lista {
         left: 420px;
-        width: 50%;
+        width: 100%;
     }
     .carousel__section-content h1 {
         left: 298px;
@@ -3355,7 +3397,7 @@ p.xln__register_text_TyC {
     /* Enterprise Fin */
     /* Mockups */
     .mockups__platform {
-        height: 45vh;
+        height: 60vh;
     }
     .mockups__content {
         left: 100px;
@@ -3365,14 +3407,18 @@ p.xln__register_text_TyC {
         font-size: 20px;
     }
     .mockups__content-title h1 {
-        font-size: 30px;
+        font-size: 56px;
+        font-family: 'GTWalsheimPro-Bold';
+        letter-spacing: -2px;
     }
     .mockups__button {
         width: 25%;
     }
     .mockups__sec-title {
-        font-size: 35px;
-    }
+        font-size: 56px;
+        font-family: 'GTWalsheimPro-Bold';
+        letter-spacing: -2px;
+    }    
     .mockups__sec-content p {
         font-size: 20px;
     }
@@ -3382,7 +3428,7 @@ p.xln__register_text_TyC {
     }
     .tablet {
         position: relative;
-        left: 130px;
+        left: 70px;
     }
     .telf {
         bottom: 450px;
@@ -3410,15 +3456,8 @@ p.xln__register_text_TyC {
     .preguntas__carousel-next {
         right: 490px;
     }
-    .preguntas__frecuentes .carousel-indicators [data-bs-target] {
-        top: 500px;
-        right: 290px;
-    }
     /* Preguntas Frecuentes Fin */
     /* Footer Inicio */
-    .footer {
-        height: 45vh;
-    }
     .footer__container {
         left: 80px;
         width: 90%;
@@ -3433,9 +3472,6 @@ p.xln__register_text_TyC {
 }
 
 @media (max-width: 1366px) {
-    .header__logo {
-        left: 70px;
-    }
     .navegacion {
         right: 160px;
     }
@@ -3444,23 +3480,20 @@ p.xln__register_text_TyC {
         width: 100%;
         top: 235px;
         right: 100px;
-        height: 180px;
     }
     .content__banner-info {
         font-size: 15px;
         position: relative;
-        right: 58px;
-        bottom: 40px;
     }
     .content__banner-info h1 {
         font-size: 29px;
     }
     .content__banner-info_block {
-        left: 590px;
-        top: -40px;
+        left: 910px;
+        top: -34px;
     }
     .slides {
-        left: 535px;
+        left: 724px;
         width: 40%;
         bottom: 170px;
     }
@@ -3488,10 +3521,12 @@ p.xln__register_text_TyC {
     /* BannerFin */
     /* Carousel Inicio */
     .carousel__section-content {
-        width: 83%;
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: hidden;
     }
     .carousel__section-content h1 {
-        left: 160px;
+        left: 0px;
     }
     .carousel__lista {
         left: 140px;
@@ -3511,7 +3546,7 @@ p.xln__register_text_TyC {
     .enterprise__carousel-content {
         left: 50px;
         width: 50%;
-        bottom: 320px;
+        bottom: 600px;
     }
     .enterprise__carousel-prev {
         left: 400px;
@@ -3529,16 +3564,16 @@ p.xln__register_text_TyC {
     /* Mockups Inicio */
     .mockups__content {
         left: 70px;
-        top: 30px;
+        top: 0px;
     }
     .telf {
         bottom: 300px;
     }
     /* Mockups Fin */
     /* Preguntas Inicio */
-    .preguntas__carousel {
+    /* .preguntas__carousel {
         left: -60px;
-    }
+    } */
     .preguntas__carousel-slides {
         width: 78%;
     }
@@ -3564,18 +3599,9 @@ p.xln__register_text_TyC {
     .preguntas__carousel-next {
         right: 340px;
     }
-    .preguntas__frecuentes .carousel-indicators [data-bs-target] {
-        top: 135px;
-        right: 272px;
-    }
     /* Preguntas Fin */
     /* Footer Inicio */
-    .footer {
-        height: 45vh;
-    }
-    .footer__group-container {
-        column-gap: 1rem;
-    }
+
     .footer__option {
         left: 115px;
     }
@@ -3636,7 +3662,7 @@ p.xln__register_text_TyC {
         align-items: center;
         justify-content: space-between;
         padding: 10px 0 10px 30px;
-        font-family: 'GT Walsheim Pro';
+        font-family: 'GTWalsheimPro-Regular';
         font-size: 14px;
         font-weight: 700;
         color: var(--white);
@@ -3954,7 +3980,6 @@ p.xln__register_text_TyC {
         width: 100%;
         top: 235px;
         right: 100px;
-        height: 180px;
     }
     .content__banner-info {
         font-size: 15px;
@@ -4046,9 +4071,9 @@ p.xln__register_text_TyC {
     }
     /* Mockups Fin */
     /* Preguntas Inicio */
-    .preguntas__carousel {
+    /* .preguntas__carousel {
         left: -60px;
-    }
+    } */
     .preguntas__carousel-slides {
         width: 78%;
     }
@@ -4074,17 +4099,10 @@ p.xln__register_text_TyC {
     .preguntas__carousel-next {
         right: 340px;
     }
-    .preguntas__frecuentes .carousel-indicators [data-bs-target] {
-        top: 135px;
-        right: 272px;
-    }
     /* Preguntas Fin */
     /* Footer Inicio */
     .footer {
         height: 45vh;
-    }
-    .footer__group-container {
-        column-gap: 1rem;
     }
     .footer__option {
         left: 115px;
@@ -4111,7 +4129,6 @@ p.xln__register_text_TyC {
         width: 100%;
         top: 88px;
         right: 125px;
-        height: 180px;
     }
     .content__banner-block p {
         font-size: 12px;
@@ -4234,18 +4251,14 @@ p.xln__register_text_TyC {
     .preguntas__slides-content p {
         font-size: 10px;
     }
-    .preguntas__carousel {
+    /* .preguntas__carousel {
         left: -140px;
-    }
+    } */
     .preguntas__carousel-prev {
         left: 400px;
     }
     .preguntas__carousel-next {
         right: 150px;
-    }
-    .preguntas__frecuentes .carousel-indicators [data-bs-target] {
-        top: 200px;
-        right: 105px;
     }
     /* Preguntas Fin */
     /* Footer Inicio*/
@@ -4254,9 +4267,6 @@ p.xln__register_text_TyC {
     }
     .footer__logo-info {
         font-size: 9px;
-    }
-    .footer__group-container {
-        column-gap: 1rem;
     }
     .footer__group {
         font-size: 15px;
@@ -4501,10 +4511,7 @@ p.xln__register_text_TyC {
     .preguntas__button {
         display: none;
     }
-    .preguntas__frecuentes .carousel-indicators [data-bs-target] {
-        right: 0px;
-        left: 50px;
-    }
+
     /* Preguntas Frecuentes Final */
     .footer {
         height: 55vh;
@@ -4527,11 +4534,6 @@ p.xln__register_text_TyC {
         width: 20%;
         position: relative;
         bottom: 255px;
-    }
-    .footer__group-container {
-        position: relative;
-        top: 15px;
-        column-gap: 2rem;
     }
     .footer__media-content {
         flex-flow: wrap;

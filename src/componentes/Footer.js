@@ -8,41 +8,43 @@ export const Footer = () => {
     <div className="footer">
       <div className="footer__container">
         <div className="footer__content">
-          <div className="footer__logo-info" >
-
-            <Image src={XlearnLogo} alt="logo" className="footer__image" />
-            <p className="footer__logo-info_title" >
-              Somos una plataforma pensada para <br />
-              empresas,coorporativa, y con enfasis en el <br /> 
-              entrenamiento de equipos de trabajo para <br /> 
-              el desarrollo de proyectos en temas como: <br/>
-              innovacion, sostenibilidad, transformacion, <br/>
-              digital, etc
-            </p>
-          </div>
 
           <div className="footer__group-container">
 
-          <div className="footer__group">
-            <h5>Compañia</h5>
-            <p>Nosotros</p>
-            <p>Casos</p>
-          </div>
-          <div className="footer__group">
-            <h5>Comunidad</h5>
-            <p>Planes por equipo</p>
-            <p>Blog</p>
-          </div>
-          <div className="footer__group">
-            <h5>Contactanos</h5>
-            <p>Preguntas frecuentes</p>
-            <p>Soporte</p>
-          </div>
-          </div>
+            <div className="footer__group">
+              <Image src={XlearnLogo} alt="logo" className="footer__image" />
+              <p className="footer__logo-info_title" >
+                  Somos una plataforma pensada para empresas,coorporativa, y con enfasis en el entrenamiento de equipos de trabajo para el desarrollo de proyectos en temas como: innovación, sostenibilidad, transformación, digital, etc
+              </p>
+            </div>
 
-          <div className="footer__content-email_logo ">
-            <Image src={logo10X} alt="logo" className="footer__image-email" />
-            <input type="email" placeholder="Enter Your Email" className="footer__email" />
+            <div className="footer__group">
+              <h5>Compañia</h5>
+              <p>Nosotros</p>
+              <p>Casos</p>
+            </div>
+
+            <div className="footer__group">
+              <h5>Comunidad</h5>
+              <p>Planes por equipo</p>
+              <p>Blog</p>
+            </div>
+
+            <div className="footer__group">
+              <h5>Contactanos</h5>
+              <p>Preguntas frecuentes</p>
+              <p>Soporte</p>
+            </div>
+
+            <div className="footer__group">
+
+              <div className="footer__content-email_logo ">
+                <Image src={logo10X} alt="logo" className="footer__image-email" />
+                <input type="email" placeholder="Enter Your Email" className="footer__email" />
+              </div>
+
+            </div>
+
           </div>
         </div>
         {/* Footer Content */}

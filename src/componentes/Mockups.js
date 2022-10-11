@@ -16,13 +16,11 @@ export const Mockups = () => {
         <Col>
           <div className="mockups__content">
             <div className="mockups__content-title" >
-              <h1>Conviertete en un <br /> caso de exito y <br/> apuestale a la <br /> innovacion con <br /> Xlearn </h1>
+              <h1>Conviértete en un caso de éxito y apuéstale a la innovacion con Xlearn </h1>
+              <div className="xln_iconLine_title"></div>
             </div>
             <p>
-              Conoce las empresas que se han<br />
-              formado con nosotros y han asumido<br />
-              los retos y oportunidades del mercado a<br />
-              traves de su capital humano
+              Conoce las empresas que se han formado con nosotros y han asumido los retos y oportunidades del mercado a traves de su capital humano.
             </p>
             <button className="mockups__button" >
               Conoce mas
@@ -32,10 +30,11 @@ export const Mockups = () => {
       </div>
       <div className="mockups_sec">
         <div className="d-flex mockups__sec-container">
-          <Col>
+          
             <div className="mockups__sec-content">
               <div>
-                <h1 className="mockups__sec-title" >Conoce las novedades <br />que tenemos para ti y <br /> para tu equipo </h1>
+                <h1 className="mockups__sec-title" >Conoce las novedades que tenemos para ti y  para tu equipo </h1>
+                <div className="xln_iconLine_title"></div>
               </div>
               <p>
               Nuevos cursos, nuevos retos y nuevas <br/> 
@@ -45,13 +44,13 @@ export const Mockups = () => {
               Conoce mas
             </button>
             </div>
-          </Col>
-          <Col>
+        
+         
             <div className="mockups__sec-favicon">
                 <Image src={tablet} alt="tablet" className="tablet" />
                 <Image src={telefono} alt="telf" className="telf" />
             </div>
-          </Col>
+        
         </div>
       </div>
     </div>
