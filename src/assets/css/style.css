@@ -1516,6 +1516,336 @@ p.xln__register_text_TyC {
 /* Register Fin */
 
 
+
+
+    /*-------------Vista empresa---------------*/
+    .dashboard__section-empresa .navbar a, .navbar a:focus {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0 10px 30px;
+        font-family: 'GTWalsheimPro-Regular';
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--white);
+        white-space: nowrap;
+        transition: 0.3s ease;
+    }
+    .dashboard__section-empresa .header__container.background {
+        position: fixed!important;
+        z-index: 9;
+        width: 100%;
+    }
+    .xln-content-dash {
+        width: 100%;
+        margin-top: 5%;
+    }
+
+    /*====Bloque Nav left====*/
+    .xln-contentNavLeft-block-empresa {
+        width: 20%;
+        height: 100vh;
+        float: left;
+        position: fixed;
+        z-index: 1;
+    }
+    .xln-contentNavLeft-block-empresa .dashboard__navegacion-container {
+        width: 100%;
+    }
+    .xln-contentNavLeft-block-empresa .dashboard__nav {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        height: 90vh;
+        position: relative;
+        padding-top: 20%;
+        padding-left: 5%;
+    }
+    /*====Fin Bloque Nav left====*/
+
+    /*====Bloque contenido====*/
+    .xln-contentSection-block-empresa {
+        width: 100%;
+        float: left;
+        padding-top: 3%;
+        padding-left: 20%;
+    }
+    .xln-contentSection-block-empresa .dashboard__banner {
+        width: 100%;
+
+    }
+    .xln-contentSection-block-empresa .dashboard__banner-image {
+        height: auto;
+        position: relative;
+        width: 100%;
+        bottom: 50%;
+    }
+    .xln-contentSection-block-empresa .dashboard__banner-content {
+        width: 95%;
+        left: 0;
+        top: 30px;
+        height: 27vh;
+        overflow: hidden;
+        position: relative;
+        border-radius: 10px;
+        margin: auto;
+    }
+    .xln-contentSection-block-empresa .gradient {
+        position: absolute;
+        width: 100%;
+        height: 27vh;
+        border-radius: 10px 0px 0px 10px;
+        bottom: 0;
+        left: 0;
+    }
+    .xln-contentSection-block-empresa .dashboard__banner-title {
+        color: var(--white);
+        bottom: 0;
+        font-weight: bold;
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        top: 25%;
+        left: 4%;
+    }
+    .xln-contentSection-block-empresa .dashboard__management {
+        bottom: 0;
+        position: relative;
+        left: 0;
+        width: 95%;
+        top: 76px;
+        margin: auto;
+    }
+    .xln-contentSection-block-empresa .dashboard__management h2 {
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .xln-contentSection-block-empresa .dashboard__management .dashboard__block-container {
+        display: flex;
+        column-gap: 2rem;
+        position: relative;
+        top: 20px;
+        left: 0;
+    }
+    .xln-contentSection-block-empresa .dashboard__management .dashboard__block {
+        background-color: var(--white);
+        border: 1px solid var(--blueDark);
+        border-radius: 5px;
+     
+    }
+    .xln-contentSection-block-empresa .dashboard__management .dashboard__block-content {
+        /* display: flex;
+        justify-content: flex-start; */
+        position: relative;
+        top: 45px;
+        right: 0;
+        left: 0%;
+        padding-bottom: 31px;
+        width: 90%;
+        margin: auto;
+    }
+    .xln-contentSection-block-empresa .dashboard__management .dashboard__block-content img {
+        width: 15%;
+    }
+    .xln-contentSection-block-empresa .dashboard__management .dashboard__block-content .dashboard__block-button {
+        width: 50%;
+        height: 40px;
+        font-weight: bold;
+        top: 0px;
+        font-size: 15px;
+    }
+    .xln-contentSection-block-empresa .dashboard__title {
+        position: relative;
+        top: 60px;
+        left: 0px;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    .xln-contentSection-block-empresa .dashboard__title h3 {
+        font-size: 32px;
+        font-weight: bold;
+    }
+    .xln-contentSection-block-empresa .dashboard__title p {
+        font-size: 15px;
+    }
+    .xln-contentSection-block-empresa .dashboard__card-info {
+        bottom: 0;
+        position: relative;
+        left: 0;
+        width: 95%;
+        margin: auto;
+        text-align: center;
+        margin-top: 17%;
+    }
+    .xln-contentSection-block-empresa .dashboard__card-info h2 {
+        position: relative;
+        left: 0;
+        width: 70%;
+        font-size: 48px;
+        font-weight: bold;
+        color: var(--blueDark);
+        margin-top: 14%;
+        margin: auto;
+        text-align: center;
+    }
+    .xln-contentSection-block-empresa .dashboard__info-container {
+        display: flex;
+        height: auto;
+        width: 100%;
+    }
+    .xln-contentSection-block-empresa .dashboard__card-content {
+        position: relative;
+        top: 50px;
+        left: 0;
+        width: 100%;
+    }
+    .xln-contentSection-block-empresa .dashboard__card-body {
+        width: 95%;
+        height: 54vh;
+        background-color: var(--white);
+        border-radius: 10px;
+    }
+    .xln-contentSection-block-empresa .dashboard__novedades-section {
+        height: 100vh;
+        margin-top: 20%;
+        width: 99%;
+    }
+    .xln-contentSection-block-empresa .dashboard__novedades-container {
+        display: flex;
+        width: 100%;
+        background-color: var(--blueDark);
+        height: 70vh;
+        position: relative;
+        bottom: 0;
+    }
+
+    .xln-contentSection-block-empresa .dashboard__novedades-content {
+        color: var(--white);
+        font-weight: bold;
+        position: relative;
+        top: 0;
+        left: 0;
+        display: table;
+        height: 100%;
+        width: 80%;
+        margin: auto;
+    }
+    .xln-contentSection-block-empresa .xln-empresa-novedades-content{
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+    .xln-contentSection-block-empresa .dashboard__novedades-content h2{
+        font-size:48px;
+        font-weight: bold;
+        width: 100%;
+    }
+    .xln-contentSection-block-empresa .dashboard__novedades-content p{
+        font-size: 15px;
+        font-weight: 500;
+        width: 100%;
+    }
+    .xln-contentSection-block-empresa .dashboard__novedades-image {
+
+        height: 360px;
+        width: 100%!important;
+        object-fit: cover!important;
+        -webkit-mask-size: cover!important;
+        mask-size: cover!important;
+    }
+    .xln-contentSection-block-empresa .dashboard__novedades-container_image {
+        display: flex;
+        column-gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        padding-right: 5%;
+        top: 0px;
+        bottom: 0px;
+        padding-top: 15%;
+    }
+    .xln-contentSection-block-empresa .dashboard__novedades-card_image {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .xln-contentSection-block-empresa .dashboard__novedades-titles {
+        color: var(--white);
+        position: relative;
+        bottom: 60px;
+        font-weight: bold;
+        left: 30px;
+        width: 100%;
+    }
+    .xln-contentSection-block-empresa .dashboard__novedades-titles h5 {
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .xln-contentSection-block-empresa .dashboard__novedades-titles p {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .xln-contentSection-block-empresa .xln-separator-title{
+        width: 30%;
+        height: 4px;
+        background:var(--green) ;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    .xln-contentSection-block-empresa .dashboard__support-content {
+        position: relative;
+        top: 0;
+        font-weight: bold;
+    }
+    .xln-contentSection-block-empresa .dashboard__support-content p {
+        width: 70%;
+        position: relative;
+        left: 0;
+        bottom: 50px;
+        margin: auto;
+    }
+    .xln-contentSection-block-empresa  .dashboard__support-button {
+        background-color: var(--green);
+        border-radius: 5px;
+        color: var(--blueDark);
+        border: none;
+        padding: 5px;
+        height: 40px;
+        width: 30%;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    /*====Fin Bloque contenido====*/
+
+    /*====Bloque Footer====*/
+    .xln-contentSection-block-empresa .footer {
+        height: 80vh;
+    }
+    .xln-contentSection-block-empresa .footer__group-container {
+        display: flex;
+        column-gap: 2rem;
+        font-size: 20px;
+        position: relative;
+        top: 8px;
+    }
+    .xln-contentSection-block-empresa .footer__group p {
+        font-size: 12px!important;
+    }
+    .xln-contentSection-block-empresa .footer__content-email_logo {
+        position: relative;
+        width: 100%;
+        top: -24px;
+    }
+    /*====Fin Bloque Footer====*/
+
+
+
+
+
+
 /* Empresas section */
 
 .empresas__section {
@@ -2077,10 +2407,9 @@ p.xln__register_text_TyC {
 /* Diagnostico Lider */
 
 .diagnostico__lider-content {
-    left: 450px;
     position: relative;
-    top: 250px;
-    width: 50%;
+    top: 150px;
+    width: 100%;
     text-align: center;
 }
 
@@ -2110,14 +2439,13 @@ p.xln__register_text_TyC {
     background-color: var(--green);
     position: relative;
     top: 50px;
-    height: 6vh;
-    width: 8%;
+    width: 14%;
     text-align: center;
     color: var(--blueDark);
-    font-size: 25px;
+    font-size: 21px;
     font-weight: bold;
     border-radius: 5px;
-    right: 75px;
+    margin: auto;
 }
 
 
@@ -2127,14 +2455,18 @@ p.xln__register_text_TyC {
 /* Seleccion diagnostico */
 
 .selection__process-content {
-    position: relative;
-    top: 350px;
     display: flex;
     column-gap: 1rem;
-    width: 60%;
-    left: 630px;
+    position: absolute;
+    top: 150px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
 }
-
+.selection__process-container {
+    width: 100%;
+    position: relative;
+}
 .selection__button-container {
     background-color: var(--white);
     height: 15vh;
@@ -2148,16 +2480,17 @@ p.xln__register_text_TyC {
     color: var(--neutroText);
     padding: 28px;
     font-weight: bold;
-    width: 25%;
+    width: 22%;
     position: relative;
-    right: 60px;
+    right: 0px;
     font-size: 20px;
+    padding-left: 50px;
 }
 
 .selection__icon {
     height: 35px;
     position: relative;
-    left: 15px;
+    left: 76px;
     top: 30px;
     z-index: 1;
 }
@@ -2169,30 +2502,29 @@ p.xln__register_text_TyC {
 
 .folder {
     position: relative;
-    left: 35px;
+    left: 76px;
 }
 
 .selection__process-footer {
     background-color: var(--white);
     position: relative;
-    top: 534px;
+    top: 415px;
     height: 20vh;
-    text-align: end;
+    width: 100%;
 }
 
 .selection__footer-button {
     background-color: var(--green);
     top: 50px;
-    height: 6vh;
-    width: 8%;
+    width: 20%;
     text-align: center;
     color: var(--blueDark);
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
-    position: relative;
     border-radius: 5px;
-    left: 1650px;
     border: none;
+    position: absolute;
+    right: 15%;
 }
 
 
@@ -2202,17 +2534,18 @@ p.xln__register_text_TyC {
 /* Seleccion de areas */
 
 .selection__buttons-container {
-    height: 25vh;
+    width: 100%;
+    position: relative;
 }
 
 .selection__buttons-content {
     display: flex;
-    flex-wrap: wrap;
-    /* column-gap: 1rem; */
-    position: relative;
-    left: 450px;
+    column-gap: 1rem;
+    position: absolute;
     top: 150px;
-    width: 70%;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
 }
 
 .selection__area-buttons {
@@ -2220,12 +2553,12 @@ p.xln__register_text_TyC {
     border-radius: 10px;
     color: var(--neutroText);
     padding: 28px;
-    margin-bottom: 25px;
     font-weight: bold;
-    width: 75%;
+    width: 100%;
     position: relative;
-    right: 60px;
+    right: 0px;
     font-size: 20px;
+    padding-left: 50px;
 }
 
 .selection__area-buttons:focus {
@@ -2235,11 +2568,11 @@ p.xln__register_text_TyC {
 
 .selection__areas-footer_container {
     background-color: var(--white);
-    position: relative;
-    top: 393px;
     height: 20vh;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
-
 .selection__areas-buttons_container {
     display: flex;
     justify-content: space-between;
@@ -2247,31 +2580,32 @@ p.xln__register_text_TyC {
 
 .footer__button-back {
     background-color: var(--whiteOff);
-    border: none;
-    border-radius: 5px;
-    position: relative;
-    left: 150px;
+    top: 40px;
+    height: 8vh;
+    width: 15%;
+    text-align: center;
     color: var(--blueDark);
+    font-size: 16px;
     font-weight: bold;
-    width: 8%;
-    top: 50px;
-    font-size: 25px;
-    height: 6vh;
+    position: absolute;
+    border-radius: 5px;
+    left: 15%;
+    border: none;
 }
 
 .footer__button-next {
     background-color: var(--green);
-    border: none;
-    border-radius: 5px;
-    position: relative;
-    right: 150px;
-    color: var(--blueDark);
-    font-weight: bold;
-    width: 8%;
-    top: 50px;
-    font-size: 25px;
-    height: 6vh;
+    top: 40px;
+    height: 8vh;
+    width: 15%;
     text-align: center;
+    color: var(--blueDark);
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    right: 15%;
+    position: absolute;
 }
 
 
@@ -2282,78 +2616,87 @@ p.xln__register_text_TyC {
 
 .preguntas__diagnostico-content {
     position: relative;
-    left: 450px;
-    top: 170px;
-    width: 70%;
+    top: 50px;
+    width: 100%;
 }
 
 .preguntas__diagnostico-content h3 {
-    bottom: 50px;
     position: relative;
-    left: 260px;
-    width: 50%;
+    width: 100%;
+    margin: auto;
+    text-align: center;
 }
 
 .preguntas__diagnostico-list {
     position: relative;
-    width: 70%;
+    width: 80%;
     background-color: var(--white);
     border-radius: 10px;
-    height: 30vh;
+    margin: auto;
+    margin-top: 24px;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 8%;
+    padding-right: 8%;
 }
 
 .preguntas__diagnostico-respuesta {
     display: flex;
     gap: 3rem;
     width: 100%;
-    height: 5vh;
     background-color: var(--white);
     font-weight: bold;
     font-size: 18px;
     position: relative;
-    right: 20px;
-    top: 60px;
+    margin-top: 23px;
 }
-
+input.preguntas__diagnostico-checkbox {
+    height: 40px!important;
+    border-radius: 100%;
+    font-size: 20px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
 .preguntas__diagnostico-respuesta li {
     list-style: none;
+    color: #000;
+    font-weight: 100;
 }
-
 .preguntas__footer {
     background-color: var(--white);
     height: 20vh;
     position: relative;
-    top: 290px;
+    top: 130px;
 }
-
 .preguntas__footer-button_prev {
     background-color: var(--whiteOff);
-    top: 50px;
-    height: 6vh;
-    width: 8%;
+    top: 40px;
+    height: 8vh;
+    width: 15%;
     text-align: center;
     color: var(--blueDark);
-    font-size: 25px;
+    font-size: 16px;
     font-weight: bold;
-    position: relative;
+    position: absolute;
     border-radius: 5px;
-    left: 50px;
+    left: 15%;
     border: none;
 }
-
 .preguntas__footer-button_next {
     background-color: var(--green);
-    top: 50px;
-    height: 6vh;
-    width: 8%;
+    top: 40px;
+    height: 8vh;
+    width: 15%;
     text-align: center;
     color: var(--blueDark);
-    font-size: 25px;
+    font-size: 16px;
     font-weight: bold;
-    position: relative;
     border-radius: 5px;
-    left: 1500px;
     border: none;
+    right: 15%;
+    position: absolute;
 }
 
 
@@ -3654,316 +3997,6 @@ p.xln__register_text_TyC {
         border-top: 0px solid var(--black);
         top: 60px;
     }
-
-
-    /*-------------Vista empresa---------------*/
-    .dashboard__section-empresa .navbar a, .navbar a:focus {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 10px 0 10px 30px;
-        font-family: 'GTWalsheimPro-Regular';
-        font-size: 14px;
-        font-weight: 700;
-        color: var(--white);
-        white-space: nowrap;
-        transition: 0.3s ease;
-    }
-    .dashboard__section-empresa .header__container.background {
-        position: fixed!important;
-        z-index: 9;
-        width: 100%;
-    }
-    .xln-content-dash {
-        width: 100%;
-        margin-top: 5%;
-    }
-
-    /*====Bloque Nav left====*/
-    .xln-contentNavLeft-block-empresa {
-        width: 20%;
-        height: 100vh;
-        float: left;
-        position: fixed;
-        z-index: 1;
-    }
-    .xln-contentNavLeft-block-empresa .dashboard__navegacion-container {
-        width: 100%;
-    }
-    .xln-contentNavLeft-block-empresa .dashboard__nav {
-        display: flex;
-        flex-direction: column;
-        background-color: var(--white);
-        width: 100%;
-        height: 90vh;
-        position: relative;
-        padding-top: 20%;
-        padding-left: 5%;
-    }
-    /*====Fin Bloque Nav left====*/
-
-    /*====Bloque contenido====*/
-    .xln-contentSection-block-empresa {
-        width: 100%;
-        float: left;
-        padding-top: 3%;
-        padding-left: 20%;
-    }
-    .xln-contentSection-block-empresa .dashboard__banner {
-        width: 100%;
-
-    }
-    .xln-contentSection-block-empresa .dashboard__banner-image {
-        height: auto;
-        position: relative;
-        width: 100%;
-        bottom: 50%;
-    }
-    .xln-contentSection-block-empresa .dashboard__banner-content {
-        width: 95%;
-        left: 0;
-        top: 30px;
-        height: 27vh;
-        overflow: hidden;
-        position: relative;
-        border-radius: 10px;
-        margin: auto;
-    }
-    .xln-contentSection-block-empresa .gradient {
-        position: absolute;
-        width: 100%;
-        height: 27vh;
-        border-radius: 10px 0px 0px 10px;
-        bottom: 0;
-        left: 0;
-    }
-    .xln-contentSection-block-empresa .dashboard__banner-title {
-        color: var(--white);
-        bottom: 0;
-        font-weight: bold;
-        width: 100%;
-        height: 50px;
-        position: absolute;
-        top: 25%;
-        left: 4%;
-    }
-    .xln-contentSection-block-empresa .dashboard__management {
-        bottom: 0;
-        position: relative;
-        left: 0;
-        width: 95%;
-        top: 76px;
-        margin: auto;
-    }
-    .xln-contentSection-block-empresa .dashboard__management h2 {
-        font-size: 28px;
-        font-weight: bold;
-    }
-    .xln-contentSection-block-empresa .dashboard__management .dashboard__block-container {
-        display: flex;
-        column-gap: 2rem;
-        position: relative;
-        top: 20px;
-        left: 0;
-    }
-    .xln-contentSection-block-empresa .dashboard__management .dashboard__block {
-        background-color: var(--white);
-        border: 1px solid var(--blueDark);
-        border-radius: 5px;
-     
-    }
-    .xln-contentSection-block-empresa .dashboard__management .dashboard__block-content {
-        /* display: flex;
-        justify-content: flex-start; */
-        position: relative;
-        top: 45px;
-        right: 0;
-        left: 0%;
-        padding-bottom: 31px;
-        width: 90%;
-        margin: auto;
-    }
-    .xln-contentSection-block-empresa .dashboard__management .dashboard__block-content img {
-        width: 15%;
-    }
-    .xln-contentSection-block-empresa .dashboard__management .dashboard__block-content .dashboard__block-button {
-        width: 50%;
-        height: 40px;
-        font-weight: bold;
-        top: 0px;
-        font-size: 15px;
-    }
-    .xln-contentSection-block-empresa .dashboard__title {
-        position: relative;
-        top: 60px;
-        left: 0px;
-        padding-left: 8%;
-        padding-right: 8%;
-    }
-    .xln-contentSection-block-empresa .dashboard__title h3 {
-        font-size: 32px;
-        font-weight: bold;
-    }
-    .xln-contentSection-block-empresa .dashboard__title p {
-        font-size: 15px;
-    }
-    .xln-contentSection-block-empresa .dashboard__card-info {
-        bottom: 0;
-        position: relative;
-        left: 0;
-        width: 95%;
-        margin: auto;
-        text-align: center;
-        margin-top: 17%;
-    }
-    .xln-contentSection-block-empresa .dashboard__card-info h2 {
-        position: relative;
-        left: 0;
-        width: 70%;
-        font-size: 48px;
-        font-weight: bold;
-        color: var(--blueDark);
-        margin-top: 14%;
-        margin: auto;
-        text-align: center;
-    }
-    .xln-contentSection-block-empresa .dashboard__info-container {
-        display: flex;
-        height: auto;
-        width: 100%;
-    }
-    .xln-contentSection-block-empresa .dashboard__card-content {
-        position: relative;
-        top: 50px;
-        left: 0;
-        width: 100%;
-    }
-    .xln-contentSection-block-empresa .dashboard__card-body {
-        width: 95%;
-        height: 54vh;
-        background-color: var(--white);
-        border-radius: 10px;
-    }
-    .xln-contentSection-block-empresa .dashboard__novedades-section {
-        height: 100vh;
-        margin-top: 20%;
-        width: 99%;
-    }
-    .xln-contentSection-block-empresa .dashboard__novedades-container {
-        display: flex;
-        width: 100%;
-        background-color: var(--blueDark);
-        height: 70vh;
-        position: relative;
-        bottom: 0;
-    }
-
-    .xln-contentSection-block-empresa .dashboard__novedades-content {
-        color: var(--white);
-        font-weight: bold;
-        position: relative;
-        top: 0;
-        left: 0;
-        display: table;
-        height: 100%;
-        width: 80%;
-        margin: auto;
-    }
-    .xln-contentSection-block-empresa .xln-empresa-novedades-content{
-        display: table-cell;
-        vertical-align: middle;
-      }
-
-    .xln-contentSection-block-empresa .dashboard__novedades-content h2{
-        font-size:48px;
-        font-weight: bold;
-        width: 100%;
-    }
-    .xln-contentSection-block-empresa .dashboard__novedades-content p{
-        font-size: 15px;
-        font-weight: 500;
-        width: 100%;
-    }
-    .xln-contentSection-block-empresa .dashboard__novedades-image {
-
-        height: 360px;
-        width: 100%!important;
-        object-fit: cover!important;
-        -webkit-mask-size: cover!important;
-        mask-size: cover!important;
-    }
-    .xln-contentSection-block-empresa .dashboard__novedades-container_image {
-        display: flex;
-        column-gap: 1rem;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        width: 100%;
-        margin: auto;
-        padding-right: 5%;
-        top: 0px;
-        bottom: 0px;
-        padding-top: 15%;
-    }
-    .xln-contentSection-block-empresa .dashboard__novedades-card_image {
-        display: table-cell;
-        vertical-align: middle;
-    }
-    .xln-contentSection-block-empresa .dashboard__novedades-titles {
-        color: var(--white);
-        position: relative;
-        bottom: 60px;
-        font-weight: bold;
-        left: 30px;
-        width: 100%;
-    }
-    .xln-contentSection-block-empresa .dashboard__novedades-titles h5 {
-        font-weight: bold;
-        font-size: 16px;
-    }
-    .xln-contentSection-block-empresa .dashboard__novedades-titles p {
-        font-size: 14px;
-        font-weight: 500;
-    }
-    .xln-contentSection-block-empresa .xln-separator-title{
-        width: 30%;
-        height: 4px;
-        background:var(--green) ;
-        margin-bottom: 10px;
-        border-radius: 10px;
-    }
-    .xln-contentSection-block-empresa .dashboard__support-content {
-        position: relative;
-        top: 0;
-        font-weight: bold;
-    }
-    .xln-contentSection-block-empresa .dashboard__support-content p {
-        width: 70%;
-        position: relative;
-        left: 0;
-        bottom: 50px;
-        margin: auto;
-    }
-    .xln-contentSection-block-empresa  .dashboard__support-button {
-        background-color: var(--green);
-        border-radius: 5px;
-        color: var(--blueDark);
-        border: none;
-        padding: 5px;
-        height: 40px;
-        width: 30%;
-        font-weight: bold;
-        font-size: 20px;
-    }
-
-    /*====Fin Bloque contenido====*/
-
-    /*====Bloque Footer====*/
-    .xln-contentSection-block-empresa .footer {
-        height: 80vh;
-    }
-    /*====Fin Bloque Footer====*/
-
       
 
 }
