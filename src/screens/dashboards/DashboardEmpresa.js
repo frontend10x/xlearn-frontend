@@ -50,11 +50,11 @@ export const DashboardEmpresa = () => {
         <HeaderDashboard />
         <div className="xln-content-dash">
 
-          <div className="xln-contentNavLeft-block-empresa">
-            <div className="dashboard__navegacion-container">
+      
+            <div className="xln__content__nav">
                 <NavegacionDashboard />
             </div>
-          </div>
+    
 
           <div className="xln-contentSection-block-empresa">
             <div className="dashboard__container-nav_banner">
