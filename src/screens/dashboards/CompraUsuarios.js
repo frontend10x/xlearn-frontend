@@ -97,7 +97,7 @@ export const CompraUsuarios = () => {
       </div>
       <div className="compra-usuarios__container">
         <div className="compra-usuarios__title" >
-          <h1>Gestion De Cupos</h1>
+          <h1>Gestion de cupos</h1>
           <p>Gestiona y administra tus cupos</p>
         </div>
         <div className="compra-usuarios__form">
@@ -160,6 +160,7 @@ export const CompraUsuarios = () => {
         <div className="compra-usarios__container-price">
           <div className="compra-usuarios__container-price__content">
             <p>Pago anual del curso</p>
+            <hr/>
             
             {price?.amount &&
             <p>$ {price.amount} USD/Año</p>            

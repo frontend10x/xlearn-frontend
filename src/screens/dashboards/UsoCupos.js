@@ -36,7 +36,7 @@ export const UsoCupos = () => {
                 </div>
                 <div className="xlrn__uso-cupos__container-titles" >
                     <div className="xlrn__uso-cupos__titles-content" >
-                        <h1>Gestion De Cupos</h1>
+                        <h1>Gestion de cupos</h1>
                         <p>Gestiona y administra tus cupos</p>
                     </div>
                 </div>

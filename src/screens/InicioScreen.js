@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Header } from "../componentes/Header";
 import { Banner } from "../componentes/Banner";
-import { Image_01, Image_02, Image_03, Image_04 } from "../assets/img";
+import { homeCarousel01, homeCarousel02, homeCarousel03, homeCarousel04 } from "../assets/img";
 import { CarouselCourses } from "../componentes/CarouselCourses";
 import { CarouselEnterprises } from "../componentes/CarouselEnterprises";
 import { Mockups } from "../componentes/Mockups";
@@ -13,39 +13,39 @@ export const InicioScreen = () => {
   const [data, setData] = useState([
     {
       title: "Presentaciones efectivas de Negocios",
-      image: Image_01,
+      image: homeCarousel01,
     },
     {
       title: "Prototipado Digital",
-      image: Image_02,
+      image: homeCarousel02,
     },
     {
       title: "ADN de un Innovador",
-      image: Image_03,
+      image: homeCarousel03,
     },
     {
       title: "Presentaciones efectivas de Negocios",
-      image: Image_04,
+      image:homeCarousel04,
     },
     {
       title: "Prototipado Digital",
-      image: Image_01,
+      image: homeCarousel01,
     },
     {
       title: "ADN de un Innovador",
-      image: Image_02,
+      image: homeCarousel02,
     },
     {
       title: "Prototipado Digital",
-      image: Image_03,
+      image: homeCarousel03,
     },
     {
       title: "Presentaciones efectivas de Negocios",
-      image: Image_04,
+      image: homeCarousel04,
     },
     {
       title: "Prototipado Digital",
-      image: Image_01,
+      image: homeCarousel01,
     },
   ]);
 

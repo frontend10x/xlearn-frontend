@@ -43,3 +43,16 @@ export {default as construccion} from '../Image/construccion.webp';
 export {default as iconoChat} from '../Image/iconoChat.jpg';
 export {default as iconoChat2} from '../Image/charla.png';
 export {default as blackout} from './blackout.jpg';
+
+export {default as NavIconLeft_01} from './icon/nav-left/1.png';
+export {default as NavIconLeft_02} from './icon/nav-left/2.png';
+export {default as NavIconLeft_03} from './icon/nav-left/3.png';
+export {default as NavIconLeft_04} from './icon/nav-left/4.png';
+export {default as NavIconLeft_05} from './icon/nav-left/5.png';
+export {default as NavIconLeft_06} from './icon/nav-left/6.png';
+
+export {default as homeCarousel01} from './home/carousel/1.png';
+export {default as homeCarousel02} from './home/carousel/2.png';
+export {default as homeCarousel03} from './home/carousel/3.png';
+export {default as homeCarousel04} from './home/carousel/4.png';
+
