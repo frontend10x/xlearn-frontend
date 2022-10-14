@@ -398,14 +398,17 @@ button.burg-toggle i {
 }
 
 .content__banner-block {
-    position: absolute;
     background-color: var(--blueDark);
     width: 565px;
-    right: 140px;
-    top: 688px;
     text-align: left;
     padding-top: 10%;
     padding-bottom: 10%;
+    display: flex;
+    column-gap: 0rem;
+    flex-direction: column;
+    margin-top: 30%;
+    position: relative;
+    left: -133px;
 }
 
 .content__banner-block h3 {
@@ -1274,9 +1277,8 @@ button.burg-toggle i {
 .login__register {
     border-top: 1px solid var(--black);
     position: relative;
-    top: 100px;
+    top: 10%;
 }
-
 .login__register-button {
     text-decoration: none;
     border: none;
@@ -1332,11 +1334,10 @@ button.burg-toggle i {
     position: relative;
     bottom: 50px;
 }
-
 .login__content-remind {
     display: flex;
     position: relative;
-    column-gap: 8rem;
+    column-gap: 3rem;
     left: 75px;
 }
 
@@ -3835,9 +3836,6 @@ input.preguntas__diagnostico-checkbox {
     .content__banner-info span {
         font-size: 35.6px;
     }
-    .content__banner-block {
-        top: 425px;
-    }
     .slides {
         bottom: 630px;
         left: 745px;
@@ -3979,11 +3977,6 @@ input.preguntas__diagnostico-checkbox {
         right: 160px;
     }
     /* Banner */
-    .content__banner-block {
-        width: 100%;
-        top: 235px;
-        right: 100px;
-    }
     .content__banner-info {
         font-size: 15px;
         position: relative;
@@ -4165,11 +4158,6 @@ input.preguntas__diagnostico-checkbox {
         right: 160px;
     }
     /* Banner */
-    .content__banner-block {
-        width: 100%;
-        top: 235px;
-        right: 100px;
-    }
     .content__banner-info {
         font-size: 15px;
         position: relative;
@@ -4310,11 +4298,7 @@ input.preguntas__diagnostico-checkbox {
     }
     /* Navegacion Fin */
     /* Banner */
-    .content__banner-block {
-        width: 100%;
-        top: 88px;
-        right: 125px;
-    }
+
     .content__banner-block p {
         font-size: 12px;
     }
