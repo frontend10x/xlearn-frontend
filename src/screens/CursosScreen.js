@@ -4,9 +4,10 @@ import { Footer } from "../componentes/Footer";
 import { Image } from "react-bootstrap";
 import {
   banner_cursos,
-  Image_01,
-  Image_02,
-  Image_03,
+  homeCarousel01, 
+  homeCarousel02, 
+  homeCarousel03, 
+  homeCarousel04,
   XlearnLogo,
 } from "../assets/img";
 
@@ -14,7 +15,7 @@ export const CursosScreen = () => {
   const [courses, setCourses] = useState([
     {
       id: 1,
-      image: Image_02,
+      image: homeCarousel02,
       title: "Sistemas De Transformacion",
       time: "1H",
       users: "300",
@@ -22,7 +23,7 @@ export const CursosScreen = () => {
     },
     {
       id: 2,
-      image: Image_01,
+      image: homeCarousel01,
       title: "Emprendimiento Corporativo",
       time: "1H",
       users: "300",
@@ -30,7 +31,7 @@ export const CursosScreen = () => {
     },
     {
       id: 1,
-      image: Image_03,
+      image: homeCarousel03,
       title: "Excelencia Operacional",
       time: "1H",
       users: "300",
@@ -50,8 +51,10 @@ export const CursosScreen = () => {
   return (
     <div className="cursos__section">
       <HeaderRegister />
-      <div className="cursos__container d-flex">
+      <div className="cursos__container">
+
         <div className="cursos__filter-container">
+          
           <div className="cursos__filter-content">
             <ul className="cursos__filter-buttons">
               <div className="cursos__filter-title" >
@@ -159,6 +162,20 @@ export const CursosScreen = () => {
               /> */}
             </ul>
           </div>
+
+          <div className="cursos__banner">
+            <Image
+              src={banner_cursos}
+              alt="banner__cursos"
+              className="cursos__banner-image"
+            />
+            <div className="cursos__banner-content">
+                  <h3>Cursos Online</h3>
+                  <p>Conoce nuestra oferta de cursos y encuentra lo que tu empresa necesita</p>
+                  <button className="cursos__banner-button" >Obten cursos de prueba gratis</button>
+            </div>
+          </div>
+
           <h4 className="cursos__section-recently" >Agregados recientemente</h4>
           <div className="map_content">
             {courses.map((item, index) => (
@@ -207,20 +224,9 @@ export const CursosScreen = () => {
             ver todos
           </button>
         </div>
-        <div className="cursos__banner">
-          <Image
-            src={banner_cursos}
-            alt="banner__cursos"
-            className="cursos__banner-image"
-          />
-          <div className="cursos__banner-content">
-                <h3>Cursos Online</h3>
-                <p>Conoce nuestra oferta de cursos y encuentra lo que tu empresa necesita</p>
-                <button className="cursos__banner-button" >Obten cursos de prueba gratis</button>
-          </div>
-        </div>
+        
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
