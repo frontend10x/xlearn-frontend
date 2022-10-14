@@ -11,15 +11,10 @@ export const ConfirmarRuta = () => {
   const { id, _rel } = useSelector((state) => state.questions);
 
   const {token} = useSelector(state => state.auth)
+  const {course_route} = useSelector(state => state.ruta)
+  const [courses, setCourses] = useState(course_route);
 
-  const [courses, setCourses] = useState([
-    { title: 'curso de prueba 0', image: Slider_01, time: 2, lessons: 20 },
-    { title: 'curso de prueba 1', image: Slider_01, time: 2, lessons: 20 },
-    { title: 'curso de prueba 2', image: Slider_01, time: 2, lessons: 20 },
-    { title: 'curso de prueba 3', image: Slider_01, time: 2, lessons: 20 },
-    { title: 'curso de prueba 4', image: Slider_01, time: 2, lessons: 20 },
-  ]);
-
+  console.log(courses,'mapeo de la ruta de cursos')
   const navigate = useNavigate();
 
   const goBack = () => {
@@ -55,9 +50,9 @@ export const ConfirmarRuta = () => {
             courses.map((item, index) => (
               <div key={index} >
                 <div className="confirm_route-card">
-                  <Image src={item.image} className="confirm_route-image" />
+                  <Image src={item.file_path} className="confirm_route-image" />
                   <div className="confirm_route-card_content">
-                    <h3>{item.title}</h3>
+                    <h3>{item.name}</h3>
                     <p>Este curso esta en tu ruta</p>
                     <div className="d-flex gap-5">
                       <p>{item.time}H</p>

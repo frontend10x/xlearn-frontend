@@ -5,6 +5,7 @@ import {persistStore,persistReducer} from "redux-persist";
 import { diagnosticReducer } from "../reducers/diagnosticReducer";
 
 import storage from "redux-persist/lib/storage";
+import { confirmedRouteReducer } from "../reducers/confirmRouteReducer";
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
@@ -17,6 +18,7 @@ const persistConfig = {
 const reducers = combineReducers({
     auth: authReducer,
     questions: diagnosticReducer,
+    ruta: confirmedRouteReducer
 });
 const persistedReducer = persistReducer(persistConfig, reducers)
 

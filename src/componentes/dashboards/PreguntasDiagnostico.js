@@ -5,6 +5,7 @@ import { HeaderDashboard } from "./HeaderDashboard";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { diagnosticQuestions } from "../../actions/diagnostico";
+import { confirmedRoute } from "../../actions/confirmRoute";
 
 export const PreguntasDiagnostico = () => {
   const { token, id, groups } = useSelector((state) => state.auth);
@@ -48,7 +49,7 @@ export const PreguntasDiagnostico = () => {
     setSchema({ ...schema, answers: [...schema.answers, answers] });
   };
 
-  // console.log(schema, 'payload');
+  
 
   const previousPage = () => {
     if (page === 1) {
@@ -63,8 +64,8 @@ export const PreguntasDiagnostico = () => {
       try {
         const data = await registerDiagnostic(target, user_id, _rel, answers, group_id, token);
         dispatch(diagnosticQuestions(answers, data.diagnostic_id, _rel));
-        // navigate("/project/diagnostic/confirm_route");
-        console.log(data,'data')
+        dispatch(confirmedRoute(data.course_route))
+        navigate("/project/diagnostic/confirm_route");
       } catch (error) {
         console.error(error);
       }

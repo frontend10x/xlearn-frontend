@@ -22,3 +22,4 @@ export const coursesByArea = (filter_id, _rel) => {
         }
     }
 }
+

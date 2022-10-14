@@ -18,6 +18,8 @@ export const diagnosticReducer = (state = initialState, action) => {
                 _rel: action.payload._rel
             }
 
+        case types.logout: 
+            return {}
         default:
             return state;
     }
