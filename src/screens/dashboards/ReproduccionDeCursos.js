@@ -18,7 +18,8 @@ export const ReproduccionDeCursos = () => {
     useEffect(() => {
         async function getVideos() {
             const data = await getLessons(token, id);
-            setLessons(data.response._embedded)
+            console.log(data.response._embedded.lesson,'structura')
+            console.log(data);
         }
         getVideos()
     },[])
