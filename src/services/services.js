@@ -224,6 +224,27 @@ export const getRegisteredUsers = async (token) => {
 
   const response = await axios.get(baseURL + '/api/v1/user/list', config)
   return response.data;
+}
 
+export const getUserCourseById = async (token, id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = await axios.get(baseURL + `/api/v1/course/show_user/${id}?offset=1`, config)
+  return response.data;
+}
+
+export const getLessons = async (token, id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = await axios.get(baseURL + `/api/v1/lesson/show_course/${id}?offset1`,config)
+  return response.data
 
 }

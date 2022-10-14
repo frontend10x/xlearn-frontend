@@ -24,6 +24,7 @@ import { CompraUsuarios } from "../screens/dashboards/CompraUsuarios";
 import { UsoCupos } from "../screens/dashboards/UsoCupos";
 import { CrearUsuarios } from "../screens/dashboards/CrearUsuarios";
 import { ReproduccionDeCursos } from "../screens/dashboards/ReproduccionDeCursos";
+import { Evaluacion } from "../screens/dashboards/Evaluacion";
 
 
 export const AppRouter = () => {
@@ -89,10 +90,11 @@ export const AppRouter = () => {
         </Route>
           <Route
             exact
-            path= "/course/videoplayer/:id"
+            path= "/course/videoplayer/:name/:id"
             element={<ReproduccionDeCursos />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
+          <Route exact path="/evaluacion/:id" element={<Evaluacion />} />
       </Routes>
     </Router>
   );
