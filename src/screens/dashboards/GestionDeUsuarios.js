@@ -11,12 +11,14 @@ export const GestionDeUsuario = () => {
     <div className="gestion__usuario-section">
       <HeaderDashboard />
       <div className="gestion__usuario-container">
+        
         <div className="gestion__usuario-navegacion">
           <NavegacionDashboard />
         </div>
+
         <div className="gestion__usuario-content">
           <div className="gestion__usuario-title">
-            <h1>Gestion De cupos</h1>
+            <h1>Gestion de cupos</h1>
             <p>Dolore magna aliquam erat volutpat.</p>
           </div>
           <div className="gestion__usuario-banner">

@@ -11,7 +11,7 @@ export const PreguntasFrecuentes = () => {
         Preguntas Frecuentes y Tutoriales
       </h2>
       <p className="preguntas__frecuentes-subtitle">
-        ¿Tienes dudas? tenemos el espacio perfecto para ti; en esta seccion podras <br />
+        ¿Tienes dudas? tenemos el espacio perfecto para ti; en esta seccion podras
         resolver tus preguntas y encontrar contenido de valor
       </p>
       </div>
@@ -23,7 +23,7 @@ export const PreguntasFrecuentes = () => {
         data-bs-ride="carousel"
       >
         {/* <!-- Indicators/dots --> */}
-        <div className="carousel-indicators">
+        <div className="carousel-indicators xln_preguntas_NavPuntos">
           <button
             type="button"
             data-bs-target="#demo"

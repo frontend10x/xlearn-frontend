@@ -80,28 +80,30 @@ export const Banner = () => {
             </div>
           </div>
         </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
-        >
-          <span className="banner__carousel-prev" aria-hidden="true">
-            <img src={buttonprev} alt="prev" />
-          </span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className=" carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
-          <span className="banner__carousel-next" aria-hidden="true">
-            <img src={buttonnext} alt="next" />
-          </span>
-          <span className="visually-hidden">Next</span>
-        </button>
+        <div className="xln-btn-banners">
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span className="banner__carousel-prev" aria-hidden="true">
+              <img src={buttonprev} alt="prev" />
+            </span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className=" carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span className="banner__carousel-next" aria-hidden="true">
+              <img src={buttonnext} alt="next" />
+            </span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
       <div className="slides">
         <div className="slides__content">

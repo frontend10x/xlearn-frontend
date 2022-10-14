@@ -8,6 +8,7 @@ export const NavegacionDashboardHeader = () => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
+    localStorage.clear()
     dispatch(logout());
   };
 

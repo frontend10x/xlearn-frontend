@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Image } from "react-bootstrap";
 import { imagenlogin, logologin } from "../../assets/img";
 import { useForm } from "../../hooks/useForm";
@@ -20,6 +20,14 @@ export const LoginScreen = () => {
   const { email, password } = formValues;
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
+  useEffect(()=>{
+    if (type === "Empresa") {
+      navigate('/dashboard/empresa');
+    } else if (type === "Lider") {
+      navigate('/inicia/diagnostico');
+    }
+  },[navigate, type])
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -31,6 +39,13 @@ export const LoginScreen = () => {
         text: `${data.message}`,
         // footer: '<a href="">Why do I have this issue?</a>'
       })
+
+
+      localStorage.setItem('user_is_login', JSON.stringify({
+        login: true, 
+        user_name: data?.datosUsuario?.name
+      }))
+      
           console.log(data,'structure')
           console.log(data.datosUsuario.roles.name,'structure2')
       
@@ -44,12 +59,8 @@ export const LoginScreen = () => {
         data?.datosUsuario?.subcompanies_id, 
         data?.datosUsuario?.groups['0']?.group_id, 
         data?.datosUsuario?.roles?.name));
-
-      if (type === "Empresa") {
-        navigate('/dashboard/empresa');
-      } else if (type === "Lider") {
-        navigate('/inicia/diagnostico');
-      }
+        console.log('type', type)
+      
     } catch (error) {
           Swal.fire({
             icon: 'error',
