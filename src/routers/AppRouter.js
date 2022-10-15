@@ -23,8 +23,9 @@ import { CrearEquipos } from "../screens/dashboards/CrearEquipos";
 import { CompraUsuarios } from "../screens/dashboards/CompraUsuarios";
 import { UsoCupos } from "../screens/dashboards/UsoCupos";
 import { CrearUsuarios } from "../screens/dashboards/CrearUsuarios";
-import { ReproduccionDeCursos } from "../screens/dashboards/ReproduccionDeCursos";
+// import { ReproduccionDeCursos } from "../screens/dashboards/ReproduccionDeCursos";
 import { Evaluacion } from "../screens/dashboards/Evaluacion";
+import CorusePlayback from "../screens/dashboards/CoursePlayback";
 
 
 export const AppRouter = () => {
@@ -91,10 +92,11 @@ export const AppRouter = () => {
           <Route
             exact
             path= "/course/videoplayer/:name/:id"
-            element={<ReproduccionDeCursos />}
+            element={<CorusePlayback />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
           <Route exact path="/evaluacion/:id" element={<Evaluacion />} />
+      
       </Routes>
     </Router>
   );
