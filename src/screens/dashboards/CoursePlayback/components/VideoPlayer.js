@@ -1,29 +1,48 @@
 import { useEffect, useState } from 'react';
 import Player from '@vimeo/player';
 
-const VideoPlayer = ({videoCurrent}) => {
+const VideoPlayer = ({videoCurrent, destroy}) => {
 
     const [videoStatus, setVideoStatus] = useState();
-    const [statePlayer, setStatePlayer] = useState();
-    const [myVideo, setMyVideo] = useState();
 
     var videoPlay = "";
 
     useEffect(()=>{
 
-        setMyVideo(document.querySelector(`#video-${videoCurrent?.vimeoId}`))
-
-        if(videoCurrent){
-
-            let player = new Player(myVideo);
-            setStatePlayer(player);
-            console.log('myVideo', myVideo)
+        const options = {
+            width : 993,
+            height : 562
         }
 
+        if(videoCurrent){
+            
+            let player = new Player('my-video', options);
+            eventsPlayer(player)
 
-    },[videoCurrent, myVideo])
+            if (destroy) {
+              
+                player.destroy().then( () => {
+                    player = new Player('my-video', options);
+                    eventsPlayer(player)
+                }).catch(function(error) {
+                    console.error('error', error)
+                });
+            
+            }
+                        
+        }
 
-    console.log(videoCurrent)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[videoCurrent, destroy])
+
+    const eventsPlayer = player => {
+
+        player?.on('playing', () => handleVideo(videoPlay, player));
+        player?.on('pause', function(data) {
+            console.log('Segundos, porcentaje, duración actual', data)
+        });
+
+    }
 
     const handleVideo = (videoPlay, player) => {
 
@@ -32,8 +51,8 @@ const VideoPlayer = ({videoCurrent}) => {
             clearInterval(videoPlay);
         }
 
-        videoPlay = setInterval( () =>
-        {
+        videoPlay = setInterval( () => {
+            
             player.on('timeupdate', (getAll) =>
             {
                 setVideoStatus({
@@ -53,18 +72,10 @@ const VideoPlayer = ({videoCurrent}) => {
         console.log('videoStatus', videoStatus)
     },[videoStatus])
 
-    //Este manejador de evento escucha cuando el usuario pause el video
-    useEffect(() =>{
-        statePlayer?.on('playing', () => handleVideo(videoPlay, statePlayer));
-        statePlayer?.on('pause', function(data) {
-            console.log('Segundos, porcentaje, duración actual', data)
-        });
-    }, [statePlayer, videoPlay])
-
     return (
         <div>
             <h3 style={{color:'white'}}>{videoCurrent?.name}</h3>
-            <iframe id={`video-${videoCurrent?.vimeoId}`} width="993" height="562" src={videoCurrent?.video} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+            <div data-vimeo-id={videoCurrent?.vimeoId} data-vimeo-defer id='my-video'></div>
         </div>
     )
 }

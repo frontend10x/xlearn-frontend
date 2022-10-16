@@ -2,9 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import Player from '@vimeo/player';
-import { Image } from "react-bootstrap";
-
 // import { Image_01, Image_02, XlearnLogo, construccion, iconoChat, iconoChat2, gradient, blackout, playButton } from "../../assets/img";
 import { HeaderDashboard } from "../../../componentes/dashboards/HeaderDashboard";
 // import { InfoVideoPlayer } from "../../componentes/dashboards/InfoVideoPlayer";
@@ -17,8 +14,8 @@ const CorusePlayback = () => {
     const {token} = useSelector(state => state.auth);
     const [lessons, setLessons] = useState();
     const [videoCurrent, setVideoCurrent] = useState();
-    
-    
+    const [destroy, setDestroy] = useState(false);
+        
     useEffect(() => {
         async function getVideos() {
             const data = await getLessons(token, id);
@@ -27,7 +24,8 @@ const CorusePlayback = () => {
             setVideoCurrent({
                 name  : videos[0]?.name,
                 video : videos[0]?.player_embed_url,
-                vimeoId : videos[0]?.vimeo_id
+                vimeoId : videos[0]?.vimeo_id,
+                lessonId : videos[0]?.id
             })
             setLessons(videos)
         }
@@ -37,16 +35,24 @@ const CorusePlayback = () => {
 
     const changeVideo = video => {
         
-        const { name, player_embed_url, vimeo_id } = video
+        storeProgress("Aquí se me ocurre enviar un storage que tenga el estado actual del video visto")
+        const { name, player_embed_url, vimeo_id, id } = video
     
         setVideoCurrent({
             name: name,
             video: player_embed_url,
-            vimeoId : vimeo_id
+            vimeoId : vimeo_id,
+            lessonId : id
         })
+
+        setDestroy(true)
         
     }
 
+    const storeProgress = (progress) => {
+        console.log(progress)
+    }
+    
     return (
         <div className="video__reproduccion-section" >
             <HeaderDashboard />
@@ -57,7 +63,7 @@ const CorusePlayback = () => {
                 </div>
                 <div className="d-flex">
                     <div className="video__reproduccion-container-player" >
-                    <VideoPlayer videoCurrent={videoCurrent} />
+                    <VideoPlayer videoCurrent={videoCurrent} destroy={destroy}/>
                     
                     {lessons?.map((video, key) => (
                         <LessonSideMenu key={key} index={key} video={video} changeVideo={changeVideo}/>

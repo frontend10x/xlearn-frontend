@@ -1,6 +1,5 @@
 const LessonSideMenu = ({index, video, changeVideo}) => {
 
-
     return (
         <div>
             <button onClick={() => changeVideo(video)}>
