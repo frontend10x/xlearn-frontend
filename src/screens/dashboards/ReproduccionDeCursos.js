@@ -1,30 +1,100 @@
-import React, { useState } from "react";
-import { Image_01, Image_02, XlearnLogo, construccion, iconoChat, iconoChat2, gradient, blackout, playButton } from "../../assets/img";
-import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
-import { Image } from "react-bootstrap";
-import { InfoVideoPlayer } from "../../componentes/dashboards/InfoVideoPlayer";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { getLessons } from "../../services/services";
 import { useSelector } from "react-redux";
 
+import Player from '@vimeo/player';
+import { Image } from "react-bootstrap";
+
+import { Image_01, Image_02, XlearnLogo, construccion, iconoChat, iconoChat2, gradient, blackout, playButton } from "../../assets/img";
+import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
+import { InfoVideoPlayer } from "../../componentes/dashboards/InfoVideoPlayer";
+import { getLessons } from "../../services/services";
 
 export const ReproduccionDeCursos = () => {
-    
     const {id, name} = useParams()
     const {token} = useSelector(state => state.auth);
     const [lessons, setLessons] = useState();
-
+    const [videoStatus, setVideoStatus] = useState();
+    const [videoCurrent, setVideoCurrent] = useState();
+    const [statePlayer, setStatePlayer] = useState();
+    
     useEffect(() => {
         async function getVideos() {
             const data = await getLessons(token, id);
-            console.log(data.response._embedded.lesson,'structura')
-            console.log(data);
+            const key = data?.response?._rel
+            const videos = data?.response?._embedded[key]
+            setVideoCurrent({
+                name  : videos[0]?.name,
+                video : videos[0]?.player_embed_url,
+                vimeoId : videos[0]?.vimeo_id
+            })
+            setLessons(videos)
         }
         getVideos()
-    },[])
+    },[token, id])
+    
+    useEffect(()=>{
 
-    console.log(lessons,'videos')
+        var videoPlay = "";
+
+        try {
+            
+            if(videoCurrent){
+                const myVideo = document.querySelector(`#video-${videoCurrent?.vimeoId}`);
+                const player = new Player(myVideo);
+                player.on('playing', () => handleVideo(videoPlay, player));
+                setStatePlayer(player);
+                console.log('myVideo', myVideo)
+            }
+
+        } catch (error) {
+            console.error('error', error)
+        }
+
+
+    },[videoCurrent])
+
+    useEffect(() => {
+        console.log('videoStatus', videoStatus)
+    },[videoStatus])
+
+    //Este manejador de evento escucha cuando el usuario pause el video
+    statePlayer?.on('pause', function(data) {
+        console.log('Segundos, porcentaje, duración actual', data)
+    });
+
+    const handleVideo = (videoPlay, player) => {
+
+        if (videoPlay)
+        {
+            clearInterval(videoPlay);
+        }
+
+        videoPlay = setInterval( () =>
+        {
+            player.on('timeupdate', (getAll) =>
+            {
+                setVideoStatus({
+                    currentTime : getAll?.seconds, //get currentime
+                    vdoEndTym : getAll?.duration, //get video duration
+                    percentage : (getAll?.percent * 100)+"%",
+                    timeSeconds : getAll?.seconds + ' Seconds'
+                })
+                
+            });
+            player.on('ended',  () => clearInterval(videoPlay));
+        }, 1000);
+        
+    }
+
+    const changeVideo = video => {
+        const { name, player_embed_url, vimeo_id } = video
+        setVideoCurrent({
+            name: name,
+            video: player_embed_url,
+            vimeoId : vimeo_id
+        })
+    }
 
     return (
         <div className="video__reproduccion-section" >
@@ -36,23 +106,18 @@ export const ReproduccionDeCursos = () => {
                 </div>
                 <div className="d-flex">
                     <div className="video__reproduccion-container-player" >
-                        {/* <Image src={blackout} className="videoplayer__image" />
-                        <Image src={playButton} className="videoplayer__playbutton"/> */}
-                        {/* <iframe
-                            src="" width="1020" height="280" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Lecci&amp;oacute;n 4 Selecci&amp;oacute;n de oportunidades de negocio"
-                            id="my-video"
-                            className="mfp-iframe"
-                        ></iframe> */}
+                    <div>
+                        <h3 style={{color:'white'}}>{videoCurrent?.name}</h3>
+                        <iframe id={`video-${videoCurrent?.vimeoId}`} width="993" height="562" src={videoCurrent?.video} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                     </div>
-                    {/* <div className="chatbox__container" >
-                        <div className="chatbox__container-content">
-
-                            <h1>Dentro de poco disfruta de compartir con tus compañeros informacion importante de los cursos</h1>
-                            <Image src={iconoChat2} className="w-25" />
-                            <Image src={construccion} className="logo__contruccion-chat" />
-                            <h1>Estamos trabajando en ello</h1>
+                    {lessons?.map((video, key) => (
+                        <div key={key}>
+                            <button onClick={() => changeVideo(video)}>
+                                <h3 style={{color:'white'}}>{key + ' - ' +video?.name}</h3>
+                            </button>
                         </div>
-                    </div> */}
+                    ))}   
+                    </div>
                 </div>
             </div>
             {/* <InfoVideoPlayer /> */}
