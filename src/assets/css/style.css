@@ -513,7 +513,7 @@ button.burg-toggle i {
     text-align: center;
     font-weight: bold;
     position: relative;
-    left: 263px;
+    /* left: 263px; */
 }
 
 .carousel__container {
