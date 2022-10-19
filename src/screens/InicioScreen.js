@@ -61,10 +61,10 @@ export const InicioScreen = () => {
           <h1>Elige los cursos de tu interes</h1>
 
           <ul className=" carousel__lista ">
-            <button>Todas las Areas</button>
+            <button>Todas las areas</button>
             <button>Corporativo</button>
-            <button>Innovacion</button>
-            <button>Transformacion</button>
+            <button>Innovación</button>
+            <button>Transformación</button>
             <button>Diseño de productos</button>
             <button>Sostenibilidad</button>
           </ul>

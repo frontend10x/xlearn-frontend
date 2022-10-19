@@ -20,10 +20,10 @@ export const Mockups = () => {
               <div className="xln_iconLine_title"></div>
             </div>
             <p>
-              Conoce las empresas que se han formado con nosotros y han asumido los retos y oportunidades del mercado a traves de su capital humano.
+              Conoce las empresas que se han formado con nosotros y han asumido los retos y oportunidades del mercado a través de su capital humano.
             </p>
             <button className="mockups__button" >
-              Conoce mas
+              Conoce más
             </button>
           </div>
         </Col>
@@ -41,7 +41,7 @@ export const Mockups = () => {
               oportunidades para aprender
               </p>
               <button className="mockups__button" >
-              Conoce mas
+              Conoce más
             </button>
             </div>
         

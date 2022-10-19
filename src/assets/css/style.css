@@ -188,7 +188,7 @@ button.burg-toggle i {
 .navegacion {
     display: flex;
     column-gap: 2rem;
-    left: 1100px;
+    left: 800px;
     width: 40%;
     position: relative;
     top: -20px;
@@ -316,13 +316,20 @@ button.burg-toggle i {
 /* Banner */
 
 .banner {
-    height: 1100px;
+    height: auto;
 }
-
+.banner .carousel-indicators {
+    left: 36%;
+    top: 35%;
+}
 .carousel-indicators {
-    bottom: 630px;
-    left: 442px;
-    width: 60%;
+    color: var(--white);
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 60%;
+    text-align: center;
+    height: 50px;
 }
 .carousel-inner {
     position: relative;
@@ -340,11 +347,12 @@ button.burg-toggle i {
 .carousel-control-prev,
 .carousel-control-next {
     width: 5%;
+    z-index: 2!important;
 }
 
 .banner__carousel-prev {
     position: relative;
-    left: 1450px;
+    left: 1080px;
     top: 287px;
     transition: background-color .3s ease;
 }
@@ -363,13 +371,14 @@ button.burg-toggle i {
     color: var(--green);
 }
 
+
 .slides {
     color: var(--white);
     display: flex;
-    position: relative;
-    bottom: 630px;
-    left: 955px;
-    width: 40%;
+    width: 43%;
+    position: absolute;
+    top: 69%;
+    left: 50%;
 }
 
 .slides__content {
@@ -384,20 +393,34 @@ button.burg-toggle i {
     font-size: 20px;
 }
 
+/* .content__banner {
+    color: white;
+    position: absolute;
+    top: 0%;
+    display: flex;
+    left: 170px;
+    width: 100%;
+} */
 .content__banner {
     color: white;
     position: absolute;
-    top: 170px;
+    top: 0%;
     display: flex;
-    left: 170px;
-    width: 41%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+.content__banner .content__banner-button.d-flex {
+    position: absolute;
+    top: 26%;
+    left: 14%;
 }
 
 .content__banner-info p {
     font-size: 25px;
 }
 
-.content__banner-block {
+/* .content__banner-block {
     background-color: var(--blueDark);
     width: 565px;
     text-align: left;
@@ -409,6 +432,15 @@ button.burg-toggle i {
     margin-top: 30%;
     position: relative;
     left: -133px;
+} */
+.content__banner-block {
+    background-color: var(--blueDark);
+    width: 565px;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 .content__banner-block h3 {
@@ -426,15 +458,15 @@ button.burg-toggle i {
 .content__banner-info {
     color: var(--white);
     border-top: 2px solid var(--white);
-    position: relative;
-    bottom: 835px;
-    left: 950px;
+    position: absolute;
     height: 430px;
     width: 25%;
+    right: 25%;
+    top: 18%;
 }
 
 .content__banner-info h1 {
-    font-size: 60px;
+    font-size: 35px;
 }
 
 .content__banner-info span {
@@ -445,7 +477,7 @@ button.burg-toggle i {
     margin-top: 20px;
 }
 
-.content__banner-info_block {
+/* .content__banner-info_block {
     background-color: var(--whiteOff);
     color: var(--blueDark);
     height: 110px;
@@ -455,7 +487,20 @@ button.burg-toggle i {
     top: 80px;
     width: 230px;
 }
-
+ */
+ .content__banner-info_block {
+    background-color: var(--whiteOff);
+    color: var(--blueDark);
+    height: 110px;
+    opacity: 0.8;
+    position: absolute;
+    top: 20%;
+    width: 230px;
+    right: 4%;
+}
+.h-75 {
+    width: 0%;
+}
 .content__banner-info_block h3 {
     font-size: 1rem;
     margin-top: 15px;
@@ -480,6 +525,7 @@ button.burg-toggle i {
     width: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
+    padding-top: 5%;
 }
 
 .carousel__lista {
@@ -518,10 +564,10 @@ button.burg-toggle i {
 
 .carousel__container {
     position: relative;
-    left: 520px;
     column-gap: 1rem;
     overflow-x: scroll;
     width: 100%;
+    padding-left: 20%;
 }
 
 .carousel__image {
@@ -596,6 +642,7 @@ button.burg-toggle i {
     background-color: #797979;
     border-radius: 20px;
     border: 2px solid #f1f2f3;
+    
 }
 
 .carousel__container::-webkit-scrollbar-track {
@@ -623,8 +670,9 @@ button.burg-toggle i {
 }
 
 .xln-btn-banners-puntos {
+    margin-top: -40%;
     position: absolute;
-    margin-top: -44%;
+    left: 70%;
 }
 
 .enterprise .carousel-indicators [data-bs-target] {
@@ -650,7 +698,15 @@ button.burg-toggle i {
     top: 304px;
     left: 890px;
 }
-
+.enterprise_carousel-next, .enterprise_carousel-prev {
+    border-radius: 2rem;
+    color: var(--black);
+    font-size: 2rem;
+    height: 40px;
+    position: relative;
+    top: 337px;
+    width: 40px;
+}
 .enterprise__carousel-next {
     background-color: white;
     border-radius: 2rem;
@@ -670,11 +726,12 @@ button.burg-toggle i {
 }
 
 .enterprise__carousel-content {
-    position: relative;
-    bottom: 520px;
-    left: 160px;
     color: var(--white);
-    width: 90%;
+    left: 0;
+    position: relative;
+    width: 85%;
+    margin: auto;
+    bottom: 560px;
 }
 
 .enterprise__carousel-content_title {
@@ -733,7 +790,7 @@ button.burg-toggle i {
 .mockups__platform {
     background-color: var(--white);
     border-radius: 0px 10px 10px 0px;
-    height: 60vh;
+    height:100%;
     text-align: center;
 }
 
@@ -751,9 +808,9 @@ button.burg-toggle i {
     margin-bottom: 13px;
 }
 .mockups__content {
+    left: 265px;
     position: relative;
-    left: 260px;
-    width: 85%;
+    width: 60%;
 }
 
 .mockups__content-title {
@@ -781,9 +838,8 @@ button.burg-toggle i {
 .mockups__button {
     background-color: transparent;
     border-radius: 5px;
-    width: 15%;
-    height: 35px;
-    width: 20%;
+    height: 56px;
+    width: 40%;
 }
 
 .mockups__button:hover {
@@ -794,12 +850,13 @@ button.burg-toggle i {
 
 .mockups__sec-container {
     width: 60%;
+    height: 100vh;
 }
 
 .mockups__sec-favicon {
-    height: 700px;
+    left: 505px;
     position: relative;
-    left: 700px;
+    top: 70px;
 }
 
 .tablet {
@@ -807,9 +864,9 @@ button.burg-toggle i {
 }
 
 .telf {
+    bottom: 427px;
     position: relative;
-    bottom: 630px;
-    right: 190px;
+    right: 146px;
     width: 80%;
 }
 
@@ -855,8 +912,8 @@ button.burg-toggle i {
 
 .preguntas__carousel-slides {
     position: relative;
-    left: 280px;
-    width: 85%;
+    width: 90%;
+    margin: auto;
 }
 
 .preguntas__carousel-image {
@@ -3839,28 +3896,28 @@ p.xln_price_GDC span {
     }
     /* Navegacion Fin */
     /* Banner */
-    .banner {
+    /* .banner {
         height: 810px;
-    }
-    .carousel-indicators {
+    } */
+    /* .carousel-indicators {
         left: 380px;
         width: 55%;
-    }
-    .banner .carousel-indicators [data-bs-target] {
+    } */
+    /* .banner .carousel-indicators [data-bs-target] {
         width: 25%;
-    }
-    .content__banner-info {
+    } */
+    /* .content__banner-info {
         bottom: 630px;
         left: 745px;
-    }
+    } */
     .content__banner-info span {
         font-size: 35.6px;
     }
-    .slides {
+    /* .slides {
         bottom: 630px;
         left: 745px;
         gap: 1.8rem;
-    }
+    } */
     .slides__content {
         width: 35%;
     }
@@ -3875,19 +3932,15 @@ p.xln_price_GDC span {
         top: 155px;
         right: 130px;
     }
-    .content__banner-info_block {
-        left: 930px;
-        top: 20px;
-        width: 200px;
-    }
+
     /* Banner Final */
     /* Carousel */
     .carousel__section-content {
         width: 78.9%;
     }
-    .carousel__container {
+    /* .carousel__container {
         left: 290px;
-    }
+    } */
     /* .carousel__lista {
         left: 420px;
         width: 100%;
@@ -3917,13 +3970,13 @@ p.xln_price_GDC span {
     }
     /* Enterprise Fin */
     /* Mockups */
-    .mockups__platform {
+    /* .mockups__platform {
         height: 60vh;
-    }
-    .mockups__content {
+    } */
+    /* .mockups__content {
         left: 100px;
         top: 20px;
-    }
+    } */
     .mockups__content p {
         font-size: 20px;
     }
@@ -3997,22 +4050,19 @@ p.xln_price_GDC span {
         right: 160px;
     }
     /* Banner */
-    .content__banner-info {
+    /* .content__banner-info {
         font-size: 15px;
         position: relative;
-    }
+    } */
     .content__banner-info h1 {
         font-size: 29px;
     }
-    .content__banner-info_block {
-        left: 910px;
-        top: -34px;
-    }
-    .slides {
+
+    /* .slides {
         left: 724px;
         width: 40%;
         bottom: 170px;
-    }
+    } */
     .slides p {
         font-size: 10px;
         margin-right: 4px;
@@ -4027,9 +4077,9 @@ p.xln_price_GDC span {
         right: 130px;
         font-size: 2.5rem;
     }
-    .carousel-indicators {
+    /* .carousel-indicators {
         bottom: 150px;
-    }
+    } */
     .content__banner-button {
         position: relative;
         top: -50px;
@@ -4050,9 +4100,9 @@ p.xln_price_GDC span {
     .carousel__lista button {
         font-size: 14px;
     }
-    .carousel__container {
+    /* .carousel__container {
         left: 170px;
-    }
+    } */
     /* Carousel Fin */
     /* Enterprise Inicio */
     .enterprise__carousel-content {
@@ -4074,10 +4124,10 @@ p.xln_price_GDC span {
     }
     /* Enterprise Fin */
     /* Mockups Inicio */
-    .mockups__content {
+    /* .mockups__content {
         left: 70px;
         top: 0px;
-    }
+    } */
     .telf {
         bottom: 300px;
     }
@@ -4178,24 +4228,21 @@ p.xln_price_GDC span {
         right: 160px;
     }
     /* Banner */
-    .content__banner-info {
+    /* .content__banner-info {
         font-size: 15px;
         position: relative;
         right: 58px;
         bottom: 40px;
-    }
+    } */
     .content__banner-info h1 {
         font-size: 29px;
     }
-    .content__banner-info_block {
-        left: 590px;
-        top: -40px;
-    }
-    .slides {
+
+    /* .slides {
         left: 535px;
         width: 40%;
         bottom: 170px;
-    }
+    } */
     .slides p {
         font-size: 10px;
         margin-right: 4px;
@@ -4210,9 +4257,9 @@ p.xln_price_GDC span {
         right: 130px;
         font-size: 2.5rem;
     }
-    .carousel-indicators {
+    /* .carousel-indicators {
         bottom: 150px;
-    }
+    } */
     .content__banner-button {
         position: relative;
         top: -50px;
@@ -4231,9 +4278,9 @@ p.xln_price_GDC span {
     .carousel__lista button {
         font-size: 14px;
     }
-    .carousel__container {
+    /* .carousel__container {
         left: 170px;
-    }
+    } */
     /* Carousel Fin */
     /* Enterprise Inicio */
     .enterprise__carousel-content {
@@ -4255,10 +4302,10 @@ p.xln_price_GDC span {
     }
     /* Enterprise Fin */
     /* Mockups Inicio */
-    .mockups__content {
+    /* .mockups__content {
         left: 70px;
         top: 30px;
-    }
+    } */
     .telf {
         bottom: 300px;
     }
@@ -4322,12 +4369,12 @@ p.xln_price_GDC span {
     .content__banner-block p {
         font-size: 12px;
     }
-    .content__banner-info {
+    /* .content__banner-info {
         font-size: 15px;
         position: relative;
         right: 88px;
         bottom: 60px;
-    }
+    } */
     .content__banner-info h1 {
         font-size: 15px;
         position: relative;
@@ -4336,16 +4383,12 @@ p.xln_price_GDC span {
     .content__banner-info p {
         margin-top: 10px;
     }
-    .content__banner-info_block {
-        left: 425px;
-        top: -60px;
-        width: 50%;
-    }
-    .slides {
+
+    /* .slides {
         left: 398px;
         width: 33%;
         bottom: 170px;
-    }
+    } */
     .slides p {
         font-size: 10px;
         margin-right: 4px;
@@ -4360,9 +4403,9 @@ p.xln_price_GDC span {
         right: 100px;
         font-size: 2rem;
     }
-    .carousel-indicators {
+    /* .carousel-indicators {
         bottom: 150px;
-    }
+    } */
     /* Banner Fin */
     /* Carousel Inicio */
     .carousel__section-content {
@@ -4378,9 +4421,9 @@ p.xln_price_GDC span {
         font-size: 10px;
         column-gap: 1rem;
     }
-    .carousel__container {
+    /* .carousel__container {
         left: 70px;
-    }
+    } */
     .carousel__image {
         height: 10vh;
     }
@@ -4412,9 +4455,9 @@ p.xln_price_GDC span {
     .mockups {
         bottom: 0px;
     }
-    .mockups__content {
+    /* .mockups__content {
         left: 49px;
-    }
+    } */
     .mockups__sec-content {
         left: 30px;
     }
@@ -4536,11 +4579,11 @@ p.xln_price_GDC span {
     }
     /* Navegacion Final */
     /* Banner */
-    .content__banner {
+    /* .content__banner {
         display: flex;
         flex-direction: column;
         top: 90px;
-    }
+    } */
     .content__banner-block {
         display: none;
     }
@@ -4563,24 +4606,19 @@ p.xln_price_GDC span {
         bottom: 25px;
         left: -10px;
     }
-    .content__banner-info {
+    /* .content__banner-info {
         position: relative;
         right: 60px;
         bottom: 88px;
         font-size: 15px;
-    }
+    } */
     .content__banner-info h1 {
         font-size: 10px;
     }
     .content__banner-info p {
         font-size: 10px;
     }
-    .content__banner-info_block {
-        left: -76px;
-        top: 36px;
-        width: 100%;
-        height: 67px;
-    }
+
     .content__banner-info_block h3 {
         font-size: 10px;
         margin-top: 8px;
@@ -4644,10 +4682,10 @@ p.xln_price_GDC span {
     .mockups__container {
         flex-direction: column;
     }
-    .mockups__content {
+    /* .mockups__content {
         width: 90%;
         text-align: center;
-    }
+    } */
     .mockups__sec-content {
         left: 20px;
     }
@@ -4678,7 +4716,6 @@ p.xln_price_GDC span {
     }
     .preguntas__carousel-slides {
         width: 90%;
-        left: 163px;
     }
     .preguntas__content-box {
         position: relative;
