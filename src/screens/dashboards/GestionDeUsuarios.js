@@ -24,7 +24,7 @@ export const GestionDeUsuario = () => {
           <div className="gestion__usuario-banner">
               <div className="gestion__usuario-banner_content">
               <h3>Aun no tienes cupos para registrar usuarios</h3>
-              <p>Aquiere tus cupos y registra tus usuarios.</p>
+              <p>Adquiere tus cupos y registra tus usuarios.</p>
               <button className="gestion__usuario-banner_button-add">+</button>
               <NavLink className="gestion__usuario-banner_button" href="/compra/cupos">
                 Adquirir cupos

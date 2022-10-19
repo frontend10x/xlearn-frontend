@@ -25,11 +25,12 @@ import { UsoCupos } from "../screens/dashboards/UsoCupos";
 import { CrearUsuarios } from "../screens/dashboards/CrearUsuarios";
 import { ReproduccionDeCursos } from "../screens/dashboards/ReproduccionDeCursos";
 import { Evaluacion } from "../screens/dashboards/Evaluacion";
-
+import { DashboardIntegrante } from "../screens/dashboards/DashboardIntegrante";
+import { IntegranteRoute } from "./IntegranteRoute";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
-  
+
   return (
     <Router>
       <Routes>
@@ -40,7 +41,7 @@ export const AppRouter = () => {
         <Route exact path="/enterprises" element={<EmpresaScreen />} />
         <Route exact path="/login" element={<LoginScreen />} />
         <Route exact path="/contact" element={<ContactoScreen />} />
-        
+
         {/* RUTA DE EMPRESA */}
         <Route element={<EmpresasRoute token={token} type={type} />}>
           <Route
@@ -50,11 +51,11 @@ export const AppRouter = () => {
           />
           <Route exact path="/gestion/cupos" element={<GestionDeUsuario />} />
           <Route exact path="/compra/cupos" element={<CompraUsuarios />} />
-          <Route exact path="/asignacion/cupos" element={<UsoCupos/>} />
-          <Route exact path="/creacion/usuarios" element={<CrearUsuarios/>} />
+          <Route exact path="/asignacion/cupos" element={<UsoCupos />} />
+          <Route exact path="/creacion/usuarios" element={<CrearUsuarios />} />
           <Route exact path="/gestion/equipo" element={<CrearEquipos />} />
         </Route>
-        
+
         {/* RUTA DEL LIDER */}
         <Route element={<LiderRoute token={token} type={type} />}>
           <Route
@@ -87,14 +88,20 @@ export const AppRouter = () => {
             path="/project/diagnostic/training/areas"
             element={<SeleccionDeAreas />}
           />
-        </Route>
           <Route
             exact
-            path= "/course/videoplayer/:name/:id"
+            path="/course/videoplayer/:name/:id"
             element={<ReproduccionDeCursos />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
           <Route exact path="/evaluacion/:id" element={<Evaluacion />} />
+        </Route>
+
+        {/* RUTA DEL INTEGRANTE */}
+        <Route element={<IntegranteRoute token={token} type={type} />}>
+        </Route>
+         <Route exact path="/dashboard/integrante" element={<DashboardIntegrante />} />
+
       </Routes>
     </Router>
   );
