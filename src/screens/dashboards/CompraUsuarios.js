@@ -161,11 +161,10 @@ export const CompraUsuarios = () => {
           <div className="compra-usuarios__container-price__content">
             <p>Pago anual del curso</p>
             <hr/>
-            
+            <h2>Pago total:</h2>
             {price?.amount &&
-            <p>$ {price.amount} USD/Año</p>            
+              <p className="xln_price_GDC">$ {price.amount} COP/Año</p>            
             }
-
           </div>
           <div className="compra-usuarios__container-price__content-total" >
             {/* <div className="container__price-total" >
@@ -178,7 +177,7 @@ export const CompraUsuarios = () => {
               Confirmar compra
             </button>
             <p className="container__price-total__terms" >
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat
+            Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta web y otros propósitos descritos en nuestra política de privacidad. He leído y estoy de acuerdo con los <a href="#">términos y condiciones</a> de la web.
             </p>
           </div>
         </div>

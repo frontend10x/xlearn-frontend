@@ -48,7 +48,7 @@ export const Banner = () => {
                 Xlearn:
                 <span>
                   <br />
-                  Haz de la innovacion el motor de transformacion
+                  Haz de la innovación el motor de transformación
                 </span>
               </h1>
             </div>
@@ -61,7 +61,7 @@ export const Banner = () => {
                 Xlearn:
                 <span>
                   <br />
-                  Involucra a tus empleados en los procesos de formacion
+                  Involucra a tus empleados en los procesos de formación
                 </span>
               </h1>
             </div>
