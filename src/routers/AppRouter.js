@@ -23,8 +23,9 @@ import { CrearEquipos } from "../screens/dashboards/CrearEquipos";
 import { CompraUsuarios } from "../screens/dashboards/CompraUsuarios";
 import { UsoCupos } from "../screens/dashboards/UsoCupos";
 import { CrearUsuarios } from "../screens/dashboards/CrearUsuarios";
-import { ReproduccionDeCursos } from "../screens/dashboards/ReproduccionDeCursos";
+// import { ReproduccionDeCursos } from "../screens/dashboards/ReproduccionDeCursos";
 import { Evaluacion } from "../screens/dashboards/Evaluacion";
+import CorusePlayback from "../screens/dashboards/CoursePlayback";
 import { DashboardIntegrante } from "../screens/dashboards/DashboardIntegrante";
 import { IntegranteRoute } from "./IntegranteRoute";
 
