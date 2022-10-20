@@ -48,7 +48,7 @@ export const Banner = () => {
                 Xlearn:
                 <span>
                   <br />
-                  Haz de la innovacion el motor de transformacion
+                  Haz de la innovación el motor de transformación
                 </span>
               </h1>
             </div>
@@ -61,7 +61,7 @@ export const Banner = () => {
                 Xlearn:
                 <span>
                   <br />
-                  Involucra a tus empleados en los procesos de formacion
+                  Involucra a tus empleados en los procesos de formación
                 </span>
               </h1>
             </div>
@@ -135,17 +135,14 @@ export const Banner = () => {
           <div className="content__banner-block">
             <h3>PROPUESTA DE VALOR</h3>
             <p>
-              Somos una plataforma pensada para empresas,corporativa, y con
-              enfasis en el entrenamiento de equipos de trabajo para el
-              desarrollo de proyectos en temas como innovacion,
-              sostenibilidad,transformacion digital, etc
+              Somos una plataforma pensada para empresas, corporativa, y con énfasis en el entrenamiento de equipos de trabajo para el desarrollo de proyectos en temas como innovación, sostenibilidad, transformación digital, etc.
             </p>
           </div>
         </Col>
         <Col className="h-75" md={6}>
           <div className="content__banner-info_block  ms-3">
             <h3>
-              2022 <br /> Innovacion <br /> Sostenibilidad <br /> Transformación
+              2022 <br /> Innovación <br /> Sostenibilidad <br /> Transformación
             </h3>
           </div>
         </Col>

@@ -14,21 +14,19 @@ export const EmpresasRegister = () => {
         <div className="planes__register-content">
           <h1>Requerimientos para el registro</h1>
           <p>
-            Registrate y escoge el plan adecuado para lo que tu organizacion
-            necesita; podras gestionar los cupos, equipos y usuarios en los
-            respectivos procesos de formacion
+            Regístrate y escoge el plan adecuado para lo que tu organización necesita; podrás gestionar los cupos, equipos y usuarios en los respectivos procesos de formación.
           </p>
         </div>
       </div>
       <div className="planes__register-information">
         <div className="planes__register-container_option">
           <div className="planes__register-option">
-            <h2>Registrate y comienza a desarrollar tus proyectos e innovacion</h2>
+            <h2>Regístrate y comienza a desarrollar tus proyectos en innovación</h2>
             <div className="xln__separator__subtitle"></div>
             <div className="planes__option-group">
               <h4>Monitorea tus equipos</h4>
               <ul>
-                <li>Evalua el rendimiento</li>
+                <li>Evalúa el rendimiento</li>
                 <li>Desarrolla proyectos</li>
               </ul>
             </div>
@@ -49,8 +47,8 @@ export const EmpresasRegister = () => {
             <div className="planes__option-group">
               <h4>Genera reportes de progreso</h4>
               <ul>
-                <li>Evalua el progreso</li>
-                <li>Revisa las dinamicas de los equipos</li>
+                <li>Evalúa el progreso</li>
+                <li>Revisa las dinámicas de los equipos</li>
               </ul>
             </div>
           </div>
@@ -60,7 +58,7 @@ export const EmpresasRegister = () => {
             <h2>¿Necesitas asesoria?</h2>
             <div className="xln__separator__subtitle"></div>
             <p>
-              Dejanos tus datos y registrate en nuestra plataforma; pronto nos pondremos en contacto
+              Déjanos tus datos y regístrate en nuestra plataforma; pronto nos pondremos en contacto (Contáctanos)
             </p>
           </div>
         </div>

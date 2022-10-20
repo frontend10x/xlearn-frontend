@@ -91,7 +91,7 @@ export const LoginScreen = () => {
                   />
                 </NavLink>
                 <p>
-                  Sumate a la experiencia Xlearn y desarrolla tu proyecto empresarial
+                  Súmate a la experiencia Xlearn y desarrolla tu proyecto empresarial
                 </p>
               </div>
             </div>
@@ -135,12 +135,12 @@ export const LoginScreen = () => {
                 </button>
               </form>
               <div className="d-flex login__register">
-                <p className="xln_loginText_bottom">¿Aun no tienes cuenta? </p>
+                <p className="xln_loginText_bottom">¿Aún no estás registrado? </p>
                 <NavLink
                   to="/plans/register"
                   className="login__register-button"
                 >
-                  Registrate
+                  Crea una cuenta
                 </NavLink>
               </div>
             </div>

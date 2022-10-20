@@ -88,8 +88,8 @@ export const CarouselEnterprises = () => {
             <div className="enterprise__carousel-content" >
                 <h3 className="enterprise__carousel-content_title" >Empresa. </h3>
                 <h1 className="enterprise__carousel-content_subtitle" >Asume nuevos retos y lleva <br /> tu negocio a otro nivel</h1>
-                <h4 className="enterprise__carousel-content_info" >Atrevete a ingresar al mundo de la innovacion a traves <br/>del entrenamineto de tu equipo </h4>
-                <NavLink to='/' className='enterprise__button' > Conoce mas </NavLink>
+                <h4 className="enterprise__carousel-content_info" >Atrévete a ingresar al mundo de la innovación a través <br/>del entrenamineto de tu equipo </h4>
+                <NavLink to='/' className='enterprise__button' > Conoce más </NavLink>
             </div>
         </div>
     );
