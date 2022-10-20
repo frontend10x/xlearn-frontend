@@ -163,11 +163,11 @@ export const EmpresaFormulario = () => {
   return (
     <div className="planes__form-content">
       <form className="planes__formulario" onSubmit={handleRegisterSubmit}>
-        <h1>Solicitud de Registro</h1>
+        <h1>Solicitud de registro</h1>
         <div className="planes__formulario-content">
           <div className="form__group">
             <p>
-              Nombre <span>*</span>
+              Nombre completo <span>*</span>
             </p>
             <input
               name="name"
@@ -178,7 +178,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group">
             <p>
-              Apellido <span>*</span>
+              Apellidos <span>*</span>
             </p>
             <input
               name="lastname"
@@ -200,7 +200,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group">
             <p>
-              Correo <span>*</span>
+              Correo electrónico <span>*</span>
             </p>
             <input
               name="email"
@@ -211,7 +211,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group">
             <p>
-              Website <span>*</span>
+              Website empresa <span>*</span>
             </p>
             <input
               name="website"
@@ -242,7 +242,7 @@ export const EmpresaFormulario = () => {
           <div className="form__container-country_content">
             <div className="form__group">
               <p>
-                Selecciona tu pais<span>*</span>
+                Selecciona tu país<span>*</span>
               </p>
               <select
                 name="country"
@@ -261,7 +261,8 @@ export const EmpresaFormulario = () => {
             </div>
             <div className="form__group">
               <p>
-                Área de la Empresa<span>*</span>
+                ¿Qué tipo de contenido estás buscando?<span>*</span>
+                <p className="xln__note__text">Tenga en cuenta: Todos los planes de Xlearn por equipos brindan acceso ilimitado a toda nuestra biblioteca de cursos.</p>
               </p>
               <select
                 name="content"
@@ -281,7 +282,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group">
             <p>
-              Elige tu plan de interes<span>*</span>
+              Selecciona tu plan de interés<span>*</span>
             </p>
             <select
               name="plan_id"
@@ -300,7 +301,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group">
             <p>
-              Selecciona tus cupos<span>*</span>
+              ¿Cuántos cupos necesitas?<span>*</span>
             </p>
             <select
               name="quotas"
@@ -343,7 +344,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group form__group__xln">
             <p className="form__group__text">
-              Cuentanos mas sobre tus necesidades <span>*</span>
+              Cuéntanos más sobre tus necesidades <span>*</span>
             </p>
             <textarea
               name="observation"
@@ -356,7 +357,7 @@ export const EmpresaFormulario = () => {
             />
           </div>
           <button className="planes__formulario-button">Registrarme</button>
-          <p className="xln__register_text_TyC">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci.</p>
+          <p className="xln__register_text_TyC">Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta plataforma y otros propósitos descritos en nuestra <a href="#">política de privacidad.</a></p>
         </div>
       </form>
     </div>

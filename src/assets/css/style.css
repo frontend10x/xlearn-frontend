@@ -670,9 +670,9 @@ button.burg-toggle i {
 }
 
 .xln-btn-banners-puntos {
-    margin-top: -40%;
+    margin-top: -46%;
     position: absolute;
-    left: 70%;
+    left: 64%;
 }
 
 .enterprise .carousel-indicators [data-bs-target] {
@@ -695,8 +695,8 @@ button.burg-toggle i {
     font-size: 2rem;
     transform: rotate(-90deg);
     position: relative;
-    top: 304px;
-    left: 890px;
+    top: 368px;
+    left: 600px;
 }
 .enterprise_carousel-next, .enterprise_carousel-prev {
     border-radius: 2rem;
@@ -714,12 +714,11 @@ button.burg-toggle i {
     font-size: 2rem;
     height: 40px;
     position: relative;
-    right: 780px;
+    right: 699px;
     transform: rotate(90deg);
-    top: 304px;
+    top: 368px;
     width: 40px;
 }
-
 .enterprise__carousel-image {
     height: 75vh;
     width: 100%;
@@ -780,11 +779,15 @@ button.burg-toggle i {
 
 .mockups__shadow {
     box-shadow: 6px 6px 10px 1px rgb(0 0 0 / 30%);
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
 }
-
+video.xln-content-video_MS {
+    border-radius: 0px 10px 10px 0px;
+}
 .mockups__container {
     display: flex;
-    width: 93%;
+    width: 100%;
 }
 
 .mockups__platform {
@@ -808,9 +811,9 @@ button.burg-toggle i {
     margin-bottom: 13px;
 }
 .mockups__content {
-    left: 265px;
+    left: 135px;
     position: relative;
-    width: 60%;
+    width: 70%;
 }
 
 .mockups__content-title {
@@ -818,9 +821,10 @@ button.burg-toggle i {
     font-weight: 700;
 }
 
-.mockups__content-title h1 {
+.mockups__content-title h2 {
     color: var(--blueDark);
-    font-weight: 700;
+    font-weight: bold;
+    font-size: 55px;
 }
 
 .mockups__sec-content {
@@ -1299,16 +1303,14 @@ button.burg-toggle i {
     background-color: var(--blueDark);
     height: 100vh;
 }
-
 .login__container {
     display: flex;
     background-color: var(--white);
-    width: 50%;
+    width: 60%;
     position: relative;
-    left: 500px;
-    top: 150px;
+    top: 10%;
+    margin: auto;
 }
-
 .login__content-inputs {
     display: flex;
     flex-direction: column;
@@ -1394,8 +1396,9 @@ button.burg-toggle i {
 .login__content-remind {
     display: flex;
     position: relative;
-    column-gap: 3rem;
-    left: 75px;
+    column-gap: 6rem;
+    left: 52px;
+    font-size: 12px;
 }
 
 .login__input-reminder {
@@ -1418,9 +1421,9 @@ button.burg-toggle i {
 }
 
 .login__header-logo-title p {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--blueDark);
-    font-weight: bold;
+    padding-top: 19px;
 }
 
 .header__register {
@@ -1530,15 +1533,14 @@ button.burg-toggle i {
     border-radius: 5px;
     color: var(--white);
     position: absolute;
-    left: 700px;
+    left: 780px;
     top: 400px;
     height: auto;
-    width: 45%;
+    width: 41%;
     padding: 5%;
     padding-top: 2%;
     padding-bottom: 6%;
 }
-
 .planes__form-content {
     position: relative;
     top: 30px;
@@ -1560,6 +1562,12 @@ button.burg-toggle i {
 .form__group p {
     position: relative;
     top: 10px;
+}
+
+.xln__note__text{
+    color: var(--green);
+    font-size: 11px;
+    padding-bottom: 10px;
 }
 
 .form__group input {
@@ -3980,7 +3988,7 @@ p.xln_price_GDC span {
     .mockups__content p {
         font-size: 20px;
     }
-    .mockups__content-title h1 {
+    .mockups__content-title h2 {
         font-size: 56px;
         font-family: 'GTWalsheimPro-Bold';
         letter-spacing: -2px;

@@ -1,22 +1,51 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Col, Image } from "react-bootstrap";
 import { tablet, telefono} from "../assets/img";
 
 export const Mockups = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+      let options = {
+      rootMargin: "0px",
+      threshold: [0.25, 0.75]
+      };
+
+      let handlePlay = (entries, observer) => {
+      entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+          videoRef.current.play();
+          } else {
+          videoRef.current.pause();
+          }
+      });
+      };
+
+      let observer = new IntersectionObserver(handlePlay, options);
+
+      observer.observe(videoRef.current);
+  });
+
   return (
     <div className="mockups">
       <div className="mockups__container">
         <Col className="mockups__shadow" >
           <div className="mockups__platform">
-            <h1>
-              Mockups <br /> platform
-            </h1>
+            <video className="xln-content-video_MS"
+              width="100%"
+              ref={videoRef}
+              pause={false}
+              muted={true}
+              controls
+              /* poster={posterMSVideo} */
+              src={require("./../assets/videos/video-promocional.mp4")}
+            ></video>
           </div>
         </Col>
         <Col>
           <div className="mockups__content">
             <div className="mockups__content-title" >
-              <h1>Conviértete en un caso de éxito y apuéstale a la innovacion con Xlearn </h1>
+              <h2>Conviértete en un caso de éxito y apuéstale a la innovacion con Xlearn </h2>
               <div className="xln_iconLine_title"></div>
             </div>
             <p>
@@ -33,7 +62,7 @@ export const Mockups = () => {
           
             <div className="mockups__sec-content">
               <div>
-                <h1 className="mockups__sec-title" >Conoce las novedades que tenemos para ti y  para tu equipo </h1>
+                <h2 className="mockups__sec-title" >Conoce las novedades que tenemos para ti y  para tu equipo </h2>
                 <div className="xln_iconLine_title"></div>
               </div>
               <p>
