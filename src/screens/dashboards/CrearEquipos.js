@@ -13,8 +13,6 @@ import { useEffect } from "react";
 
 
 
-var selectLider = new Map();
-
 export const CrearEquipos = () => {
 
   const { token, subcompanie_id } = useSelector((state) => state.auth);
@@ -24,6 +22,7 @@ export const CrearEquipos = () => {
   });
   const { name, description } = formValues;
   const [usersWithoutGroup, setUsersWithoutGroup] = useState()
+  const [lider, setLider] = useState([])
   const [users, handleInputUser] = useForm({
     user: ''
   });
@@ -59,17 +58,18 @@ export const CrearEquipos = () => {
     }
   };
 
-  console.log(selectLider.length)
-
   const addUsersToGroup = (e) => {
-    selectLider.set(e?.target?.id, e?.target?.value)
-    console.log('selectlider', selectLider)
+
+    let obj = [
+      {
+        id: e?.target?.id,
+        value: e?.target?.value
+      },
+      ...lider
+    ]
+    setLider(obj)
     
   }
-
-  console.log(selectLider)
-  // array?.forEach()
-
   
 
   return (
@@ -96,14 +96,13 @@ export const CrearEquipos = () => {
             <input onChange={handleInputChange} name="name" type="text" placeholder="Nombre del equipo" />
             <select placeholder="Agregar rol de lider" className="xlrn__asignar-rol">
               <option value="..." >Asignar rol de lider</option>
-              {/* {users && 
-                users?.map((item, index) => (
+              {lider?.map((item, index) => (
                   <option key={index} value={item.id} onChange={handleInputUser} name="user">
-                    {item.name}
+                    {item.value}
                   </option>
                   )
                 )
-              } */}
+              }
             </select>
             {usersWithoutGroup &&
               usersWithoutGroup.map((item, index) => (
