@@ -13,7 +13,7 @@ export const NavegacionDashboard = () => {
                         <NavLink to='/dashboard/empresa' className='dashboard__nav-link' ><img src={NavIconLeft_01}/> Inicio</NavLink>
                         <NavLink to='/gestion/cupos' className='dashboard__nav-link' ><img src={NavIconLeft_02}/> Gestion de cupos</NavLink>
                         <NavLink to='/gestion/equipo' className='dashboard__nav-link' ><img src={NavIconLeft_04}/> Gestion se equipos</NavLink>
-                        <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_05}/> Gestion de usuarios</NavLink>
+                        <NavLink to='/asignacion/cupos' className='dashboard__nav-link' ><img src={NavIconLeft_05}/> Gestion de usuarios</NavLink>
                         <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_03}/> Chat</NavLink>
                         <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_06}/> Reporte</NavLink>
                     </Nav>

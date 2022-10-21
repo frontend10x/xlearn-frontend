@@ -14,7 +14,8 @@ export const authReducer = (state = initialState, action) => {
                 id: action.payload.id,
                 subcompanie_id: action.payload.subcompanie_id,
                 groups: action.payload.groups,
-                type: action.payload.type
+                type: action.payload.type,
+                diagnostic: action.payload.diagnostic
             }
 
         case types.logout:
