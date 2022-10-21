@@ -16,6 +16,7 @@ import { useEffect } from "react";
 var selectLider = new Map();
 
 export const CrearEquipos = () => {
+
   const { token, subcompanie_id } = useSelector((state) => state.auth);
   const [formValues, handleInputChange] = useForm({
     name: '',
@@ -58,8 +59,18 @@ export const CrearEquipos = () => {
     }
   };
 
+  console.log(selectLider.length)
+
   const addUsersToGroup = (e) => {
+    selectLider.set(e?.target?.id, e?.target?.value)
+    console.log('selectlider', selectLider)
+    
   }
+
+  console.log(selectLider)
+  // array?.forEach()
+
+  
 
   return (
     <div className="crear__equipos-section">
