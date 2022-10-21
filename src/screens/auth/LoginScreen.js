@@ -31,7 +31,7 @@ export const LoginScreen = () => {
     }
     else if (type === "Lider") {
       navigate('/inicia/diagnostico');
-    }else if (type === "Integrante") {
+    }else if (type === "Participante") {
       navigate('/dashboard/integrante');
     }
   },[navigate, type, diagnostic])

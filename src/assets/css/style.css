@@ -3692,6 +3692,12 @@ p.xln_price_GDC span {
     position: relative;
 }
 
+.xlrn__asignar-rol {
+    height: 40px;
+    margin-bottom: 20px;
+    width:477px;
+}
+
 /* Gestion de Equipos Fin*/
 
 /* Creacion de usuario Inicio */

@@ -248,3 +248,16 @@ export const getLessons = async (token, id) => {
   return response.data
 
 }
+
+export const getUserWithoutGroups = async (token, subcompanie_id) => {
+  
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = await axios.get(baseURL + `/api/v1/user/sub_companies_withou_group?offset=1&limit=-1&subcompanies_id=${subcompanie_id}`, config)
+
+  return response.data
+}

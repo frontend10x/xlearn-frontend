@@ -1,27 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDashboard";
 import { Footer } from "../../componentes/Footer";
 import { useForm } from "../../hooks/useForm";
-import { createGroup } from "../../services/services";
+import { createGroup, getUserWithoutGroups } from "../../services/services";
 import { useSelector } from "react-redux";
 import { Alert, Image } from "react-bootstrap";
 import { equiposIcon } from "../../assets/img";
 import { Axios } from "axios";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 
 
+var selectLider = new Map();
 
 export const CrearEquipos = () => {
-  const { token } = useSelector((state) => state.auth);
+  const { token, subcompanie_id } = useSelector((state) => state.auth);
   const [formValues, handleInputChange] = useForm({
-    name:'',
-    description:'',
+    name: '',
+    description: '',
   });
   const { name, description } = formValues;
+  const [usersWithoutGroup, setUsersWithoutGroup] = useState()
+  const [users, handleInputUser] = useForm({
+    user: ''
+  });
+  useEffect(() => {
+    async function getUsersFromSubcompanieId() {
+      const data = await getUserWithoutGroups(token, subcompanie_id)
+      setUsersWithoutGroup(data.response._embedded.users)
+    }
+    getUsersFromSubcompanieId();
+  }, []);
 
-  
 
   const createTeams = async (e) => {
     try {
@@ -34,6 +46,8 @@ export const CrearEquipos = () => {
         // footer: '<a href="">Why do I have this issue?</a>'
       })
 
+      addUsersToGroup();
+
     } catch (error) {
       Swal.fire({
         icon: 'success',
@@ -43,6 +57,9 @@ export const CrearEquipos = () => {
       })
     }
   };
+
+  const addUsersToGroup = (e) => {
+  }
 
   return (
     <div className="crear__equipos-section">
@@ -66,7 +83,25 @@ export const CrearEquipos = () => {
 
           <div className="xlrn__crear-equipos__form" id="form" >
             <input onChange={handleInputChange} name="name" type="text" placeholder="Nombre del equipo" />
-            {/* <input onChange={handleInputChange} name="description" type="text" placeholder="Descripcion"/> */}
+            <select placeholder="Agregar rol de lider" className="xlrn__asignar-rol">
+              <option value="..." >Asignar rol de lider</option>
+              {/* {users && 
+                users?.map((item, index) => (
+                  <option key={index} value={item.id} onChange={handleInputUser} name="user">
+                    {item.name}
+                  </option>
+                  )
+                )
+              } */}
+            </select>
+            {usersWithoutGroup &&
+              usersWithoutGroup.map((item, index) => (
+                <div>
+                  <input type="radio" value={item.name} id={item.id} onClick={addUsersToGroup} />
+                  <h1>{item.name}</h1>
+                </div>
+              ))
+            }
             <button className="xlrn__crear-equipos__form-button" onClick={createTeams} >Crear equipo</button>
           </div>
 
