@@ -60,14 +60,14 @@ export const CrearEquipos = () => {
 
   const addUsersToGroup = (e) => {
 
-    let obj = [
+    let arr = [
       {
         id: e?.target?.id,
         value: e?.target?.value
       },
       ...lider
     ]
-    setLider(obj)
+    setLider(arr)
     
   }
   
