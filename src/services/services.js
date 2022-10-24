@@ -262,7 +262,7 @@ export const getUserWithoutGroups = async (token, subcompanie_id) => {
   return response.data
 }
 
-export const addUserToGroup = async (token, group_id,user) => {
+export const addUserToGroup = async (token, group_id, user, leader) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -270,7 +270,7 @@ export const addUserToGroup = async (token, group_id,user) => {
   };
 
   const body = {user}
-  console.log(body,user,'body y user')
+  body['leader'] = leader
 
   const response = await axios.post(baseURL + `/api/v1/groupuser/assignment/${group_id}`,body,config)
   return response
