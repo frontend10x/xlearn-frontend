@@ -672,7 +672,7 @@ button.burg-toggle i {
 .xln-btn-banners-puntos {
     margin-top: -46%;
     position: absolute;
-    left: 64%;
+    left: 68%;
 }
 
 .enterprise .carousel-indicators [data-bs-target] {
@@ -696,7 +696,7 @@ button.burg-toggle i {
     transform: rotate(-90deg);
     position: relative;
     top: 368px;
-    left: 600px;
+    left: 658px;
 }
 .enterprise_carousel-next, .enterprise_carousel-prev {
     border-radius: 2rem;
@@ -714,7 +714,7 @@ button.burg-toggle i {
     font-size: 2rem;
     height: 40px;
     position: relative;
-    right: 699px;
+    right: 631px;
     transform: rotate(90deg);
     top: 368px;
     width: 40px;
@@ -776,7 +776,9 @@ button.burg-toggle i {
     position: relative;
     bottom: 100px;
 }
-
+.mockups-section {
+    padding-top: 7%;
+}
 .mockups__shadow {
     box-shadow: 6px 6px 10px 1px rgb(0 0 0 / 30%);
     height: 100%;
@@ -881,12 +883,7 @@ video.xln-content-video_MS {
 /* Inicio Preguntas y respuestas */
 .carousel-indicators.xln_preguntas_NavPuntos {
     width: 100%;
-    left: 0;
-    right: 0;
-    margin-right: 0;
-    margin-left: 0;
-    margin: 0 auto;
-    bottom: 252px;
+    margin-top: 0px;
 }
 .preguntas_frecuentes .active {
     background-color: var(--green);
@@ -894,7 +891,7 @@ video.xln-content-video_MS {
 
 .preguntas__frecuentes {
     background-color: var(--white);
-    height: 700px;
+    /* height: 700px; */
 }
 
 .preguntas__frecuentes-content {
@@ -919,11 +916,19 @@ video.xln-content-video_MS {
     width: 90%;
     margin: auto;
 }
-
 .preguntas__carousel-image {
-    width: 35%;
+    width: 80%;
+    border-radius: 20px;
 }
-
+.xln_carousel_PositionLeft {
+    width: 50%;
+    float: left;
+}
+.xln_carousel_PositionRigth {
+    width: 50%;
+    float: left;
+    position: relative;
+}
 .preguntas__frecuentes .carousel-control-prev {
     width: 10%;
     height: 100px;
@@ -935,13 +940,12 @@ video.xln-content-video_MS {
     height: 100px;
     z-index: 2;
 }
-
 .preguntas__carousel-prev {
     color: var(--black);
     font-size: 2.5rem;
     position: relative;
-    top: 330px;
-    left: 750px;
+    top: 417px;
+    left: 617px;
     transform: rotate(-90deg);
     background-color: var(--whiteOff);
     width: 50px;
@@ -957,8 +961,8 @@ video.xln-content-video_MS {
     height: 50px;
     transform: rotate(90deg);
     width: 50px;
-    top: 330px;
-    right: 750px;
+    top: 417px;
+    right: 611px;
     background-color: var(--whiteOff);
 }
 
@@ -978,18 +982,23 @@ video.xln-content-video_MS {
 .preguntas__carousel-next:hover {
     color: var(--green);
 }
-
 .preguntas__content-box {
+    width: 100%;
+    position: absolute;
+    left: 20%;
+    margin: 10% 0 0 -25px;
+}
+/* .preguntas__content-box {
     bottom: 70px;
     left: 100px;
     position: relative;
-}
+} */
 
-.preguntas__slides-content {
+/* .preguntas__slides-content {
     position: relative;
     left: 550px;
     bottom: 240px;
-}
+} */
 
 .preguntas__comillas {
     color: var(--green);
@@ -4025,10 +4034,10 @@ p.xln_price_GDC span {
     .preguntas__carousel-image {
         width: 40%;
     }
-    .preguntas__slides-content {
+    /* .preguntas__slides-content {
         bottom: 170px;
         left: 420px;
-    }
+    } */
     .preguntas__slides-content_info {
         font-size: 20px;
     }
@@ -4150,10 +4159,10 @@ p.xln_price_GDC span {
     .preguntas__carousel-image {
         width: 45%;
     }
-    .preguntas__slides-content {
+   /*  .preguntas__slides-content {
         bottom: 190px;
         left: 390px;
-    }
+    } */
     .preguntas__slides-content h4 {
         font-size: 16px;
     }
@@ -4328,10 +4337,10 @@ p.xln_price_GDC span {
     .preguntas__carousel-image {
         width: 45%;
     }
-    .preguntas__slides-content {
+    /* .preguntas__slides-content {
         bottom: 190px;
         left: 390px;
-    }
+    } */
     .preguntas__slides-content h4 {
         font-size: 16px;
     }
@@ -4477,10 +4486,10 @@ p.xln_price_GDC span {
     }
     /* Mockups Fin */
     /* Preguntas Inicio */
-    .preguntas__slides-content {
+    /* .preguntas__slides-content {
         left: 280px;
         bottom: 150px;
-    }
+    } */
     .preguntas__slides-content h4 {
         font-size: 12px;
     }
@@ -4725,11 +4734,11 @@ p.xln_price_GDC span {
     .preguntas__carousel-slides {
         width: 90%;
     }
-    .preguntas__content-box {
+    /* .preguntas__content-box {
         position: relative;
         top: 170px;
         left: -230px;
-    }
+    } */
     .preguntas__slides-content p {
         font-size: 12px;
     }

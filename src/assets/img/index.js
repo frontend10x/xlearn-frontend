@@ -59,3 +59,6 @@ export {default as homeCarousel04} from './home/carousel/4.png';
 /* export {default as posterMSVideo} from './home/carousel/4.png'; */
 
 
+export {default as homeCarouselPF01} from './home/preguntas-frecuentes/1.png';
+export {default as homeCarouselPF02} from './home/preguntas-frecuentes/2.png';
+
