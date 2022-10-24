@@ -7,7 +7,7 @@ import { addUserToGroup, createGroup, getUserWithoutGroups } from "../../service
 import { useSelector } from "react-redux";
 import { Alert, Image } from "react-bootstrap";
 import { equiposIcon } from "../../assets/img";
-import { Axios } from "axios";
+// import { Axios } from "axios";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 
