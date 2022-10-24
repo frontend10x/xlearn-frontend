@@ -201,9 +201,9 @@ export const typeOfUsers = async (token) => {
 
 }
 
-export const creationUser = async (token, name, email, phone, type_id, rol_id, password, password_confirmation) => {
+export const creationUser = async (token, name, email, phone, type_id, rol_id, password, password_confirmation, subcompanies_id) => {
 
-  const body = { name, email, phone, type_id, rol_id, password, password_confirmation }
+  const body = { name, email, phone, type_id, rol_id, password, password_confirmation,subcompanies_id }
 
   const config = {
     headers: {
@@ -247,4 +247,31 @@ export const getLessons = async (token, id) => {
   const response = await axios.get(baseURL + `/api/v1/lesson/show_course/${id}?offset1`,config)
   return response.data
 
+}
+
+export const getUserWithoutGroups = async (token, subcompanie_id) => {
+  
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = await axios.get(baseURL + `/api/v1/user/sub_companies_withou_group?offset=1&limit=-1&subcompanies_id=${subcompanie_id}`, config)
+
+  return response.data
+}
+
+export const addUserToGroup = async (token, group_id,user) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const body = {user}
+  console.log(body,user,'body y user')
+
+  const response = await axios.post(baseURL + `/api/v1/groupuser/assignment/${group_id}`,body,config)
+  return response
 }

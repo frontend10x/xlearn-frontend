@@ -32,7 +32,7 @@ export const UsoCupos = () => {
             <HeaderDashboard />
             <div className="xlrn__uso-cupos__section-container d-flex" >
                 <div className="xlrn__uso-cupos__nav" >
-                    <NavegacionDashboard />
+                    {/* <NavegacionDashboard /> */}
                 </div>
                 <div className="xlrn__uso-cupos__container-titles" >
                     <div className="xlrn__uso-cupos__titles-content" >
@@ -42,42 +42,17 @@ export const UsoCupos = () => {
                 </div>
 
                 <div className="xlrn__uso-cupos__container-blocks" >
-                    <div className="d-flex gap-5">
-
-                        <div className="xlrn__uso-cupos__block" >
-                            <div className="xlrn__uso-cupos__block-function" >
-                                <Image src={cuposIcon} />
-                                <NavLink href="/creacion/usuarios" className="xlrn__uso-cupos__block-button" >Ingresar</NavLink>
-                            </div>
-                            <div className="xlrn__uso-cupos__content-users" >
-                                <h3>Cupos disponibles</h3>
-                                <p>Ingresa tus usuarios</p>
-                            </div>
-
-                        </div>
-
-                        <div className="xlrn__uso-cupos__block" >
-                            <div className="xlrn__uso-cupos__block-function" >
-                                <Image src={equiposIcon} />
-                                <NavLink href="/gestion/equipo" className="xlrn__uso-cupos__block-button" >Ingresar</NavLink>
-                            </div>
-                            <div className="xlrn__uso-cupos__content-users" >
-                                <h3>en uso</h3>
-                                <p>cupos sin usuarios asignados</p>
-                            </div>
-                        </div>
-                    </div>
-
                     <div className="xlrn__uso-cupos-registered__container" >
+                        <p>Usuarios</p>
                         <div className="xlrn__uso-cupos-registered" >
                             {users &&
                                 users.map((item, index) => (
                                     <div key={index} className="xlrn__uso-cupos-registered__card" >
-                                        <Image src={imagenUser} className="user__image" />
+                                        {/* <img src={imagenUser} className="user__image" /> */}
+                                            <input type='checkbox' value={item.id} onClick={addToGroup} />
                                         <div className="xlrn__uso-cupos-registered__card-content" >
                                             <h1>{item.name}</h1>
                                             <p>{item.email}</p>
-                                            <input type='checkbox' value={item.id} onClick={addToGroup} />
                                         </div>
                                     </div>
                                 ))
@@ -85,7 +60,6 @@ export const UsoCupos = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
             {/* <Footer /> */}
         </div>

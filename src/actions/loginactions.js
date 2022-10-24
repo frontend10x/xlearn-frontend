@@ -1,6 +1,6 @@
 import { types } from "../types/types";
 
-export const login = (email,password,token,name,roles, id, subcompanie_id, groups, type) => {
+export const login = (email,password,token,name,roles, id, subcompanie_id, groups, type,diagnostic) => {
     return {
         type: types.login,
         payload: {
@@ -12,7 +12,8 @@ export const login = (email,password,token,name,roles, id, subcompanie_id, group
             id,
             subcompanie_id,
             groups,
-            type
+            type,
+            diagnostic
         }
     }
 }

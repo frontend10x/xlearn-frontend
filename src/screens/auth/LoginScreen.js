@@ -12,7 +12,7 @@ import Swal from "sweetalert2";
 
 export const LoginScreen = () => {
 
-  const { type } = useSelector(state => state.auth);
+  const { type, diagnostic } = useSelector(state => state.auth);
   const [formValues, handleInputChange] = useForm({
     email: "",
     password: "",
@@ -21,13 +21,20 @@ export const LoginScreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   
+  
   useEffect(()=>{
     if (type === "Empresa") {
       navigate('/dashboard/empresa');
-    } else if (type === "Lider") {
-      navigate('/inicia/diagnostico');
+    } 
+    else if (type === "Lider" && diagnostic === true ) {
+      navigate('/dashboard/lider');
     }
-  },[navigate, type])
+    else if (type === "Lider") {
+      navigate('/inicia/diagnostico');
+    }else if (type === "Participante") {
+      navigate('/dashboard/integrante');
+    }
+  },[navigate, type, diagnostic])
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -46,9 +53,6 @@ export const LoginScreen = () => {
         user_name: data?.datosUsuario?.name
       }))
       
-          console.log(data,'structure')
-          console.log(data.datosUsuario.roles.name,'structure2')
-      
       dispatch(login(
         email, 
         password, 
@@ -58,8 +62,8 @@ export const LoginScreen = () => {
         data?.datosUsuario?.id, 
         data?.datosUsuario?.subcompanies_id, 
         data?.datosUsuario?.groups['0']?.group_id, 
-        data?.datosUsuario?.roles?.name));
-        console.log('type', type)
+        data?.datosUsuario?.roles?.name,
+        data?.datosUsuario?.diagnostic.status));
       
     } catch (error) {
           Swal.fire({

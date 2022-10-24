@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 
 export const CrearUsuarios = () => {
     
-    const {token, roles} = useSelector(state => state.auth)
+    const {token, roles,subcompanie_id} = useSelector(state => state.auth)
     const [formValues, handleInputChange] = useForm({
         name: '',
         email: '',
@@ -21,6 +21,7 @@ export const CrearUsuarios = () => {
         password:'',
         password_confirmation:''
     });
+
 
     const [users, setUsers] = useState();
     const [areaTelf, setAreaTelf] = useState([
@@ -41,7 +42,7 @@ export const CrearUsuarios = () => {
 
     const createUser = async () => {
         try {
-            const data = await creationUser( token,name, email, phone, type_id, rol_id, password, password_confirmation);
+            const data = await creationUser( token,name, email, phone, type_id, rol_id, password, password_confirmation, subcompanie_id);
             Swal.fire({
                 icon: 'success',
                 title: 'Usuario creado con exito',
@@ -50,8 +51,8 @@ export const CrearUsuarios = () => {
               })
         } catch (error) {
             Swal.fire({
-                icon: 'success',
-                title: 'Felicidades',
+                icon: 'error',
+                title: 'Algo Salio Mal',
                 text: `${error.response.data.message}`,
                 // footer: '<a href="">Why do I have this issue?</a>'
               })   
