@@ -100,8 +100,8 @@ export const AppRouter = () => {
 
         {/* RUTA DEL INTEGRANTE */}
         <Route element={<IntegranteRoute token={token} type={type} />}>
-        </Route>
          <Route exact path="/dashboard/integrante" element={<DashboardIntegrante />} />
+        </Route>
 
       </Routes>
     </Router>
