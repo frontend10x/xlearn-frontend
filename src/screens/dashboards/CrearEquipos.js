@@ -34,11 +34,20 @@ export const CrearEquipos = () => {
   }, [answer]);
 
   const createTeams = (e) => {
-    createGroup(token, name, description).then(event => {
+    const leader = document.getElementById('leader').value;
+    if (leader === "false") {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Por favor asigna un lider',
+        text: `Debes Asignar un lider a tu grupo`,
+      })
+      return 
+    } 
+      console.log(leader,'lider');
+      createGroup(token, name, description).then(event => {
       const group_id = event.id;
-      const leader = document.getElementById('leader').value;
+
       addUserToGroup(token, group_id, users, leader).then(event => {
-        console.log(event)
         Swal.fire({
           icon: 'success',
           title: 'Felicidades',
@@ -73,7 +82,7 @@ export const CrearEquipos = () => {
       setLider(arr);
       users.push(e.target.id);
     }
-    
+
   }
 
   return (
@@ -99,7 +108,7 @@ export const CrearEquipos = () => {
           <div className="xlrn__crear-equipos__form" id="form" >
             <input onChange={handleInputChange} name="name" type="text" placeholder="Nombre del equipo" />
             <select placeholder="Agregar rol de lider" className="xlrn__asignar-rol" id="leader">
-              <option value="..." >Asignar rol de lider</option>
+              <option value={false} >Asignar rol de lider</option>
               {lider?.map((item, index) => (
                 <option key={index} value={item.id} >
                   {item.value}
