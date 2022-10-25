@@ -11,8 +11,7 @@ export const PreguntasFrecuentes = () => {
         Preguntas frecuentes y tutoriales
       </h2>
       <p className="preguntas__frecuentes-subtitle">
-        ¿Tienes dudas? tenemos el espacio perfecto para ti; en esta seccion podras
-        resolver tus preguntas y encontrar contenido de valor
+          ¿Tienes dudas ? tenemos el espacio perfecto para ti ; en esta sección podrás resolver tus preguntas y encontrar contenido de valor
       </p>
       </div>
 
@@ -56,20 +55,15 @@ export const PreguntasFrecuentes = () => {
             <div className="preguntas__slides-content xln_carousel_PositionRigth">
               <div className="preguntas__content-box">
               <h4>
-                Feugiat pretium nib ipsum consequa vida tru quisque <br />
-                non tellus orci ac strud ctor tellus mauris Feugiat <br />
-                pretium nib ipsum conseq?
+                  ¿Sabes cómo generar los reportes, hacer seguimiento y monitorear los resultados de tu organización en los procesos de formación y desarrollo de proyectos?
               </h4>
               <div className="preguntas__slides-content_info ">
                 <p className="preguntas__comillas">“</p>
                 <p>
-                  Feugiat pretium nib ipsum consequa vida trum <br /> quisque
-                  non tellus orci ac strud ctor tellus mauris <br /> Feugiat
-                  pretium nib ipsum consequa vida trum <br /> Feugiat pretium
-                  nib ipsum consequa vida trum <br /> quisque non tell
+                  En este video te enseñamos todos los tips para monitorear los reportes de tu equipo de trabajo y los avances que se han generado alrededor del proyecto en desarrollo.
                 </p>
               </div>
-              <button className="preguntas__button" >LOREM IPSUM DOLOR SIT AMET</button>
+              <button className="preguntas__button" >Conocer más acerca de este tema →</button>
               </div>
 
             </div>
@@ -87,19 +81,14 @@ export const PreguntasFrecuentes = () => {
             <div className="preguntas__slides-content xln_carousel_PositionRigth">
               <div className="preguntas__content-box">
 
-                <h4>
-                  Feugiat pretium nib ipsum consequa vida tru quisque <br />
-                  non tellus orci ac strud ctor tellus mauris Feugiat <br />
-                  pretium nib ipsum conseq?
-                </h4>
-                <div className="preguntas__slides-content_info">
-                  <p className="preguntas__comillas">“</p>
-                  <p>
-                    Feugiat pretium nib ipsum consequa vida trum <br /> quisque
-                    non tellus orci ac strud ctor tellus mauris <br /> Feugiat
-                    pretium nib ipsum consequa vida trum <br /> Feugiat pretium
-                    nib ipsum consequa vida trum <br /> quisque non tell
-                  </p>
+              <h4>
+                  ¿Sabes cómo generar los reportes, hacer seguimiento y monitorear los resultados de tu organización en los procesos de formación y desarrollo de proyectos?
+              </h4>
+              <div className="preguntas__slides-content_info ">
+                <p className="preguntas__comillas">“</p>
+                <p>
+                  En este video te enseñamos todos los tips para monitorear los reportes de tu equipo de trabajo y los avances que se han generado alrededor del proyecto en desarrollo.
+                </p>
                 </div>
                 <button className="preguntas__button" >LOREM IPSUM DOLOR SIT AMET</button>
               </div>

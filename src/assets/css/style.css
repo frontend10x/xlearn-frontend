@@ -905,6 +905,9 @@ video.xln-content-video_MS {
 
 .preguntas__frecuentes-subtitle {
     text-align: center;
+    width: 50%;
+    margin: auto;
+    font-size: 20px;
 }
 
 .preguntas__carousel {
@@ -983,7 +986,7 @@ video.xln-content-video_MS {
     color: var(--green);
 }
 .preguntas__content-box {
-    width: 100%;
+    width: 80%;
     position: absolute;
     left: 20%;
     margin: 10% 0 0 -25px;
