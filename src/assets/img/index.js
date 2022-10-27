@@ -62,3 +62,15 @@ export {default as homeCarousel04} from './home/carousel/4.png';
 export {default as homeCarouselPF01} from './home/preguntas-frecuentes/1.png';
 export {default as homeCarouselPF02} from './home/preguntas-frecuentes/2.png';
 
+export {default as recomendation_01} from './recomendation_01.jpg';
+export {default as recomendation_02} from './recomendation_02.jpg';
+export {default as recomendation_03} from './recomendation_03.jpg';
+export {default as recomendation_04} from './recomendation_04.jpg';
+
+export {default as EmpresaInnovacion} from './innovacion.jpg';
+export {default as EmpresaTransformacion} from './transformacion-digital.jpg';
+export {default as EmpresaExelencia} from './exelencia-operacional.jpg';
+
+export {default as IconRutaPlayer} from './icon__course__player.png';
+
+export {default as ImageProyectos} from './cursos-internos/estudiantes.png';
