@@ -8,6 +8,9 @@ import {
   dashboard3,
   cuposIcon,
   equiposIcon,
+  EmpresaInnovacion,
+  EmpresaTransformacion,
+  EmpresaExelencia,
 } from "../../assets/img";
 import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDashboard";
 import { Image } from "react-bootstrap";
@@ -22,9 +25,9 @@ export const DashboardEmpresa = () => {
   const dispatch = useDispatch();
 
   const [course, setCourse] = useState([
-    { title: "Emprendimiento Corporativo", image: dashboard1 },
-    { title: "Transformacion digital", image: dashboard3 },
-    { title: "Excelencia operacional", image: dashboard3 },
+    { title: "Innovación", image: EmpresaInnovacion },
+    { title: "Transformación digital", image: EmpresaTransformacion },
+    { title: "Excelencia operacional", image: EmpresaExelencia },
   ]);
 
   const [news, setNews] = useState([
@@ -92,7 +95,7 @@ export const DashboardEmpresa = () => {
                       </button>
                     </div>
                     <div className="dashboard__title">
-                      <h3>0/20 Cupos utilizados</h3>
+                      <h3>0 Cupos utilizados</h3>
                       <p>Administra tus Cupos</p>
                     </div>
                   </div>

@@ -2,7 +2,18 @@ import React, { useEffect, useState } from "react";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDashboard";
 import { Image } from "react-bootstrap";
-import { banner_cursos, dashboard1, dashboard3, dashboard2, construccion, XlearnLogo, Image_02 } from "../../assets/img";
+import { 
+  banner_cursos,
+  dashboard1, 
+  dashboard3, 
+  dashboard2,
+  construccion,
+  XlearnLogo,
+  Image_02,
+  recomendation_01,
+  recomendation_02,
+  recomendation_03,
+  recomendation_04, } from "../../assets/img";
 import { useSelector } from "react-redux";
 import { Footer } from "../../componentes/Footer";
 import { useNavigate } from "react-router-dom";
@@ -14,9 +25,10 @@ export const DashboardLider = () => {
   const navigate = useNavigate();
 
   const [course, setCourse] = useState([
-    { title: "Emprendimiento Corporativo", image: dashboard3, subtitle: "presenta tus ideas de negocio", time: "2H", user: "366" },
-    { title: "Transformacion digital", image: dashboard3, subtitle: "define herramientas para tu negocio", time: "2H", user: "366" },
-    { title: "Excelencia operacional", image: dashboard3, subtitle: "determina tu segmento de clientes", time: "2H", user: "366" },
+    { title: "Presentaciones efectivas de negocios", image:  recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
+    { title: "Modelación de negocios", image:  recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },
+    { title: "Diseño de propuesta de valor", image:  recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
+    { title: "Prototipado", image:  recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
   ]);
   const [courseRoute, setCourseRoute] = useState();
   const redirect = (e) => (

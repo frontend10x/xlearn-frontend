@@ -1838,7 +1838,7 @@ p.xln__register_text_TyC {
     }
     .xln-contentSection-block-empresa .dashboard__card-body {
         width: 95%;
-        height: 54vh;
+        height: 50vh;
         background-color: var(--white);
         border-radius: 10px;
     }
@@ -2899,11 +2899,11 @@ input.preguntas__diagnostico-checkbox {
     top: 150px;
     display: flex;
     height: 100vh;
-    width: 100%;
+    width: 92%;
     margin: auto;
 }
 .dashboard__lider-container_courses-card {
-    padding: 5%;
+    padding: 1%;
     padding-top: 0!important;
 }
 .dashboard__lider-container_courses-card-content {
@@ -2950,7 +2950,7 @@ input.preguntas__diagnostico-checkbox {
     position: absolute;
     bottom: 0;
     margin: 0 auto;
-    left: 33%;
+    left: 9%;
 }
 
 .dashboard__lider-container-help {
@@ -3930,16 +3930,46 @@ p.xln_price_GDC span {
 /* Reproductor de video inicio */
 .video__reproduccion-section {
     background-color: var(--blueDark);
-    height: 150vh;
+    /* height: 150vh; */
 }
-
+.video__reproduccion-container-player button {
+    background: #fff0;
+    border: 0px;
+}
 .video__reproduccion-container-player {
     height: 666px;
-    width:1156px;
+    width: 95%;
     position: relative;
-    left: 100px;
+    margin: auto;
 }
-
+.xln_player_course {
+    width: 70%;
+    float: left;
+}
+.xln__content__rutaClick {
+    margin-top: 16px;
+    position: relative;
+    top:10px;
+}
+h3.xlnIcon__couser__ruta {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    font-size: 17px;
+    padding-top: 5px;
+    color: #fff;
+}
+.xlnMenu__icon__player img {
+    width: 60px;
+    position: relative;
+    left: -8px;
+}
+.xlnMenu__icon__player p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
 .videoplayer__image {
     height: 666px;
     width:1156px;
@@ -4006,7 +4036,44 @@ p.xln_price_GDC span {
 /* Reproductor de video Fin */
 
 /* InfoPlayer Component Inicio Fin*/
-
+.xlnPlayer__content__proyectos {
+    width: 70%;
+    margin: auto;
+}
+.proyectos__text {
+    width: 60%;
+    float: left;
+    padding: 20px;
+}
+.proyectos__img {
+    width: 30%;
+    float: left;
+    padding: 20px;
+}
+.proyectos__img h3{
+    font-weight: bold;
+    padding: 10px;
+}
+.xlrn__infovideoplayer-content {
+    height: auto;
+    padding-top: 4%;
+}
+.xlrn__infovideoplayer-content-users {
+    width: 70%;
+    height: auto;
+    display: flex;
+    margin: auto;
+}
+.xlrn__infovideo-nav-container-buttons input {
+    background: none;
+    width: 100px;
+    border: none;
+    font-weight: bold;
+}
+.xlrn__infovideo-nav-container-buttons input:hover {
+    border-bottom: 4px solid var(--blueAlternative);
+    color: var(--blueAlternative);
+}
 .xlrn__infovideo-nav {
     background-color: var(--whiteOff);
     height: 15vh;
