@@ -112,17 +112,17 @@ export const ReproduccionDeCursos = () => {
                         <h3 style={{color:'white'}}>{videoCurrent?.name}</h3>
                         <iframe id={`video-${videoCurrent?.vimeoId}`} width="993" height="562" src={videoCurrent?.video} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
                     </div>
-                    {/* {lessons?.map((video, key) => (
+                    {lessons?.map((video, key) => (
                         <div key={key}>
                             <button onClick={() => changeVideo(video)}>
                                 <h3 style={{color:'white'}}>{key + ' - ' +video?.name}</h3>
                             </button>
                         </div>
-                    ))}    */}
+                    ))}   
                     </div>
                 </div>
             </div>
-            <InfoVideoPlayer proffesor={proffesor} />
+            {/* <InfoVideoPlayer proffesor={proffesor} /> */}
         </div>
     )
 }

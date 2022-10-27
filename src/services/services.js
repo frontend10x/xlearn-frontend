@@ -275,3 +275,7 @@ export const addUserToGroup = async (token, group_id, user, leader) => {
   const response = await axios.post(baseURL + `/api/v1/groupuser/assignment/${group_id}`,body,config)
   return response
 }
+
+export const getEnterprisesGroup = () => {
+  
+}
