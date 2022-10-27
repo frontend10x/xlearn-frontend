@@ -103,18 +103,23 @@ export const ReproduccionDeCursos = () => {
             <HeaderDashboard />
             <div className="video__reproduccion-container" >
                 <div className="video__reproduccion-content" >
-                    <h2>{name}</h2>
+                    <h2 style={{color:'white'}}>{videoCurrent?.name}</h2>
+                    {/* <h2>{name}</h2> */}
                     <button>Comunidad</button>
                 </div>
                 <div className="d-flex">
                     <div className="video__reproduccion-container-player" >
                         
                     <div className="xln_player_course">
-                        {/* <h3 style={{color:'white'}}>{videoCurrent?.name}</h3> */}
+                        
                         <iframe id={`video-${videoCurrent?.vimeoId}`} width="993" height="562" src={videoCurrent?.video} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
                     </div>
+                    <div className="xlnMenu__icon__player">
+                        <p>Ruta</p>
+                        <img src={IconRutaPlayer}/>
+                    </div>
                     {lessons?.map((video, key) => (
-                        <div key={key}>
+                        <div className="xln__content__rutaClick" key={key}>
                             <button onClick={() => changeVideo(video)}>
                                 {/* <h3 style={{color:'black'}}>{key + ' - ' +video?.name}</h3> */}
                                 <h3 className="xlnIcon__couser__ruta">{key}</h3>
@@ -124,7 +129,7 @@ export const ReproduccionDeCursos = () => {
                     </div>
                 </div>
             </div>
-            {/* <InfoVideoPlayer proffesor={proffesor} /> */}
+            <InfoVideoPlayer proffesor={proffesor} />
         </div>
     )
 }

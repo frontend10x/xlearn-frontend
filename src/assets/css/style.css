@@ -3985,18 +3985,18 @@ h3.xlnIcon__couser__ruta {
 
 .video__reproduccion-content {
     color: var(--white);
-    margin-bottom: 100px;
-    display: flex;
-    justify-content: space-around;
-    position: relative;
-    right: 270px;
+    padding-bottom: 100px;
     top: 50px;
+    width: 90%;
+    margin: auto;
+    position: relative;
 }
 
 .video__reproduccion-content h2 {
     font-weight: bold;
+    width: 70%;
+    float: left;
 }
-
 .video__reproduccion-content button {
     border: 1px solid var(--white);
     background-color: transparent;
@@ -4053,7 +4053,7 @@ h3.xlnIcon__couser__ruta {
 .proyectos__img h3{
     font-weight: bold;
     padding: 10px;
-    
+
 }
 .xlrn__infovideoplayer-content {
     height: auto;
