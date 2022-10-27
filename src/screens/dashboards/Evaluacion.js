@@ -6,25 +6,26 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { diagnosticQuestions } from "../../actions/diagnostico";
 import { confirmedRoute } from "../../actions/confirmRoute";
+import { diagnosticEvaluation } from "../../actions/evaluation";
 
 export const Evaluacion = () => {
   const { token, id, groups } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   // const [question, setQuestion] = useState();
   const [question, setQuestion ] = useState([
-    {question:"¿Cuál es el objetivo del curso de Análisis estratégico del entorno?",options:[
+    {question_id:1 ,question:"¿Cuál es el objetivo del curso de Análisis estratégico del entorno?",options:[
       {response:"Encontrar nuevas formas de aterrizar a la luna"},
       {response:"Conocer nuevas oportunidades de mercado"},
       {response:"Explorar y analizar oportunidades de negocio que conduzcan a definir el foco para el diseño de un nuevo negocio"},
       {response:"Identificar tendencias"}
     ]},
-    {question:"¿Cuál es la utilidad de la herramienta Foco de negocio?",options:[
+    {question_id:2,question:"¿Cuál es la utilidad de la herramienta Foco de negocio?",options:[
       {response:"Recopilar información de una oportunidad de negocio"},
       {response:"Mostrar el panorama de todas las posibles oportunidades de negocio alrededor de una temática"},
       {response:"Delimitar un espacio de mercado para el diseño del nuevo negocio y facilitar la síntesis, los hallazgos clave sobre la atmósfera, los artefactos y los actores de una oportunidad de negocio seleccionada"},
       {response:"Remodelar las líneas de cableado de la empresa"}
     ]},
-    {question:"¿Cuál es el objetivo del curso de Análisis estratégico del entorno?",options:[
+    {question_id:3,question:"¿Cuál es el objetivo del curso de Análisis estratégico del entorno?",options:[
       {response:"Encontrar nuevas formas de aterrizar a la luna"},
       {response:"Conocer nuevas oportunidades de mercado"},
       {response:"Explorar y analizar oportunidades de negocio que conduzcan a definir el foco para el diseño de un nuevo negocio"},
@@ -83,9 +84,7 @@ export const Evaluacion = () => {
   const nextPage = async () => {
     if (page === 4) {
       try {
-        const data = await registerDiagnostic(target, user_id, _rel, answers, group_id, token);
-        dispatch(diagnosticQuestions(answers, data.diagnostic_id, _rel));
-        dispatch(confirmedRoute(data.course_route))
+        // dispatch(diagnosticEvaluation(answers, question_id, _rel));
         navigate("/project/diagnostic/confirm_route");
       } catch (error) {
         console.error(error);
