@@ -113,23 +113,31 @@ export const ReproduccionDeCursos = () => {
                         {/* <h3 style={{color:'white'}}>{videoCurrent?.name}</h3> */}
                         <iframe id={`video-${videoCurrent?.vimeoId}`} width="993" height="562" src={videoCurrent?.video} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
                     </div>
+<<<<<<< HEAD
+                    {lessons?.map((video, key) => (
+                        <div key={key}>
+=======
                     <div className="xlnMenu__icon__player">
                         <p>Ruta</p>
                         <img src={IconRutaPlayer}/>
                     </div>
                     {lessons?.map((video, key) => (
                         <div className="xln__content__rutaClick" key={key}>
+>>>>>>> 5ce1507a524d5e23c0d3366ca0d6bba072b54f67
                             <button onClick={() => changeVideo(video)}>
                                 {/* <h3 style={{color:'black'}}>{key + ' - ' +video?.name}</h3> */}
                                 <h3 className="xlnIcon__couser__ruta">{key}</h3>
                             </button>
                         </div>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 5ce1507a524d5e23c0d3366ca0d6bba072b54f67
                     ))}   
                     </div>
                 </div>
             </div>
-            <InfoVideoPlayer proffesor={proffesor} />
+            {/* <InfoVideoPlayer proffesor={proffesor} /> */}
         </div>
     )
 }

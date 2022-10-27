@@ -8,5 +8,7 @@ export const types = {
     /* Diagnostico */
     proyectoRoute: '[ROUTE] PROYECTO',
     entrenamientoRoute: '[ROUTE] ENTRENAMIENTO',
-    ruta: '[ROUTE] CONFIRMACION'
+    ruta: '[ROUTE] CONFIRMACION',
+
+    /* Evaluacion */
 }

@@ -217,7 +217,7 @@ export const EmpresaFormulario = () => {
               name="website"
               value={website}
               onChange={handleInputChange}
-              placeholder="Website"
+              placeholder="Website (Opcional)"
             />
           </div>
           <div className="form__group">
@@ -344,7 +344,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group form__group__xln">
             <p className="form__group__text">
-              Cuéntanos más sobre tus necesidades <span>*</span>
+              Cuéntanos más sobre tus necesidades  <span>*</span>
             </p>
             <textarea
               name="observation"

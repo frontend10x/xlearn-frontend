@@ -10,7 +10,27 @@ import { confirmedRoute } from "../../actions/confirmRoute";
 export const Evaluacion = () => {
   const { token, id, groups } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  const [question, setQuestion] = useState();
+  // const [question, setQuestion] = useState();
+  const [question, setQuestion ] = useState([
+    {question:"¿Cuál es el objetivo del curso de Análisis estratégico del entorno?",options:[
+      {response:"Encontrar nuevas formas de aterrizar a la luna"},
+      {response:"Conocer nuevas oportunidades de mercado"},
+      {response:"Explorar y analizar oportunidades de negocio que conduzcan a definir el foco para el diseño de un nuevo negocio"},
+      {response:"Identificar tendencias"}
+    ]},
+    {question:"¿Cuál es la utilidad de la herramienta Foco de negocio?",options:[
+      {response:"Recopilar información de una oportunidad de negocio"},
+      {response:"Mostrar el panorama de todas las posibles oportunidades de negocio alrededor de una temática"},
+      {response:"Delimitar un espacio de mercado para el diseño del nuevo negocio y facilitar la síntesis, los hallazgos clave sobre la atmósfera, los artefactos y los actores de una oportunidad de negocio seleccionada"},
+      {response:"Remodelar las líneas de cableado de la empresa"}
+    ]},
+    {question:"¿Cuál es el objetivo del curso de Análisis estratégico del entorno?",options:[
+      {response:"Encontrar nuevas formas de aterrizar a la luna"},
+      {response:"Conocer nuevas oportunidades de mercado"},
+      {response:"Explorar y analizar oportunidades de negocio que conduzcan a definir el foco para el diseño de un nuevo negocio"},
+      {response:"Identificar tendencias"}
+    ]}
+  ])
   const [page, setPage] = useState();
   const [perPage, setPerpage] = useState(1);
   const [max, setMax] = useState();
@@ -28,7 +48,7 @@ export const Evaluacion = () => {
     async function quiz() {
       try {
         const data = await quizDiagnostic(token);
-        setQuestion(data.response._embedded.questions);
+        // setQuestion(data.response._embedded.questions);
         setPage(data.response["hc:offset"]);
         setMax(data.response["hc:limit"]);
       } catch (error) {
@@ -53,7 +73,8 @@ export const Evaluacion = () => {
 
   const previousPage = () => {
     if (page === 1) {
-      navigate("/selection/process");
+      setPage(page + 1)
+      // navigate("/selection/process");
     } else {
       setPage(page - 1);
     }
