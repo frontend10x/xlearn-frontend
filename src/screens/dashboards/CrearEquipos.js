@@ -5,12 +5,11 @@ import { Footer } from "../../componentes/Footer";
 import { useForm } from "../../hooks/useForm";
 import { addUserToGroup, createGroup, getUserWithoutGroups } from "../../services/services";
 import { useSelector } from "react-redux";
-import { Alert, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import { equiposIcon } from "../../assets/img";
-// import { Axios } from "axios";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 
 
 const users = []
@@ -25,6 +24,8 @@ export const CrearEquipos = () => {
   const [usersWithoutGroup, setUsersWithoutGroup] = useState()
   const [lider, setLider] = useState([]);
   const [answer, setAnswer] = useState(false);
+  const [teamManagement, setTeamManagement] = useState(false)
+  const navigate = useNavigate();
   useEffect(() => {
     async function getUsersFromSubcompanieId() {
       const data = await getUserWithoutGroups(token, subcompanie_id)
@@ -41,10 +42,10 @@ export const CrearEquipos = () => {
         title: 'Por favor asigna un lider',
         text: `Debes Asignar un lider a tu grupo`,
       })
-      return 
-    } 
-      console.log(leader,'lider');
-      createGroup(token, name, description).then(event => {
+      return
+    }
+    // console.log(leader,'lider');
+    createGroup(token, name, description).then(event => {
       const group_id = event.id;
 
       addUserToGroup(token, group_id, users, leader).then(event => {
@@ -54,6 +55,7 @@ export const CrearEquipos = () => {
           text: `${event.data.message}`,
         })
         setAnswer(event.message);
+        setTeamManagement(true)
       }
       );
     }
@@ -83,6 +85,12 @@ export const CrearEquipos = () => {
       users.push(e.target.id);
     }
 
+  }
+
+  const redirect = (e) => {
+    if (e.target.value == true) {
+      navigate("/manejo/equipos")
+    }
   }
 
   return (
@@ -125,7 +133,10 @@ export const CrearEquipos = () => {
                 </div>
               ))
             }
-            <button className="xlrn__crear-equipos__form-button" onClick={createTeams} >Crear equipo</button>
+            {teamManagement ?
+              <button className="xlrn__crear-equipos__form-button" onClick={redirect} value={teamManagement} >Gestion de equipos</button>
+              : <button className="xlrn__crear-equipos__form-button" onClick={createTeams} >Crear equipo</button>
+            }
           </div>
 
         </div>

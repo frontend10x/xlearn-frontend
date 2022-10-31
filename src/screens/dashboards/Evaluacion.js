@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { diagnosticQuestions } from "../../actions/diagnostico";
 import { confirmedRoute } from "../../actions/confirmRoute";
+import { diagnosticEvaluation } from "../../actions/evaluation";
 
 export const Evaluacion = () => {
   const { token, id, groups } = useSelector((state) => state.auth);
