@@ -1,6 +1,11 @@
 import axios from "axios";
 import { baseURL } from "../utils/route";
 
+export const registerAnswers = async (schema) => {
+  const response = await axios.post(baseURL + "/api/v1/answer/store", schema);
+  return response.data;
+}
+
 export const loginPost = async (email, password) => {
   const response = await axios.post(baseURL + "/api/v1/login", {
     email,
@@ -148,7 +153,7 @@ export const confirmRoute = async (token, diagnostic_id) => {
 
   const body = {}
 
-  const response = await axios.patch(baseURL + `/api/v1/diagnostic/confirm_route/${diagnostic_id}`,body, config);
+  const response = await axios.patch(baseURL + `/api/v1/diagnostic/confirm_route/${diagnostic_id}`, body, config);
 
   return response.data;
 };
@@ -203,7 +208,7 @@ export const typeOfUsers = async (token) => {
 
 export const creationUser = async (token, name, email, phone, type_id, rol_id, password, password_confirmation, subcompanies_id) => {
 
-  const body = { name, email, phone, type_id, rol_id, password, password_confirmation,subcompanies_id }
+  const body = { name, email, phone, type_id, rol_id, password, password_confirmation, subcompanies_id }
 
   const config = {
     headers: {
@@ -244,13 +249,13 @@ export const getLessons = async (token, id) => {
     }
   };
 
-  const response = await axios.get(baseURL + `/api/v1/lesson/show_course/${id}?offset1`,config)
+  const response = await axios.get(baseURL + `/api/v1/lesson/show_course/${id}?offset1`, config)
   return response.data
 
 }
 
 export const getUserWithoutGroups = async (token, subcompanie_id) => {
-  
+
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -269,13 +274,13 @@ export const addUserToGroup = async (token, group_id, user, leader) => {
     }
   };
 
-  const body = {user}
+  const body = { user }
   body['leader'] = leader
 
-  const response = await axios.post(baseURL + `/api/v1/groupuser/assignment/${group_id}`,body,config)
+  const response = await axios.post(baseURL + `/api/v1/groupuser/assignment/${group_id}`, body, config)
   return response
 }
 
 export const getEnterprisesGroup = () => {
-  
+
 }

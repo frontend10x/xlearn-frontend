@@ -11,4 +11,5 @@ export const types = {
     ruta: '[ROUTE] CONFIRMACION',
 
     /* Evaluacion */
+    evaluation: '[EVALUATION] ANSWERS'
 }
