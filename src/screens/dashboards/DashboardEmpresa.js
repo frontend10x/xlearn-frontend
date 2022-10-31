@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   vistaEmpresa,
   gradient,
@@ -19,17 +19,18 @@ import { Col } from "react-bootstrap";
 import { Footer } from "../../componentes/Footer";
 import { logout } from "../../actions/loginactions";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
+import { getEnterpriseGroups, getEnterpriseQuotas } from "../../services/services";
 
 export const DashboardEmpresa = () => {
-  const { name } = useSelector((state) => state.auth);
+  const { name,subcompanie_id,token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-
   const [course, setCourse] = useState([
     { title: "Innovación", image: EmpresaInnovacion },
     { title: "Transformación digital", image: EmpresaTransformacion },
     { title: "Excelencia operacional", image: EmpresaExelencia },
   ]);
-
+  const [quotas,setQuotas] = useState();
+  const [createdTeams,setCreatedTeams] = useState();
   const [news, setNews] = useState([
     {
       title: "Prepara tu proyecto",
@@ -42,6 +43,21 @@ export const DashboardEmpresa = () => {
       image: dashboard2,
     },
   ]);
+
+  useEffect(() => {
+    async function getQuotas() {
+      const data = await getEnterpriseQuotas(token, subcompanie_id)
+      setQuotas(data.quotas);
+    }
+
+    async function getGroups() {
+      const data = await getEnterpriseGroups(token,subcompanie_id)
+      setCreatedTeams(data.groups["hc:length"])
+    }
+
+    getQuotas();
+    getGroups();
+  },[])
 
   const handleLogout = () => {
     dispatch(logout());
@@ -95,7 +111,7 @@ export const DashboardEmpresa = () => {
                       </button>
                     </div>
                     <div className="dashboard__title">
-                      <h3>0 Cupos utilizados</h3>
+                      <h3>{quotas} Cupos utilizados</h3>
                       <p>Administra tus Cupos</p>
                     </div>
                   </div>
@@ -109,7 +125,7 @@ export const DashboardEmpresa = () => {
                       </button>
                     </div>
                     <div className="dashboard__title">
-                      <h3>0 Equipos Creados</h3>
+                      <h3>{createdTeams} Equipos Creados</h3>
                       <p>Crea y gestiona tus equipos</p>
                     </div>
                   </div>

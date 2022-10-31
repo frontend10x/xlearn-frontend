@@ -28,6 +28,7 @@ import { Evaluacion } from "../screens/dashboards/Evaluacion";
 import CorusePlayback from "../screens/dashboards/CoursePlayback";
 import { DashboardIntegrante } from "../screens/dashboards/DashboardIntegrante";
 import { IntegranteRoute } from "./IntegranteRoute";
+import { GestionDeEquipos } from "../screens/dashboards/GestionDeEquipos";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -55,6 +56,7 @@ export const AppRouter = () => {
           <Route exact path="/asignacion/cupos" element={<UsoCupos />} />
           <Route exact path="/creacion/usuarios" element={<CrearUsuarios />} />
           <Route exact path="/gestion/equipo" element={<CrearEquipos />} />
+          <Route exact path="/manejo/equipos" element={<GestionDeEquipos />} />
         </Route>
 
         {/* RUTA DEL LIDER */}

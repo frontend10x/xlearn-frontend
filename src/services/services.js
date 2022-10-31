@@ -276,6 +276,28 @@ export const addUserToGroup = async (token, group_id, user, leader) => {
   return response
 }
 
-export const getEnterprisesGroup = () => {
+export const getEnterpriseQuotas = async (token,subcompanie_id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
   
+  const body = ""
+
+  const response = await axios.post(baseURL + `/api/v1/payment/approved_payment_status?subcompanie_id=${subcompanie_id}`,body,config)
+  return response.data
+
+}
+
+export const getEnterpriseGroups = async (token,subcompanie_id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = await axios.get(baseURL + `/api/v1/group/list_company_group/${subcompanie_id}?offset=1`,config)
+  return response.data
+
 }

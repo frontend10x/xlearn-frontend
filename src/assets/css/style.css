@@ -56,11 +56,11 @@ button.burg-toggle i {
     background-color: transparent;
 }
 
-/* .header__container.background {
+.header__container.background {
     position: fixed!important;
     z-index: 9;
     width: 100%;
-} */
+}
 
 .header {
     transition: all 0.5s;
@@ -3812,6 +3812,10 @@ p.xln_price_GDC span {
 /* Gestion de Equipos Fin*/
 
 /* Creacion de usuario Inicio */
+
+.xlrn__crear-suarios__section .header{
+    position:fixed;
+}
 
 .xlrn__crear-usuarios__container {
     display: flex;
