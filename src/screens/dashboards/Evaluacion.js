@@ -9,7 +9,7 @@ export const Evaluacion = () => {
   const { token, groups } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [question, setQuestion] = useState([]);
-  const {id} = useParams();
+  const { id } = useParams();
   const [page, setPage] = useState(0);
   const [perPage, setPerpage] = useState(1);
   const indexAlphabetic = ["A", "B", "C", "D"];
@@ -35,36 +35,34 @@ export const Evaluacion = () => {
     quiz();
   }, []);
 
-  // useEffect(() => {
-  //   // console.clear();
-  //   if (page != undefined) {
-  //     const res = validateAnswers(page);
-  //     console.log(page, res);
-  //     setDisabled(!res);
-  //   }
-  // }, [page]);
+  useEffect(() => {
+    const res = validateAnswers(page);
+    setDisabled(!res);
+  }, [page]);
 
-  const respuesta = (event, questions, response) => {
+  const respuesta = (event, idQues, response) => {
     const savedAnswer = [...schema.answers];
-    const answers = savedAnswer.filter((e) => e.question_id != questions.id);
-    answers.push({ question_id: questions.id, answer: response.id });
+    const answers = savedAnswer.filter((e) => e.question_id != idQues);
+    answers.push({ question_id: idQues, answer: response.id });
     setDisabled(false);
     setSchema({ ...schema, answers: answers });
   };
 
   const previousPage = () => {
-    page > 1 && setPage(page - 1);
+    if (page == 0) {
+      console.log("Regresar a la pagina anterior");
+    }
+    page > 0 && setPage(page - 1);
   };
 
   const nextPage = async (status) => {
-    // const questionLength = question.length;
-    // if (validateAnswers(page - 1)) {
-    //   page < questionLength && setPage(page + 1);
-    //   if (status) {
-    //    const result = await registerAnswers(schema)
-    //     console.log("Fin del cuestionario");
-    //   }
-    // }
+    const questionLength = question.length;
+    if (validateAnswers(page)) {
+      page < (questionLength - 1) && setPage(page + 1);
+      if (status) {
+        console.log("Listo para enviar");
+      }
+    }
   };
 
   const validateAnswers = (numPages) => {
@@ -76,8 +74,6 @@ export const Evaluacion = () => {
       );
       if (isExists.length == 0) {
         return false
-        // const answers = { question_id: getIdQuestion.id, answer: null };
-        // setSchema({ ...schema, answers: [...schema.answers, answers] });
       }
       return true;
     } catch (error) {
@@ -98,34 +94,31 @@ export const Evaluacion = () => {
       <HeaderDashboard />
       <div className="preguntas__diagnostico-container">
         {question.length > 0 &&
-          Object.keys(question[0]).map((item, index) => {
-            // return(<h1>{item.question}</h1>)
-              return(
-              <div key={index} className="preguntas__diagnostico-content">
-                <h3>{item.question}</h3>
-                <ul className="preguntas__diagnostico-list">
-                  {item.options.map((items, index) => (
-                    <div
-                      key={index}
-                      className="preguntas__diagnostico-respuesta"
-                    >
-                      <input
-                        idanswer={index}
-                        idquestion={item.id}
-                        type="submit"
-                        className="preguntas__diagnostico-checkbox"
-                        onClick={(event) => respuesta(event, item, items)}
-                        value={indexAlphabetic[index]}
-                        name="course"
-                      ></input>
-                      <li>{items.response}</li>
-                    </div>
-                    
-                    ))}
-                </ul>
-              </div>
-            ) 
-          })}
+          (
+            <div className="preguntas__diagnostico-content">
+              <h3>{question[page].question}</h3>
+              <ul className="preguntas__diagnostico-list">
+                {question[page].options.map((items, index) => (
+                  <div
+                    key={index}
+                    className="preguntas__diagnostico-respuesta"
+                  >
+                    <input
+                      idanswer={index}
+                      idquestion={1}
+                      type="submit"
+                      className="preguntas__diagnostico-checkbox"
+                      onClick={(event) => respuesta(event, question[page].id, items)}
+                      value={indexAlphabetic[index]}
+                      name="course"
+                    ></input>
+                    <li>{items.response}</li>
+                  </div>
+                ))}
+              </ul>
+            </div>
+          )
+        }
       </div>
       <div>
         <div className="preguntas__footer">
@@ -137,10 +130,10 @@ export const Evaluacion = () => {
           </button>
           <button
             className="preguntas__footer-button_next"
-            // onClick={() => nextPage(question.length == page)}
+            onClick={() => nextPage((question.length - 1) == page)}
             disabled={isDisabled}
           >
-            {/* {question.length == page ? "Enviar respuesta" : "Siguiente"} */}
+            {question.length == page ? "Enviar respuesta" : "Siguiente"}
           </button>
         </div>
       </div>
