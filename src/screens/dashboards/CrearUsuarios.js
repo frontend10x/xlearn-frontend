@@ -25,7 +25,7 @@ export const CrearUsuarios = () => {
 
     const [users, setUsers] = useState();
     const [areaTelf, setAreaTelf] = useState([
-        {label:"+57", value:1}
+        {label:"integrante", value:1}
     ]);
 
     const {name, email, phone, type_id, rol_id, password, password_confirmation} = formValues;
@@ -97,7 +97,7 @@ export const CrearUsuarios = () => {
                             </div>
                             {/* O
                             <div className="xlrn__crear-usuarios__massive-charge" >
-                                <input type='file' className="xlrn__crear-usuarios__massive-charge__input"/>
+                                <input type='range' className="xlrn__crear-usuarios__massive-charge__input "/>
                             </div> */}
                         </div>
 

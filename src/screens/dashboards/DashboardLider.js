@@ -4,12 +4,6 @@ import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDash
 import { Image } from "react-bootstrap";
 import { 
   banner_cursos,
-  dashboard1, 
-  dashboard3, 
-  dashboard2,
-  construccion,
-  XlearnLogo,
-  Image_02,
   recomendation_01,
   recomendation_02,
   recomendation_03,
@@ -31,8 +25,14 @@ export const DashboardLider = () => {
     { title: "Prototipado", image:  recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
   ]);
   const [courseRoute, setCourseRoute] = useState();
+  const [progress,setProgress] = useState(true); 
+  
   const redirect = (e) => (
     navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`)
+  )
+
+  const evaluation = (e) => (
+    navigate(`/evaluacion`)
   )
 
   useEffect(() => {
@@ -43,8 +43,6 @@ export const DashboardLider = () => {
 
     getUserCourses()
   }, [])
-
-  console.log(courseRoute,'ruta de los cursos')
 
   return (
     <div className="dashboard__lider" >
@@ -75,9 +73,12 @@ export const DashboardLider = () => {
                   <p>Curso A</p>
                   <h3>{item.name}</h3>
                   <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
-                  <h4>Progreso: <span>40%</span></h4> | <h4> Lecciones: 6 </h4>
+                  <h4>Progreso: <span>0%</span></h4> | <h4> Lecciones: 0 </h4>
                   </div>
-                  <button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Ingresar</button>
+                  {progress ?
+                    <button onClick={evaluation} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Presentar</button>
+                    :<button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
+                  }
                 </div> 
             </div>
                 ))
@@ -107,8 +108,8 @@ export const DashboardLider = () => {
               <div className="dashboard__lider-container_courses-card-content" >
                 <div className="dashboard__lider-container_courses-card-content-body" >
                   <div className="d-flex justify-content-around" >
-                    <p>{item.time} de contenido</p>
-                    <p>{item.user} de usuarios</p>
+                    {/* <p>{item.time} de contenido</p>
+                    <p>{item.user} de usuarios</p> */}
                   </div>
                   <h3>{item.title}</h3>
                   <p>{item.subtitle}</p>

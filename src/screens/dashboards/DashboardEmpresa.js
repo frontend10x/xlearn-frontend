@@ -111,7 +111,7 @@ export const DashboardEmpresa = () => {
                       </button>
                     </div>
                     <div className="dashboard__title">
-                      <h3>{quotas} Cupos utilizados</h3>
+                      <h3>{quotas} Cupos disponibles</h3>
                       <p>Administra tus Cupos</p>
                     </div>
                   </div>

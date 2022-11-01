@@ -104,7 +104,6 @@ export const ReproduccionDeCursos = () => {
             <div className="video__reproduccion-container" >
                 <div className="video__reproduccion-content" >
                     <h2 style={{color:'white'}}>{videoCurrent?.name}</h2>
-                    {/* <h2>{name}</h2> */}
                     <button>Comunidad</button>
                 </div>
                 <div className="d-flex">

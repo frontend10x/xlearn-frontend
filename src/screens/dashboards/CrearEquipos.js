@@ -24,7 +24,7 @@ export const CrearEquipos = () => {
   const [usersWithoutGroup, setUsersWithoutGroup] = useState()
   const [lider, setLider] = useState([]);
   const [answer, setAnswer] = useState(false);
-  const [teamManagement, setTeamManagement] = useState(false)
+  const [teamManagement, setTeamManagement] = useState(true)
   const navigate = useNavigate();
   useEffect(() => {
     async function getUsersFromSubcompanieId() {
@@ -88,9 +88,7 @@ export const CrearEquipos = () => {
   }
 
   const redirect = (e) => {
-    if (e.target.value == true) {
-      navigate("/manejo/equipos")
-    }
+      navigate('/manejo/equipos');
   }
 
   return (
