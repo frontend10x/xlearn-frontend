@@ -25,7 +25,9 @@ export const CrearUsuarios = () => {
 
     const [users, setUsers] = useState();
     const [areaTelf, setAreaTelf] = useState([
-        {label:"integrante", value:1}
+        {label:"Mercadeo", value:1
+    }
+        
     ]);
 
     const {name, email, phone, type_id, rol_id, password, password_confirmation} = formValues;
@@ -63,49 +65,64 @@ export const CrearUsuarios = () => {
         <div className="xlrn__crear-suarios__section" >
             <HeaderDashboard />
             <div className="xlrn__crear-usuarios__container" >
-                <div className="xlrn__crear-usuarios__nav" >
+
+                {/* <div className="xlrn__crear-usuarios__nav" >
                     <NavegacionDashboard />
-                </div>
-                <div className="xlrn__crear-usuarios__content-titles" >
-                    <h1>Gestion de cupos</h1>
-                    <p>Gestiona y administra tus cupos</p>
-                </div>
-                <div className="xlrn__crear-usuarios__container-form" >
-                    <div className="xlrn__crear-usuarios__container-form-content" >
-                        <Image src={equiposIcon} />
-                        <h1>Crear usuarios</h1>
-                        <h3>Crea los usuarios, entrena tus equipos y desarrolla tu proyecto</h3>
+                </div> */}
+                <div className="xln-content-dash">
+                    <div className="xln__content__nav">
+                        <NavegacionDashboard />
                     </div>
-                    <div className="xlrn__crear-usuarios__form" >
-                        <div className="xlrn__crear-usuarios__form-content">
-                            <input onChange={handleInputChange} name="name" placeholder="Nombre y Apellido" />
-                            <input onChange={handleInputChange} name="email" placeholder="Correo (Usuario)" />
-                            <div className="d-flex gap-2" >
-                                <input onChange={handleInputChange} name="phone" placeholder="Telefono" className="input__phone" />
-                                <select onChange={handleInputChange} name="rol_id" className="input__rol" >
-                                    <option value="..." >selecciona</option>
-                                    {areaTelf&&
-                                        areaTelf.map((item, index) => (
-                                            <option key={index} value={item.value} >{item.label}</option>
-                                        ))
-                                    }
-                                </select>
-                            </div>
-                            <div className="xlrn__crear-usuario__input-password">
-                                <input placeholder="Contraseña" onChange={handleInputChange} type='text' name="password"/>
-                                <input placeholder="Confirmar Contraseña" onChange={handleInputChange} type='text' name="password_confirmation" />
-                            </div>
-                            {/* O
-                            <div className="xlrn__crear-usuarios__massive-charge" >
-                                <input type='range' className="xlrn__crear-usuarios__massive-charge__input "/>
-                            </div> */}
+        
+                    <div className="xln-contentSection-block-empresa">
+                        <div className="xlrn__crear-usuarios__content-titles" >
+                            <h1>Gestion de cupos</h1>
+                            <p>Gestiona y administra tus cupos</p>
                         </div>
 
-                        <button onClick={createUser} >Confirmar</button>
+                        <div className="xlrn__crear-usuarios__container-form" >
+                            <div className="xlrn__crear-usuarios__container-form-content" >
+                                <Image src={equiposIcon} />
+                                <h1>Crear usuarios</h1>
+                                <p>Crea los usuarios, entrena tus equipos y desarrolla tu proyecto</p>
+                            </div>
+                            <div className="xlrn__crear-usuarios__form" >
+                                <div className="xlrn__crear-usuarios__form-content">
+                                    <input onChange={handleInputChange} name="name" placeholder="Nombre y Apellido" />
+                                    <input onChange={handleInputChange} name="email" placeholder="Correo (Usuario)" />
+                                    <div className="d-flex gap-2" >
+                                        <input onChange={handleInputChange} name="phone" placeholder="Telefono" className="input__phone" />
+                                        <select onChange={handleInputChange} name="rol_id" className="input__rol" >
+                                            <option value="..." >selecciona</option>
+                                            {areaTelf&&
+                                                areaTelf.map((item, index) => (
+                                                    <option key={index} value={item.value} >{item.label}</option>
+                                                ))
+                                            }
+                                        </select>
+                                    </div>
+                                    <div className="xlrn__crear-usuario__input-password">
+                                        <input placeholder="Contraseña" onChange={handleInputChange} type='text' name="password"/>
+                                        <input placeholder="Confirmar Contraseña" onChange={handleInputChange} type='text' name="password_confirmation" />
+                                    </div>
+                                    {/* O
+                                    <div className="xlrn__crear-usuarios__massive-charge" >
+                                        <input type='range' className="xlrn__crear-usuarios__massive-charge__input "/>
+                                    </div> */}
+                                </div>
+
+                                <button onClick={createUser} >Confirmar</button>
+                            </div>
+                        </div>
                     </div>
+                    
+
                 </div>
+
             </div>
-            <Footer />
+            <div className="xln-contentSection-block-empresa">
+                <Footer />
+            </div>
         </div>
     )
 }

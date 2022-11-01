@@ -8,7 +8,7 @@ import {
   homeCarousel02, 
   homeCarousel03, 
   homeCarousel04,
-  XlearnLogo,
+  XlearnLogoBlack,
 } from "../assets/img";
 
 export const CursosScreen = () => {
@@ -19,7 +19,7 @@ export const CursosScreen = () => {
       title: "Sistemas De Transformacion",
       time: "1H",
       users: "300",
-      logo: XlearnLogo,
+      logo: XlearnLogoBlack,
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ export const CursosScreen = () => {
       title: "Emprendimiento Corporativo",
       time: "1H",
       users: "300",
-      logo: XlearnLogo,
+      logo: XlearnLogoBlack,
     },
     {
       id: 1,
@@ -35,7 +35,7 @@ export const CursosScreen = () => {
       title: "Excelencia Operacional",
       time: "1H",
       users: "300",
-      logo: XlearnLogo,
+      logo: XlearnLogoBlack,
     },
   ]);
   const filterCourses = () => {

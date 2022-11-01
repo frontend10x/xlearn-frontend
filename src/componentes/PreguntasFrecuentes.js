@@ -90,7 +90,7 @@ export const PreguntasFrecuentes = () => {
                   En este video te enseñamos todos los tips para monitorear los reportes de tu equipo de trabajo y los avances que se han generado alrededor del proyecto en desarrollo.
                 </p>
                 </div>
-                <button className="preguntas__button" >LOREM IPSUM DOLOR SIT AMET</button>
+                <button className="preguntas__button" >Conocer más acerca de este tema →</button>
               </div>
             </div>
 
