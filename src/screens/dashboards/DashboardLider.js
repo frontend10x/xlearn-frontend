@@ -32,7 +32,8 @@ export const DashboardLider = () => {
   )
 
   const evaluation = (e) => (
-    navigate(`/evaluacion`)
+    navigate(`/evaluacion/${e.target.id}`)
+    
   )
 
   useEffect(() => {

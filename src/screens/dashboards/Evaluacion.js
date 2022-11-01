@@ -1,79 +1,17 @@
 import React, { useState, useEffect, useRef, createRef } from "react";
-import { quizDiagnostic, registerAnswers, registerDiagnostic } from "../../services/services";
+import { evaluationCourse, quizDiagnostic, registerAnswers, registerDiagnostic } from "../../services/services";
 import { useSelector } from "react-redux/es/exports";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { diagnosticQuestions } from "../../actions/diagnostico";
-import { confirmedRoute } from "../../actions/confirmRoute";
-import { diagnosticEvaluation } from "../../actions/evaluation";
+import { useParams } from "react-router-dom";
 
 export const Evaluacion = () => {
-  const { token, id, groups } = useSelector((state) => state.auth);
+  const { token, groups } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-  // const [question, setQuestion] = useState();
-
-  const [question, setQuestion] = useState([
-    {
-      id: 1,
-      question:
-        "1.¿Cuál es el objetivo del curso de Análisis estratégico del entorno?",
-      options: [
-        {
-          id: 1,
-          response: "Encontrar nuevas formas de aterrizar a la luna",
-        },
-        { id: 2, response: "Conocer nuevas oportunidades de mercado" },
-        {
-          id: 3,
-          response:
-            "Explorar y analizar oportunidades de negocio que conduzcan a definir el foco para el diseño de un nuevo negocio",
-        },
-        { id: 4, response: "Identificar tendencias" },
-      ],
-    },
-    {
-      id: 2,
-      question: "2.¿Cuál es la utilidad de la herramienta Foco de negocio?",
-      options: [
-        {
-          id: 1,
-          response: "Recopilar información de una oportunidad de negocio",
-        },
-        {
-          id: 2,
-          response:
-            "Mostrar el panorama de todas las posibles oportunidades de negocio alrededor de una temática",
-        },
-        {
-          id: 3,
-          response:
-            "Delimitar un espacio de mercado para el diseño del nuevo negocio y facilitar la síntesis, los hallazgos clave sobre la atmósfera, los artefactos y los actores de una oportunidad de negocio seleccionada",
-        },
-        { id: 4, response: "Remodelar las líneas de cableado de la empresa" },
-      ],
-    },
-    {
-      id: 3,
-      question:
-        "3.¿Cuál es el objetivo del curso de Análisis estratégico del entorno?",
-      options: [
-        { id: 1, response: "Encontrar nuevas formas de aterrizar a la luna" },
-        { id: 2, response: "Conocer nuevas oportunidades de mercado" },
-        {
-          id: 3,
-          response:
-            "Explorar y analizar oportunidades de negocio que conduzcan a definir el foco para el diseño de un nuevo negocio",
-        },
-        { id: 4, response: "Identificar tendencias" },
-      ],
-    },
-  ]);
-
-  const [page, setPage] = useState();
+  const [question, setQuestion] = useState([]);
+  const {id} = useParams();
+  const [page, setPage] = useState(0);
   const [perPage, setPerpage] = useState(1);
-  const [max, setMax] = useState();
-  const navigate = useNavigate();
   const indexAlphabetic = ["A", "B", "C", "D"];
   const [isDisabled, setDisabled] = useState(true);
   // const classSelected = "preguntas__diagnostico-checkbox-selected";
@@ -88,10 +26,8 @@ export const Evaluacion = () => {
   useEffect(() => {
     async function quiz() {
       try {
-        const data = await quizDiagnostic(token);
-        // setQuestion(data.response._embedded.questions);
-        setPage(data.response["hc:offset"]);
-        setMax(data.response["hc:limit"]);
+        const data = await evaluationCourse(token, id);
+        setQuestion(data.response._embedded.evaluation.questions)
       } catch (error) {
         console.error(error);
       }
@@ -121,14 +57,14 @@ export const Evaluacion = () => {
   };
 
   const nextPage = async (status) => {
-    const questionLength = question.length;
-    if (validateAnswers(page - 1)) {
-      page < questionLength && setPage(page + 1);
-      if (status) {
-       const result = await registerAnswers(schema)
-        console.log("Fin del cuestionario");
-      }
-    }
+    // const questionLength = question.length;
+    // if (validateAnswers(page - 1)) {
+    //   page < questionLength && setPage(page + 1);
+    //   if (status) {
+    //    const result = await registerAnswers(schema)
+    //     console.log("Fin del cuestionario");
+    //   }
+    // }
   };
 
   const validateAnswers = (numPages) => {
@@ -156,14 +92,15 @@ export const Evaluacion = () => {
   //   });
   // }
 
+  // .slice((page - 1) * perPage, (page - 1) * perPage + perPage)
   return (
     <div className="preguntas__diagnostico">
       <HeaderDashboard />
       <div className="preguntas__diagnostico-container">
-        {question &&
-          question
-            .slice((page - 1) * perPage, (page - 1) * perPage + perPage)
-            .map((item, index) => (
+        {question.length > 0 &&
+          Object.keys(question[0]).map((item, index) => {
+            // return(<h1>{item.question}</h1>)
+              return(
               <div key={index} className="preguntas__diagnostico-content">
                 <h3>{item.question}</h3>
                 <ul className="preguntas__diagnostico-list">
@@ -183,10 +120,12 @@ export const Evaluacion = () => {
                       ></input>
                       <li>{items.response}</li>
                     </div>
-                  ))}
+                    
+                    ))}
                 </ul>
               </div>
-            ))}
+            ) 
+          })}
       </div>
       <div>
         <div className="preguntas__footer">
@@ -198,10 +137,10 @@ export const Evaluacion = () => {
           </button>
           <button
             className="preguntas__footer-button_next"
-            onClick={() => nextPage(question.length == page)}
+            // onClick={() => nextPage(question.length == page)}
             disabled={isDisabled}
           >
-            {question.length == page ? "Enviar respuesta" : "Siguiente"}
+            {/* {question.length == page ? "Enviar respuesta" : "Siguiente"} */}
           </button>
         </div>
       </div>

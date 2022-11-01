@@ -303,6 +303,17 @@ export const getEnterpriseGroups = async (token,subcompanie_id) => {
   };
 
   const response = await axios.get(baseURL + `/api/v1/group/list_company_group/${subcompanie_id}?offset=1`,config)
-  return response.data
+  return response.data;
 
+}
+
+export const evaluationCourse = async (token, course_id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = await axios.get(baseURL + `/api/v1/evaluation/course?course_id=${course_id}`, config)
+  return response.data;
 }

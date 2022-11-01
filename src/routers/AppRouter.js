@@ -97,7 +97,7 @@ export const AppRouter = () => {
             element={<ReproduccionDeCursos />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
-          <Route exact path="/evaluacion" element={<Evaluacion />} />
+          <Route exact path="/evaluacion/:id" element={<Evaluacion />} />
         </Route>
 
         {/* RUTA DEL INTEGRANTE */}
