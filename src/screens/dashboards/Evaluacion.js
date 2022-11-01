@@ -14,7 +14,8 @@ export const Evaluacion = () => {
   const [perPage, setPerpage] = useState(1);
   const indexAlphabetic = ["A", "B", "C", "D"];
   const [isDisabled, setDisabled] = useState(true);
-  // const classSelected = "preguntas__diagnostico-checkbox-selected";
+  const styleInputSelect = useRef({});
+  const classSelected = "preguntas__diagnostico-checkbox-selected";
 
   const [schema, setSchema] = useState({
     evaluation_id: 24,
@@ -38,9 +39,11 @@ export const Evaluacion = () => {
   useEffect(() => {
     const res = validateAnswers(page);
     setDisabled(!res);
+    getStyleInput();
   }, [page]);
 
   const respuesta = (event, idQues, response) => {
+    saveResponseStyle(idQues, response.id, event)
     const savedAnswer = [...schema.answers];
     const answers = savedAnswer.filter((e) => e.question_id != idQues);
     answers.push({ question_id: idQues, answer: response.id });
@@ -81,14 +84,30 @@ export const Evaluacion = () => {
     }
   };
 
-  // const removeClass = () => {
-  //   const allClassSeleted = document.querySelectorAll(`.${classSelected}`);
-  //   allClassSeleted.forEach(e => {
-  //     e.classList.remove(classSelected);
-  //   });
-  // }
+  const saveResponseStyle = (idQues, idAns, event) => {
+    const savedKeyCss = new Object();
+    removeClass();
+    event.target.classList.add(classSelected);
+    savedKeyCss[idQues] = idAns;
+    Object.assign(styleInputSelect.current, savedKeyCss);
+  }
 
-  // .slice((page - 1) * perPage, (page - 1) * perPage + perPage)
+  const getStyleInput = () => {
+    removeClass();
+    const data = styleInputSelect.current;
+    for (const key in data) {
+      const attb = document.getElementById(`${key}-${data[key]}`);
+      attb && attb.classList.add(classSelected);
+    }
+  }
+
+  const removeClass = () => {
+    const allClassSeleted = document.querySelectorAll(`.${classSelected}`);
+    allClassSeleted.forEach(e => {
+      e.classList.remove(classSelected);
+    });
+  }
+
   return (
     <div className="preguntas__diagnostico">
       <HeaderDashboard />
@@ -104,8 +123,7 @@ export const Evaluacion = () => {
                     className="preguntas__diagnostico-respuesta"
                   >
                     <input
-                      idanswer={index}
-                      idquestion={1}
+                      id={items.question_id + "-" + items.id}
                       type="submit"
                       className="preguntas__diagnostico-checkbox"
                       onClick={(event) => respuesta(event, question[page].id, items)}
@@ -133,7 +151,7 @@ export const Evaluacion = () => {
             onClick={() => nextPage((question.length - 1) == page)}
             disabled={isDisabled}
           >
-            {question.length == page ? "Enviar respuesta" : "Siguiente"}
+            {(question.length - 1) == page ? "Enviar respuestas" : "Siguiente"}
           </button>
         </div>
       </div>
