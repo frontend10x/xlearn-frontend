@@ -19,6 +19,8 @@
   --neutroText: #8894ab;
   --white: #ffffff;
   --whiteOff: #f4f4f4;
+  --blueclaro: #F5F8FA;
+  --blueoscuro: #CBD6E2;
 }
 
 html,
@@ -1031,9 +1033,9 @@ video.xln-content-video_MS {
   display: flex;
   flex-direction: column;
   position: relative;
-  left: 180px;
   top: 65px;
   width: 80%;
+  margin: auto;
 }
 
 .footer__content {
@@ -1170,12 +1172,12 @@ video.xln-content-video_MS {
   padding-left: 33%;
 }
 .map_content {
-  position: relative;
   bottom: 320px;
-  left: 500px;
   display: flex;
   gap: 1rem;
   width: 60%;
+  position: relative;
+  left: 33%;
 }
 
 .cursos__section-populars {
@@ -1187,12 +1189,12 @@ video.xln-content-video_MS {
 }
 
 .map_content2 {
-  position: relative;
   bottom: 261px;
-  left: 500px;
   display: flex;
   gap: 1rem;
   width: 60%;
+  position: relative;
+  left: 33%;
 }
 
 .cursos__card-body {
@@ -1286,13 +1288,14 @@ img.cursos__banner-image {
   border-radius: 5px;
   width: 15%;
   position: relative;
-  left: 60%;
+  left: 56%;
   bottom: 231px;
 }
 
 .cursos__button-expand:hover {
   background-color: var(--green);
   border: none;
+  border: 1px solid var(--green);
 }
 
 /* Cursos Screen Fin */
@@ -4111,6 +4114,168 @@ h3.xlnIcon__couser__ruta {
   background-color: var(--white);
 }
 
+
+/* Contact section */
+
+.xlrn-contacto__section-banner__content {
+  height: 100vh;
+  margin-bottom: 15%;
+  margin-top: 5%;
+}
+.xln__content__bannerContact {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: 60vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.xln__content__bannerContact::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient( 90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 68%) 49%, rgb(0 0 0 / 52%) 100% );
+  z-index: 1;
+}
+.xln__content__bannerContact h1 {
+  color: #fff;
+  z-index: 2;
+  font-weight: bold;
+}
+.xln__content__bannerContact p {
+  color: #fff;
+  z-index: 2;
+}
+
+.xln__content__bannerContact button {
+  background-color: var(--green);
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 47%;
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 2;
+}
+.xln__title__bannerContact {
+  left: 30%;
+  position: absolute;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  z-index: 2;
+}
+
+.xlrn__contacto-formulario-container {
+  width: 50%;
+  float: left;
+}
+.xlrn__contacto-formulario-container .xln__txt__formContact {
+  width: 80%;
+  margin: auto;
+
+}
+.xlrn__contacto-formulario-container .xln__txt__formContact h2{
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--blueDark);
+
+}
+.xlrn__contacto-formulario-container .xln__txt__formContact p{
+  font-size: 16px;
+  color: var(--blueDark);
+
+}
+.xln__content__formContact {
+  width: 80%;
+  margin: auto;
+  background: white;
+  padding: 8%;
+  padding-bottom: 3%;
+}
+.xlrn__contacto-formulario-group p {
+  padding-top: 23px;
+}
+.xlrn__contacto-formulario-group {
+  width: 100%;
+}
+
+
+
+.xln__input__GroupBlock-1 {
+  width: 100%;
+  padding: 10px;
+}
+.xln__input__GroupBlock-1 label {
+  width: 100%;
+  
+}
+.xln__input__GroupBlock-1 input {
+  width: 100%;
+  
+  
+}
+.xln__input__GroupBlock-1 select {
+  width: 100%;
+  height: 40px;
+  background: var(--blueclaro);
+  border:1px solid var(--blueoscuro);
+}
+
+.xln__input__GroupBlock-1 textarea {
+  width: 100%;
+  height: 20vh;
+  background: var(--blueclaro);
+  border:1px solid var(--blueoscuro);
+}
+
+
+.xln__input__GroupBlock-2 {
+  width: 50%;
+  float: left;
+  padding: 10px;
+  
+}
+.xln__input__GroupBlock-2 label {
+  width: 100%;
+  
+}
+
+.xln__input__GroupBlock-2 input {
+  width: 100%;
+  height: 40px;
+  background: var(--blueclaro);
+  border:1px solid var(--blueoscuro);
+}
+.xln__input__GroupBlock-2 select {
+  width: 100%;
+  height: 40px;
+  background: var(--blueclaro);
+  border:1px solid var(--blueoscuro);
+}
+span.campo_requerido {
+  color: red;
+}
+.xlrn__contacto-formulario-group label {
+  color: var(--blueDark);
+  font-size: 15px;
+}
+.xln__formulario-button__contact {
+  background-color: var(--green);
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  padding: 10px;
+  width: 50%;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 auto;
+  left: 30%;
+}
 /* Responsive */
 
 @media (max-width: 1440px) {

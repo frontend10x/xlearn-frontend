@@ -75,3 +75,5 @@ export {default as EmpresaExelencia} from './exelencia-operacional.jpg';
 export {default as IconRutaPlayer} from './icon__course__player.png';
 
 export {default as ImageProyectos} from './cursos-internos/estudiantes.png';
+
+export {default as bannerContact01} from '../Image/banner_contact.png';
