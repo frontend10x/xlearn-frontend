@@ -20,8 +20,10 @@ export const NavegacionDashboard = () => {
       },[])
     
     const redirect = () => {
-        if (quotas) {
-            navigate("/dashboard/empresa")
+        if (quotas > 0) {
+            navigate("/gestion/cupos/disponibles");
+        }else if (quotas < 0) {
+            navigate("/gestion/cupos");
         }
     }
 
