@@ -9,6 +9,11 @@ export const confirmedRouteReducer = (state = initialState, action) => {
             return {
                 course_route: action.payload.course_route
             }
+
+        case types.clearRoute:
+            return {
+                course_route:{}
+            }    
         case types.logout:
             return {}
         default:

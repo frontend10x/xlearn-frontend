@@ -13,13 +13,13 @@ export const diagnosticQuestions = (answers, diagnostic_id, _rel) => {
     }
 }
 
-export const diagnosticTraining = (answers,diagnostic_id, _relA) => {
+export const diagnosticTraining = (answers,diagnostic_id, _rel) => {
     return {
         type: types.entrenamientoRoute,
         payload: {
             answers,
             diagnostic_id,
-            _relA
+            _rel
         }
     }
 }
@@ -43,14 +43,7 @@ export const cleanQuestions = () => {
 
 export const cleanRoute = () => {
     return {
-        type: types.ruta,
-        payload: {}
-    }
-}
-
-export const cleanTraining = () => {
-    return {
-        type: types.entrenamientoRoute,
+        type: types.clearRoute,
         payload: {}
     }
 }

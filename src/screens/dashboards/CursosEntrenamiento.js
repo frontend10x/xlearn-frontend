@@ -9,7 +9,7 @@ import { confirmedRoute } from "../../actions/confirmRoute";
 
 export const CursosEntrenamiento = () => {
   const { token, id, groups } = useSelector((state) => state.auth);
-  const { filter_id } = useSelector(state => state.training);
+  const { filter_id } = useSelector(state => state.questions);
   const [courses, setCourses] = useState();
   
   const [schema, setSchema] = useState({
@@ -52,6 +52,7 @@ export const CursosEntrenamiento = () => {
       dispatch(diagnosticTraining(answer,data?.diagnostic_id, _rel))
       dispatch(confirmedRoute(data.course_route))
       navigate("/project/diagnostic/confirm_route");
+      console.log(_rel,'rel')
     } catch (error) {
       console.error(error);
     }

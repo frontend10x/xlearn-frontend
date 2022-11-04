@@ -10,28 +10,31 @@ import { cleanQuestions, cleanTraining } from "../../actions/diagnostico";
 
 export const ConfirmarRuta = () => {
   const { id, _rel } = useSelector((state) => state.questions);
-  const {course_route} = useSelector(state => state.ruta)
-  const {token} = useSelector(state => state.auth)
+  const { course_route } = useSelector(state => state.ruta)
+  const { token } = useSelector(state => state.auth)
   const [courses, setCourses] = useState(course_route);
   const [trainingCourses, setTrainigCourses] = useState();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  console.log(id)
+  console.log(_rel)
 
   const goBack = () => {
     if (_rel === 'questions') {
       dispatch(cleanQuestions());
       navigate('/project/diagnostic/questions');
-  }
+    } else if (_rel === 'areas') {
+      dispatch(cleanQuestions());
+      navigate('/project/diagnostic/training/areas')
+    }
   }
   const confirmedRoute = async () => {
     try {
-      const data = await confirmRoute(token,id);
+      const data = await confirmRoute(token, id);
       navigate('/dashboard/lider');
-      
+
     } catch (error) {
-      console.error(error.response,'error')
+      console.error(error.response, 'error')
     }
   }
 

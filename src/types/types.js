@@ -9,6 +9,7 @@ export const types = {
     proyectoRoute: '[ROUTE] PROYECTO',
     entrenamientoRoute: '[ROUTE] ENTRENAMIENTO',
     ruta: '[ROUTE] CONFIRMACION',
+    clearRoute: '[ROUTE] CLEAR',
 
     /* Evaluacion */
     evaluation: '[EVALUATION] EVALUATION'
