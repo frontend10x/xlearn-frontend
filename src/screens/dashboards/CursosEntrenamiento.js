@@ -1,25 +1,50 @@
 import React, { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { getCoursesById } from "../../services/services";
 
 export const CursosEntrenamiento = () => {
-  const { token } = useSelector((state) => state.auth);
-  const {filter_id} = useSelector(state => state.questions);
+  const { token, id, groups } = useSelector((state) => state.auth);
+  const { filter_id } = useSelector(state => state.questions);
   const [courses, setCourses] = useState();
-
+  const [schema, setSchema] = useState({
+    target: "Entrenamiento",
+    user_id: id,
+    _rel: 'entrenamiento',
+    group_id: groups,
+    course: []
+  });
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function getCoursesByArea() {
-      const data = await getCoursesById(token,filter_id); 
+      const data = await getCoursesById(token, filter_id);
       setCourses(data.response._embedded.courses);
-    } 
+    }
 
     getCoursesByArea();
   }, []);
 
-  console.log(courses, 'cursos')
+  const respuesta = (item) => {
+    const course = {
+      "course": `${item.areas.id}`,
+    }
+    setSchema({ ...schema, course: [...schema.course, course] });
+  };
+
+  const previousPage = () => {
+    navigate('/project/diagnostic/training/areas')
+  };
+
+  const nextPage = async () => {
+    try {
+      navigate("/project/diagnostic/confirm_route");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="cursos__entrenamiento-section">
@@ -34,15 +59,26 @@ export const CursosEntrenamiento = () => {
             courses.map((item, index) => (
               <div className="cursos__entrenamiento-selection_card" key={index} >
                 <div className="cursos__entrenamiento-selection_card-image" >
-                <input type="radio" />
+                  <input type="radio" onClick={() => respuesta(item)} />
                   <Image src={item.file_path} alt={item.file_path} />
-                </div>
-                <div className="cursos__entrenamiento-selection_card-content" >
                   <h1>{item.name}</h1>
                 </div>
               </div>
             ))
           }
+        </div>
+      </div>
+      <div>
+        <div className="preguntas__footer">
+          <button
+            className="preguntas__footer-button_prev"
+            onClick={previousPage}
+          >
+            Volver
+          </button>
+          <button className="preguntas__footer-button_next" onClick={nextPage}>
+            Siguiente
+          </button>
         </div>
       </div>
     </div>
