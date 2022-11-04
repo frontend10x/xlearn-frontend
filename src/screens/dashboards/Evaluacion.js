@@ -14,12 +14,12 @@ export const Evaluacion = () => {
   const [perPage, setPerpage] = useState(1);
   const indexAlphabetic = ["A", "B", "C", "D"];
   const [isDisabled, setDisabled] = useState(true);
-  // const classSelected = "preguntas__diagnostico-checkbox-selected";
+  const [evaluationID, setEvaluationID] = useState();
 
   const [schema, setSchema] = useState({
-    evaluation_id: 24,
+    evaluation_id: "",
     user_id: id,
-    course_id: 1,
+    course_id: evaluationID,
     answers: []
   });
 
@@ -28,6 +28,7 @@ export const Evaluacion = () => {
       try {
         const data = await evaluationCourse(token, id);
         setQuestion(data.response._embedded.evaluation.questions)
+        setEvaluationID(data.response._embedded.evaluation.id)
       } catch (error) {
         console.error(error);
       }
@@ -35,14 +36,14 @@ export const Evaluacion = () => {
     quiz();
   }, []);
 
-  // useEffect(() => {
-  //   // console.clear();
-  //   if (page != undefined) {
-  //     const res = validateAnswers(page);
-  //     console.log(page, res);
-  //     setDisabled(!res);
-  //   }
-  // }, [page]);
+  useEffect(() => {
+    // console.clear();
+    if (page != undefined) {
+      const res = validateAnswers(page);
+      console.log(page, res);
+      setDisabled(!res);
+    }
+  }, [page]);
 
   const respuesta = (event, questions, response) => {
     const savedAnswer = [...schema.answers];
