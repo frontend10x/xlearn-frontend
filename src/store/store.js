@@ -2,12 +2,13 @@ import { legacy_createStore as createStore, combineReducers, applyMiddleware, co
 import thunk from "redux-thunk";
 import { authReducer } from "../reducers/authReducer";
 import { persistStore, persistReducer } from "redux-persist";
-import { diagnosticReducer } from "../reducers/diagnosticReducer";
+import { questionsReducer } from "../reducers/questionsReducer";
 
 
 import storage from "redux-persist/lib/storage";
 import { confirmedRouteReducer } from "../reducers/confirmRouteReducer";
 import { evaluationReducer } from "../reducers/evaluationReducer";
+import { trainingReducer } from "../reducers/trainingReducers";
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
@@ -19,7 +20,8 @@ const persistConfig = {
 
 const reducers = combineReducers({
     auth: authReducer,
-    questions: diagnosticReducer,
+    questions: questionsReducer,
+    training: trainingReducer,
     ruta: confirmedRouteReducer,
     evaluation: evaluationReducer
 });

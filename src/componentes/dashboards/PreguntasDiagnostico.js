@@ -4,7 +4,7 @@ import { useSelector } from "react-redux/es/exports";
 import { HeaderDashboard } from "./HeaderDashboard";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { diagnosticQuestions } from "../../actions/diagnostico";
+import { cleanQuestions, diagnosticQuestions } from "../../actions/diagnostico";
 import { confirmedRoute } from "../../actions/confirmRoute";
 
 export const PreguntasDiagnostico = () => {
@@ -55,6 +55,7 @@ export const PreguntasDiagnostico = () => {
   const previousPage = () => {
     if (page === 1) {
       navigate("/selection/process");
+      dispatch(cleanQuestions());
     } else {
       setPage(page - 1);
     }

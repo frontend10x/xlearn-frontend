@@ -1,22 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { coursesByArea } from "../../actions/diagnostico";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
-import { getCoursesById } from "../../services/services";
+import { getCoursesById, registerDiagnostic } from "../../services/services";
 
 export const CursosEntrenamiento = () => {
   const { token, id, groups } = useSelector((state) => state.auth);
-  const { filter_id } = useSelector(state => state.questions);
+  const { filter_id } = useSelector(state => state.training);
   const [courses, setCourses] = useState();
+  
   const [schema, setSchema] = useState({
     target: "Entrenamiento",
     user_id: id,
-    _rel: 'entrenamiento',
+    _rel: 'areas',
     group_id: groups,
-    course: []
+    answer: []
   });
   const navigate = useNavigate();
+  const dispatch = useDispatch()
+
+  const {target,user_id,_rel,group_id,answer} = schema;
+
+  console.log(schema)
 
   useEffect(() => {
     async function getCoursesByArea() {
@@ -28,10 +35,10 @@ export const CursosEntrenamiento = () => {
   }, []);
 
   const respuesta = (item) => {
-    const course = {
-      "course": `${item.areas.id}`,
+    const answer = {
+      "course": `${item.id}`,
     }
-    setSchema({ ...schema, course: [...schema.course, course] });
+    setSchema({ ...schema, answer: [...schema.answer, answer] });
   };
 
   const previousPage = () => {
@@ -40,7 +47,10 @@ export const CursosEntrenamiento = () => {
 
   const nextPage = async () => {
     try {
-      navigate("/project/diagnostic/confirm_route");
+      const data = await registerDiagnostic(target,user_id,_rel,answer,group_id,token);
+      console.log(data);
+      // dispatch(coursesByArea(filter_id, _rel));
+      // navigate("/project/diagnostic/confirm_route");
     } catch (error) {
       console.error(error);
     }

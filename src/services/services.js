@@ -317,3 +317,14 @@ export const evaluationCourse = async (token, course_id) => {
   const response = await axios.get(baseURL + `/api/v1/evaluation/course?course_id=${course_id}`, config)
   return response.data;
 }
+
+export const getUsersGroup = async (token, group_id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = await axios.get(baseURL + `/api/v1/groupuser/list_group_users/${group_id}`, config)
+  return response.data;
+}

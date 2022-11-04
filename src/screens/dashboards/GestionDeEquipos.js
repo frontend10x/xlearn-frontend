@@ -5,7 +5,7 @@ import { Footer } from "../../componentes/Footer";
 import { Col, Image, Row } from "react-bootstrap";
 import { equiposIcon } from "../../assets/img";
 import { useForm } from "../../hooks/useForm"
-import { creationUser, getEnterpriseGroups, typeOfUsers } from "../../services/services";
+import { creationUser, getEnterpriseGroups, getUsersGroup, typeOfUsers } from "../../services/services";
 import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
 
@@ -18,11 +18,17 @@ export const GestionDeEquipos = () => {
         async function getEnterprisesGroup() {
             const data = await getEnterpriseGroups(token, subcompanie_id);
             setGroups(data.groups._embedded.groups)
+            console.log(data.groups._embedded.groups)
         }
-        getEnterprisesGroup();
-    }, []);
+        
+        async function getUserForGroups() {
+            const data = await getUsersGroup(token,59)
+            console.log(data)
+        }
 
-    console.log(groups[47]);
+        getEnterprisesGroup();
+        getUserForGroups()
+    }, []);
 
     return (
         <div className="xlrn__crear-suarios__section" >
