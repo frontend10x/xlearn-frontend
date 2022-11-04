@@ -187,12 +187,13 @@ button.burg-toggle i {
 /* Inicio Navegacion */
 
 .navegacion {
-  display: flex;
+  -webkit-column-gap: 2rem;
   column-gap: 2rem;
-  left: 800px;
-  width: 40%;
+  display: flex;
+  left: 54%;
   position: relative;
   top: -20px;
+  width: 40%;
 }
 
 .navbar {
@@ -1348,7 +1349,9 @@ img.cursos__banner-image {
   background-color: var(--blueDark);
   height: 100vh;
 }
-
+.login__container-content {
+  width: 100%;
+}
 .login__container {
   display: flex;
   background-color: var(--white);
@@ -2714,12 +2717,11 @@ p.xln__register_text_TyC {
 
 .selection__process-footer {
   background-color: var(--white);
-  position: relative;
-  top: 415px;
   height: 20vh;
   width: 100%;
+  position: fixed;
+  bottom: 0;
 }
-
 .selection__footer-button {
   background-color: var(--green);
   top: 50px;
@@ -2885,6 +2887,13 @@ input.preguntas__diagnostico-checkbox-selected {
   position: relative;
   top: 130px;
 }
+/* .cursos__entrenamiento-section .preguntas__footer {
+  background-color: var(--white);
+  height: 20vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+} */
 
 .preguntas__footer-button_prev {
   background-color: var(--whiteOff);
@@ -3263,13 +3272,23 @@ input.preguntas__diagnostico-checkbox-selected {
 .cursos__entrenamiento-selection_container {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  width: 57%;
   position: relative;
-  top: 80px;
-  left: 550px;
-  height: 100vh;
+  top: 0px;
 }
-
+.cursos__entrenamiento-section .cursos__filter-content {
+  position: relative;
+  left: 35px;
+  top: 76px;
+  height: 56vh;
+  width: 40%;
+  float: left;
+}
+.cursos__entrenamiento-container {
+  width: 100%;
+  position: relative;
+  padding-top:2%;
+}
 .cursos__entrenamiento-container p {
   text-align: center;
 }
@@ -3329,40 +3348,50 @@ input.preguntas__diagnostico-checkbox-selected {
 }
 
 .cursos__entrenamiento-selection_card-image {
-  margin-right: 15px;
-  width: 302px;
+  width: 100%;
 }
 
 .cursos__entrenamiento-selection_card-image img {
   height: 250px;
-  width: 302px;
+  width: 100%;
   border-radius: 10px 10px 0px 0px;
 }
 
 .cursos__entrenamiento-selection_card-image input {
   position: relative;
-  left: 270px;
-  top: 40px;
+  left: 86%;
+  top: 45px;
   width: 20px;
   height: 20px;
 }
 
 .cursos__entrenamiento-selection_card-content {
   background-color: var(--white);
-  width: 302px;
+  width: 100%;
   margin-bottom: 50px;
 }
 
-.cursos__entrenamiento-selection_card-image h1 {
+.cursos__entrenamiento-selection_card-image h2 {
   background-color: var(--white);
-  width: 302px;
+  width: 100%;
   font-size: 16px;
   height: 126px;
   border-radius: 0px 0px 10px 10px;
   text-align: center;
-  margin-top: 15px;
+  padding-top: 21px;
+}
+.cursos__entrenamiento-selection_card {
+  width: 33%;
+  position: relative;
+  padding: 1%;
 }
 
+.cursos__entrenamiento-container h3 {
+  font-size: 27px;
+  font-weight: bold;
+  padding-bottom: 21px;
+  padding-left: 10px;
+}
 /* Cursos Entrenamiento Fin  */
 
 /* Confirmar Ruta */
@@ -4223,9 +4252,9 @@ p.xln_price_GDC span {
 /* Creacion de usuario Fin */
 
 /* Informacion de equipos  */
-.xlrn__crear-usuarios__container {
+/* .xlrn__crear-usuarios__container {
   height: 100vh;
-}
+} */
 
 .xlrn__informacion-equipos {
   background-color: var(--white);
@@ -4247,7 +4276,167 @@ p.xln_price_GDC span {
   width: 100%;
 }
 
+
+.xln__content__progress_gestionDeCupos {
+  width: 90%;
+  position: relative;
+  margin-top: 4%;
+  padding-bottom: 30%;
+  padding-left: 15%;
+}
+.xlrn__informacion-equipos {
+  background-color: var(--white);
+  height: 610px;
+  width: 45%;
+  float: left!important;
+}
+.xlrn__crear-suarios__section .xln-contentNavLeft-block .dashboard__nav {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding-top: 50%;
+  padding-left: 5%;
+}
+
+.xln__content__info_gestionDeCupos {
+  display: flex;
+}
+.xln_info_gestionDeCupos {
+  width: 100%;
+}
+.xln_info_gestionDeCupos ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+}
+.xln_info_gestionDeCupos ul li {
+  margin-bottom: 8px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+.xlrn__informacion-equipos_interno {
+  background: none;
+  height: auto;
+  margin: 2%;
+}
+.xlrn__informacion-equipos_interno .xlrn__informacion-equipos-content {
+  position: relative;
+  width: 100%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.xln_info_gestionDeCupos ul li:nth-child(even) {background: #fff;}
+.xln_info_gestionDeCupos ul li:nth-child(odd) {background: #F4F4F4;}
+
+.progress__bar__style:nth-child(even) {background: #F4F4F4;}
+.progress__bar__style:nth-child(odd) {background: #fff;}
+
+.xlrn__informacion-equipos-content h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+.xlrn__informacion-equipos-content_title{
+  color: var(--green);
+  font-weight: bold;
+}
+.xlrn__informacion-equipos-content h5 {
+  font-size: 14px;
+}
+.xln_info_gestionDeCupos input {
+  width: 100%;
+}
+.progress__bar__style {
+  padding-top: 11px;
+  padding-bottom: 19px;
+  margin-bottom: 7px;
+}
+.xlrn__informacion-equipos-content-users {
+  padding-top: 15%;
+}
+.xlrn__crear-suarios__section .xlrn__informacion-equipos-title {
+  position: absolute;
+  left: 26%;
+  top: 150px;
+  font-weight: bold;
+  width: 60%;
+  float: left;
+}
+
+.range[type='range'] {
+  display: block;
+  width: 100%;
+}
+
+.range[type='range']:focus {
+  outline: none;
+}
+
+.range[type='range'],
+.range[type='range']::-webkit-slider-runnable-track,
+.range[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+.range[type=range]::-webkit-slider-thumb {
+  background-color: var(--green);
+  width: 21px;
+  height: 21px;
+  border: 3px solid #ddd;
+  border-radius: 50%;
+  margin-top: -9px;
+
+}
+
+.range[type=range]::-moz-range-thumb {
+  background-color: var(--green);
+  width: 16px;
+  height: 16px;
+  border: 3px solid #ddd;
+  border-radius: 50%;
+}
+
+.range[type=range]::-ms-thumb {
+  background-color: var(--green);
+  width: 21px;
+  height: 21px;
+  border: 3px solid #ddd;
+  
+  border-radius: 50%;
+}
+
+.range[type=range]::-webkit-slider-runnable-track {
+  background-color: var(--blueoscuro);
+  height: 5px;
+  -webkit-appearance: none;
+  background-image:linear-gradient(to right, var(--green) calc(var(--value)*1%), var(--blueoscuro) 0);
+  
+}
+
+.range[type=range]:focus::-webkit-slider-runnable-track {
+  outline: none;
+}
+
+.range[type=range]::-moz-range-track {
+  -webkit-appearance: none;
+  background-image:linear-gradient(to right, var(--green) calc(var(--value)*1%), var(--blueoscuro) 0);
+  
+  height: 5px;
+}
+
+.range[type=range]::-ms-track {
+  background-color: #777;
+  border: 1px solid red!important;
+  height: 3px;
+}
 /* Informacion de equipos Fin */
+
+
 
 /* Reproductor de video inicio */
 .video__reproduccion-section {

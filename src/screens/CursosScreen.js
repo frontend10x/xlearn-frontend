@@ -58,9 +58,9 @@ export const CursosScreen = () => {
           <div className="cursos__filter-content">
             <ul className="cursos__filter-buttons">
               <div className="cursos__filter-title" >
-                <h3>Todas Las Areas</h3>
+                <h3>Todas Las áreas</h3>
               </div>
-              <h4 className="">Innovacion</h4>
+              <h4 className="">Innovación</h4>
               <input
                 className="text-start"
                 type="button"

@@ -55,6 +55,9 @@ export const CursosEntrenamiento = () => {
       console.error(error);
     }
   };
+  const filterCourses = () => {
+    alert(`Filtro hecho este es el id`);
+  };
 
   return (
     <div className="cursos__entrenamiento-section">
@@ -64,6 +67,103 @@ export const CursosEntrenamiento = () => {
         <div className="cursos__entrenamiento-content">
           <h1>Selecciona tus cursos</h1>
         </div>
+
+        <div className="cursos__filter-content">
+            <ul className="cursos__filter-buttons">
+              
+              <div>
+                <h3>Áreas</h3>
+              </div>
+
+              <h4>Corporativo</h4>
+              <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Sostenibilidad"
+              />
+              <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Economía Circular"
+              />
+              
+              <h4>Corporativo</h4>
+              <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Sistemas de Innovación"
+              />
+              <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Diseño de nuevos negocios"
+              />
+               <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Innovación Abierta"
+              />
+              <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Oportunidades, Retos y Priorización"
+              />
+
+              <h4>Corporativo</h4>
+              <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="IOT"
+              />
+              <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Analítica y Big Data"
+              />
+              <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Inteligencia Artificial"
+              />
+               <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Marketing Digital"
+              />
+              <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Ciberseguridad"
+              />
+              <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Blockchain"
+              />
+              <input
+                className="text-start"
+                type="button"
+                onClick={filterCourses}
+                value="Robótica"
+              />
+
+
+              
+            </ul>
+          </div>
+
         <div className="cursos__entrenamiento-selection_container" >
           {courses &&
             courses.map((item, index) => (
@@ -71,12 +171,15 @@ export const CursosEntrenamiento = () => {
                 <div className="cursos__entrenamiento-selection_card-image" >
                   <input type="radio" onClick={() => respuesta(item)} />
                   <Image src={item.file_path} alt={item.file_path} />
-                  <h1>{item.name}</h1>
+                  <h2>{item.name}</h2>
                 </div>
               </div>
             ))
           }
         </div>
+      
+      
+      
       </div>
       <div>
         <div className="preguntas__footer">
