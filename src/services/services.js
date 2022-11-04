@@ -1,10 +1,7 @@
 import axios from "axios";
 import { baseURL } from "../utils/route";
 
-export const registerAnswers = async (schema) => {
-  const response = await axios.post(baseURL + "/api/v1/answer/store", schema);
-  return response.data;
-}
+
 
 export const loginPost = async (email, password) => {
   const response = await axios.post(baseURL + "/api/v1/login", {
@@ -326,5 +323,17 @@ export const getUsersGroup = async (token, group_id) => {
   };
 
   const response = await axios.get(baseURL + `/api/v1/groupuser/list_group_users/${group_id}`, config)
+  return response.data;
+}
+
+export const registerAnswers = async (token,schema) => {
+ 
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = await axios.post(baseURL + "/api/v1/answer/store", schema,config);
   return response.data;
 }

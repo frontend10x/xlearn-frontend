@@ -4,39 +4,42 @@ import { useSelector } from "react-redux/es/exports";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export const Evaluacion = () => {
-  const { token, groups } = useSelector((state) => state.auth);
+  const { token, groups,id } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [question, setQuestion] = useState([]);
-  const { id } = useParams();
+  const { course_id } = useParams();
   const [page, setPage] = useState(0);
   const [perPage, setPerpage] = useState(1);
   const indexAlphabetic = ["A", "B", "C", "D"];
   const [isDisabled, setDisabled] = useState(true);
   const styleInputSelect = useRef({});
   const classSelected = "preguntas__diagnostico-checkbox-selected";
-  const [evaluationID, setEvaluationID] = useState();
-
   const [schema, setSchema] = useState({
-    evaluation_id: evaluationID,
+    evaluation_id: Number,
     user_id: id,
-    course_id: id,
+    course_id: course_id,
     answers: []
   });
+
+  console.log(schema)
 
   useEffect(() => {
     async function quiz() {
       try {
-        const data = await evaluationCourse(token, id);
-        setQuestion(data.response._embedded.evaluation.questions)
-        setEvaluationID(data.response._embedded.evaluation.id)
+        const data = await evaluationCourse(token, course_id);
+        setQuestion(data.response._embedded.evaluation.questions);
+        setSchema({...schema, evaluation_id: data.response._embedded.evaluation.id})
       } catch (error) {
         console.error(error);
       }
     }
     quiz();
   }, []);
+
+  
 
   useEffect(() => {
     const res = validateAnswers(page);
@@ -54,7 +57,7 @@ export const Evaluacion = () => {
   };
 
   const previousPage = () => {
-    if (page == 0) {
+    if (page === 0) {
       console.log("Regresar a la pagina anterior");
     }
     page > 0 && setPage(page - 1);
@@ -65,7 +68,13 @@ export const Evaluacion = () => {
     if (validateAnswers(page)) {
       page < (questionLength - 1) && setPage(page + 1);
       if (status) {
-        console.log("Listo para enviar");
+        const data = await registerAnswers(token,schema)
+        Swal.fire({
+          icon: 'success',
+          title: 'Felicidades',
+          text: `${data.message}`,
+        })
+    
       }
     }
   };
