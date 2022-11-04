@@ -35,20 +35,21 @@ export const GestionDeEquipos = () => {
                     <h1>Gestion de Equipos</h1>
                     <p>Gestiona y administra tus cupos</p>
                 </div>
-                {groups &&
+                <div className="xln__content__progress_gestionDeCupos">
+                {groups && 
                     groups.map((item, index) =>
                     (
-                        <div className="xlrn__informacion-equipos">
+                        <div className="xlrn__informacion-equipos xlrn__informacion-equipos_interno">
                             <div className="xlrn__informacion-equipos-content" >
-                                <p>Equipo {item.id}</p>
+                                <p className="xlrn__informacion-equipos-content_title">Equipo {item.id}</p>
                                 <h2>Curso: {item.name}</h2>
                                 <h5>Lider: Andres Ochoa</h5>
                                 <h5>Inicio: 05/03/2022</h5>
                                 <div className="xlrn__informacion-equipos-content-users" >
                                     <div className="xlrn" >
-                                        <Row className="d-flex" >
-                                            <Col md={4} >
-                                                <p>
+                                        <div className="xln__content__info_gestionDeCupos" >
+                                            <div className="xln_info_gestionDeCupos" >
+                                                <p className="text-center" >
                                                     Usuario
                                                 </p>
                                                 <ul>
@@ -56,21 +57,27 @@ export const GestionDeEquipos = () => {
                                                     <li>Jair</li>
                                                     <li>Carlos</li>
                                                 </ul>
-                                            </Col>
-                                            <Col md={4} >
+                                            </div>
+                                            <div className="xln_info_gestionDeCupos" >
                                                 <p className="text-center" >
                                                     Progreso
                                                 </p>
-                                                <input type="range" />
-                                                <input type="range" />
-                                                <input type="range" />
-                                            </Col>
-                                            <Col md={4} >
+                                                <div className="progress__bar__style">
+                                                    <input type="range" className="range" />
+                                                </div>
+                                                <div className="progress__bar__style">
+                                                    <input type="range" className="range" />
+                                                </div>
+                                                <div className="progress__bar__style">
+                                                    <input type="range" className="range" />
+                                                </div>
+                                            </div>
+                                            <div className="xln_info_gestionDeCupos" >
                                                 <p className="text-center" >
                                                     Ultimo Ingreso
                                                 </p>
-                                            </Col>
-                                        </Row>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -78,6 +85,7 @@ export const GestionDeEquipos = () => {
                     )
                     )
                 }
+                </div>
             </div>
             <Footer />
         </div>
