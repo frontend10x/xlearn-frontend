@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { coursesByArea } from "../../actions/diagnostico";
+import { coursesByArea, diagnosticTraining } from "../../actions/diagnostico";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { getCoursesById, registerDiagnostic } from "../../services/services";
+import { confirmedRoute } from "../../actions/confirmRoute";
 
 export const CursosEntrenamiento = () => {
   const { token, id, groups } = useSelector((state) => state.auth);
@@ -48,9 +49,9 @@ export const CursosEntrenamiento = () => {
   const nextPage = async () => {
     try {
       const data = await registerDiagnostic(target,user_id,_rel,answer,group_id,token);
-      console.log(data);
-      // dispatch(coursesByArea(filter_id, _rel));
-      // navigate("/project/diagnostic/confirm_route");
+      dispatch(diagnosticTraining(answer,data?.diagnostic_id, _rel))
+      dispatch(confirmedRoute(data.course_route))
+      navigate("/project/diagnostic/confirm_route");
     } catch (error) {
       console.error(error);
     }

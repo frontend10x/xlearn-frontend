@@ -1,28 +1,30 @@
 import React, { useState } from "react";
 import { Image } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Slider_01 } from "../../assets/img";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { Footer } from "../../componentes/Footer";
 import { useNavigate } from "react-router-dom";
 import { confirmRoute } from "../../services/services";
+import { cleanQuestions, cleanTraining } from "../../actions/diagnostico";
 
 export const ConfirmarRuta = () => {
   const { id, _rel } = useSelector((state) => state.questions);
-
-  const {token} = useSelector(state => state.auth)
   const {course_route} = useSelector(state => state.ruta)
+  const {token} = useSelector(state => state.auth)
   const [courses, setCourses] = useState(course_route);
-
-  console.log(courses,'mapeo de la ruta de cursos')
+  const [trainingCourses, setTrainigCourses] = useState();
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  console.log(id)
 
   const goBack = () => {
     if (_rel === 'questions') {
-      navigate('/project/diagnostic/questions')
-    }
+      dispatch(cleanQuestions());
+      navigate('/project/diagnostic/questions');
   }
-
+  }
   const confirmedRoute = async () => {
     try {
       const data = await confirmRoute(token,id);

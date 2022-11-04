@@ -11,6 +11,12 @@ export const questionsReducer = (state = initialState, action) => {
                 id: action.payload.diagnostic_id,
                 _rel:action.payload._rel
             }
+        case types.entrenamientoRoute:
+            return {
+                filter_id: action.payload.filter_id,
+                _rel: action.payload._rel,
+                id: action.payload.diagnostic_id
+                }
 
         case types.logout: 
             return {}

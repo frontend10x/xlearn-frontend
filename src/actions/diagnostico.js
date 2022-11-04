@@ -13,6 +13,16 @@ export const diagnosticQuestions = (answers, diagnostic_id, _rel) => {
     }
 }
 
+export const diagnosticTraining = (answers,diagnostic_id, _relA) => {
+    return {
+        type: types.entrenamientoRoute,
+        payload: {
+            answers,
+            diagnostic_id,
+            _relA
+        }
+    }
+}
 
 export const coursesByArea = (filter_id, _rel) => {
     return {
