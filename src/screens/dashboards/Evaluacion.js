@@ -117,7 +117,7 @@ export const Evaluacion = () => {
             <div className="preguntas__diagnostico-content">
               <h3>{question[page].question}</h3>
               <ul className="preguntas__diagnostico-list">
-                {question[page].options.map((items, index) => (
+                {question[page]?.options.map((items, index) => (
                   <div
                     key={index}
                     className="preguntas__diagnostico-respuesta"
