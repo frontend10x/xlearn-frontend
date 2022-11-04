@@ -31,6 +31,7 @@ export const PreguntasDiagnostico = () => {
         setQuestion(data.response._embedded.questions);
         setPage(data.response["hc:offset"]);
         setMax(data.response["hc:limit"]);
+        console.log(data)
       } catch (error) {
         console.error(error);
       }
@@ -93,7 +94,7 @@ export const PreguntasDiagnostico = () => {
                         type="submit"
                         className="preguntas__diagnostico-checkbox"
                         onClick={() => respuesta(items)}
-                        value="A"
+                        value={items.numeration}
                         name="course"
                       ></input>
                       <li>{items.response}</li>

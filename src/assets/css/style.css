@@ -3275,7 +3275,7 @@ input.preguntas__diagnostico-checkbox-selected {
 
 /* Confirmar Ruta Fin*/
 
-/* Gestion de cupos */
+/* Gestion de cupos (Usuarios) */
 
 .gestion__usuario-section .header__container.background {
   position: fixed !important;
@@ -3383,7 +3383,73 @@ input.preguntas__diagnostico-checkbox-selected {
   position: relative;
   top: 10px;
 }
-/* Gestion de cupos Fin */
+/* Gestion de cupos (Usuarios) Fin */
+
+/* Gestion de cupos (Disponibles) */
+.xlrn__gestion-cupos_blocks {
+  position: relative;
+  left:450px;
+  width: 75%;
+}
+
+.xlrn__gestion-cupos_content {
+  background-color: white;
+  border-radius: 1rem;
+  border: 2px solid gray;
+  height: 300px;
+  position: relative;
+  top: 270px;
+  width: 100%;
+}
+
+.xlrn__gestion-cupos-title {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  top: 25px;
+}
+
+.xlrn__gestion-cupos-subtitle {
+  position: relative;
+  top: 110px;
+  left: 40px;
+}
+
+.xlrn__gestion-cupos-title img {
+  position: relative;
+  right: 40px;
+  top: 20px;
+}
+
+.xlrn__gestion-cupos-button-agregar-cupos {
+  background-color: transparent;
+  border: 1px solid var(--blueAlternative) ;
+  border-radius: 10px;
+  position: relative;
+  left: 45px;
+  height: 45px;
+  font-weight: bold;
+  color: var(--blueAlternative);
+  top: 25px;
+}
+
+.xlrn__gestion-cupos-button-agregar-cupos:hover {
+  background-color: var(--blueAlternative);
+  color: var(--white);
+}
+
+.xlrn__gestion-cupos-button {
+  position: relative;
+  left: 45px;
+  border:none;
+  border-radius: 10px;
+  background-color: var(--green);
+  height: 45px;
+  top: 25px;
+  font-weight: bold;
+}
+
+/* Gestion de cupos (Disponibles) Fin */
 
 /* Compra de cupos Inicio*/
 .compra-usuarios__section .dashboard__nav {
@@ -3780,6 +3846,7 @@ p.xln_price_GDC span {
   margin: auto;
   text-align: center;
 }
+
 .xlrn__crear-equipos__form input {
   height: 40px;
   margin-bottom: 20px;
@@ -3961,6 +4028,33 @@ p.xln_price_GDC span {
 }
 
 /* Creacion de usuario Fin */
+
+/* Informacion de equipos  */
+.xlrn__crear-usuarios__container {
+  height: 100vh;
+}
+
+.xlrn__informacion-equipos {
+  background-color: var(--white);
+  height: 610px;
+  width: 547px;
+  position: relative;
+  top: 250px;
+}
+
+.xlrn__informacion-equipos-title {
+  position: relative;
+  top: 130px;
+  left: 240px;
+  width: 20%;
+}
+
+.xlrn__informacion-equipos-content {
+  position: relative;
+  width: 100%;
+}
+
+/* Informacion de equipos Fin */
 
 /* Reproductor de video inicio */
 .video__reproduccion-section {
