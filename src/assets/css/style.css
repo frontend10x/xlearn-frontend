@@ -184,12 +184,13 @@ button.burg-toggle i {
 /* Inicio Navegacion */
 
 .navegacion {
-  display: flex;
+  -webkit-column-gap: 2rem;
   column-gap: 2rem;
-  left: 800px;
-  width: 40%;
+  display: flex;
+  left: 54%;
   position: relative;
   top: -20px;
+  width: 40%;
 }
 
 .navbar {
@@ -1305,6 +1306,9 @@ img.cursos__banner-image {
 .login {
   background-color: var(--blueDark);
   height: 100vh;
+}
+.login__container-content {
+  width: 100%;
 }
 .login__container {
   display: flex;
