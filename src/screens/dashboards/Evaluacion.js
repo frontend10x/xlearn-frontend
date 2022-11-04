@@ -16,11 +16,12 @@ export const Evaluacion = () => {
   const [isDisabled, setDisabled] = useState(true);
   const styleInputSelect = useRef({});
   const classSelected = "preguntas__diagnostico-checkbox-selected";
+  const [evaluationID, setEvaluationID] = useState();
 
   const [schema, setSchema] = useState({
-    evaluation_id: "",
+    evaluation_id: evaluationID,
     user_id: id,
-    course_id: evaluationID,
+    course_id: id,
     answers: []
   });
 
