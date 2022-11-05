@@ -103,7 +103,7 @@ export const CompraUsuarios = () => {
         <div className="compra-usuarios__form">
           <form className="compra-usuarios__form-payment">
             <div className="compra-usuarios__form-inputs" >
-              <label>Numero de Usuarios</label>
+              <label>Número de usuarios</label>
               <div className="compra-usuarios__form-inputs__container" >
                 <select name="amount_user"
                   onChange={handleInputChange}
@@ -119,7 +119,7 @@ export const CompraUsuarios = () => {
                 </select>
                 <button>+ 20 usuarios</button>
               </div>
-              <label>Tiempo de Suscripcion</label>
+              <label>Tiempo de suscripción</label>
 
               <div className='compra-usuarios__form-inputs__container'>
                 <select name="amount_time"
@@ -137,14 +137,14 @@ export const CompraUsuarios = () => {
                 <button>+ 24 Meses</button>
               </div>
               <div className="compra-usuarios__form-inputs__data" >
-                <div className="compra-usuarios__form-inputs__data-container" >
+                {/* <div className="compra-usuarios__form-inputs__data-container" >
                   <label>NIT</label>
                   <input type='text' placeholder="Escribe tu NIT" name="NIT"
                     onChange={handleInputChange}
                   />
-                </div>
+                </div> */}
                 <div className="compra-usuarios__form-inputs__data-container" >
-                  <label>Cupon De Descuento</label>
+                  <label>Cupón de descuento</label>
                   <input type='text' placeholder="Ingresa tu cupon si tienes uno"
                     name="coupon"
                     onChange={handleInputChange}
@@ -163,7 +163,7 @@ export const CompraUsuarios = () => {
             <hr/>
             <h2>Pago total:</h2>
             {price?.amount &&
-              <p className="xln_price_GDC">$ {price.amount} COP/Año</p>            
+              <p className="xln_price_GDC">$ {price.amount} COP</p>            
             }
           </div>
           <div className="compra-usuarios__container-price__content-total" >

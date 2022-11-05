@@ -40,7 +40,7 @@ export const Footer = () => {
 
               <div className="footer__content-email_logo ">
                 <Image src={logo10X} alt="logo" className="footer__image-email" />
-                <input type="email" placeholder="Enter Your Email" className="footer__email" />
+                {/* <input type="email" placeholder="Enter Your Email" className="footer__email" /> */}
               </div>
 
             </div>

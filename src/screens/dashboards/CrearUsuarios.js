@@ -93,7 +93,7 @@ export const CrearUsuarios = () => {
                                     <div className="d-flex gap-2" >
                                         <input onChange={handleInputChange} name="phone" placeholder="Telefono" className="input__phone" />
                                         <select onChange={handleInputChange} name="rol_id" className="input__rol" >
-                                            <option value="..." >selecciona</option>
+                                            <option value="..." >Seleccionar área</option>
                                             {areaTelf&&
                                                 areaTelf.map((item, index) => (
                                                     <option key={index} value={item.value} >{item.label}</option>

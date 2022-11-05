@@ -16,12 +16,12 @@ export const InfoVideoPlayer = ({ proffesor }) => {
                 <div className="xlrn__infovideo-nav d-flex justify-content-around" >
                     <div className="xlrn__infovideo-nav-container-buttons mt-5 d-flex gap-3 h-25" >
                         <input type="button" className="xlrn__infovideo-nav__button" value="Proyecto" onClick={pageSelected} />
-                        <input type="button" className="xlrn__infovideo-nav__button" value="Recursos" onClick={pageSelected} />
-                        <input type="button" className="xlrn__infovideo-nav__button" value="Glosario" onClick={pageSelected} />
+                        {/* <input type="button" className="xlrn__infovideo-nav__button" value="Recursos" onClick={pageSelected} />
+                        <input type="button" className="xlrn__infovideo-nav__button" value="Glosario" onClick={pageSelected} /> */}
                     </div>
-                    <div className="xlrn__infovideo-nav-buttons-makereport mt-5 "  >
+                    {/* <div className="xlrn__infovideo-nav-buttons-makereport mt-5 "  >
                         <input type="button" className="xlrn__infovideo-nav__button" value="Hacer un reporte" />
-                    </div>
+                    </div> */}
                 </div>
                 {pages === "Proyecto" &&
                     <div className="xlrn__infovideoplayer-container-content" >
@@ -46,7 +46,7 @@ export const InfoVideoPlayer = ({ proffesor }) => {
                         </div>
                     </div>
                 }
-                {pages === "Recursos" &&
+                {/* {pages === "Recursos" &&
                     <div className="xlrn__infovideoplayer-container-content" >
                     <div className="xlrn__infovideoplayer-content" >
                         <div className="xlnPlayer__content__proyectos" >
@@ -66,8 +66,8 @@ export const InfoVideoPlayer = ({ proffesor }) => {
                     </div>
                 </div>
 
-                }
-                {pages === "Glosario" &&
+                } */}
+                {/* {pages === "Glosario" &&
                    <div className="xlrn__infovideoplayer-container-content" >
                    <div className="xlrn__infovideoplayer-content" >
                        <div className="xlnPlayer__content__proyectos" >
@@ -87,7 +87,7 @@ export const InfoVideoPlayer = ({ proffesor }) => {
                    </div>
                </div>
 
-                }
+                } */}
 
         </div> {/* Contenedor fin */ }
         </div >

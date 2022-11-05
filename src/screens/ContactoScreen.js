@@ -6,10 +6,12 @@ import { Footer } from "../componentes/Footer";
 import {
     bannerContact01
   } from "../assets/img";
+import { useNavigate } from "react-router-dom";
 
 export const ContactoScreen = () => {
 
     const [countries, setCountries] = useState()
+    const navigate = useNavigate()
 
     useEffect(() => {
         async function countries() {
@@ -24,7 +26,9 @@ export const ContactoScreen = () => {
         countries();
     }, [])
 
-
+    const redirect = () => {
+        navigate('/plans/register')
+    }
 
     return (
         <div className="xlrn-contacto__section" >
@@ -36,8 +40,8 @@ export const ContactoScreen = () => {
                         <div className="xln__title__bannerContact">
                             <h1>¡Ponte en contacto con nosotros y entrena a tu equipo!</h1>
                             <p>Es el momento de crear, proponer , generar ingresos y, sobre todo ,de innovar. Descubre y aprovecha el potencial de tu organización y desarrolla un plan de acción en torno al entrenamiento ¡Contáctanos!</p>
-                            <button>
-                                Iniciar curso de prueba gratis
+                            <button onClick={redirect} className='w-25' >
+                                Iniciar
                             </button>
                         </div>
                     </div>
@@ -77,7 +81,7 @@ export const ContactoScreen = () => {
                                         </div>
                                     </div>
 
-                                    <div className="xlrn__contacto-formulario-group" >
+                                    {/* <div className="xlrn__contacto-formulario-group" >
                                         <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
                                             <label >Web site</label>
                                             <input type='text' />
@@ -94,9 +98,9 @@ export const ContactoScreen = () => {
                                                     ))}
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> */}
 
-                                    <div className="xlrn__contacto-formulario-group" >
+                                    {/* <div className="xlrn__contacto-formulario-group" >
                                         <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-1" >
                                             <label >Que plan de Xlearn te interesa <span className="campo_requerido">*</span></label>
                                             <select>
@@ -112,11 +116,11 @@ export const ContactoScreen = () => {
                                                 <option value="" >select</option>
                                             </select>
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     <div className="xlrn__contacto-formulario-group" >
                                         <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-1" >
-                                            <label >Dejanos saber un poco mas de ti</label>
+                                            <label >Cuéntanos tu requerimiento</label>
                                             <textarea/>
                                         </div>
                                     </div>
