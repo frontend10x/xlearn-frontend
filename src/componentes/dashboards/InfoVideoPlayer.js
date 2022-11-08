@@ -1,6 +1,27 @@
 import React, { useState } from "react";
-import { ImageProyectos } from "../../assets/img";
-export const InfoVideoPlayer = ({ proffesor }) => {
+import { Image } from "react-bootstrap";
+import { 
+    ImageProyectos, 
+    recomendation_01,
+    recomendation_02,
+    recomendation_03,
+    recomendation_04,} from "../../assets/img";
+import { useNavigate } from "react-router-dom";
+
+export const InfoVideoPlayer = () => {
+
+    const navigate = useNavigate();
+
+    const [course, setCourse] = useState([
+        { title: "Presentaciones efectivas de negocios", image:  recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
+        { title: "Modelación de negocios", image:  recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },
+        { title: "Diseño de propuesta de valor", image:  recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
+        { title: "Prototipado", image:  recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
+      ]);
+
+    const redirect = (e) => (
+    navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`)
+    )
 
     const [pages, setPages] = useState("Proyecto");
 
@@ -40,9 +61,33 @@ export const InfoVideoPlayer = ({ proffesor }) => {
                             </div>
                             <div className="xlrn__infovideoplayer-content-users" >
                                 <div>
-                                    {proffesor}
+                                    profesor
                                 </div>
                             </div>
+
+
+                            <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
+                            <div className="dashboard__lider-container_courses" >
+                                {course &&
+                                course.map((item, index) => (
+                                    <div key={index} className="dashboard__lider-container_courses-card" >
+                                    <Image src={item.image} className="img-recomendation-xln" />
+                                    <div className="dashboard__lider-container_courses-card-content" >
+                                        <div className="dashboard__lider-container_courses-card-content-body" >
+                                        <div className="d-flex justify-content-around" >
+                                            {/* <p>{item.time} de contenido</p>
+                                            <p>{item.user} de usuarios</p> */}
+                                        </div>
+                                        <h3>{item.title}</h3>
+                                        <p>{item.subtitle}</p>
+                                        <button className="dashboard__lider-container_courses-card-content_button" onClick={redirect} >Ingresar</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                ))
+                                }
+                            </div>
+
                         </div>
                     </div>
                 }
