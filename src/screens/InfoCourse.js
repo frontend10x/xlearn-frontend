@@ -16,6 +16,14 @@ export const InfoCourse = () => {
         getCourses();
     }, []) /* LOGICA DE CURSOS PUBLICOS */
 
+    const [lessons, setLessons] = useState([
+        {title:"ADN Innovador",time:"2:59"},
+        {title:"Observar",time:"1:07"},
+        {title:"Experimentar",time:"1:07"},
+        {title:"Colaborar",time:"1:07"},
+        {title:"Asociar",time:"1:07"}
+    ]);
+
     console.log(courses,'variable');
 
     return (
@@ -25,6 +33,15 @@ export const InfoCourse = () => {
                        <Image src={courses.file_path} alt="image_description" className='w-25 h-25' />
                         {courses.name}
                         <a href={courses.video_uri}> URL DEL VIDEO DE PRUEBA DEL CURSO</a>
+
+                        {lessons &&
+                            lessons.map((item,index) => (
+                                <div>
+                                    {item.title} {item.time}
+                                </div>
+                            ))
+                        }
+
                     </div>
         </div>
     )
