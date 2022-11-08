@@ -2,7 +2,7 @@ import React from "react";
 import { HeaderRegister } from "../componentes/HeaderRegister";
 import { Footer } from "../componentes/Footer";
 import { Image } from "react-bootstrap";
-import { banner_empresa01, empresas_contacto, empresas_image, Image_01, platformImage, playButton } from "../assets/img";
+import { banner_empresa01, empresas_contacto, empresas_image, Image_01, platformImage, playButton, empresa_img, } from "../assets/img";
 
 export const EmpresaScreen = () => {
   return (
@@ -87,7 +87,7 @@ export const EmpresaScreen = () => {
         </div>
       </div>
         <div className="empresas__banner-image_content">
-          <Image src={empresas_image} className="empresas__banner-image_section" />
+          <Image src={empresa_img} className="empresas__banner-image_section" />
         </div>
         <div className="empresas__section-information" >
           <div className="empresas__section-information_content" >
@@ -100,16 +100,16 @@ export const EmpresaScreen = () => {
             <Image src={platformImage} alt="platform-image" className="empresas__platform-image" />
           </div>
           <div className="empresas__platform-container_options" >
-            <div className="empresas__platform-video" >
+            {/* <div className="empresas__platform-video" >
               <Image src={playButton} alt="playVideo" />
               <p>Play Video</p>
-            </div>
+            </div> */}
             <div className="empresas__platform-options_content" >
               <h1>Conoce nuestra plataforma; podrás analizar el rendimiento y mejorar los procesos de tu compañía a través de la formación y capacitación</h1>
               <h4>- Xlearn para empresas</h4>
               <p>Regístrate y gestiona los cupos para el desarrollo de proyectos que impulsen la innovación y el aprovechamiento de la capacidad instalada</p>
-              <h4>+ Administra tu equipo</h4>
-              <h4>+ Monitorea el rendimiento</h4>
+              {/* <h4>+ Administra tu equipo</h4>
+              <h4>+ Monitorea el rendimiento</h4> */}
             </div>
           </div>
         </div>

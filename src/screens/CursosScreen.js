@@ -178,7 +178,7 @@ export const CursosScreen = () => {
                     alt="logo"
                     className="cursos__card-logo"
                   /> */}
-                  <button onClick={redirect} id={item.id} value={item.value} />
+                  <button onClick={redirect} id={item.id} value={item.value} >Descripción</button>
                 </div>
               </div>
             ))}

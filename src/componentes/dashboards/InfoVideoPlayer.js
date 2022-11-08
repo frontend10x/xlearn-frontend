@@ -65,29 +65,29 @@ export const InfoVideoPlayer = () => {
                                 </div>
                             </div>
 
-
-                            <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
-                            <div className="dashboard__lider-container_courses" >
-                                {course &&
-                                course.map((item, index) => (
-                                    <div key={index} className="dashboard__lider-container_courses-card" >
-                                    <Image src={item.image} className="img-recomendation-xln" />
-                                    <div className="dashboard__lider-container_courses-card-content" >
-                                        <div className="dashboard__lider-container_courses-card-content-body" >
-                                        <div className="d-flex justify-content-around" >
-                                            {/* <p>{item.time} de contenido</p>
-                                            <p>{item.user} de usuarios</p> */}
+                            <div className="xln__internos__CursosRecomendadosPlayer" >
+                                <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
+                                <div className="dashboard__lider-container_courses" >
+                                    {course &&
+                                    course.map((item, index) => (
+                                        <div key={index} className="dashboard__lider-container_courses-card" >
+                                        <Image src={item.image} className="img-recomendation-xln" />
+                                        <div className="dashboard__lider-container_courses-card-content" >
+                                            <div className="dashboard__lider-container_courses-card-content-body" >
+                                            <div className="d-flex justify-content-around" >
+                                                {/* <p>{item.time} de contenido</p>
+                                                <p>{item.user} de usuarios</p> */}
+                                            </div>
+                                            <h3>{item.title}</h3>
+                                            <p>{item.subtitle}</p>
+                                            <button className="dashboard__lider-container_courses-card-content_button" onClick={redirect} >Ingresar</button>
+                                            </div>
                                         </div>
-                                        <h3>{item.title}</h3>
-                                        <p>{item.subtitle}</p>
-                                        <button className="dashboard__lider-container_courses-card-content_button" onClick={redirect} >Ingresar</button>
                                         </div>
-                                    </div>
-                                    </div>
-                                ))
-                                }
+                                    ))
+                                    }
+                                </div>
                             </div>
-
                         </div>
                     </div>
                 }

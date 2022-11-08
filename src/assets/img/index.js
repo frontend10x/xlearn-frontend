@@ -33,6 +33,7 @@ export {default as gradient} from '../Breakpoints/1920/Gradinet.png';
 export {default as banner_cursos} from '../Image/banner_cursos01.png';
 export {default as banner_empresa01} from '../Image/banner_empresas01.png';
 export {default as empresas_image} from '../Image/empresas_image.jpeg';
+export {default as empresa_img} from '../Image/empresa-img.png';
 export {default as platformImage} from '../Breakpoints/1920/platform_section.png';
 export {default as empresas_contacto} from '../Image/empresas_contacto.jpg';
 export {default as cuposIcon } from '../Image/Icon_Cupos.png';

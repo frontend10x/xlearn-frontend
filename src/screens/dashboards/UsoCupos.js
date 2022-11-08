@@ -29,37 +29,48 @@ export const UsoCupos = () => {
 
     return (
         <div className="xlrn__uso-cupos__section" >
-            <HeaderDashboard />
-            <div className="xlrn__uso-cupos__section-container d-flex" >
-                <div className="xlrn__uso-cupos__nav" >
-                    {/* <NavegacionDashboard /> */}
-                </div>
-                <div className="xlrn__uso-cupos__container-titles" >
-                    <div className="xlrn__uso-cupos__titles-content" >
-                        <h1>Gestion de cupos</h1>
-                        <p>Gestiona y administra tus cupos</p>
-                    </div>
-                </div>
 
-                <div className="xlrn__uso-cupos__container-blocks" >
-                    <div className="xlrn__uso-cupos-registered__container" >
-                        <p>Usuarios</p>
-                        <div className="xlrn__uso-cupos-registered" >
-                            {users &&
-                                users.map((item, index) => (
-                                    <div key={index} className="xlrn__uso-cupos-registered__card" >
-                                        {/* <img src={imagenUser} className="user__image" /> */}
-                                            <input type='checkbox' value={item.id} onClick={addToGroup} />
-                                        <div className="xlrn__uso-cupos-registered__card-content" >
-                                            <h1>{item.name}</h1>
-                                            <p>{item.email}</p>
-                                        </div>
-                                    </div>
-                                ))
-                            }
+            <HeaderDashboard />
+
+            <div className="xlrn__uso-cupos__section-container d-flex" >
+
+                <div className="xln-content-dash">
+
+                    <div className="xlrn__uso-cupos__nav" >
+                        <NavegacionDashboard />
+                    </div>
+
+                    <div className="xln-contentSection-block-empresa" >
+
+                        <div className="xlrn__uso-cupos__container-titles" >
+                            <div className="xlrn__uso-cupos__titles-content" >
+                                <h1>Gestion de usuarios</h1>
+                                <p>Gestiona y administra usuarios</p>
+                            </div>
                         </div>
+
+                        <div className="xlrn__uso-cupos-registered__container" >
+                            <p>Usuarios</p>
+                            <div className="xlrn__uso-cupos-registered" >
+                                {users &&
+                                    users.map((item, index) => (
+                                        <div key={index} className="xlrn__uso-cupos-registered__card" >
+                                            {/* <img src={imagenUser} className="user__image" /> */}
+                                                <input type='checkbox' value={item.id} onClick={addToGroup} />
+                                                <img src={imagenUser}/>
+                                            <div className="xlrn__uso-cupos-registered__card-content" >
+                                                <h1>{item.name}</h1>
+                                                <p>{item.email}</p>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+                
             </div>
             {/* <Footer /> */}
         </div>
