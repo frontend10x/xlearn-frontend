@@ -16,16 +16,13 @@ export const EmpresaScreen = () => {
         />
         <div className="empresas__banner-content">
           <h1>
-            Lleva tu empresa al siguiente nivel a traves del entrenamiento de tu
-            equipo de trabajo
+          Lleva tu empresa al siguiente nivel a través del entrenamiento de tu equipo de trabajo
           </h1>
           <p>
-            Contamos con una gran oferta de cursos que te ayudaran a aumentar la
-            productividad de tu organizacion, acelerando el crecimiento y
-            desarrollo de nuevas competencias
+            Contamos con una gran oferta de cursos que te ayudaran a aumentar la productividad de tu organización, acelerando el crecimiento y desarrollando nuevas competencias
           </p>
           <button className="empresas__banner-button">
-            Conoce nuestros planes
+          Conoce nuestros planes
           </button>
         </div>
       </div>
@@ -35,31 +32,31 @@ export const EmpresaScreen = () => {
           <a href="/enterprises">| Empresa</a>
         </div>
         <div className="empresas__innovacion-title">
-          <h4>INNOVACION</h4>
+          <h4>INNOVACIÓN</h4>
         </div>
         <div className="empresas__innovacion-information_container" >
           <div className="empresas__innovacion-content">
             <h1>
-              Implementa procesos y metodologias que le aporten al desarrollo y
-              a la optimizacion de recursos en tun compañia
+              Implementa procesos y metodologías que le aporten al desarrollo y
+              a la optimización de recursos en tus compañia
             </h1>
           </div>
           <div className="empresas__innovacion-information">
             <div className="empresas__innovacion-information_group" >
               <div className="empresas__innovacion-information_group-title" >
-                <h4>Introduccion a la innovacion</h4>
+                <h4>Introduccion a la innovación</h4>
               </div>
               <h2>ADN Innovador</h2>
               <p>
                 Conoce y desarrolla las habilidades de una empresa innovadora,
-                caracteristicas y acciones para fortalecer tu ADN innovador
+                caracteristicas y acciones para fortalecer tu ADN innovador.
               </p>
             </div>
             <div className="empresas__innovacion-information_group" >
               <div className="empresas__innovacion-information_group-title" >
-                <h4>Introduccion a la innovacion</h4>
+                <h4>Introduccion a la innovación</h4>
               </div>
-              <h2>¿Que es innovacion?</h2>
+              <h2>¿Que es innovación?</h2>
               <p>
               Ingresa al mundo de la innovación conociendo su definición, 
               tipos, dimensiones y el proceso para implementarla en tu emprendimiento
@@ -76,11 +73,11 @@ export const EmpresaScreen = () => {
             </div>
             <div className="empresas__innovacion-information_group" >
               <div className="empresas__innovacion-information_group-title" >
-                <h4>Introduccion a la innovacion</h4>
+                <h4>Introducción a la innovación</h4>
               </div>
               <h2>Experimentar y decidir</h2>
               <p>
-              Arriésgate a experimentar y obtén las herramientas necesarias para plantear hipótesis y experimentos que validen tu idea de negocio
+                Arriésgate a experimentar y obtén las herramientas necesarias para plantear hipótesis y experimentos que validen tu idea de negocio
               </p>
             </div>
           </div>
@@ -92,7 +89,7 @@ export const EmpresaScreen = () => {
         <div className="empresas__section-information" >
           <div className="empresas__section-information_content" >
             <h4>INNOVACION</h4>
-            <h1>Ingresa al Mundo de la innovacion entrenando a tus <span> equipos</span> de trabajo </h1>
+            <h1>Ingresa al mundo de la innovacion entrenando a tus <span> equipos</span> de trabajo </h1>
           </div>
         </div>
         <div className="empresas__platform-container">
