@@ -30,6 +30,7 @@ import { DashboardIntegrante } from "../screens/dashboards/DashboardIntegrante";
 import { IntegranteRoute } from "./IntegranteRoute";
 import { GestionDeEquipos } from "../screens/dashboards/GestionDeEquipos";
 import { GestionDeCupos } from "../screens/dashboards/GestionDeCupos";
+import { InfoCourse } from "../screens/InfoCourse";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -43,7 +44,9 @@ export const AppRouter = () => {
         <Route exact path="/plans/register" element={<EmpresasRegister />} />
         <Route exact path="/enterprises" element={<EmpresaScreen />} />
         <Route exact path="/login" element={<LoginScreen />} />
+        <Route exact path="/login/:id" element={<LoginScreen />} />
         <Route exact path="/contact" element={<ContactoScreen />} />
+        <Route exact path="/course/info/:id" element={<InfoCourse />} />
 
         {/* RUTA DE EMPRESA */}
         <Route element={<EmpresasRoute token={token} type={type} />}>
@@ -60,7 +63,8 @@ export const AppRouter = () => {
           <Route exact path="/manejo/equipos" element={<GestionDeEquipos />} />
           <Route exact path="/gestion/cupos/disponibles" element={<GestionDeCupos />} />
         </Route>
-
+        {/* RUTA DE EMPRESA */}
+        
         {/* RUTA DEL LIDER */}
         <Route element={<LiderRoute token={token} type={type} />}>
           <Route
@@ -101,6 +105,7 @@ export const AppRouter = () => {
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
           <Route exact path="/evaluacion/:course_id" element={<Evaluacion />} />
         </Route>
+        {/* RUTA DEL LIDER */}
 
         {/* RUTA DEL INTEGRANTE */}
         <Route element={<IntegranteRoute token={token} type={type} />}>

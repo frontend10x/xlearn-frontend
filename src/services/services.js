@@ -2,7 +2,6 @@ import axios from "axios";
 import { baseURL } from "../utils/route";
 
 
-
 export const loginPost = async (email, password) => {
   const response = await axios.post(baseURL + "/api/v1/login", {
     email,
