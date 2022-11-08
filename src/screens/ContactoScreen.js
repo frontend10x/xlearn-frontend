@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 //import { Image } from "react-bootstrap";
-import { HeaderPublic } from "../componentes/HeaderPublic";
+import { HeaderRegister } from "../componentes/HeaderRegister";
 import { getCountrys } from "../services/services";
 import { Footer } from "../componentes/Footer";
 import {
@@ -32,7 +32,7 @@ export const ContactoScreen = () => {
 
     return (
         <div className="xlrn-contacto__section" >
-            <HeaderPublic />
+           <HeaderRegister />
             <div className="xlrn-contacto__section-container" >
                 <div className="xlrn-contacto__section-banner" >
                     {/* <Image src={ bannerContact01 } alt="image__banner" /> */}

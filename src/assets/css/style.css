@@ -39,7 +39,7 @@ body {
   border: none;
   background-color: transparent;
   position: relative;
-  top: 10px;
+  top: 30px;
   left: 60px;
 }
 
@@ -75,7 +75,7 @@ button.burg-toggle i {
 .header__logo {
   position: absolute;
   left: 130px;
-  top: 20px;
+  top: 40px;
 }
 
 .header .logo img {
@@ -1607,7 +1607,7 @@ img.cursos__banner-image {
   border-radius: 5px;
   color: var(--white);
   position: absolute;
-  left: 780px;
+  left: 56%;
   top: 400px;
   height: auto;
   width: 41%;
@@ -2949,6 +2949,39 @@ input.preguntas__diagnostico-checkbox-selected {
 
 /* Preguntas Diagnostico Fin */
 
+
+/* Información cursos */
+.xln__info_courses .col-lg-4 img {
+  width: 100%!important;
+}
+.xln__info_courses .hero {
+  background: var(--blueDark);
+}
+.xln__info_courses .title {
+  color: #fff;
+  padding-left: 7%;
+}
+.xln__info_courses .btn__cursos__descripcion {
+  background-color: var(--green);
+  border: none;
+  color: var(--blueDark);
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 5px;
+  width: 30%!important;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+.xln__info_courses .objetivos_de_curso {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  height: 200px;
+}
+
+.hero .row {
+  --bs-gutter-x: -0.5rem;
+}
 /* Dashboard Lider */
 
 .dashboard__lider-banner {
@@ -4511,10 +4544,11 @@ p.xln_price_GDC span {
 .xln_player_course {
   width: 70%;
   float: left;
+  height: 90vh;
 }
 
 .xln__content__rutaClick {
-  margin-top: 16px;
+  margin-top: 8px;
   position: relative;
   top: 10px;
 }
