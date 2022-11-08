@@ -3,7 +3,7 @@ import { evaluationCourse, quizDiagnostic, registerAnswers, registerDiagnostic }
 import { useSelector } from "react-redux/es/exports";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 export const Evaluacion = () => {
@@ -23,7 +23,7 @@ export const Evaluacion = () => {
     answers: []
   });
 
-  console.log(schema)
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function quiz() {
@@ -57,7 +57,7 @@ export const Evaluacion = () => {
 
   const previousPage = () => {
     if (page === 0) {
-      console.log("Regresar a la pagina anterior");
+      navigate(`/presentacion/evaluacion/${course_id}`);
     }
     page > 0 && setPage(page - 1);
   };
@@ -73,7 +73,7 @@ export const Evaluacion = () => {
           title: 'Felicidades',
           text: `${data.message}`,
         })
-    
+        navigate();
       }
     }
   };

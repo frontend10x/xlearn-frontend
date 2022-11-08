@@ -25,7 +25,7 @@ export const DashboardLider = () => {
     { title: "Prototipado", image:  recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
   ]);
   const [courseRoute, setCourseRoute] = useState();
-  const [progress,setProgress] = useState(false); 
+  const [progress,setProgress] = useState(true); 
   
   const redirect = (e) => (
     navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`)

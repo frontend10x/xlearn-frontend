@@ -13,22 +13,33 @@ export const GestionDeEquipos = () => {
 
     const { token, roles, subcompanie_id } = useSelector(state => state.auth)
     const [groups, setGroups] = useState([]);
+    const [users, setUsers] = useState([]);
+    const [ids, setIds] = useState([]); 
 
     useEffect(() => {
         async function getEnterprisesGroup() {
             const data = await getEnterpriseGroups(token, subcompanie_id);
             setGroups(data.groups._embedded.groups)
-            console.log(data.groups._embedded.groups)
         }
-        
+
         async function getUserForGroups() {
-            const data = await getUsersGroup(token,59)
-            console.log(data)
+            const data = await getUsersGroup(token, 59)
+            setUsers(data.users)
+            console.log(data.users);
         }
 
         getEnterprisesGroup();
         getUserForGroups()
     }, []);
+
+    // useEffect(() => {
+    //     groups.map(function (e) {
+    //         let id = e.id.JSON
+    //         setIds(id);
+    //         console.log(ids)
+    //     });
+    // },[])
+
 
     return (
         <div className="xlrn__crear-suarios__section" >
@@ -42,55 +53,54 @@ export const GestionDeEquipos = () => {
                     <p>Gestiona y administra tus cupos</p>
                 </div>
                 <div className="xln__content__progress_gestionDeCupos">
-                {groups && 
-                    groups.map((item, index) =>
-                    (
-                        <div className="xlrn__informacion-equipos xlrn__informacion-equipos_interno">
-                            <div className="xlrn__informacion-equipos-content" >
-                                <p className="xlrn__informacion-equipos-content_title">Equipo {item.id}</p>
-                                <h2>Curso: {item.name}</h2>
-                                <h5>Lider: Andres Ochoa</h5>
-                                <h5>Inicio: 05/03/2022</h5>
-                                <div className="xlrn__informacion-equipos-content-users" >
-                                    <div className="xlrn" >
-                                        <div className="xln__content__info_gestionDeCupos" >
-                                            <div className="xln_info_gestionDeCupos" >
-                                                <p className="text-center" >
-                                                    Usuario
-                                                </p>
-                                                <ul>
-                                                    <li>Thomas</li>
-                                                    <li>Jair</li>
-                                                    <li>Carlos</li>
-                                                </ul>
-                                            </div>
-                                            <div className="xln_info_gestionDeCupos" >
-                                                <p className="text-center" >
-                                                    Progreso
-                                                </p>
-                                                <div className="progress__bar__style">
-                                                    <input type="range" className="range" />
+                    {groups &&
+                        groups.map((item, index) =>
+                        (
+                            <div className="xlrn__informacion-equipos xlrn__informacion-equipos_interno">
+                                <div className="xlrn__informacion-equipos-content" >
+                                    <p className="xlrn__informacion-equipos-content_title">Equipo {item.id}</p>
+                                    <h2>Curso: {item.name}</h2>
+                                    <h5>Lider: {item.leader}</h5>
+                                    <h5>Inicio: 05/03/2022</h5>
+                                    <div className="xlrn__informacion-equipos-content-users" >
+                                        <div className="xlrn" >
+                                            <div className="xln__content__info_gestionDeCupos" >
+                                                <div className="xln_info_gestionDeCupos" >
+                                                    <p className="text-center" >
+                                                        Usuario
+                                                    </p>
+                                                    <ul>
+                                                        {users &&
+                                                            users.map((item, index) => (
+                                                                <li>{item.name}</li>
+                                                            ))
+                                                        }
+                                                    </ul>
                                                 </div>
-                                                <div className="progress__bar__style">
-                                                    <input type="range" className="range" />
+                                                <div className="xln_info_gestionDeCupos" >
+                                                    <p className="text-center" >
+                                                        Progreso
+                                                    </p>
+                                                    <div className="progress__bar__style">
+                                                        <input type="range" className="range" />
+                                                    </div>
+                                                    <div className="progress__bar__style">
+                                                        <input type="range" className="range" />
+                                                    </div>
                                                 </div>
-                                                <div className="progress__bar__style">
-                                                    <input type="range" className="range" />
+                                                <div className="xln_info_gestionDeCupos" >
+                                                    <p className="text-center" >
+                                                        Ultimo Ingreso
+                                                    </p>
                                                 </div>
-                                            </div>
-                                            <div className="xln_info_gestionDeCupos" >
-                                                <p className="text-center" >
-                                                    Ultimo Ingreso
-                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    )
-                    )
-                }
+                        )
+                        )
+                    }
                 </div>
             </div>
             <Footer />
