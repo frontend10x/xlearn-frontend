@@ -10,43 +10,27 @@ import {
   homeCarousel04,
   XlearnLogoBlack,
 } from "../assets/img";
+import { getCourse } from "../services/services";
+import { useNavigate } from "react-router-dom";
 
 export const CursosScreen = () => {
-  const [courses, setCourses] = useState([
-    {
-      id: 1,
-      image: homeCarousel02,
-      title: "Sistemas De Transformacion",
-      time: "1H",
-      users: "300",
-      logo: XlearnLogoBlack,
-    },
-    {
-      id: 2,
-      image: homeCarousel01,
-      title: "Emprendimiento Corporativo",
-      time: "1H",
-      users: "300",
-      logo: XlearnLogoBlack,
-    },
-    {
-      id: 1,
-      image: homeCarousel03,
-      title: "Excelencia Operacional",
-      time: "1H",
-      users: "300",
-      logo: XlearnLogoBlack,
-    },
-  ]);
+  const [courses, setCourses] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+      async function getCourses() {
+          const data = await getCourse();
+          setCourses(data.response._embedded.courses);
+      }
+
+      getCourses();
+  },[]) /* LOGICA DE CURSOS PUBLICOS */
   const filterCourses = () => {
     alert(`Filtro hecho este es el id`);
   };
-
-  // useEffect(() => {
-  //     async function getCourses() {
-  //         const data = await
-  //     }
-  // }) /* LOGICA DE CURSOS PUBLICOS */
+  const redirect = (e) => {
+    navigate(`/course/info/:${e.target.id}`);
+  }
 
   return (
     <div className="cursos__section">
@@ -179,21 +163,22 @@ export const CursosScreen = () => {
           <h4 className="cursos__section-recently" >Agregados recientemente</h4>
           <div className="map_content">
             {courses.map((item, index) => (
-              <div className="cursos__card-body" key={index}>
-                <Image src={item.image} alt={item.title} />
-                <div className="cursos__card-content">
+              <div className="cursos__card-body" key={index}   >
+                <Image src={item.file_path} alt={item.file_path} />
+                <div className="cursos__card-content" >
                   <div className="cursos__card-titles">
                     <div className="cursos__card-information">
-                      <h6>{item.users} usuarios</h6>
-                      <h6>{item.time}</h6>
+                      {/* <h6>{item.users} usuarios</h6> */}
+                      {/* <h6>{item.time}</h6> */}
                     </div>
-                    <h5>{item.title}</h5>
+                    <h5>{item.name}</h5>
                   </div>
-                  <Image
+                  {/* <Image
                     src={item.logo}
                     alt="logo"
                     className="cursos__card-logo"
-                  />
+                  /> */}
+                  <button onClick={redirect} id={item.id} value={item.value} />
                 </div>
               </div>
             ))}
@@ -202,20 +187,20 @@ export const CursosScreen = () => {
           <div className="map_content2">
             {courses.map((item, index) => (
               <div className="cursos__card-body" key={index}>
-                <Image src={item.image} alt={item.title} />
+                <Image src={item.file_path} alt={item.file_path} />
                 <div className="cursos__card-content">
                   <div className="cursos__card-titles">
                     <div className="cursos__card-information">
-                      <h6>{item.users} usuarios</h6>
-                      <h6>{item.time}</h6>
+                      {/* <h6>{item.users} usuarios</h6> */}
+                      {/* <h6>{item.time}</h6> */}
                     </div>
-                    <h5>{item.title}</h5>
+                    <h5>{item.name}</h5>
                   </div>
-                  <Image
+                  {/* <Image
                     src={item.logo}
                     alt="logo"
                     className="cursos__card-logo"
-                  />
+                  /> */}
                 </div>
               </div>
             ))}
