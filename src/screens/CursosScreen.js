@@ -52,7 +52,7 @@ export const CursosScreen = () => {
                 onClick={filterCourses}
                 value="Sistemas de innovacion"
               />
-              <input
+              {/* <input
                 className="text-start"
                 type="button"
                 onClick={filterCourses}
@@ -75,7 +75,7 @@ export const CursosScreen = () => {
                 type="button"
                 onClick={filterCourses}
                 value="Oportunidades, retos y Priorizacion"
-              />
+              /> */}
               {/* <h4>Transformacion Digital</h4>
               <input
                 className="text-start"

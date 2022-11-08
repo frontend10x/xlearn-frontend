@@ -121,14 +121,14 @@ export const ReproduccionDeCursos = () => {
                         <div className="xln__content__rutaClick" key={key}>
                             <button onClick={() => changeVideo(video)}>
                                 {/* <h3 style={{color:'black'}}>{key + ' - ' +video?.name}</h3> */}
-                                <h3 className="xlnIcon__couser__ruta">{key}</h3>
+                                <h3 className="xlnIcon__couser__ruta">{key + 1 }</h3>
                             </button>
                         </div>
                     ))}   
                     </div>
                 </div>
             </div>
-            <InfoVideoPlayer proffesor={proffesor} />
+            <InfoVideoPlayer />
         </div>
     )
 }
