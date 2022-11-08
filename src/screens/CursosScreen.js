@@ -28,8 +28,9 @@ export const CursosScreen = () => {
   const filterCourses = () => {
     alert(`Filtro hecho este es el id`);
   };
+  
   const redirect = (e) => {
-    navigate(`/course/info/:${e.target.id}`);
+    navigate(`/course/info/${e.target.id}`);
   }
 
   return (
@@ -51,7 +52,7 @@ export const CursosScreen = () => {
                 onClick={filterCourses}
                 value="Sistemas de innovacion"
               />
-              <input
+              {/* <input
                 className="text-start"
                 type="button"
                 onClick={filterCourses}
@@ -74,7 +75,7 @@ export const CursosScreen = () => {
                 type="button"
                 onClick={filterCourses}
                 value="Oportunidades, retos y Priorizacion"
-              />
+              /> */}
               {/* <h4>Transformacion Digital</h4>
               <input
                 className="text-start"
