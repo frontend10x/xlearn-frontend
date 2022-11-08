@@ -28,8 +28,9 @@ export const CursosScreen = () => {
   const filterCourses = () => {
     alert(`Filtro hecho este es el id`);
   };
+  
   const redirect = (e) => {
-    navigate(`/course/info/:${e.target.id}`);
+    navigate(`/course/info/${e.target.id}`);
   }
 
   return (

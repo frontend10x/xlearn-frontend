@@ -336,3 +336,9 @@ export const registerAnswers = async (token,schema) => {
   const response = await axios.post(baseURL + "/api/v1/answer/store", schema,config);
   return response.data;
 }
+
+export const getCourseDescription = async (id) => {
+  const response = await axios.get(baseURL + `/api/v1/course/show/${id}`)
+
+  return response.data
+}

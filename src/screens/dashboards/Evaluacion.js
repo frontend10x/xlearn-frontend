@@ -8,7 +8,6 @@ import Swal from "sweetalert2";
 
 export const Evaluacion = () => {
   const { token, groups,id } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
   const [question, setQuestion] = useState([]);
   const { course_id } = useParams();
   const [page, setPage] = useState(0);
