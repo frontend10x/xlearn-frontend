@@ -342,3 +342,8 @@ export const getCourseDescription = async (id) => {
 
   return response.data
 }
+
+export const generateCertificate = async (token) => {
+  const response = await axios.post()
+  return response.data
+}
