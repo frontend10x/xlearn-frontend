@@ -16,7 +16,9 @@ export const HeaderRegister = () => {
         >
           <i className="fa-solid fa-bars fa-2xl"></i>
         </button>
-        <img src={XlearnLogo} alt="header__logo" className="header__logo" />
+        <NavLink href="/">
+          <img src={XlearnLogo} alt="header__logo" className="header__logo" />
+        </NavLink>
         <Navegacion />
       </header>
 
