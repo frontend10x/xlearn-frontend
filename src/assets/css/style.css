@@ -1211,11 +1211,12 @@ video.xln-content-video_MS {
 
 .map_content {
   bottom: 320px;
-  display: flex;
-  gap: 1rem;
   width: 60%;
   position: relative;
   left: 33%;
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .cursos__section-populars {
@@ -1229,13 +1230,26 @@ video.xln-content-video_MS {
 .map_content2 {
   bottom: 261px;
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
   width: 60%;
   position: relative;
   left: 33%;
 }
 
+.cursos__card-content button {
+  background: var(--green);
+  padding: 8px 20px;
+  margin-left: 15px;
+  border-radius: 4px;
+  color: var(--black);
+  border: none;
+  text-decoration: none;
+  margin-top: 79px;
+}
+
 .cursos__card-body {
+  width: 30%;
   border-radius: 10px;
 }
 
@@ -1340,6 +1354,7 @@ img.cursos__banner-image {
   border: none;
   border: 1px solid var(--green);
 }
+
 
 /* Cursos Screen Fin */
 
@@ -2093,7 +2108,7 @@ p.xln__register_text_TyC {
 }
 
 .empresas__innovacion-container {
-  height: 65vh;
+  height: 100vh;
 }
 
 .empresas__innovacion-information_container {
@@ -2149,13 +2164,12 @@ p.xln__register_text_TyC {
 }
 
 .empresas__banner-image_content {
-  height: 75vh;
-  width: 50%;
+  height: 100vh;
+  width: 100%;
 }
 
 .empresas__banner-image_section {
   position: relative;
-  left: 400px;
   width: 100%;
 }
 
@@ -2218,9 +2232,12 @@ p.xln__register_text_TyC {
 
 .empresas__platform-options_content {
   position: relative;
-  left: 300px;
-  top: 110px;
-  width: 40%;
+  left: 26%;
+  top: 21%;
+  width: 54%;
+}
+.empresas__banner-contacto img {
+  width: 100%;
 }
 
 .empresas__platform-options_content h1 {
@@ -2268,10 +2285,11 @@ p.xln__register_text_TyC {
 
 .empresas__banner-contacto_content {
   position: relative;
-  bottom: 550px;
+  bottom: 390px;
   left: 100px;
   color: var(--white);
   height: 0px;
+  width: 80%;
 }
 
 .empresas__banner-contacto_content p {
@@ -2294,7 +2312,7 @@ p.xln__register_text_TyC {
   border: none;
   background-color: var(--green);
   border-radius: 5px;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bold;
   color: var(--blueDark);
   width: 20%;
@@ -2305,7 +2323,7 @@ p.xln__register_text_TyC {
   background-color: transparent;
   border-radius: 5px;
   font-weight: bold;
-  font-size: 25px;
+  font-size: 18px;
   width: 20%;
   color: var(--green);
 }
@@ -3034,8 +3052,9 @@ input.preguntas__diagnostico-checkbox-selected {
   text-align: left;
   padding-left: 27px;
   padding-right: 27px;
+  position: absolute;
+  top: 66px;
 }
-
 .dashboard__lider-container_courses-card-content-body {
   position: relative;
   top: 50px;
@@ -3980,6 +3999,39 @@ p.xln_price_GDC span {
   font-size: 14px;
 }
 
+
+.xlrn__uso-cupos__section .header__container {
+  position: fixed !important;
+  z-index: 9;
+  width: 100%;
+}
+
+.xlrn__uso-cupos__section .xlrn__uso-cupos-registered__container {
+  position: relative;
+  width: 0%;
+  top: 30px;
+  width: 90%;
+  margin: auto;
+}
+.xlrn__uso-cupos__section .xlrn__uso-cupos__container-titles {
+  width: 73%;
+  height: 24vh;
+}
+
+.xlrn__uso-cupos-registered__card:nth-child(even) {background: #fff;}
+.xlrn__uso-cupos-registered__card:nth-child(odd) {background: #F4F4F4;}
+
+.xlrn__uso-cupos__section .xlrn__uso-cupos-registered__card {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.xlrn__uso-cupos__section .xlrn__uso-cupos-registered__card img {
+    width: 40px;
+    height: 40px;
+    margin-top: 25px;
+    margin-left: 17px;
+}
 /* Uso De Cupos Fin */
 
 /* Gestion de Equipos */
@@ -4587,6 +4639,11 @@ h3.xlnIcon__couser__ruta {
   width: 70%;
   height: auto;
   display: flex;
+  margin: auto;
+}
+
+.xln__internos__CursosRecomendadosPlayer {
+  width: 78%;
   margin: auto;
 }
 
@@ -5907,3 +5964,9 @@ span.campo_requerido {
 }
 
 /* Responsive Fin */
+
+
+
+.modal-backdrop {
+  z-index: 8;
+}
