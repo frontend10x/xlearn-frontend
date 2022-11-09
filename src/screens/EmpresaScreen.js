@@ -15,9 +15,9 @@ export const EmpresaScreen = () => {
           className="empresas__banner-image"
         />
         <div className="empresas__banner-content">
-          <h1>
-          Lleva tu empresa al siguiente nivel a través del entrenamiento de tu equipo de trabajo
-          </h1>
+          <h2>
+            Lleva tu empresa al siguiente nivel a través del entrenamiento de tu equipo de trabajo
+          </h2>
           <p>
             Contamos con una gran oferta de cursos que te ayudaran a aumentar la productividad de tu organización, acelerando el crecimiento y desarrollando nuevas competencias
           </p>
@@ -27,25 +27,25 @@ export const EmpresaScreen = () => {
         </div>
       </div>
       <div className="empresas__innovacion-container">
-        <div className="empresas__innovacion-redirection">
+        {/* <div className="empresas__innovacion-redirection">
           <a href="/">Home </a>
           <a href="/enterprises">| Empresa</a>
-        </div>
+        </div> */}
         <div className="empresas__innovacion-title">
-          <h4>INNOVACIÓN</h4>
+          <h4>Innovación</h4>
         </div>
         <div className="empresas__innovacion-information_container" >
           <div className="empresas__innovacion-content">
-            <h1>
+            <h2>
               Implementa procesos y metodologías que le aporten al desarrollo y
               a la optimización de recursos en tus compañia
-            </h1>
+            </h2>
           </div>
           <div className="empresas__innovacion-information">
+            <div className="empresas__innovacion-information_group-title" >
+              <h4>Introduccion a la innovación</h4>
+            </div>
             <div className="empresas__innovacion-information_group" >
-              <div className="empresas__innovacion-information_group-title" >
-                <h4>Introduccion a la innovación</h4>
-              </div>
               <h2>ADN Innovador</h2>
               <p>
                 Conoce y desarrolla las habilidades de una empresa innovadora,
@@ -53,9 +53,9 @@ export const EmpresaScreen = () => {
               </p>
             </div>
             <div className="empresas__innovacion-information_group" >
-              <div className="empresas__innovacion-information_group-title" >
-                {/* <h4>Introduccion a la innovación</h4> */}
-              </div>
+              {/* <div className="empresas__innovacion-information_group-title" >
+                <h4>Introduccion a la innovación</h4>
+              </div> */}
               <h2>¿Que es innovación?</h2>
               <p>
               Ingresa al mundo de la innovación conociendo su definición, 
@@ -63,18 +63,18 @@ export const EmpresaScreen = () => {
               </p>
             </div>
             <div className="empresas__innovacion-information_group" >
-              <div className="empresas__innovacion-information_group-title" >
+              {/* <div className="empresas__innovacion-information_group-title" >
                 <h4>Introduccion a la innovacion</h4>
-              </div>
+              </div> */}
                 <h2>Entender y explorar</h2>
               <p>
               Aprende a identificar oportunidades a través de uso de herramientas para la generación y priorización de ideas
               </p>
             </div>
             <div className="empresas__innovacion-information_group" >
-              <div className="empresas__innovacion-information_group-title" >
+              {/* <div className="empresas__innovacion-information_group-title" >
                 <h4>Introducción a la innovación</h4>
-              </div>
+              </div> */}
               <h2>Experimentar y decidir</h2>
               <p>
                 Arriésgate a experimentar y obtén las herramientas necesarias para plantear hipótesis y experimentos que validen tu idea de negocio
@@ -88,8 +88,8 @@ export const EmpresaScreen = () => {
         </div>
         <div className="empresas__section-information" >
           <div className="empresas__section-information_content" >
-            <h4>INNOVACION</h4>
-            <h1>Ingresa al mundo de la innovacion entrenando a tus <span> equipos</span> de trabajo </h1>
+            <h4>Innovación</h4>
+            <h2>Ingresa al mundo de la innovacion entrenando a tus <span> equipos</span> de trabajo </h2>
           </div>
         </div>
         <div className="empresas__platform-container">
@@ -112,7 +112,6 @@ export const EmpresaScreen = () => {
         </div>
         <div className="empresas__colaboration-container" >
           <div className="empresas__colaboration-content" >
-            <h4>ACERCA DE </h4>
             <h1>Empresas que hemos <span>acompañado</span></h1>
           </div>
           <div className="empresas__colaboration-information">

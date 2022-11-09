@@ -23,7 +23,7 @@ export {default as imagenlogin} from './login/Imagen_Ingreso.jpg';
 export {default as buttonprev } from '../Breakpoints/1920/Icon_Back_Default.jpg';
 export {default as buttonnext} from '../Breakpoints/1920/Icon_Next_Default.jpg';
 export {default as hoverprev} from '../Breakpoints/1920/Icon_Back_Hover.jpg';
-export {default as registerbanner} from '../Image/AdobeStock_302471776.jpeg';
+export {default as registerbanner} from '../Image/planes-banner.jpg';
 export {default as vistaEmpresa} from '../Image/banner_vista-empresa.jpeg';
 export {default as logo10X} from '../Breakpoints/1920/Logo_10X.png';
 export {default as dashboard1} from '../Image/dashboardinfo1.jpeg';
