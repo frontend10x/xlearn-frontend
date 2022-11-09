@@ -12,7 +12,8 @@ import {
 export const Banner = () => {
   return (
     <div className="banner">
-      <div
+
+      <div className="controladores"
         id="carouselExampleIndicators"
         className="carousel slide enterprise__carosuel-indicators"
         data-bs-ride="carousel"
@@ -39,6 +40,7 @@ export const Banner = () => {
             aria-label="Slide 3"
           ></button>
         </div>
+
         <div className="carousel-inner">
           <div className="carousel-item active">
             <Image src={Slider_01} className="d-block w-100" alt="..." />
@@ -80,6 +82,7 @@ export const Banner = () => {
             </div>
           </div>
         </div>
+
         <div className="xln-btn-banners">
           <button
             className="carousel-control-prev"
@@ -105,6 +108,8 @@ export const Banner = () => {
           </button>
         </div>
       </div>
+
+
       <div className="slides">
         <div className="slides__content">
           <h3>01</h3>
@@ -147,6 +152,7 @@ export const Banner = () => {
           </div>
         </Col>
       </div>
+
       <div
         className="modal fade"
         id="staticBackdrop"
