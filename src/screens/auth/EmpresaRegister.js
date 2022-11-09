@@ -33,7 +33,7 @@ export const EmpresasRegister = () => {
             <div className="planes__option-group">
               <h4>Accede a contenido de valor</h4>
               <ul>
-                <li>contenido exclusivo y especializado</li>
+                <li>Contenido exclusivo y especializado</li>
                 <li>Acompañamiento de consultores</li>
               </ul>
             </div>

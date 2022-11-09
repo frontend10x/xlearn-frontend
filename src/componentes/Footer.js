@@ -18,25 +18,25 @@ export const Footer = () => {
               </p>
             </div>
 
-            <div className="footer__group">
+            <div className="footer__group margins ">
               <h5>Compañia</h5>
               <p>Nosotros</p>
-              <p>Casos</p>
+              <p>Empresas</p>
             </div>
 
-            <div className="footer__group">
+            <div className="footer__group margins ">
               <h5>Comunidad</h5>
-              <p>Planes por equipo</p>
+              <p>Planes</p>
               <p>Blog</p>
             </div>
 
-            <div className="footer__group">
-              <h5>Contactanos</h5>
-              <p>Preguntas frecuentes</p>
+            <div className="footer__group margins">
+              <h5>Contáctanos</h5>
+              <p>FAQ</p>
               <p>Soporte</p>
             </div>
 
-            <div className="footer__group">
+            <div className="footer__group position">
 
               <div className="footer__content-email_logo ">
                 <Image src={logo10X} alt="logo" className="footer__image-email" />
@@ -56,7 +56,7 @@ export const Footer = () => {
             <div className="footer__option" >
               <p>Ayuda</p>
               <p>Privacidad</p>
-              <p>Terminos</p>
+              <p>Términos</p>
             </div>
           </div>
           <div className="footer__media-links" >

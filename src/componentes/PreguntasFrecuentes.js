@@ -23,7 +23,7 @@ export const PreguntasFrecuentes = () => {
       >
         {/* <!-- Indicators/dots --> */}
         <div className="carousel-indicators xln_preguntas_NavPuntos">
-          <button
+          {/* <button
             type="button"
             data-bs-target="#demo"
             data-bs-slide-to="0"
@@ -33,7 +33,7 @@ export const PreguntasFrecuentes = () => {
             type="button"
             data-bs-target="#demo"
             data-bs-slide-to="1"
-          ></button>
+          ></button> */}
           {/* <button
             type="button"
             data-bs-target="#demo"
@@ -47,7 +47,7 @@ export const PreguntasFrecuentes = () => {
           <div className="carousel-item active">
             <div className="xln_carousel_PositionLeft">
               <Image
-                src={homeCarouselPF01}
+                src={homeCarouselPF02}
                 alt="preguntas frecuentes 1"
                 className="preguntas__carousel-image"
               />
@@ -69,7 +69,7 @@ export const PreguntasFrecuentes = () => {
             </div>
           </div>
 
-          <div className="carousel-item">
+          {/* <div className="carousel-item">
             <div className="xln_carousel_PositionLeft">
               <Image
                 src={homeCarouselPF02}
@@ -94,7 +94,7 @@ export const PreguntasFrecuentes = () => {
               </div>
             </div>
 
-          </div>
+          </div> */}
           {/* <div className="carousel-item">
             <Image
               src={Image_04}
@@ -127,7 +127,7 @@ export const PreguntasFrecuentes = () => {
         </div>
 
         {/* <!-- Left and right controls/icons --> */}
-        <button
+        {/* <button
           className="carousel-control-prev"
           type="button"
           data-bs-target="#demo"
@@ -142,7 +142,7 @@ export const PreguntasFrecuentes = () => {
           data-bs-slide="next"
         >
           <span className="preguntas__carousel-next">^</span>
-        </button>
+        </button> */}
       </div>
       {/* Final de Carrusel */}
     </div>

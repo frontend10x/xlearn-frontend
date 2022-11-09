@@ -19,7 +19,7 @@ export const Navegacion = () => {
                     Empresa
                 </NavLink>
                 <NavLink className="nav-link " to="/contact">
-                    Contactanos
+                    Contáctanos
                 </NavLink>
                 <i className="bi bi-list mobile-nav-toggle"></i>
             </Nav>

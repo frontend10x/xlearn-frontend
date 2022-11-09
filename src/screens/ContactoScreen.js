@@ -7,11 +7,19 @@ import {
     bannerContact01
   } from "../assets/img";
 import { useNavigate } from "react-router-dom";
+import {useForm} from '../hooks/useForm';
 
 export const ContactoScreen = () => {
 
-    const [countries, setCountries] = useState()
-    const navigate = useNavigate()
+    const [countries, setCountries] = useState();
+    const navigate = useNavigate();
+    const [formValues, handleInputChange] = useForm({
+        name:"",
+        phone:"",
+        enterprise:"",
+        email:"",
+        observation:""
+    });
 
     useEffect(() => {
         async function countries() {
@@ -61,23 +69,23 @@ export const ContactoScreen = () => {
 
                                     <div className="xlrn__contacto-formulario-group" >
                                         <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
-                                            <label >Nombre <span className="campo_requerido">*</span></label>
-                                            <input type='text' />
+                                            <label >Nombre y Apellido <span className="campo_requerido">*</span></label>
+                                            <input type='text' name="name" onChange={handleInputChange} />
                                         </div>
                                         <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
-                                            <label >Apellidos <span className="campo_requerido">*</span></label>
-                                            <input type='text' />
+                                            <label >Telefono <span className="campo_requerido">*</span></label>
+                                            <input type='text' name="phone" onChange={handleInputChange} />
                                         </div>
                                     </div>
 
                                     <div className="xlrn__contacto-formulario-group" >
                                         <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
                                             <label >Empresa <span className="campo_requerido">*</span></label>
-                                            <input type='text' />
+                                            <input type='text' name="enterprise" onChange={handleInputChange} />
                                         </div>
                                         <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
                                             <label >Correo electrónico <span className="campo_requerido">*</span></label>
-                                            <input type='text' />
+                                            <input type='text' name="email" onChange={handleInputChange}/>
                                         </div>
                                     </div>
 
@@ -121,7 +129,7 @@ export const ContactoScreen = () => {
                                     <div className="xlrn__contacto-formulario-group" >
                                         <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-1" >
                                             <label >Cuéntanos tu requerimiento</label>
-                                            <textarea/>
+                                            <textarea name="observation" onChange={handleInputChange} />
                                         </div>
                                     </div>
                                     <div className="xlrn__contacto-formulario-group" >

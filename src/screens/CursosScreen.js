@@ -29,8 +29,12 @@ export const CursosScreen = () => {
     alert(`Filtro hecho este es el id`);
   };
   
-  const redirect = (e) => {
-    navigate(`/course/info/${e.target.id}`);
+  const redirect = (item) => {
+    navigate(`/course/info/${item}`);
+  }
+
+  const startRegister = () => {
+    navigate('/plans/register')
   }
 
   return (
@@ -48,34 +52,30 @@ export const CursosScreen = () => {
               <h4 className="">Innovación</h4>
               <input
                 className="text-start"
-                type="button"
                 onClick={filterCourses}
-                value="Sistemas de innovacion"
+                value="Sistemas de innovación"
               />
-              {/* <input
+              <p
                 className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Emprendimiento Corporativo"
-              />
-              <input
+                // onClick={filterCourses}
+                // value="Emprendimiento Corporativo"
+              >Emprendimiento corporativo</p>
+              <p
                 className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Exelencia Operacional"
-              />
-              <input
+                // type="button"
+                // onClick={filterCourses}
+                value="Excelencia Operacional"
+              >Excelencia operacional</p>
+              <p
                 className="text-start"
-                type="button"
-                onClick={filterCourses}
                 value="Innovacion Abierta"
-              />
-              <input
+              >Innovacion abierta</p>
+              <p
                 className="text-start"
-                type="button"
-                onClick={filterCourses}
                 value="Oportunidades, retos y Priorizacion"
-              /> */}
+              >Oportunidades, retos y Priorizacion</p>
+
+
               {/* <h4>Transformacion Digital</h4>
               <input
                 className="text-start"
@@ -157,14 +157,14 @@ export const CursosScreen = () => {
             <div className="cursos__banner-content">
                   <h3>Cursos Online</h3>
                   <p>Conoce nuestra oferta de cursos y encuentra lo que tu empresa necesita</p>
-                  <button className="cursos__banner-button" >Obten cursos de prueba gratis</button>
+                  <button className="cursos__banner-button w-25 " onClick={startRegister} >Registrarme</button>
             </div>
           </div>
 
           <h4 className="cursos__section-recently" >Agregados recientemente</h4>
           <div className="map_content">
             {courses.map((item, index) => (
-              <div className="cursos__card-body" key={index}   >
+              <div className="cursos__card-body" key={index} onClick={() => redirect(item.id)}  >
                 <Image src={item.file_path} alt={item.file_path} />
                 <div className="cursos__card-content" >
                   <div className="cursos__card-titles">
@@ -179,7 +179,6 @@ export const CursosScreen = () => {
                     alt="logo"
                     className="cursos__card-logo"
                   /> */}
-                  <button onClick={redirect} id={item.id} value={item.value} >Descripción</button>
                 </div>
               </div>
             ))}

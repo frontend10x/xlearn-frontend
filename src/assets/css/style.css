@@ -1097,6 +1097,16 @@ video.xln-content-video_MS {
   font-size: 15px !important;
 }
 
+.position {
+    width: 25%;
+    position: relative;
+    bottom: 25px;
+}
+
+.margins p {
+  margin-bottom: 0px;
+}
+
 .footer__content-email_logo {
   position: relative;
   width: 100%;
@@ -2108,7 +2118,7 @@ p.xln__register_text_TyC {
 }
 
 .empresas__innovacion-container {
-  height: 100vh;
+  height: 80vh;
 }
 
 .empresas__innovacion-information_container {

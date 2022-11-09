@@ -107,15 +107,15 @@ export const Banner = () => {
       </div>
       <div className="slides">
         <div className="slides__content">
-          <h3>02</h3>
+          <h3>01</h3>
           <p>Innova</p>
         </div>
         <div className="slides__content">
-          <h3>03</h3>
+          <h3>02</h3>
           <p>Desarrolla</p>
         </div>
         <div className="slides__content">
-          <h3>04</h3>
+          <h3>03</h3>
           <p>Crea</p>
         </div>
       </div>

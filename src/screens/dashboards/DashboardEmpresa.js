@@ -47,7 +47,8 @@ export const DashboardEmpresa = () => {
   useEffect(() => {
     async function getQuotas() {
       const data = await getEnterpriseQuotas(token, subcompanie_id)
-      setQuotas(data.quotas);
+      // setQuotas(data.quotas);
+      console.log(data)
     }
 
     async function getGroups() {

@@ -75,16 +75,16 @@ export const Header = () => {
                     Categorias
                     <ul className="header__menu-lista categoria">
                       <NavLink data-bs-toggle="tooltip" href="/login" className="link">
-                        Innovacion
+                        Innovación
                       </NavLink>
                       <NavLink ldata-bs-toggle="tooltip" href="/plans/register" className="link">
-                        Transformacion
+                        Transformación
                       </NavLink>
                       <NavLink ldata-bs-toggle="tooltip" href="/plans/register" className="link">
                         Sostenibilidad
                       </NavLink>
                       <NavLink ldata-bs-toggle="tooltip" href="/plans/register" className="link">
-                        Gestion de Proyectos
+                        Gestión de proyectos
                       </NavLink>
                       <NavLink ldata-bs-toggle="tooltip" href="/plans/register" className="link" >
                         Inteligencia
@@ -93,7 +93,7 @@ export const Header = () => {
                         Cultura
                       </NavLink>
                       <NavLink ldata-bs-toggle="tooltip" href="/plans/register" className="link">
-                        Gestion Estrategica
+                        Gestión estratégica
                       </NavLink>
                       <NavLink ldata-bs-toggle="tooltip" href="/plans/register" className="link">
                         Habilidades

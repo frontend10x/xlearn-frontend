@@ -32,6 +32,7 @@ import { GestionDeEquipos } from "../screens/dashboards/GestionDeEquipos";
 import { GestionDeCupos } from "../screens/dashboards/GestionDeCupos";
 import { InfoCourse } from "../screens/InfoCourse";
 import { DescripcionEvaluacion } from "../screens/dashboards/DescripcionEvaluacion";
+import { GenerarCertificado } from "../screens/dashboards/GenerarCertificado";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -106,6 +107,7 @@ export const AppRouter = () => {
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
           <Route exact path="/presentacion/evaluacion/:course_id" element={<DescripcionEvaluacion/>} />
           <Route exact path="/evaluacion/:course_id" element={<Evaluacion />} />
+          <Route exact path="/certificado/:course_id" element={<GenerarCertificado/>} />
 
         </Route>
         {/* RUTA DEL LIDER */}

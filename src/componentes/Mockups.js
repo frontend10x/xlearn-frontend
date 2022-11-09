@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Col, Image } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { tablet, telefono} from "../assets/img";
 
 export const Mockups = () => {
@@ -26,6 +27,16 @@ export const Mockups = () => {
       observer.observe(videoRef.current);
   });
 
+  const navigate = useNavigate();
+  const redirect = (e) => {
+    if (e.target.id === "empresas") {
+      navigate('/enterprises');
+    }else {
+      navigate('/courses');
+    }
+      
+  }
+
   return (
     <div className="mockups">
       <div className="mockups__container">
@@ -45,13 +56,13 @@ export const Mockups = () => {
         <Col>
           <div className="mockups__content">
             <div className="mockups__content-title" >
-              <h2>Conviértete en un caso de éxito y apuéstale a la innovacion con Xlearn </h2>
+              <h2>Conviértete en un caso de éxito y apuéstale a la innovación con Xlearn </h2>
               <div className="xln_iconLine_title"></div>
             </div>
             <p>
               Conoce las empresas que se han formado con nosotros y han asumido los retos y oportunidades del mercado a través de su capital humano.
             </p>
-            <button className="mockups__button" >
+            <button className="mockups__button" onClick={redirect} id="empresas" >
               Conoce más
             </button>
           </div>
@@ -69,7 +80,7 @@ export const Mockups = () => {
               Nuevos cursos, nuevos retos y nuevas <br/> 
               oportunidades para aprender
               </p>
-              <button className="mockups__button" >
+              <button className="mockups__button" onClick={redirect} id="cursos" >
               Conoce más
             </button>
             </div>

@@ -63,7 +63,7 @@ export const EmpresaFormulario = () => {
     async function size() {
       try {
         const data = await getSize();
-        console.log(data)
+        console.log(data,'structure')
         setSizes(data);
       } catch (error) {
         console.error(error);
@@ -167,24 +167,24 @@ export const EmpresaFormulario = () => {
         <div className="planes__formulario-content">
           <div className="form__group">
             <p>
-              Nombre completo <span>*</span>
+              Nombre(s) <span>*</span>
             </p>
             <input
               name="name"
               value={name}
               onChange={handleInputChange}
-              placeholder="Nombre"
+              placeholder="Nombre(s)"
             />
           </div>
           <div className="form__group">
             <p>
-              Apellidos <span>*</span>
+              Apellidos(s) <span>*</span>
             </p>
             <input
               name="lastname"
               value={lastname}
               onChange={handleInputChange}
-              placeholder="Apellido"
+              placeholder="Apellido(s)"
             />
           </div>
           <div className="form__group">

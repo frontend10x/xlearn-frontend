@@ -343,7 +343,14 @@ export const getCourseDescription = async (id) => {
   return response.data
 }
 
-export const generateCertificate = async (token) => {
-  const response = await axios.post()
+export const generateCertificate = async (token, user_id, course_id) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = await axios.post(baseURL + `/api/v1/certificate/generate?user_id=${user_id}&course_id=${course_id}`, config)
   return response.data
 }

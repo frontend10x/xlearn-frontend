@@ -54,7 +54,7 @@ export const EmpresaScreen = () => {
             </div>
             <div className="empresas__innovacion-information_group" >
               <div className="empresas__innovacion-information_group-title" >
-                <h4>Introduccion a la innovación</h4>
+                {/* <h4>Introduccion a la innovación</h4> */}
               </div>
               <h2>¿Que es innovación?</h2>
               <p>
@@ -124,7 +124,7 @@ export const EmpresaScreen = () => {
         <div className="empresas__banner-contacto" >
           <Image src={empresas_contacto} />
           <div className="empresas__banner-contacto_content" >
-            <p>Contactanos</p>
+            <p>Contáctanos</p>
             <h1>Ponte en contacto con nosotros</h1>
             <div className="empresas__banner-button_container" >
               <button className="empresas__banner-contacto_button" >Contactanos ahora</button>
