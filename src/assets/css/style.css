@@ -324,6 +324,15 @@ button.burg-toggle i {
   top: 35%;
 }
 
+.banner .carousel-item img{
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+
 .carousel-indicators {
   color: var(--white);
   left: 0;
@@ -356,18 +365,16 @@ button.burg-toggle i {
 }
 
 .banner__carousel-prev {
-  position: relative;
-  left: 1080px;
-  top: 287px;
+  position: absolute;
+  top: 86%;
   transition: background-color 0.3s ease;
+  left: 1380%;
 }
-
 .banner__carousel-next {
-  position: relative;
-  top: 287px;
-  right: 255px;
+  position: absolute;
+  top: 86%;
+  right: 310%;
 }
-
 .banner__carousel-prev:hover {
   background-image: url("../Breakpoints/1920/Icon_Back_Hover.jpg");
 }
@@ -383,6 +390,7 @@ button.burg-toggle i {
   position: absolute;
   top: 69%;
   left: 50%;
+  z-index: 9;
 }
 
 .slides__content {
@@ -396,6 +404,8 @@ button.burg-toggle i {
 .slides p {
   font-size: 20px;
 }
+
+
 
 /* .content__banner {
     color: white;
@@ -440,12 +450,12 @@ button.burg-toggle i {
 } */
 .content__banner-block {
   background-color: var(--blueDark);
-  width: 565px;
+  width: 42%;
   text-align: left;
   position: absolute;
   bottom: 0;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 4%;
+  padding-bottom: 2%;
 }
 
 .content__banner-block h3 {
@@ -465,8 +475,8 @@ button.burg-toggle i {
   border-top: 2px solid var(--white);
   position: absolute;
   height: 430px;
-  width: 25%;
-  right: 25%;
+  width: 33%;
+  right: 18%;
   top: 18%;
 }
 
@@ -656,6 +666,24 @@ button.burg-toggle i {
 /* Carousel Fin */
 
 /* Inicio de Enterprise */
+
+.enterprise .carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height:70vh !important;
+}
+
+.enterprise-section .carousel-indicators {
+  color: var(--white);
+  left: 0;
+  margin: auto;
+  position: absolute;
+  top: 70%;
+  text-align: center;
+  height: 50px;
+}
+
 .enterprise-section {
   height: 100vh;
 }
@@ -668,17 +696,21 @@ button.burg-toggle i {
   width: 100%;
 }
 
-.xln-btn-banners-dos {
+.xln-btn-banners-dos button {
   position: absolute;
-  width: 100%;
-  height: 200px;
-  margin-top: -46%;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+.xln-btn-banners-dos {
+  position: relative;
+}
 .xln-btn-banners-puntos {
-  margin-top: -46%;
+  margin-top:10px;
   position: absolute;
-  left: 68%;
+  left: 0%;
+  width: 100%;
 }
 
 .enterprise .carousel-indicators [data-bs-target] {
@@ -688,8 +720,7 @@ button.burg-toggle i {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   position: relative;
-  top: 620px;
-  right: 290px;
+  
 }
 
 .enterprise__carousel-prev {
@@ -699,10 +730,10 @@ button.burg-toggle i {
   background-color: var(--white);
   color: var(--black);
   font-size: 2rem;
-  transform: rotate(-90deg);
+  transform: translate(-16%, 30%) rotate(-90deg);
   position: relative;
-  top: 368px;
-  left: 658px;
+  top: -79px;
+  right: 79px;
 }
 
 .enterprise_carousel-next,
@@ -717,21 +748,24 @@ button.burg-toggle i {
 }
 
 .enterprise__carousel-next {
-  background-color: white;
+  height: 40px;
+  width: 40px;
   border-radius: 2rem;
+  background-color: var(--white);
   color: var(--black);
   font-size: 2rem;
-  height: 40px;
+  transform: translate(0%, 30%) rotate(90deg);
   position: relative;
-  right: 631px;
-  transform: rotate(90deg);
-  top: 368px;
-  width: 40px;
+  top: -79px;
+  left: 79px;
 }
 
 .enterprise__carousel-image {
-  height: 75vh;
+  height: 100vh;
   width: 100%;
+  object-fit: cover;
+  -webkit-mask-size: cover;
+  mask-size: cover;
 }
 
 .enterprise__carousel-content {
@@ -741,8 +775,11 @@ button.burg-toggle i {
   width: 85%;
   margin: auto;
   bottom: 560px;
+  position: relative;
+  left: ;
+  transform: translate(0%, 95%);
+  z-index: 9;
 }
-
 .enterprise__carousel-content_title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -786,7 +823,7 @@ button.burg-toggle i {
 }
 
 .mockups-section {
-  padding-top: 7%;
+  padding-top: 14%;
 }
 
 .mockups__shadow {
@@ -893,6 +930,7 @@ video.xln-content-video_MS {
 /* Mockups Final */
 
 /* Inicio Preguntas y respuestas */
+
 .carousel-indicators.xln_preguntas_NavPuntos {
   width: 100%;
   margin-top: 0px;
@@ -964,9 +1002,9 @@ video.xln-content-video_MS {
 .preguntas__carousel-prev {
   color: var(--black);
   font-size: 2.5rem;
-  position: relative;
-  top: 417px;
-  left: 617px;
+  position: absolute;
+  top: 468%;
+  left: 410%;
   transform: rotate(-90deg);
   background-color: var(--whiteOff);
   width: 50px;
@@ -977,13 +1015,13 @@ video.xln-content-video_MS {
 .preguntas__carousel-next {
   color: var(--black);
   font-size: 2.5rem;
-  position: relative;
+  position: absolute;
   border-radius: 50px;
   height: 50px;
   transform: rotate(90deg);
   width: 50px;
-  top: 417px;
-  right: 611px;
+  top: 468%;
+  right: 382%;
   background-color: var(--whiteOff);
 }
 
@@ -2981,6 +3019,7 @@ input.preguntas__diagnostico-checkbox-selected {
 
 .hero .row {
   --bs-gutter-x: -0.5rem;
+
 }
 /* Dashboard Lider */
 
@@ -4928,20 +4967,20 @@ span.campo_requerido {
     margin-right: 12px;
   }
 
-  .banner__carousel-prev {
+/*   .banner__carousel-prev {
     top: 155px;
     left: 1135px;
-  }
+  } */
 
-  .banner__carousel-next {
+  /* .banner__carousel-next {
     top: 155px;
     right: 130px;
-  }
+  } */
 
   /* Banner Final */
   /* Carousel */
   .carousel__section-content {
-    width: 78.9%;
+    width: 100%;
   }
 
   /* .carousel__container {
@@ -4951,34 +4990,32 @@ span.campo_requerido {
         left: 420px;
         width: 100%;
     } */
-  .carousel__section-content h1 {
+  /* .carousel__section-content h1 {
     left: 298px;
-  }
+  } */
 
   /* Carousel Fin */
   /* Enterprise */
-  .enterprise__carousel-image {
-    height: 60vh;
-  }
 
-  .enterprise__carousel-content {
-    bottom: 410px;
+
+  /* .enterprise__carousel-content {
+    bottom:650px;
     width: 80%;
-  }
+  } */
 
-  .enterprise .carousel-indicators [data-bs-target] {
+  /* .enterprise .carousel-indicators [data-bs-target] {
     right: 295px;
-  }
+  } */
 
-  .enterprise__carousel-prev {
+  /* .enterprise__carousel-prev {
     top: 231px;
     left: 630px;
-  }
+  } */
 
-  .enterprise__carousel-next {
+  /* .enterprise__carousel-next {
     top: 231px;
     right: 566px;
-  }
+  } */
 
   /* Enterprise Fin */
   /* Mockups */
@@ -5036,7 +5073,7 @@ span.campo_requerido {
   }
 
   .preguntas__carousel-image {
-    width: 40%;
+    width: 100%;
   }
 
   /* .preguntas__slides-content {
@@ -5047,13 +5084,13 @@ span.campo_requerido {
     font-size: 20px;
   }
 
-  .preguntas__carousel-prev {
+  /* .preguntas__carousel-prev {
     left: 550px;
-  }
+  } */
 
-  .preguntas__carousel-next {
+  /* .preguntas__carousel-next {
     right: 490px;
-  }
+  } */
 
   /* Preguntas Frecuentes Fin */
   /* Footer Inicio */
@@ -5096,17 +5133,17 @@ span.campo_requerido {
     margin-right: 4px;
   }
 
-  .banner__carousel-prev {
+/*   .banner__carousel-prev {
     left: 1043px;
     top: 270px;
     font-size: 2.5rem;
-  }
+  } */
 
-  .banner__carousel-next {
+  /* .banner__carousel-next {
     top: 270px;
     right: 130px;
     font-size: 2.5rem;
-  }
+  } */
 
   /* .carousel-indicators {
         bottom: 150px;
@@ -5140,26 +5177,26 @@ span.campo_requerido {
     } */
   /* Carousel Fin */
   /* Enterprise Inicio */
-  .enterprise__carousel-content {
+  /* .enterprise__carousel-content {
     left: 50px;
     width: 50%;
     bottom: 600px;
-  }
+  } */
 
-  .enterprise__carousel-prev {
+  /* .enterprise__carousel-prev {
     left: 400px;
     top: 200px;
-  }
+  } */
 
-  .enterprise__carousel-next {
+  /* .enterprise__carousel-next {
     top: 200px;
     right: 370px;
-  }
+  } */
 
-  .enterprise .carousel-indicators [data-bs-target] {
+  /* .enterprise .carousel-indicators [data-bs-target] {
     right: 308px;
     top: 155px;
-  }
+  } */
 
   /* Enterprise Fin */
   /* Mockups Inicio */
@@ -5181,7 +5218,7 @@ span.campo_requerido {
   }
 
   .preguntas__carousel-image {
-    width: 45%;
+    width: 100%;
   }
 
   /*  .preguntas__slides-content {
@@ -5200,13 +5237,13 @@ span.campo_requerido {
     font-size: 14px;
   }
 
-  .preguntas__carousel-prev {
+  /* .preguntas__carousel-prev {
     left: 440px;
-  }
+  } */
 
-  .preguntas__carousel-next {
+  /* .preguntas__carousel-next {
     right: 340px;
-  }
+  } */
 
   /* Preguntas Fin */
   /* Footer Inicio */
@@ -5304,17 +5341,17 @@ span.campo_requerido {
     margin-right: 4px;
   }
 
-  .banner__carousel-prev {
+/*   .banner__carousel-prev {
     left: 738px;
     top: 270px;
     font-size: 2.5rem;
-  }
+  } */
 
-  .banner__carousel-next {
+  /* .banner__carousel-next {
     top: 270px;
     right: 130px;
     font-size: 2.5rem;
-  }
+  } */
 
   /* .carousel-indicators {
         bottom: 150px;
@@ -5346,26 +5383,26 @@ span.campo_requerido {
     } */
   /* Carousel Fin */
   /* Enterprise Inicio */
-  .enterprise__carousel-content {
+  /* .enterprise__carousel-content {
     left: 50px;
     width: 50%;
     bottom: 320px;
-  }
+  } */
 
-  .enterprise__carousel-prev {
+  /* .enterprise__carousel-prev {
     left: 400px;
     top: 200px;
-  }
+  } */
 
-  .enterprise__carousel-next {
+  /* .enterprise__carousel-next {
     top: 200px;
     right: 370px;
-  }
+  } */
 
-  .enterprise .carousel-indicators [data-bs-target] {
+  /* .enterprise .carousel-indicators [data-bs-target] {
     right: 308px;
     top: 155px;
-  }
+  } */
 
   /* Enterprise Fin */
   /* Mockups Inicio */
@@ -5387,7 +5424,7 @@ span.campo_requerido {
   }
 
   .preguntas__carousel-image {
-    width: 45%;
+    width:100%;
   }
 
   /* .preguntas__slides-content {
@@ -5406,13 +5443,13 @@ span.campo_requerido {
     font-size: 14px;
   }
 
-  .preguntas__carousel-prev {
+  /* .preguntas__carousel-prev {
     left: 440px;
-  }
+  } */
 
-  .preguntas__carousel-next {
+  /* .preguntas__carousel-next {
     right: 340px;
-  }
+  } */
 
   /* Preguntas Fin */
   /* Footer Inicio */
@@ -5476,17 +5513,17 @@ span.campo_requerido {
     margin-right: 4px;
   }
 
-  .banner__carousel-prev {
+/*   .banner__carousel-prev {
     left: 550px;
     top: 202px;
     font-size: 2rem;
-  }
+  } */
 
-  .banner__carousel-next {
+  /* .banner__carousel-next {
     top: 202px;
     right: 100px;
     font-size: 2rem;
-  }
+  } */
 
   /* .carousel-indicators {
         bottom: 150px;
@@ -5522,28 +5559,26 @@ span.campo_requerido {
 
   /* Carousel Fin */
   /* Enterprise Inicio */
-  .enterprise__carousel-image {
-    height: 40vh;
-  }
 
-  .enterprise__carousel-content {
+
+  /* .enterprise__carousel-content {
     bottom: 350px;
-  }
+  } */
 
-  .enterprise__carousel-prev {
+  /* .enterprise__carousel-prev {
     top: 160px;
     left: 300px;
-  }
+  } */
 
-  .enterprise__carousel-next {
+  /* .enterprise__carousel-next {
     top: 160px;
     right: 250px;
-  }
+  } */
 
-  .enterprise .carousel-indicators [data-bs-target] {
+  /* .enterprise .carousel-indicators [data-bs-target] {
     right: 210px;
     top: 140px;
-  }
+  } */
 
   /* Enterprise Fin */
   /* Mockups Inicio */
@@ -5583,13 +5618,13 @@ span.campo_requerido {
   /* .preguntas__carousel {
         left: -140px;
     } */
-  .preguntas__carousel-prev {
+  /* .preguntas__carousel-prev {
     left: 400px;
-  }
+  } */
 
-  .preguntas__carousel-next {
+  /* .preguntas__carousel-next {
     right: 150px;
-  }
+  } */
 
   /* Preguntas Fin */
   /* Footer Inicio*/
@@ -5750,20 +5785,20 @@ span.campo_requerido {
     font-size: 10px;
     margin-top: 8px;
   }
-
+/* 
   .banner__carousel-prev {
     left: 160px;
     width: 80%;
     height: 20%;
     top: 102px;
   }
-
-  .banner__carousel-next {
+ */
+  /* .banner__carousel-next {
     right: 165px;
     width: 80%;
     height: 20%;
     top: 102px;
-  }
+  } */
 
   /* Banner Fin*/
   /* Carousel Inicio */
@@ -5792,13 +5827,11 @@ span.campo_requerido {
 
   /* Carousel Fin */
   /* Enterprise Inicio */
-  .enterprise__carousel-image {
-    height: 35vh;
-  }
 
-  .enterprise__carousel-content {
+
+  /* .enterprise__carousel-content {
     bottom: 220px;
-  }
+  } */
 
   .enterprise__carousel-content_title,
   .enterprise__carousel-content_subtitle {
@@ -5814,9 +5847,9 @@ span.campo_requerido {
     display: none;
   }
 
-  .enterprise .carousel-indicators [data-bs-target] {
+  /* .enterprise .carousel-indicators [data-bs-target] {
     right: 110px;
-  }
+  } */
 
   /* Enterprise Fin */
   /* Mockups */
