@@ -10,7 +10,6 @@ import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { InfoVideoPlayer } from "../../componentes/dashboards/InfoVideoPlayer";
 import { getLessons } from "../../services/services";
 
-import {FontAwesomeIcon} from "fontawesome";
 
 export const ReproduccionDeCursos = () => {
     const {id, name} = useParams()
