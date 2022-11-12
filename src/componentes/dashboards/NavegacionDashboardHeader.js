@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../actions/loginactions";
-import { Nav} from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 export const NavegacionDashboardHeader = () => {
@@ -29,6 +29,9 @@ export const NavegacionDashboardHeader = () => {
         </NavLink>
         <NavLink className="nav-link " to="/contact">
           Contactanos
+        </NavLink>
+        <NavLink className="nav-link " to="/soporte">
+          Soporte
         </NavLink>
         <i className="bi bi-list mobile-nav-toggle"></i>
       </Nav>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import Player from '@vimeo/player';
@@ -10,6 +10,8 @@ import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { InfoVideoPlayer } from "../../componentes/dashboards/InfoVideoPlayer";
 import { getLessons } from "../../services/services";
 
+import {FontAwesomeIcon} from "fontawesome";
+
 export const ReproduccionDeCursos = () => {
     const {id, name} = useParams()
     const {token} = useSelector(state => state.auth);
@@ -17,8 +19,8 @@ export const ReproduccionDeCursos = () => {
     const [videoStatus, setVideoStatus] = useState();
     const [videoCurrent, setVideoCurrent] = useState();
     const [statePlayer, setStatePlayer] = useState();
-    
-    const proffesor = "Carlos";
+    const [evaluation, setEvaluation] = useState(true)
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function getVideos() {
@@ -98,6 +100,9 @@ export const ReproduccionDeCursos = () => {
         })
     }
 
+    const redirect = () => {
+
+    }
     return (
         <div className="video__reproduccion-section" >
             <HeaderDashboard />
@@ -122,9 +127,13 @@ export const ReproduccionDeCursos = () => {
                             <button onClick={() => changeVideo(video)}>
                                 {/* <h3 style={{color:'black'}}>{key + ' - ' +video?.name}</h3> */}
                                 <h3 className="xlnIcon__couser__ruta">{key + 1 }</h3>
+                                
                             </button>
-                        </div>
+                            </div>
                     ))}   
+                    {evaluation &&
+                        <button className="" onClick={redirect} ><i class="fa-light fa-paper-plane-top"></i></button>
+                    }
                     </div>
                 </div>
             </div>

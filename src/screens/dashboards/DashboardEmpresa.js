@@ -22,15 +22,15 @@ import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { getEnterpriseGroups, getEnterpriseQuotas } from "../../services/services";
 
 export const DashboardEmpresa = () => {
-  const { name,subcompanie_id,token } = useSelector((state) => state.auth);
+  const { name, subcompanie_id, token } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const [course, setCourse] = useState([
     { title: "Innovación", image: EmpresaInnovacion },
     { title: "Transformación digital", image: EmpresaTransformacion },
     { title: "Excelencia operacional", image: EmpresaExelencia },
   ]);
-  const [quotas,setQuotas] = useState();
-  const [createdTeams,setCreatedTeams] = useState();
+  const [quotas, setQuotas] = useState();
+  const [createdTeams, setCreatedTeams] = useState();
   const [news, setNews] = useState([
     {
       title: "Prepara tu proyecto",
@@ -44,21 +44,22 @@ export const DashboardEmpresa = () => {
     },
   ]);
 
+  const subcompany = subcompanie_id.subcompanies_id;
+
   useEffect(() => {
     async function getQuotas() {
-      const data = await getEnterpriseQuotas(token, subcompanie_id)
+      const data = await getEnterpriseQuotas(token, subcompany)
       // setQuotas(data.quotas);
-      console.log(data)
     }
 
     async function getGroups() {
-      const data = await getEnterpriseGroups(token,subcompanie_id)
+      const data = await getEnterpriseGroups(token, subcompany)
       setCreatedTeams(data.groups["hc:length"])
     }
 
     getQuotas();
     getGroups();
-  },[])
+  }, [])
 
   const handleLogout = () => {
     dispatch(logout());
@@ -70,15 +71,15 @@ export const DashboardEmpresa = () => {
         <HeaderDashboard />
         <div className="xln-content-dash">
 
-      
-            <div className="xln__content__nav">
-                <NavegacionDashboard />
-            </div>
-    
+
+          <div className="xln__content__nav">
+            <NavegacionDashboard />
+          </div>
+
 
           <div className="xln-contentSection-block-empresa">
             <div className="dashboard__container-nav_banner">
-              
+
               <div className="dashboard__banner">
                 <div className="dashboard__banner-content">
                   <div className="dashboard__banner-title">
@@ -95,11 +96,11 @@ export const DashboardEmpresa = () => {
                   <Image src={gradient} alt="gradiente" className="gradient" />
                 </div>
 
-                
+
               </div>
             </div>
             <div className="dashboard__management">
-            
+
               <h2>Gestiona los cupos y contenidos</h2>
 
               <div className="dashboard__block-container">
@@ -111,10 +112,16 @@ export const DashboardEmpresa = () => {
                         Administrar Cupos
                       </button>
                     </div>
-                    <div className="dashboard__title">
-                      <h3>{quotas} Cupos disponibles</h3>
-                      <p>Administra tus Cupos</p>
-                    </div>
+                    {quotas ?
+                      <div className="dashboard__title">
+                        <h3>{quotas} Cupos disponibles</h3>
+                        <p>Administra tus Cupos</p>
+                      </div>
+                      : <div className="dashboard__title">
+                        <h3>0 Cupos disponibles</h3>
+                        <p>Administra tus Cupos</p>
+                      </div>
+                    }
                   </div>
                 </Col>
                 <Col>
@@ -200,7 +207,7 @@ export const DashboardEmpresa = () => {
               </div>
             </div>
           </div>
-          
+
         </div>
 
         <div className="xln-contentSection-block-empresa">

@@ -277,28 +277,30 @@ export const addUserToGroup = async (token, group_id, user, leader) => {
   return response
 }
 
-export const getEnterpriseQuotas = async (token,subcompanie_id) => {
+export const getEnterpriseQuotas = async (token, subcompanie_id) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     }
   };
-  
+
+  console.log(subcompanie_id,'servicio');
+
   const body = ""
 
-  const response = await axios.post(baseURL + `/api/v1/payment/approved_payment_status?subcompanie_id=${subcompanie_id}`,body,config)
+  const response = await axios.post(baseURL + `/api/v1/payment/approved_payment_status?subcompanie_id=${subcompanie_id}`, body, config)
   return response.data
 
 }
 
-export const getEnterpriseGroups = async (token,subcompanie_id) => {
+export const getEnterpriseGroups = async (token, subcompanie_id) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     }
   };
 
-  const response = await axios.get(baseURL + `/api/v1/group/list_company_group/${subcompanie_id}?offset=1`,config)
+  const response = await axios.get(baseURL + `/api/v1/group/list_company_group/${subcompanie_id}?offset=1`, config)
   return response.data;
 
 }
@@ -325,15 +327,15 @@ export const getUsersGroup = async (token, group_id) => {
   return response.data;
 }
 
-export const registerAnswers = async (token,schema) => {
- 
+export const registerAnswers = async (token, schema) => {
+
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
     }
   };
 
-  const response = await axios.post(baseURL + "/api/v1/answer/store", schema,config);
+  const response = await axios.post(baseURL + "/api/v1/answer/store", schema, config);
   return response.data;
 }
 
@@ -353,4 +355,15 @@ export const generateCertificate = async (token, user_id, course_id) => {
 
   const response = await axios.post(baseURL + `/api/v1/certificate/generate?user_id=${user_id}&course_id=${course_id}`, config)
   return response.data
+}
+
+export const contactSupport = async (name, phone, company, email, observation) => {
+
+  const body = {
+    name, phone, company, email, observation
+  }
+
+  const response = await axios.post(baseURL + `/api/v1/contact_us/store`, body)
+  return response.data
+
 }

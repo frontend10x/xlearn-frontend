@@ -33,6 +33,8 @@ import { GestionDeCupos } from "../screens/dashboards/GestionDeCupos";
 import { InfoCourse } from "../screens/InfoCourse";
 import { DescripcionEvaluacion } from "../screens/dashboards/DescripcionEvaluacion";
 import { GenerarCertificado } from "../screens/dashboards/GenerarCertificado";
+import { PoliticasPrivacidad } from "../screens/PoliticasPrivacidad";
+import { Soporte } from "../screens/dashboards/Soporte";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -64,6 +66,9 @@ export const AppRouter = () => {
           <Route exact path="/gestion/equipo" element={<CrearEquipos />} />
           <Route exact path="/manejo/equipos" element={<GestionDeEquipos />} />
           <Route exact path="/gestion/cupos/disponibles" element={<GestionDeCupos />} />
+          <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
+          <Route exact path="/soporte" element={<Soporte />} />
+
         </Route>
         {/* RUTA DE EMPRESA */}
         
@@ -108,7 +113,8 @@ export const AppRouter = () => {
           <Route exact path="/presentacion/evaluacion/:course_id" element={<DescripcionEvaluacion/>} />
           <Route exact path="/evaluacion/:course_id" element={<Evaluacion />} />
           <Route exact path="/certificado/:course_id" element={<GenerarCertificado/>} />
-
+          <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
+          <Route exact path="/soporte" element={<Soporte />} />
         </Route>
         {/* RUTA DEL LIDER */}
 

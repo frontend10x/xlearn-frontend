@@ -10,9 +10,11 @@ export const NavegacionDashboard = () => {
     const {token, subcompanie_id} = useSelector(state => state.auth)
     const [quotas, setQuotas] = useState();
     const navigate = useNavigate();
+    const subcompany = subcompanie_id.subcompanies_id;
+
     useEffect(() => {
         async function getQuotas() {
-          const data = await getEnterpriseQuotas(token, subcompanie_id)
+          const data = await getEnterpriseQuotas(token, subcompany);
           setQuotas(data.quotas);
         }
     
