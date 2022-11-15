@@ -26,9 +26,9 @@ export const LoginScreen = () => {
     if (type === "Empresa") {
       navigate('/dashboard/empresa');
     } 
-    else if (type === "Lider" && diagnostic === true ) {
-      navigate('/dashboard/lider');
-    }
+    // else if (type === "Lider" && diagnostic === true ) {
+    //   navigate('/dashboard/lider');
+    // }
     else if (type === "Lider") {
       navigate('/inicia/diagnostico');
     }else if (type === "Integrante") {

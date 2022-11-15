@@ -10,7 +10,7 @@ import WebCheckout from "../../componentes/Commons/Wompi/WebCheckout";
 
 export const CompraUsuarios = () => {
   const { token, name, email, subcompanie_id } = useSelector(state => state.auth)
-
+  const subCompany = subcompanie_id.subcompanies_id;
   const [places, setPlaces] = useState([
     // { label: 1, value: 1 },
     // { label: 2, value: 2 },
@@ -77,7 +77,7 @@ export const CompraUsuarios = () => {
 
   const calculatePrice = async (e) => {
     e.preventDefault();
-    const data = await makePayment(token, name, email, amount_user, amount_time, coupon, subcompanie_id)
+    const data = await makePayment(token, name, email, amount_user, amount_time, coupon, subCompany);
     setPrice(data.payment_details);
   }
 

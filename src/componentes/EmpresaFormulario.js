@@ -211,7 +211,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group">
             <p>
-              Website empresa <span>*</span>
+              Website empresa 
             </p>
             <input
               name="website"
@@ -344,7 +344,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group form__group__xln">
             <p className="form__group__text">
-              Cuéntanos más sobre tus necesidades  <span>*</span>
+              Cuéntanos más sobre tus necesidades 
             </p>
             <textarea
               name="observation"
@@ -353,7 +353,7 @@ export const EmpresaFormulario = () => {
               onChange={handleInputChange}
               cols="53"
               rows="4"
-              placeholder="Cuentanos mas"
+              placeholder="Cuéntanos más"
             />
           </div>
           <button className="planes__formulario-button">Registrarme</button>

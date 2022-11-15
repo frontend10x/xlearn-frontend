@@ -8,15 +8,18 @@ import { getCoursesById, registerDiagnostic } from "../../services/services";
 import { confirmedRoute } from "../../actions/confirmRoute";
 
 export const CursosEntrenamiento = () => {
-  const { token, id, groups } = useSelector((state) => state.auth);
+  const { token, id, subcompanie_id } = useSelector((state) => state.auth);
   const { filter_id } = useSelector(state => state.questions);
   const [courses, setCourses] = useState();
   
+  const group = subcompanie_id.group_id;
+  console.log(group)
+
   const [schema, setSchema] = useState({
     target: "Entrenamiento",
     user_id: id,
     _rel: 'areas',
-    group_id: groups,
+    group_id: group,
     answer: []
   });
   const navigate = useNavigate();
@@ -51,7 +54,7 @@ export const CursosEntrenamiento = () => {
       const data = await registerDiagnostic(target,user_id,_rel,answer,group_id,token);
       dispatch(diagnosticTraining(answer,data?.diagnostic_id, _rel))
       dispatch(confirmedRoute(data.course_route))
-      navigate("/project/diagnostic/confirm_route");
+      // navigate("/project/diagnostic/confirm_route");
       console.log(_rel,'rel')
     } catch (error) {
       console.error(error);

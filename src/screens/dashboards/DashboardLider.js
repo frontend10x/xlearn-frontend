@@ -39,6 +39,7 @@ export const DashboardLider = () => {
   useEffect(() => {
     async function getUserCourses() {
       const data = await getUserCourseById(token, id);
+      console.log(data)
       setCourseRoute(data.response._embedded.courses)
     }
 
