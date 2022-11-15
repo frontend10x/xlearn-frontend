@@ -353,7 +353,9 @@ export const generateCertificate = async (token, user_id, course_id) => {
     }
   };
 
-  const response = await axios.post(baseURL + `/api/v1/certificate/generate?user_id=${user_id}&course_id=${course_id}`, config)
+  const body = {};
+
+  const response = await axios.post(baseURL + `/api/v1/certificate/generate?user_id=${user_id}&course_id=${course_id}`, body,config)
   return response.data
 }
 

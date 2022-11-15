@@ -26,9 +26,11 @@ export const CrearEquipos = () => {
   const [answer, setAnswer] = useState(false);
   const [teamManagement, setTeamManagement] = useState(false)
   const navigate = useNavigate();
+  const subCompany = subcompanie_id.subcompanies_id;
+
   useEffect(() => {
     async function getUsersFromSubcompanieId() {
-      const data = await getUserWithoutGroups(token, subcompanie_id)
+      const data = await getUserWithoutGroups(token, subCompany)
       setUsersWithoutGroup(data.response._embedded.users)
     }
     getUsersFromSubcompanieId();

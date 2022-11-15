@@ -15,15 +15,19 @@ export const GestionDeEquipos = () => {
     const [groups, setGroups] = useState([]);
     const [users, setUsers] = useState([]);
     const [ids, setIds] = useState([]); 
+    const subCompany = subcompanie_id.subcompanies_id;
+    console.log(groups,'crupos')
 
     useEffect(() => {
         async function getEnterprisesGroup() {
-            const data = await getEnterpriseGroups(token, subcompanie_id);
+            const data = await getEnterpriseGroups(token, subCompany);
             setGroups(data.groups._embedded.groups)
+            console.log(data.groups)
+            setIds()
         }
 
         async function getUserForGroups() {
-            const data = await getUsersGroup(token, 59)
+            const data = await getUsersGroup(token, 64)
             setUsers(data.users)
             console.log(data.users);
         }
@@ -31,14 +35,6 @@ export const GestionDeEquipos = () => {
         getEnterprisesGroup();
         getUserForGroups()
     }, []);
-
-    // useEffect(() => {
-    //     groups.map(function (e) {
-    //         let id = e.id.JSON
-    //         setIds(id);
-    //         console.log(ids)
-    //     });
-    // },[])
 
 
     return (

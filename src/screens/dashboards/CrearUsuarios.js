@@ -22,7 +22,8 @@ export const CrearUsuarios = () => {
         password_confirmation:''
     });
 
-
+    const subCompany = subcompanie_id.subcompanies_id; 
+    console.log(subCompany)
     const [users, setUsers] = useState();
     const [areaTelf, setAreaTelf] = useState([
         {label:"Mercadeo", value:1
@@ -44,7 +45,7 @@ export const CrearUsuarios = () => {
 
     const createUser = async () => {
         try {
-            const data = await creationUser( token,name, email, phone, type_id, rol_id, password, password_confirmation, subcompanie_id);
+            const data = await creationUser( token,name, email, phone, type_id, rol_id, password, password_confirmation, subCompany);
             Swal.fire({
                 icon: 'success',
                 title: 'Usuario creado con exito',

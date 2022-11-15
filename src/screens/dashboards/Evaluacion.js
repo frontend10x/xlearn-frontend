@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef, createRef } from "react";
-import { evaluationCourse, quizDiagnostic, registerAnswers, registerDiagnostic } from "../../services/services";
+import { evaluationCourse, generateCertificate, quizDiagnostic, registerAnswers, registerDiagnostic } from "../../services/services";
 import { useSelector } from "react-redux/es/exports";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Score } from "./Score";
 
 export const Evaluacion = () => {
   const { token, groups,id } = useSelector((state) => state.auth);
@@ -12,6 +13,7 @@ export const Evaluacion = () => {
   const { course_id } = useParams();
   const [page, setPage] = useState(0);
   const [perPage, setPerpage] = useState(1);
+  const [results, setResults] = useState(false);
   const indexAlphabetic = ["A", "B", "C", "D"];
   const [isDisabled, setDisabled] = useState(true);
   const styleInputSelect = useRef({});
@@ -67,16 +69,22 @@ export const Evaluacion = () => {
     if (validateAnswers(page)) {
       page < (questionLength - 1) && setPage(page + 1);
       if (status) {
-        const data = await registerAnswers(token,schema)
+        const data = await registerAnswers(token,schema);
+        const response = await generateCertificate(token ,id,course_id);
+        setResults(response)
+
         Swal.fire({
           icon: 'success',
           title: 'Felicidades',
           text: `${data.message}`,
         })
-        navigate();
+        console.log(data,'data')
+        // navigate();
       }
     }
   };
+
+  console.log(results,'results');
 
   const validateAnswers = (numPages) => {
     const getIdQuestion = question[numPages];
@@ -109,6 +117,10 @@ export const Evaluacion = () => {
       const attb = document.getElementById(`${key}-${data[key]}`);
       attb && attb.classList.add(classSelected);
     }
+  }
+
+  const handleScore = (params) => {
+    console.log('parans', params)
   }
 
   const removeClass = () => {
