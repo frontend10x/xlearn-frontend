@@ -859,7 +859,7 @@ button.burg-toggle i {
   position: relative;
   top: 30px;
   background-color: var(--green);
-  
+
 }
 
 .enterprise__button:hover {
@@ -1404,6 +1404,17 @@ video.xln-content-video_MS {
 
   transform: translate(34%, -186%);
 }
+.cursos__banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: -webkit-fill-available;
+  height: 100%;
+  background: linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 68%) 49%, rgb(0 0 0 / 52%) 100%);
+  z-index: 1;
+  border-radius: 12px;
+}
 .cursos__banner img {
   width: 100%;
 }
@@ -1424,6 +1435,7 @@ img.cursos__banner-image {
   width: 100%;
   padding-left: 10%;
   padding-right: 10%;
+  z-index: 2;
 }
 
 .cursos__banner-content h3 {
@@ -2189,6 +2201,18 @@ p.xln__register_text_TyC {
 .empresas__section h2 {
   font-size: 24px;
 }
+
+.empresas__banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: -webkit-fill-available;
+  height: 82%;
+  background: linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 68%) 49%, rgb(0 0 0 / 52%) 100%);
+  z-index: 1;
+}
+
 .empresas__banner-image {
   width: 100%;
 }
@@ -2200,6 +2224,7 @@ p.xln__register_text_TyC {
   top: 36%;
   left: 36%;
   transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 .empresas__banner-content h2 {
