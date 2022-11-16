@@ -284,8 +284,6 @@ export const getEnterpriseQuotas = async (token, subcompanie_id) => {
     }
   };
 
-  console.log(subcompanie_id,'servicio');
-
   const body = ""
 
   const response = await axios.post(baseURL + `/api/v1/payment/approved_payment_status?subcompanie_id=${subcompanie_id}`, body, config)
