@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { Col, Image } from "react-bootstrap";
 import {
   Slider_01,
@@ -10,14 +10,34 @@ import {
 } from "../assets/img";
 
 export const Banner = () => {
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+      let options = {
+      rootMargin: "0px",
+      threshold: [0.25, 0.75]
+      };
+
+      let handlePlay = (entries, observer) => {
+      entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+          videoRef.current.play();
+          } else {
+          videoRef.current.pause();
+          }
+      });
+      };
+
+      let observer = new IntersectionObserver(handlePlay, options);
+
+      observer.observe(videoRef.current);
+  });
+
   return (
     <div className="banner">
 
-      <div className="controladores"
-        id="carouselExampleIndicators"
-        className="carousel slide enterprise__carosuel-indicators"
-        data-bs-ride="carousel"
-      >
+      <div className="controladores carousel slide enterprise__carosuel-indicators" id="carouselExampleIndicators" data-bs-ride="carousel">
         <div className="carousel-indicators  ">
           <button
             type="button"
@@ -166,13 +186,21 @@ export const Banner = () => {
           <div className="modal-content bg-dark">
             <button
               type="button"
-              className="btn-close"
+              className="btn-close btn-close-white"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
 
             <div className="modal-body">
-              <Image src={Slider_01} className="w-100" />
+              <video className="xln-content-video_MS"
+                width="100%"
+                ref={videoRef}
+                pause={false}
+                muted={false}
+                controls
+                /* poster={posterMSVideo} */
+                src={require("./../assets/videos/video-promocional.mp4")}
+              ></video>
             </div>
           </div>
         </div>

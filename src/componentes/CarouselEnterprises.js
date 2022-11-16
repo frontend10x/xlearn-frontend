@@ -50,6 +50,12 @@ export const CarouselEnterprises = () => {
                             className="d-block enterprise__carousel-image "
                             alt="enterprise_1"
                         />
+                        <div className="enterprise__carousel-content" >
+                            <h3 className="enterprise__carousel-content_title" >Empresa</h3>
+                            <h1 className="enterprise__carousel-content_subtitle" >Asume nuevos retos y lleva tu negocio a otro nivel</h1>
+                            <h4 className="enterprise__carousel-content_info" >Atrévete a ingresar al mundo de la innovación a través del entrenamineto de tu equipo </h4>
+                            <button className='enterprise__button' onClick={redirect} > Conoce más </button>
+                        </div>
                     </div>
                     <div className="carousel-item">
                         <Image
@@ -57,6 +63,12 @@ export const CarouselEnterprises = () => {
                             className="d-block enterprise__carousel-image "
                             alt="enterprise_2"
                         />
+                        <div className="enterprise__carousel-content" >
+                            <h3 className="enterprise__carousel-content_title" >Empresa</h3>
+                            <h1 className="enterprise__carousel-content_subtitle" >Monitorea el rendimiento de tus empleados</h1>
+                            <h4 className="enterprise__carousel-content_info" >Podrás observar y analizar los resultados en cada una de las etapas de entrenamiento </h4>
+                            <button className='enterprise__button' onClick={redirect} > Conoce más </button>
+                        </div>
                     </div>
                     <div className="carousel-item">
                         <Image
@@ -64,6 +76,12 @@ export const CarouselEnterprises = () => {
                             className="d-block enterprise__carousel-image "
                             alt="enterprise_3"
                         />
+                        <div className="enterprise__carousel-content" >
+                            <h3 className="enterprise__carousel-content_title" >Empresa</h3>
+                            <h1 className="enterprise__carousel-content_subtitle" >Incrementa la productividad y establece las metas</h1>
+                            <h4 className="enterprise__carousel-content_info" >Es el momento de optimizar los procesos y generar estrategias en pro del crecimiento de la organización </h4>
+                            <button className='enterprise__button' onClick={redirect} > Conoce más </button>
+                        </div>
                     </div>
                 </div>
 
@@ -93,12 +111,7 @@ export const CarouselEnterprises = () => {
                 </div>
 
             </div>
-            <div className="enterprise__carousel-content" >
-                <h3 className="enterprise__carousel-content_title" >Empresa. </h3>
-                <h1 className="enterprise__carousel-content_subtitle" >Asume nuevos retos y lleva <br /> tu negocio a otro nivel</h1>
-                <h4 className="enterprise__carousel-content_info" >Atrévete a ingresar al mundo de la innovación a través <br/>del entrenamineto de tu equipo </h4>
-                <button className='enterprise__button' onClick={redirect} > Conoce más </button>
-            </div>
+            
         </div>
     );
 };
