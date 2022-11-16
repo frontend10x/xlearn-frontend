@@ -859,6 +859,7 @@ button.burg-toggle i {
   position: relative;
   top: 30px;
   background-color: var(--green);
+  
 }
 
 .enterprise__button:hover {
