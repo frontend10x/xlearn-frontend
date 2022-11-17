@@ -54,7 +54,7 @@ export const CursosEntrenamiento = () => {
       const data = await registerDiagnostic(target,user_id,_rel,answer,group_id,token);
       dispatch(diagnosticTraining(answer,data?.diagnostic_id, _rel))
       dispatch(confirmedRoute(data.course_route))
-      // navigate("/project/diagnostic/confirm_route");
+      navigate("/project/diagnostic/confirm_route");
       console.log(_rel,'rel')
     } catch (error) {
       console.error(error);
