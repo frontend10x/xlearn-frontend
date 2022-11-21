@@ -62,7 +62,7 @@ export const CompraUsuarios = () => {
   ]);
 
   const [price, setPrice] = useState();
-
+  const [disabled, setDisabled] = useState(false)
   const [formValues, handleInputChange] = useForm({
     name: name,
     email: email,
@@ -76,9 +76,14 @@ export const CompraUsuarios = () => {
   let { amount_user, amount_time, coupon } = formValues
 
   const calculatePrice = async (e) => {
+    setDisabled(true);
     e.preventDefault();
     const data = await makePayment(token, name, email, amount_user, amount_time, coupon, subCompany);
+    console.log(data)
     setPrice(data.payment_details);
+    setTimeout(() => {
+      setDisabled(false);
+    }, 3000);
   }
 
   const [buyConfirm, setBuyConfirm] = useState(false)
@@ -151,7 +156,7 @@ export const CompraUsuarios = () => {
                   />
                 </div>
               </div>
-              <button className="compra-usuario__calculate-price-button" onClick={calculatePrice} >
+              <button className="compra-usuario__calculate-price-button" disabled={disabled} style={disabled ? {backgroundColor:'#31fb8550'} : {backgroundColor:'#31fb84'}} onClick={calculatePrice} >
                 Calcular
               </button>
             </div>
@@ -162,9 +167,11 @@ export const CompraUsuarios = () => {
             <p>Pago anual del curso</p>
             <hr/>
             <h2>Pago total:</h2>
-            {price?.amount &&
-              <p className="xln_price_GDC">$ {price.amount} COP</p>            
-            }
+            {price?.amount_pesos ?
+              <p className="xln_price_GDC">$ {price.amount_pesos} COP</p>            
+              : 
+              <p className="xln_price_GDC">$ 0 COP</p>            
+              }
           </div>
           <div className="compra-usuarios__container-price__content-total" >
             {/* <div className="container__price-total" >

@@ -23,7 +23,7 @@ import { getEnterpriseGroups, getEnterpriseQuotas } from "../../services/service
 
 export const DashboardEmpresa = () => {
   const { name, subcompanie_id, token } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const [course, setCourse] = useState([
     { title: "Innovación", image: EmpresaInnovacion },
     { title: "Transformación digital", image: EmpresaTransformacion },
@@ -54,16 +54,13 @@ export const DashboardEmpresa = () => {
 
     async function getGroups() {
       const data = await getEnterpriseGroups(token, subcompany)
-      setCreatedTeams(data.groups["hc:length"])
+      console.log(data,'data de grupos')
+      setCreatedTeams(data.groups["hc:length"]);
     }
 
     getQuotas();
     getGroups();
   }, [])
-
-  const handleLogout = () => {
-    dispatch(logout());
-  }
 
   return (
     <div className="dashboard__section-empresa">
@@ -108,7 +105,7 @@ export const DashboardEmpresa = () => {
                   <div className="dashboard__block">
                     <div className="dashboard__block-content">
                       <Image src={cuposIcon} />
-                      <button className="dashboard__block-button">
+                      <button className="dashboard__block-button" >
                         Administrar Cupos
                       </button>
                     </div>
@@ -132,10 +129,16 @@ export const DashboardEmpresa = () => {
                         Administrar tus equipos
                       </button>
                     </div>
+                    {createdTeams ?
                     <div className="dashboard__title">
-                      <h3>{createdTeams} Equipos Creados</h3>
+                      <h3>{createdTeams} Equipos creados</h3>
                       <p>Crea y gestiona tus equipos</p>
                     </div>
+                    : <div className="dashboard__title">
+                      <h3> 0 Equipos creados</h3>
+                      <p>Crea y gestiona tus equipos</p>
+                    </div>
+                    }
                   </div>
                 </Col>
               </div>

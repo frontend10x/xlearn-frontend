@@ -14,7 +14,7 @@ const WebCheckout = ({dataPayment, onSubmit}) => {
         <form action="https://checkout.wompi.co/p/" method="GET">
             <input type="hidden" name="public-key" defaultValue={data?.public_key} />
             <input type="hidden" name="currency" defaultValue={data?.currency} />
-            <input type="hidden" name="amount-in-cents" defaultValue={data?.amount * 100} />
+            <input type="hidden" name="amount-in-cents" defaultValue={data?.amount_cents} />
             <input type="hidden" name="reference" defaultValue={data?.reference} />
             <input type="hidden" name="signature:integrity" defaultValue={data?.signature}/>
             <button type="submit" id="btn-checkout-wompi"></button>
