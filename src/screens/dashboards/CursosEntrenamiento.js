@@ -13,7 +13,7 @@ export const CursosEntrenamiento = () => {
   const [courses, setCourses] = useState();
   
   const group = subcompanie_id.group_id;
-  console.log(group)
+  
 
   const [schema, setSchema] = useState({
     target: "Entrenamiento",
