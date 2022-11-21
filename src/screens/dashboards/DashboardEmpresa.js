@@ -20,10 +20,12 @@ import { Footer } from "../../componentes/Footer";
 import { logout } from "../../actions/loginactions";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { getEnterpriseGroups, getEnterpriseQuotas } from "../../services/services";
+import { useNavigate } from "react-router-dom";
 
 export const DashboardEmpresa = () => {
   const { name, subcompanie_id, token } = useSelector((state) => state.auth);
   // const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [course, setCourse] = useState([
     { title: "Innovación", image: EmpresaInnovacion },
     { title: "Transformación digital", image: EmpresaTransformacion },
@@ -49,7 +51,7 @@ export const DashboardEmpresa = () => {
   useEffect(() => {
     async function getQuotas() {
       const data = await getEnterpriseQuotas(token, subcompany)
-      // setQuotas(data.quotas);
+      setQuotas(data.quotas);
     }
 
     async function getGroups() {
@@ -61,6 +63,15 @@ export const DashboardEmpresa = () => {
     getQuotas();
     getGroups();
   }, [])
+
+  const redirect = (e) => {
+    if (e.target.value === "teams") {
+      navigate('/gestion/equipo');
+    } else if ( e.target.value === "users") {
+      navigate('/creacion/usuarios');
+    }
+  }
+
 
   return (
     <div className="dashboard__section-empresa">
@@ -105,12 +116,12 @@ export const DashboardEmpresa = () => {
                   <div className="dashboard__block">
                     <div className="dashboard__block-content">
                       <Image src={cuposIcon} />
-                      <button className="dashboard__block-button" >
+                      <button className="dashboard__block-button" onClick={redirect} value="users">
                         Administrar Cupos
                       </button>
                     </div>
                     {quotas ?
-                      <div className="dashboard__title">
+                      <div className="dashboard__title"  >
                         <h3>{quotas} Cupos disponibles</h3>
                         <p>Administra tus Cupos</p>
                       </div>
@@ -125,7 +136,7 @@ export const DashboardEmpresa = () => {
                   <div className="dashboard__block">
                     <div className="dashboard__block-content">
                       <Image src={equiposIcon} />
-                      <button className="dashboard__block-button">
+                      <button className="dashboard__block-button" onClick={redirect} value="teams" >
                         Administrar tus equipos
                       </button>
                     </div>
