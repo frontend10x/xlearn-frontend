@@ -26,10 +26,26 @@ export const CrearUsuarios = () => {
     console.log(subCompany)
     const [users, setUsers] = useState();
     const [areaTelf, setAreaTelf] = useState([
-        {label:"Mercadeo", value:1
-    }
+        {label:"Gestión humana", value:1},
+        {label:"Comercial", value:2},
+        {label:"Mercadeo", value:3},
+        {label:"Finanzas", value:4},
+        {label:"Administración", value:5},
+        {label:"TI", value:6},
+        {label:"Compras", value:7},
+        {label:"Legal", value:8},
+        {label:"Producción", value:9},
+        {label:"Innovación", value:10},
+        {label:"Dirección", value:11},
+        {label:"Diseño", value:12},
+        {label:"Calidad", value:13},
+        {label:"Transformación digital", value:14},
+        {label:"Contabilidad", value:15},
+        {label:"Logística", value:16},
+        {label:"Otro", value:17},
         
     ]);
+
 
     const {name, email, phone, type_id, rol_id, password, password_confirmation} = formValues;
 
