@@ -60,10 +60,18 @@ export const Footer = () => {
             </div>
           </div>
           <div className="footer__media-links" >
+            <a href="https://www.facebook.com/XLearn10XThinking" >
             <Image src={facebook} alt='icon'  className="footer__media-icon"  />
+            </a>
+            <a href="https://twitter.com/XLearn2" >
             <Image src={twitter}  alt='icon' className="footer__media-icon"  />
+            </a>
+            <a href="https://www.linkedin.com/in/x-learn-409991240/" >
             <Image src={linkedin} alt='icon'  className="footer__media-icon"  />
+            </a>
+            <a href="https://www.youtube.com/channel/UCyS1OiIhWpylctMcbSkYgFQ">
             <Image src={youtube}  alt='icon'  className="footer__media-icon" />
+            </a>
           </div>
         </div>
 
