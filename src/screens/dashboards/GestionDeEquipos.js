@@ -14,26 +14,20 @@ export const GestionDeEquipos = () => {
     const { token, roles, subcompanie_id } = useSelector(state => state.auth)
     const [groups, setGroups] = useState([]);
     const [users, setUsers] = useState([]);
-    const [ids, setIds] = useState([]); 
+    const [ids, setIds] = useState([]);
     const subCompany = subcompanie_id.subcompanies_id;
-    console.log(groups,'crupos')
+
+    console.log(groups, 'grupos')
 
     useEffect(() => {
         async function getEnterprisesGroup() {
             const data = await getEnterpriseGroups(token, subCompany);
             setGroups(data.groups._embedded.groups)
             console.log(data.groups)
-            setIds()
-        }
-
-        async function getUserForGroups() {
-            const data = await getUsersGroup(token, 64)
-            setUsers(data.users)
-            console.log(data.users);
+            console.log(data, 'structura')
         }
 
         getEnterprisesGroup();
-        getUserForGroups()
     }, []);
 
 
@@ -65,24 +59,23 @@ export const GestionDeEquipos = () => {
                                                     <p className="text-center" >
                                                         Usuario
                                                     </p>
+                                                                        <p className="text-center" >
+                                                                            Progreso
+                                                                        </p>
                                                     <ul>
-                                                        {users &&
-                                                            users.map((item, index) => (
-                                                                <li>{item.name}</li>
+                                                        {
+                                                            item.users.map((items, index) => (
+                                                                <div key={index} className="d-flex" >
+                                                                    <h4>{items.name}</h4>
+                                                                    <div className="xln_info_gestionDeCupos" >
+                                                                        <div className="progress__bar__style">
+                                                                            <input type="range" className="range" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             ))
                                                         }
                                                     </ul>
-                                                </div>
-                                                <div className="xln_info_gestionDeCupos" >
-                                                    <p className="text-center" >
-                                                        Progreso
-                                                    </p>
-                                                    <div className="progress__bar__style">
-                                                        <input type="range" className="range" />
-                                                    </div>
-                                                    <div className="progress__bar__style">
-                                                        <input type="range" className="range" />
-                                                    </div>
                                                 </div>
                                                 <div className="xln_info_gestionDeCupos" >
                                                     <p className="text-center" >
