@@ -3106,6 +3106,8 @@ input.preguntas__diagnostico-checkbox-selected {
 }
 .xln__info_courses .hero {
   background: var(--blueDark);
+  padding-bottom: 5%;
+  padding-top: 3%;
 }
 .xln__info_courses .title {
   color: #fff;
@@ -3126,13 +3128,96 @@ input.preguntas__diagnostico-checkbox-selected {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  height: 200px;
+  background: var(--blueAlternative);
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
+.objetivos_de_curso .title_objetivos_de_curso {
+  text-align: left;
+  padding-bottom: 40px;
+  color: var(--blueclaro);
+}
+
+.objetivos_de_curso p {
+  color: var(--blueclaro);
+  text-align: left;
+  }
+
+  .objetivos_de_curso .separador {
+    width: 40px;
+    height: 2px;
+    background:var(--green);
+    margin-bottom: 36px;
+    border-radius: 10px;
+}
+.objetivos_de_curso .row {
+  width: 90%;
+  margin: auto;
+}
 .hero .row {
   --bs-gutter-x: -0.5rem;
 
 }
+
+.separador-left {
+  height: 125px;
+  width: 14px;
+  background: var(--green);
+  border-radius: 10px;
+  position: absolute;
+  margin-left: -39px;
+  margin-top: -15px;
+}
+.section_cta_de_curso {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background: #ffffff;
+}
+.section_cta_de_curso .row {
+  width: 80%;
+  margin: auto;
+}
+.section_cta_de_curso h2 {
+  text-align: left;
+  font-size: 45px;
+  font-weight: bold;
+}
+.section_introCursos-button {
+  background-color: #31fb8400;
+  border: none;
+  border-radius: 5px;
+  position: relative;
+  padding: 10px;
+  width: 50%;
+  font-size: 17px;
+  font-weight: bold;
+  border: solid 2px var(--bluedark);
+  color: var(--blueDark);
+  top: 32px;
+}
+.section_cta_de_curso .col-sm {
+  text-align: left;
+}
+.section_cta_de_curso .col-sm img {
+  width: 100%;
+  position: relative;
+  top: -150px;
+}
+
+.section_descripction_course {
+  padding-bottom: 15%;
+}
+
+.xln__info_courses .dashboard__lider-container_courses-card-content p {
+  text-align: left;
+  padding-left: 27px;
+  padding-right: 27px;
+  position: static;
+  top: 69px;
+}
+
 /* Dashboard Lider */
 
 .dashboard__lider-banner {
