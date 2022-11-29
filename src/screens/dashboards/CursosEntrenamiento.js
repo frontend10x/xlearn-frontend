@@ -27,8 +27,8 @@ export const CursosEntrenamiento = () => {
 
   const {target,user_id,_rel,group_id,answer} = schema;
 
-  console.log(schema,'valores')
-  console.log(courses,'structura');
+
+  console.log(group_id,'structura');
 
   useEffect(() => {
     async function getCoursesByArea() {

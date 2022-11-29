@@ -43,7 +43,6 @@ export const CrearUsuarios = () => {
         {label:"Contabilidad", value:15},
         {label:"Logística", value:16},
         {label:"Otro", value:17},
-        
     ]);
 
 

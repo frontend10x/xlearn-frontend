@@ -48,26 +48,6 @@ export const UsoCupos = () => {
                                 <p>Gestiona y administra usuarios</p>
                             </div>
                         </div>
-
-                        <div className="xlrn__uso-cupos-registered__container" >
-                            <p>Usuarios</p>
-                            <div className="xlrn__uso-cupos-registered" >
-                                {users &&
-                                    users.map((item, index) => (
-                                        <div key={index} className="xlrn__uso-cupos-registered__card" >
-                                            {/* <img src={imagenUser} className="user__image" /> */}
-                                                <input type='checkbox' value={item.id} onClick={addToGroup} />
-                                                <img src={imagenUser}/>
-                                            <div className="xlrn__uso-cupos-registered__card-content" >
-                                                <h1>{item.name}</h1>
-                                                <p>{item.email}</p>
-                                            </div>
-                                        </div>
-                                    ))
-                                }
-                            </div>
-                        </div>
-
                     </div>
                 </div>
                 

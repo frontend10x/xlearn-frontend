@@ -90,6 +90,7 @@ export const EmpresaFormulario = () => {
     password:"",
     password_confirmation:"",
     observation: "",
+    nit: ""
   });
 
   const {
@@ -106,6 +107,7 @@ export const EmpresaFormulario = () => {
     password,
     password_confirmation,
     observation,
+    nit
   } = formValues;
 
   const handleRegisterSubmit = async (e) => {
@@ -185,6 +187,17 @@ export const EmpresaFormulario = () => {
               value={lastname}
               onChange={handleInputChange}
               placeholder="Apellido(s)"
+            />
+          </div>
+          <div className="form__group">
+            <p>
+              NIT <span>*</span>
+            </p>
+            <input
+              name="nit"
+              value={nit}
+              onChange={handleInputChange}
+              placeholder="NIT Ej:00000000"
             />
           </div>
           <div className="form__group">
