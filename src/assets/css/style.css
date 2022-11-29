@@ -1248,7 +1248,7 @@ video.xln-content-video_MS {
 }
 
 .footer__image-email {
-  width: 100%;
+  width: 200px;
 }
 
 .link-footer{
@@ -4786,6 +4786,42 @@ p.xln_price_GDC span {
   border: 1px solid red!important;
   height: 3px;
 }
+
+.xln__creacion-nuevo-equipo {
+  background-color: var(--white);
+  width: 1175px;
+  position: relative;
+  left: 550px;
+  bottom: 150px;
+  height: 215px;
+  border: 1px solid var(--blueDark);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.xln__creacion-nuevo-equipo button {
+  background-color: var(--green);
+  border: none;
+  color: var(--blueDark);
+  height: 41px;
+  width: 188px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* .xln__creacion-nuevo-equipo-content {
+
+} */
+
+.xln__creacion-nuevo-equipo-content h2 {
+  font-weight: bold;
+  color: var(--blueDark);
+
+}
+
 /* Informacion de equipos Fin */
 
 

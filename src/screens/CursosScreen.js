@@ -18,6 +18,11 @@ export const CursosScreen = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
+
+  useEffect(() => {
       async function getCourses() {
           const data = await getCourse();
           setCourses(data.response._embedded.courses);
@@ -36,6 +41,9 @@ export const CursosScreen = () => {
   const startRegister = () => {
     navigate('/plans/register')
   }
+
+  
+
 
   return (
     <div className="cursos__section">

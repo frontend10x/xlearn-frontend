@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { registerbanner } from "../../assets/img";
 import { HeaderRegister } from "../../componentes/HeaderRegister";
 import { Footer } from "../../componentes/Footer";
@@ -6,6 +6,11 @@ import { EmpresaFormulario } from "../../componentes/EmpresaFormulario";
 
 export const EmpresasRegister = () => {
   
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
+
   return (
     <div className="planes-register">
       <HeaderRegister />

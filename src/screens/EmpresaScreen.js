@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { HeaderRegister } from "../componentes/HeaderRegister";
 import {useNavigate } from "react-router-dom";
 import { Footer } from "../componentes/Footer";
@@ -8,6 +8,11 @@ import { banner_empresa01, empresas_contacto, empresas_image, Image_01, platform
 export const EmpresaScreen = () => {
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
 
   const contactanos = () => {
     navigate('/contact')

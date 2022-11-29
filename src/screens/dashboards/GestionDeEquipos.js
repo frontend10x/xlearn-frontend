@@ -8,6 +8,7 @@ import { useForm } from "../../hooks/useForm"
 import { creationUser, getEnterpriseGroups, getUsersGroup, typeOfUsers } from "../../services/services";
 import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export const GestionDeEquipos = () => {
 
@@ -15,8 +16,11 @@ export const GestionDeEquipos = () => {
     const [groups, setGroups] = useState([]);
     const [users, setUsers] = useState([]);
     const [ids, setIds] = useState([]);
+    const navigate = useNavigate();
 
-    console.log(groups, 'grupos')
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     useEffect(() => {
         async function getEnterprisesGroup() {
@@ -29,6 +33,9 @@ export const GestionDeEquipos = () => {
         getEnterprisesGroup();
     }, []);
 
+    const redirect = () => {
+        navigate('/gestion/equipo');
+    }
 
     return (
         <div className="xlrn__crear-suarios__section" >
@@ -91,6 +98,13 @@ export const GestionDeEquipos = () => {
                     }
                 </div>
             </div>
+                <div className="xln__creacion-nuevo-equipo" >
+                    <div className="xln__creacion-nuevo-equipo-content" >
+                        <Image src={equiposIcon} className="ms-5" />
+                        <h2>Nuevo equipo</h2>
+                    </div>
+                    <button onClick={redirect} >Crear equipo</button>
+                </div>
             <Footer />
         </div>
     )

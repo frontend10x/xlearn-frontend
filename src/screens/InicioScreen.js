@@ -14,6 +14,11 @@ export const InicioScreen = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
+  
+  useEffect(() => {
     async function getCarrouselCourses() {
       const data = await getCourse()
       console.log(data.response._embedded.courses)

@@ -23,6 +23,9 @@ import { getEnterpriseGroups, getEnterpriseQuotas } from "../../services/service
 import { useNavigate } from "react-router-dom";
 
 export const DashboardEmpresa = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const { name, subcompanie_id, token } = useSelector((state) => state.auth);
   // const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -46,20 +49,16 @@ export const DashboardEmpresa = () => {
     },
   ]);
 
-  console.log(quotas,'creados');
-
   useEffect(() => {
     async function getQuotas() {
       const data = await getEnterpriseQuotas(token, subcompanie_id)
       setQuotas(data.quotas);
-      console.log(data.quotas,'parametros');
     }
 
     async function getGroups() {
       const data = await getEnterpriseGroups(token, subcompanie_id)
       setCreatedTeams(data.groups["hc:length"]);
     }
-
     getQuotas();
     getGroups();
   }, [])

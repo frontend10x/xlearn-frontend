@@ -5,9 +5,9 @@ import { contactSupport, getCountrys } from "../services/services";
 import { Footer } from "../componentes/Footer";
 import {
     bannerContact01
-  } from "../assets/img";
+} from "../assets/img";
 import { useNavigate } from "react-router-dom";
-import {useForm} from '../hooks/useForm';
+import { useForm } from '../hooks/useForm';
 import Swal from "sweetalert2";
 
 
@@ -16,15 +16,20 @@ export const ContactoScreen = () => {
     const [countries, setCountries] = useState();
     const navigate = useNavigate();
     const [formValues, handleInputChange] = useForm({
-        name:"",
-        phone:"",
-        company:"",
-        email:"",
-        observation:""
+        name: "",
+        phone: "",
+        company: "",
+        email: "",
+        observation: ""
     });
 
-    const {name,phone,company,email,observation} = formValues;
-
+    const { name, phone, company, email, observation } = formValues;
+    
+    useEffect(() => {
+        // 👇️ scroll to top on page load
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      }, []);
+    
 
     useEffect(() => {
         async function countries() {
@@ -46,13 +51,13 @@ export const ContactoScreen = () => {
     const contact = async (e) => {
         e.preventDefault();
         try {
-            const data = await contactSupport(name,phone,company,email,observation)
+            const data = await contactSupport(name, phone, company, email, observation)
             Swal.fire({
                 icon: 'success',
-                title:`${data.message}` ,
+                title: `${data.message}`,
                 text: `Te contactaremos pronto`,
                 // footer: 'Revisa tu correo para confirmar la cuenta'
-              });
+            });
         } catch (error) {
             console.log(error)
         }
@@ -60,7 +65,7 @@ export const ContactoScreen = () => {
 
     return (
         <div className="xlrn-contacto__section" >
-           <HeaderRegister />
+            <HeaderRegister />
             <div className="xlrn-contacto__section-container" >
                 <div className="xlrn-contacto__section-banner" >
                     {/* <Image src={ bannerContact01 } alt="image__banner" /> */}
@@ -74,8 +79,8 @@ export const ContactoScreen = () => {
                         </div>
                     </div>
                     <div className="xlrn-contacto__section-banner__content" >
-                        
-                        
+
+
                         <div className="xlrn__contacto-formulario-container">
                             <div className="xln__txt__formContact">
                                 <h2>Contáctanos</h2>
@@ -105,7 +110,7 @@ export const ContactoScreen = () => {
                                         </div>
                                         <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
                                             <label >Correo electrónico <span className="campo_requerido">*</span></label>
-                                            <input type='text' name="email" onChange={handleInputChange}/>
+                                            <input type='text' name="email" onChange={handleInputChange} />
                                         </div>
                                     </div>
 
@@ -162,8 +167,8 @@ export const ContactoScreen = () => {
                                 </form>
                             </div>
                         </div>
-                    
-                    
+
+
                     </div>
                 </div>
             </div>
