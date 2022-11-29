@@ -1176,7 +1176,7 @@ video.xln-content-video_MS {
 
 .footer__group-container {
   display: flex;
-  column-gap: 5rem;
+  column-gap: 3rem;
   font-size: 20px;
   position: relative;
   top: 10px;
@@ -1248,7 +1248,11 @@ video.xln-content-video_MS {
 }
 
 .footer__image-email {
-  width: 70%;
+  width: 100%;
+}
+
+.link-footer{
+  cursor: pointer;
 }
 
 /* Footer Fin */
@@ -1287,7 +1291,7 @@ video.xln-content-video_MS {
   margin-top: 15px;
   width: 28%;
   position: relative;
-  left: 10px;
+  left: 0px;
   font-weight: bold;
 }
 
@@ -1302,7 +1306,7 @@ video.xln-content-video_MS {
   border: none;
   font-size: 20px;
   position: relative;
-  left: 9px;
+  left: -4px;
 }
 
 .cursos__section-recently {
@@ -1401,7 +1405,7 @@ video.xln-content-video_MS {
   height: 30vh;
   width: 60%;
   position: absolute;
-
+  z-index: 9;
   transform: translate(34%, -186%);
 }
 .cursos__banner::after {
@@ -3321,8 +3325,8 @@ input.preguntas__diagnostico-checkbox-selected {
   text-align: left;
   padding-left: 27px;
   padding-right: 27px;
-  position: absolute;
-  top: 66px;
+  position: relative;
+  top: 0px;
 }
 .dashboard__lider-container_courses-card-content-body {
   position: relative;

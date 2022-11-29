@@ -2,8 +2,40 @@ import React from "react";
 import { Image } from "react-bootstrap";
 // import { Link } from "react-router-dom";
 import { XlearnLogo, facebook, twitter, linkedin, youtube, logo10X } from "../assets/img";
+import { useNavigate } from "react-router-dom";
 
 export const Footer = () => {
+
+  const navigate = useNavigate()
+
+  const nosotros = () => {
+    navigate('/enterprises')
+  }
+
+  const empresa = () => {
+    navigate('/enterprises')
+  }
+
+  const planes = () => {
+    navigate('/plans/register')
+  }
+
+  const soporte = () => {
+    navigate('/contact')
+  }
+
+  const ayuda = () => {
+    navigate('/contact')
+  }
+
+  const privacidad = () => {
+    navigate('/contact')
+  }
+
+  const terminos = () => {
+    navigate('/contact')
+  }
+
   return (
     <div className="footer">
       <div className="footer__container">
@@ -20,20 +52,20 @@ export const Footer = () => {
 
             <div className="footer__group margins ">
               <h5>Compañia</h5>
-              <p>Nosotros</p>
-              <p>Empresas</p>
+              <p className="link-footer" onClick={nosotros}>Nosotros</p>
+              <p className="link-footer" onClick={empresa} >Empresas</p>
             </div>
 
             <div className="footer__group margins ">
               <h5>Comunidad</h5>
-              <p>Planes</p>
-              <p>Blog</p>
+              <p className="link-footer" onClick={planes}>Planes</p>
+              {/* <p>Blog</p> */}
             </div>
 
             <div className="footer__group margins">
               <h5>Contáctanos</h5>
-              <p>FAQ</p>
-              <p>Soporte</p>
+              <p className="link-footer">FAQ</p>
+              <p className="link-footer" onClick={soporte}>Soporte</p>
             </div>
 
             <div className="footer__group position">
@@ -54,9 +86,9 @@ export const Footer = () => {
               <p>&copy; Xlearn,by 10XThinking .2022</p>
 
             <div className="footer__option" >
-              <p>Ayuda</p>
-              <p>Privacidad</p>
-              <p>Términos</p>
+              <p className="link-footer" onClick={ayuda}>Ayuda</p>
+              <p className="link-footer" onClick={privacidad}>Privacidad</p>
+              <p className="link-footer" onClick={terminos}>Términos</p>
             </div>
           </div>
           <div className="footer__media-links" >

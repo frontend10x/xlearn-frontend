@@ -205,9 +205,9 @@ export const CursosScreen = () => {
               </div>
             ))}
           </div>
-          <button className="cursos__button-expand" >
+          {/* <button className="cursos__button-expand" >
             ver todos
-          </button>
+          </button> */}
         </div>
         
       </div>

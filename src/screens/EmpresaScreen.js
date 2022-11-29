@@ -1,10 +1,26 @@
 import React from "react";
 import { HeaderRegister } from "../componentes/HeaderRegister";
+import {useNavigate } from "react-router-dom";
 import { Footer } from "../componentes/Footer";
 import { Image } from "react-bootstrap";
 import { banner_empresa01, empresas_contacto, empresas_image, Image_01, platformImage, playButton, empresa_img, } from "../assets/img";
 
 export const EmpresaScreen = () => {
+
+  const navigate = useNavigate()
+
+  const contactanos = () => {
+    navigate('/contact')
+  }
+
+  const proyecto = () => {
+    navigate('/plans/register')
+  }
+
+  const planes = () => {
+    navigate('/plans/register')
+  }
+
   return (
     <div className="empresas__section">
       <HeaderRegister />
@@ -21,8 +37,8 @@ export const EmpresaScreen = () => {
           <p>
             Contamos con una gran oferta de cursos que te ayudaran a aumentar la productividad de tu organización, acelerando el crecimiento y desarrollando nuevas competencias
           </p>
-          <button className="empresas__banner-button">
-          Conoce nuestros planes
+          <button onClick={planes} className="empresas__banner-button">
+            Conoce nuestros planes
           </button>
         </div>
       </div>
@@ -126,8 +142,8 @@ export const EmpresaScreen = () => {
             <p>Contáctanos</p>
             <h1>Ponte en contacto con nosotros</h1>
             <div className="empresas__banner-button_container" >
-              <button className="empresas__banner-contacto_button" >Contactanos ahora</button>
-              <button className="empresas__banner-proyecto_button" >Quiero iniciar un proyecto</button>
+              <button onClick={contactanos} className="empresas__banner-contacto_button" >Contactanos ahora</button>
+              <button onClick={proyecto} className="empresas__banner-proyecto_button" >Quiero iniciar un proyecto</button>
             </div>
           </div>
         </div>
