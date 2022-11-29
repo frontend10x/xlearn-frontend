@@ -367,3 +367,16 @@ export const contactSupport = async (name, phone, company, email, observation) =
   return response.data
 
 }
+
+export const getUserByEnterprise = async (token,subcompanie_id) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+  const body = ""
+  const response = await axios.get(baseURL + `/api/v1/sub_companies/users/${subcompanie_id}?offset=1`,config)
+  return response.data
+
+}

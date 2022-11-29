@@ -67,9 +67,9 @@ export const DashboardEmpresa = () => {
     if (e.target.value === "teams" && createdTeams > 0 ) {
       navigate('/manejo/equipos');
     } else if (e.target.value === "teams" && createdTeams === 0 ) {
-      navigate('/manejo/equipos')
+      navigate('/manejo/equipos');
     } else if (e.target.value === "users" && quotas > 0 ) {
-      navigate('/manejo/cupos/disponibles')
+      navigate('/gestion/cupos/disponibles')
     } else if ( e.target.value === "users" && quotas === 0) {
       navigate('/compra/cupos');
     }
