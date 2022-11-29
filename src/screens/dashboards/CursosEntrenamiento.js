@@ -8,37 +8,42 @@ import { getCoursesById, registerDiagnostic } from "../../services/services";
 import { confirmedRoute } from "../../actions/confirmRoute";
 
 export const CursosEntrenamiento = () => {
-  const { token, id, subcompanie_id } = useSelector((state) => state.auth);
+  const { token, id, subcompanie_id, groups } = useSelector((state) => state.auth);
   const { filter_id } = useSelector(state => state.questions);
   const [courses, setCourses] = useState();
+  const [checked, setChecked] = useState(false);
   
-  const group = subcompanie_id.group_id;
-  
+  console.log(groups,'grupo')
 
   const [schema, setSchema] = useState({
     target: "Entrenamiento",
     user_id: id,
     _rel: 'areas',
-    group_id: group,
+    group_id: groups,
     answer: []
   });
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const {target,user_id,_rel,group_id,answer} = schema;
 
-  console.log(schema)
+  console.log(schema,'valores')
+  console.log(courses,'structura');
 
   useEffect(() => {
     async function getCoursesByArea() {
       const data = await getCoursesById(token, filter_id);
       setCourses(data.response._embedded.courses);
     }
-
     getCoursesByArea();
   }, []);
 
   const respuesta = (item) => {
+    if (checked === false) {
+      setChecked(true);
+    } else {
+      setChecked(false);
+    }
     const answer = {
       "course": `${item.id}`,
     }
@@ -55,11 +60,11 @@ export const CursosEntrenamiento = () => {
       dispatch(diagnosticTraining(answer,data?.diagnostic_id, _rel))
       dispatch(confirmedRoute(data.course_route))
       navigate("/project/diagnostic/confirm_route");
-      console.log(_rel,'rel')
     } catch (error) {
       console.error(error);
     }
   };
+
   const filterCourses = () => {
     alert(`Filtro hecho este es el id`);
   };
@@ -75,7 +80,6 @@ export const CursosEntrenamiento = () => {
 
         <div className="cursos__filter-content">
             <ul className="cursos__filter-buttons">
-              
               <div>
                 <h3>Áreas</h3>
               </div>
@@ -174,7 +178,7 @@ export const CursosEntrenamiento = () => {
             courses.map((item, index) => (
               <div className="cursos__entrenamiento-selection_card" key={index} >
                 <div className="cursos__entrenamiento-selection_card-image" >
-                  <input type="radio" onClick={() => respuesta(item)} />
+                  <input type="radio" onClick={() => respuesta(item)} checked={checked} id={item.name + " " + item.id} name={item.name} />
                   <Image src={item.file_path} alt={item.file_path} />
                   <h2>{item.name}</h2>
                 </div>

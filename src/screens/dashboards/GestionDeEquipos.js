@@ -15,13 +15,12 @@ export const GestionDeEquipos = () => {
     const [groups, setGroups] = useState([]);
     const [users, setUsers] = useState([]);
     const [ids, setIds] = useState([]);
-    const subCompany = subcompanie_id.subcompanies_id;
 
     console.log(groups, 'grupos')
 
     useEffect(() => {
         async function getEnterprisesGroup() {
-            const data = await getEnterpriseGroups(token, subCompany);
+            const data = await getEnterpriseGroups(token, subcompanie_id);
             setGroups(data.groups._embedded.groups)
             console.log(data.groups)
             console.log(data, 'structura')

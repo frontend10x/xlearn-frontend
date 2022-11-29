@@ -31,7 +31,7 @@ export const SeleccionProceso = () => {
       <HeaderDashboard />
       <div className="selection__process-container">
         <div className="selection__process-content">
-          <Image src={proyectoIcon} className="selection__icon folder"/>
+          {/* <Image src={proyectoIcon} className="selection__icon folder"/>
           <input
             type="submit"
             className="selection__process-button"
@@ -39,7 +39,7 @@ export const SeleccionProceso = () => {
             value="Proyecto"
             id="1"
             onClick={selectionSection}
-          />
+          /> */}
           <Image src={entrenamientoIcon} className="selection__icon " />
           <input
             type="submit"

@@ -18,6 +18,11 @@ export const DashboardLider = () => {
   const { name, token, id } = useSelector(state => state.auth)
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
+
   const [course, setCourse] = useState([
     { title: "Presentaciones efectivas de negocios", image:  recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
     { title: "Modelación de negocios", image:  recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },

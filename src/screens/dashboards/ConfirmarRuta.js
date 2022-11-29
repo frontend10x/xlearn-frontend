@@ -48,7 +48,7 @@ export const ConfirmarRuta = () => {
         </div>
         <div className="confirm_route-add_course" >
           <h3>Mis cursos</h3>
-          <button>Agregar curso a la lista</button>
+          {/* <button>Agregar curso a la lista</button> */}
         </div>
         <div className="confirm_route-container_route" >
           {

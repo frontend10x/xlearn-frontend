@@ -46,17 +46,17 @@ export const DashboardEmpresa = () => {
     },
   ]);
 
-  const subcompany = subcompanie_id.subcompanies_id;
+  console.log(quotas,'creados');
 
   useEffect(() => {
     async function getQuotas() {
-      const data = await getEnterpriseQuotas(token, subcompany)
+      const data = await getEnterpriseQuotas(token, subcompanie_id)
       setQuotas(data.quotas);
+      console.log(data.quotas,'parametros');
     }
 
     async function getGroups() {
-      const data = await getEnterpriseGroups(token, subcompany)
-      console.log(data,'data de grupos')
+      const data = await getEnterpriseGroups(token, subcompanie_id)
       setCreatedTeams(data.groups["hc:length"]);
     }
 
@@ -65,10 +65,14 @@ export const DashboardEmpresa = () => {
   }, [])
 
   const redirect = (e) => {
-    if (e.target.value === "teams") {
-      navigate('/gestion/equipo');
-    } else if ( e.target.value === "users") {
-      navigate('/creacion/usuarios');
+    if (e.target.value === "teams" && createdTeams > 0 ) {
+      navigate('/manejo/equipos');
+    } else if (e.target.value === "teams" && createdTeams === 0 ) {
+      navigate('/manejo/equipos')
+    } else if (e.target.value === "users" && quotas > 0 ) {
+      navigate('/manejo/cupos/disponibles')
+    } else if ( e.target.value === "users" && quotas === 0) {
+      navigate('/compra/cupos');
     }
   }
 
