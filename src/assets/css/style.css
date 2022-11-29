@@ -202,7 +202,7 @@ button.burg-toggle i {
   position: relative;
   top: -46px;
   width: 40%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, 70%);
   left: 70%;
 }
 .navegacion {
@@ -2787,6 +2787,31 @@ p.xln__register_text_TyC {
 /* Vista Empresa Fin*/
 
 /* Diagnostico Lider */
+
+.preguntas__diagnostico .navegacion {
+  -webkit-column-gap: 2rem;
+  column-gap: 2rem;
+  display: flex;
+  left: 70%;
+  position: relative;
+  -webkit-transform: translate(-50%,50%);
+  transform: translate(-50%,76%);
+  width: 40%;
+}
+
+.diagnostico__lider .burg-toggle {
+  border: none;
+  background-color: transparent;
+  position: relative;
+  top: 19px;
+  left: 60px;
+}
+
+.diagnostico__lider .header__logo {
+  position: absolute;
+  left: 130px;
+  top: 29px;
+}
 
 .diagnostico__lider-content {
   position: relative;
