@@ -2212,7 +2212,7 @@ p.xln__register_text_TyC {
   top: 0;
   left: 0;
   width: -webkit-fill-available;
-  height: 82%;
+  height: 89%;
   background: linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 68%) 49%, rgb(0 0 0 / 52%) 100%);
   z-index: 1;
 }
@@ -3669,7 +3669,6 @@ input.preguntas__diagnostico-checkbox-selected {
 }
 
 .cursos__entrenamiento-selection_card-image img {
-  height: 250px;
   width: 100%;
   border-radius: 10px 10px 0px 0px;
 }
@@ -6300,4 +6299,12 @@ span.campo_requerido {
 
 .modal-backdrop {
   z-index: 8;
+}
+
+
+.politicas__privacidad-container {
+  width: 90%;
+  margin: auto;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
