@@ -2212,7 +2212,7 @@ p.xln__register_text_TyC {
   top: 0;
   left: 0;
   width: -webkit-fill-available;
-  height: 82%;
+  height: 89%;
   background: linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 68%) 49%, rgb(0 0 0 / 52%) 100%);
   z-index: 1;
 }
@@ -3669,7 +3669,6 @@ input.preguntas__diagnostico-checkbox-selected {
 }
 
 .cursos__entrenamiento-selection_card-image img {
-  height: 250px;
   width: 100%;
   border-radius: 10px 10px 0px 0px;
 }
@@ -3903,9 +3902,14 @@ input.preguntas__diagnostico-checkbox-selected {
 /* Gestion de cupos (Usuarios) Fin */
 
 /* Gestion de cupos (Disponibles) */
+.xlrn__gestion-cupos .header__container.background {
+  position: fixed !important;
+  z-index: 9;
+  width: 100%;
+}
 .xlrn__gestion-cupos_blocks {
   position: relative;
-  left: 450px;
+  left: 21%;
   width: 75%;
 }
 
@@ -3915,7 +3919,7 @@ input.preguntas__diagnostico-checkbox-selected {
   border: 2px solid gray;
   height: 300px;
   position: relative;
-  top: 270px;
+  top:30%;
   width: 100%;
 }
 
@@ -3929,8 +3933,33 @@ input.preguntas__diagnostico-checkbox-selected {
 .xlrn__gestion-cupos-subtitle {
   position: relative;
   top: 110px;
-  left: 40px;
+  left: 0px;
+  width: 90%;
+  margin: auto;
 }
+.gestion__cupos___xln .xlrn__gestion-cupos_blocks {
+  position: relative;
+  left: 21%;
+  width: 78%!important;
+}
+
+.gestion__cupos___xln .gestion__cupos___xln button {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.gestion__cupos___xln .xln-content-dash {
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 11%;
+}
+
+
+/* .xlrn__gestion-cupos .xlrn__gestion-cupos_blocks {
+  position: relative;
+  left: 21%;
+  width: 78%;
+} */
 
 .xlrn__gestion-cupos-title img {
   position: relative;
@@ -6300,4 +6329,12 @@ span.campo_requerido {
 
 .modal-backdrop {
   z-index: 8;
+}
+
+
+.politicas__privacidad-container {
+  width: 90%;
+  margin: auto;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }

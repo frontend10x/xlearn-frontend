@@ -29,12 +29,14 @@ export const Footer = () => {
   }
 
   const privacidad = () => {
-    navigate('/contact')
+    navigate('/politicas/privacidad')
   }
 
   const terminos = () => {
     navigate('/contact')
   }
+
+  
 
   return (
     <div className="footer">

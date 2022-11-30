@@ -12,8 +12,7 @@ export const CursosEntrenamiento = () => {
   const { filter_id } = useSelector(state => state.questions);
   const [courses, setCourses] = useState();
   const [checked, setChecked] = useState(false);
-  
-  console.log(groups,'grupo')
+  const [checkedState, setCheckedState] = useState(false);
 
   const [schema, setSchema] = useState({
     target: "Entrenamiento",
@@ -38,17 +37,37 @@ export const CursosEntrenamiento = () => {
     getCoursesByArea();
   }, []);
 
-  const respuesta = (item) => {
-    if (checked === false) {
-      setChecked(true);
-    } else {
-      setChecked(false);
+  useEffect(()=>{
+    if(courses){
+      setCheckedState(new Array(courses.length).fill(false))
     }
-    const answer = {
-      "course": `${item.id}`,
+  }, [courses])
+
+  const handleOnChange = (courseId, position, isChecked) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    setCheckedState(updatedCheckedState);
+    
+    let answer = {};
+    
+    if(!isChecked){
+      answer = {
+        "course": courseId,
+      }
+
+      setSchema({ ...schema, answer: [...schema.answer, answer] });
+      
+    }else{
+      answer = schema?.answer.filter(item => item?.course !== courseId)
+      setSchema({ ...schema, answer: answer });
     }
-    setSchema({ ...schema, answer: [...schema.answer, answer] });
+
   };
+
+  console.log("schema22", schema)
+  
 
   const previousPage = () => {
     navigate('/project/diagnostic/training/areas')
@@ -175,16 +194,22 @@ export const CursosEntrenamiento = () => {
 
         <div className="cursos__entrenamiento-selection_container" >
           {courses &&
-            courses.map((item, index) => (
+            courses.map(({id, name, file_path}, index) => (
               <div className="cursos__entrenamiento-selection_card" key={index} >
                 <div className="cursos__entrenamiento-selection_card-image" >
-                  <input type="radio" onClick={() => respuesta(item)} checked={checked} id={item.name + " " + item.id} name={item.name} />
-                  <Image src={item.file_path} alt={item.file_path} />
-                  <h2>{item.name}</h2>
+                  <input 
+                    type="checkbox" 
+                    checked={checkedState[index]}
+                    id={`course-${index}-${id}`} 
+                    onChange={() => handleOnChange(id, index, checkedState[index])}
+                  />
+                  <Image src={file_path} alt={file_path} />
+                  <h2>{name}</h2>
                 </div>
               </div>
             ))
           }
+          
         </div>
       
       
