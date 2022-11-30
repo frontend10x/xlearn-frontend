@@ -120,7 +120,6 @@ export const CrearEquipos = () => {
                 <div className="xlrn__crear-equipos__form" id="form" >
                   <input onChange={handleInputChange} name="name" type="text" placeholder="Nombre del equipo" />
                   <select placeholder="Agregar rol de lider" className="xlrn__asignar-rol" id="leader">
-                    <option value={false} >Asignar rol de lider</option>
                     {lider?.map((item, index) => (
                       <option key={index} value={item.id} >
                         {item.value}
@@ -128,6 +127,7 @@ export const CrearEquipos = () => {
                     )
                     )
                     }
+                    <option value={false} >Asignar rol de lider</option>
                   </select>
                   {usersWithoutGroup &&
                     usersWithoutGroup.map((item, index) => (
