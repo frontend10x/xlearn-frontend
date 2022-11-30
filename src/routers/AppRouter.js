@@ -36,6 +36,8 @@ import { GenerarCertificado } from "../screens/dashboards/GenerarCertificado";
 import { PoliticasPrivacidad } from "../screens/PoliticasPrivacidad";
 import { Soporte } from "../screens/dashboards/Soporte";
 import { Score } from "../screens/dashboards/Score";
+import { TerminosCondiciones } from "../screens/TerminosCondiciones";
+import { Ayuda } from "../screens/Ayuda";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -53,6 +55,8 @@ export const AppRouter = () => {
         <Route exact path="/contact" element={<ContactoScreen />} />
         <Route exact path="/course/info/:id" element={<InfoCourse />} />
         <Route exact path="/puntaje/:id/:course_id" element={<Score />} />
+        <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
+        <Route exact path="/informacion/ayuda" element={<Ayuda />} />
 
         {/* RUTA DE EMPRESA */}
         <Route element={<EmpresasRoute token={token} type={type} />}>
