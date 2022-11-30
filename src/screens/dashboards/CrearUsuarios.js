@@ -21,8 +21,8 @@ export const CrearUsuarios = () => {
         password:'',
         password_confirmation:''
     });
+    const [disabled, setDisabled] = useState(true);
 
-    const [disabled, setDisabled] = useState(false);
     const [areaTelf, setAreaTelf] = useState([
         {label:"Gestión humana", value:1},
         {label:"Comercial", value:2},
@@ -52,7 +52,7 @@ export const CrearUsuarios = () => {
         try {
             const data = await getEnterpriseQuotas(token,subcompanie_id);
             if (data.quotas > 0) {
-                setDisabled(true);
+                setDisabled(false);
             }
         } catch (error) {
             console.error(error,'error')
@@ -61,7 +61,7 @@ export const CrearUsuarios = () => {
        validateQuotas();
     },[token,subcompanie_id])
 
-    console.log(disabled)
+    console.log(disabled,'boolean');
 
     const createUser = async () => {
         try {
