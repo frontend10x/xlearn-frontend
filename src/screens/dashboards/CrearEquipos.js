@@ -14,7 +14,10 @@ import { useNavigate } from "react-router-dom";
 
 const users = []
 export const CrearEquipos = () => {
-
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
   const { token, subcompanie_id } = useSelector((state) => state.auth);
   const [formValues, handleInputChange] = useForm({
     name: '',

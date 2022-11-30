@@ -51,23 +51,32 @@ export const DashboardEmpresa = () => {
 
   useEffect(() => {
     async function getQuotas() {
-      const data = await getEnterpriseQuotas(token, subcompanie_id)
-      setQuotas(data.quotas);
+      try {
+        const data = await getEnterpriseQuotas(token, subcompanie_id)
+        setQuotas(data.quotas);  
+      } catch (error) {
+        console.error(error,'error')
+      }
+      
     }
 
     async function getGroups() {
-      const data = await getEnterpriseGroups(token, subcompanie_id)
-      setCreatedTeams(data.groups["hc:length"]);
+      try {
+        const data = await getEnterpriseGroups(token, subcompanie_id)
+        setCreatedTeams(data.groups["hc:length"]);
+      } catch (error) {
+        console.error(error,'error 2')        
+      }
     }
     getQuotas();
     getGroups();
-  }, [])
+  }, [token,subcompanie_id])
 
   const redirect = (e) => {
     if (e.target.value === "teams" && createdTeams > 0 ) {
       navigate('/manejo/equipos');
     } else if (e.target.value === "teams" && createdTeams === 0 ) {
-      navigate('/manejo/equipos');
+      navigate('/gestion/equipos');
     } else if (e.target.value === "users" && quotas > 0 ) {
       navigate('/gestion/cupos/disponibles')
     } else if ( e.target.value === "users" && quotas === 0) {

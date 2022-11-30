@@ -5,7 +5,7 @@ import { Footer } from "../../componentes/Footer";
 import { Image } from "react-bootstrap";
 import { equiposIcon } from "../../assets/img";
 import { useForm } from "../../hooks/useForm"
-import { creationUser, typeOfUsers } from "../../services/services";
+import { creationUser, getEnterpriseQuotas, typeOfUsers } from "../../services/services";
 import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
 
@@ -22,9 +22,7 @@ export const CrearUsuarios = () => {
         password_confirmation:''
     });
 
-    const subCompany = subcompanie_id.subcompanies_id; 
-    console.log(subCompany)
-    const [users, setUsers] = useState();
+    const [disabled, setDisabled] = useState(false);
     const [areaTelf, setAreaTelf] = useState([
         {label:"Gestión humana", value:1},
         {label:"Comercial", value:2},
@@ -50,17 +48,24 @@ export const CrearUsuarios = () => {
 
 
     useEffect(() => {
-        async function typeUsers() {
-            const data = await typeOfUsers(token)
-            setUsers(data.types_users);
+       async function validateQuotas() {
+        try {
+            const data = await getEnterpriseQuotas(token,subcompanie_id);
+            if (data.quotas > 0) {
+                setDisabled(true);
+            }
+        } catch (error) {
+            console.error(error,'error')
         }
+       }
+       validateQuotas();
+    },[token,subcompanie_id])
 
-        typeUsers()
-    },[])
+    console.log(disabled)
 
     const createUser = async () => {
         try {
-            const data = await creationUser( token,name, email, phone, type_id, rol_id, password, password_confirmation, subCompany);
+            const data = await creationUser( token,name, email, phone, type_id, rol_id, password, password_confirmation, subcompanie_id);
             Swal.fire({
                 icon: 'success',
                 title: 'Usuario creado con exito',
@@ -127,7 +132,7 @@ export const CrearUsuarios = () => {
                                     </div> */}
                                 </div>
 
-                                <button onClick={createUser} >Confirmar</button>
+                                <button onClick={createUser} disabled={disabled} style={disabled ? {backgroundColor:'#31fb8550'} : {backgroundColor:'#31fb84'}} >Confirmar</button>
                             </div>
                         </div>
                     </div>

@@ -8,18 +8,12 @@ import { getEnterpriseQuotas } from "../../services/services";
 export const NavegacionDashboard = () => {
 
     const { token, subcompanie_id } = useSelector(state => state.auth)
-    // const [quotas, setQuotas] = useState();
     const navigate = useNavigate();
-    const subcompany = subcompanie_id.subcompanies_id;
-
-    useEffect( ()  => {
-        
-    }, [])
 
     const redirect = () => {
-        getEnterpriseQuotas(token, subcompany)
+        getEnterpriseQuotas(token, subcompanie_id)
         .then( event => {
-            navigate('/gestion/cupos/disponibles')
+            navigate('/creacion/usuarios')
         })
         .catch(error => {
             console.error(error.response.data.message,'error');

@@ -8,18 +8,19 @@ import {
     equiposIcon,
     vistaEmpresa,
     gradient,
-  } from "../../assets/img";
+} from "../../assets/img";
 import { useSelector } from 'react-redux'
 import { getEnterpriseQuotas, getEnterpriseGroups } from '../../services/services'
+import { useNavigate } from "react-router-dom";
 
 export const GestionDeCupos = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [])
+    }, [])
     const { token, subcompanie_id } = useSelector(state => state.auth);
     const [quotas, setQuotas] = useState();
     const [createdTeams, setCreatedTeams] = useState();
-
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function getQuotas() {
@@ -36,6 +37,14 @@ export const GestionDeCupos = () => {
         getGroups();
     }, [token, subcompanie_id])
 
+    const redirect = (e) => {
+        if (e.target.value === "cupos") {
+            navigate('/compra/cupos')
+        } else if (e.target.value === "asignar") {
+            navigate('/gestion/equipo');
+        }
+    }
+
     return (
         <div className="dashboard__section-empresa gestion__cupos___xln">
             <div className="dashboard__container" >
@@ -47,31 +56,31 @@ export const GestionDeCupos = () => {
                     </div>
 
                     <div className="xln-contentSection-block-empresa">
-                        
+
                         <div className="dashboard__container-nav_banner">
 
-                        <div className="dashboard__banner">
-                            <div className="dashboard__banner-content">
-                            <div className="dashboard__banner-title">
-                                <h1>Administra tus cupos</h1>
-                                <p>
-                                Es el momento de gestionar y desarrollar tus proyectos con Xlearn
-                                </p>
-                            </div>
-                            <Image
-                                src={vistaEmpresa}
-                                alt="banner"
-                                className="dashboard__banner-image"
-                            />
-                            <Image src={gradient} alt="gradiente" className="gradient" />
-                            </div>
+                            <div className="dashboard__banner">
+                                <div className="dashboard__banner-content">
+                                    <div className="dashboard__banner-title">
+                                        <h1>Administra tus cupos</h1>
+                                        <p>
+                                            Es el momento de gestionar y desarrollar tus proyectos con Xlearn
+                                        </p>
+                                    </div>
+                                    <Image
+                                        src={vistaEmpresa}
+                                        alt="banner"
+                                        className="dashboard__banner-image"
+                                    />
+                                    <Image src={gradient} alt="gradiente" className="gradient" />
+                                </div>
 
+
+                            </div>
 
                         </div>
 
-                        </div>
 
-                 
                     </div>
 
                     <div className='xlrn__gestion-cupos_blocks' >
@@ -81,7 +90,7 @@ export const GestionDeCupos = () => {
                                     <div className="xlrn__gestion-cupos_content">
                                         <div className="xlrn__gestion-cupos-title">
                                             <Image src={cuposIcon} />
-                                            <button className="xlrn__gestion-cupos-button-agregar-cupos">
+                                            <button className="xlrn__gestion-cupos-button-agregar-cupos" onClick={redirect} value="cupos">
                                                 Agregar cupos
                                             </button>
                                         </div>
@@ -95,7 +104,7 @@ export const GestionDeCupos = () => {
                                     <div className="xlrn__gestion-cupos_content">
                                         <div className="xlrn__gestion-cupos-title">
                                             <Image src={equiposIcon} />
-                                            <button className="xlrn__gestion-cupos-button">
+                                            <button className="xlrn__gestion-cupos-button" onClick={redirect} value="asignar" >
                                                 Asignar usuarios
                                             </button>
                                         </div>
