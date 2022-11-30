@@ -4434,7 +4434,7 @@ p.xln_price_GDC span {
   /* flex-direction: column; */
   position: relative;
   top: 80px;
-  width: 100%;
+  width: 80%;
   /* display: flex; */
   /* justify-content: center; */
   align-items: center;
@@ -4446,7 +4446,7 @@ p.xln_price_GDC span {
 .xlrn__crear-equipos__form input {
   height: 40px;
   margin-bottom: 20px;
-  width: 60%;
+  width: 86%;
 }
 
 .xlrn__crear-equipos__form-button {
@@ -4456,7 +4456,7 @@ p.xln_price_GDC span {
   color: var(--blueDark);
   font-weight: bold;
   height: 41px;
-  width: 26%;
+  width: 46%;
   position: relative;
   margin-top: 5%;
 }
@@ -4464,7 +4464,7 @@ p.xln_price_GDC span {
 .xlrn__asignar-rol {
   height: 40px;
   margin-bottom: 20px;
-  width: 60%;
+  width: 86%;
 }
 
 .xln__conten__gestionEquipo {
