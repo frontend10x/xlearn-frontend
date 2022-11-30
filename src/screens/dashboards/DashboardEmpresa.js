@@ -75,6 +75,10 @@ export const DashboardEmpresa = () => {
     }
   }
 
+  const soporte = () => {
+      navigate('/contact')
+  }
+
 
   return (
     <div className="dashboard__section-empresa">
@@ -89,6 +93,7 @@ export const DashboardEmpresa = () => {
 
 
           <div className="xln-contentSection-block-empresa">
+            
             <div className="dashboard__container-nav_banner">
 
               <div className="dashboard__banner">
@@ -109,7 +114,9 @@ export const DashboardEmpresa = () => {
 
 
               </div>
+
             </div>
+
             <div className="dashboard__management">
 
               <h2>Gestiona los cupos y contenidos</h2>
@@ -217,7 +224,7 @@ export const DashboardEmpresa = () => {
                   <p>
                     Tienes dudas? Dejanos ts preguntas, comentarios o sugerencias y pronto nos pondremos en contacto
                   </p>
-                  <button className="dashboard__support-button">
+                  <button onClick={soporte} className="dashboard__support-button">
                     Ir a soporte
                   </button>
                 </div>
