@@ -2209,16 +2209,25 @@ p.xln__register_text_TyC {
 .empresas__banner::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: -8%;
   left: 0;
-  width: -webkit-fill-available;
-  height: 89%;
+  width: 100%;
+  height:100vh;
   background: linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 68%) 49%, rgb(0 0 0 / 52%) 100%);
   z-index: 1;
 }
 
+.empresas__banner {
+  width: 100%;
+  height: 500px;
+}
+
 .empresas__banner-image {
   width: 100%;
+  object-fit: cover;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  height: 112%;
 }
 
 .empresas__banner-content {
@@ -4434,7 +4443,7 @@ p.xln_price_GDC span {
   /* flex-direction: column; */
   position: relative;
   top: 80px;
-  width: 100%;
+  width: 80%;
   /* display: flex; */
   /* justify-content: center; */
   align-items: center;
@@ -4446,7 +4455,7 @@ p.xln_price_GDC span {
 .xlrn__crear-equipos__form input {
   height: 40px;
   margin-bottom: 20px;
-  width: 60%;
+  width: 86%;
 }
 
 .xlrn__crear-equipos__form-button {
@@ -4456,7 +4465,7 @@ p.xln_price_GDC span {
   color: var(--blueDark);
   font-weight: bold;
   height: 41px;
-  width: 26%;
+  width: 46%;
   position: relative;
   margin-top: 5%;
 }
@@ -4464,7 +4473,7 @@ p.xln_price_GDC span {
 .xlrn__asignar-rol {
   height: 40px;
   margin-bottom: 20px;
-  width: 60%;
+  width: 86%;
 }
 
 .xln__conten__gestionEquipo {
@@ -4818,16 +4827,22 @@ p.xln_price_GDC span {
 
 .xln__creacion-nuevo-equipo {
   background-color: var(--white);
-  width: 1175px;
+  width: 70%;
   position: relative;
-  left: 550px;
-  bottom: 150px;
+  left: 26%;
   height: 215px;
   border: 1px solid var(--blueDark);
   border-radius: 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  bottom: 243px;
+}
+
+.xlrn__crear-suarios__section .footer {
+  width: 80%;
+  margin-left: 20%;
+  height: 80vh;
 }
 
 .xln__creacion-nuevo-equipo button {
@@ -6333,7 +6348,7 @@ span.campo_requerido {
 
 
 .politicas__privacidad-container {
-  width: 90%;
+  width: 70%;
   margin: auto;
   padding-top: 10%;
   padding-bottom: 10%;

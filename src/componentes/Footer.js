@@ -25,7 +25,7 @@ export const Footer = () => {
   }
 
   const ayuda = () => {
-    navigate('/contact')
+    navigate('/informacion/ayuda')
   }
 
   const privacidad = () => {
@@ -33,7 +33,7 @@ export const Footer = () => {
   }
 
   const terminos = () => {
-    navigate('/contact')
+    navigate('/terminos/condiciones')
   }
 
   
