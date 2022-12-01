@@ -38,6 +38,8 @@ import { Soporte } from "../screens/dashboards/Soporte";
 import { Score } from "../screens/dashboards/Score";
 import { TerminosCondiciones } from "../screens/TerminosCondiciones";
 import { Ayuda } from "../screens/Ayuda";
+import { ForgotPassword } from "../screens/auth/ForgotPassword";
+import { RecuperarPassword } from "../screens/auth/RecuperarPassword";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -57,6 +59,8 @@ export const AppRouter = () => {
         <Route exact path="/puntaje/:id/:course_id" element={<Score />} />
         <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
         <Route exact path="/informacion/ayuda" element={<Ayuda />} />
+        <Route exact path="/recuperacion/contrasena" element={<ForgotPassword/>} />
+        <Route exact path="/recuperacion" element={<RecuperarPassword/>} />
 
         {/* RUTA DE EMPRESA */}
         <Route element={<EmpresasRoute token={token} type={type} />}>

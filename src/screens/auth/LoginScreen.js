@@ -75,6 +75,10 @@ export const LoginScreen = () => {
     }
   };
 
+  const redirect = () => {
+    navigate('/recuperacion/contrasena')
+  }
+
 
   return (
     <div className="Login-Screen">
@@ -126,7 +130,7 @@ export const LoginScreen = () => {
                 <div className="d-flex login__content-remind ">
                   <input type="checkbox" className="login__input-reminder" />
                   <p className="xln-textRecordarme-aling">Recordarme</p>
-                  <button className="login__remind-button">
+                  <button className="login__remind-button" onClick={redirect} >
                     {" "}
                     ¿Olvidaste Tu Contraseña?
                   </button>

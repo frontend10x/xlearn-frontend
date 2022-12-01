@@ -380,3 +380,8 @@ export const getUserByEnterprise = async (token,subcompanie_id) => {
   return response.data
 
 }
+
+export const handlePassword = async (email) => {
+  const response = await axios.post(baseURL + `/api/v1/user/forgot_password?email=${email}`);
+  return response.data
+}
