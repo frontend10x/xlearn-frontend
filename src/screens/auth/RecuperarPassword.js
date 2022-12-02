@@ -1,11 +1,19 @@
 import React from 'react'
 import { logologin } from '../../assets/img'
+import { NavLink } from 'react-router-dom'
+import { Image } from 'react-bootstrap'
+import { useForm } from '../../hooks/useForm'
 
 export const RecuperarPassword = () => {
 
+    const [formValues,handleInputChange] = useForm({
+        email:""
+    })
+
+    const {email} = formValues;
 
     const forgotPassword = () => {
-        
+
     }
 
     return (
@@ -36,6 +44,14 @@ export const RecuperarPassword = () => {
                                 className="login__content-form "
                                 onSubmit={forgotPassword}
                             >
+                                <input
+                                    type="text"
+                                    name="password"
+                                    value={email}
+                                    placeholder="Email"
+                                    onChange={handleInputChange}
+                                    className="login__email w-50 mx-auto"
+                                />
                                 <input
                                     type="text"
                                     name="email"
