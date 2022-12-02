@@ -60,7 +60,7 @@ export const AppRouter = () => {
         <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
         <Route exact path="/informacion/ayuda" element={<Ayuda />} />
         <Route exact path="/recuperacion/contrasena" element={<ForgotPassword/>} />
-        <Route exact path="/recuperacion" element={<RecuperarPassword/>} />
+        <Route exact path="/recuperacion/:id" element={<RecuperarPassword/>} />
 
         {/* RUTA DE EMPRESA */}
         <Route element={<EmpresasRoute token={token} type={type} />}>

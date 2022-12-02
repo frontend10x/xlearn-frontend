@@ -24,7 +24,6 @@ export const ForgotPassword = () => {
                 title: 'Revisa tu correo',
                 text: `${data.message}`,
             })
-            navigate(`/recuperacion`);
         } catch (error) {
             console.error(error, 'error de peticion');
         }

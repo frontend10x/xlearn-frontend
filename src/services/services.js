@@ -385,3 +385,8 @@ export const handlePassword = async (email) => {
   const response = await axios.post(baseURL + `/api/v1/user/forgot_password?email=${email}`);
   return response.data
 }
+
+export const recoveryPassword = async (id,password) => {
+  const response = await axios.put(baseURL + `/api/v1/user/recover_password/${id}?password=${password}`)
+  return response.data;
+}

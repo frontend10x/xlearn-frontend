@@ -1,19 +1,23 @@
 import React from 'react'
 import { logologin } from '../../assets/img'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import { Image } from 'react-bootstrap'
 import { useForm } from '../../hooks/useForm'
+import { recoveryPassword } from '../../services/services'
 
 export const RecuperarPassword = () => {
 
     const [formValues,handleInputChange] = useForm({
-        email:""
+        password:""
     })
 
-    const {email} = formValues;
+    const {password} = formValues;
+    const {id} = useParams();
 
-    const forgotPassword = () => {
-
+    const forgotPassword = async (e) => {
+        e.preventDefault()
+        const data = await recoveryPassword(id,password)
+        console.log(data);
     }
 
     return (
@@ -34,7 +38,7 @@ export const RecuperarPassword = () => {
                                     />
                                 </NavLink>
                                 <p>
-                                    Ingresa tu email para recuperar tu contraseña
+                                    Ingresa tu nueva contraseña
                                 </p>
                             </div>
                         </div>
@@ -45,18 +49,10 @@ export const RecuperarPassword = () => {
                                 onSubmit={forgotPassword}
                             >
                                 <input
-                                    type="text"
+                                    type="password"
                                     name="password"
-                                    value={email}
-                                    placeholder="Email"
-                                    onChange={handleInputChange}
-                                    className="login__email w-50 mx-auto"
-                                />
-                                <input
-                                    type="text"
-                                    name="email"
-                                    value={email}
-                                    placeholder="Email"
+                                    value={password}
+                                    placeholder="password"
                                     onChange={handleInputChange}
                                     className="login__email w-50 mx-auto"
                                 />
