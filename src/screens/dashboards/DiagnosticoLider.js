@@ -12,7 +12,7 @@ export const DiagnosticoLider = () => {
             <div className="diagnostico__lider-container">
                 <div className="diagnostico__lider-content">
                     <h1>Estructura tu proceso</h1>
-                    <h4>Inicia tu diagnostico</h4>
+                    <h4>Inicia tu diagnóstico</h4>
                     <NavLink href='/selection/process' className='diagnostico__lider-button' >Iniciar</NavLink>
                 </div>
                 {/* <div className="diagnostico__lider-footer" >

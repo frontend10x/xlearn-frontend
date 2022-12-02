@@ -29,11 +29,12 @@ export const CrearEquipos = () => {
   const [answer, setAnswer] = useState(false);
   const [teamManagement, setTeamManagement] = useState(false)
   const navigate = useNavigate();
-  const subCompany = subcompanie_id.subcompanies_id;
+
+  console.log(usersWithoutGroup,'response');
 
   useEffect(() => {
     async function getUsersFromSubcompanieId() {
-      const data = await getUserWithoutGroups(token, subCompany)
+      const data = await getUserWithoutGroups(token, subcompanie_id)
       setUsersWithoutGroup(data.response._embedded.users)
     }
     getUsersFromSubcompanieId();
@@ -49,7 +50,6 @@ export const CrearEquipos = () => {
       })
       return
     }
-    // console.log(leader,'lider');
     createGroup(token, name, description).then(event => {
       const group_id = event.id;
 
@@ -138,7 +138,7 @@ export const CrearEquipos = () => {
                         <input className="xln__gestionEquipo__radio" type="radio" value={item.name} id={item.id} onClick={addUsersToGroup} />
                         <img src={imagenUser}/>
                         <h2>{item.name}</h2>
-                        <p>correo@xlearn.com.co</p>
+                        <p>{item.email}</p>
                       </div>
                     ))
                   }

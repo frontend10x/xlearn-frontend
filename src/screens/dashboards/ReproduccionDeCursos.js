@@ -130,8 +130,9 @@ export const ReproduccionDeCursos = () => {
                             </button>
                             </div>
                     ))}   
+
                     {evaluation &&
-                        <button className="" onClick={redirect} ><i class="fa-light fa-paper-plane-top"></i></button>
+                        <button className="" onClick={redirect} >BOTON</button>
                     }
                     </div>
                 </div>
