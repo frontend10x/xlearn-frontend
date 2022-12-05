@@ -20,7 +20,7 @@ export const ReproduccionDeCursos = () => {
     const [statePlayer, setStatePlayer] = useState();
     const [evaluation, setEvaluation] = useState(true)
     const navigate = useNavigate();
-
+    console.log(id,'id del curso');
     useEffect(() => {
         async function getVideos() {
             const data = await getLessons(token, id);
@@ -100,8 +100,9 @@ export const ReproduccionDeCursos = () => {
     }
 
     const redirect = () => {
-
+        navigate(`/presentacion/evaluacion/${id}`);
     }
+    
     return (
         <div className="video__reproduccion-section" >
             <HeaderDashboard />
