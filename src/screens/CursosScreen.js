@@ -63,6 +63,7 @@ export const CursosScreen = () => {
                 className="text-start "
                 onClick={filterCourses}
                 value="Sistemas de innovación"
+                type="button"
               />
               <p
                 className="text-start fs-5 mt-3"
