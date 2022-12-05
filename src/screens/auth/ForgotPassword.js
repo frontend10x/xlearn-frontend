@@ -30,7 +30,7 @@ export const ForgotPassword = () => {
     }
 
     return (
-        <div className="Login-Screen">
+        <div className="Login-Screen Forgot-your-password">
             <div className="login">
                 <div className="login__container animate__animated animate__bounce animate__delay-2s w-50 ">
                     {/* <div className="xln-contentImage-login">
@@ -57,6 +57,7 @@ export const ForgotPassword = () => {
                                 className="login__content-form "
                                 onSubmit={forgotPassword}
                             >
+                                <h2 className='title_contrasena_olvido'>¿Olvidaste tu contraseña?</h2>
                                 <input
                                     type="text"
                                     name="email"

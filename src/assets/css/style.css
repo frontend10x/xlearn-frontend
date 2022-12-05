@@ -1635,8 +1635,61 @@ img.cursos__banner-image {
   transform: translate(-100%, -50%);
 }
 
+
+
+
 /* Login Screen Fin */
 
+
+/* olvidaste tu contraseña*/
+.Forgot-your-password .login__email {
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  left: 0;
+  margin-bottom: 20px;
+  position: relative;
+  width: 80%;
+  padding: 10px;
+}
+.Forgot-your-password .login__button-entrar {
+  border-radius: 5px;
+  background-color: var(--green);
+  text-decoration: none;
+  border: none;
+  padding: 5px;
+  width: 80%;
+  position: relative;
+  left: 0;
+  color: var(--blueDark);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 8%;
+}
+.Forgot-your-password .login__content-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--whiteOff);
+  height: auto;
+}
+.Forgot-your-password .login__container {
+  position: absolute;
+  top: 23%;
+  left: 27%;
+  margin: -25px 0 0 -25px;
+}
+.Forgot-your-password .title_contrasena_olvido {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 8%;
+  padding-bottom: 3%;
+  font-weight: bold;
+}
 /* Register*/
 .planes__register-banner {
   background-size: cover;
