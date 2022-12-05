@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { HeaderDashboard } from '../../componentes/dashboards/HeaderDashboard'
@@ -32,10 +33,12 @@ export const DescripcionEvaluacion = () => {
     return (
         <div className='description__evaluation-section' >
             <HeaderDashboard />
-            <div className='h-100 description__evaluation-container ' >
+
+            <Container className='' >
+            <div className='h-100 description__evaluation-container text-center mt-5' >
                 <p>Que lejos has llegado!</p>
                 <h1>Valida tu conocimiento</h1>
-                <div>
+                <div className='d-flex justify-content-center gap-5 mt-5 mb-5 ' >
                     <div>
                         <p>
                             Duracion
@@ -54,11 +57,13 @@ export const DescripcionEvaluacion = () => {
                         <p>Intentos</p>
                         <p>{tries}</p>
                     </div>
-                    <button onClick={redirect}>
+                </div>
+                    <button onClick={redirect} className='mb-5 enterprise__button w-25 ' >
                         Ingresar
                     </button>
-                </div>
             </div>
+            </Container>
+
             <Footer />
         </div>
     )

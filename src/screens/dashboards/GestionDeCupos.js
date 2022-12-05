@@ -41,7 +41,7 @@ export const GestionDeCupos = () => {
         if (e.target.value === "cupos") {
             navigate('/compra/cupos')
         } else if (e.target.value === "asignar") {
-            navigate('/gestion/equipo');
+            navigate('/creacion/usuarios');
         }
     }
 
