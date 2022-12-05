@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Image } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { Slider_01 } from "../../assets/img";
@@ -9,6 +9,12 @@ import { confirmRoute } from "../../services/services";
 import { cleanQuestions, cleanTraining } from "../../actions/diagnostico";
 
 export const ConfirmarRuta = () => {
+
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  }, []);
+
   const { id, _rel } = useSelector((state) => state.questions);
   const { course_route } = useSelector(state => state.ruta)
   const { token } = useSelector(state => state.auth)

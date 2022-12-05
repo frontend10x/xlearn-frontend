@@ -3822,7 +3822,9 @@ input.preguntas__diagnostico-checkbox-selected {
   margin-bottom: 100%; */
 }
 .confirm_route-container {
-  padding-bottom: 10%;
+  padding-bottom: 0%;
+  height: 100vh;
+  margin-bottom: 100%;
 }
 .confirm_route-card {
   display: flex;
