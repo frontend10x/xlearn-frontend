@@ -4,9 +4,9 @@ import { Footer } from "../componentes/Footer";
 import { Image } from "react-bootstrap";
 import {
   banner_cursos,
-  homeCarousel01, 
-  homeCarousel02, 
-  homeCarousel03, 
+  homeCarousel01,
+  homeCarousel02,
+  homeCarousel03,
   homeCarousel04,
   XlearnLogoBlack,
 } from "../assets/img";
@@ -19,21 +19,22 @@ export const CursosScreen = () => {
 
   useEffect(() => {
     // 👇️ scroll to top on page load
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
   useEffect(() => {
-      async function getCourses() {
-          const data = await getCourse();
-          setCourses(data.response._embedded.courses);
-      }
+    async function getCourses() {
+      const data = await getCourse();
+      setCourses(data.response._embedded.courses);
+      console.log(data, 'cursos');
+    }
 
-      getCourses();
-  },[]) /* LOGICA DE CURSOS PUBLICOS */
+    getCourses();
+  }, []) /* LOGICA DE CURSOS PUBLICOS */
   const filterCourses = () => {
     alert(`Filtro hecho este es el id`);
   };
-  
+
   const redirect = (item) => {
     navigate(`/course/info/${item}`);
   }
@@ -42,7 +43,7 @@ export const CursosScreen = () => {
     navigate('/plans/register')
   }
 
-  
+
 
 
   return (
@@ -51,7 +52,7 @@ export const CursosScreen = () => {
       <div className="cursos__container">
 
         <div className="cursos__filter-container">
-          
+
           <div className="cursos__filter-content">
             <ul className="cursos__filter-buttons">
               <div className="cursos__filter-title" >
@@ -59,27 +60,25 @@ export const CursosScreen = () => {
               </div>
               <h4 className="">Innovación</h4>
               <input
-                className="text-start"
+                className="text-start "
                 onClick={filterCourses}
                 value="Sistemas de innovación"
               />
               <p
-                className="text-start"
-                // onClick={filterCourses}
-                // value="Emprendimiento Corporativo"
+                className="text-start fs-5 mt-3"
+              // onClick={filterCourses}
+              // value="Emprendimiento Corporativo"
               >Emprendimiento corporativo</p>
               <p
-                className="text-start"
-                // type="button"
-                // onClick={filterCourses}
+                className="text-start fs-5"
                 value="Excelencia Operacional"
               >Excelencia operacional</p>
               <p
-                className="text-start"
+                className="text-start fs-5"
                 value="Innovacion Abierta"
               >Innovacion abierta</p>
               <p
-                className="text-start"
+                className="text-start fs-5"
                 value="Oportunidades, retos y Priorizacion"
               >Oportunidades, retos y Priorizacion</p>
 
@@ -163,9 +162,9 @@ export const CursosScreen = () => {
               className="cursos__banner-image"
             />
             <div className="cursos__banner-content">
-                  <h3>Cursos Online</h3>
-                  <p>Conoce nuestra oferta de cursos y encuentra lo que tu empresa necesita</p>
-                  <button className="cursos__banner-button w-25 " onClick={startRegister} >Registrarme</button>
+              <h3>Cursos Online</h3>
+              <p>Conoce nuestra oferta de cursos y encuentra lo que tu empresa necesita</p>
+              <button className="cursos__banner-button w-25 " onClick={startRegister} >Registrarme</button>
             </div>
           </div>
 
@@ -217,7 +216,7 @@ export const CursosScreen = () => {
             ver todos
           </button> */}
         </div>
-        
+
       </div>
       <Footer />
     </div>
