@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import Player from '@vimeo/player';
 import { Image } from "react-bootstrap";
 
-import { Image_01, Image_02, XlearnLogo, construccion, iconoChat, iconoChat2, gradient, blackout, playButton, IconRutaPlayer, } from "../../assets/img";
+import { Image_01, Image_02, XlearnLogo, construccion, iconoChat, iconoChat2, gradient, blackout, playButton, IconRutaPlayer, IconRutaExamen, } from "../../assets/img";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { InfoVideoPlayer } from "../../componentes/dashboards/InfoVideoPlayer";
 import { getLessons } from "../../services/services";
@@ -132,7 +132,7 @@ export const ReproduccionDeCursos = () => {
                     ))}   
 
                     {evaluation &&
-                        <button className="" onClick={redirect} >BOTON</button>
+                        <button className="xln-btn-couseExamen" onClick={redirect} ><img src={IconRutaExamen}/></button>
                     }
                     </div>
                 </div>
