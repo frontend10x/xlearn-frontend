@@ -3813,13 +3813,17 @@ input.preguntas__diagnostico-checkbox-selected {
 }
 
 .confirm_route-container_route {
+  height: 100vh;
+  left: 150px;
   position: relative;
   top: 150px;
-  left: 150px;
   width: 80%;
-  height: 90vh;
+  /* padding-bottom: 10%;
+  margin-bottom: 100%; */
 }
-
+.confirm_route-container {
+  padding-bottom: 10%;
+}
 .confirm_route-card {
   display: flex;
   padding-bottom: 20px;
@@ -3839,11 +3843,18 @@ input.preguntas__diagnostico-checkbox-selected {
   width: 15%;
 }
 
-.xlrn__confirm-route__footer {
+/* .xlrn__confirm-route__footer {
   background-color: var(--white);
   position: relative;
   top: 100px;
   height: 20vh;
+} */
+.xlrn__confirm-route__footer {
+  background-color: var(--white);
+  height: 20vh;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 /* Confirmar Ruta Fin*/
