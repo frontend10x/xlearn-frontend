@@ -75,6 +75,7 @@ export {default as EmpresaTransformacion} from './transformacion-digital.jpg';
 export {default as EmpresaExelencia} from './exelencia-operacional.jpg';
 
 export {default as IconRutaPlayer} from './icon__course__player.png';
+export {default as IconRutaExamen} from './icon__course__examen.png';
 
 export {default as ImageProyectos} from './cursos-internos/estudiantes.png';
 
