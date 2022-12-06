@@ -80,3 +80,7 @@ export {default as IconRutaExamen} from './icon__course__examen.png';
 export {default as ImageProyectos} from './cursos-internos/estudiantes.png';
 
 export {default as bannerContact01} from '../Image/banner_contact.png';
+
+
+
+export {default as cliente1} from './Logos clientes-01.png';

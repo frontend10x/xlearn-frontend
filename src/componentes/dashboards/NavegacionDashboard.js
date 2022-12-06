@@ -13,7 +13,7 @@ export const NavegacionDashboard = () => {
     const redirect = () => {
         getEnterpriseQuotas(token, subcompanie_id)
         .then( event => {
-            navigate('/creacion/usuarios')
+            navigate('/gestion/cupos/disponibles')
         })
         .catch(error => {
             console.error(error.response.data.message,'error');

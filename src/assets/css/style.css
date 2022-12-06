@@ -2259,7 +2259,7 @@ p.xln__register_text_TyC {
   font-size: 24px;
 }
 
-.empresas__banner::after {
+/* .empresas__banner::after {
   content: "";
   position: absolute;
   top: -8%;
@@ -2268,7 +2268,7 @@ p.xln__register_text_TyC {
   height:100vh;
   background: linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 68%) 49%, rgb(0 0 0 / 52%) 100%);
   z-index: 1;
-}
+} */
 
 .empresas__banner {
   width: 100%;
