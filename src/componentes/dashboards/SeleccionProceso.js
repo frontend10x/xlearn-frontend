@@ -55,7 +55,7 @@ export const SeleccionProceso = () => {
             onClick={redirection}
             className="selection__footer-button"
           >
-            siguiente
+            Siguiente
           </NavLink>
         </div>
       </div>

@@ -3629,6 +3629,9 @@ input.preguntas__diagnostico-checkbox-selected {
 .xlrn__dashboard__lider-block-image {
   height: 205px;
   width: 184px;
+  object-fit: cover;
+  -webkit-mask-size: cover;
+  mask-size: cover;
 }
 
 .xlrn__dashboard__lider-content-info h4 {
