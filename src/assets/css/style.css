@@ -3813,7 +3813,7 @@ input.preguntas__diagnostico-checkbox-selected {
 }
 
 .confirm_route-container_route {
-  height: 100vh;
+  /* height: 100vh; */
   left: 150px;
   position: relative;
   top: 150px;
@@ -3823,8 +3823,8 @@ input.preguntas__diagnostico-checkbox-selected {
 }
 .confirm_route-container {
   padding-bottom: 0%;
-  height: 100vh;
-  margin-bottom: 100%;
+  /* height: 100vh; */
+  margin-bottom: 29%;
 }
 .confirm_route-card {
   display: flex;

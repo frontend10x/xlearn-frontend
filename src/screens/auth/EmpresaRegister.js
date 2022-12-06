@@ -60,7 +60,7 @@ export const EmpresasRegister = () => {
         </div>
         <div className="planes__container-about">
           <div className="planes__register-about">
-            <h2>¿Necesitas asesoria?</h2>
+            <h2>¿Necesitas asesoría?</h2>
             <div className="xln__separator__subtitle"></div>
             <p>
               Déjanos tus datos y regístrate en nuestra plataforma; pronto nos pondremos en contacto (Contáctanos)
