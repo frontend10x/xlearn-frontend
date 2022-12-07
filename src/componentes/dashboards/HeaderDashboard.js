@@ -1,10 +1,13 @@
 import React from "react";
 import { NavLink } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { XlearnLogo } from "../../assets/img";
 import { NavegacionDashboardHeader } from "../dashboards/NavegacionDashboardHeader";
 
 
 export const HeaderDashboard = () => {
+  const {type} = useSelector(state => state.auth);
+  console.log(type,'tipo')
   return (
     <div className="header__container background ">
       <header id="header" className="header fixed_top background">
