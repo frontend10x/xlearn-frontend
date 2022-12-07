@@ -180,7 +180,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group">
             <p>
-              Apellidos(s) <span>*</span>
+              Apellido(s) <span>*</span>
             </p>
             <input
               name="lastname"
@@ -233,7 +233,7 @@ export const EmpresaFormulario = () => {
               placeholder="Website (Opcional)"
             />
           </div>
-          <div className="form__group">
+          <div className="form__group form__group__xln">
             <p>
               Tamaño de la Empresa<span>*</span>
             </p>

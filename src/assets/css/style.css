@@ -2259,7 +2259,7 @@ p.xln__register_text_TyC {
   font-size: 24px;
 }
 
-.empresas__banner::after {
+/* .empresas__banner::after {
   content: "";
   position: absolute;
   top: -8%;
@@ -2268,7 +2268,7 @@ p.xln__register_text_TyC {
   height:100vh;
   background: linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 68%) 49%, rgb(0 0 0 / 52%) 100%);
   z-index: 1;
-}
+} */
 
 .empresas__banner {
   width: 100%;
@@ -3629,6 +3629,9 @@ input.preguntas__diagnostico-checkbox-selected {
 .xlrn__dashboard__lider-block-image {
   height: 205px;
   width: 184px;
+  object-fit: cover;
+  -webkit-mask-size: cover;
+  mask-size: cover;
 }
 
 .xlrn__dashboard__lider-content-info h4 {
@@ -3813,13 +3816,19 @@ input.preguntas__diagnostico-checkbox-selected {
 }
 
 .confirm_route-container_route {
+  /* height: 100vh; */
+  left: 150px;
   position: relative;
   top: 150px;
-  left: 150px;
   width: 80%;
-  height: 90vh;
+  /* padding-bottom: 10%;
+  margin-bottom: 100%; */
 }
-
+.confirm_route-container {
+  padding-bottom: 0%;
+  /* height: 100vh; */
+  margin-bottom: 29%;
+}
 .confirm_route-card {
   display: flex;
   padding-bottom: 20px;
@@ -3839,11 +3848,18 @@ input.preguntas__diagnostico-checkbox-selected {
   width: 15%;
 }
 
-.xlrn__confirm-route__footer {
+/* .xlrn__confirm-route__footer {
   background-color: var(--white);
   position: relative;
   top: 100px;
   height: 20vh;
+} */
+.xlrn__confirm-route__footer {
+  background-color: var(--white);
+  height: 20vh;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 /* Confirmar Ruta Fin*/
