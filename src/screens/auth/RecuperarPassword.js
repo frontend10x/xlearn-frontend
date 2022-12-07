@@ -74,7 +74,7 @@ export const RecuperarPassword = () => {
                                 />
                                 <input
                                     type="password"
-                                    name="password"
+                                    name="password2"
                                     value={password2}
                                     placeholder="confirmar password"
                                     onChange={handleInputChange}
