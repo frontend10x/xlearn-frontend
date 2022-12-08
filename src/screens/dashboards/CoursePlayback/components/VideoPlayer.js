@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Player from '@vimeo/player';
 
-const VideoPlayer = ({videoCurrent, destroy}) => {
+const VideoPlayer = ({videoCurrent, destroy, handlingProgress}) => {
 
     const [videoStatus, setVideoStatus] = useState();
 
@@ -38,9 +38,7 @@ const VideoPlayer = ({videoCurrent, destroy}) => {
     const eventsPlayer = player => {
 
         player?.on('playing', () => handleVideo(videoPlay, player));
-        player?.on('pause', function(data) {
-            console.log('Segundos, porcentaje, duración actual', data)
-        });
+        player?.on('pause', (data) => handlingProgress(data));
 
     }
 
@@ -75,7 +73,7 @@ const VideoPlayer = ({videoCurrent, destroy}) => {
     return (
         <div>
             <h3 style={{color:'white'}}>{videoCurrent?.name}</h3>
-            <div data-vimeo-id={videoCurrent?.vimeoId} data-vimeo-defer id='my-video'></div>
+            <div className="xln_player_course" data-vimeo-id={videoCurrent?.vimeoId} data-vimeo-defer id='my-video'></div>
         </div>
     )
 }

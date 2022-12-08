@@ -9,32 +9,53 @@ import { Image_01, Image_02, XlearnLogo, construccion, iconoChat, iconoChat2, gr
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { InfoVideoPlayer } from "../../componentes/dashboards/InfoVideoPlayer";
 import { getLessons } from "../../services/services";
+import { storeProgress } from "../../services/apis/progress.services";
 
 
 export const ReproduccionDeCursos = () => {
-    const {id, name} = useParams()
-    const {token} = useSelector(state => state.auth);
+    const {course_id, name} = useParams()
+    const {token, id} = useSelector(state => state.auth);
     const [lessons, setLessons] = useState();
     const [videoStatus, setVideoStatus] = useState();
     const [videoCurrent, setVideoCurrent] = useState();
     const [statePlayer, setStatePlayer] = useState();
     const [evaluation, setEvaluation] = useState(true)
     const navigate = useNavigate();
-    console.log(id,'id del curso');
+
+     const getVideos = async () => {
+        const data = await getLessons(token, course_id);
+        const key = data?.response?._rel
+        const videos = data?.response?._embedded[key]
+        setVideoCurrent({
+            id  : videos[0]?.id,
+            name  : videos[0]?.name,
+            video : videos[0]?.player_embed_url,
+            vimeoId : videos[0]?.vimeo_id
+        })
+        setLessons(videos)
+    }
+
     useEffect(() => {
-        async function getVideos() {
-            const data = await getLessons(token, id);
-            const key = data?.response?._rel
-            const videos = data?.response?._embedded[key]
-            setVideoCurrent({
-                name  : videos[0]?.name,
-                video : videos[0]?.player_embed_url,
-                vimeoId : videos[0]?.vimeo_id
-            })
-            setLessons(videos)
-        }
         getVideos()
-    },[token, id])
+    },[token, course_id])
+
+    const changeVideo = ({ name, player_embed_url, vimeo_id, id }) => {
+        
+        setVideoCurrent({
+            name,
+            video: player_embed_url,
+            vimeoId : vimeo_id,
+            id
+        })
+    }
+
+    const setNewPlayer = async videoCurrent => {
+        const myVideo = await document.querySelector(`#video-${videoCurrent?.vimeoId}`);
+        const player = await new Player(myVideo);
+        console.log("NUEVO PLAYER >> ", player)
+        player.on('playing', () => console.log("NUEVO PLAYER >> ", player));
+        setStatePlayer(player);
+    }
     
     useEffect(()=>{
 
@@ -43,11 +64,7 @@ export const ReproduccionDeCursos = () => {
         try {
             
             if(videoCurrent){
-                const myVideo = document.querySelector(`#video-${videoCurrent?.vimeoId}`);
-                const player = new Player(myVideo);
-                player.on('playing', () => handleVideo(videoPlay, player));
-                setStatePlayer(player);
-                console.log('myVideo', myVideo)
+                setNewPlayer(videoCurrent)
             }
 
         } catch (error) {
@@ -57,16 +74,31 @@ export const ReproduccionDeCursos = () => {
 
     },[videoCurrent])
 
-    useEffect(() => {
-        console.log('videoStatus', videoStatus)
-    },[videoStatus])
+    // useEffect(() => {
+    //     //console.log('videoStatus', videoStatus)
+    // },[videoStatus])
 
     //Este manejador de evento escucha cuando el usuario pause el video
     statePlayer?.on('pause', function(data) {
-        console.log('Segundos, porcentaje, duración actual', data)
+        handlingProgress(data)
     });
 
+    const handlingProgress = ({duration, percent, seconds}) => {
+        const payload = {
+            "course_id" : course_id,
+            "user_id": id,
+            "lesson_id": videoCurrent?.id,
+            "percentage": percent,
+            "advanced_current_time": seconds,
+            "total_video_time": duration
+        }
+        storeProgress(payload).then(response => console.log(response)).catch(error => console.log(error))
+    }
+
     const handleVideo = (videoPlay, player) => {
+
+        console.log("ESTE >>> player", player, videoPlay)
+        console.log("ESTE >>> videoPlay", videoPlay)
 
         if (videoPlay)
         {
@@ -83,24 +115,17 @@ export const ReproduccionDeCursos = () => {
                     percentage : (getAll?.percent * 100)+"%",
                     timeSeconds : getAll?.seconds + ' Seconds'
                 })
-                
+            
             });
             player.on('ended',  () => clearInterval(videoPlay));
         }, 1000);
         
     }
 
-    const changeVideo = video => {
-        const { name, player_embed_url, vimeo_id } = video
-        setVideoCurrent({
-            name: name,
-            video: player_embed_url,
-            vimeoId : vimeo_id
-        })
-    }
+    console.log("videoStatus", videoStatus)
 
     const redirect = () => {
-        navigate(`/presentacion/evaluacion/${id}`);
+        navigate(`/presentacion/evaluacion/${course_id}`);
     }
     
     return (
@@ -109,7 +134,6 @@ export const ReproduccionDeCursos = () => {
             <div className="video__reproduccion-container" >
                 <div className="video__reproduccion-content" >
                     <h2 style={{color:'white'}}>{videoCurrent?.name}</h2>
-                    {/* <button>Comunidad</button> */}
                 </div>
                 <div className="d-flex">
                     <div className="video__reproduccion-container-player" >
@@ -125,7 +149,6 @@ export const ReproduccionDeCursos = () => {
                     {lessons?.map((video, key) => (
                         <div className="xln__content__rutaClick" key={key}>
                             <button onClick={() => changeVideo(video)}>
-                                {/* <h3 style={{color:'black'}}>{key + ' - ' +video?.name}</h3> */}
                                 <h3 className="xlnIcon__couser__ruta">{key + 1 }</h3>
                                 
                             </button>
