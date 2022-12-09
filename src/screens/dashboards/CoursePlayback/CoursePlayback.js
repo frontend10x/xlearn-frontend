@@ -4,10 +4,11 @@ import { useSelector } from "react-redux";
 
 // import { Image_01, Image_02, XlearnLogo, construccion, iconoChat, iconoChat2, gradient, blackout, playButton } from "../../assets/img";
 import { HeaderDashboard } from "../../../componentes/dashboards/HeaderDashboard";
-// import { InfoVideoPlayer } from "../../componentes/dashboards/InfoVideoPlayer";
 import { getLessons } from "../../../services/services";
 import VideoPlayer from "./components/VideoPlayer";
 import LessonSideMenu from "./components/LessonSideMenu";
+import { InfoVideoPlayer } from "../../../componentes/dashboards/InfoVideoPlayer";
+
 
 const CorusePlayback = () => {
     const {id, name} = useParams()
@@ -71,7 +72,7 @@ const CorusePlayback = () => {
                     </div>
                 </div>
             </div>
-            {/* <InfoVideoPlayer /> */}
+            <InfoVideoPlayer />
         </div>
     )
 }

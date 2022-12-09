@@ -29,6 +29,22 @@ export const InfoVideoPlayer = () => {
         setPages(e.target.value);
     }
 
+    useEffect(() => {
+        async function getCourses() {
+            const data = await getCourseDescription(id);
+            setCourses(data.response._embedded.course)
+        }
+
+        async function getAllCourses() {
+            const data = await getCourse();
+            // console.log(data.response._embedded.courses,'datos');
+            setCourse(data.response._embedded.courses)
+        }
+
+        getCourses();
+        getAllCourses();
+    }, []) /* LOGICA DE CURSOS PUBLICOS */
+
     console.log(pages)
 
     return (

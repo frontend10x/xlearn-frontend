@@ -117,7 +117,7 @@ export const AppRouter = () => {
           <Route
             exact
             path="/course/videoplayer/:name/:id"
-            element={<ReproduccionDeCursos />}
+            element={<CorusePlayback />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
           <Route exact path="/presentacion/evaluacion/:course_id" element={<DescripcionEvaluacion/>} />

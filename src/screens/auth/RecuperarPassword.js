@@ -21,7 +21,7 @@ export const RecuperarPassword = () => {
     const forgotPassword = async (e) => {
         e.preventDefault()
         try {
-            const data = await recoveryPassword(id,password);
+            const data = await recoveryPassword(id,password,password2);
             Swal.fire({
                 icon: 'success',
                 title: 'Felicidades',

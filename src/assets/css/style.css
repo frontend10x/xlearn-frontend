@@ -186,6 +186,8 @@ button.burg-toggle i {
 
 /* Inicio Navegacion */
 
+
+
 /* .navegacion {
   -webkit-column-gap: 2rem;
   column-gap: 2rem;
@@ -3251,6 +3253,14 @@ input.preguntas__diagnostico-checkbox-selected {
 
 }
 
+.button__info-course {
+  position: relative;
+  bottom: 210px;
+  left: 250px;
+  background-color: transparent;
+  border: none;
+}
+
 .separador-left {
   height: 125px;
   width: 14px;
@@ -3308,6 +3318,8 @@ input.preguntas__diagnostico-checkbox-selected {
   position: static;
   top: 69px;
 }
+
+
 
 /* Dashboard Lider */
 

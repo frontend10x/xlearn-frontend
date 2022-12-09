@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { HeaderRegister } from "../componentes/HeaderRegister";
 import { useParams } from 'react-router-dom'
-import { getCourse, getCourseDescription } from '../services/services'
+import { getCourse, getCourseDescription, getLessons } from '../services/services'
 import { Image } from 'react-bootstrap'
 import {
     telefonoDos,
@@ -28,6 +28,13 @@ export const InfoCourse = () => {
         //   { title: "Diseño de propuesta de valor", image:  recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
         //   { title: "Prototipado", image:  recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
     ]);
+    const [lessons, setLessons] = useState([
+        // { title: "ADN Innovador", time: "2:59" },
+        // { title: "Observar", time: "1:07" },
+        // { title: "Experimentar", time: "1:07" },
+        // { title: "Colaborar", time: "1:07" },
+        // { title: "Asociar", time: "1:07" }
+    ]);
     const [courseRoute, setCourseRoute] = useState();
     const redirect = (e) => {
         if (e.target.value === 'login') {
@@ -37,30 +44,6 @@ export const InfoCourse = () => {
 
         }
     }
-
-    const videoRef = useRef(null);
-
-    useEffect(() => {
-        let options = {
-        rootMargin: "0px",
-        threshold: [0.25, 0.75]
-        };
-  
-        let handlePlay = (entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-            videoRef.current.play();
-            } else {
-            videoRef.current.pause();
-            }
-        });
-        };
-  
-        let observer = new IntersectionObserver(handlePlay, options);
-  
-        observer.observe(videoRef.current);
-    });
-
 
     useEffect(() => {
         // 👇️ scroll to top on page load
@@ -79,19 +62,20 @@ export const InfoCourse = () => {
             setCourse(data.response._embedded.courses)
         }
 
+        async function getLessonsCourse() {
+            const data = await getLessons("", id)
+            console.log(data)
+            setLessons(data.response._embedded.lesson)
+        }
+
         getCourses();
         getAllCourses();
+        getLessonsCourse();
     }, []) /* LOGICA DE CURSOS PUBLICOS */
 
-    console.log(courses, 'datos a imprimir')
+    console.log(lessons, 'datos a imprimir')
 
-    const [lessons, setLessons] = useState([
-        { title: "ADN Innovador", time: "2:59" },
-        { title: "Observar", time: "1:07" },
-        { title: "Experimentar", time: "1:07" },
-        { title: "Colaborar", time: "1:07" },
-        { title: "Asociar", time: "1:07" }
-    ]);
+
 
     // console.log(courses,'variable');
 
@@ -103,7 +87,7 @@ export const InfoCourse = () => {
                 <div className="row align-items-center">
                     <div className="col-lg-4">
                         <Image src={courses.file_path} alt="image_description" />
-                        <button className="btn" data-bs-toggle="modal" data-bs-target="#videoTrailer">
+                        <button className="button__info-course" data-bs-toggle="modal" data-bs-target="#videoTrailer">
                             <Image src={playButton} />
                         </button>
                     </div>
@@ -158,14 +142,17 @@ export const InfoCourse = () => {
                 <div className="row g-lg-5 py-5">
                     <div className="col-lg-7 text-center text-lg-start">
                         <h3 className="fw-bold lh-1 mb-3">Descripción general del curso</h3>
-                        <p className="col-lg-10 fs-5"><div dangerouslySetInnerHTML={{__html: courses.description}} /></p>
+                        <p className="col-lg-10 fs-5"><div dangerouslySetInnerHTML={{ __html: courses.description }} /></p>
                     </div>
                     <div className="col-md-10 mx-auto col-lg-5">
                         <h2>Lecciones del curso</h2>
+                        <button className="" data-bs-toggle="modal" data-bs-target="#videoTrailer">
+                            {courses.name}
+                        </button>
                         {lessons &&
                             lessons.map((item, index) => (
                                 <div>
-                                    {item.title} {item.time}
+                                    {item.name}
                                 </div>
                             ))
                         }
@@ -226,18 +213,10 @@ export const InfoCourse = () => {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <video className="xln-content-video_MS"
-                                width="100%"
-                                ref={videoRef}
-                                pause={false}
-                                muted={false}
-                                controls
-                                src={course.video_path}
-                            ></video>
+                            <iframe width="993" height="562" src={course?.video_path} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Understood</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
                 </div>
