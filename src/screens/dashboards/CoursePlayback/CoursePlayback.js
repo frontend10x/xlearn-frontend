@@ -20,6 +20,11 @@ const CorusePlayback = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        // 👇️ scroll to top on page load
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      }, []);
+
+    useEffect(() => {
         async function getVideos() {
             const data = await getLessons(token, course_id);
             const key = data?.response?._rel
