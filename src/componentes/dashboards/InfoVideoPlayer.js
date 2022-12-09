@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Image } from "react-bootstrap";
 import { 
     ImageProyectos, 
@@ -6,18 +6,21 @@ import {
     recomendation_02,
     recomendation_03,
     recomendation_04,} from "../../assets/img";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { getCourseDescription, getCourse } from "../../services/services";
+
 
 export const InfoVideoPlayer = () => {
 
     const navigate = useNavigate();
-
-    const [course, setCourse] = useState([
+    const {id} = useParams();
+    const [courses, setCourses] = useState([
         { title: "Presentaciones efectivas de negocios", image:  recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
         { title: "Modelación de negocios", image:  recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },
         { title: "Diseño de propuesta de valor", image:  recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
         { title: "Prototipado", image:  recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
       ]);
+    const [course, setCourse] = useState([]);
 
     const redirect = (e) => (
     navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`)
@@ -32,13 +35,14 @@ export const InfoVideoPlayer = () => {
     useEffect(() => {
         async function getCourses() {
             const data = await getCourseDescription(id);
-            setCourses(data.response._embedded.course)
+            setCourse(data.response._embedded.course)
+            console.log(data,'datos')
         }
 
         async function getAllCourses() {
             const data = await getCourse();
             // console.log(data.response._embedded.courses,'datos');
-            setCourse(data.response._embedded.courses)
+            setCourses(data.response._embedded.courses)
         }
 
         getCourses();
@@ -84,8 +88,8 @@ export const InfoVideoPlayer = () => {
                             <div className="xln__internos__CursosRecomendadosPlayer" >
                                 <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
                                 <div className="dashboard__lider-container_courses" >
-                                    {course &&
-                                    course.map((item, index) => (
+                                    {courses &&
+                                    courses.map((item, index) => (
                                         <div key={index} className="dashboard__lider-container_courses-card" >
                                         <Image src={item.image} className="img-recomendation-xln" />
                                         <div className="dashboard__lider-container_courses-card-content" >
