@@ -84,7 +84,7 @@ export const InfoVideoPlayer = () => {
                         <div className="xlrn__infovideoplayer-content" >
                             <div className="xlnPlayer__content__proyectos" >
                                 <div className="proyectos__text">
-                                    <div className="w-" dangerouslySetInnerHTML={{ __html: course.description }} />
+                                    <div className="w-75" dangerouslySetInnerHTML={{ __html: course.description }} />
                                 </div>
                                 <div className="proyectos__img">
                                     <h3>Estudiantes 1.540</h3>
