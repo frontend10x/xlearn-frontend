@@ -52,6 +52,8 @@ export const LoginScreen = () => {
         login: true, 
         user_name: data?.datosUsuario?.name
       }))
+
+      localStorage.setItem('access_token', data?.token)
       
       dispatch(login(
         email, 

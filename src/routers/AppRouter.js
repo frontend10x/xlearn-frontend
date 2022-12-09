@@ -25,7 +25,6 @@ import { UsoCupos } from "../screens/dashboards/UsoCupos";
 import { CrearUsuarios } from "../screens/dashboards/CrearUsuarios";
 import { ReproduccionDeCursos } from "../screens/dashboards/ReproduccionDeCursos";
 import { Evaluacion } from "../screens/dashboards/Evaluacion";
-import CorusePlayback from "../screens/dashboards/CoursePlayback";
 import { DashboardIntegrante } from "../screens/dashboards/DashboardIntegrante";
 import { IntegranteRoute } from "./IntegranteRoute";
 import { GestionDeEquipos } from "../screens/dashboards/GestionDeEquipos";
@@ -40,6 +39,7 @@ import { TerminosCondiciones } from "../screens/TerminosCondiciones";
 import { Ayuda } from "../screens/Ayuda";
 import { ForgotPassword } from "../screens/auth/ForgotPassword";
 import { RecuperarPassword } from "../screens/auth/RecuperarPassword";
+import CoursePlayback from "../screens/dashboards/CoursePlayback";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -116,8 +116,8 @@ export const AppRouter = () => {
           />
           <Route
             exact
-            path="/course/videoplayer/:name/:id"
-            element={<CorusePlayback />}
+            path="/course/videoplayer/:name/:course_id"
+            element={<CoursePlayback />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
           <Route exact path="/presentacion/evaluacion/:course_id" element={<DescripcionEvaluacion/>} />
