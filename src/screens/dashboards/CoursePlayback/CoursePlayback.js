@@ -8,13 +8,14 @@ import VideoPlayer from "./components/VideoPlayer";
 import LessonSideMenu from "./components/LessonSideMenu";
 import { InfoVideoPlayer } from "../../../componentes/dashboards/InfoVideoPlayer";
 import { IconRutaPlayer, IconRutaExamen} from "../../../assets/img";
-import { storeProgress } from "../../../services/apis/progress.services";
+import { getProgress, storeProgress } from "../../../services/apis/progress.services";
 
 const CorusePlayback = () => {
     const {course_id, name} = useParams()
     const {token, id} = useSelector(state => state.auth);
     const [lessons, setLessons] = useState();
     const [videoCurrent, setVideoCurrent] = useState();
+    const [progress, setProgress] = useState();
     const [destroy, setDestroy] = useState(false);
     const navigate = useNavigate();
 
@@ -53,11 +54,21 @@ const CorusePlayback = () => {
             "course_id" : course_id,
             "user_id": id,
             "lesson_id": videoCurrent?.lessonId,
-            "percentage": percent,
+            "percentage": percent * 100,
             "advanced_current_time": seconds,
             "total_video_time": duration
         }
-        storeProgress(payload).then(response => console.log(response)).catch(error => console.log(error))
+        storeProgress(payload).then(() => {
+            console.log("lessons", lessons)
+            getProgress(payload).then(prgs => {
+                lessons?.map(({id}) => {
+                    console.log("id", id)
+                    let obj = prgs?.progress.find(prg => prg.lesson_id === id  );
+                    console.log(id, obj)
+                })
+                setProgress(prgs)
+            })
+        }).catch(error => console.log(error))
     }
 
     const redirect = () => {
