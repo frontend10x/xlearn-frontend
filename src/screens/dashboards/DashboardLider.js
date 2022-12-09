@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDashboard";
 import { Image } from "react-bootstrap";
-import { 
+import {
   banner_cursos,
   recomendation_01,
   recomendation_02,
   recomendation_03,
-  recomendation_04, } from "../../assets/img";
+  recomendation_04,
+} from "../../assets/img";
 import { useSelector } from "react-redux";
 import { Footer } from "../../componentes/Footer";
 import { useNavigate } from "react-router-dom";
 import { getUserCourseById } from "../../services/services";
+import { getCourse } from "../../services/services";
 
 export const DashboardLider = () => {
 
@@ -20,35 +22,44 @@ export const DashboardLider = () => {
 
   useEffect(() => {
     // 👇️ scroll to top on page load
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
   const [course, setCourse] = useState([
-    { title: "Presentaciones efectivas de negocios", image:  recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
-    { title: "Modelación de negocios", image:  recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },
-    { title: "Diseño de propuesta de valor", image:  recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
-    { title: "Prototipado", image:  recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
+    // { title: "Presentaciones efectivas de negocios", image: recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
+    // { title: "Modelación de negocios", image: recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },
+    // { title: "Diseño de propuesta de valor", image: recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
+    // { title: "Prototipado", image: recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
   ]);
   const [courseRoute, setCourseRoute] = useState();
-  const [progress,setProgress] = useState(false); 
-  
+  const [progress, setProgress] = useState(false);
+
   const redirect = (e) => (
     navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`)
   )
 
   const evaluation = (e) => (
     navigate(`/evaluacion/${e.target.id}`)
-    
   )
+
+  const support = () => {
+    navigate('/contact')
+  }
 
   useEffect(() => {
     async function getUserCourses() {
       const data = await getUserCourseById(token, id);
-      console.log(data)
       setCourseRoute(data.response._embedded.courses)
     }
+   
+    async function getAllCourses() {
+      const data = await getCourse();
+      setCourse(data.response._embedded.courses)
+      console.log(data.response._embedded.courses,'cursos');
+    }
 
-    getUserCourses()
+    getUserCourses();
+    getAllCourses();
   }, [])
 
   return (
@@ -59,7 +70,7 @@ export const DashboardLider = () => {
         <div className="dashboard__lider-banner_content" >
           <h1>¡Hola {name}!</h1>
           <p><span>Continúa aprendiendo.</span> Mira la última actividad en tus cursos</p>
-           
+
         </div>
       </div>
 
@@ -70,26 +81,26 @@ export const DashboardLider = () => {
 
         <div className="xlrn__dashborad__lider-container-block">
           <div className="xlrn__dashboard__lider-block d-flex " >
-              {courseRoute&&
+            {courseRoute &&
 
-                courseRoute.map((item, index) => (
-                  <div className="xlrn__dashboard__lider-block-content d-flex" >
-                  
+              courseRoute.map((item, index) => (
+                <div className="xlrn__dashboard__lider-block-content d-flex" key={index} >
+
                   <Image src={item.file_path} className="xlrn__dashboard__lider-block-image" />
-                  <div className="xlrn__dashboard__lider-block-content-titles" key={index}>
-                  <p>Curso A</p>
-                  <h3>{item.name}</h3>
-                  <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
-                  <h4>Progreso: <span>0%</span></h4> | <h4> Lecciones: 0 </h4>
+                  <div className="xlrn__dashboard__lider-block-content-titles" >
+                    <p>Curso A</p>
+                    <h3>{item.name}</h3>
+                    <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
+                      <h4>Progreso: <span>0%</span></h4> | <h4> Lecciones: 0 </h4>
+                    </div>
+                    {progress ?
+                      <button onClick={evaluation} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Presentar</button>
+                      : <button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
+                    }
                   </div>
-                  {progress ?
-                    <button onClick={evaluation} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Presentar</button>
-                    :<button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
-                  }
-                </div> 
-            </div>
-                ))
-              }
+                </div>
+              ))
+            }
             {/* <div className="xlrn__dashboard__lider-block-content d-flex 5" >
               <Image src={Image_02} className="xlrn__dashboard__lider-block-image" />
               <div className="xlrn__dashboard__lider-block-content-titles" >
@@ -111,16 +122,15 @@ export const DashboardLider = () => {
         {course &&
           course.map((item, index) => (
             <div key={index} className="dashboard__lider-container_courses-card" >
-              <Image src={item.image} className="img-recomendation-xln" />
+              <Image src={item.file_path} className="img-recomendation-xln" />
               <div className="dashboard__lider-container_courses-card-content" >
                 <div className="dashboard__lider-container_courses-card-content-body" >
                   <div className="d-flex justify-content-around" >
                     {/* <p>{item.time} de contenido</p>
                     <p>{item.user} de usuarios</p> */}
                   </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.subtitle}</p>
-                  <button className="dashboard__lider-container_courses-card-content_button" onClick={redirect} >Ingresar</button>
+                  <h3>{item.name}</h3>
+                  <button className="dashboard__lider-container_courses-card-content_button" value={item.name} id={item.id} onClick={redirect} >Ingresar</button>
                 </div>
               </div>
             </div>
@@ -141,7 +151,7 @@ export const DashboardLider = () => {
           <div className="dashboard__lider-container-help-content" >
             <h1>¿Necesitas Asesoría?</h1>
             <p>¿Tienes dudas? Dejanos tus preguntas, comentarios o sugerencias y pronto nos pondremos en contacto contigo</p>
-            <button>Ingresar</button>
+            <button onClick={support} >Ingresar</button>
           </div>
         </div>
       </div>

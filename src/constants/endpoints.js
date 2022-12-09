@@ -1,1 +1,1 @@
-export const PROGRESS_STORE = '/api/v1/progress/store'
+export const PROGRESS_STORE = '/api/v1/progress/store';

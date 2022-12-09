@@ -5121,6 +5121,7 @@ h3.xlnIcon__couser__ruta {
   width: 100px;
   border: none;
   font-weight: bold;
+  z-index: 99;
 }
 
 .xlrn__infovideo-nav-container-buttons input:hover {

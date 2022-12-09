@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { HeaderDashboard } from "../../../componentes/dashboards/HeaderDashboard";
 import { getLessons } from "../../../services/services";
 import VideoPlayer from "./components/VideoPlayer";
-// import LessonSideMenu from "./components/LessonSideMenu";
+import LessonSideMenu from "./components/LessonSideMenu";
 import { InfoVideoPlayer } from "../../../componentes/dashboards/InfoVideoPlayer";
 import { IconRutaPlayer, IconRutaExamen} from "../../../assets/img";
 import { storeProgress } from "../../../services/apis/progress.services";

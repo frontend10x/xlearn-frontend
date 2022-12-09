@@ -79,14 +79,14 @@ export const NavegacionDashboardHeader = () => {
           <i className="bi bi-list mobile-nav-toggle"></i> */}
         <div className="d-flex" >
           <p className="text-light" >{name}</p>
-          <div class="dropdown">
+          <div className="dropdown">
           <button className="ms-5 dropdown w-50" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
             <Image src={imagenUser} alt='user' className="w-50" />
           </button>
-            <ul class="dropdown-menu">
-              <li><button class="dropdown-item" href="#">Ajustes</button></li>
-              <li><button class="dropdown-item" href="#">Perfil</button></li>
-              <li><button onClick={handleLogout} class="dropdown-item" href="#">Log out</button></li>
+            <ul className="dropdown-menu">
+              <li><button className="dropdown-item" href="#">Ajustes</button></li>
+              <li><button className="dropdown-item" href="#">Perfil</button></li>
+              <li><button onClick={handleLogout} className="dropdown-item" href="#">Log out</button></li>
             </ul>
           </div>
         </div>
