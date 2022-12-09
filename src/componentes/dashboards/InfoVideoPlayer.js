@@ -35,7 +35,7 @@ export const InfoVideoPlayer = () => {
     const [pages, setPages] = useState("Proyecto");
 
     const pageSelected = (e) => {
-        if (e.target.value === "Proyecto" ) {
+        if (e.target.value === "Proyecto") {
             setPages("Proyecto");
         } else if (e.target.value === "Recursos") {
             setPages("Recursos");
@@ -84,10 +84,7 @@ export const InfoVideoPlayer = () => {
                         <div className="xlrn__infovideoplayer-content" >
                             <div className="xlnPlayer__content__proyectos" >
                                 <div className="proyectos__text">
-                                    <p>A lo largo del curso desarrollaremos una herramienta llamada Foco de Negocio que nos permitirá definir el foco de negocio y sintetizar los resultados clave del análisis del entorno.</p>
-                                    <p>El Foco de Negocio resume los hallazgos más importantes de cada lección. En la primera lección, la creación del ecosistema de oportunidades, analizaremos el panorama el de todas oportunidades de negocio recolectando primeros datos del entorno del que alimentan el componente de tendencias, cifras y referentes. Iremos profundizando en los elementos en el transcurso de las lecciones de selección de oportunidades de negocio y análisis de las 4A.</p>
-                                    <p>El objetivo es que lleguemos al final del curso con los conceptos claros sobre el Foco de Negocio y que reflejen el análisis del entorno de hasta las 2 oportunidades de negocio y, con ello, podremos priorizar y definir los datos objetivos y vincularlos a la visión estratégica de la organización, es decir, el foco del negocio.</p>
-                                    <p>Finalmente, lograremos desarrollar las capacidades para analizar integralmente el entorno de negocio de la temática de interés y definir un foco de negocio con una base de datos objetiva.</p>
+                                    <div className="w-75" dangerouslySetInnerHTML={{ __html: course.description }} />
                                 </div>
                                 <div className="proyectos__img">
                                     <h3>Estudiantes 1.540</h3>
@@ -100,7 +97,7 @@ export const InfoVideoPlayer = () => {
                                     <div className="d-flex" >
                                         <Col md={6} className="d-flex gap-5 border-end" >
                                             <Image src={imagenUser} className='about__tutor' alt="usuario" />
-                                            <div className="w-50" dangerouslySetInnerHTML={{ __html: course.about_author }} />
+                                            <div className="w-75" dangerouslySetInnerHTML={{ __html: course.about_author }} />
                                         </Col>
                                         <Col md={6} className="d-flex" >
                                             <ul className="d-flex" >
@@ -138,7 +135,7 @@ export const InfoVideoPlayer = () => {
                                     }
                                 </div>
                             </div>
-                            
+
                             {/* <div className="" > 
                                 <h2>Tener Presente</h2>
                             </div> */}
@@ -147,16 +144,16 @@ export const InfoVideoPlayer = () => {
                 }
                 {pages === "Recursos" &&
                     <div className="xlrn__infovideoplayer-container-content" >
-                    <div className="xlrn__infovideoplayer-content" >
-                        <div className="xlnPlayer__content__proyectos" >
-                            <div className="proyectos__text">
-                                <h3>Recursos</h3>
+                        <div className="xlrn__infovideoplayer-content" >
+                            <div className="xlnPlayer__content__proyectos" >
+                                <div className="proyectos__text">
+                                    <h3>Recursos</h3>
+                                </div>
+
                             </div>
-                            
+
                         </div>
-                       
                     </div>
-                </div>
 
                 }
                 {/* {pages === "Glosario" &&
