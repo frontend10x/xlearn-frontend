@@ -7,7 +7,6 @@ import { NavegacionDashboardHeader } from "../dashboards/NavegacionDashboardHead
 
 export const HeaderDashboard = () => {
   const {type} = useSelector(state => state.auth);
-  console.log(type,'tipo')
   return (
     <div className="header__container background ">
       <header id="header" className="header fixed_top background">

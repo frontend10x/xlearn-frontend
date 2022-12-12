@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import Player from '@vimeo/player';
 
-const VideoPlayer = ({videoCurrent, destroy, handlingProgress}) => {
+const VideoPlayer = ({videoCurrent, destroy, handlingProgress, pause = false}) => {
 
     const [videoStatus, setVideoStatus] = useState();
+    const [playing, setPlaying] = useState(false);
 
     var videoPlay = "";
 
@@ -21,7 +22,7 @@ const VideoPlayer = ({videoCurrent, destroy, handlingProgress}) => {
             eventsPlayer(player)
 
             if (destroy) {
-              
+                
                 player.destroy().then( () => {
                     player = new Player('my-video', options);
                     eventsPlayer(player)
@@ -37,9 +38,12 @@ const VideoPlayer = ({videoCurrent, destroy, handlingProgress}) => {
 
     const eventsPlayer = player => {
 
+        const currentTime = videoCurrent?.currentTime 
         player.setLoop(false).then(() => {});
-        // player?.on('playing', () => handleVideo(videoPlay, player));
+        player.setCurrentTime( currentTime || 0)
         player?.on('pause', (data) => handlingProgress(data));
+        //player.on('timeupdate', (data) => setVideoStatus(data));
+        player.on('playing', (data) => handlingProgress({duration : data?.duration, percent : 0.01, seconds : 1}));
         
         // player.on('ended', function(data) {
         //     console.log("ended", data)
@@ -47,6 +51,7 @@ const VideoPlayer = ({videoCurrent, destroy, handlingProgress}) => {
         // });
 
     }
+
 
     // const handleVideo = (videoPlay, player) => {
 

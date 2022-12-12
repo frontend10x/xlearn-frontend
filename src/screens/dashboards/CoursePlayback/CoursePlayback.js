@@ -17,6 +17,7 @@ const CorusePlayback = () => {
     const [videoCurrent, setVideoCurrent] = useState();
     const [progress, setProgress] = useState();
     const [destroy, setDestroy] = useState(false);
+
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,25 +25,45 @@ const CorusePlayback = () => {
         consultProgress({
             course_id : course_id,
             user_id : id
-        })
-    },[token, course_id])    
+        }, true )
+    },[token, course_id])
+    
+    useEffect(() => {
+        if(progress && lessons){
+            const currentLesson = progress?.progress?.find(prg => prg.current)
+            
+            const currentIndex = progress?.progress?.findIndex(prg => prg.current)
+
+            console.log(currentIndex)
+
+            const activeLesson = currentLesson?.percentage_completion === 100 
+                               ? lessons.at(currentIndex + 1) 
+                               : lessons.at(currentIndex === -1 ? 0 : currentIndex)
+
+            const progressCurrent = progress?.progress?.find(prg => prg?.lesson_id === activeLesson?.id)
+
+            progress?.changeLesson && setVideoCurrent({
+                percentage : progressCurrent?.percentage_completion,
+                currentTime : progressCurrent?.advanced_current_time,
+                name: activeLesson?.name,
+                video: activeLesson?.player_embed_url,
+                vimeoId : activeLesson?.vimeo_id,
+                lessonId : activeLesson?.id
+            })
+        }
+    },[progress, lessons])
 
     const getVideos = async () => {
         const data = await getLessons(token, course_id);
         const key = data?.response?._rel
         const videos = data?.response?._embedded[key]
-        setVideoCurrent({
-            name  : videos[0]?.name,
-            video : videos[0]?.player_embed_url,
-            vimeoId : videos[0]?.vimeo_id,
-            lessonId : videos[0]?.id
-        })
         setLessons(videos)
     }
 
-    const changeVideo = ({ name, player_embed_url, vimeo_id, id }) => {
+    const changeVideo = ({ name, player_embed_url, vimeo_id, id, index }) => {
         
         setVideoCurrent({
+            index,
             name: name,
             video: player_embed_url,
             vimeoId : vimeo_id,
@@ -54,7 +75,7 @@ const CorusePlayback = () => {
     }
 
     const handlingProgress = ({duration, percent, seconds}) => {
-        
+
         const payload = {
             "course_id" : course_id,
             "user_id": id,
@@ -64,13 +85,15 @@ const CorusePlayback = () => {
             "total_video_time": duration
         }
         seconds && storeProgress(payload).then(() => {
-            consultProgress(payload)            
+            const change = (percent === 1)
+            consultProgress(payload, change)            
         }).catch(error => console.log(error))
     }
 
-    const consultProgress = (payload) => {
-        getProgress(payload).then(prgs => {
-            setProgress(prgs?.progress)
+    const consultProgress = (payload, changeLesson = false) => {
+        getProgress(payload).then(({progress}) => {
+            progress = { progress, changeLesson }
+            setProgress(progress)
         })
     }
 
@@ -95,11 +118,12 @@ const CorusePlayback = () => {
                         <img src={IconRutaPlayer}/>
                     </div>
                     {lessons?.map((video, key) => {
-                        let obj = progress.find(prg => prg.lesson_id === video?.id  );
+                        let obj = progress?.progress?.find(prg => prg.lesson_id === video?.id  );
                         return <LessonSideMenu 
-                                    progress={obj?.percentage_completion}  
+                                    progress={obj?.percentage_completion}    
                                     key={key} index={key} 
-                                    video={video} changeVideo={changeVideo}
+                                    video={video} 
+                                    changeVideo={changeVideo}
                                 />
                     })}
                     <button className="xln-btn-couseExamen mt-3" onClick={redirect} ><img src={IconRutaExamen}/></button>

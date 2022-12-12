@@ -29,8 +29,6 @@ export const InfoVideoPlayer = () => {
         setPages(e.target.value);
     }
 
-    console.log(pages)
-
     return (
         <div className="xlrn__infovideoplayer-section" >
             <div className="xlrn__infovideoplayer-container" >
