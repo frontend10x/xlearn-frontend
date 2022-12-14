@@ -4996,6 +4996,27 @@ h3.xlnIcon__couser__ruta {
   color: #fff;
 }
 
+h3.xlnIcon__couser__ruta_completed {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 1px solid #fff;
+  font-size: 17px;
+  padding-top: 5px;
+  color: rgb(0, 0, 0);
+  background-color: #03ff84;
+}
+
+h3.xlnIcon__couser__ruta_initiated {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 1px solid #03ff84;
+  font-size: 17px;
+  padding-top: 5px;
+  color: #03ff84;
+}
+
 .xlnMenu__icon__player img {
   width: 60px;
   position: relative;
