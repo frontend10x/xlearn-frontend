@@ -22,21 +22,28 @@ export const Score = () => {
     }, [])
 
     const scores = 28;
-
+    const percentage = 98
     return (
         <div className='certificate__section' >
             <HeaderDashboard />
             <Container className='container-fluid' >
 
                 <div className='certifate__section-container text-center mt-5' >
-                    <div className='certificate__section-content' >
+                    <div className='certificate__section-content border-bottom' >
                         <h2 className='fw-bold' >Resultado</h2>
                         <h1 className='title' >¡Felicidades!</h1>
                         {/* {correctAnswers} Aciertos */}
                         <h4 className='fw-bold' >
                             {scores} Aciertos
                         </h4>
+                        <h2 className='percentage__evaluation' >{percentage}% </h2>
                     </div>
+                </div>
+                <div className='text-center mt-5' >
+
+                    <button className='button__certificate' >
+                        Finalizar
+                    </button>
                 </div>
             </Container>
         </div>

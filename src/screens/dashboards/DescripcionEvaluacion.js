@@ -49,7 +49,7 @@ export const DescripcionEvaluacion = () => {
                             <p>
                                 Duracion
                             </p>
-                            <p>30 Minutos</p>
+                            <p>Ilimitado</p>
                         </div>
                         <div>
                             <Image src={psychology} className='w-25 mb-2' />
@@ -64,7 +64,7 @@ export const DescripcionEvaluacion = () => {
                         <div>
                             <Image src={flag} className='w-25 mb-2 ' />
                             <p>Intentos</p>
-                            <p>{tries}</p>
+                            <p>Ilimitados</p>
                         </div>
                     </div>
                     <button onClick={redirect} className='mb-5 enterprise__button w-25 ' >
