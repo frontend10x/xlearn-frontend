@@ -1,0 +1,33 @@
+:root {
+    --black: #19191c;
+    --blueAlternative: #270bc4;
+    --blueDark: #002333;
+    --green: #31fb84;
+    --neutroText: #8894ab;
+    --white: #ffffff;
+    --whiteOff: #f4f4f4;
+    --blueclaro: #F5F8FA;
+    --blueoscuro: #CBD6E2;
+}
+
+.title {
+    color: var(--green);
+    font-weight: bold;
+}
+
+.percentage__evaluation {
+    color: var(--green);
+    font-weight: bold;
+}
+
+.button__certificate{
+    border: none;
+    border-radius: 15px;
+    background-color: var(--green);
+    padding: 10px;
+    width: 193px;
+    height: 54px;
+    font-weight: bold;
+    color: var(--blueDark);
+    font-size: 16px;
+}

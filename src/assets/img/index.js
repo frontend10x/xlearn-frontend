@@ -84,3 +84,9 @@ export {default as bannerContact01} from '../Image/banner_contact.png';
 
 
 export {default as cliente1} from './Logos clientes-01.png';
+
+/* Iconos de evaluacion */
+export {default as hourglass} from '../img/hourglass.png'
+export {default as checklist} from '../img/checklist.png'
+export {default as flag} from '../img/flag.png'
+export {default as psychology } from '../img/psychology.png'

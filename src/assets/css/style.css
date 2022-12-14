@@ -198,6 +198,11 @@ button.burg-toggle i {
   width: 40%;
 } */
 
+.button__navegacion-user {
+  border: none;
+  background-color: transparent;
+}
+
 .background .navegacion {
   column-gap: 2rem;
   display: flex;

@@ -40,6 +40,7 @@ import { Ayuda } from "../screens/Ayuda";
 import { ForgotPassword } from "../screens/auth/ForgotPassword";
 import { RecuperarPassword } from "../screens/auth/RecuperarPassword";
 import CoursePlayback from "../screens/dashboards/CoursePlayback";
+import { Perfil } from "../screens/dashboards/Perfil";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -56,11 +57,10 @@ export const AppRouter = () => {
         <Route exact path="/login/:id" element={<LoginScreen />} />
         <Route exact path="/contact" element={<ContactoScreen />} />
         <Route exact path="/course/info/:id" element={<InfoCourse />} />
-        <Route exact path="/puntaje/:id/:course_id" element={<Score />} />
         <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
         <Route exact path="/informacion/ayuda" element={<Ayuda />} />
-        <Route exact path="/recuperacion/contrasena" element={<ForgotPassword/>} />
-        <Route exact path="/recuperacion/:id" element={<RecuperarPassword/>} />
+        <Route exact path="/recuperacion/contrasena" element={<ForgotPassword />} />
+        <Route exact path="/recuperacion/:id" element={<RecuperarPassword />} />
 
         {/* RUTA DE EMPRESA */}
         <Route element={<EmpresasRoute token={token} type={type} />}>
@@ -81,7 +81,7 @@ export const AppRouter = () => {
 
         </Route>
         {/* RUTA DE EMPRESA */}
-        
+
         {/* RUTA DEL LIDER */}
         <Route element={<LiderRoute token={token} type={type} />}>
           <Route
@@ -120,17 +120,19 @@ export const AppRouter = () => {
             element={<CoursePlayback />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
-          <Route exact path="/presentacion/evaluacion/:course_id" element={<DescripcionEvaluacion/>} />
-          <Route exact path="/evaluacion/:course_id" element={<Evaluacion />} />
-          <Route exact path="/certificado/:course_id" element={<GenerarCertificado/>} />
+          <Route exact path="/presentacion/evaluacion/:name/:course_id" element={<DescripcionEvaluacion />} />
+          <Route exact path="/evaluacion/:name/:course_id" element={<Evaluacion />} />
+          <Route exact path="/puntaje/:name/:id/:course_id" element={<Score />} />
+          <Route exact path="/certificado/:course_id" element={<GenerarCertificado />} />
           <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
           <Route exact path="/soporte" element={<Soporte />} />
+          <Route exact path="/profile/:name" element={<Perfil/>} />
         </Route>
         {/* RUTA DEL LIDER */}
 
         {/* RUTA DEL INTEGRANTE */}
         <Route element={<IntegranteRoute token={token} type={type} />}>
-         <Route exact path="/dashboard/integrante" element={<DashboardIntegrante />} />
+          <Route exact path="/dashboard/integrante" element={<DashboardIntegrante />} />
         </Route>
 
       </Routes>

@@ -1,0 +1,25 @@
+:root {
+    --black: #19191c;
+    --blueAlternative: #270bc4;
+    --blueDark: #002333;
+    --green: #31fb84;
+    --neutroText: #8894ab;
+    --white: #ffffff;
+    --whiteOff: #f4f4f4;
+    --blueclaro: #F5F8FA;
+    --blueoscuro: #CBD6E2;
+  }
+
+.card__image {
+    width: 224px;
+}
+
+.card_title {
+    font-size: 16px;
+}
+
+.card__content {
+    height: 130px;
+    background-color: var(--white);
+    width: 35%;
+}
