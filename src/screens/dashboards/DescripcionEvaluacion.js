@@ -10,7 +10,7 @@ import StyleDescripcionEvaluacion from '../../assets/css/screens/dashboards/Styl
 
 export const DescripcionEvaluacion = () => {
     const { token } = useSelector(state => state.auth)
-    const { course_id } = useParams();
+    const { course_id, name } = useParams();
     const [quantity, setQuantity] = useState();
     const [tries, setTries] = useState();
     const navigate = useNavigate()
@@ -29,7 +29,7 @@ export const DescripcionEvaluacion = () => {
     }, []);
 
     const redirect = () => {
-        navigate(`/evaluacion/${course_id}`)
+        navigate(`/evaluacion/${name}/${course_id}`)
     }
 
     return (

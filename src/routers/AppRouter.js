@@ -120,9 +120,9 @@ export const AppRouter = () => {
             element={<CoursePlayback />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
-          <Route exact path="/presentacion/evaluacion/:course_id" element={<DescripcionEvaluacion />} />
-          <Route exact path="/evaluacion/:course_id" element={<Evaluacion />} />
-          <Route exact path="/puntaje/:id/:course_id" element={<Score />} />
+          <Route exact path="/presentacion/evaluacion/:name/:course_id" element={<DescripcionEvaluacion />} />
+          <Route exact path="/evaluacion/:name/:course_id" element={<Evaluacion />} />
+          <Route exact path="/puntaje/:name/:id/:course_id" element={<Score />} />
           <Route exact path="/certificado/:course_id" element={<GenerarCertificado />} />
           <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
           <Route exact path="/soporte" element={<Soporte />} />

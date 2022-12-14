@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Container } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { HeaderDashboard } from '../../componentes/dashboards/HeaderDashboard';
 import { generateCertificate } from '../../services/services';
 import StyleScore from '../../assets/css/screens/dashboards/StyleScore.css';
@@ -11,7 +11,8 @@ export const Score = () => {
     const [score, setScore] = useState();
     const [correctAnswers, setCorrectAnswers] = useState();
     const { token } = useSelector(state => state.auth)
-    const { id, course_id } = useParams();
+    const { id, course_id,name } = useParams();
+    const navigate = useNavigate();
     useEffect(() => {
         async function scores() {
             const response = await generateCertificate(token, id, course_id);
@@ -21,8 +22,18 @@ export const Score = () => {
         scores()
     }, [])
 
+    console.log(name,'nombre del curso');
+
     const scores = 28;
-    const percentage = 98
+    const percentage = 8
+
+    const redirect = () => {
+        if (percentage >= 90) {
+            navigate(`/certificado/${course_id}`);
+        } else {
+            navigate(`/course/videoplayer/${name}/${course_id}`);
+        }
+    }
     return (
         <div className='certificate__section' >
             <HeaderDashboard />
@@ -40,10 +51,16 @@ export const Score = () => {
                     </div>
                 </div>
                 <div className='text-center mt-5' >
+                    {percentage >= 90 ?
+                        <button className='button__certificate' onClick={redirect} >
+                            Finalizar
+                        </button>
+                        : 
+                        <button className='button__certificate' onClick={redirect} >
+                            Repasar
+                        </button>
+                    }
 
-                    <button className='button__certificate' >
-                        Finalizar
-                    </button>
                 </div>
             </Container>
         </div>

@@ -101,7 +101,7 @@ const CorusePlayback = () => {
     }
 
     const redirect = () => {
-        navigate(`/presentacion/evaluacion/${course_id}`);
+        navigate(`/presentacion/evaluacion/${name}/${course_id}`);
     }
     
     return (

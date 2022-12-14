@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 export const Evaluacion = () => {
   const { token, groups,id } = useSelector((state) => state.auth);
   const [question, setQuestion] = useState([]);
-  const { course_id } = useParams();
+  const { course_id,name } = useParams();
   const [page, setPage] = useState(0);
   const [perPage, setPerpage] = useState(1);
   const [results, setResults] = useState(false);
@@ -76,7 +76,7 @@ export const Evaluacion = () => {
           title: 'Felicidades',
           text: `${data.message}`,
         })
-        navigate(`/puntaje/${id}/${course_id}`);
+        navigate(`/puntaje/${name}/${id}/${course_id}`);
       }
     }
   };
