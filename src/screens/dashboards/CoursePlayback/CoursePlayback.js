@@ -8,7 +8,7 @@ import VideoPlayer from "./components/VideoPlayer";
 import LessonSideMenu from "./components/LessonSideMenu";
 import { InfoVideoPlayer } from "../../../componentes/dashboards/InfoVideoPlayer";
 import { IconRutaPlayer, IconRutaExamen} from "../../../assets/img";
-import { storeProgress } from "../../../services/apis/progress.services";
+import { getProgress, storeProgress } from "../../../services/apis/progress.services";
 
 
 const CorusePlayback = () => {
@@ -16,34 +16,57 @@ const CorusePlayback = () => {
     const {token, id} = useSelector(state => state.auth);
     const [lessons, setLessons] = useState();
     const [videoCurrent, setVideoCurrent] = useState();
+    const [progress, setProgress] = useState();
     const [destroy, setDestroy] = useState(false);
+
     const navigate = useNavigate();
 
     useEffect(() => {
+        getVideos()
+        consultProgress({
+            course_id : course_id,
+            user_id : id
+        }, true )
+    },[token, course_id])
+    
+    useEffect(() => {
+        if(progress && lessons){
+            const currentLesson = progress?.progress?.find(prg => prg.current)
+            
+            const currentIndex = progress?.progress?.findIndex(prg => prg.current)
+
+            console.log(currentIndex)
+
+            const activeLesson = currentLesson?.percentage_completion === 100 
+                               ? lessons.at(currentIndex + 1) 
+                               : lessons.at(currentIndex === -1 ? 0 : currentIndex)
+
+            const progressCurrent = progress?.progress?.find(prg => prg?.lesson_id === activeLesson?.id)
+
+            progress?.changeLesson && setVideoCurrent({
+                percentage : progressCurrent?.percentage_completion,
+                currentTime : progressCurrent?.advanced_current_time,
+                name: activeLesson?.name,
+                video: activeLesson?.player_embed_url,
+                vimeoId : activeLesson?.vimeo_id,
+                lessonId : activeLesson?.id
+            })
+        }
         // 👇️ scroll to top on page load
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-      }, []);
+    },[progress, lessons])
 
-    useEffect(() => {
-        async function getVideos() {
-            const data = await getLessons(token, course_id);
-            const key = data?.response?._rel
-            const videos = data?.response?._embedded[key]
-            setVideoCurrent({
-                name  : videos[0]?.name,
-                video : videos[0]?.player_embed_url,
-                vimeoId : videos[0]?.vimeo_id,
-                lessonId : videos[0]?.id
-            })
-            setLessons(videos)
-        }
-        getVideos()
-    },[token, course_id])    
+    const getVideos = async () => {
+        const data = await getLessons(token, course_id);
+        const key = data?.response?._rel
+        const videos = data?.response?._embedded[key]
+        setLessons(videos)
+    }
 
-
-    const changeVideo = ({ name, player_embed_url, vimeo_id, id }) => {
+    const changeVideo = ({ name, player_embed_url, vimeo_id, id, index }) => {
         
         setVideoCurrent({
+            index,
             name: name,
             video: player_embed_url,
             vimeoId : vimeo_id,
@@ -55,15 +78,26 @@ const CorusePlayback = () => {
     }
 
     const handlingProgress = ({duration, percent, seconds}) => {
+
         const payload = {
             "course_id" : course_id,
             "user_id": id,
             "lesson_id": videoCurrent?.lessonId,
-            "percentage": percent,
+            "percentage": percent * 100,
             "advanced_current_time": seconds,
             "total_video_time": duration
         }
-        storeProgress(payload).then(response => console.log(response)).catch(error => console.log(error))
+        seconds && storeProgress(payload).then(() => {
+            const change = (percent === 1)
+            consultProgress(payload, change)            
+        }).catch(error => console.log(error))
+    }
+
+    const consultProgress = (payload, changeLesson = false) => {
+        getProgress(payload).then(({progress}) => {
+            progress = { progress, changeLesson }
+            setProgress(progress)
+        })
     }
 
     const redirect = () => {
@@ -76,7 +110,6 @@ const CorusePlayback = () => {
             <div className="video__reproduccion-container" >
                 <div className="video__reproduccion-content" >
                 <h2 style={{color:'white'}}>{name}</h2>
-                    {/* <h2>{name}</h2> */}
                     <button>Comunidad</button>
                 </div>
                 <div className="d-flex">
@@ -87,9 +120,15 @@ const CorusePlayback = () => {
                         <p>Ruta</p>
                         <img src={IconRutaPlayer}/>
                     </div>
-                    {lessons?.map((video, key) => (
-                        <LessonSideMenu key={key} index={key} video={video} changeVideo={changeVideo}/>
-                    ))}
+                    {lessons?.map((video, key) => {
+                        let obj = progress?.progress?.find(prg => prg.lesson_id === video?.id  );
+                        return <LessonSideMenu 
+                                    progress={obj?.percentage_completion}    
+                                    key={key} index={key} 
+                                    video={video} 
+                                    changeVideo={changeVideo}
+                                />
+                    })}
                     <button className="xln-btn-couseExamen mt-3" onClick={redirect} ><img src={IconRutaExamen}/></button>
                     </div>
                 </div>
