@@ -74,7 +74,7 @@ export const ContactoScreen = () => {
                             <h1>¡Ponte en contacto con nosotros y entrena a tu equipo!</h1>
                             <p>Es el momento de crear, proponer , generar ingresos y, sobre todo ,de innovar. Descubre y aprovecha el potencial de tu organización y desarrolla un plan de acción en torno al entrenamiento ¡Contáctanos!</p>
                             <button onClick={redirect} className='w-25' >
-                                Iniciar
+                                Registrarme
                             </button>
                         </div>
                     </div>

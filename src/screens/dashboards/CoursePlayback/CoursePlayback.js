@@ -10,6 +10,7 @@ import { InfoVideoPlayer } from "../../../componentes/dashboards/InfoVideoPlayer
 import { IconRutaPlayer, IconRutaExamen} from "../../../assets/img";
 import { getProgress, storeProgress } from "../../../services/apis/progress.services";
 
+
 const CorusePlayback = () => {
     const {course_id, name} = useParams()
     const {token, id} = useSelector(state => state.auth);
@@ -51,6 +52,8 @@ const CorusePlayback = () => {
                 lessonId : activeLesson?.id
             })
         }
+        // 👇️ scroll to top on page load
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
     },[progress, lessons])
 
     const getVideos = async () => {

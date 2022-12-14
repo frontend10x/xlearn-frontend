@@ -1,12 +1,26 @@
 import React from "react";
 import { NavLink } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { XlearnLogo } from "../../assets/img";
 import { NavegacionDashboardHeader } from "../dashboards/NavegacionDashboardHeader";
-
+import StyleHeaderDashboard from "../../assets/css/componentes/StyleHeaderDashboard.css"
 
 export const HeaderDashboard = () => {
-  const {type} = useSelector(state => state.auth);
+  const { type } = useSelector(state => state.auth);
+
+  const navigate = useNavigate();
+
+  const redirect = () => {
+    if (type === "Empresa") {
+      navigate('/dashboard/empresa')
+    } else if (type === "Lider") {
+      navigate('/dashboard/lider')
+    } else {
+      navigate('/dashboard/integrante')
+    }
+  }
+
   return (
     <div className="header__container background ">
       <header id="header" className="header fixed_top background">
@@ -19,8 +33,10 @@ export const HeaderDashboard = () => {
         >
           <i className="fa-solid fa-bars fa-2xl"></i>
         </button>
-        <img src={XlearnLogo} alt="header__logo" className="header__logo" />
-        <NavegacionDashboardHeader />
+        <a className="header__button-redirect" onClick={redirect} >
+          <img src={XlearnLogo} alt="header__logo" className="header__logo" />
+        </a>
+        <NavegacionDashboardHeader type={type} />
       </header>
 
       {/* <!-- Modal --> */}

@@ -25,7 +25,6 @@ import { UsoCupos } from "../screens/dashboards/UsoCupos";
 import { CrearUsuarios } from "../screens/dashboards/CrearUsuarios";
 import { ReproduccionDeCursos } from "../screens/dashboards/ReproduccionDeCursos";
 import { Evaluacion } from "../screens/dashboards/Evaluacion";
-import CorusePlayback from "../screens/dashboards/CoursePlayback";
 import { DashboardIntegrante } from "../screens/dashboards/DashboardIntegrante";
 import { IntegranteRoute } from "./IntegranteRoute";
 import { GestionDeEquipos } from "../screens/dashboards/GestionDeEquipos";

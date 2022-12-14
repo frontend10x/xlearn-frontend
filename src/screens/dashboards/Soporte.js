@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux';
 import { registerbanner } from "../../assets/img";
 import { HeaderDashboard } from '../../componentes/dashboards/HeaderDashboard';
 
@@ -19,15 +20,14 @@ export const Soporte = () => {
         } else if (selector === "Xlearn") {
            setSection("Xlearn")
         }
-
-
-        
     }
+
+    const {type} = useSelector(state => state.auth);
 
   return (
     <div className='soporte__section' >
         <div className='soporte__section' >
-            <HeaderDashboard />
+            <HeaderDashboard type={type} />
             <div className='soporte__banner h-100' /* style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.675)), url("${registerbanner}")` }}  */>
                 <div className='soporte__banner-content' >
                     <h1>Centro de ayuda | <span className='fw-bold' >FAQ's </span> </h1>
