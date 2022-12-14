@@ -2,10 +2,8 @@ import React, { useState, useEffect, useRef, createRef } from "react";
 import { evaluationCourse, generateCertificate, quizDiagnostic, registerAnswers, registerDiagnostic } from "../../services/services";
 import { useSelector } from "react-redux/es/exports";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
-import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Score } from "./Score";
 
 export const Evaluacion = () => {
   const { token, groups,id } = useSelector((state) => state.auth);
@@ -78,8 +76,7 @@ export const Evaluacion = () => {
           title: 'Felicidades',
           text: `${data.message}`,
         })
-        console.log(data,'data')
-        // navigate();
+        navigate(`/puntaje/${id}/${course_id}`);
       }
     }
   };
