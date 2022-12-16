@@ -4988,6 +4988,12 @@ p.xln_price_GDC span {
   top: 10px;
 }
 
+.xln__content__rutaClick button:hover{
+  border-color: #f8f9fa00;
+  background-color: #f8f9fa00;
+  box-shadow: #f8f9fa00;
+}
+
 h3.xlnIcon__couser__ruta {
   width: 30px;
   height: 30px;
