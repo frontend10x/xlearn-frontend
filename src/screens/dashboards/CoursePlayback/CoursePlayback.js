@@ -35,8 +35,6 @@ const CorusePlayback = () => {
             
             const currentIndex = progress?.progress?.findIndex(prg => prg.current)
 
-            console.log(currentIndex)
-
             const activeLesson = currentLesson?.percentage_completion === 100 
                                ? lessons.at(currentIndex + 1) 
                                : lessons.at(currentIndex === -1 ? 0 : currentIndex)
