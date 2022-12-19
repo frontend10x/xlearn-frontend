@@ -19,29 +19,14 @@ export const InfoCourse = () => {
 
     const { id } = useParams();
     const [courses, setCourses] = useState([]);
-
     const navigate = useNavigate();
-
-    const [course, setCourse] = useState([
-        //   { title: "Presentaciones efectivas de negocios", image:  recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
-        //   { title: "Modelación de negocios", image:  recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },
-        //   { title: "Diseño de propuesta de valor", image:  recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
-        //   { title: "Prototipado", image:  recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
-    ]);
-    const [lessons, setLessons] = useState([
-        // { title: "ADN Innovador", time: "2:59" },
-        // { title: "Observar", time: "1:07" },
-        // { title: "Experimentar", time: "1:07" },
-        // { title: "Colaborar", time: "1:07" },
-        // { title: "Asociar", time: "1:07" }
-    ]);
-    const [courseRoute, setCourseRoute] = useState();
+    const [course, setCourse] = useState([]);
+    const [lessons, setLessons] = useState([]);
     const redirect = (e) => {
         if (e.target.value === 'login') {
             navigate('/login')
         } else {
             navigate('/plans/register')
-
         }
     }
 
@@ -53,18 +38,16 @@ export const InfoCourse = () => {
     useEffect(() => {
         async function getCourses() {
             const data = await getCourseDescription(id);
-            setCourses(data.response._embedded.course)
+            setCourse(data.response._embedded.course)
         }
 
         async function getAllCourses() {
             const data = await getCourse();
-            // console.log(data.response._embedded.courses,'datos');
-            setCourse(data.response._embedded.courses)
+            setCourses(data.response._embedded.courses)
         }
 
         async function getLessonsCourse() {
             const data = await getLessons("", id)
-            console.log(data)
             setLessons(data.response._embedded.lesson)
         }
 
@@ -73,11 +56,7 @@ export const InfoCourse = () => {
         getLessonsCourse();
     }, []) /* LOGICA DE CURSOS PUBLICOS */
 
-    console.log(lessons, 'datos a imprimir')
-
-
-
-    // console.log(courses,'variable');
+    console.log(course,'curso');
 
     return (
         <div className='xln__info_courses' >
@@ -86,13 +65,13 @@ export const InfoCourse = () => {
             <div className="hero">
                 <div className="row align-items-center">
                     <div className="col-lg-4">
-                        <Image src={courses.file_path} alt="image_description" />
+                        <Image src={course.file_path} alt="image_description" />
                         <button className="button__info-course" data-bs-toggle="modal" data-bs-target="#videoTrailer">
                             <Image src={playButton} />
                         </button>
                     </div>
                     <div className="col-lg-8 title">
-                        <h2 className="display-5 fw-bold lh-1 mb-3">{courses.name}</h2>
+                        <h2 className="display-5 fw-bold lh-1 mb-3">{course.name}</h2>
                         <div className="d-grid gap-2 d-md-flex justify-content-md-start">
                             <a href='/login' className="btn btn-primary btn-lg px-4 me-md-2 btn__cursos__descripcion"> Iniciar curso</a>
                         </div>
@@ -142,16 +121,16 @@ export const InfoCourse = () => {
                 <div className="row g-lg-5 py-5">
                     <div className="col-lg-7 text-center text-lg-start">
                         <h3 className="fw-bold lh-1 mb-3">Descripción general del curso</h3>
-                        <p className="col-lg-10 fs-5"><div dangerouslySetInnerHTML={{ __html: courses.description }} /></p>
+                        <div className="col-lg-10 fs-5"><p dangerouslySetInnerHTML={{ __html: course.about_author }} /></div>
                     </div>
                     <div className="col-md-10 mx-auto col-lg-5">
                         <h2>Lecciones del curso</h2>
                         <button className="" data-bs-toggle="modal" data-bs-target="#videoTrailer">
-                            {courses.name}
+                            {course.name}
                         </button>
                         {lessons &&
                             lessons.map((item, index) => (
-                                <div>
+                                <div key={index}>
                                     {item.name}
                                 </div>
                             ))
@@ -184,8 +163,8 @@ export const InfoCourse = () => {
             <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
 
             <div className="dashboard__lider-container_courses" >
-                {course &&
-                    course.map((item, index) => (
+                {courses &&
+                    courses.map((item, index) => (
                         <div key={index} className="dashboard__lider-container_courses-card" >
                             <Image src={item.file_path} className="img-recomendation-xln" />
                             <div className="dashboard__lider-container_courses-card-content" >
@@ -205,18 +184,18 @@ export const InfoCourse = () => {
 
 
 
-            <div class="modal fade" id="videoTrailer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Video Trailer</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="videoTrailer" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="staticBackdropLabel">Video Trailer</h1>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <iframe width="993" height="562" src={course?.video_path} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="true"></iframe>
+                        <div className="modal-body">
+                            <iframe width="993" height="562" src={course?.video_path} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen={true}></iframe>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
                         </div>
                     </div>
                 </div>

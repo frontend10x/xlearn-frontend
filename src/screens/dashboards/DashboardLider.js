@@ -50,6 +50,7 @@ export const DashboardLider = () => {
     async function getUserCourses() {
       const data = await getUserCourseById(token, id);
       setCourseRoute(data.response._embedded.courses)
+      console.log(data.response._embedded.courses,'respuesta de ruta')
     }
    
     async function getAllCourses() {

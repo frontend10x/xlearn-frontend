@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Col, Image } from "react-bootstrap";
 import {
+    arrowFront,
     ImageProyectos,
+    manageSearch,
     recomendation_01,
     recomendation_02,
     recomendation_03,
     recomendation_04,
+    robot,
 } from "../../assets/img";
 import { useNavigate, useParams } from "react-router-dom";
 import { getCourseDescription, getCourse } from "../../services/services";
 import { imagenUser } from "../../assets/img";
+import "../../assets/css/componentes/StyleInfoVideoPlayer.css";
 
 export const InfoVideoPlayer = () => {
 
@@ -91,24 +95,24 @@ export const InfoVideoPlayer = () => {
                                     <img src={ImageProyectos} />
                                 </div>
                             </div>
-                            <div className="xlrn__infovideoplayer-content-users" >
-                                <div className="" >
-                                    <h2 className="fw-bold">Acerca del tutor</h2>
-                                    <div className="d-flex" >
+                            <div className="xlrn__infovideoplayer-content-users flex-column ">
+                                    <h2 className="fw-bold ms-5 ">Acerca del tutor</h2>
+                                <div className="description__infovideoplayer-content" >
+                                    <div className="d-flex mt-5" >
                                         <Col md={6} className="d-flex gap-5 border-end" >
-                                            <Image src={imagenUser} className='about__tutor' alt="usuario" />
+                                            <Image src={imagenUser} className='about__tutor-image ms-5' alt="usuario" />
                                             <div className="w-75" dangerouslySetInnerHTML={{ __html: course.about_author }} />
                                         </Col>
-                                        <Col md={6} className="d-flex" >
-                                            <ul className="d-flex" >
-                                                <li className="border-bottom w-25" >
-                                                    <button onClick={activeChatBox} >Modo consultor</button>
-                                                </li>
-                                            </ul>
-                                            {/* <Image src={imagenUser} alt="imagen" /> */}
+                                        <Col md={6} className="d-flex justify-content-start ms-5 mt-5" >
+                                            <div className=" ms-5 mt-5 border-bottom container__buttons d-flex " >
+                                                <Image src={manageSearch} alt="" className="icon_manageSearch" />
+                                                <button className="consultor__button " onClick={activeChatBox} >Modo consultor <span className="ms-5" >  </span> </button>
+                                                <Image src={arrowFront} alt="" className="icon_arrowFront mt-1" />
+                                            </div>
+                                            <Image src={robot} alt="bot" className="ms-5 w-25 h-50" />
+
                                         </Col>
                                     </div>
-
                                 </div>
                             </div>
 
@@ -118,8 +122,8 @@ export const InfoVideoPlayer = () => {
                                     {courses &&
                                         courses.map((item, index) => (
                                             <div key={index} className="dashboard__lider-container_courses-card" >
-                                                <Image src={item.file_path} className="img-recomendation-xln" />
                                                 <div className="dashboard__lider-container_courses-card-content" >
+                                                    <Image src={item.file_path} className="img-recomendation-xln" />
                                                     <div className="dashboard__lider-container_courses-card-content-body" >
                                                         <div className="d-flex justify-content-around" >
                                                             {/* <p>{item.time} de contenido</p>
@@ -142,7 +146,7 @@ export const InfoVideoPlayer = () => {
                         </div>
                     </div>
                 }
-                {pages === "Recursos" &&
+                {/* {pages === "Recursos" &&
                     <div className="xlrn__infovideoplayer-container-content" >
                         <div className="xlrn__infovideoplayer-content" >
                             <div className="xlnPlayer__content__proyectos" >
@@ -155,7 +159,7 @@ export const InfoVideoPlayer = () => {
                         </div>
                     </div>
 
-                }
+                } */}
                 {/* {pages === "Glosario" &&
                    <div className="xlrn__infovideoplayer-container-content" >
                    <div className="xlrn__infovideoplayer-content" >

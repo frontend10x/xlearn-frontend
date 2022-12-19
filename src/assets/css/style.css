@@ -23,6 +23,7 @@
   --whiteOff: #f4f4f4;
   --blueclaro: #F5F8FA;
   --blueoscuro: #CBD6E2;
+  --pearl: #F2F2F2;
 }
 
 html,
@@ -5135,6 +5136,7 @@ h3.xlnIcon__couser__ruta_initiated {
   height: auto;
   display: flex;
   margin: auto;
+  /* background-color: var(--pearl) ; */
 }
 
 .xln__internos__CursosRecomendadosPlayer {
