@@ -4958,7 +4958,17 @@ p.xln_price_GDC span {
 
 
 
-/* Reproductor de video inicio */
+/* -------------- Reproductor de video inicio ---------------*/
+
+
+/*Reproductor cursos recomendados seccion*/
+.video__reproduccion-section .xlrn__infovideoplayer-content {
+  height: auto;
+  padding-top: 4%;
+  padding-bottom: 30%;
+}
+/*Fin Reproductor cursos recomendados seccion*/
+
 .video__reproduccion-section {
   background-color: var(--blueDark);
   /* height: 150vh; */
