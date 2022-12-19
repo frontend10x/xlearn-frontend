@@ -91,7 +91,7 @@ export const InfoVideoPlayer = () => {
                                     <div className="w-75" dangerouslySetInnerHTML={{ __html: course.description }} />
                                 </div>
                                 <div className="proyectos__img">
-                                    <h3>Estudiantes 1.540</h3>
+                                    {/* <h3>Estudiantes 1.540</h3> */}
                                     <img src={ImageProyectos} />
                                 </div>
                             </div>
