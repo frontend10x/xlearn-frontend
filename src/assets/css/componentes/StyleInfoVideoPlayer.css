@@ -1,0 +1,45 @@
+:root {
+    --black: #19191c;
+    --blueAlternative: #270bc4;
+    --blueDark: #002333;
+    --green: #31fb84;
+    --neutroText: #8894ab;
+    --white: #ffffff;
+    --whiteOff: #f4f4f4;
+    --blueclaro: #F5F8FA;
+    --blueoscuro: #CBD6E2;
+    --pearl: #F2F2F2;
+}
+
+
+.consultor__button {
+    border: none;
+    background-color: transparent;
+    font-weight: bold;
+    color: var(--blueDark);
+}
+
+.container__buttons {
+    width: 200px;
+    height: 30px;
+    text-align: center;
+}
+
+.about__tutor-image {
+    height: 50px;
+    width: 50px;
+}
+
+.description__infovideoplayer-content {
+    background-color: var(--pearl);
+    height: 55vh;
+}
+
+.icon_manageSearch {
+    width: 30px;
+}
+
+.icon_arrowFront {
+    height: 20px;
+    width: 30px;
+}

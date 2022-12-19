@@ -90,3 +90,9 @@ export {default as hourglass} from '../img/hourglass.png'
 export {default as checklist} from '../img/checklist.png'
 export {default as flag} from '../img/flag.png'
 export {default as psychology } from '../img/psychology.png'
+
+/* Infovideo player iconos */
+
+export {default as manageSearch} from '../img/manage_search.png'
+export {default as arrowFront} from '../img/arrow_forward.png'
+export {default as robot} from '../img/robot.png'
