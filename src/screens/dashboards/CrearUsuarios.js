@@ -17,7 +17,7 @@ export const CrearUsuarios = () => {
         email: '',
         phone: '',
         type_id: roles,
-        // rol_id:'',
+        rol_id:'',
         password:'',
         password_confirmation:''
     });
@@ -44,7 +44,7 @@ export const CrearUsuarios = () => {
     ]);
 
 
-    const {name, email, phone, type_id, /* rol_id, */ password, password_confirmation} = formValues;
+    const {name, email, phone, type_id, rol_id, password, password_confirmation} = formValues;
 
 
     useEffect(() => {
@@ -65,7 +65,7 @@ export const CrearUsuarios = () => {
 
     const createUser = async () => {
         try {
-            const data = await creationUser( token,name, email, phone, type_id, /* rol_id, */ password, password_confirmation, subcompanie_id);
+            const data = await creationUser( token,name, email, phone, type_id, rol_id, password, password_confirmation, subcompanie_id);
             Swal.fire({
                 icon: 'success',
                 title: 'Usuario creado con exito',

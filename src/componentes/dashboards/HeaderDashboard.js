@@ -26,7 +26,7 @@ export const HeaderDashboard = () => {
       <header id="header" className="header fixed_top background">
         {/* <!-- Button trigger modal --> */}
         {token ?
-          <div></div>
+          <></>
           : <button
           type="button"
           className="burg-toggle"
