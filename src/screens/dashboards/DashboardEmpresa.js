@@ -53,41 +53,47 @@ export const DashboardEmpresa = () => {
     async function getQuotas() {
       try {
         const data = await getEnterpriseQuotas(token, subcompanie_id)
-        setQuotas(data.quotas);  
+        setQuotas(data.quotas);
       } catch (error) {
-        console.error(error,'error')
+        console.error(error, 'error')
       }
-      
+
     }
 
-    async function getGroups() {
-      try {
-        const data = await getEnterpriseGroups(token, subcompanie_id)
-        setCreatedTeams(data.groups["hc:length"]);
-      } catch (error) {
-        console.error(error,'error 2')        
-      }
-    }
+    // async function getGroups() {
+    //   try {
+    //     const data = await getEnterpriseGroups(token, subcompanie_id)
+    //     setCreatedTeams(data.groups["hc:length"]);
+    //   } catch (error) {
+    //     console.error(error,'error 2')        
+    //   }
+    // }
     getQuotas();
-    getGroups();
-  }, [token,subcompanie_id])
+    // getGroups();
+  }, [token, subcompanie_id])
 
   const redirect = (e) => {
-    if (e.target.value === "teams" && createdTeams > 0 ) {
-      navigate('/manejo/equipos');
-    } else if (e.target.value === "teams" && createdTeams === 0 ) {
-      navigate('/gestion/equipos');
-    } else if (e.target.value === "users" && quotas > 0 ) {
+    if (e.target.value === "users" && quotas > 0) {
       navigate('/gestion/cupos/disponibles')
-    } else if ( e.target.value === "users" && quotas === 0) {
+    } else if (e.target.value === "users" && quotas === 0) {
       navigate('/compra/cupos');
     }
   }
 
-  console.log(createdTeams,'value')
+  const change = () => {
+    getEnterpriseGroups(token, subcompanie_id)
+      .then(event => {
+        navigate('/manejo/equipos');
+      })
+      .catch(error => {
+        console.error(error, 'error 2')
+        navigate('/gestion/equipo');
+      }
+    )
+  }
 
   const soporte = () => {
-      navigate('/contact')
+    navigate('/contact')
   }
 
 
@@ -104,7 +110,7 @@ export const DashboardEmpresa = () => {
 
 
           <div className="xln-contentSection-block-empresa">
-            
+
             <div className="dashboard__container-nav_banner">
 
               <div className="dashboard__banner">
@@ -157,19 +163,19 @@ export const DashboardEmpresa = () => {
                   <div className="dashboard__block">
                     <div className="dashboard__block-content">
                       <Image src={equiposIcon} />
-                      <button className="dashboard__block-button" onClick={redirect} value="teams" >
+                      <button className="dashboard__block-button" onClick={change}>
                         Administrar tus equipos
                       </button>
                     </div>
                     {createdTeams ?
-                    <div className="dashboard__title">
-                      <h3>{createdTeams} Equipos creados</h3>
-                      <p>Crea y gestiona tus equipos</p>
-                    </div>
-                    : <div className="dashboard__title">
-                      <h3> 0 Equipos creados</h3>
-                      <p>Crea y gestiona tus equipos</p>
-                    </div>
+                      <div className="dashboard__title">
+                        <h3>{createdTeams} Equipos creados</h3>
+                        <p>Crea y gestiona tus equipos</p>
+                      </div>
+                      : <div className="dashboard__title">
+                        <h3> 0 Equipos creados</h3>
+                        <p>Crea y gestiona tus equipos</p>
+                      </div>
                     }
                   </div>
                 </Col>

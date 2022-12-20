@@ -28,7 +28,7 @@ export const NavegacionDashboardHeader = () => {
 
             </NavLink>
             <NavLink className="nav-link " to="/compra/cupos">
-              Compra
+              Comprar
             </NavLink>
             {/* <NavLink className="nav-link " to="/gestion/equipo">
               Gestión de equipos
