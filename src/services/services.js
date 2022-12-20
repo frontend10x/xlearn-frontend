@@ -202,9 +202,9 @@ export const typeOfUsers = async (token) => {
 
 }
 
-export const creationUser = async (token, name, email, phone, type_id, rol_id, password, password_confirmation, subcompanies_id) => {
+export const creationUser = async (token, name, email, phone, type_id, rol_id, area, password, password_confirmation, subcompanies_id) => {
 
-  const body = { name, email, phone, type_id, rol_id, password, password_confirmation, subcompanies_id }
+  const body = { name, email, phone, type_id, rol_id, area,password, password_confirmation, subcompanies_id }
 
   const config = {
     headers: {
