@@ -7,7 +7,7 @@ import { NavegacionDashboardHeader } from "../dashboards/NavegacionDashboardHead
 import StyleHeaderDashboard from "../../assets/css/componentes/StyleHeaderDashboard.css"
 
 export const HeaderDashboard = () => {
-  const { type } = useSelector(state => state.auth);
+  const { type,token } = useSelector(state => state.auth);
 
   const navigate = useNavigate();
 
@@ -25,21 +25,27 @@ export const HeaderDashboard = () => {
     <div className="header__container background ">
       <header id="header" className="header fixed_top background">
         {/* <!-- Button trigger modal --> */}
-        <button
+        {token ?
+          <div></div>
+          : <button
           type="button"
           className="burg-toggle"
           data-bs-toggle="modal"
           data-bs-target="#exampleModal"
-        >
+          >
           <i className="fa-solid fa-bars fa-2xl"></i>
         </button>
+        }
         <a className="header__button-redirect" onClick={redirect} >
           <img src={XlearnLogo} alt="header__logo" className="header__logo" />
         </a>
         <NavegacionDashboardHeader type={type} />
       </header>
+      {token ?
+        <div>
 
-      {/* <!-- Modal --> */}
+        </div>
+      :
       <div className="modal__container">
         <div className="modal-dialog modal-fullscreen-sm-down">
           <div
@@ -212,6 +218,7 @@ export const HeaderDashboard = () => {
           </div>
         </div>
       </div>
+      }
     </div>
   );
 };
