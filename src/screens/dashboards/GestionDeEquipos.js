@@ -20,7 +20,7 @@ export const GestionDeEquipos = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [])
+    }, [])
 
     useEffect(() => {
         async function getEnterprisesGroup() {
@@ -65,9 +65,9 @@ export const GestionDeEquipos = () => {
                                                     <p className="text-center" >
                                                         Usuario
                                                     </p>
-                                                                        <p className="text-center" >
-                                                                            Progreso
-                                                                        </p>
+                                                    <p className="text-center" >
+                                                        Progreso
+                                                    </p>
                                                     <ul>
                                                         {
                                                             item.users.map((items, index) => (
@@ -98,13 +98,13 @@ export const GestionDeEquipos = () => {
                     }
                 </div>
             </div>
-                <div className="xln__creacion-nuevo-equipo" >
-                    <div className="xln__creacion-nuevo-equipo-content" >
-                        <Image src={equiposIcon} className="ms-5" />
-                        <h2>Nuevo equipo</h2>
-                    </div>
-                    <button onClick={redirect} >Crear equipo</button>
+            <div className="xln__creacion-nuevo-equipo" >
+                <div className="xln__creacion-nuevo-equipo-content" >
+                    <Image src={equiposIcon} className="ms-5" />
+                    <h2>Nuevo equipo</h2>
                 </div>
+                <button onClick={redirect} >Crear equipo</button>
+            </div>
             <Footer />
         </div>
     )

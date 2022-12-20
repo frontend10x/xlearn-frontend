@@ -16,7 +16,7 @@ const users = []
 export const CrearEquipos = () => {
   useEffect(() => {
     // 👇️ scroll to top on page load
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
   const { token, subcompanie_id } = useSelector((state) => state.auth);
   const [formValues, handleInputChange] = useForm({
@@ -30,7 +30,7 @@ export const CrearEquipos = () => {
   const [teamManagement, setTeamManagement] = useState(false)
   const navigate = useNavigate();
 
-  console.log(usersWithoutGroup,'response');
+  console.log(usersWithoutGroup, 'response');
 
   useEffect(() => {
     async function getUsersFromSubcompanieId() {
@@ -93,7 +93,7 @@ export const CrearEquipos = () => {
   }
 
   const redirect = (e) => {
-      navigate('/manejo/equipos');
+    navigate('/manejo/equipos');
   }
 
   return (
@@ -103,53 +103,54 @@ export const CrearEquipos = () => {
 
         <div className="xln-content-dash">
 
-            <div className="xln__content__nav">
-              <NavegacionDashboard />
+          <div className="xln__content__nav">
+            <NavegacionDashboard />
+          </div>
+
+          <div className="xln-contentSection-block-empresa">
+            <div className="xlrn__crear-equipos__content-title" >
+              <h1>Gestion de equipos</h1>
+              <p>Crea tus equipos</p>
             </div>
-            
-            <div className="xln-contentSection-block-empresa">
-              <div className="xlrn__crear-equipos__content-title" >
-                <h1>Gestion de equipos</h1>
-                <p>Crea tus equipos</p>
+
+            <div className="xlrn__crear-equipos__container-form" >
+              <div className="xlrn__crear-equipos__container-form-content" >
+                <Image src={equiposIcon} />
+                <h1>Crea tu grupo</h1>
+                <p>Crea a tu grupo y capacitalos con la ruta que asigne el lider</p>
               </div>
 
-              <div className="xlrn__crear-equipos__container-form" >
-                <div className="xlrn__crear-equipos__container-form-content" >
-                  <Image src={equiposIcon} />
-                  <h1>Crea tu grupo</h1>
-                  <p>Crea a tu grupo y capacitalos con la ruta que asigne el lider</p>
-                </div>
-
-                <div className="xlrn__crear-equipos__form" id="form" >
-                  <input onChange={handleInputChange} name="name" type="text" placeholder="Nombre del equipo" />
-                  <select placeholder="Agregar rol de lider" className="xlrn__asignar-rol" id="leader">
-                    {lider?.map((item, index) => (
-                      <option key={index} value={item.id} >
-                        {item.value}
-                      </option>
-                    )
-                    )
-                    }
-                    <option value={false} >Asignar rol de lider</option>
-                  </select>
-                  {usersWithoutGroup &&
-                    usersWithoutGroup.map((item, index) => (
-                      <div className="xln__conten__gestionEquipo" key={index}>
-                        <input className="xln__gestionEquipo__radio" type="radio" value={item.name} id={item.id} onClick={addUsersToGroup} />
-                        <img src={imagenUser}/>
-                        <h2>{item.name}</h2>
-                        <p>{item.email}</p>
-                      </div>
-                    ))
+              <div className="xlrn__crear-equipos__form" id="form" >
+                <input onChange={handleInputChange} name="name" type="text" placeholder="Nombre del equipo" />
+                
+                {usersWithoutGroup &&
+                  usersWithoutGroup.map((item, index) => (
+                    <div className="xln__conten__gestionEquipo" key={index}>
+                      <input className="xln__gestionEquipo__radio" type="radio" value={item.name} id={item.id} onClick={addUsersToGroup} />
+                      <img src={imagenUser} />
+                      <h2>{item.name}</h2>
+                      <p>{item.email}</p>
+                    </div>
+                  ))
+                }
+                <select placeholder="Agregar rol de lider" className="xlrn__asignar-rol" id="leader">
+                  {lider?.map((item, index) => (
+                    <option key={index} value={item.id} >
+                      {item.value}
+                    </option>
+                  )
+                  )
                   }
-                  {teamManagement ?
-                    <button className="xlrn__crear-equipos__form-button" onClick={redirect} value={teamManagement} >Gestion de equipos</button>
-                    : <button className="xlrn__crear-equipos__form-button" onClick={createTeams} >Crear equipo</button>
-                  }
-                </div>
-
+                  <option value={false} >Asignar rol de lider</option>
+                </select>
+                {teamManagement ?
+                  <button className="xlrn__crear-equipos__form-button" onClick={redirect} value={teamManagement} >Gestion de equipos</button>
+                  : <button className="xlrn__crear-equipos__form-button" onClick={createTeams} >Crear equipo</button>
+                }
               </div>
+
             </div>
+          </div>
         </div>
 
       </div>
