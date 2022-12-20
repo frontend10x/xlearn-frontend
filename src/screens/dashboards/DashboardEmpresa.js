@@ -84,6 +84,8 @@ export const DashboardEmpresa = () => {
     }
   }
 
+  console.log(createdTeams,'value')
+
   const soporte = () => {
       navigate('/contact')
   }

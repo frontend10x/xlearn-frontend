@@ -20,7 +20,7 @@ export const GestionDeEquipos = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-      }, [])
+    }, [])
 
     useEffect(() => {
         async function getEnterprisesGroup() {
@@ -52,7 +52,7 @@ export const GestionDeEquipos = () => {
                     {groups &&
                         groups.map((item, index) =>
                         (
-                            <div className="xlrn__informacion-equipos xlrn__informacion-equipos_interno">
+                            <div className="xlrn__informacion-equipos xlrn__informacion-equipos_interno" key={index} >
                                 <div className="xlrn__informacion-equipos-content" >
                                     <p className="xlrn__informacion-equipos-content_title">Equipo {item.id}</p>
                                     <h2>{item.name}</h2>
@@ -60,33 +60,34 @@ export const GestionDeEquipos = () => {
                                     <h5>Inicio: 05/03/2022</h5>
                                     <div className="xlrn__informacion-equipos-content-users" >
                                         <div className="xlrn" >
-                                            <div className="xln__content__info_gestionDeCupos" >
+                                            <div className="xln__content__info_gestionDeCupos " >
                                                 <div className="xln_info_gestionDeCupos" >
-                                                    <p className="text-center" >
-                                                        Usuario
-                                                    </p>
-                                                                        <p className="text-center" >
-                                                                            Progreso
-                                                                        </p>
-                                                    <ul>
-                                                        {
-                                                            item.users.map((items, index) => (
-                                                                <div key={index} className="d-flex" >
-                                                                    <h4>{items.name}</h4>
-                                                                    <div className="xln_info_gestionDeCupos" >
-                                                                        <div className="progress__bar__style">
-                                                                            <input type="range" className="range" />
-                                                                        </div>
+                                                    <div className="d-flex gap-5 " >
+                                                        <p className="fw-bold me-5 w-25 " >
+                                                            Usuarios
+                                                        </p>
+                                                        <p className=" w-25 ms-5 fw-bold  " >
+                                                            Progreso
+                                                        </p>
+                                                        {/* <p className=" text-end w-25 fw-bold ">
+                                                            Ultimo Ingreso
+                                                        </p> */}
+                                                    </div>
+                                                    {
+                                                        item.users.map((items, index) => (
+                                                            <div key={index} className="d-flex" >
+                                                                <h6 className="w-50" >{items.name}</h6>
+                                                                <div className="xln_info_gestionDeCupos" >
+                                                                    <div className="progress__bar__style ms-5 w-50 ">
+                                                                        <input type="range" className="range" /* value={item.progress} */ />
                                                                     </div>
                                                                 </div>
-                                                            ))
-                                                        }
-                                                    </ul>
-                                                </div>
-                                                <div className="xln_info_gestionDeCupos" >
-                                                    <p className="text-center" >
-                                                        Ultimo Ingreso
-                                                    </p>
+                                                                {/* <div className="me-5" >
+                                                                    time
+                                                                </div> */}
+                                                            </div>
+                                                        ))
+                                                    }
                                                 </div>
                                             </div>
                                         </div>
@@ -98,13 +99,13 @@ export const GestionDeEquipos = () => {
                     }
                 </div>
             </div>
-                <div className="xln__creacion-nuevo-equipo" >
-                    <div className="xln__creacion-nuevo-equipo-content" >
-                        <Image src={equiposIcon} className="ms-5" />
-                        <h2>Nuevo equipo</h2>
-                    </div>
-                    <button onClick={redirect} >Crear equipo</button>
+            <div className="xln__creacion-nuevo-equipo" >
+                <div className="xln__creacion-nuevo-equipo-content" >
+                    <Image src={equiposIcon} className="ms-5" />
+                    <h2>Nuevo equipo</h2>
                 </div>
+                <button onClick={redirect} >Crear equipo</button>
+            </div>
             <Footer />
         </div>
     )
