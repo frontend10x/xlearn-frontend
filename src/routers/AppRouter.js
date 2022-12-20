@@ -78,6 +78,8 @@ export const AppRouter = () => {
           <Route exact path="/gestion/cupos/disponibles" element={<GestionDeCupos />} />
           <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
           <Route exact path="/soporte" element={<Soporte />} />
+          <Route exact path="/profile/:name" element={<Perfil/>} />
+
 
         </Route>
         {/* RUTA DE EMPRESA */}

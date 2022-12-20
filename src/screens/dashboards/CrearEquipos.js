@@ -123,7 +123,7 @@ export const CrearEquipos = () => {
               <div className="xlrn__crear-equipos__form" id="form" >
                 <input onChange={handleInputChange} name="name" type="text" placeholder="Nombre del equipo" />
                 
-                {usersWithoutGroup &&
+                {usersWithoutGroup ?
                   usersWithoutGroup.map((item, index) => (
                     <div className="xln__conten__gestionEquipo" key={index}>
                       <input className="xln__gestionEquipo__radio" type="radio" value={item.name} id={item.id} onClick={addUsersToGroup} />
@@ -132,6 +132,7 @@ export const CrearEquipos = () => {
                       <p>{item.email}</p>
                     </div>
                   ))
+                  : <p style={{color:"#8894ab"}}  className="fw-bold" >Crea tus usuarios en asginar usuario de gestion de equipos</p>
                 }
                 <select placeholder="Agregar rol de lider" className="xlrn__asignar-rol" id="leader">
                   {lider?.map((item, index) => (
