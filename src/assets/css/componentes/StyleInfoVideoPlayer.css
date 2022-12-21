@@ -29,10 +29,13 @@
     height: 50px;
     width: 50px;
 }
-
+.border-end {
+    padding-right: 4%;
+}
 .description__infovideoplayer-content {
     background-color: var(--pearl);
-    height: 55vh;
+    height: auto;
+    padding-bottom: 3%;
 }
 
 .icon_manageSearch {

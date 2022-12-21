@@ -3885,7 +3885,11 @@ input.preguntas__diagnostico-checkbox-selected {
 /* Confirmar Ruta Fin*/
 
 /* Gestion de cupos (Usuarios) */
-
+.xlrn__crear-suarios__section.lxn__manejo__equipos .footer {
+  width: 100%;
+  padding-left: 20%;
+  height: 80vh;
+}
 .gestion__usuario-section .header__container.background {
   position: fixed !important;
   z-index: 9;
