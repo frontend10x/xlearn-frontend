@@ -127,7 +127,7 @@ export const InfoVideoPlayer = () => {
                                                     <div className="dashboard__lider-container_courses-card-content-body" >
                                                         <div className="d-flex justify-content-around" >
                                                             {/* <p>{item.time} de contenido</p>
-                                                <p>{item.user} de usuarios</p> */}
+                                                            <p>{item.user} de usuarios</p> */}
                                                         </div>
                                                         <h3>{item.name}</h3>
                                                         <p>{item.subtitle}</p>
