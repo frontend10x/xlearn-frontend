@@ -36,8 +36,8 @@ export const DescripcionEvaluacion = () => {
         <div className='description__evaluation-section' >
             <HeaderDashboard />
 
-            <Container className='' >
-                <div className='description__evaluation-container text-center mt-5 d-flex flex-column justify-content-center align-items-center ' >
+            <Container className='contenedor' >
+                <div className='description__evaluation-container text-center mt-5 d-flex flex-column justify-content-center align-items-center pt-5 pb-5 ' >
                     <p>¡Que lejos has llegado!</p>
                     <h1 className='fw-bold' >Valida tu conocimiento</h1>
                     <div className='evaluacion__icono-central' >

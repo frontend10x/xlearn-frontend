@@ -61,8 +61,8 @@ const VideoPlayer = ({videoCurrent, destroy, handlingProgress, pause = false}) =
     }
 
     return (
-        <div>
-            <h3 style={{color:'white'}}>{videoCurrent?.name}</h3>
+        <div className='ms-5 mt-5' >
+            <h3 className='ms-1' style={{color:'white'}}>{videoCurrent?.name}</h3>
             <div className="xln_player_course" data-vimeo-id={videoCurrent?.vimeoId} data-vimeo-defer id='my-video'></div>
         </div>
     )

@@ -4981,10 +4981,11 @@ p.xln_price_GDC span {
 }
 
 .video__reproduccion-container-player {
-  height: 666px;
+  /* height: 666px;
   width: 95%;
   position: relative;
-  margin: auto;
+  margin: auto; */
+  display: flex;
 }
 
 .xln_player_course {

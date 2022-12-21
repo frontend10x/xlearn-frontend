@@ -9,11 +9,14 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useForm } from '../hooks/useForm';
 import Swal from "sweetalert2";
+import { HeaderDashboard } from "../componentes/dashboards/HeaderDashboard";
+import { useSelector } from "react-redux";
 
 
 export const ContactoScreen = () => {
 
     const [countries, setCountries] = useState();
+    const { token, type } = useSelector(state => state.auth);
     const navigate = useNavigate();
     const [formValues, handleInputChange] = useForm({
         name: "",
@@ -24,12 +27,12 @@ export const ContactoScreen = () => {
     });
 
     const { name, phone, company, email, observation } = formValues;
-    
+
     useEffect(() => {
         // 👇️ scroll to top on page load
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-      }, []);
-    
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, []);
+
 
     useEffect(() => {
         async function countries() {
@@ -44,8 +47,12 @@ export const ContactoScreen = () => {
         countries();
     }, [])
 
-    const redirect = () => {
-        navigate('/plans/register')
+    const redirect = (e) => {
+        if (e.target.value === "inicio" && type === "Lider" ) {
+            navigate('/dashboard/lider')
+        } else {
+            navigate('/plans/register')
+        }
     }
 
     const contact = async (e) => {
@@ -65,7 +72,7 @@ export const ContactoScreen = () => {
 
     return (
         <div className="xlrn-contacto__section" >
-            <HeaderRegister />
+            <HeaderDashboard />
             <div className="xlrn-contacto__section-container" >
                 <div className="xlrn-contacto__section-banner" >
                     {/* <Image src={ bannerContact01 } alt="image__banner" /> */}
@@ -73,9 +80,15 @@ export const ContactoScreen = () => {
                         <div className="xln__title__bannerContact">
                             <h1>¡Ponte en contacto con nosotros y entrena a tu equipo!</h1>
                             <p>Es el momento de crear, proponer , generar ingresos y, sobre todo ,de innovar. Descubre y aprovecha el potencial de tu organización y desarrolla un plan de acción en torno al entrenamiento ¡Contáctanos!</p>
-                            <button onClick={redirect} className='w-25' >
-                                Registrarme
-                            </button>
+                            {token ?
+                                <button onClick={redirect} className='w-25' value="inicio" >
+                                    Volver a inicio
+                                </button>
+
+                                : <button onClick={redirect} className='w-25' value="registro" >
+                                    Registrarme
+                                </button>
+                            }
                         </div>
                     </div>
                     <div className="xlrn-contacto__section-banner__content" >
