@@ -109,7 +109,7 @@ export const InfoVideoPlayer = () => {
                                                 <button className="consultor__button " onClick={activeChatBox} >Modo consultor <span className="ms-5" >  </span> </button>
                                                 <Image src={arrowFront} alt="" className="icon_arrowFront mt-1" />
                                             </div>
-                                            <Image src={robot} alt="bot" className="ms-5 w-25 h-50" />
+                                            <Image src={robot} alt="bot" className="robot__icon" />
 
                                         </Col>
                                     </div>

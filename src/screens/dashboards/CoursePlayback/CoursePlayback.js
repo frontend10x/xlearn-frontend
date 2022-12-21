@@ -7,13 +7,15 @@ import { getLessons } from "../../../services/services";
 import VideoPlayer from "./components/VideoPlayer";
 import LessonSideMenu from "./components/LessonSideMenu";
 import { InfoVideoPlayer } from "../../../componentes/dashboards/InfoVideoPlayer";
-import { IconRutaPlayer, IconRutaExamen} from "../../../assets/img";
+import { IconRutaPlayer, IconRutaExamen } from "../../../assets/img";
 import { getProgress, storeProgress } from "../../../services/apis/progress.services";
+import { Col } from "react-bootstrap";
 
+import "../../../assets/css/screens/dashboards/StyleCoursePlayback.css";
 
 const CorusePlayback = () => {
-    const {course_id, name} = useParams()
-    const {token, id} = useSelector(state => state.auth);
+    const { course_id, name } = useParams()
+    const { token, id } = useSelector(state => state.auth);
     const [lessons, setLessons] = useState();
     const [videoCurrent, setVideoCurrent] = useState();
     const [progress, setProgress] = useState();
@@ -24,35 +26,35 @@ const CorusePlayback = () => {
     useEffect(() => {
         getVideos()
         consultProgress({
-            course_id : course_id,
-            user_id : id
-        }, true )
-    },[token, course_id])
-    
+            course_id: course_id,
+            user_id: id
+        }, true)
+    }, [token, course_id])
+
     useEffect(() => {
-        if(progress && lessons){
+        if (progress && lessons) {
             const currentLesson = progress?.progress?.find(prg => prg.current)
-            
+
             const currentIndex = progress?.progress?.findIndex(prg => prg.current)
 
-            const activeLesson = currentLesson?.percentage_completion === 100 
-                               ? lessons.at(currentIndex + 1) 
-                               : lessons.at(currentIndex === -1 ? 0 : currentIndex)
+            const activeLesson = currentLesson?.percentage_completion === 100
+                ? lessons.at(currentIndex + 1)
+                : lessons.at(currentIndex === -1 ? 0 : currentIndex)
 
             const progressCurrent = progress?.progress?.find(prg => prg?.lesson_id === activeLesson?.id)
 
             progress?.changeLesson && setVideoCurrent({
-                percentage : progressCurrent?.percentage_completion,
-                currentTime : progressCurrent?.advanced_current_time,
+                percentage: progressCurrent?.percentage_completion,
+                currentTime: progressCurrent?.advanced_current_time,
                 name: activeLesson?.name,
                 video: activeLesson?.player_embed_url,
-                vimeoId : activeLesson?.vimeo_id,
-                lessonId : activeLesson?.id
+                vimeoId: activeLesson?.vimeo_id,
+                lessonId: activeLesson?.id
             })
         }
         // 👇️ scroll to top on page load
-        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-    },[progress, lessons])
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }, [progress, lessons])
 
     const getVideos = async () => {
         const data = await getLessons(token, course_id);
@@ -62,23 +64,23 @@ const CorusePlayback = () => {
     }
 
     const changeVideo = ({ name, player_embed_url, vimeo_id, id, index }) => {
-        
+
         setVideoCurrent({
             index,
             name: name,
             video: player_embed_url,
-            vimeoId : vimeo_id,
-            lessonId : id
+            vimeoId: vimeo_id,
+            lessonId: id
         })
 
         setDestroy(true)
-        
+
     }
 
-    const handlingProgress = ({duration, percent, seconds}) => {
+    const handlingProgress = ({ duration, percent, seconds }) => {
 
         const payload = {
-            "course_id" : course_id,
+            "course_id": course_id,
             "user_id": id,
             "lesson_id": videoCurrent?.lessonId,
             "percentage": percent * 100,
@@ -87,12 +89,12 @@ const CorusePlayback = () => {
         }
         seconds && storeProgress(payload).then(() => {
             const change = (percent === 1)
-            consultProgress(payload, change)            
+            consultProgress(payload, change)
         }).catch(error => console.log(error))
     }
 
     const consultProgress = (payload, changeLesson = false) => {
-        getProgress(payload).then(({progress}) => {
+        getProgress(payload).then(({ progress }) => {
             progress = { progress, changeLesson }
             setProgress(progress)
         })
@@ -101,33 +103,36 @@ const CorusePlayback = () => {
     const redirect = () => {
         navigate(`/presentacion/evaluacion/${name}/${course_id}`);
     }
-    
+
     return (
         <div className="video__reproduccion-section" >
             <HeaderDashboard />
             <div className="video__reproduccion-container" >
-                <div className="video__reproduccion-content" >
-                <h2 style={{color:'white'}}>{name}</h2>
+                {/* <div className="video__reproduccion-content" >
+                    <h2 style={{ color: 'white' }}>{name}</h2>
                     <button>Comunidad</button>
-                </div>
+                </div> */}
                 <div className="d-flex">
                     <div className="video__reproduccion-container-player" >
-                    <VideoPlayer videoCurrent={videoCurrent} destroy={destroy} handlingProgress={handlingProgress}/>
-                    
-                    <div className="xlnMenu__icon__player">
-                        <p>Ruta</p>
-                        <img src={IconRutaPlayer}/>
-                    </div>
-                    {lessons?.map((video, key) => {
-                        let obj = progress?.progress?.find(prg => prg.lesson_id === video?.id  );
-                        return <LessonSideMenu 
-                                    progress={obj?.percentage_completion}    
-                                    key={key} index={key} 
-                                    video={video} 
+                        <Col md={11} >
+                            <VideoPlayer videoCurrent={videoCurrent} destroy={destroy} handlingProgress={handlingProgress} />
+                        </Col>
+                        <Col md={2} className="ms-4 mt-5 h-75" >
+                            <div className="xlnMenu__icon__player">
+                                <p className="ms-3" >Ruta</p>
+                                <img src={IconRutaPlayer} className="ms-3" />
+                            </div>
+                            {lessons?.map((video, key) => {
+                                let obj = progress?.progress?.find(prg => prg.lesson_id === video?.id);
+                                return <LessonSideMenu
+                                    progress={obj?.percentage_completion}
+                                    key={key} index={key}
+                                    video={video}
                                     changeVideo={changeVideo}
                                 />
-                    })}
-                    <button className="xln-btn-couseExamen mt-3" onClick={redirect} ><img src={IconRutaExamen}/></button>
+                            })}
+                            <button className="xln-btn-couseExamen mt-3 ms-3" onClick={redirect} ><img src={IconRutaExamen} /></button>
+                        </Col>
                     </div>
                 </div>
             </div>

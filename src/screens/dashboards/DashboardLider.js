@@ -82,7 +82,7 @@ export const DashboardLider = () => {
 
         <div className="xlrn__dashborad__lider-container-block">
           <div className="xlrn__dashboard__lider-block d-flex " >
-            {courseRoute &&
+            {courseRoute ?
 
               courseRoute.map((item, index) => (
                 <div className="xlrn__dashboard__lider-block-content d-flex" key={index} >
@@ -101,6 +101,7 @@ export const DashboardLider = () => {
                   </div>
                 </div>
               ))
+              : <p style={{color: "#8894ab"}} className="fw-bold" >Aun no tienes una ruta asignada</p>
             }
             {/* <div className="xlrn__dashboard__lider-block-content d-flex 5" >
               <Image src={Image_02} className="xlrn__dashboard__lider-block-image" />
