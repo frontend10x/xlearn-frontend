@@ -14,10 +14,12 @@ export const Score = () => {
     const { id, course_id,name } = useParams();
     const navigate = useNavigate();
     useEffect(() => {
+
         async function scores() {
             const response = await generateCertificate(token, id, course_id);
-            setScore(response.results.percentage)
-            setCorrectAnswers(response.results.correct_answers.length)
+            /* setScore(response.results.percentage) */
+            /* setCorrectAnswers(response.results.correct_answers.length) */
+            console.log(response, 'respuesta');
         }
         scores()
     }, [])
