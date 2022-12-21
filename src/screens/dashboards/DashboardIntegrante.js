@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDashboard";
 import { Image } from "react-bootstrap";
-import { 
+import {
   banner_cursos,
-  dashboard1, 
-  dashboard3, 
+  dashboard1,
+  dashboard3,
   dashboard2,
   construccion,
   XlearnLogo,
@@ -13,7 +13,8 @@ import {
   recomendation_01,
   recomendation_02,
   recomendation_03,
-  recomendation_04, } from "../../assets/img";
+  recomendation_04,
+} from "../../assets/img";
 
 import { useSelector } from "react-redux";
 import { Footer } from "../../componentes/Footer";
@@ -22,14 +23,15 @@ import { getUserCourseById } from "../../services/services";
 
 export const DashboardIntegrante = () => {
 
-  const { name, token, id } = useSelector(state => state.auth)
+  const { name, token, id } = useSelector(state => state.auth);
+  const [progress, setProgress] = useState(false);
   const navigate = useNavigate();
 
   const [course, setCourse] = useState([
-    { title: "Presentaciones efectivas de negocios", image:  recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
-    { title: "Modelación de negocios", image:  recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },
-    { title: "Diseño de propuesta de valor", image:  recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
-    { title: "Prototipado", image:  recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
+    { title: "Presentaciones efectivas de negocios", image: recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
+    { title: "Modelación de negocios", image: recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },
+    { title: "Diseño de propuesta de valor", image: recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
+    { title: "Prototipado", image: recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
   ]);
   const [courseRoute, setCourseRoute] = useState();
   const redirect = (e) => (
@@ -45,7 +47,11 @@ export const DashboardIntegrante = () => {
     getUserCourses()
   }, [])
 
-  console.log(courseRoute,'ruta de los cursos')
+  const evaluation = (e) => (
+    navigate(`/evaluacion/${e.target.id}`)
+  )
+
+  console.log(courseRoute, 'ruta de los cursos')
 
   return (
     <div className="dashboard__lider" >
@@ -55,7 +61,7 @@ export const DashboardIntegrante = () => {
         <div className="dashboard__lider-banner_content" >
           <h1>¡Hola {name}!</h1>
           <p><span>Continúa aprendiendo.</span> Mira la última actividad en tus cursos</p>
-           
+
         </div>
       </div>
 
@@ -66,23 +72,27 @@ export const DashboardIntegrante = () => {
 
         <div className="xlrn__dashborad__lider-container-block">
           <div className="xlrn__dashboard__lider-block d-flex " >
-              {courseRoute&&
+            {courseRoute.lenght > 0 ?
 
-                courseRoute.map((item, index) => (
-                  <div className="xlrn__dashboard__lider-block-content d-flex gap-4 " >
-                  
+              courseRoute.map((item, index) => (
+                <div className="xlrn__dashboard__lider-block-content d-flex" key={index} >
+
                   <Image src={item.file_path} className="xlrn__dashboard__lider-block-image" />
-                  <div className="xlrn__dashboard__lider-block-content-titles" key={index}>
-                  <p>Curso A</p>
-                  <h3>{item.name}</h3>
-                  <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
-                  <h4>Progreso: <span>40%</span></h4> | <h4> Lecciones: 6 </h4>
+                  <div className="xlrn__dashboard__lider-block-content-titles" >
+                    <p>Curso A</p>
+                    <h3>{item.name}</h3>
+                    <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
+                      <h4>Progreso: <span>0%</span></h4> | <h4> Lecciones: 0 </h4>
+                    </div>
+                    {progress ?
+                      <button onClick={evaluation} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Presentar</button>
+                      : <button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
+                    }
                   </div>
-                  <button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Ver curso</button>
-                </div> 
-            </div>
-                ))
-              }
+                </div>
+              ))
+              : <p style={{ color: "#8894ab" }} className="fw-bold" >Aun no tienes una ruta asignada</p>
+            }
             {/* <div className="xlrn__dashboard__lider-block-content d-flex gap-4" >
               <Image src={Image_02} className="xlrn__dashboard__lider-block-image" />
               <div className="xlrn__dashboard__lider-block-content-titles" >
