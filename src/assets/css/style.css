@@ -4930,6 +4930,7 @@ p.xln_price_GDC span {
   justify-content: space-around;
   align-items: center;
   bottom: 243px;
+  margin-top: 8%;
 }
 
 .xlrn__crear-suarios__section .footer {
@@ -4990,6 +4991,7 @@ p.xln_price_GDC span {
   position: relative;
   margin: auto; */
   display: flex;
+  padding-bottom: 3%;
 }
 
 .xln_player_course {

@@ -82,7 +82,7 @@ export const DashboardLider = () => {
 
         <div className="xlrn__dashborad__lider-container-block">
           <div className="xlrn__dashboard__lider-block d-flex " >
-            {courseRoute.length > 0 ?
+            {courseRoute ?
 
               courseRoute.map((item, index) => (
                 <div className="xlrn__dashboard__lider-block-content d-flex" key={index} >
