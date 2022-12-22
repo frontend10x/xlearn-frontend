@@ -20,21 +20,21 @@ export const LoginScreen = () => {
   const { email, password } = formValues;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
-  
-  useEffect(()=>{
+
+
+  useEffect(() => {
     if (type === "Empresa") {
       navigate('/dashboard/empresa');
-    } 
-    else if (type === "Lider" && diagnostic === true ) {
+    }
+    else if (type === "Lider" && diagnostic === true) {
       navigate('/dashboard/lider');
     }
     else if (type === "Lider") {
       navigate('/inicia/diagnostico');
-    }else if (type === "Integrante") {
+    } else if (type === "Integrante") {
       navigate('/dashboard/integrante');
     }
-  },[navigate, type, diagnostic])
+  }, [navigate, type, diagnostic])
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -49,31 +49,31 @@ export const LoginScreen = () => {
 
 
       localStorage.setItem('user_is_login', JSON.stringify({
-        login: true, 
+        login: true,
         user_name: data?.datosUsuario?.name
       }))
 
       localStorage.setItem('access_token', data?.token)
-      
+
       dispatch(login(
-        email, 
-        password, 
-        data?.token, 
-        data?.datosUsuario?.name, 
-        data?.datosUsuario?.roles.id, 
-        data?.datosUsuario?.id, 
-        data?.datosUsuario?.subcompanies_id, 
-        data?.datosUsuario?.groups['0']?.group_id, 
+        email,
+        password,
+        data?.token,
+        data?.datosUsuario?.name,
+        data?.datosUsuario?.roles.id,
+        data?.datosUsuario?.id,
+        data?.datosUsuario?.subcompanies_id,
+        data?.datosUsuario?.groups['0']?.group_id,
         data?.datosUsuario?.roles?.name,
         data?.datosUsuario?.diagnostic.status));
-      
+
     } catch (error) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Revisa que los datos sean correctos',
-            text: `${error?.response?.data?.message}`,
-            // footer: '<a href="">Why do I have this issue?</a>'
-          })
+      Swal.fire({
+        icon: 'error',
+        title: 'Revisa que los datos sean correctos',
+        text: `${error?.response?.data?.message}`,
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
     }
   };
 

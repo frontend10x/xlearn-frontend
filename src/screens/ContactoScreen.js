@@ -49,8 +49,11 @@ export const ContactoScreen = () => {
 
     const redirect = (e) => {
         if (e.target.value === "inicio" && type === "Lider" ) {
-            navigate('/dashboard/lider')
-        } else {
+            navigate('/dashboard/lider');
+        } else if (e.target.value === "inicio" && type === "Integrante" ) {
+            navigate('/dashboard/integrante');
+        } 
+        else {
             navigate('/plans/register')
         }
     }
@@ -176,7 +179,6 @@ export const ContactoScreen = () => {
                                     <div className="xlrn__contacto-formulario-group" >
                                         <p>Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta plataforma y otros propósitos descritos en nuestra política de privacidad.</p>
                                     </div>
-
                                 </form>
                             </div>
                         </div>

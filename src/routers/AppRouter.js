@@ -45,6 +45,7 @@ import { Perfil } from "../screens/dashboards/Perfil";
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
 
+
   return (
     <Router>
       <Routes>
@@ -78,7 +79,7 @@ export const AppRouter = () => {
           <Route exact path="/gestion/cupos/disponibles" element={<GestionDeCupos />} />
           <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
           <Route exact path="/soporte" element={<Soporte />} />
-          <Route exact path="/profile/:name" element={<Perfil/>} />
+          <Route exact path="/profile/:name" element={<Perfil />} />
 
 
         </Route>
@@ -116,7 +117,7 @@ export const AppRouter = () => {
             path="/project/diagnostic/training/areas"
             element={<SeleccionDeAreas />}
           />
-          <Route
+          {/* <Route
             exact
             path="/course/videoplayer/:name/:course_id"
             element={<CoursePlayback />}
@@ -128,15 +129,23 @@ export const AppRouter = () => {
           <Route exact path="/certificado/:course_id" element={<GenerarCertificado />} />
           <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
           <Route exact path="/soporte" element={<Soporte />} />
-          <Route exact path="/profile/:name" element={<Perfil/>} />
+          <Route exact path="/profile/:name" element={<Perfil />} /> */}
         </Route>
         {/* RUTA DEL LIDER */}
 
         {/* RUTA DEL INTEGRANTE */}
         <Route element={<IntegranteRoute token={token} type={type} />}>
+          <Route exact path="/dashboard/lider" element={<DashboardLider />} />
           <Route exact path="/dashboard/integrante" element={<DashboardIntegrante />} />
+          <Route exact path="/course/videoplayer/:name/:course_id" element={<CoursePlayback />} />
+          <Route exact path="/presentacion/evaluacion/:name/:course_id" element={<DescripcionEvaluacion />} />
+          <Route exact path="/evaluacion/:name/:course_id" element={<Evaluacion />} />
+          <Route exact path="/puntaje/:name/:id/:course_id" element={<Score />} />
+          <Route exact path="/certificado/:course_id" element={<GenerarCertificado />} />
+          <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
+          <Route exact path="/soporte" element={<Soporte />} />
+          <Route exact path="/profile/:name" element={<Perfil />} />
         </Route>
-
       </Routes>
     </Router>
   );

@@ -31,7 +31,7 @@ export const DashboardLider = () => {
     // { title: "Diseño de propuesta de valor", image: recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
     // { title: "Prototipado", image: recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
   ]);
-  const [courseRoute, setCourseRoute] = useState();
+  const [courseRoute, setCourseRoute] = useState([]);
   const [progress, setProgress] = useState(false);
 
   const redirect = (e) => (
@@ -50,13 +50,11 @@ export const DashboardLider = () => {
     async function getUserCourses() {
       const data = await getUserCourseById(token, id);
       setCourseRoute(data.response._embedded.courses)
-      console.log(data.response._embedded.courses,'respuesta de ruta')
     }
    
     async function getAllCourses() {
       const data = await getCourse();
       setCourse(data.response._embedded.courses)
-      console.log(data.response._embedded.courses,'cursos');
     }
 
     getUserCourses();
@@ -82,7 +80,7 @@ export const DashboardLider = () => {
 
         <div className="xlrn__dashborad__lider-container-block">
           <div className="xlrn__dashboard__lider-block d-flex " >
-            {courseRoute.length > 0 ?
+            {courseRoute ?
 
               courseRoute.map((item, index) => (
                 <div className="xlrn__dashboard__lider-block-content d-flex" key={index} >
