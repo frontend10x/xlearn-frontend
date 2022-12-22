@@ -4,54 +4,57 @@ import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDash
 import { Image } from "react-bootstrap";
 import {
   banner_cursos,
-  dashboard1,
-  dashboard3,
-  dashboard2,
-  construccion,
-  XlearnLogo,
-  Image_02,
   recomendation_01,
   recomendation_02,
   recomendation_03,
   recomendation_04,
 } from "../../assets/img";
-
 import { useSelector } from "react-redux";
 import { Footer } from "../../componentes/Footer";
 import { useNavigate } from "react-router-dom";
 import { getUserCourseById } from "../../services/services";
+import { getCourse } from "../../services/services";
 
 export const DashboardIntegrante = () => {
 
-  const { name, token, id } = useSelector(state => state.auth);
-  const [progress, setProgress] = useState(false);
+  const { name, token, id } = useSelector(state => state.auth)
   const navigate = useNavigate();
 
-  const [course, setCourse] = useState([
-    { title: "Presentaciones efectivas de negocios", image: recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
-    { title: "Modelación de negocios", image: recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },
-    { title: "Diseño de propuesta de valor", image: recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
-    { title: "Prototipado", image: recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
-  ]);
+  useEffect(() => {
+    // 👇️ scroll to top on page load
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
+  const [course, setCourse] = useState([]);
   const [courseRoute, setCourseRoute] = useState();
+  const [progress, setProgress] = useState(false);
+
   const redirect = (e) => (
     navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`)
   )
+
+  // const evaluation = (e) => (
+  //   navigate(`/evaluacion/${e.target.id}`)
+  // )
+
+  const support = () => {
+    navigate('/contact')
+  }
 
   useEffect(() => {
     async function getUserCourses() {
       const data = await getUserCourseById(token, id);
       setCourseRoute(data.response._embedded.courses)
     }
+   
+    async function getAllCourses() {
+      const data = await getCourse();
+      setCourse(data.response._embedded.courses)
+    }
 
-    getUserCourses()
+    getUserCourses();
+    getAllCourses();
   }, [])
-
-  const evaluation = (e) => (
-    navigate(`/evaluacion/${e.target.id}`)
-  )
-
-  console.log(courseRoute, 'ruta de los cursos')
 
   return (
     <div className="dashboard__lider" >
@@ -76,7 +79,7 @@ export const DashboardIntegrante = () => {
 
               courseRoute.map((item, index) => (
                 <div className="xlrn__dashboard__lider-block-content d-flex" key={index} >
-
+                  {console.log(item,'valores')}
                   <Image src={item.file_path} className="xlrn__dashboard__lider-block-image" />
                   <div className="xlrn__dashboard__lider-block-content-titles" >
                     <p>Curso A</p>
@@ -84,16 +87,16 @@ export const DashboardIntegrante = () => {
                     <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
                       <h4>Progreso: <span>0%</span></h4> | <h4> Lecciones: 0 </h4>
                     </div>
-                    {progress ?
-                      <button onClick={evaluation} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Presentar</button>
-                      : <button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
-                    }
+                    <button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
+                    {/* {progress &&
+                      // <button onClick={evaluation} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Presentar</button> : 
+                    } */}
                   </div>
                 </div>
               ))
-              : <p style={{ color: "#8894ab" }} className="fw-bold" >Aun no tienes una ruta asignada</p>
+              : <p style={{color: "#8894ab"}} className="fw-bold" >Aun no tienes una ruta asignada</p>
             }
-            {/* <div className="xlrn__dashboard__lider-block-content d-flex gap-4" >
+            {/* <div className="xlrn__dashboard__lider-block-content d-flex 5" >
               <Image src={Image_02} className="xlrn__dashboard__lider-block-image" />
               <div className="xlrn__dashboard__lider-block-content-titles" >
                 <p>Curso B</p>
@@ -108,22 +111,21 @@ export const DashboardIntegrante = () => {
         </div>
       </div>
 
-      <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
 
+      <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
       <div className="dashboard__lider-container_courses" >
         {course &&
           course.map((item, index) => (
             <div key={index} className="dashboard__lider-container_courses-card" >
-              <Image src={item.image} className="img-recomendation-xln" />
+              <Image src={item.file_path} className="img-recomendation-xln" />
               <div className="dashboard__lider-container_courses-card-content" >
                 <div className="dashboard__lider-container_courses-card-content-body" >
                   <div className="d-flex justify-content-around" >
-                    <p>{item.time} de contenido</p>
-                    <p>{item.user} de usuarios</p>
+                    {/* <p>{item.time} de contenido</p>
+                    <p>{item.user} de usuarios</p> */}
                   </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.subtitle}</p>
-                  <button className="dashboard__lider-container_courses-card-content_button" onClick={redirect} >Ingresar</button>
+                  <h3>{item.name}</h3>
+                  <button className="dashboard__lider-container_courses-card-content_button" value={item.name} id={item.id} onClick={redirect} >Ingresar</button>
                 </div>
               </div>
             </div>
@@ -144,7 +146,7 @@ export const DashboardIntegrante = () => {
           <div className="dashboard__lider-container-help-content" >
             <h1>¿Necesitas Asesoría?</h1>
             <p>¿Tienes dudas? Dejanos tus preguntas, comentarios o sugerencias y pronto nos pondremos en contacto contigo</p>
-            <button>Ingresar</button>
+            <button onClick={support} >Ingresar</button>
           </div>
         </div>
       </div>
