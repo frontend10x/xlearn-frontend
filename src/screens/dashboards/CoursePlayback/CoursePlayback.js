@@ -114,10 +114,10 @@ const CorusePlayback = () => {
                 </div> */}
                 <div className="d-flex">
                     <div className="video__reproduccion-container-player" >
-                        <Col md={12} >
+                        <Col md={12} className="w-100" >
                             <VideoPlayer videoCurrent={videoCurrent} destroy={destroy} handlingProgress={handlingProgress} />
                         </Col>
-                        <Col md={2} className="ms-4 mt-5 h-75" >
+                        <Col md={1} className="mt-5 h-75" >
                             <div className="xlnMenu__icon__player">
                                 <p className="ms-3" >Ruta</p>
                                 <img src={IconRutaPlayer} className="ms-3" />

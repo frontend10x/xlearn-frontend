@@ -40,7 +40,7 @@ body {
   border: none;
   background-color: transparent;
   position: relative;
-  top: 30px;
+  top: 15px;
   left: 60px;
 }
 
@@ -76,7 +76,7 @@ button.burg-toggle i {
 .header__logo {
   position: absolute;
   left: 130px;
-  top: 20px;
+  top: 25px;
 }
 
 .header .logo img {
