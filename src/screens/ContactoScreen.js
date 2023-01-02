@@ -48,11 +48,14 @@ export const ContactoScreen = () => {
     }, [])
 
     const redirect = (e) => {
-        if (e.target.value === "inicio" && type === "Lider" ) {
+        if (e.target.value === "inicio" && type === "Empresa" ) {
+            navigate('/dashboard/empresa');
+        } else if (e.target.value === "inicio" && type === "Lider" ) {
             navigate('/dashboard/lider');
-        } else if (e.target.value === "inicio" && type === "Integrante" ) {
+        }
+         else if (e.target.value === "inicio" && type === "Integrante" ) {
             navigate('/dashboard/integrante');
-        } 
+        }
         else {
             navigate('/plans/register')
         }

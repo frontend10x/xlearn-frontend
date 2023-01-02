@@ -3390,10 +3390,9 @@ input.preguntas__diagnostico-checkbox-selected {
   margin: auto;
 }
 
-/* .dashboard__lider-container_courses {
-    left: 240px;
-    width: 50%;
-} */
+.dashboard__lider-container_courses {
+  height: 70vh;
+}
 
 .dashboard__lider-container_courses {
   position: relative;

@@ -114,7 +114,7 @@ const CorusePlayback = () => {
                 </div> */}
                 <div className="d-flex">
                     <div className="video__reproduccion-container-player" >
-                        <Col md={11} >
+                        <Col md={12} >
                             <VideoPlayer videoCurrent={videoCurrent} destroy={destroy} handlingProgress={handlingProgress} />
                         </Col>
                         <Col md={2} className="ms-4 mt-5 h-75" >

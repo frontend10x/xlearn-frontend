@@ -120,7 +120,7 @@ export const CompraUsuarios = () => {
                     ))
                   }
                 </select>
-                <button>+ 20 usuarios</button>
+                {/* <button>+ 20 usuarios</button> */}
               </div>
               <label>Tiempo de suscripción</label>
 
@@ -137,7 +137,7 @@ export const CompraUsuarios = () => {
                     ))
                   }
                 </select>
-                <button>+ 24 Meses</button>
+                {/* <button>+ 24 Meses</button> */}
               </div>
               <div className="compra-usuarios__form-inputs__data" >
                 {/* <div className="compra-usuarios__form-inputs__data-container" >

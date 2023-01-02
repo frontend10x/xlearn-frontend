@@ -126,7 +126,7 @@ export const CrearEquipos = () => {
                 {usersWithoutGroup ?
                   usersWithoutGroup.map((item, index) => (
                     <div className="xln__conten__gestionEquipo" key={index}>
-                      <input className="xln__gestionEquipo__radio" type="radio" value={item.name} id={item.id} onClick={addUsersToGroup} />
+                      <input className="xln__gestionEquipo__radio" type="checkbox" value={item.name} id={item.id} onClick={addUsersToGroup} />
                       <img src={imagenUser} />
                       <h2>{item.name}</h2>
                       <p>{item.email}</p>

@@ -126,7 +126,8 @@ export const EmpresaFormulario = () => {
         quotas,
         password,
         password_confirmation,
-        observation
+        observation,
+        nit
       );
       Swal.fire({
         icon: 'success',
@@ -148,7 +149,8 @@ export const EmpresaFormulario = () => {
           quotas,
           password,
           password_confirmation,
-          observation
+          observation,
+          nit
         )
       );
       
@@ -191,8 +193,8 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group">
             <p>
-              NIT <span>*</span>
-            </p>
+              NIT <span>*</span> (Sin digito de verificacion)
+                </p>
             <input
               name="nit"
               value={nit}
