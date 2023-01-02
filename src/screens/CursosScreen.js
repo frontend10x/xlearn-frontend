@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { HeaderRegister } from "../componentes/HeaderRegister";
 import { Footer } from "../componentes/Footer";
 import { Image } from "react-bootstrap";
 import {
@@ -12,6 +11,7 @@ import {
 } from "../assets/img";
 import { getCourse } from "../services/services";
 import { useNavigate } from "react-router-dom";
+import { HeaderDashboard } from "../componentes/dashboards/HeaderDashboard";
 
 export const CursosScreen = () => {
   const [courses, setCourses] = useState([]);
@@ -48,7 +48,7 @@ export const CursosScreen = () => {
 
   return (
     <div className="cursos__section">
-      <HeaderRegister />
+      <HeaderDashboard />
       <div className="cursos__container">
 
         <div className="cursos__filter-container">

@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { HeaderRegister } from "../componentes/HeaderRegister";
 import { useParams } from 'react-router-dom'
 import { getCourse, getCourseDescription, getLessons } from '../services/services'
 import { Image } from 'react-bootstrap'
@@ -14,6 +13,7 @@ import {
 import { Footer } from '../componentes/Footer'
 
 import { useNavigate } from "react-router-dom";
+import { HeaderDashboard } from '../componentes/dashboards/HeaderDashboard';
 
 export const InfoCourse = () => {
 
@@ -60,7 +60,7 @@ export const InfoCourse = () => {
 
     return (
         <div className='xln__info_courses' >
-            <HeaderRegister />
+            <HeaderDashboard />
 
             <div className="hero">
                 <div className="row align-items-center">

@@ -1,9 +1,9 @@
 import React,{useEffect} from "react";
-import { HeaderRegister } from "../componentes/HeaderRegister";
 import {useNavigate } from "react-router-dom";
 import { Footer } from "../componentes/Footer";
 import { Image } from "react-bootstrap";
 import { banner_empresa01, empresas_contacto, empresas_image, Image_01, platformImage, playButton, empresa_img, } from "../assets/img";
+import { HeaderDashboard } from "../componentes/dashboards/HeaderDashboard";
 
 export const EmpresaScreen = () => {
 
@@ -28,7 +28,7 @@ export const EmpresaScreen = () => {
 
   return (
     <div className="empresas__section">
-      <HeaderRegister />
+      <HeaderDashboard />
       <div className="empresas__banner">
         <Image
           src={banner_empresa01}

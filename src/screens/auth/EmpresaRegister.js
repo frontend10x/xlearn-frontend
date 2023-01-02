@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 import { registerbanner } from "../../assets/img";
-import { HeaderRegister } from "../../componentes/HeaderRegister";
 import { Footer } from "../../componentes/Footer";
 import { EmpresaFormulario } from "../../componentes/EmpresaFormulario";
+import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 
 export const EmpresasRegister = () => {
   
@@ -13,7 +13,7 @@ export const EmpresasRegister = () => {
 
   return (
     <div className="planes-register">
-      <HeaderRegister />
+      <HeaderDashboard />
       <div className="planes__register-banner"  style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.675)), url("${registerbanner}")` }}>
 
         <div className="planes__register-content">
