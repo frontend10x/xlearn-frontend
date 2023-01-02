@@ -60,16 +60,16 @@ export const DashboardEmpresa = () => {
 
     }
 
-    // async function getGroups() {
-    //   try {
-    //     const data = await getEnterpriseGroups(token, subcompanie_id)
-    //     setCreatedTeams(data.groups["hc:length"]);
-    //   } catch (error) {
-    //     console.error(error,'error 2')        
-    //   }
-    // }
+    async function getGroups() {
+      try {
+        const data = await getEnterpriseGroups(token, subcompanie_id)
+        setCreatedTeams(data.groups["hc:length"]);
+      } catch (error) {
+        console.error(error,'error 2')        
+      }
+    }
     getQuotas();
-    // getGroups();
+    getGroups();
   }, [token, subcompanie_id])
 
   const redirect = (e) => {

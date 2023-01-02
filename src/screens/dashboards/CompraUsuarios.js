@@ -10,7 +10,6 @@ import WebCheckout from "../../componentes/Commons/Wompi/WebCheckout";
 
 export const CompraUsuarios = () => {
   const { token, name, email, subcompanie_id } = useSelector(state => state.auth)
-  const subCompany = subcompanie_id.subcompanies_id;
   const [places, setPlaces] = useState([
     // { label: 1, value: 1 },
     // { label: 2, value: 2 },
@@ -78,8 +77,7 @@ export const CompraUsuarios = () => {
   const calculatePrice = async (e) => {
     setDisabled(true);
     e.preventDefault();
-    const data = await makePayment(token, name, email, amount_user, amount_time, coupon, subCompany);
-    console.log(data)
+    const data = await makePayment(token, name, email, amount_user, amount_time, coupon, subcompanie_id);
     setPrice(data.payment_details);
     setTimeout(() => {
       setDisabled(false);
@@ -122,7 +120,7 @@ export const CompraUsuarios = () => {
                     ))
                   }
                 </select>
-                <button>+ 20 usuarios</button>
+                {/* <button>+ 20 usuarios</button> */}
               </div>
               <label>Tiempo de suscripción</label>
 
@@ -139,7 +137,7 @@ export const CompraUsuarios = () => {
                     ))
                   }
                 </select>
-                <button>+ 24 Meses</button>
+                {/* <button>+ 24 Meses</button> */}
               </div>
               <div className="compra-usuarios__form-inputs__data" >
                 {/* <div className="compra-usuarios__form-inputs__data-container" >
@@ -184,11 +182,30 @@ export const CompraUsuarios = () => {
               Confirmar compra
             </button>
             <p className="container__price-total__terms" >
-            Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta web y otros propósitos descritos en nuestra política de privacidad. He leído y estoy de acuerdo con los <a href="#">términos y condiciones</a> de la web.
+            Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta web y otros propósitos descritos en nuestra política de privacidad. He leído y estoy de acuerdo con los<a type="button" class="ms-1" data-bs-toggle="modal" data-bs-target="#pagoModal"> términos y condiciones </a> de la web.
             </p>
           </div>
         </div>
       </div>
+
+
+<div class="modal fade" id="pagoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
       <Footer />
     </div>
     </>

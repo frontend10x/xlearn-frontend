@@ -31,3 +31,8 @@
     color: var(--blueDark);
     font-size: 16px;
 }
+
+.title_fail {
+    color: red;
+    font-weight: bold;
+}
