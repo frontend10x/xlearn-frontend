@@ -3884,7 +3884,11 @@ input.preguntas__diagnostico-checkbox-selected {
 /* Confirmar Ruta Fin*/
 
 /* Gestion de cupos (Usuarios) */
-
+.xlrn__crear-suarios__section.lxn__manejo__equipos .footer {
+  width: 100%;
+  padding-left: 20%;
+  height: 80vh;
+}
 .gestion__usuario-section .header__container.background {
   position: fixed !important;
   z-index: 9;
@@ -4925,6 +4929,7 @@ p.xln_price_GDC span {
   justify-content: space-around;
   align-items: center;
   bottom: 243px;
+  margin-top: 8%;
 }
 
 .xlrn__crear-suarios__section .footer {
@@ -4985,6 +4990,7 @@ p.xln_price_GDC span {
   position: relative;
   margin: auto; */
   display: flex;
+  padding-bottom: 3%;
 }
 
 .xln_player_course {

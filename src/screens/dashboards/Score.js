@@ -19,6 +19,7 @@ export const Score = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+
         async function scores() {
             const response = await generateCertificate(token, id, course_id);
             setStatus(response?.status);

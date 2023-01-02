@@ -38,7 +38,7 @@ export const GestionDeEquipos = () => {
     }
 
     return (
-        <div className="xlrn__crear-suarios__section" >
+        <div className="xlrn__crear-suarios__section lxn__manejo__equipos" >
             <HeaderDashboard />
             <div className="xlrn__crear-usuarios__container" >
                 <div className="xlrn__crear-usuarios__nav" >
