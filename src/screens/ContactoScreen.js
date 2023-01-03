@@ -85,7 +85,7 @@ export const ContactoScreen = () => {
                     <div className="xln__content__bannerContact" style={{ backgroundImage: `url(${bannerContact01})` }}>
                         <div className="xln__title__bannerContact">
                             <h1>¡Ponte en contacto con nosotros y entrena a tu equipo!</h1>
-                            <p>Es el momento de crear, proponer , generar ingresos y, sobre todo ,de innovar. Descubre y aprovecha el potencial de tu organización y desarrolla un plan de acción en torno al entrenamiento ¡Contáctanos!</p>
+                            <p>Es el momento de crear, proponer , generar ingresos y, sobre todo de innovar. Descubre y aprovecha el potencial de tu organización y desarrolla un plan de acción en torno al entrenamiento ¡Contáctanos!</p>
                             {token ?
                                 <button onClick={redirect} className='w-25' value="inicio" >
                                     Volver a inicio
