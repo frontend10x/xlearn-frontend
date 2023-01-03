@@ -8,7 +8,7 @@ const LessonSideMenu = ({progress, index, video, changeVideo}) => {
     
     const tooltip = (
         <Tooltip id="tooltip">
-          <strong>{index + 1 }:</strong> {video?.name}.
+          <strong>{video?.name}.</strong>
         </Tooltip>
     );
 

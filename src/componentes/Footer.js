@@ -12,9 +12,9 @@ export const Footer = () => {
     navigate('/enterprises')
   }
 
-  const empresa = () => {
+  /* const empresa = () => {
     navigate('/enterprises')
-  }
+  } */
 
   const planes = () => {
     navigate('/plans/register')
@@ -24,10 +24,10 @@ export const Footer = () => {
     navigate('/contact')
   }
 
-  const ayuda = () => {
+  /* const ayuda = () => {
     navigate('/informacion/ayuda')
   }
-
+ */
   const privacidad = () => {
     navigate('/politicas/privacidad')
   }
@@ -48,14 +48,14 @@ export const Footer = () => {
             <div className="footer__group">
               <Image src={XlearnLogo} alt="logo" className="footer__image" />
               <p className="footer__logo-info_title" >
-                  Somos una plataforma pensada para empresas,coorporativa, y con enfasis en el entrenamiento de equipos de trabajo para el desarrollo de proyectos en temas como: innovación, sostenibilidad, transformación, digital, etc
+              Somos una plataforma pensada para empresas, corporativa, y con énfasis en el entrenamiento de equipos de trabajo para el desarrollo de proyectos en temas como: innovación, sostenibilidad, transformación digital, etc.
               </p>
             </div>
 
             <div className="footer__group margins ">
               <h5>Compañia</h5>
               <p className="link-footer" onClick={nosotros}>Nosotros</p>
-              <p className="link-footer" onClick={empresa} >Empresas</p>
+              {/* <p className="link-footer" onClick={empresa} >Empresas</p> */}
             </div>
 
             <div className="footer__group margins ">
@@ -66,7 +66,7 @@ export const Footer = () => {
 
             <div className="footer__group margins">
               <h5>Contáctanos</h5>
-              <p className="link-footer">FAQ</p>
+              {/* <p className="link-footer">FAQ</p> */}
               <p className="link-footer" onClick={soporte}>Soporte</p>
             </div>
 
@@ -88,7 +88,7 @@ export const Footer = () => {
               <p>&copy; Xlearn,by 10XThinking .2022</p>
 
             <div className="footer__option" >
-              <p className="link-footer" onClick={ayuda}>Ayuda</p>
+              {/* <p className="link-footer" onClick={ayuda}>Ayuda</p> */}
               <p className="link-footer" onClick={privacidad}>Privacidad</p>
               <p className="link-footer" onClick={terminos}>Términos</p>
             </div>

@@ -65,7 +65,7 @@ export const Banner = () => {
           <div className="carousel-item active">
             <Image src={Slider_01} className="d-block w-100" alt="..." />
             <div className="content__banner-info">
-              <p>Competencias y Proyectos</p>
+              <p>Competencias y proyectos</p>
               <h1>
                 Xlearn:
                 <span>
@@ -78,7 +78,7 @@ export const Banner = () => {
           <div className="carousel-item">
             <Image src={Slider_02} className="d-block w-100" alt="..." />
             <div className="content__banner-info">
-              <p>Competencias y Proyectos</p>
+              <p>Competencias y proyectos</p>
               <h1>
                 Xlearn:
                 <span>
@@ -91,7 +91,7 @@ export const Banner = () => {
           <div className="carousel-item">
             <Image src={Slider_03} className="d-block w-100" alt="..." />
             <div className="content__banner-info">
-              <p>Competencias y Proyectos</p>
+              <p>Competencias y proyectos</p>
               <h1>
                 Xlearn:
                 <span>

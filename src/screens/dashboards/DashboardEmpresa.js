@@ -144,7 +144,7 @@ export const DashboardEmpresa = () => {
                     <div className="dashboard__block-content">
                       <Image src={cuposIcon} />
                       <button className="dashboard__block-button" onClick={redirect} value="users">
-                        Administrar Cupos
+                        Administrar cupos
                       </button>
                     </div>
                     {quotas ?
@@ -239,7 +239,7 @@ export const DashboardEmpresa = () => {
                 <div className="dashboard__support-content">
                   <h1>¿Necesitas ayuda?</h1>
                   <p>
-                    Tienes dudas? Dejanos ts preguntas, comentarios o sugerencias y pronto nos pondremos en contacto
+                    ¿Tienes dudas?  Déjanos tus preguntas, comentarios o sugerencias y pronto nos pondremos en contacto 
                   </p>
                   <button onClick={soporte} className="dashboard__support-button">
                     Ir a soporte
