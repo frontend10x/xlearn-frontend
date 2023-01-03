@@ -134,7 +134,7 @@ export const LoginScreen = () => {
                   <p className="xln-textRecordarme-aling">Recordarme</p>
                   <button className="login__remind-button" onClick={redirect} >
                     {" "}
-                    ¿Olvidaste Tu Contraseña?
+                    ¿Olvidaste tu contraseña?
                   </button>
                 </div>
 

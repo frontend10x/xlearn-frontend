@@ -3310,11 +3310,57 @@ input.preguntas__diagnostico-checkbox-selected {
 .section_cta_de_curso .col-sm img {
   width: 100%;
   position: relative;
-  top: -150px;
+  top: -50px;
 }
 
+.xln__info_courses .modal.show .modal-dialog {
+  transform: none;
+  max-width: 80%;
+}
+.xln__info_courses .modal-dialog iframe {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
 .section_descripction_course {
   padding-bottom: 15%;
+}
+.section_descripction_course button {
+  background: var(--blueDark);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.section_descripction_course button::before {
+  content: '▶';
+  position: relative;
+  left: 0;
+  border-radius: 21px;
+  padding-left: 8px;
+  padding-top: 7px;
+  padding-right: 7px;
+  padding-bottom: 7px;
+  left: -125px;
+  border: 2px solid #fff;
+  font-size: 10px;
+}
+.section_descripction_course .col-md-10 div {
+  padding-top: 11px;
+}
+.section_descripction_course .col-md-10 div::before {
+  content: '🔒︎';
+  position: relative;
+  left: 0;
+  border-radius: 21px;
+  padding-left: 8px;
+  padding-top: 7px;
+  padding-right: 7px;
+  padding-bottom: 7px;
+  font-size: 10px;
 }
 
 .xln__info_courses .dashboard__lider-container_courses-card-content p {
@@ -3403,7 +3449,20 @@ input.preguntas__diagnostico-checkbox-selected {
   overflow: scroll;
   overflow-y: hidden;
 }
-
+.xln__info_courses .dashboard__lider-container_courses {
+  display: flex;
+  height: auto;
+  margin: auto;
+  overflow: scroll;
+  overflow-y: hidden;
+  position: relative;
+  top: 150px;
+  width: 90%;
+  margin-bottom: 300px;
+}
+.xln__info_courses .dashboard__lider-container_courses-card-content-body {
+  height: 70%;
+}
 
 .dashboard__lider-container_courses-card {
   padding: 1%;
