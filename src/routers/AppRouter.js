@@ -55,13 +55,13 @@ export const AppRouter = () => {
         <Route exact path="/plans/register" element={<EmpresasRegister />} />
         <Route exact path="/enterprises" element={<EmpresaScreen />} />
         <Route exact path="/login" element={<LoginScreen />} />
-        <Route exact path="/login/:id" element={<LoginScreen />} />
         <Route exact path="/contact" element={<ContactoScreen />} />
         <Route exact path="/course/info/:id" element={<InfoCourse />} />
         <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
         <Route exact path="/informacion/ayuda" element={<Ayuda />} />
         <Route exact path="/recuperacion/contrasena" element={<ForgotPassword />} />
         <Route exact path="/recuperacion/:id" element={<RecuperarPassword />} />
+        <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad/>} />
 
         {/* RUTA DE EMPRESA */}
         <Route element={<EmpresasRoute token={token} type={type} />}>
@@ -77,7 +77,6 @@ export const AppRouter = () => {
           <Route exact path="/gestion/equipo" element={<CrearEquipos />} />
           <Route exact path="/manejo/equipos" element={<GestionDeEquipos />} />
           <Route exact path="/gestion/cupos/disponibles" element={<GestionDeCupos />} />
-          <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
           <Route exact path="/soporte" element={<Soporte />} />
           <Route exact path="/profile/:name" element={<Perfil />} />
 
