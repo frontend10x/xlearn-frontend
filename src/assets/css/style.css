@@ -4870,6 +4870,7 @@ p.xln_price_GDC span {
   background: #fff;
   padding: 30px;
   border-radius: 10px;
+  height: 55vh;
 }
 
 .xln_info_gestionDeCupos ul li:nth-child(even) {background: #fff;}

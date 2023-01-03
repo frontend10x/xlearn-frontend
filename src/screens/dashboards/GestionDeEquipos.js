@@ -79,7 +79,7 @@ export const GestionDeEquipos = () => {
                                                                 <h6 className="w-50" >{items.name}</h6>
                                                                 <div className="xln_info_gestionDeCupos" >
                                                                     <div className="progress__bar__style ms-5 w-50 ">
-                                                                        <input type="range" className="range" /* value={item.progress} */ />
+                                                                        <input type="range" className="range" value={0} />
                                                                     </div>
                                                                 </div>
                                                                 {/* <div className="me-5" >

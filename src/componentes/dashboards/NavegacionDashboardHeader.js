@@ -26,7 +26,7 @@ export const NavegacionDashboardHeader = () => {
 
       {type === "Empresa" &&
         <div className="navegacion">
-          <Nav id="navbar" className="navbar mt-1">
+          <Nav id="navbar" className="navbar mt-1 ms-auto">
             <NavLink className="nav-link " to="/dashboard/empresa">
 
             </NavLink>
@@ -66,7 +66,7 @@ export const NavegacionDashboardHeader = () => {
       }
       {type === "Lider" &&
         <div className="navegacion">
-          <Nav id="navbar" className="navbar">
+          <Nav id="navbar" className="navbar mt-1 ms-auto ">
             <NavLink className="nav-link " to="/dashboard/lider">
               Inicio
             </NavLink>
@@ -106,7 +106,7 @@ export const NavegacionDashboardHeader = () => {
       }
       {type === "Integrante" &&
         <div className="navegacion">
-          <Nav id="navbar" className="navbar">
+          <Nav id="navbar" className="navbar mt-1 ms-auto ">
             <NavLink className="nav-link " to="/dashboard/empresa">
               Inicio
             </NavLink>
