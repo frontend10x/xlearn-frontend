@@ -16,7 +16,7 @@ export const PoliticasPrivacidad = () => {
     return (
         <div className='politicas__prvacidad-section' >
             <HeaderDashboard />
-            <Container className="" >
+            <Container className="politicas__privacidad-container" >
 
                 <h3 className="fw-bold" >
                     Aviso de privacidad para los usuarios

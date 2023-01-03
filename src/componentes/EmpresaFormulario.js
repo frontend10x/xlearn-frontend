@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "../actions/loginactions";
 import { useForm } from "../hooks/useForm";
+import { useNavigate } from "react-router-dom"; 
 import {
   getContent,
   getCountrys,
@@ -10,6 +11,7 @@ import {
   registerPost,
 } from "../services/services";
 import Swal from "sweetalert2";
+
 
 export const EmpresaFormulario = () => {
   const [countries, setCountries] = useState();
@@ -28,7 +30,9 @@ export const EmpresaFormulario = () => {
     // { label: 9, value: 9 },
     // { label: 10, value: 10 },
   ]);
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function countries() {
@@ -163,6 +167,10 @@ export const EmpresaFormulario = () => {
       })
     }
   };
+
+  const privacidad = () => {
+    navigate('/politicas/privacidad')
+  }
 
   return (
     <div className="planes__form-content">
@@ -372,7 +380,7 @@ export const EmpresaFormulario = () => {
             />
           </div>
           <button className="planes__formulario-button">Registrarme</button>
-          <p className="xln__register_text_TyC">Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta plataforma y otros propósitos descritos en nuestra <a href="#">política de privacidad.</a></p>
+          <p className="xln__register_text_TyC">Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta plataforma y otros propósitos descritos en nuestra <a href="#" onClick={privacidad}>Política de privacidad.</a></p>
         </div>
       </form>
     </div>
