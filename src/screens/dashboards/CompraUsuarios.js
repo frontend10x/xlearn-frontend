@@ -182,21 +182,21 @@ export const CompraUsuarios = () => {
                 Confirmar compra
               </button>
               <p className="container__price-total__terms" >
-                Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta web y otros propósitos descritos en nuestra política de privacidad. He leído y estoy de acuerdo con los<a type="button" class="ms-1" data-bs-toggle="modal" data-bs-target="#pagoModal"> términos y condiciones </a> de la web.
+                Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta web y otros propósitos descritos en nuestra política de privacidad. He leído y estoy de acuerdo con los<a type="button" className="ms-1" data-bs-toggle="modal" data-bs-target="#pagoModal"> términos y condiciones </a> de la web.
               </p>
             </div>
           </div>
         </div>
 
 
-        <div class="modal fade" id="pagoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Politica de uso de los cursos y del portal Xlearn</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div className="modal fade" id="pagoModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog modal-fullscreen">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">Politica de uso de los cursos y del portal Xlearn</h5>
+                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body h-100 ">
+              <div className="modal-body h-100 ">
                 
 
                   POLITICA DE USO DEL PORTAL WEB XLEARN
@@ -457,9 +457,9 @@ export const CompraUsuarios = () => {
 
                 
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                <button type="button" data-bs-dismiss="modal" class="btn btn-success">Aceptar</button>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                <button type="button" data-bs-dismiss="modal" className="btn btn-success">Aceptar</button>
               </div>
             </div>
           </div>

@@ -53,9 +53,11 @@ export const DashboardEmpresa = () => {
     async function getQuotas() {
       try {
         const data = await getEnterpriseQuotas(token, subcompanie_id)
+        console.log(data)
         setQuotas(data.quotas);
       } catch (error) {
         console.error(error, 'error')
+        setQuotas(0);
       }
 
     }
@@ -73,6 +75,7 @@ export const DashboardEmpresa = () => {
   }, [token, subcompanie_id])
 
   const redirect = (e) => {
+    console.log(e.target.value, quotas)
     if (e.target.value === "users" && quotas > 0) {
       navigate('/gestion/cupos/disponibles')
     } else if (e.target.value === "users" && quotas === 0) {
