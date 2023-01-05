@@ -56,6 +56,8 @@ export const DashboardIntegrante = () => {
     getAllCourses();
   }, [])
 
+  console.log(courseRoute,'prueba');
+
   return (
     <div className="dashboard__lider" >
       <HeaderDashboard />
@@ -79,13 +81,12 @@ export const DashboardIntegrante = () => {
 
               courseRoute.map((item, index) => (
                 <div className="xlrn__dashboard__lider-block-content d-flex" key={index} >
-                  {console.log(item,'valores')}
                   <Image src={item.file_path} className="xlrn__dashboard__lider-block-image" />
                   <div className="xlrn__dashboard__lider-block-content-titles" >
                     <p>Curso A</p>
                     <h3>{item.name}</h3>
                     <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
-                      <h4>Progreso: <span>0%</span></h4> | <h4> Lecciones: 0 </h4>
+                      <h4>Progreso: <span>0%</span></h4> | <h4> Lecciones: {item["lessons:amount"]} </h4>
                     </div>
                     <button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
                     {/* {progress &&

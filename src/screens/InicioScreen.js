@@ -40,7 +40,7 @@ export const InicioScreen = () => {
           <h1>Elige los cursos de tu interés</h1>
 
           <ul className=" carousel__lista ">
-            <button>Todas las areas</button> |
+            <button>Todas las áreas</button> |
             <button>Innovación</button> |
             <button>Corporativo</button> |
             <button>Transformación</button> |
