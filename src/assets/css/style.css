@@ -1490,7 +1490,21 @@ img.cursos__banner-image {
 /* Cursos Screen Fin */
 
 /* Login Screen */
-
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+.eyePassword {
+  position: relative;
+  margin-top: 9px;
+  right: -13px;
+}
+.eyePassword img {
+  width: 25px;
+}
 .login {
   background-color: var(--blueDark);
   height: 100vh;
@@ -1505,6 +1519,7 @@ img.cursos__banner-image {
   position: relative;
   top: 10%;
   margin: auto;
+
 }
 
 .login__content-inputs {
