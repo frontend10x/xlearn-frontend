@@ -41,6 +41,7 @@ import { ForgotPassword } from "../screens/auth/ForgotPassword";
 import { RecuperarPassword } from "../screens/auth/RecuperarPassword";
 import CoursePlayback from "../screens/dashboards/CoursePlayback";
 import { Perfil } from "../screens/dashboards/Perfil";
+import { Cookies } from "../screens/Cookies";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -62,6 +63,7 @@ export const AppRouter = () => {
         <Route exact path="/recuperacion/contrasena" element={<ForgotPassword />} />
         <Route exact path="/recuperacion/:id" element={<RecuperarPassword />} />
         <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad/>} />
+        <Route exact path="/cookies/usuario" element={<Cookies/>} />
 
         {/* RUTA DE EMPRESA */}
         <Route element={<EmpresasRoute token={token} type={type} />}>

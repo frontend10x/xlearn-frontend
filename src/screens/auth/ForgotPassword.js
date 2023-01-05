@@ -25,6 +25,11 @@ export const ForgotPassword = () => {
                 text: `${data.message}`,
             })
         } catch (error) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Algo salio mal',
+                text: `${error.response.data.message}`,
+            })
             console.error(error, 'error de peticion');
         }
     }
