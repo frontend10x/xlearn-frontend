@@ -1813,6 +1813,7 @@ input[data-autocompleted] {
   padding: 5%;
   padding-top: 2%;
   padding-bottom: 6%;
+  font-size: 0.80em;
 }
 
 .planes__form-content {
@@ -1855,6 +1856,7 @@ input[data-autocompleted] {
   border-radius: 5px;
   padding: 7px;
   width: 100%;
+  color: #adadad;
 }
 
 .form__container-country_content .form__group {

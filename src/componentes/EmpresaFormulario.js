@@ -253,7 +253,7 @@ export const EmpresaFormulario = () => {
               onChange={handleInputChange}
               placeholder="Tamaño"
             >
-              <option value="...">select</option>
+              <option value="...">Ingresa tamaño</option>
               {sizes &&
                 sizes.map((item, index) => (
                   <option key={index} value={item.id}>
@@ -273,7 +273,7 @@ export const EmpresaFormulario = () => {
                 onChange={handleInputChange}
                 placeholder="Pais"
               >
-                <option value="...">select</option>
+                <option value="...">Selecciona opción</option>
                 {countries &&
                   countries.map((item, index) => (
                     <option key={index} value={item.id}>
@@ -293,7 +293,7 @@ export const EmpresaFormulario = () => {
                 onChange={handleInputChange}
                 placeholder="Contenido"
               >
-                <option value="...">select</option>
+                <option value="...">Selecciona una opción</option>
                 {courses &&
                   courses.map((item, index) => (
                     <option key={index} value={item.id}>
@@ -313,7 +313,7 @@ export const EmpresaFormulario = () => {
               onChange={handleInputChange}
               placeholder="Planes"
             >
-              <option value="...">select</option>
+              <option value="...">Selecciona opción</option>
               {plans &&
                 plans.map((item, index) => (
                   <option key={index} value={item.id}>
@@ -332,7 +332,7 @@ export const EmpresaFormulario = () => {
               onChange={handleInputChange}
               placeholder="Cupos"
             >
-              <option value="...">select</option>
+              <option value="...">Ingresa numero cupos</option>
               {places &&
                 places.map((item, index) => (
                   <option key={index} value={item.value}>
@@ -350,7 +350,7 @@ export const EmpresaFormulario = () => {
               type="password"
               value={password}
               onChange={handleInputChange}
-              placeholder="Password"
+              placeholder="Contraseña"
             />
           </div>
           <div className="form__group">
@@ -360,7 +360,7 @@ export const EmpresaFormulario = () => {
             <input
               name="password_confirmation"
               type="password"
-              placeholder="Confirm Password"
+              placeholder="Confirmar contraseña"
               value={password_confirmation}
               onChange={handleInputChange}
             />
