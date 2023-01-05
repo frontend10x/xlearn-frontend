@@ -8,6 +8,8 @@ export const Cookies = () => {
         <div className='cookies__section' >
             <HeaderDashboard />
             <Container>
+
+                <h3>Politica de cookies</h3>
                 Términos de la Política de Cookies
 
                 Aviso de Cookies
