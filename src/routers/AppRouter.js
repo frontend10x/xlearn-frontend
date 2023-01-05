@@ -42,6 +42,7 @@ import { RecuperarPassword } from "../screens/auth/RecuperarPassword";
 import CoursePlayback from "../screens/dashboards/CoursePlayback";
 import { Perfil } from "../screens/dashboards/Perfil";
 import { Cookies } from "../screens/Cookies";
+import { ErrorScreen } from "../screens/ErrorScreen";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -147,6 +148,7 @@ export const AppRouter = () => {
           <Route exact path="/soporte" element={<Soporte />} />
           <Route exact path="/profile/:name" element={<Perfil />} />
         </Route>
+        <Route exact path="error" element={ErrorScreen} />
       </Routes>
     </Router>
   );

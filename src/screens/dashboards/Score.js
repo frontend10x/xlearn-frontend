@@ -66,11 +66,11 @@ export const Score = () => {
                         <div className='certifate__section-container text-center mt-5' >
                             <div className='certificate__section-content border-bottom' >
                                 <h2 className='fw-bold' >Resultado</h2>
-                                <h1 className='title_fail' >¡!</h1>
+                                <h1 className='title_fail' >¡{response.message}!</h1>
                                 <h4 className='fw-bold' >
                                     {response?.results?.correct_answers} Aciertos
                                 </h4>
-                                <h2 className='percentage__evaluation' >% </h2>
+                                <h2 className='percentage__evaluation' >{response?.percentage}% </h2>
                             </div>
                         </div>
 
