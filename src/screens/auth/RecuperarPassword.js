@@ -37,7 +37,7 @@ export const RecuperarPassword = () => {
     }
 
     return (
-        <div className="Login-Screen">
+        <div className="Login-Screen recuperarcontrasena">
             <div className="login">
                 <div className="login__container animate__animated animate__bounce animate__delay-2s w-50 ">
                     {/* <div className="xln-contentImage-login">
@@ -68,7 +68,7 @@ export const RecuperarPassword = () => {
                                     type="password"
                                     name="password"
                                     value={password}
-                                    placeholder="password"
+                                    placeholder="Contraseña"
                                     onChange={handleInputChange}
                                     className="login__email w-50 mx-auto"
                                 />
@@ -76,7 +76,7 @@ export const RecuperarPassword = () => {
                                     type="password"
                                     name="password2"
                                     value={password2}
-                                    placeholder="confirmar password"
+                                    placeholder="Confirmar contraseña"
                                     onChange={handleInputChange}
                                     className="login__email w-50 mx-auto"
                                 />

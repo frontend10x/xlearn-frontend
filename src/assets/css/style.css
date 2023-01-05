@@ -1589,6 +1589,13 @@ input[data-autocompleted] {
   padding: 10px;
 }
 
+.recuperarcontrasena .login__email, .login__password {
+  left: 0px;
+}
+.recuperarcontrasena  .login__button-entrar {
+  left: 0;
+}
+
 .login__password {
   border: none;
   text-decoration: none;
