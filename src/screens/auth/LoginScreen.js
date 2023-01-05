@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
 import { imagenlogin, logologin } from "../../assets/img";
 import { useForm } from "../../hooks/useForm";
@@ -20,7 +20,7 @@ export const LoginScreen = () => {
   const { email, password } = formValues;
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     if (type === "Empresa") {
@@ -81,6 +81,13 @@ export const LoginScreen = () => {
     navigate('/recuperacion/contrasena')
   }
 
+  const showPassword = () => {
+    if (show === false) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  }
 
   return (
     <div className="Login-Screen">
@@ -119,15 +126,18 @@ export const LoginScreen = () => {
                   onChange={handleInputChange}
                   className="login__email"
                 />
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Contraseña"
-                  value={password}
-                  onChange={handleInputChange}
-                  className="login__password"
-                />
+                <div className="d-flex " >
 
+                  <input
+                    type={show === true ? 'text' : 'password'}
+                    name="password"
+                    placeholder="Contraseña"
+                    value={password}
+                    onChange={handleInputChange}
+                    className="login__password"
+                  />
+                  <a type="button" className="w-25" onClick={showPassword} >Mostrar</a>
+                </div>
 
                 <div className="d-flex login__content-remind ">
                   <input type="checkbox" className="login__input-reminder" />

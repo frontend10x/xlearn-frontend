@@ -131,8 +131,8 @@ export const EmpresaFormulario = () => {
       );
       Swal.fire({
         icon: 'success',
-        title: 'Registro Hecho',
-        text: `${data.message}, Revisa tu correo para confirmar la cuenta`,
+        title: 'Registro hecho',
+        text: `${data.message}, Revisa tu correo para confirmar la cuenta, ve a la casilla de correos no deseados en caso de no encontrarlo en tu bandeja de entrada`,
         // footer: 'Revisa tu correo para confirmar la cuenta'
       });
       dispatch(

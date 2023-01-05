@@ -36,7 +36,9 @@ export const Footer = () => {
     navigate('/terminos/condiciones')
   }
 
-  
+  const cookies = () => {
+    navigate('/cookies/usuario');
+  }
 
   return (
     <div className="footer">
@@ -89,6 +91,7 @@ export const Footer = () => {
 
             <div className="footer__option" >
               {/* <p className="link-footer" onClick={ayuda}>Ayuda</p> */}
+              <p className="link-footer" onClick={cookies}>Cookies</p>
               <p className="link-footer" onClick={privacidad}>Privacidad</p>
               <p className="link-footer" onClick={terminos}>Términos</p>
             </div>
