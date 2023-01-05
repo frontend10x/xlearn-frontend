@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Image } from "react-bootstrap";
-import { imagenlogin, logologin } from "../../assets/img";
+import { imagenlogin, logologin, eyePassword } from "../../assets/img";
 import { useForm } from "../../hooks/useForm";
 import { NavLink } from "react-router-dom";
 import { loginPost } from "../../services/services";
@@ -136,7 +136,7 @@ export const LoginScreen = () => {
                     onChange={handleInputChange}
                     className="login__password"
                   />
-                  <a type="button" className="w-25" onClick={showPassword} >Mostrar</a>
+                  <a type="button" className="eyePassword" onClick={showPassword} ><Image src={eyePassword} /></a>
                 </div>
 
                 <div className="d-flex login__content-remind ">

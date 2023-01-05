@@ -96,3 +96,5 @@ export {default as psychology } from '../img/psychology.png'
 export {default as manageSearch} from '../img/manage_search.png'
 export {default as arrowFront} from '../img/arrow_forward.png'
 export {default as robot} from '../img/robot.png'
+
+export {default as eyePassword} from '../img/eye-password.png'
