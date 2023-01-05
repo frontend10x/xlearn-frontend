@@ -1,9 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Container } from 'react-bootstrap'
 import { HeaderDashboard } from '../componentes/dashboards/HeaderDashboard'
 import { Footer } from '../componentes/Footer'
 
 export const Cookies = () => {
+    
+    useEffect(() => {
+        // 👇️ scroll to top on page load
+        window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+      }, []);
+    
     return (
         <div className='cookies__section' >
             <HeaderDashboard />
