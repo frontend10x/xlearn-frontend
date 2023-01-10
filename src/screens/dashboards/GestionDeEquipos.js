@@ -54,7 +54,7 @@ export const GestionDeEquipos = () => {
                         (
                             <div className="xlrn__informacion-equipos xlrn__informacion-equipos_interno" key={index} >
                                 <div className="xlrn__informacion-equipos-content" >
-                                    <p className="xlrn__informacion-equipos-content_title">Equipo {item.id}</p>
+                                    <p className="xlrn__informacion-equipos-content_title">Equipo {index + 1}</p>
                                     <h2>{item.name}</h2>
                                     <h5>Lider: {item.leader}</h5>
                                     <h5>Inicio: 05/03/2022</h5>

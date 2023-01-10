@@ -1,10 +1,19 @@
 import React from "react";
 import { Col, Image, NavItem } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import { XlearnLogo } from "../assets/img";
 
 export const CarouselCourses = ({item}) => {
   
-  console.log(item.name, 'structure')
+  const navigate = useNavigate();
+
+  console.log(item,'estructura')
+
+  const infoCourse = (e) => {
+    
+    navigate(`/course/info/${e.target.id}`)
+  }
+
 
   return(
         <Col >
@@ -16,6 +25,9 @@ export const CarouselCourses = ({item}) => {
                   <button
                     type="button"
                     className="carousel__button"
+                    value={item.name}
+                    id={item.id}
+                    onClick={infoCourse}
                   >
                     Conocer
                   </button>

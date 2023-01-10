@@ -43,6 +43,7 @@ import CoursePlayback from "../screens/dashboards/CoursePlayback";
 import { Perfil } from "../screens/dashboards/Perfil";
 import { Cookies } from "../screens/Cookies";
 import { ErrorScreen } from "../screens/ErrorScreen";
+import { CommonRoutes } from "./CommonRoutes";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -63,8 +64,9 @@ export const AppRouter = () => {
         <Route exact path="/informacion/ayuda" element={<Ayuda />} />
         <Route exact path="/recuperacion/contrasena" element={<ForgotPassword />} />
         <Route exact path="/recuperacion/:id" element={<RecuperarPassword />} />
-        <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad/>} />
-        <Route exact path="/cookies/usuario" element={<Cookies/>} />
+        <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
+        <Route exact path="/cookies/usuario" element={<Cookies />} />
+
 
         {/* RUTA DE EMPRESA */}
         <Route element={<EmpresasRoute token={token} type={type} />}>
@@ -81,9 +83,6 @@ export const AppRouter = () => {
           <Route exact path="/manejo/equipos" element={<GestionDeEquipos />} />
           <Route exact path="/gestion/cupos/disponibles" element={<GestionDeCupos />} />
           <Route exact path="/soporte" element={<Soporte />} />
-          <Route exact path="/profile/:name" element={<Perfil />} />
-
-
         </Route>
         {/* RUTA DE EMPRESA */}
 
@@ -119,19 +118,6 @@ export const AppRouter = () => {
             path="/project/diagnostic/training/areas"
             element={<SeleccionDeAreas />}
           />
-          {/* <Route
-            exact
-            path="/course/videoplayer/:name/:course_id"
-            element={<CoursePlayback />}
-          />
-          <Route exact path="/dashboard/lider" element={<DashboardLider />} />
-          <Route exact path="/presentacion/evaluacion/:name/:course_id" element={<DescripcionEvaluacion />} />
-          <Route exact path="/evaluacion/:name/:course_id" element={<Evaluacion />} />
-          <Route exact path="/puntaje/:name/:id/:course_id" element={<Score />} />
-          <Route exact path="/certificado/:course_id" element={<GenerarCertificado />} />
-          <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
-          <Route exact path="/soporte" element={<Soporte />} />
-          <Route exact path="/profile/:name" element={<Perfil />} /> */}
         </Route>
         {/* RUTA DEL LIDER */}
 
@@ -146,9 +132,14 @@ export const AppRouter = () => {
           <Route exact path="/certificado/:course_id" element={<GenerarCertificado />} />
           <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
           <Route exact path="/soporte" element={<Soporte />} />
+        </Route>
+
+        <Route element={<CommonRoutes token={token} />} >
           <Route exact path="/profile/:name" element={<Perfil />} />
         </Route>
-        <Route exact path="error" element={ErrorScreen} />
+
+        <Route path="*" element={<ErrorScreen />} />
+
       </Routes>
     </Router>
   );

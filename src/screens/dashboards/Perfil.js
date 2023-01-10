@@ -3,7 +3,7 @@ import { Col, Container, Image } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { HeaderDashboard } from '../../componentes/dashboards/HeaderDashboard'
 import { getUserCourseById } from '../../services/services'
-import StylePerfil from '../../assets/css/screens/dashboards/StylePerfil.css';
+import '../../assets/css/screens/dashboards/StylePerfil.css';
 
 export const Perfil = () => {
 

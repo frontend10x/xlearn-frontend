@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
 import { NavIconLeft_01, NavIconLeft_02, NavIconLeft_03, NavIconLeft_04, NavIconLeft_05, NavIconLeft_06 } from "../../assets/img";
 import { getEnterpriseGroups, getEnterpriseQuotas } from "../../services/services";
+import "../../assets/css/componentes/StyleNavegacionDashboard.css";
 
 export const NavegacionDashboard = () => {
 

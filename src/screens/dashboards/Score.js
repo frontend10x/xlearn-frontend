@@ -4,12 +4,13 @@ import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { HeaderDashboard } from '../../componentes/dashboards/HeaderDashboard';
 import { generateCertificate } from '../../services/services';
-import StyleScore from '../../assets/css/screens/dashboards/StyleScore.css';
+import '../../assets/css/screens/dashboards/StyleScore.css';
+import { baseURL } from '../../utils/route';
 
 export const Score = () => {
 
     const [response, setResponse] = useState();
-    const { token } = useSelector(state => state.auth)
+    const { token, type } = useSelector(state => state.auth)
 
     const { id, course_id, name } = useParams();
 
@@ -25,14 +26,19 @@ export const Score = () => {
         scores()
     }, [])
 
-
-    const redirect = () => {
-        if (response.percentage >= 90) {
-            navigate(`/certificado/${course_id}`);
+    const redirect = async ()  => {
+        if (response?.status) {
+            
+            await window.open(baseURL + response.paths.download, '_blank');
+            await window.open(baseURL + response.paths.show, '_blank');
+            navigate(`/dashboard/${type.toLowerCase()}`);
         } else {
             navigate(`/course/videoplayer/${name}/${course_id}`);
         }
     }
+
+
+
     return (
         <div className='certificate__section' >
             <HeaderDashboard />
@@ -61,7 +67,7 @@ export const Score = () => {
                 }
                 {response?.status === false &&
 
-                
+
                     <>
                         <div className='certifate__section-container text-center mt-5' >
                             <div className='certificate__section-content border-bottom' >
