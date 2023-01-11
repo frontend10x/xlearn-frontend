@@ -98,3 +98,6 @@ export {default as arrowFront} from '../img/arrow_forward.png'
 export {default as robot} from '../img/robot.png'
 
 export {default as eyePassword} from '../img/eye-password.png'
+
+/* Imagen de 404 */
+export {default as error404 } from '../img/error_404.webp'

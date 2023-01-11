@@ -90,7 +90,7 @@ export const DashboardLider = () => {
                     <p>Curso A</p>
                     <h3>{item.name}</h3>
                     <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
-                      <h4>Progreso: <span>0%</span></h4> | <h4> Lecciones: 0 </h4>
+                      <h4>Progreso: <span>0%</span></h4> | <h4> Lecciones: {item["lessons:amount"]} </h4>
                     </div>
                     {progress ?
                       <button onClick={evaluation} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Presentar</button>
