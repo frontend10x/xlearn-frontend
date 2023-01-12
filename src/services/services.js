@@ -24,7 +24,8 @@ export const registerPost = async (
   quotas,
   password,
   password_confirmation,
-  observation
+  observation,
+  nit
 ) => {
   const response = await axios.post(
     baseURL + "/api/v1/register_requests/store",
@@ -42,6 +43,7 @@ export const registerPost = async (
       observation,
       password,
       password_confirmation,
+      nit
     }
   );
 
