@@ -13,7 +13,7 @@ export const Cookies = () => {
             <HeaderDashboard />
             <Container>
 
-                <h3>Politica de cookies</h3>
+                <h3 className="fw-bold" >Politica de cookies</h3>
                 Términos de la Política de Cookies
 
                 Aviso de Cookies

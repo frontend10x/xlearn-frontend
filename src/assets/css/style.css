@@ -2625,6 +2625,10 @@ p.xln__register_text_TyC {
   color: var(--neutroText);
 }
 
+.dashboard__nav-link:focus {
+  color: var(--green);
+}
+
 .dashboard__banner {
   width: 100%;
 }
