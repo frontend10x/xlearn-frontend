@@ -116,6 +116,7 @@ export const EmpresaFormulario = () => {
 
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
+    console.log(formValues);
     try {
       const data = await registerPost(
         name,
