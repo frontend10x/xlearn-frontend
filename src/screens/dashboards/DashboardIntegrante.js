@@ -86,7 +86,7 @@ export const DashboardIntegrante = () => {
                     <p>Curso A</p>
                     <h3>{item.name}</h3>
                     <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
-                      <h4>Progreso: <span>{item['lessons:amount']}%</span></h4> | <h4> Lecciones: {item["lessons:amount"]} </h4>
+                      <h4>Progreso: <span>{item['progress:porcentage']}%</span></h4> | <h4> Lecciones: {item["lessons:amount"]} </h4>
                     </div>
                     <button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
                     {/* {progress &&

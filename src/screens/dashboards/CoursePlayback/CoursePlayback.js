@@ -10,6 +10,7 @@ import { InfoVideoPlayer } from "../../../componentes/dashboards/InfoVideoPlayer
 import { IconRutaPlayer, IconRutaExamen } from "../../../assets/img";
 import { getProgress, storeProgress } from "../../../services/apis/progress.services";
 import { Col } from "react-bootstrap";
+import { evaluationCourse } from "../../../services/services";
 
 import "../../../assets/css/screens/dashboards/StyleCoursePlayback.css";
 
@@ -20,6 +21,7 @@ const CorusePlayback = () => {
     const [videoCurrent, setVideoCurrent] = useState();
     const [progress, setProgress] = useState();
     const [destroy, setDestroy] = useState(false);
+    const [evaluation, setEvaluation] = useState();
 
     const navigate = useNavigate();
 
@@ -55,6 +57,21 @@ const CorusePlayback = () => {
         // 👇️ scroll to top on page load
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }, [progress, lessons])
+
+    function quiz() {
+        evaluationCourse(token, course_id)
+            .then(event => {
+                setEvaluation(true)
+            })
+            .catch(error => {
+                console.error(error);
+                setEvaluation(false)
+            })
+    }
+
+    quiz();
+
+    console.log(evaluation, 'boolean');
 
     const getVideos = async () => {
         const data = await getLessons(token, course_id);
@@ -131,7 +148,9 @@ const CorusePlayback = () => {
                                     changeVideo={changeVideo}
                                 />
                             })}
-                            <button className="xln-btn-couseExamen mt-3 ms-3" onClick={redirect} ><img src={IconRutaExamen} /></button>
+                            {evaluation &&
+                                <button className="xln-btn-couseExamen mt-3 ms-3" onClick={redirect} ><img src={IconRutaExamen} /></button>
+                            }
                         </Col>
                     </div>
                 </div>
