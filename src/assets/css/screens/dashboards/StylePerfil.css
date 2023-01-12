@@ -11,7 +11,7 @@
   }
 
 .card__image {
-    width: 224px;
+    width: 270px;
 }
 
 .card_title {
@@ -22,4 +22,11 @@
     height: 130px;
     background-color: var(--white);
     width: 35%;
+}
+
+.card__container {
+    display: flex;
+    flex-flow: wrap;
+    width: 880px;
+    gap: 1.5rem;
 }
