@@ -77,7 +77,7 @@ export const AppRouter = () => {
           />
           <Route exact path="/gestion/cupos" element={<GestionDeUsuario />} />
           <Route exact path="/compra/cupos" element={<CompraUsuarios />} />
-          <Route exact path="/asignacion/cupos" element={<UsoCupos />} />
+          <Route exact path="/gestion/usuarios" element={<UsoCupos />} />
           <Route exact path="/creacion/usuarios" element={<CrearUsuarios />} />
           <Route exact path="/gestion/equipo" element={<CrearEquipos />} />
           <Route exact path="/manejo/equipos" element={<GestionDeEquipos />} />
