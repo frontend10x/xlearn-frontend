@@ -33,6 +33,7 @@ export const LoginScreen = () => {
       navigate('/inicia/diagnostico');
     } else if (type === "Integrante") {
       navigate('/dashboard/integrante');
+      navigate(0)
     }
   }, [navigate, type, diagnostic])
 

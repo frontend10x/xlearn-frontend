@@ -247,7 +247,7 @@ export const getLessons = async (token, id) => {
     }
   };
 
-  const response = await axios.get(baseURL + `/api/v1/lesson/show_course/${id}?offset1&limit=15`, config)
+  const response = await axios.get(baseURL + `/api/v1/lesson/show_course/${id}?offset=1&limit=15`, config)
   return response.data
 
 }
