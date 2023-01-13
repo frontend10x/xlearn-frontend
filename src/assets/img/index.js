@@ -85,6 +85,8 @@ export {default as bannerContact01} from '../Image/banner_contact.png';
 
 export {default as cliente1} from './Logos clientes-01.png';
 
+export {default as trashIcon} from './basura.png'
+
 /* Iconos de evaluacion */
 export {default as hourglass} from '../img/hourglass.png'
 export {default as checklist} from '../img/checklist.png'

@@ -4487,7 +4487,9 @@ p.xln_price_GDC span {
   top: 30px;
 }
 
-.xlrn__uso-cupos-registered {}
+/* .xlrn__uso-cupos-registered {
+  height: 70vh;
+} */
 
 .xlrn__uso-cupos-registered h1 {
   font-size: 25px;

@@ -392,3 +392,15 @@ export const recoveryPassword = async (id,password,password2) => {
   const response = await axios.put(baseURL + `/api/v1/user/recover_password/${id}?password=${password}&password_confirmation=${password2}`)
   return response.data;
 }
+
+export const desactivateUser = async (token,id) => {
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = axios.delete(baseURL + `/api/v1/user/delete/${id}`, config);
+  return response.data;
+}
