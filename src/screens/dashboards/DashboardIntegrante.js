@@ -44,7 +44,8 @@ export const DashboardIntegrante = () => {
   useEffect(() => {
     async function getUserCourses() {
       const data = await getUserCourseById(token, id);
-      setCourseRoute(data.response._embedded.courses)
+      setCourseRoute(data.response._embedded.courses);
+      console.log(data)
     }
    
     async function getAllCourses() {

@@ -42,7 +42,7 @@ export const InicioScreen = () => {
           <ul className=" carousel__lista ">
             <button>Todas las áreas</button> |
             <button>Innovación</button> |
-            <button>Corporativo</button> |
+            {/* <button>Corporativo</button> | */}
             <button>Transformación</button> |
             <button>Diseño de productos</button> |
             <button>Sostenibilidad</button>

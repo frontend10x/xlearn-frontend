@@ -27,13 +27,13 @@ export const UsoCupos = () => {
 
     const desactivate = async (e) => {
         const id = e.target.id;
-        console.log(id,'id del button');
+        console.log(id, 'id del button');
         // try {
         //     const data = await desactivateUser(token,id);
         //     console.log(data);
-            
+
         // } catch (error) {
-            
+
         // }
     }
 
@@ -55,7 +55,7 @@ export const UsoCupos = () => {
                         <div className="xlrn__uso-cupos__container-titles" >
                             <div className="xlrn__uso-cupos__titles-content" >
                                 <h1>Gestion de usuarios</h1>
-                                <p>Gestiona y administra usuarios</p>
+                                <p className="fw-bold" >Gestiona y administra usuarios</p>
                             </div>
                         </div>
 
@@ -71,6 +71,7 @@ export const UsoCupos = () => {
                                 {users &&
                                     users.map((item, index) => (
                                         <div key={index} className="xlrn__uso-cupos-registered__card" >
+                                            {console.log(item)}
                                             {/* <img src={imagenUser} className="user__image" /> */}
                                             <img src={imagenUser} />
                                             <div className="w-100 d-flex justify-content-between" >
@@ -79,7 +80,9 @@ export const UsoCupos = () => {
                                                     <p>{item.email}</p>
                                                 </div>
                                                 <div className="my-auto d-flex gap-5 me-3" >
-                                                    <button className="me-5 desactivate_button" id={item.id} onClick={desactivate}><img src={trashIcon} className="my-auto"/></button>
+                                                    <button type='button' className="me-4 desactivate_button" onClick={desactivate} id={item.id} value="1" >
+                                                        <img className="me-5 my-auto image_trash" src={trashIcon} />
+                                                    </button >
                                                     <h3>{item.group_id}</h3>
                                                 </div>
                                             </div>
