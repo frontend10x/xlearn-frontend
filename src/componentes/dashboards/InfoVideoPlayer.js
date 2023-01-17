@@ -53,7 +53,7 @@ export const InfoVideoPlayer = () => {
             try {
                 const data = await getCourseDescription(course_id);
                 setCourse(data.response._embedded.course)
-                console.log(data, 'datos')
+                console.log(data);
             } catch (error) {
 
             }
@@ -69,6 +69,8 @@ export const InfoVideoPlayer = () => {
         getAllCourses();
     }, []) /* LOGICA DE CURSOS PUBLICOS */
 
+    console.log(course?.resource, 'value');
+
 
     return (
         <div className="xlrn__infovideoplayer-section" >
@@ -76,8 +78,11 @@ export const InfoVideoPlayer = () => {
                 <div className="xlrn__infovideo-nav d-flex justify-content-around" >
                     <div className="xlrn__infovideo-nav-container-buttons mt-5 d-flex gap-3 h-25" >
                         <input type="button" className="xlrn__infovideo-nav__button" value="Proyecto" onClick={pageSelected} />
-                        <input type="button" className="xlrn__infovideo-nav__button" value="Recursos" onClick={pageSelected} />
-                        <input type="button" className="xlrn__infovideo-nav__button" value="Glosario" onClick={pageSelected} />
+                        {course?.resource &&
+
+                            < input type="button" className="xlrn__infovideo-nav__button" value="Recursos" onClick={pageSelected} />
+                        }
+                        {/* <input type="button" className="xlrn__infovideo-nav__button" value="Glosario" onClick={pageSelected} /> */}
                     </div>
                     {/* <div className="xlrn__infovideo-nav-buttons-makereport mt-5 "  >
                         <input type="button" className="xlrn__infovideo-nav__button" value="Hacer un reporte" />
@@ -96,11 +101,11 @@ export const InfoVideoPlayer = () => {
                                 </div>
                             </div>
                             <div className="xlrn__infovideoplayer-content-users flex-column ">
-                                    <h2 className="fw-bold ms-5 ">Acerca del tutor</h2>
+                                <h2 className="fw-bold ms-5 ">Acerca del tutor</h2>
                                 <div className="description__infovideoplayer-content" >
                                     <div className="d-flex mt-5" >
                                         <Col md={6} className="d-flex gap-5 border-end" >
-                                            <Image src={imagenUser} className='about__tutor-image ms-5' alt="usuario" />
+                                            <Image src={course.img_author} className='about__tutor-image ms-5' alt="usuario" />
                                             <div className="w-75" dangerouslySetInnerHTML={{ __html: course.about_author }} />
                                         </Col>
                                         <Col md={6} className="d-flex justify-content-start ms-5 mt-5" >
@@ -109,8 +114,7 @@ export const InfoVideoPlayer = () => {
                                                 <button className="consultor__button " onClick={activeChatBox} >Modo consultor <span className="ms-5" >  </span> </button>
                                                 <Image src={arrowFront} alt="" className="icon_arrowFront mt-1" />
                                             </div>
-                                            <Image src={robot} alt="bot" className="robot__icon" />
-
+                                            <Image src={robot} alt="bot" className="robot__icon" onClick={activeChatBox} />
                                         </Col>
                                     </div>
                                 </div>
@@ -146,7 +150,7 @@ export const InfoVideoPlayer = () => {
                         </div>
                     </div>
                 }
-                {/* {pages === "Recursos" &&
+                {pages === "Recursos" &&
                     <div className="xlrn__infovideoplayer-container-content" >
                         <div className="xlrn__infovideoplayer-content" >
                             <div className="xlnPlayer__content__proyectos" >
@@ -159,7 +163,7 @@ export const InfoVideoPlayer = () => {
                         </div>
                     </div>
 
-                } */}
+                }
                 {/* {pages === "Glosario" &&
                    <div className="xlrn__infovideoplayer-container-content" >
                    <div className="xlrn__infovideoplayer-content" >
