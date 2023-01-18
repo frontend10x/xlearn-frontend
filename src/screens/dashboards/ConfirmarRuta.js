@@ -65,10 +65,10 @@ export const ConfirmarRuta = () => {
                   <div className="confirm_route-card_content">
                     <h3>{item.name}</h3>
                     <p>Este curso esta en tu ruta</p>
-                    <div className="d-flex gap-5">
+                    {/* <div className="d-flex gap-5">
                       <p>{item.time}H</p>
                       <p>{item.lessons} Clases</p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

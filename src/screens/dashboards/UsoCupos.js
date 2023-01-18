@@ -7,11 +7,12 @@ import { cuposIcon, equiposIcon, imagenUser, trashIcon } from "../../assets/img"
 import { useSelector } from "react-redux";
 import { desactivateUser, getRegisteredUsers, getUserByEnterprise } from "../../services/services";
 import '../../assets/css/screens/dashboards/StyleUsoCupos.css';
+import { useNavigate } from "react-router-dom";
 
 export const UsoCupos = () => {
     const [users, setUsers] = useState();
     const { token, subcompanie_id } = useSelector(state => state.auth);
-
+    const navigate = useNavigate();
     useEffect(() => {
         const getAllUsers = async () => {
             try {
@@ -26,8 +27,8 @@ export const UsoCupos = () => {
     }, [])
 
     const desactivate = async (e) => {
-        const id = e.target.id;
-        console.log(id, 'id del button');
+        // const id = e.target.id;
+        // console.log(id, 'id del button');
         // try {
         //     const data = await desactivateUser(token,id);
         //     console.log(data);
@@ -35,6 +36,7 @@ export const UsoCupos = () => {
         // } catch (error) {
 
         // }
+        navigate(`/contact`)
     }
 
     return (
@@ -80,9 +82,7 @@ export const UsoCupos = () => {
                                                     <p>{item.email}</p>
                                                 </div>
                                                 <div className="my-auto d-flex gap-5 me-3" >
-                                                    <button type='button' className="me-4 desactivate_button" onClick={desactivate} id={item.id} value="1" >
-                                                        <img className="me-5 my-auto image_trash" src={trashIcon} />
-                                                    </button >
+                                                        <Image className="me-5 my-auto image_trash" onClick={desactivate} src={trashIcon} />
                                                     <h3>{item.group_id}</h3>
                                                 </div>
                                             </div>

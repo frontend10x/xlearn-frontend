@@ -147,7 +147,7 @@ export const EmpresaScreen = () => {
             <p>Contáctanos</p>
             <h1>Ponte en contacto con nosotros</h1>
             <div className="empresas__banner-button_container" >
-              <button onClick={contactanos} className="empresas__banner-contacto_button" >Contactanos ahora</button>
+              <button onClick={contactanos} className="empresas__banner-contacto_button" >Contáctanos ahora</button>
               <button onClick={proyecto} className="empresas__banner-proyecto_button" >Quiero iniciar un proyecto</button>
             </div>
           </div>

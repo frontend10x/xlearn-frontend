@@ -169,10 +169,10 @@ export const InfoCourse = () => {
                             <Image src={item.file_path} className="img-recomendation-xln" />
                             <div className="dashboard__lider-container_courses-card-content" >
                                 <div className="dashboard__lider-container_courses-card-content-body" >
-                                    <div className="d-flex justify-content-around" >
+                                    {/* <div className="d-flex justify-content-around" >
                                         <p>{item.time} de contenido</p>
                                         <p>{item.user} de usuarios</p>
-                                    </div>
+                                    </div> */}
                                     <h3>{item.name}</h3>
                                     <button className="dashboard__lider-container_courses-card-content_button" onClick={redirect} value="login" >Ingresar</button>
                                 </div>

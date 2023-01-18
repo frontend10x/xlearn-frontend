@@ -53,7 +53,6 @@ export const InfoVideoPlayer = () => {
             try {
                 const data = await getCourseDescription(course_id);
                 setCourse(data.response._embedded.course)
-                console.log(data);
             } catch (error) {
 
             }
@@ -61,7 +60,6 @@ export const InfoVideoPlayer = () => {
 
         async function getAllCourses() {
             const data = await getCourse();
-            // console.log(data.response._embedded.courses,'datos');
             setCourses(data.response._embedded.courses)
         }
 
@@ -69,8 +67,7 @@ export const InfoVideoPlayer = () => {
         getAllCourses();
     }, []) /* LOGICA DE CURSOS PUBLICOS */
 
-    console.log(course?.resource, 'value');
-
+    console.log(course,'curso');
 
     return (
         <div className="xlrn__infovideoplayer-section" >
@@ -78,8 +75,7 @@ export const InfoVideoPlayer = () => {
                 <div className="xlrn__infovideo-nav d-flex justify-content-around" >
                     <div className="xlrn__infovideo-nav-container-buttons mt-5 d-flex gap-3 h-25" >
                         <input type="button" className="xlrn__infovideo-nav__button" value="Proyecto" onClick={pageSelected} />
-                        {course?.resource &&
-
+                        {course?.resources?.length > 0 &&
                             < input type="button" className="xlrn__infovideo-nav__button" value="Recursos" onClick={pageSelected} />
                         }
                         {/* <input type="button" className="xlrn__infovideo-nav__button" value="Glosario" onClick={pageSelected} /> */}
@@ -156,6 +152,14 @@ export const InfoVideoPlayer = () => {
                             <div className="xlnPlayer__content__proyectos" >
                                 <div className="proyectos__text">
                                     <h3>Recursos</h3>
+                                    {
+                                        course.resources.map((item,index) => (
+                                            <div key={index} >
+                                                {console.log(item,'items')}
+
+                                            </div>
+                                        ))
+                                    }
                                 </div>
 
                             </div>
