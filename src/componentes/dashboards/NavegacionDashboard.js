@@ -41,7 +41,7 @@ export const NavegacionDashboard = () => {
                         <NavLink type="button" href='/dashboard/empresa' className='dashboard__nav-link' ><img src={NavIconLeft_01} /> Inicio</NavLink>
                         <NavLink className='dashboard__nav-link' type="button" onClick={redirect}  ><img src={NavIconLeft_02} /> Gestión de cupos </NavLink>
                         <NavLink type="button" onClick={change} className='dashboard__nav-link' ><img src={NavIconLeft_04} /> Gestión de equipos</NavLink>
-                        <NavLink href='/asignacion/cupos' className='dashboard__nav-link' ><img src={NavIconLeft_05} /> Gestión de usuarios</NavLink>
+                        <NavLink href='/gestion/usuarios' className='dashboard__nav-link' ><img src={NavIconLeft_05} /> Gestión de usuarios</NavLink>
                         {/* <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_03}/> Chat</NavLink>
                         <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_06}/> Reporte</NavLink> */}
                     </Nav>

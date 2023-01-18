@@ -53,7 +53,7 @@ export const NavegacionDashboardHeader = () => {
                 <ul className="dropdown-menu">
                   {/* <li><button className="dropdown-item" href="#">Ajustes</button></li> */}
                   <li><button onClick={redirect} className="dropdown-item" href="#">Perfil</button></li>
-                  <li><button onClick={handleLogout} className="dropdown-item" href="#">Log out</button></li>
+                  <li><button onClick={handleLogout} className="dropdown-item" href="#">Cerrar sesión</button></li>
                 </ul>
               </div>
             </div>
@@ -93,7 +93,7 @@ export const NavegacionDashboardHeader = () => {
                 <ul className="dropdown-menu">
                   {/* <li><button className="dropdown-item" href="#">Ajustes</button></li> */}
                   <li><button onClick={redirect} className="dropdown-item" href="#">Perfil</button></li>
-                  <li><button onClick={handleLogout} className="dropdown-item" href="#">Log out</button></li>
+                  <li><button onClick={handleLogout} className="dropdown-item" href="#">Cerrar sesión</button></li>
                 </ul>
               </div>
             </div>
@@ -133,7 +133,7 @@ export const NavegacionDashboardHeader = () => {
                 <ul className="dropdown-menu">
                   {/* <li><button className="dropdown-item" href="#">Ajustes</button></li> */}
                   <li><button onClick={redirect} className="dropdown-item" href="#">Perfil</button></li>
-                  <li><button onClick={handleLogout} className="dropdown-item" href="#">Log out</button></li>
+                  <li><button onClick={handleLogout} className="dropdown-item" href="#">Cerrar sesión</button></li>
                 </ul>
               </div>
             </div>

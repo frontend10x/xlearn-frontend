@@ -103,7 +103,7 @@ export const Footer = () => {
             <a href="https://twitter.com/XLearn2" >
             <Image src={twitter}  alt='icon' className="footer__media-icon"  />
             </a>
-            <a href="https://www.linkedin.com/in/x-learn-409991240/" >
+            <a href="https://www.linkedin.com/in/xlearn-platform-409991240/" >
             <Image src={linkedin} alt='icon'  className="footer__media-icon"  />
             </a>
             <a href="https://www.youtube.com/channel/UCyS1OiIhWpylctMcbSkYgFQ">

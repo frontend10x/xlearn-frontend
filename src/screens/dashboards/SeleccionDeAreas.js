@@ -58,8 +58,8 @@ export const SeleccionDeAreas = () => {
       </div>
       <div className="selection__areas-footer_container">
         <div className="selection__areas-buttons_container">
-          <input type="button" onClick={redirect} className="footer__button-back" value="volver"/>
-          <input type="button" onClick={redirect} className="footer__button-next" value="siguiente" />
+          <input type="button" onClick={redirect} className="footer__button-back" value="Volver"/>
+          <input type="button" onClick={redirect} className="footer__button-next" value="Siguiente" />
         </div>
       </div>
     </div>

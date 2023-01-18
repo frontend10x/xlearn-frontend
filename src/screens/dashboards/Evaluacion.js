@@ -31,6 +31,7 @@ export const Evaluacion = () => {
         const data = await evaluationCourse(token, course_id);
         setQuestion(data.response._embedded.evaluation.questions);
         setSchema({...schema, evaluation_id: data.response._embedded.evaluation.id})
+        console.log(data.response._embedded.evaluation.questions.length,'revisar');
       } catch (error) {
         console.error(error);
       }
@@ -57,7 +58,7 @@ export const Evaluacion = () => {
 
   const previousPage = () => {
     if (page === 0) {
-      navigate(`/presentacion/evaluacion/${course_id}`);
+      navigate(`/presentacion/evaluacion/${name}/${course_id}`);
     }
     page > 0 && setPage(page - 1);
   };
@@ -165,6 +166,7 @@ export const Evaluacion = () => {
           >
             Volver
           </button>
+          <h2 className="text-center pt-5 fw-bold" style={{color:'#8894ab'}} >{page + 1} / {question.length} </h2>
           <button
             className="preguntas__footer-button_next"
             onClick={() => nextPage((question.length - 1) == page)}
