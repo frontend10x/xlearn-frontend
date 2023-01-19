@@ -3464,19 +3464,20 @@ input.preguntas__diagnostico-checkbox-selected {
   margin: auto;
 }
 
-.dashboard__lider-container_courses {
-  height: 70vh;
-}
 
 .dashboard__lider-container_courses {
-  position: relative;
-  top: 150px;
-  display: flex;
-  width: 100%;
-  margin: auto;
-  overflow: scroll;
-  overflow-y: hidden;
+    display: flex;
+    height: 68vh;
+    margin: auto;
+    overflow: scroll;
+    overflow-y: hidden;
+    position: relative;
+    top: 29px;
+    width: 92%;
+    margin-top: 134px;
 }
+
+
 .xln__info_courses .dashboard__lider-container_courses {
   display: flex;
   height: auto;
