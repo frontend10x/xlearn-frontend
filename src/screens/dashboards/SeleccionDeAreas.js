@@ -27,12 +27,11 @@ export const SeleccionDeAreas = () => {
   }
 
   const redirect =  (e) => {
-    if (filter && e.target.value === "siguiente") {
+    if (filter && e.target.value === "Siguiente") {
       dispatch(coursesByArea(filter));
       navigate("/project/diagnostic/training");
-    }else if (e.target.value === "volver") {
+    }else if (e.target.value === "Volver") {
       navigate("/selection/process");
-      // alert('llego')
     }
   };
 

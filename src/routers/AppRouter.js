@@ -110,13 +110,13 @@ export const AppRouter = () => {
           />
           <Route
             exact
-            path="/project/diagnostic/confirm_route"
-            element={<ConfirmarRuta />}
+            path="/project/diagnostic/training/areas"
+            element={<SeleccionDeAreas />}
           />
           <Route
             exact
-            path="/project/diagnostic/training/areas"
-            element={<SeleccionDeAreas />}
+            path="/project/diagnostic/confirm_route"
+            element={<ConfirmarRuta />}
           />
         </Route>
         {/* RUTA DEL LIDER */}
