@@ -4763,7 +4763,7 @@ p.xln_price_GDC span {
 
 .xlrn__crear-usuarios__container-form {
   background-color: var(--white);
-  height: 80vh;
+  height: 100vh;
   width: 80%;
   position: relative;
   border-radius: 5px;
