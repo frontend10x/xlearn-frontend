@@ -3466,7 +3466,7 @@ input.preguntas__diagnostico-checkbox-selected {
 
 .dashboard__lider-container_courses {
     display: flex;
-    height: 68vh;
+    /* height: 100vh; */
     margin: auto;
     overflow: scroll;
     overflow-y: hidden;
