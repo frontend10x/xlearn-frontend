@@ -3499,7 +3499,7 @@ input.preguntas__diagnostico-checkbox-selected {
 
 .dashboard__lider-container_courses-card-content {
   background-color: var(--white);
-  width: 346px;
+  width: 100%;
   height: 27vh;
   position: relative;
   border-radius: 0px 0px 10px 10px;

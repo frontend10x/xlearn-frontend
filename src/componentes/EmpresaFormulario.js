@@ -85,6 +85,7 @@ export const EmpresaFormulario = () => {
     lastname: "",
     company: "",
     email: "",
+    email_confirmation:"",
     website: "",
     size: "",
     country: "",
@@ -102,6 +103,7 @@ export const EmpresaFormulario = () => {
     lastname,
     company,
     email,
+    email_confirmation,
     website,
     size,
     country,
@@ -123,6 +125,7 @@ export const EmpresaFormulario = () => {
         lastname,
         company,
         email,
+        email_confirmation,
         website,
         size,
         country,
@@ -137,7 +140,7 @@ export const EmpresaFormulario = () => {
       Swal.fire({
         icon: 'success',
         title: 'Registro hecho',
-        text: `${data.message}, Revisa tu correo para confirmar la cuenta, ve a la casilla de correos no deseados en caso de no encontrarlo en tu bandeja de entrada`,
+        text: `${data.message}`,
         // footer: 'Revisa tu correo para confirmar la cuenta'
       });
       dispatch(
@@ -146,6 +149,7 @@ export const EmpresaFormulario = () => {
           lastname,
           company,
           email,
+          email_confirmation,
           website,
           size,
           country,
@@ -234,6 +238,17 @@ export const EmpresaFormulario = () => {
             />
           </div>
           <div className="form__group">
+            <p>
+              Corfirmacion de correo <span>*</span>
+            </p>
+            <input
+              name="email_confirmation"
+              value={email_confirmation}
+              onChange={handleInputChange}
+              placeholder="Corfirmar correo"
+            />
+          </div>
+          <div className="form__group w-100">
             <p>
               Website empresa 
             </p>

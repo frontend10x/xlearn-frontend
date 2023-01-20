@@ -15,6 +15,7 @@ export const CrearUsuarios = () => {
     const [formValues, handleInputChange] = useForm({
         name: '',
         email: '',
+        email_confirmation:'',
         phone: '',
         type_id: roles,
         rol_id:'',
@@ -45,7 +46,7 @@ export const CrearUsuarios = () => {
     ]);
 
 
-    const {name, email, phone, type_id, rol_id, area ,password, password_confirmation} = formValues;
+    const {name, email, email_confirmation,phone, type_id, rol_id, area ,password, password_confirmation} = formValues;
 
 
     useEffect(() => {
@@ -62,11 +63,9 @@ export const CrearUsuarios = () => {
        validateQuotas();
     },[token,subcompanie_id])
 
-    console.log(disabled,'boolean');
-
     const createUser = async () => {
         try {
-            const data = await creationUser( token,name, email, phone, type_id, rol_id, area , password, password_confirmation, subcompanie_id);
+            const data = await creationUser( token,name, email, email_confirmation,phone, type_id, rol_id, area , password, password_confirmation, subcompanie_id);
             Swal.fire({
                 icon: 'success',
                 title: 'Usuario creado con exito',
@@ -81,6 +80,7 @@ export const CrearUsuarios = () => {
                 // footer: '<a href="">Why do I have this issue?</a>'
               })   
         }
+        console.log(formValues,'valores');
     }
 
     return (
@@ -112,6 +112,7 @@ export const CrearUsuarios = () => {
                                 <div className="xlrn__crear-usuarios__form-content">
                                     <input onChange={handleInputChange} name="name" placeholder="Nombre y Apellido" />
                                     <input onChange={handleInputChange} name="email" placeholder="Correo (Usuario)" />
+                                    <input onChange={handleInputChange} name="email_confirmation" placeholder="Confirmar correo" />
                                     <div className="d-flex gap-2" >
                                         <input onChange={handleInputChange} name="phone" placeholder="Telefono" className="input__phone" />
                                         <select onChange={handleInputChange} name="area" className="input__rol" >

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDashboard";
-import { Image } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 import {
   banner_cursos,
   recomendation_01,
@@ -14,6 +14,7 @@ import { Footer } from "../../componentes/Footer";
 import { useNavigate } from "react-router-dom";
 import { getUserCourseById } from "../../services/services";
 import { getCourse } from "../../services/services";
+import { CarouselDashboards } from "../../componentes/CarouselDashboards";
 
 export const DashboardLider = () => {
 
@@ -25,12 +26,7 @@ export const DashboardLider = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
-  const [course, setCourse] = useState([
-    // { title: "Presentaciones efectivas de negocios", image: recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
-    // { title: "Modelación de negocios", image: recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },
-    // { title: "Diseño de propuesta de valor", image: recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
-    // { title: "Prototipado", image: recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
-  ]);
+  const [course, setCourse] = useState([]);
   const [courseRoute, setCourseRoute] = useState([]);
   const [progress, setProgress] = useState(false);
 
@@ -51,7 +47,7 @@ export const DashboardLider = () => {
       const data = await getUserCourseById(token, id);
       setCourseRoute(data.response._embedded.courses)
     }
-   
+
     async function getAllCourses() {
       const data = await getCourse();
       setCourse(data.response._embedded.courses)
@@ -99,8 +95,9 @@ export const DashboardLider = () => {
                   </div>
                 </div>
               ))
-              : <p style={{color: "#8894ab"}} className="fw-bold" >Aun no tienes una ruta asignada</p>
+              : <p style={{ color: "#8894ab" }} className="fw-bold" >Aun no tienes una ruta asignada</p>
             }
+
             {/* <div className="xlrn__dashboard__lider-block-content d-flex 5" >
               <Image src={Image_02} className="xlrn__dashboard__lider-block-image" />
               <div className="xlrn__dashboard__lider-block-content-titles" >
@@ -119,15 +116,15 @@ export const DashboardLider = () => {
 
       <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
       <div className="dashboard__lider-container_courses" >
-        {course &&
+        {/* {course &&
           course.map((item, index) => (
             <div key={index} className="dashboard__lider-container_courses-card" >
               <Image src={item.file_path} className="img-recomendation-xln" />
               <div className="dashboard__lider-container_courses-card-content" >
                 <div className="dashboard__lider-container_courses-card-content-body" >
                   <div className="d-flex justify-content-around" >
-                    {/* <p>{item.time} de contenido</p>
-                    <p>{item.user} de usuarios</p> */}
+                    <p>{item.time} de contenido</p>
+                    <p>{item.user} de usuarios</p>
                   </div>
                   <h3>{item.name}</h3>
                   <button className="dashboard__lider-container_courses-card-content_button" value={item.name} id={item.id} onClick={redirect} >Ingresar</button>
@@ -135,7 +132,10 @@ export const DashboardLider = () => {
               </div>
             </div>
           ))
-        }
+        } */}
+        <Container >
+          <CarouselDashboards item={course} />
+        </Container>
       </div>
       {/* <div className="dashboar__lider-construction-container" >
         <div className="dashboar__lider-construction-content" >
