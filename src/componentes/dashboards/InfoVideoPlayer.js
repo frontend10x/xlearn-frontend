@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Image } from "react-bootstrap";
+import { Col, Container, Image } from "react-bootstrap";
 import {
     arrowFront,
     ImageProyectos,
@@ -14,6 +14,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getCourseDescription, getCourse } from "../../services/services";
 import { imagenUser } from "../../assets/img";
 import "../../assets/css/componentes/StyleInfoVideoPlayer.css";
+import { CarouselDashboards } from "../CarouselDashboards";
 
 export const InfoVideoPlayer = () => {
 
@@ -119,15 +120,15 @@ export const InfoVideoPlayer = () => {
                             <div className="xln__internos__CursosRecomendadosPlayer" >
                                 <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
                                 <div className="dashboard__lider-container_courses" >
-                                    {courses &&
+                                    {/* {courses &&
                                         courses.map((item, index) => (
                                             <div key={index} className="dashboard__lider-container_courses-card" >
                                                 <div className="dashboard__lider-container_courses-card-content" >
                                                     <Image src={item.file_path} className="img-recomendation-xln" />
                                                     <div className="dashboard__lider-container_courses-card-content-body" >
                                                         <div className="d-flex justify-content-around" >
-                                                            {/* <p>{item.time} de contenido</p>
-                                                            <p>{item.user} de usuarios</p> */}
+                                                            <p>{item.time} de contenido</p>
+                                                            <p>{item.user} de usuarios</p>
                                                         </div>
                                                         <h3>{item.name}</h3>
                                                         <p>{item.subtitle}</p>
@@ -136,7 +137,10 @@ export const InfoVideoPlayer = () => {
                                                 </div>
                                             </div>
                                         ))
-                                    }
+                                    } */}
+                                    <Container >
+                                        <CarouselDashboards item={courses} />
+                                    </Container>
                                 </div>
                             </div>
 

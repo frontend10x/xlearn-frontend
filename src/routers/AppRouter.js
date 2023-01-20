@@ -44,6 +44,7 @@ import { Perfil } from "../screens/dashboards/Perfil";
 import { Cookies } from "../screens/Cookies";
 import { ErrorScreen } from "../screens/ErrorScreen";
 import { CommonRoutes } from "./CommonRoutes";
+import { Prueba } from "../screens/prueba";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -66,6 +67,8 @@ export const AppRouter = () => {
         <Route exact path="/recuperacion/:id" element={<RecuperarPassword />} />
         <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
         <Route exact path="/cookies/usuario" element={<Cookies />} />
+        <Route exact path="/prueba" element={<Prueba />} />
+        
 
 
         {/* RUTA DE EMPRESA */}

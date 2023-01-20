@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDashboard";
-import { Image } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 import {
   banner_cursos,
   recomendation_01,
@@ -14,6 +14,7 @@ import { Footer } from "../../componentes/Footer";
 import { useNavigate } from "react-router-dom";
 import { getUserCourseById } from "../../services/services";
 import { getCourse } from "../../services/services";
+import { CarouselDashboards } from "../../componentes/CarouselDashboards";
 
 export const DashboardIntegrante = () => {
 
@@ -116,15 +117,15 @@ export const DashboardIntegrante = () => {
 
       <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
       <div className="dashboard__lider-container_courses" >
-        {course &&
+        {/* {course &&
           course.map((item, index) => (
             <div key={index} className="dashboard__lider-container_courses-card" >
               <Image src={item.file_path} className="img-recomendation-xln" />
               <div className="dashboard__lider-container_courses-card-content" >
                 <div className="dashboard__lider-container_courses-card-content-body" >
                   <div className="d-flex justify-content-around" >
-                    {/* <p>{item.time} de contenido</p>
-                    <p>{item.user} de usuarios</p> */}
+                    <p>{item.time} de contenido</p>
+                    <p>{item.user} de usuarios</p>
                   </div>
                   <h3>{item.name}</h3>
                   <button className="dashboard__lider-container_courses-card-content_button" value={item.name} id={item.id} onClick={redirect} >Ingresar</button>
@@ -132,7 +133,11 @@ export const DashboardIntegrante = () => {
               </div>
             </div>
           ))
-        }
+        } */}
+        <Container>
+          <CarouselDashboards item={course} />
+        </Container>
+
       </div>
       {/* <div className="dashboar__lider-construction-container" >
         <div className="dashboar__lider-construction-content" >
