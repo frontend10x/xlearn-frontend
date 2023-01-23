@@ -167,7 +167,7 @@ export const Banner = () => {
         <Col className="h-75" md={6}>
           <div className="content__banner-info_block  ms-3">
             <h3>
-              2022 <br /> Innovación <br /> Sostenibilidad <br /> Transformación
+              2023 <br /> Innovación <br /> Sostenibilidad <br /> Transformación
             </h3>
           </div>
         </Col>
