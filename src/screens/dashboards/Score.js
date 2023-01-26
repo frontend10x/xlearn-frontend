@@ -21,14 +21,12 @@ export const Score = () => {
         async function scores() {
             const response = await generateCertificate(token, id, course_id);
             setResponse(response)
-            console.log(response, 'respuesta')
         }
         scores()
     }, [])
 
     const redirect = async ()  => {
         if (response?.status) {
-            
             await window.open(baseURL + response.paths.download, '_blank');
             await window.open(baseURL + response.paths.show, '_blank');
             navigate(`/dashboard/${type.toLowerCase()}`);

@@ -8,7 +8,7 @@ import { login } from "../../actions/loginactions";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import '../../assets/css/screens/auth/StyleLogin.css'; 
 
 export const LoginScreen = () => {
 

@@ -27,7 +27,6 @@ const responsive = {
 
 export const CarouselDashboards = ({ item }) => {
 
-    console.log(item, 'log desde el componente');
     const course = item;
 
     return (
