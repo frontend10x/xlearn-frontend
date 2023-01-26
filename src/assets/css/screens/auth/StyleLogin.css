@@ -1,0 +1,195 @@
+:root {
+    --black: #19191c;
+    --blueAlternative: #270bc4;
+    --blueDark: #002333;
+    --green: #31fb84;
+    --neutroText: #8894ab;
+    --white: #ffffff;
+    --whiteOff: #f4f4f4;
+    --blueclaro: #F5F8FA;
+    --blueoscuro: #CBD6E2;
+    --pearl: #F2F2F2;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
+
+.eyePassword {
+    position: relative;
+    margin-top: 9px;
+    right: -13px;
+}
+
+.eyePassword img {
+    width: 25px;
+}
+
+.login {
+    background-color: var(--blueDark);
+    height: 100vh;
+}
+
+.login__container-content {
+    width: 100%;
+}
+
+.login__container {
+    display: flex;
+    background-color: var(--white);
+    width: 60%;
+    position: relative;
+    top: 10%;
+    margin: auto;
+
+}
+
+.login__content-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--whiteOff);
+    height: 450px;
+}
+
+.login__content-header {
+    text-align: center;
+    height: 130px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.login__content-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login__register {
+    border-top: 1px solid var(--black);
+    position: relative;
+    top: 10%;
+}
+
+.login__register-button {
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    color: var(--blueDark);
+    font-weight: bold;
+}
+
+.login__button-entrar {
+    border-radius: 5px;
+    background-color: var(--green);
+    text-decoration: none;
+    border: none;
+    padding: 5px;
+    width: 80%;
+    position: relative;
+    left: 50px;
+    color: var(--blueDark);
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.login__button-entrar:hover {
+    color: var(--white);
+}
+
+.login__email {
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    left: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 80%;
+    padding: 10px;
+}
+
+.recuperarcontrasena .login__email,
+.login__password {
+    left: 0px;
+}
+
+.recuperarcontrasena .login__button-entrar {
+    left: 0;
+}
+
+.login__password {
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    left: 50px;
+    position: relative;
+    width: 80%;
+    padding: 10px;
+}
+
+.login__content-title {
+    color: var(--blueDark);
+    font-weight: bold;
+    position: relative;
+    bottom: 50px;
+}
+
+.login__content-remind {
+    display: flex;
+    position: relative;
+    column-gap: 6rem;
+    left: 52px;
+    font-size: 12px;
+}
+
+.login__input-reminder {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.login__remind-button {
+    border: none;
+    /* background-color: var(--whiteOff); */
+    background-color: #fff0;
+    padding: 0;
+    position: relative;
+    bottom: 0px;
+}
+
+.login__header-logo-title {
+    margin-top: 20px;
+}
+
+.login__header-logo-title p {
+    font-size: 18px;
+    color: var(--blueDark);
+    padding-top: 19px;
+}
+
+.header__register {
+    background-color: var(--blueDark);
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 20px 0;
+    position: absolute;
+}
+
+.login .xln_loginText_bottom {
+    padding-right: 10px;
+}
+
+.login .xln-textRecordarme-aling {
+    position: relative;
+    top: 50%;
+    left: 0%;
+    transform: translate(-100%, -50%);
+}

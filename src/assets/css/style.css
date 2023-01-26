@@ -1490,7 +1490,8 @@ img.cursos__banner-image {
 /* Cursos Screen Fin */
 
 /* Login Screen */
-input:-webkit-autofill,
+
+/* input:-webkit-autofill,
 input:-webkit-autofill:focus {
     transition: background-color 600000s 0s, color 600000s 0s;
 }
@@ -1629,7 +1630,7 @@ input[data-autocompleted] {
 
 .login__remind-button {
   border: none;
-  /* background-color: var(--whiteOff); */
+  /* background-color: var(--whiteOff); 
   background-color: #fff0;
   padding: 0;
   position: relative;
@@ -1663,7 +1664,7 @@ input[data-autocompleted] {
   top: 50%;
   left: 0%;
   transform: translate(-100%, -50%);
-}
+} */
 
 
 
@@ -5675,6 +5676,7 @@ span.campo_requerido {
   }
 
   /* Footer Fin */
+  
   /* Login Screen */
   .login__container {
     left: 260px;

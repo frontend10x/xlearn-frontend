@@ -4,29 +4,21 @@ import {
     arrowFront,
     ImageProyectos,
     manageSearch,
-    recomendation_01,
-    recomendation_02,
-    recomendation_03,
-    recomendation_04,
     robot,
 } from "../../assets/img";
 import { useNavigate, useParams } from "react-router-dom";
 import { getCourseDescription, getCourse } from "../../services/services";
-import { imagenUser } from "../../assets/img";
 import "../../assets/css/componentes/StyleInfoVideoPlayer.css";
 import { CarouselDashboards } from "../CarouselDashboards";
+import { baseURL } from "../../utils/route";
 
 export const InfoVideoPlayer = () => {
 
     const navigate = useNavigate();
     const { course_id } = useParams();
-    const [courses, setCourses] = useState([
-        // { title: "Presentaciones efectivas de negocios", image:  recomendation_01, subtitle: "Presenta tus ideas de negocio", time: "2H", user: "366" },
-        // { title: "Modelación de negocios", image:  recomendation_02, subtitle: "Define las herramientas para tu negocio", time: "2H", user: "366" },
-        // { title: "Diseño de propuesta de valor", image:  recomendation_03, subtitle: "Determina tu segmento de clientes", time: "2H", user: "366" },
-        // { title: "Prototipado", image:  recomendation_04, subtitle: "Valida tus ideas de negocio", time: "2H", user: "366" },
-    ]);
+    const [courses, setCourses] = useState([]);
     const [course, setCourse] = useState([]);
+    const [resources, setResources] = useState();
 
     const redirect = (e) => (
         navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`)
@@ -53,22 +45,26 @@ export const InfoVideoPlayer = () => {
         async function getCourses() {
             try {
                 const data = await getCourseDescription(course_id);
-                setCourse(data.response._embedded.course)
+                setCourse(data.response._embedded.course);
+                setResources(data.response._embedded.course.resources);
+                console.log(resources,'valores');
             } catch (error) {
-
+                console.error(error);
             }
         }
 
         async function getAllCourses() {
             const data = await getCourse();
-            setCourses(data.response._embedded.courses)
+            setCourses(data.response._embedded.courses);
         }
 
         getCourses();
         getAllCourses();
     }, []) /* LOGICA DE CURSOS PUBLICOS */
 
-    console.log(course,'curso');
+    const donwloadResource = async (e) => {
+        await window.open(resources[`${e.target.id}`].file_path,'_blank');
+    }
 
     return (
         <div className="xlrn__infovideoplayer-section" >
@@ -157,10 +153,9 @@ export const InfoVideoPlayer = () => {
                                 <div className="proyectos__text">
                                     <h3>Recursos</h3>
                                     {
-                                        course.resources.map((item,index) => (
+                                        resources.map((item,index) => (
                                             <div key={index} >
-                                                {console.log(item,'items')}
-
+                                                <a className="mt-5" type="button" onClick={donwloadResource} id={index} >{item.name}</a>
                                             </div>
                                         ))
                                     }
