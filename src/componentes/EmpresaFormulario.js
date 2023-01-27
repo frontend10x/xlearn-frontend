@@ -120,6 +120,7 @@ export const EmpresaFormulario = () => {
 
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
+    console.log('se disparo')
     try {
       const data = await registerPost(
         name,
