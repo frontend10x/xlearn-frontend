@@ -3467,7 +3467,7 @@ input.preguntas__diagnostico-checkbox-selected {
 
 .dashboard__lider-container_courses {
     display: flex;
-    height: 68vh;
+    /* height: 100vh; */
     margin: auto;
     overflow: scroll;
     overflow-y: hidden;
@@ -4764,7 +4764,7 @@ p.xln_price_GDC span {
 
 .xlrn__crear-usuarios__container-form {
   background-color: var(--white);
-  height: 80vh;
+  height: 100vh;
   width: 80%;
   position: relative;
   border-radius: 5px;
