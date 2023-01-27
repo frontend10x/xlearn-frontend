@@ -46,7 +46,7 @@ export const CrearUsuarios = () => {
     ]);
 
 
-    const {name, email, email_confirmation,phone, type_id, rol_id, area ,password, password_confirmation} = formValues;
+    const {name, email, email_confirmation, phone, type_id, rol_id, area ,password, password_confirmation} = formValues;
 
 
     useEffect(() => {
@@ -65,7 +65,7 @@ export const CrearUsuarios = () => {
 
     const createUser = async () => {
         try {
-            const data = await creationUser( token,name, email, email_confirmation,phone, type_id, rol_id, area , password, password_confirmation, subcompanie_id);
+            const data = await creationUser( token,name, email, email_confirmation, phone, type_id, rol_id, area , password, password_confirmation, subcompanie_id);
             Swal.fire({
                 icon: 'success',
                 title: 'Usuario creado con exito',
@@ -80,7 +80,6 @@ export const CrearUsuarios = () => {
                 // footer: '<a href="">Why do I have this issue?</a>'
               })   
         }
-        console.log(formValues,'valores');
     }
 
     return (
@@ -134,7 +133,7 @@ export const CrearUsuarios = () => {
                                     </div> */}
                                 </div>
 
-                                <button onClick={createUser} disabled={disabled} style={disabled ? {backgroundColor:'#31fb8550'} : {backgroundColor:'#31fb84'}} >Confirmar</button>
+                                <button onClick={createUser} disabled={disabled} style={disabled ? {backgroundColor:'#31fb8550'} : {backgroundColor:'#270bc4'}} >Confirmar</button>
                             </div>
                         </div>
                     </div>

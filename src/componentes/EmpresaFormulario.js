@@ -86,6 +86,7 @@ export const EmpresaFormulario = () => {
     company: "",
     email: "",
     email_confirmation:"",
+    phone:"",
     website: "",
     size: "",
     country: "",
@@ -104,6 +105,7 @@ export const EmpresaFormulario = () => {
     company,
     email,
     email_confirmation,
+    phone,
     website,
     size,
     country,
@@ -118,7 +120,6 @@ export const EmpresaFormulario = () => {
 
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    console.log(formValues);
     try {
       const data = await registerPost(
         name,
@@ -126,6 +127,7 @@ export const EmpresaFormulario = () => {
         company,
         email,
         email_confirmation,
+        phone,
         website,
         size,
         country,
@@ -150,6 +152,7 @@ export const EmpresaFormulario = () => {
           company,
           email,
           email_confirmation,
+          phone,
           website,
           size,
           country,
@@ -248,7 +251,18 @@ export const EmpresaFormulario = () => {
               placeholder="Corfirmar correo"
             />
           </div>
-          <div className="form__group w-100">
+          <div className="form__group">
+            <p>
+              Contacto<span>*</span>
+            </p>
+            <input
+              name="phone"
+              value={phone}
+              onChange={handleInputChange}
+              placeholder="Telefono"
+            />
+          </div>
+          <div className="form__group">
             <p>
               Website empresa 
             </p>

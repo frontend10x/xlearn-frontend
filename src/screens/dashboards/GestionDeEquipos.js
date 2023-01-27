@@ -57,7 +57,7 @@ export const GestionDeEquipos = () => {
                                     <p className="xlrn__informacion-equipos-content_title">Equipo {index + 1}</p>
                                     <h2>{item.name}</h2>
                                     <h5>Lider: {item.leader}</h5>
-                                    <h5>Inicio: 05/03/2022</h5>
+                                    <h5>Inicio: {item.created_at}</h5>
                                     <div className="xlrn__informacion-equipos-content-users" >
                                         <div className="xlrn" >
                                             <div className="xln__content__info_gestionDeCupos " >
@@ -76,7 +76,6 @@ export const GestionDeEquipos = () => {
                                                     {
                                                         item.users.map((items, index) => (
                                                             <div key={index} className="d-flex" >
-                                                                {console.log(items,'usuarios')}
                                                                 <h6 className="w-50" >{items.name}</h6>
                                                                 <div className="xln_info_gestionDeCupos" >
                                                                     <div className="progress__bar__style ms-5 w-50 ">
