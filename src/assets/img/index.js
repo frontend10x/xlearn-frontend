@@ -59,6 +59,8 @@ export {default as homeCarousel02} from './home/carousel/2.png';
 export {default as homeCarousel03} from './home/carousel/3.png';
 export {default as homeCarousel04} from './home/carousel/4.png';
 
+export {default as fileZip} from './file-Image.png';
+
 /* export {default as posterMSVideo} from './home/carousel/4.png'; */
 
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Col, Container, Image } from "react-bootstrap";
 import {
     arrowFront,
+    fileZip,
     ImageProyectos,
     manageSearch,
     robot,
@@ -65,6 +66,7 @@ export const InfoVideoPlayer = () => {
     const donwloadResource = async (e) => {
         await window.open(resources[`${e.target.id}`].file_path,'_blank');
     }
+
 
     return (
         <div className="xlrn__infovideoplayer-section" >
@@ -154,8 +156,9 @@ export const InfoVideoPlayer = () => {
                                     <h3>Recursos</h3>
                                     {
                                         resources.map((item,index) => (
-                                            <div key={index} >
-                                                <a className="mt-5" type="button" onClick={donwloadResource} id={index} >{item.name}</a>
+                                            <div key={index} className="w-50" >
+                                                <Image src={fileZip} alt='zip' className="zipFile"/>
+                                                <a className="mt-5 ms-3" type="button" onClick={donwloadResource} id={index} >{item.name}</a>
                                             </div>
                                         ))
                                     }
