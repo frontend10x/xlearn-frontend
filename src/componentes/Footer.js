@@ -50,7 +50,7 @@ export const Footer = () => {
             <div className="footer__group">
               <Image src={XlearnLogo} alt="logo" className="footer__image" />
               <p className="footer__logo-info_title" >
-              Somos una plataforma pensada para empresas, corporativa, y con énfasis en el entrenamiento de equipos de trabajo para el desarrollo de proyectos en temas como: innovación, sostenibilidad, transformación digital, etc.
+                Somos una plataforma educativa para empresas especializada en innovación; podrás encontrar contenido de alto valor para tu  compañía, realizar tus entrenamientos y proyectos a partir del desarrollo de temáticas como: innovación, sostenibilidad, transformación digital, emprendimiento corporativo, excelencia operacional y mucho más...
               </p>
             </div>
 
@@ -87,7 +87,7 @@ export const Footer = () => {
 
         <div className="footer__media">
           <div className="footer__media-content" >
-              <p>&copy; Xlearn,by 10XThinking .2022</p>
+              <p>Xlearn by 10XThinking. 2023</p>
 
             <div className="footer__option" >
               {/* <p className="link-footer" onClick={ayuda}>Ayuda</p> */}
