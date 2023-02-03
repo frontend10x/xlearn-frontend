@@ -57,3 +57,7 @@
 .zipFile {
     width: 20%;
 }
+
+html{
+    background-color: var(--white);
+}

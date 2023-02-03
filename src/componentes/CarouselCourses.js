@@ -7,13 +7,10 @@ export const CarouselCourses = ({item}) => {
   
   const navigate = useNavigate();
 
-  console.log(item,'estructura')
-
   const infoCourse = (e) => {
     
     navigate(`/course/info/${e.target.id}`)
   }
-
 
   return(
         <Col >
