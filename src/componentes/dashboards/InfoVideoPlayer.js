@@ -67,6 +67,7 @@ export const InfoVideoPlayer = () => {
         await window.open(resources[`${e.target.id}`].file_path,'_blank');
     }
 
+    console.log(resources,'recursos');
 
     return (
         <div className="xlrn__infovideoplayer-section" >

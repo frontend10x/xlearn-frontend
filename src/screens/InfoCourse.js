@@ -14,6 +14,8 @@ import { Footer } from '../componentes/Footer'
 
 import { useNavigate } from "react-router-dom";
 import { HeaderDashboard } from '../componentes/dashboards/HeaderDashboard';
+import { CarouselDashboards } from '../componentes/CarouselDashboards';
+import { Container } from 'react-bootstrap';
 
 export const InfoCourse = () => {
 
@@ -56,7 +58,7 @@ export const InfoCourse = () => {
         getLessonsCourse();
     }, []) /* LOGICA DE CURSOS PUBLICOS */
 
-    console.log(course,'curso');
+    console.log(course, 'curso');
 
     return (
         <div className='xln__info_courses' >
@@ -163,23 +165,9 @@ export const InfoCourse = () => {
             <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
 
             <div className="dashboard__lider-container_courses" >
-                {courses &&
-                    courses.map((item, index) => (
-                        <div key={index} className="dashboard__lider-container_courses-card" >
-                            <Image src={item.file_path} className="img-recomendation-xln" />
-                            <div className="dashboard__lider-container_courses-card-content" >
-                                <div className="dashboard__lider-container_courses-card-content-body" >
-                                    {/* <div className="d-flex justify-content-around" >
-                                        <p>{item.time} de contenido</p>
-                                        <p>{item.user} de usuarios</p>
-                                    </div> */}
-                                    <h3>{item.name}</h3>
-                                    <button className="dashboard__lider-container_courses-card-content_button" onClick={redirect} value="login" >Ingresar</button>
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                }
+                <Container >
+                    <CarouselDashboards item={courses} />
+                </Container>
             </div>
 
 
