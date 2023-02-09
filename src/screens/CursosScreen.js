@@ -12,6 +12,7 @@ import {
 import { getCourse } from "../services/services";
 import { useNavigate } from "react-router-dom";
 import { HeaderDashboard } from "../componentes/dashboards/HeaderDashboard";
+import '../assets/css/screens/public/StyleCursosScreen.css';
 
 export const CursosScreen = () => {
   const [courses, setCourses] = useState([]);
@@ -81,7 +82,7 @@ export const CursosScreen = () => {
               <p
                 className="text-start fs-5"
                 value="Oportunidades, retos y Priorizacion"
-              >Oportunidades, retos y Priorizacion</p>
+              >Oportunidades, retos y priorizacion</p>
 
 
               {/* <h4>Transformacion Digital</h4>
@@ -172,15 +173,18 @@ export const CursosScreen = () => {
           <h4 className="cursos__section-recently" >Agregados recientemente</h4>
           <div className="map_content">
             {courses.map((item, index) => (
-              <div className="cursos__card-body" key={index} onClick={() => redirect(item.id)}  >
+              <div className="cursos__card-body" key={index}   >
                 <Image src={item.file_path} alt={item.file_path} />
                 <div className="cursos__card-content" >
                   <div className="cursos__card-titles">
                     <div className="cursos__card-information">
                       {/* <h6>{item.users} usuarios</h6> */}
                       {/* <h6>{item.time}</h6> */}
-                    </div>
                     <h5>{item.name}</h5>
+                    </div>
+                    <button className="description_button fw-bold" onClick={() => redirect(item.id)} >
+                      Descripción
+                    </button>
                   </div>
                   {/* <Image
                     src={item.logo}
@@ -213,7 +217,7 @@ export const CursosScreen = () => {
               </div>
             ))}
           </div>
-          {/* <button className="cursos__button-expand" >
+          {/* <button className="cursos__button-expand me-3" >
             ver todos
           </button> */}
         </div>
