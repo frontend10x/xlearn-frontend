@@ -48,7 +48,7 @@ export const InfoVideoPlayer = () => {
                 const data = await getCourseDescription(course_id);
                 setCourse(data.response._embedded.course);
                 setResources(data.response._embedded.course.resources);
-                console.log(resources,'valores');
+                console.log(resources, 'valores');
             } catch (error) {
                 console.error(error);
             }
@@ -64,10 +64,10 @@ export const InfoVideoPlayer = () => {
     }, []) /* LOGICA DE CURSOS PUBLICOS */
 
     const donwloadResource = async (e) => {
-        await window.open(resources[`${e.target.id}`].file_path,'_blank');
+        await window.open(resources[`${e.target.id}`].file_path, '_blank');
     }
 
-    console.log(resources,'recursos');
+    console.log(resources, 'items');
 
     return (
         <div className="xlrn__infovideoplayer-section" >
@@ -155,14 +155,29 @@ export const InfoVideoPlayer = () => {
                             <div className="xlnPlayer__content__proyectos" >
                                 <div className="proyectos__text">
                                     <h3>Recursos</h3>
-                                    {
-                                        resources.map((item,index) => (
+                                    {resources &&
+                                        resources.map((item, index) => (
                                             <div key={index} className="w-50" >
-                                                <Image src={fileZip} alt='zip' className="zipFile"/>
+                                                <Image src={fileZip} alt='zip' className="zipFile" />
                                                 <a className="mt-5 ms-3" type="button" onClick={donwloadResource} id={index} >{item.name}</a>
                                             </div>
+
                                         ))
                                     }
+                                    {/* <h3 className="mt-3" >Realidad Aumentada</h3>
+                                    {resources ?
+                                        resources.map((item, index) => (
+                                            <div key={index} className="w-50" >
+                                                {item.type === "Realidad aumentada" &&
+                                                    <>
+                                                        <Image src={fileZip} alt='zip' className="zipFile" />
+                                                        (<a className="mt-5 ms-3" type="button" onClick={donwloadResource} id={index} >{item.name}</a>)
+                                                    </>
+                                                }
+                                            </div>
+                                        ))
+                                        : <div> </div>
+                                    } */}
                                 </div>
 
                             </div>
