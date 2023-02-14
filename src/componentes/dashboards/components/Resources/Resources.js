@@ -9,8 +9,8 @@ export const Resources = ({title, data, download, type = "default"}) => {
       <h3>{renderTitle()}</h3>
       {data?.map((item, index) => (
         (type === item?.type ) && (
-          <div className="w-50" key={index}>
-          <Image src={fileZip} alt='zip' className="zipFile" />
+          <div key={index}>
+          <Image src={fileZip} alt='zip' className="zipFile" style={{ width: '9%' }} />
           <a className="mt-5 ms-3" type="button" onClick={download} id={index} >{item?.name}</a>
         </div>
         )

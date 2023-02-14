@@ -160,6 +160,8 @@ export const InfoVideoPlayer = () => {
                                     title='Recursos'
                                     download={donwloadResource} 
                                     data={resources}/>
+                                </div>
+                                <div className="proyectos__text">
                                 <Resources
                                     title='Realidad Aumentada'
                                     type="Realidad aumentada"
