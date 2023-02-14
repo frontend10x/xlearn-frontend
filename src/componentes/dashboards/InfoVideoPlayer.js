@@ -12,6 +12,8 @@ import { getCourseDescription, getCourse } from "../../services/services";
 import "../../assets/css/componentes/StyleInfoVideoPlayer.css";
 import { CarouselDashboards } from "../CarouselDashboards";
 import { baseURL } from "../../utils/route";
+import Resources from "./components/Resources";
+
 
 export const InfoVideoPlayer = () => {
 
@@ -157,12 +159,14 @@ export const InfoVideoPlayer = () => {
                                     <h3>Recursos</h3>
                                     {resources &&
                                         resources.map((item, index) => (
-                                            <div key={index} className="w-50" >
-                                                <Image src={fileZip} alt='zip' className="zipFile" />
-                                                <a className="mt-5 ms-3" type="button" onClick={donwloadResource} id={index} >{item.name}</a>
-                                            </div>
-
+                                            <Resources key={index} file={fileZip} download={donwloadResource} data={item}/>
                                         ))
+                                        // resources.map((item, index) => (
+                                        //     <div key={index} className="w-50" >
+                                        //         <Image src={fileZip} alt='zip' className="zipFile" />
+                                        //         <a className="mt-5 ms-3" type="button" onClick={donwloadResource} id={index} >{item.name}</a>
+                                        //     </div>
+                                        // ))
                                     }
                                     {/* <h3 className="mt-3" >Realidad Aumentada</h3>
                                     {resources ?
