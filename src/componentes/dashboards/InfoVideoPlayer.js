@@ -156,32 +156,15 @@ export const InfoVideoPlayer = () => {
                         <div className="xlrn__infovideoplayer-content" >
                             <div className="xlnPlayer__content__proyectos" >
                                 <div className="proyectos__text">
-                                    <h3>Recursos</h3>
-                                    {resources &&
-                                        resources.map((item, index) => (
-                                            <Resources key={index} file={fileZip} download={donwloadResource} data={item}/>
-                                        ))
-                                        // resources.map((item, index) => (
-                                        //     <div key={index} className="w-50" >
-                                        //         <Image src={fileZip} alt='zip' className="zipFile" />
-                                        //         <a className="mt-5 ms-3" type="button" onClick={donwloadResource} id={index} >{item.name}</a>
-                                        //     </div>
-                                        // ))
-                                    }
-                                    {/* <h3 className="mt-3" >Realidad Aumentada</h3>
-                                    {resources ?
-                                        resources.map((item, index) => (
-                                            <div key={index} className="w-50" >
-                                                {item.type === "Realidad aumentada" &&
-                                                    <>
-                                                        <Image src={fileZip} alt='zip' className="zipFile" />
-                                                        (<a className="mt-5 ms-3" type="button" onClick={donwloadResource} id={index} >{item.name}</a>)
-                                                    </>
-                                                }
-                                            </div>
-                                        ))
-                                        : <div> </div>
-                                    } */}
+                                <Resources
+                                    title='Recursos'
+                                    download={donwloadResource} 
+                                    data={resources}/>
+                                <Resources
+                                    title='Realidad Aumentada'
+                                    type="Realidad aumentada"
+                                    download={donwloadResource} 
+                                    data={resources}/>
                                 </div>
 
                             </div>
