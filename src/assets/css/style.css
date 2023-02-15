@@ -6567,7 +6567,7 @@ span.campo_requerido {
     bottom: 0px;
   }
 
-  .login__email {
+  /* .login__email {
     border: none;
     text-decoration: none;
     border-radius: 5px;
@@ -6578,8 +6578,8 @@ span.campo_requerido {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-  .login__password {
+ */
+  /* .login__password {
     border: none;
     text-decoration: none;
     border-radius: 5px;
@@ -6588,7 +6588,7 @@ span.campo_requerido {
     position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+  } */
 
   .login__content-inputs {
     display: flex;

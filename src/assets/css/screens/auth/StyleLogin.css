@@ -11,6 +11,23 @@
     --pearl: #F2F2F2;
 }
 
+.Login-Screen {
+    height: 100vh;
+}
+
+.login {
+    background-color: var(--blueDark);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    padding-bottom: 0px!important;
+    padding-top: 0px!important;
+    align-self: center;
+}
+
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
     transition: background-color 600000s 0s, color 600000s 0s;
@@ -21,22 +38,35 @@ input[data-autocompleted] {
 }
 
 .eyePassword {
-    position: relative;
-    margin-top: 9px;
-    right: -13px;
+    position: absolute;
+    width: 50px;
+    height: 36px;
+    right: 0;
+    top: 63px;
 }
 
 .eyePassword img {
     width: 25px;
 }
 
-.login {
-    background-color: var(--blueDark);
-    height: 100vh;
+
+.xln_content_login {
+    width: 70%;
+    margin: auto;
 }
+
+.xln__left__col {
+    padding: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 
 .login__container-content {
     width: 100%;
+    background: #f4f4f4;
+    padding: 50px;
 }
 
 .login__container {
@@ -50,19 +80,18 @@ input[data-autocompleted] {
 }
 
 .login__content-inputs {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--whiteOff);
-    height: 450px;
+    height: 450px; */
 }
 
 .login__content-header {
     text-align: center;
-    height: 130px;
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-bottom: 10px;
+
 }
 
 .login__content-form {
@@ -81,9 +110,17 @@ input[data-autocompleted] {
     text-decoration: none;
     border: none;
     background-color: transparent;
-    position: relative;
     color: var(--blueDark);
     font-weight: bold;
+    text-align: center;
+    width: 100% !important;
+    margin: 0 auto;
+    display: inline-block;
+    margin-top: 44px;
+}
+
+.login__register-button:hover {
+    color: #000;
 }
 
 .login__button-entrar {
@@ -92,9 +129,9 @@ input[data-autocompleted] {
     text-decoration: none;
     border: none;
     padding: 5px;
-    width: 80%;
+    width: 100%;
     position: relative;
-    left: 50px;
+
     color: var(--blueDark);
     font-weight: bold;
     text-align: center;
@@ -110,7 +147,7 @@ input[data-autocompleted] {
     text-decoration: none;
     border-radius: 5px;
     position: relative;
-    width: 90%;
+    width: 100%;
     padding: 10px;
     margin: auto;
 }
@@ -129,9 +166,10 @@ input[data-autocompleted] {
     text-decoration: none;
     border-radius: 5px;
     position: relative;
-    width: 90%;
+    width: 100%;
     padding: 10px;
     margin: auto;
+    top: 10px;
 }
 
 .login__content-title {
@@ -162,16 +200,19 @@ input[data-autocompleted] {
     padding: 0;
     position: relative;
     bottom: 0px;
+    width: 100%;
+    text-align: right;
 }
 
-.login__header-logo-title {
+/* .login__header-logo-title {
     margin-top: 20px;
-}
+} */
 
 .login__header-logo-title p {
     font-size: 18px;
     color: var(--blueDark);
     padding-top: 19px;
+    padding-bottom: 27px;
 }
 
 .header__register {
@@ -184,6 +225,8 @@ input[data-autocompleted] {
 
 .login .xln_loginText_bottom {
     padding-right: 10px;
+    text-align: center;
+    padding-top: 16px;
 }
 
 .login .xln-textRecordarme-aling {
@@ -191,4 +234,109 @@ input[data-autocompleted] {
     top: 50%;
     left: 0%;
     transform: translate(-100%, -50%);
+}
+
+@media (max-width: 1367px) {
+    .login {
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 0px !important;
+
+    }
+
+    .login {
+        height: auto;
+    }
+
+    .xln_content_login {
+        width: 100%;
+        margin: auto;
+    }
+
+    .login__container-content {
+        width: 100%;
+        background: #f4f4f4;
+        padding: 80px;
+        height: inherit;
+    }
+
+    .login__content-inputs {
+        padding-top: 36px;
+    }
+
+    .row.xln_section_info .col-md-6 {
+        width: 50% !important;
+    }
+
+    .row.xln_section_info .col-md-2 {
+        width: 20% !important;
+    }
+
+    .row.xln_section_info .col-md-10 {
+        width: 80% !important;
+    }
+
+    .row.xln_section_info .col-md-10 p {
+        font-size: 12px;
+    }
+
+    button.login__remind-button p {
+        font-size: 12px;
+    }
+
+}
+
+
+@media (max-width: 425px) {
+
+    .container {
+        padding: 0px !important;
+
+    }
+
+    .login {
+        height: auto;
+    }
+
+    .xln_content_login {
+        width: 100%;
+        margin: auto;
+    }
+
+    .login__container-content {
+        width: 100%;
+        background: #f4f4f4;
+        padding: 30px;
+        height: inherit;
+    }
+
+    .login__content-inputs {
+        padding-top: 36px;
+    }
+
+    .row.xln_section_info .col-md-6 {
+        width: 50% !important;
+    }
+
+    .row.xln_section_info .col-md-2 {
+        width: 20% !important;
+    }
+
+    .row.xln_section_info .col-md-10 {
+        width: 80% !important;
+    }
+
+    .row.xln_section_info .col-md-10 p {
+        font-size: 12px;
+    }
+
+    button.login__remind-button p {
+        font-size: 12px;
+    }
+
 }
