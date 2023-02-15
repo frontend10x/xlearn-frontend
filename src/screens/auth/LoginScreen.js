@@ -8,7 +8,7 @@ import { login } from "../../actions/loginactions";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import '../../assets/css/screens/auth/StyleLogin.css'; 
+import '../../assets/css/screens/auth/StyleLogin.css';
 
 export const LoginScreen = () => {
 
@@ -34,7 +34,7 @@ export const LoginScreen = () => {
     } else if (type === "Integrante") {
       navigate('/dashboard/integrante');
     }
-    if(type) navigate(0)
+    if (type) navigate(0)
   }, [navigate, type, diagnostic])
 
   const handleLogin = async (e) => {
@@ -93,80 +93,104 @@ export const LoginScreen = () => {
   return (
     <div className="Login-Screen">
       <div className="login">
-        <div /* className="login__container animate__animated animate__bounce animate__delay-2s" */ className="row" >
-          <div /* className="xln-contentImage-login" */ className="col-md-3" >
-            <Image src={imagenlogin} alt="imagen-login" />
-          </div>
-          <div /* className="login__container-content" */ className="col-md-6" >
-            <div className="login__content-header">
-              <div className="login__header-logo-title">
-                <NavLink to='/'>
 
-                  <Image
-                    src={logologin}
-                    className="login__logo"
-                    alt="imagen-login"
-                  />
-                </NavLink>
-                <p>
-                  Súmate a la experiencia Xlearn y desarrolla tu proyecto empresarial
-                </p>
-              </div>
-            </div>
-            
-            <div className="login__content-inputs">
-              {/* <p className="login__content-title">Bienvenido a Xlearn</p> */}
-              <form
-                className="login__content-form"
-                onSubmit={handleLogin}
-              >
-                <input
-                  type="text"
-                  name="email"
-                  value={email}
-                  placeholder="Email"
-                  onChange={handleInputChange}
-                  className="login__email"
-                />
-                <div className="d-flex " >
+        <div className="container" >
 
-                  <input
-                    type={show === true ? 'text' : 'password'}
-                    name="password"
-                    placeholder="Contraseña"
-                    value={password}
-                    onChange={handleInputChange}
-                    className="login__password"
-                  />
-                  <a type="button" className="eyePassword" onClick={showPassword} ><Image src={eyePassword} /></a>
+          <div className="row xln_content_login">
+
+
+              <div className="col-md-5 xln__left__col" style={{ backgroundImage: `url(${imagenlogin})`, }} ></div>
+
+              <div className="col-md-7 rigth" style={{ padding: "0px" }}>
+                <div className="login__container-content">
+                  <div className="login__content-header">
+                    <div className="login__header-logo-title">
+                      <NavLink to='/'>
+
+                        <Image
+                          src={logologin}
+                          className="login__logo"
+                          alt="imagen-login"
+                        />
+                      </NavLink>
+                      <p>
+                        Súmate a la experiencia Xlearn y desarrolla tu proyecto empresarial
+                      </p>
+                    </div>
+                  </div>
+                  <div className="login__content-inputs">
+                    {/* <p className="login__content-title">Bienvenido a Xlearn</p> */}
+                    <form
+                      className="login__content-form"
+                      onSubmit={handleLogin}
+                    >
+
+
+                      <div className="row" style={{position: "relative"}}>
+
+                        <input
+                          type="text"
+                          name="email"
+                          value={email}
+                          placeholder="Email"
+                          onChange={handleInputChange}
+                          className="login__email"
+                        />
+                        <input
+                          type={show === true ? 'text' : 'password'}
+                          name="password"
+                          placeholder="Contraseña"
+                          value={password}
+                          onChange={handleInputChange}
+                          className="login__password"
+                        />
+                        <a type="button" className="eyePassword" onClick={showPassword} ><Image src={eyePassword} /></a>
+
+                      </div>
+
+                      
+                      <div className="row xln_section_info" style={{marginTop: "35px"}}>
+                        <div className="col-md-6">
+                          <div className="row">
+                            <div className="col-md-2">
+                              <input type="checkbox" className="login__input-reminder" />
+                            </div>
+                            <div className="col-md-10">
+                              <p /* className="xln-textRecordarme-aling" */>Recordarme</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-md-6" style={{padding:"0px"}}>
+                          <button className="login__remind-button" onClick={redirect} >
+                            {" "}
+                            <p>¿Olvidaste tu contraseña?</p>
+                          </button>
+                        </div>
+                      </div>
+
+                      <button
+                        className="login__button-entrar"
+                      >
+                        Entrar
+                      </button>
+                    </form>
+                    <div /* className="d-flex login__register" */>
+                        <NavLink
+                          to="/plans/register"
+                          className="login__register-button"
+                        >
+                          <span style={{textDecoration:"none",fontWeight:"normal"}}>¿Aún no estás registrado?</span> Crea una cuenta
+                        </NavLink>
+                     
+                    </div>
+                  </div>
                 </div>
-
-                <div className="d-flex login__content-remind ">
-                  <input type="checkbox" className="login__input-reminder" />
-                  <p className="xln-textRecordarme-aling">Recordarme</p>
-                  <button className="login__remind-button" onClick={redirect} >
-                    {" "}
-                    ¿Olvidaste tu contraseña?
-                  </button>
-                </div>
-
-                <button
-                  className="login__button-entrar"
-                >
-                  Entrar
-                </button>
-              </form>
-              <div className="d-flex login__register">
-                <p className="xln_loginText_bottom">¿Aún no estás registrado? </p>
-                <NavLink
-                  to="/plans/register"
-                  className="login__register-button"
-                >
-                  Crea una cuenta
-                </NavLink>
               </div>
-            </div>
+
+  
+
           </div>
+
         </div>
       </div>
     </div>
