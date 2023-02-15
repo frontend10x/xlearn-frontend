@@ -94,26 +94,22 @@ export const LoginScreen = () => {
     <div className="Login-Screen">
       <div className="login">
 
-        <div className="container">
+        <div className="container" >
 
-          <div className="row" style={{width:"70%", margin:"auto"}}>
+          <div className="row xln_content_login">
 
 
-              <div className="col-md-4" style={{ padding: "0px", backgroundImage: `url(${imagenlogin})`, }} >
-                  
-                  {/* <Image src={imagenlogin} alt="imagen-login" style={{ width: "100%" }} /> */}
-          
-              </div>
+              <div className="col-md-5 xln__left__col" style={{ backgroundImage: `url(${imagenlogin})`, }} ></div>
 
-              <div className="col-md-8" style={{ padding: "0px" }}>
+              <div className="col-md-7 rigth" style={{ padding: "0px" }}>
                 <div className="login__container-content">
-                  <div /* className="login__content-header" */>
-                    <div /* className="login__header-logo-title" */>
+                  <div className="login__content-header">
+                    <div className="login__header-logo-title">
                       <NavLink to='/'>
 
                         <Image
                           src={logologin}
-                          /* className="login__logo" */
+                          className="login__logo"
                           alt="imagen-login"
                         />
                       </NavLink>
@@ -130,7 +126,7 @@ export const LoginScreen = () => {
                     >
 
 
-                      <div className="row">
+                      <div className="row" style={{position: "relative"}}>
 
                         <input
                           type="text"
@@ -153,15 +149,21 @@ export const LoginScreen = () => {
                       </div>
 
                       
-                      <div className="row">
+                      <div className="row xln_section_info" style={{marginTop: "35px"}}>
                         <div className="col-md-6">
-                          <input type="checkbox" className="login__input-reminder" />
-                          <p /* className="xln-textRecordarme-aling" */>Recordarme</p>
+                          <div className="row">
+                            <div className="col-md-2">
+                              <input type="checkbox" className="login__input-reminder" />
+                            </div>
+                            <div className="col-md-10">
+                              <p /* className="xln-textRecordarme-aling" */>Recordarme</p>
+                            </div>
+                          </div>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6" style={{padding:"0px"}}>
                           <button className="login__remind-button" onClick={redirect} >
                             {" "}
-                            ¿Olvidaste tu contraseña?
+                            <p>¿Olvidaste tu contraseña?</p>
                           </button>
                         </div>
                       </div>
@@ -173,13 +175,13 @@ export const LoginScreen = () => {
                       </button>
                     </form>
                     <div /* className="d-flex login__register" */>
-                      <p className="xln_loginText_bottom">¿Aún no estás registrado? </p>
-                      <NavLink
-                        to="/plans/register"
-                        className="login__register-button"
-                      >
-                        Crea una cuenta
-                      </NavLink>
+                        <NavLink
+                          to="/plans/register"
+                          className="login__register-button"
+                        >
+                          <span style={{textDecoration:"none",fontWeight:"normal"}}>¿Aún no estás registrado?</span> Crea una cuenta
+                        </NavLink>
+                     
                     </div>
                   </div>
                 </div>
