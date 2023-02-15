@@ -1373,7 +1373,7 @@ video.xln-content-video_MS {
 
 .cursos__card-content {
   background-color: var(--white);
-  height: 15vh;
+  height:auto;
   border-radius: 0px 0px 10px 10px;
 }
 
@@ -6041,6 +6041,11 @@ span.campo_requerido {
 
 @media (max-width: 768px) {
 
+  /*login*/
+  .xln-contentImage-login {
+    display: none;
+  }
+
   /* Header */
   .header__logo {
     top: 20px;
@@ -6278,6 +6283,8 @@ span.campo_requerido {
 }
 
 @media (max-width: 425px) {
+
+  
 
   /* Header Inicio */
   .header {
@@ -6527,6 +6534,7 @@ span.campo_requerido {
   }
 
   /*----------------- Login ---------------*/
+  
   .xln-contentImage-login {
     display: none;
   }
