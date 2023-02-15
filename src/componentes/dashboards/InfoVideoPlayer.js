@@ -69,8 +69,6 @@ export const InfoVideoPlayer = () => {
         await window.open(resources[`${e.target.id}`].file_path, '_blank');
     }
 
-    console.log(resources, 'items');
-
     return (
         <div className="xlrn__infovideoplayer-section" >
             <div className="xlrn__infovideoplayer-container" >
@@ -103,7 +101,10 @@ export const InfoVideoPlayer = () => {
                                 <div className="description__infovideoplayer-content" >
                                     <div className="d-flex mt-5" >
                                         <Col md={6} className="d-flex gap-5 border-end" >
-                                            <Image src={course.img_author} className='about__tutor-image ms-5' alt="usuario" />
+                                            {course?.img_author?.map((img, index)=>(
+                                                <Image key={index} src={img} className='about__tutor-image ms-5' alt="usuario" />
+                                            ))
+                                            }
                                             <div className="w-75" dangerouslySetInnerHTML={{ __html: course.about_author }} />
                                         </Col>
                                         <Col md={6} className="d-flex justify-content-start ms-5 mt-5" >
