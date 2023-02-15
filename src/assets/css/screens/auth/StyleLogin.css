@@ -109,11 +109,10 @@ input[data-autocompleted] {
     border: none;
     text-decoration: none;
     border-radius: 5px;
-    left: 50px;
-    margin-bottom: 20px;
     position: relative;
-    width: 80%;
+    width: 90%;
     padding: 10px;
+    margin: auto;
 }
 
 .recuperarcontrasena .login__email,
@@ -129,10 +128,10 @@ input[data-autocompleted] {
     border: none;
     text-decoration: none;
     border-radius: 5px;
-    left: 50px;
     position: relative;
-    width: 80%;
+    width: 90%;
     padding: 10px;
+    margin: auto;
 }
 
 .login__content-title {
