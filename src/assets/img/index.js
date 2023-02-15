@@ -105,3 +105,6 @@ export {default as eyePassword} from '../img/eye-password.png'
 
 /* Imagen de 404 */
 export {default as error404 } from '../img/error_404.webp'
+
+/* Icono de carrito */
+export {default as cartIcon } from './shopping-cart.png'

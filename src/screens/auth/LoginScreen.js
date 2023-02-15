@@ -93,11 +93,11 @@ export const LoginScreen = () => {
   return (
     <div className="Login-Screen">
       <div className="login">
-        <div className="login__container animate__animated animate__bounce animate__delay-2s">
-          <div className="xln-contentImage-login">
+        <div /* className="login__container animate__animated animate__bounce animate__delay-2s" */ className="row" >
+          <div /* className="xln-contentImage-login" */ className="col-md-3" >
             <Image src={imagenlogin} alt="imagen-login" />
           </div>
-          <div className="login__container-content">
+          <div /* className="login__container-content" */ className="col-md-6" >
             <div className="login__content-header">
               <div className="login__header-logo-title">
                 <NavLink to='/'>
@@ -113,6 +113,7 @@ export const LoginScreen = () => {
                 </p>
               </div>
             </div>
+            
             <div className="login__content-inputs">
               {/* <p className="login__content-title">Bienvenido a Xlearn</p> */}
               <form
