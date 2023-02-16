@@ -1161,108 +1161,6 @@ video.xln-content-video_MS {
 
 /* Inicio Footer */
 
-.footer {
-  background-color: var(--blueDark);
-  height: 60vh;
-}
-
-.footer__container {
-  color: var(--white);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 65px;
-  width: 80%;
-  margin: auto;
-}
-
-.footer__content {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 2px solid var(--green);
-}
-
-.footer__group-container {
-  display: flex;
-  column-gap: 3rem;
-  font-size: 20px;
-  position: relative;
-  top: 10px;
-}
-
-.footer__group h5 {
-  position: relative;
-  bottom: 24px;
-  font-size: 20px;
-}
-
-.footer__group p {
-  font-size: 15px !important;
-}
-
-.position {
-    width: 25%;
-    position: relative;
-    bottom: 25px;
-}
-
-.margins p {
-  margin-bottom: 0px;
-}
-
-.footer__content-email_logo {
-  position: relative;
-  width: 100%;
-}
-
-.footer__image {
-  position: relative;
-  bottom: 25px;
-}
-
-.footer__media {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  top: 15px;
-}
-
-.footer__media-content {
-  display: flex;
-}
-
-.footer__option {
-  column-gap: 5rem;
-  display: flex;
-  position: relative;
-  left: 190px;
-}
-
-.footer__media-links {
-  display: flex;
-  column-gap: 2rem;
-}
-
-.footer__media-icon {
-  width: 20px;
-  height: 20px;
-  color: var(--white);
-}
-
-.footer__email {
-  margin-top: 25px;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.footer__image-email {
-  width: 200px;
-}
-
-.link-footer{
-  cursor: pointer;
-}
-
 /* Footer Fin */
 
 /* Cursos Screen */
@@ -1721,208 +1619,7 @@ input[data-autocompleted] {
   padding-bottom: 3%;
   font-weight: bold;
 }
-/* Register*/
-.planes__register-banner {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  height: 500px;
-}
 
-.register__banner-image {
-  height: 70vh;
-  width: 100%;
-}
-
-.planes__register-content {
-  color: var(--white);
-  left: 100px;
-  position: relative;
-  width: 41%;
-  top: 160px;
-}
-
-.planes__register-content h1 {
-  font-weight: bold;
-}
-
-.planes__register-information {
-  height: 100vh;
-  padding-top: 10%;
-  padding-bottom: 10%;
-}
-
-.planes__register-container_option {
-  height: 100vh;
-}
-
-.planes__register-option {
-  height: 50vh;
-  position: relative;
-  left: 100px;
-  width: 40%;
-}
-
-.planes__register-option h2 {
-  font-weight: bold;
-  font-size: 30px;
-  width: 100%;
-}
-
-.xln__separator__subtitle {
-  width: 100px;
-  height: 8px;
-  background: #270bc4;
-  border-radius: 10px;
-  margin-bottom: 10%;
-}
-
-.planes__option-group {
-  float: left !important;
-  display: block !important;
-  width: 50%;
-}
-
-.planes__option-group ul {
-  margin-bottom: 2rem !important;
-  padding-left: 1rem;
-}
-
-.planes__option-group h4 {
-  font-size: 20px;
-  height: 60px;
-}
-
-.planes__container-about {
-  background-color: var(--white);
-  height: 50vh;
-}
-
-.planes__register-about {
-  left: 100px;
-  position: relative;
-  top: 42px;
-  width: 40%;
-}
-
-.planes__register-about h2 {
-  font-weight: bold;
-}
-
-.planes__form-container {
-  background-color: var(--blueAlternative);
-  border-radius: 5px;
-  color: var(--white);
-  position: absolute;
-  left: 56%;
-  top: 400px;
-  height: auto;
-  width: 41%;
-  padding: 5%;
-  padding-top: 2%;
-  padding-bottom: 6%;
-  font-size: 0.80em;
-}
-
-.planes__form-content {
-  position: relative;
-  top: 30px;
-}
-
-.planes__formulario-content {
-  display: flex;
-  flex-flow: wrap;
-  width: 100%;
-  position: relative;
-  left: 0px;
-}
-
-.form__group {
-  width: 50%;
-  padding: 8px;
-}
-
-.form__group p {
-  position: relative;
-  top: 10px;
-}
-
-.xln__note__text {
-  color: var(--green);
-  font-size: 11px;
-  padding-bottom: 10px;
-}
-
-.form__group input {
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
-  width: 100%;
-}
-
-.form__group select {
-  border-radius: 5px;
-  padding: 7px;
-  width: 100%;
-  color: #adadad;
-}
-
-.form__container-country_content .form__group {
-  width: 100%;
-}
-
-.form__container-country_content {
-  width: 100%;
-}
-
-.form__container-country_content select {
-  width: 100%;
-}
-
-.form__group span {
-  color: red;
-}
-
-.form__group.form__group__xln {
-  width: 100%;
-}
-
-.form__group.form__group__xln textarea {
-  width: 100%;
-}
-
-textarea {
-  border-radius: 5px;
-  resize: none;
-}
-
-.planes__formulario-button {
-  background-color: var(--green);
-  border: none;
-  border-radius: 10px;
-  left: 100px;
-  position: relative;
-  padding: 10px;
-  top: 30px;
-  width: 50%;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-p.xln__register_text_TyC {
-  margin-top: 13%;
-}
-
-.planes__formulario h1 {
-  font-weight: bold;
-  font-size: 30px;
-}
-
-.planes__option-group ul li::marker {
-  color: var(--green);
-}
-
-/* Register Fin */
 
 /*-------------Vista empresa---------------*/
 .dashboard__section-empresa .header__container.background {
@@ -2263,18 +1960,6 @@ p.xln__register_text_TyC {
 
 /*====Fin Bloque contenido====*/
 
-/*====Bloque Footer====*/
-.xln-contentSection-block-empresa .footer {
-  height: 80vh;
-}
-
-.xln-contentSection-block-empresa .footer__group-container {
-  display: flex;
-  column-gap: 4rem;
-  font-size: 20px;
-  position: relative;
-  top: 8px;
-}
 
 /*====Fin Bloque Footer====*/
 
@@ -4008,11 +3693,7 @@ input.preguntas__diagnostico-checkbox-selected {
 /* Confirmar Ruta Fin*/
 
 /* Gestion de cupos (Usuarios) */
-.xlrn__crear-suarios__section.lxn__manejo__equipos .footer {
-  width: 100%;
-  padding-left: 20%;
-  height: 80vh;
-}
+
 .gestion__usuario-section .header__container.background {
   position: fixed !important;
   z-index: 9;
@@ -4110,19 +3791,6 @@ input.preguntas__diagnostico-checkbox-selected {
   width: 30%;
 }
 
-.gestion__usuario-section .footer {
-  width: 80%;
-  margin-left: 20%;
-  height: 80vh;
-}
-
-.gestion__usuario-section .footer__group-container {
-  display: flex;
-  column-gap: 2rem;
-  font-size: 20px;
-  position: relative;
-  top: 10px;
-}
 
 /* Gestion de cupos (Usuarios) Fin */
 
@@ -4234,19 +3902,6 @@ input.preguntas__diagnostico-checkbox-selected {
   padding-left: 5%;
 }
 
-.compra-usuarios__section .footer {
-  width: 80%;
-  margin-left: 20%;
-  height: 80vh;
-}
-
-.compra-usuarios__section .footer__group-container {
-  display: flex;
-  column-gap: 2rem;
-  font-size: 20px;
-  position: relative;
-  top: 10px;
-}
 
 .compra-usuarios__form {
   width: 40%;
@@ -4830,19 +4485,6 @@ p.xln_price_GDC span {
   border-radius: 5px;
 }
 
-.crear__equipos-section .footer {
-  width: 80%;
-  margin-left: 20%;
-  height: 80vh;
-}
-
-.crear__equipos-section .footer__group-container {
-  display: flex;
-  column-gap: 2rem;
-  font-size: 20px;
-  position: relative;
-  top: 10px;
-}
 
 /* .xlrn__crear-usuarios__massive-charge__input {
     
@@ -5059,22 +4701,6 @@ p.xln_price_GDC span {
   margin-top: 8%;
 }
 
-.xlrn__crear-suarios__section .footer {
-  width: 100%;
-  margin-left: 0;
-  height: 80vh;
-}
-
-.xln__creacion-nuevo-equipo button {
-  background-color: var(--green);
-  border: none;
-  color: var(--blueDark);
-  height: 41px;
-  width: 188px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 5px;
-}
 
 /* .xln__creacion-nuevo-equipo-content {
 
@@ -6030,9 +5656,9 @@ span.campo_requerido {
 
   /* Preguntas Fin */
   /* Footer Inicio */
-  .footer {
+  /* .footer {
     height: 45vh;
-  }
+  } */
 
   .footer__option {
     left: 115px;
@@ -6234,7 +5860,7 @@ span.campo_requerido {
   /* Footer Fin*/
 
   /*Estilos ventana registro*/
-  .navegacion {
+  /* .navegacion {
     display: inline-flex;
     column-gap: normal;
     left: 32%;
@@ -6264,20 +5890,20 @@ span.campo_requerido {
     width: 100%;
     padding-left: 10%;
     padding-right: 10%;
-  }
+  } */
 
-  .planes__register-container_option {
+  /* .planes__register-container_option {
     height: 190vh;
-  }
+  } */
 
-  .planes__container-about {
+  /* .planes__container-about {
     background-color: var(--white);
     height: 30vh;
   }
 
   .planes__formulario-button {
     left: 25%;
-  }
+  } */
 
   /*Fin Estilos ventana registro*/
 }
@@ -6498,32 +6124,32 @@ span.campo_requerido {
   }
 
   /* Preguntas Frecuentes Final */
-  .footer {
+  /* .footer {
     height: 55vh;
-  }
+  } */
 
   .footer__container {
     left: 25px;
   }
 
-  .footer__content {
+ /*  .footer__content {
     flex-direction: column;
-  }
+  } */
 
-  .footer__logo-info_title {
+  /* .footer__logo-info_title {
     font-size: 12px;
     position: relative;
     left: 60px;
     width: 80%;
     top: -14px;
   }
-
-  .footer__image-email {
+ */
+  /* .footer__image-email {
     left: 260px;
     width: 20%;
     position: relative;
     bottom: 255px;
-  }
+  } */
 
   .footer__media-content {
     flex-flow: wrap;
@@ -6601,12 +6227,12 @@ span.campo_requerido {
   }
 
   /*Estilos ventana registro*/
-  .planes__register-about {
+  /* .planes__register-about {
     left: 10%;
     position: relative;
     top: 42px;
     width: 80%;
-  }
+  } */
 
   .planes__form-container {
     padding-bottom: 17%;
