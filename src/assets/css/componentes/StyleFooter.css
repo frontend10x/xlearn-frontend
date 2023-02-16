@@ -1,0 +1,249 @@
+.footer {
+    background-color: var(--blueDark);
+    color: #fff;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    /* height: 60vh; */
+}
+
+.footer__container {
+    /* color: var(--white);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 65px;
+    width: 80%;
+    margin: auto; */
+}
+
+.footer__content {
+    /* display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--green); */
+}
+
+.footer__group-container {
+    display: flex;
+    column-gap: 3rem;
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+}
+
+/* .footer__group h5 {
+    position: relative;
+    bottom: 24px;
+    font-size: 20px;
+} */
+
+.footer__group p {
+    font-size: 15px !important;
+}
+
+.position {
+    width: 25%;
+    position: relative;
+    bottom: 25px;
+}
+
+.margins p {
+    margin-bottom: 0px;
+}
+
+.footer__content-email_logo {
+    position: relative;
+    width: 100%;
+}
+
+/* .footer__image {
+    position: relative;
+    bottom: 25px;
+} */
+
+.footer__media {
+    /* display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 15px; */
+}
+
+/* .footer__media-content {
+    display: flex;
+} */
+
+/* .footer__option {
+    column-gap: 5rem;
+    display: flex;
+    position: relative;
+    left: 190px;
+} */
+
+/* .footer__media-links {
+    display: flex;
+    column-gap: 2rem;
+} */
+
+.footer__media-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--white);
+}
+
+.footer__email {
+    margin-top: 25px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.footer__image-email {
+    width: 100%;
+}
+
+.link-footer {
+    cursor: pointer;
+}
+.xln__altoTitle__footer {
+    height: 70px;
+}
+
+.xln__altoTitle__footer h5 {
+    bottom: -15px!important;
+    position: relative;
+    font-weight: bold;
+}
+
+hr{
+    color: #31fb84;
+    height: 2px;
+    opacity: 1;
+}
+/*====Bloque Footer====*/
+.xln-contentSection-block-empresa .footer {
+    height: 80vh;
+}
+
+.xln-contentSection-block-empresa .footer__group-container {
+    display: flex;
+    column-gap: 4rem;
+    font-size: 20px;
+    position: relative;
+    top: 8px;
+}
+
+.xlrn__crear-suarios__section.lxn__manejo__equipos .footer {
+    width: 100%;
+    padding-left: 20%;
+    height: 80vh;
+}
+
+
+.gestion__usuario-section .footer {
+    width: 80%;
+    margin-left: 20%;
+    height: 80vh;
+}
+
+.gestion__usuario-section .footer__group-container {
+    display: flex;
+    column-gap: 2rem;
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+}
+
+
+.compra-usuarios__section .footer {
+    width: 80%;
+    margin-left: 20%;
+    height: 80vh;
+}
+
+.compra-usuarios__section .footer__group-container {
+    display: flex;
+    column-gap: 2rem;
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+}
+
+
+.crear__equipos-section .footer {
+    width: 80%;
+    margin-left: 20%;
+    height: 80vh;
+}
+
+.crear__equipos-section .footer__group-container {
+    display: flex;
+    column-gap: 2rem;
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+}
+
+
+.xlrn__crear-suarios__section .footer {
+    width: 100%;
+    margin-left: 0;
+    height: 80vh;
+}
+
+.xln__creacion-nuevo-equipo button {
+    background-color: var(--green);
+    border: none;
+    color: var(--blueDark);
+    height: 41px;
+    width: 188px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.logoFooter img{
+    width: 170px;
+}
+
+
+
+@media (max-width: 1367px) {}
+
+@media (max-width: 768px) {
+
+}
+
+
+@media (max-width: 700px) {
+
+    .row.xln__social_mediaFooter .col-md-2 {
+        width: 12%!important;
+    }
+    .logoFooter{
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+    .footer {
+        padding-top: 10%;
+        padding-bottom: 10%;
+
+    }
+    p.footer__logo-info_title {
+        text-align: center;
+    }
+    .xln__altoTitle__footer {
+        height: 0px;
+        padding-bottom: 32px;
+        padding-top: 29px;
+    }
+    .row.columnas-x2 .col-md-2 {
+        width: 50%;
+    }
+    .row.columnas-x2 .col-md-2 {
+        width: 50%;
+    }
+
+    .none{
+        display: none;
+    }
+
+}
