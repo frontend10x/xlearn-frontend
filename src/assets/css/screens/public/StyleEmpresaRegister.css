@@ -7,7 +7,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: center;
-    height: 500px;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 .register__banner-image {
@@ -19,7 +20,7 @@
     color: var(--white);
     /* left: 100px; */
     position: relative;
-    top: 160px;
+    /* top: 160px; */
 }
 
 .planes__register-content h1 {
@@ -59,13 +60,7 @@
     width: 100%;
 }
 
-.xln__separator__subtitle {
-    width: 100px;
-    height: 8px;
-    background: #270bc4;
-    border-radius: 10px;
-    margin-bottom: 3%;
-}
+
 
 /* .planes__option-group {
     float: left !important;
@@ -229,6 +224,11 @@ p.xln__register_text_TyC {
     .row {
         width: 100%;
         margin: auto;
+    }
+
+    .planes__register-banner {
+        padding-top: 20%;
+        padding-bottom: 20%;
     }
     .planes__register-content {
         text-align: center;
