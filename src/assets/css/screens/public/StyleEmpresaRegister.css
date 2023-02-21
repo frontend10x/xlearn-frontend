@@ -78,6 +78,10 @@
     padding-left: 1rem;
 }
 
+.planes__option-group li {
+    Word-wrap: break-Word;
+}
+
 .planes__option-group h4 {
     font-size: 20px;
    /*  height: 20px; */
@@ -243,7 +247,7 @@ p.xln__register_text_TyC {
         padding-top: 10%;
     }
     .planes__register-option {
-        padding-top: 5%;
+        padding-top:20%;
         text-align: center;
     }
     .xln__separator__subtitle {
