@@ -1,0 +1,193 @@
+.hr__EmpresaScreen {
+    color: #d9d9d9;
+}
+
+.Enterprises__register-banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    padding-top: 8%;
+    padding-bottom: 8%;
+}
+
+.Enterprises__register-content {
+    color: var(--white);
+    position: relative;
+}
+
+.empresas__banner-button {
+    border: none;
+    background-color: var(--green);
+    border-radius: 5px;
+    color: var(--blueDark);
+    font-weight: bold;
+    font-size: 17px;
+    width: 38%;
+    height: 40px;
+}
+
+section.empresas__innovacion-container {
+    padding-top: 6%;
+    padding-bottom: 6%;
+}
+
+h2.xln__description_EmpresasRigth {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.empresas__banner-image_section {
+    position: relative;
+    width: 100%;
+}
+
+.empresas__platform-options_content {
+    width: 60%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.empresas__banner-contacto img {
+    width: 100%;
+}
+
+.empresas__platform-options_content h1 {
+    color: var(--blueDark);
+    font-weight: bold;
+    font-size: 21px;
+    text-align: left;
+}
+
+.empresas__platform-options_content h4 {
+    font-weight: bold;
+    color: var(--blueDark);
+}
+
+.empresas__platform-container .left {
+    padding: 0;
+    margin: 0;
+}
+
+.empresas__platform-container .rigth {
+    background: #F4F4F4;
+}
+.empresas__platform-container .empresas__platform-image {
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.empresas__banner-button_container {
+    /* display: flex;
+    column-gap: 50px;
+    position: relative;
+    top: 35px; */
+    width: 100%;
+  }
+
+  .empresas__banner-contacto_button {
+    border: none;
+    background-color: var(--green);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--blueDark);
+    width: 100%;
+    height: 50px;
+}
+
+.empresas__banner-proyecto_button {
+    border: 1px solid var(--green);
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 100%;
+    color: var(--green);
+    height: 50px;
+}
+
+.xln__CTA_Enterprises h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+  
+  
+
+@media (max-width: 1367px) {}
+
+@media (max-width: 768px) {
+    .row {
+        width: 90%;
+    }
+    .row .item_row {
+        width: 100%!important;
+        padding: 0;
+        margin: auto;
+    }
+
+    h2.xln__description_EmpresasRigth {
+        font-weight: bold;
+        font-size: 21px;
+        text-align: center;
+    }
+
+    .sub_center_aling {
+        text-align: center;
+    }
+
+    .Enterprises__register-banner {
+        padding-top:20%;
+        padding-bottom: 20%;
+    }
+
+    .Enterprises__register-content {
+        text-align: center;
+
+    }
+
+    .Enterprises__container-about {
+        background-color: var(--white);
+        padding-top: 10%;
+        padding-bottom: 10%;
+        position: relative;
+        margin-top: 0%;
+    }
+
+    .empresas__banner-button {
+        border: none;
+        background-color: var(--green);
+        border-radius: 5px;
+        color: var(--blueDark);
+        font-weight: bold;
+        font-size: 17px;
+        width: 90%;
+        height: 40px;
+    }
+
+    .empresas__platform-container .empresas__platform-image {
+        padding-top: 0%;
+        padding-bottom: 0%;
+    }
+
+    .empresas__platform-options_content {
+        width: 90%;
+        margin: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+
+    .empresas__banner-contacto_button {
+        margin-bottom: 11%;
+    }
+
+}
+
+
+@media (max-width: 552px) {}

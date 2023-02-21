@@ -34,6 +34,16 @@ body {
   font-family: "GTWalsheimPro-Regular";
 }
 
+
+/* Separador */
+.xln__separator__subtitle {
+  width: 100px;
+  height: 8px;
+  background: #270bc4;
+  border-radius: 10px;
+  margin-bottom: 3%;
+}
+
 /* Inicio Header */
 
 .burg-toggle {
@@ -2020,7 +2030,7 @@ input[data-autocompleted] {
   color: var(--white);
 }
 
-.empresas__banner-button {
+/* .empresas__banner-button {
   border: none;
   background-color: var(--green);
   border-radius: 5px;
@@ -2029,11 +2039,11 @@ input[data-autocompleted] {
   font-size: 17px;
   width: 38%;
   height: 40px;
-}
+} */
 
-.empresas__innovacion-container {
+/* .empresas__innovacion-container {
   height: auto;
-}
+} */
 
 .empresas__innovacion-information_container {
   display: flex;
@@ -2090,17 +2100,13 @@ input[data-autocompleted] {
   margin-bottom: 32px;
 }
 
-.empresas__banner-image_content {
+/* .empresas__banner-image_content {
   height: auto;
   width: 100%;
   margin-top: 15%;
   margin-bottom: 8%;
 }
-
-.empresas__banner-image_section {
-  position: relative;
-  width: 100%;
-}
+ */
 
 .empresas__section-information_content {
   position: relative;
@@ -2123,28 +2129,24 @@ input[data-autocompleted] {
   border-bottom: 6px solid var(--blueAlternative);
 }
 
-.empresas__platform-container {
+/* .empresas__platform-container {
   display: flex;
   height: 100vh;
-}
+} */
 
-.empresas__platform-container_image {
+/* .empresas__platform-container_image {
   width: 50%;
-}
+} */
 
-.empresas__platform-image {
-  width: 100%;
-}
 
-.empresas__platform-container_options {
+/* .empresas__platform-container_options {
   background-color: #f4f4f4;
   width: 50%;
-  /* height: 100vh; */
   position: relative;
   bottom: 18%;
   display: flex;
   flex-direction: column;
-}
+} */
 
 .empresas__platform-video {
   display: flex;
@@ -2160,27 +2162,6 @@ input[data-autocompleted] {
   top: 20px;
 }
 
-.empresas__platform-options_content {
-  width: 67%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.empresas__banner-contacto img {
-  width: 100%;
-}
-
-.empresas__platform-options_content h1 {
-  font-size: 30px;
-  font-weight: bold;
-  color: var(--blueDark);
-}
-
-.empresas__platform-options_content h4 {
-  font-weight: bold;
-  color: var(--blueDark);
-}
 
 .empresas__colaboration-container {
   display: flex;
@@ -2233,15 +2214,7 @@ input[data-autocompleted] {
   font-size: 45px;
   font-weight: bold;
 }
-
-.empresas__banner-button_container {
-  display: flex;
-  column-gap: 50px;
-  position: relative;
-  top: 35px;
-}
-
-.empresas__banner-contacto_button {
+/* .empresas__banner-contacto_button {
   border: none;
   background-color: var(--green);
   border-radius: 5px;
@@ -2250,8 +2223,8 @@ input[data-autocompleted] {
   color: var(--blueDark);
   width: 20%;
 }
-
-.empresas__banner-proyecto_button {
+ */
+/* .empresas__banner-proyecto_button {
   border: 1px solid var(--green);
   background-color: transparent;
   border-radius: 5px;
@@ -2260,7 +2233,7 @@ input[data-autocompleted] {
   width: 20%;
   color: var(--green);
   height: 50px;
-}
+} */
 
 /* Empresas section Fin */
 
