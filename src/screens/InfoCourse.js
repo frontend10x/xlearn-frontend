@@ -8,7 +8,8 @@ import {
     recomendation_02,
     recomendation_03,
     recomendation_04,
-    playButton
+    playButton,
+    flechaIzquierdaCourse
 } from "../assets/img";
 import { Footer } from '../componentes/Footer'
 
@@ -16,6 +17,9 @@ import { useNavigate } from "react-router-dom";
 import { HeaderDashboard } from '../componentes/dashboards/HeaderDashboard';
 import { CarouselDashboards } from '../componentes/CarouselDashboards';
 import { Container } from 'react-bootstrap';
+
+import '../assets/css/screens/public/StyleInfoCourse.css';
+
 
 export const InfoCourse = () => {
 
@@ -64,30 +68,36 @@ export const InfoCourse = () => {
         <div className='xln__info_courses' >
             <HeaderDashboard />
 
-            <div className="hero">
+            <section className="hero">
                 <div className="row align-items-center">
-                    <div className="col-lg-4">
-                        <Image src={course.file_path} alt="image_description" />
+                    <div className="col-md-4" style={{position: "relative"}}>
+                        <Image src={course.file_path} alt="image_description" style={{width: "100%"}} />
                         <button className="button__info-course" data-bs-toggle="modal" data-bs-target="#videoTrailer">
                             <Image src={playButton} />
                         </button>
                     </div>
-                    <div className="col-lg-8 title">
-                        <h2 className="display-5 fw-bold lh-1 mb-3">{course.name}</h2>
-                        <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                            <a href='/login' className="btn btn-primary btn-lg px-4 me-md-2 btn__cursos__descripcion"> Iniciar curso</a>
+                    <div className="col-md-1"></div>
+                    <div className="col-md-7 title">
+                        <div className="InfoCourse__innovacion-redirection">
+                            <Image src={flechaIzquierdaCourse} alt="image_description" style={{width: "10px",marginRight:"15px",}} />
+                            <a href="/" rel="noreferrer">Home </a>
+                            <a href="/courses" rel="noreferrer">| Cursos | </a>
+                            <a className='activarGreen' rel="noreferrer">{course.name}</a>
+                        </div>
+                        <h2 className="xln__name_course">{course.name}</h2>
+                        <div className="">
+                            <a href='/login' className="btn btn-primary btn-lg px-4 me-md-2 btn__cursos__descripcion" rel="noreferrer"> Iniciar curso</a>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-
-            <div className="objetivos_de_curso">
+            <section className="objetivos_de_curso">
                 <div className="row align-items-center">
 
                     <div className="row">
 
-                        <div className="col-lg-12 title_objetivos_de_curso">
+                        <div className="col-md-12 title_objetivos_de_curso">
                             <h2>En este curso desarrollarás :</h2>
                         </div>
 
@@ -117,35 +127,34 @@ export const InfoCourse = () => {
 
 
                 </div>
-            </div>
+            </section>
 
-            <div className="section_descripction_course container col-lg-12">
-                <div className="row g-lg-5 py-5">
-                    <div className="col-lg-7 text-center text-lg-start">
-                        <h3 className="fw-bold lh-1 mb-3">Descripción general del curso</h3>
-                        <div className="col-lg-10 fs-5"><p dangerouslySetInnerHTML={{ __html: course.about_author }} /></div>
+            <section className="section_descripction_course container">
+                <div className="row">
+
+                    <div className="col-md-6">
+                        <h2 className="xln__description__tutor">Descripción general del curso</h2>
+                        <div className="col-md-12"><p dangerouslySetInnerHTML={{ __html: course.about_author }} /></div>
                     </div>
-                    <div className="col-md-10 mx-auto col-lg-5">
-                        <h2>Lecciones del curso</h2>
+
+                    <div className="col-md-6">
+                        <h2  className="xln__description__tutor">Lecciones del curso</h2>
                         <button className="" data-bs-toggle="modal" data-bs-target="#videoTrailer">
                             {course.name}
                         </button>
                         {lessons &&
                             lessons.map((item, index) => (
-                                <div key={index}>
+                                <div className='xln_item_courses' key={index}>
                                     {item.name}
                                 </div>
                             ))
                         }
                     </div>
+
                 </div>
-            </div>
+            </section>
 
-            {/* <div className='d-flex flex-column' > 
-
-            </div> */}
-
-            <div className="section_cta_de_curso">
+            <section className="section_cta_de_curso">
                 <div className="row align-items-center">
                     <div className="col-sm">
                         <h2>Regístrate a nuestra plataforma</h2>
@@ -159,16 +168,22 @@ export const InfoCourse = () => {
                         <Image src={telefonoDos} alt="telf" />
                     </div>
                 </div>
-            </div>
+            </section>
 
 
-            <h2 className="dashboard__lider-container-title" >Cursos recomendados</h2>
 
-            <div className="dashboard__lider-container_courses" >
-                <Container >
-                    <CarouselDashboards item={courses} />
-                </Container>
-            </div>
+            <section className="section_carousel_curso container" >
+                <div className='row'>
+                    <div className='col-md-12'>
+                        <h2 className="xln__description__tutor" >Cursos recomendados</h2>
+                    </div>
+                    <div className='col-md-12'>
+                        <Container >
+                            <CarouselDashboards item={courses} />
+                        </Container>
+                    </div>
+                </div>
+            </section>
 
 
 

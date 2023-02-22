@@ -128,24 +128,24 @@ export const Footer = () => {
                 <div className="col-md-2"></div>
                 <div className="col-md-2"></div>
                 <div className="col-md-2">
-                  <a href="https://www.facebook.com/XLearn10XThinking" >
+                  <a href="https://www.facebook.com/XLearn10XThinking" rel="noreferrer">
                   <Image src={facebook} alt='icon'  className="footer__media-icon"  />
                   </a>
                 </div>
 
                 <div className="col-md-2">
-                  <a href="https://twitter.com/XLearn2" >
+                  <a href="https://twitter.com/XLearn2" rel="noreferrer">
                   <Image src={twitter}  alt='icon' className="footer__media-icon"  />
                   </a>
                 </div>
 
                 <div className="col-md-2">
-                  <a href="https://www.linkedin.com/in/xlearn-platform-409991240/" >
+                  <a href="https://www.linkedin.com/in/xlearn-platform-409991240/" rel="noreferrer">
                   <Image src={linkedin} alt='icon'  className="footer__media-icon"  />
                   </a>
                 </div>
                 <div className="col-md-2">
-                  <a href="https://www.youtube.com/channel/UCyS1OiIhWpylctMcbSkYgFQ">
+                  <a href="https://www.youtube.com/channel/UCyS1OiIhWpylctMcbSkYgFQ" rel="noreferrer">
                   <Image src={youtube}  alt='icon'  className="footer__media-icon" />
                   </a>
                 </div>
