@@ -39,7 +39,7 @@ export const HeaderDashboard = () => {
             <i className="fa-solid fa-bars fa-2xl"></i>
           </button>
         }
-        <a className="header__button-redirect" onClick={redirect} >
+        <a className="header__button-redirect" onClick={redirect} rel="noreferrer">
           <img src={XlearnLogo} alt="header__logo" className="header__logo" />
         </a>
         <NavegacionDashboardHeader type={type} />

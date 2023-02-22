@@ -1,0 +1,356 @@
+/* Información cursos */
+.xln__info_courses .col-lg-4 img {
+    width: 100% !important;
+}
+
+.xln__info_courses .hero {
+    background: var(--blueDark);
+    padding-bottom: 5%;
+    padding-top: 3%;
+}
+
+.xln__info_courses .title {
+    color: #fff;
+    /* padding-left: 7%; */
+}
+
+
+.InfoCourse__innovacion-redirection a {
+    color: #fff;
+    font-weight: 100;
+    text-decoration: none;
+}
+
+
+.activarGreen {
+    color: var(--green) !important;
+}
+
+
+.xln__name_course {
+    font-size: 45px;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.xln__name_course:first-letter {
+    text-transform: uppercase;
+}
+
+.xln__info_courses .btn__cursos__descripcion {
+    background-color: var(--green);
+    border: none;
+    color: var(--blueDark);
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 5px;
+    width: 30% !important;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+
+.xln__info_courses .objetivos_de_curso {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background: var(--blueAlternative);
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.objetivos_de_curso .title_objetivos_de_curso {
+    text-align: left;
+    padding-bottom: 40px;
+    color: var(--blueclaro);
+}
+
+.objetivos_de_curso p {
+    color: var(--blueclaro);
+    text-align: left;
+}
+
+.objetivos_de_curso .separador {
+    width: 40px;
+    height: 2px;
+    background: var(--green);
+    margin-bottom: 36px;
+    border-radius: 10px;
+}
+
+.objetivos_de_curso .row {
+    width: 90%;
+    margin: auto;
+}
+
+.hero .row {
+    --bs-gutter-x: -0.5rem;
+
+}
+
+.button__info-course {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+.separador-left {
+    height: 125px;
+    width: 6px;
+    background: var(--green);
+    border-radius: 10px;
+    position: absolute;
+    margin-left: -39px;
+    margin-top: -15px;
+}
+.section_cta_de_curso {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background: #ffffff;
+}
+
+.section_cta_de_curso .row {
+    width: 80%;
+    margin: auto;
+}
+
+.section_cta_de_curso h2 {
+    text-align: left;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.section_introCursos-button {
+    background-color: #31fb8400;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    padding: 10px;
+    width: 50%;
+    font-size: 17px;
+    font-weight: bold;
+    border: solid 2px var(--bluedark);
+    color: var(--blueDark);
+    top: 32px;
+}
+
+.section_cta_de_curso .col-sm {
+    text-align: left;
+}
+
+.section_cta_de_curso .col-sm img {
+    width: 100%;
+    position: relative;
+    top: -50px;
+}
+
+.xln__info_courses .modal.show .modal-dialog {
+    transform: none;
+    max-width: 80%;
+}
+
+.xln__info_courses .modal-dialog iframe {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.section_descripction_course {
+    padding-top: 8% !important;
+    padding-bottom: 10% !important;
+}
+
+.section_descripction_course button {
+    background: var(--blueDark);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    margin-bottom: 29px;
+}
+
+.section_descripction_course button::before {
+    content: '▶';
+    border-radius: 21px;
+    padding-left: 7px;
+    padding-top: 4px;
+    padding-right: 6px;
+    padding-bottom: 4px;
+    border: 2px solid #fff;
+    font-size: 10px;
+    position: absolute;
+    top: 46%;
+    left: 27px;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
+
+.section_descripction_course .col-md-10 div {
+    padding-top: 11px;
+}
+
+.section_descripction_course .col-md-10 div::before {
+    content: '🔒︎';
+    position: relative;
+    left: 0;
+    border-radius: 21px;
+    padding-left: 8px;
+    padding-top: 6px;
+    padding-right: 7px;
+    padding-bottom: 6px;
+    font-size: 10px;
+}
+
+.xln__info_courses .dashboard__lider-container_courses-card-content p {
+    text-align: left;
+    padding-left: 27px;
+    padding-right: 27px;
+    position: static;
+    top: 69px;
+}
+
+
+.col-md-6 .xln_item_courses {
+    margin-bottom: 10px;
+}
+
+.xln__description__tutor {
+    font-weight: bold;
+    padding-bottom: 35px;
+}
+
+section.section_carousel_curso {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 9%!important;
+    padding-bottom:9%!important;
+}
+
+@media (max-width: 1367px) {}
+
+@media (max-width: 768px) {
+
+    .xln__info_courses .btn__cursos__descripcion {
+        background-color: var(--green);
+        border: none;
+        color: var(--blueDark);
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 5px;
+        width: 80% !important;
+        padding-top: 11px;
+        padding-bottom: 11px;
+    }
+
+    .xln__info_courses .title {
+        width: 80%;
+        margin: auto;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        text-align: center;
+    }
+
+    .xln__info_courses .modal.show .modal-dialog {
+        transform: none;
+        max-width: 100%;
+    }
+
+    section.objetivos_de_curso .col-sm {
+        width: 50%;
+    }
+
+    .xln__info_courses .objetivos_de_curso {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+
+    .objetivos_de_curso .title_objetivos_de_curso {
+        text-align: center;
+        padding-bottom: 40px;
+        color: var(--blueclaro);
+    }
+
+    .col-sm p {
+        text-align: center;
+    }
+
+    .objetivos_de_curso .separador {
+        width: 40px;
+        height: 2px;
+        background: var(--green);
+        margin-bottom: 36px !important;
+        border-radius: 10px;
+        margin: 0 auto;
+    }
+
+    .section_descripction_course {
+        width: 90%;
+    }
+
+    .col-md-12 p {
+        text-align: center;
+    }
+    .col-md-12 h3 {
+        text-align: center;
+    }
+    .section_cta_de_curso {
+        padding-top: 15%;
+    }
+
+    .section_descripction_course .section_cta_de_curso .col-sm {
+        padding-top: 13%;
+    }
+
+    .section_descripction_course .section_cta_de_curso .col-sm img {
+        width: 100%;
+        position: relative;
+        top: 0px;
+        padding-bottom: 20%;
+    }
+
+    .xln__description__tutor {
+        text-align: center;
+    }
+
+    .section_introCursos-button {
+        background-color: #31fb8400;
+        border: none;
+        border-radius: 5px;
+        position: relative;
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-weight: bold;
+        border: solid 2px var(--bluedark);
+        color: var(--blueDark);
+        top: 0;
+        text-align: center;
+    }
+
+    .section_cta_de_curso h2 {
+        text-align: center;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .separador-left {
+        display: none;
+    }
+    .section_cta_de_curso .col-sm img {
+        width: 100%;
+        position: relative;
+        top: 0px;
+        padding-bottom: 20%;
+        padding-top: 20%;
+    }
+
+}
+
+
+@media (max-width: 552px) {}

@@ -182,7 +182,7 @@ export const CompraUsuarios = () => {
                 Confirmar compra
               </button>
               <p className="container__price-total__terms" >
-                Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta web y otros propósitos descritos en nuestra política de privacidad. He leído y estoy de acuerdo con los<a type="button" className="ms-1" data-bs-toggle="modal" data-bs-target="#pagoModal"> términos y condiciones </a> de la web.
+                Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta web y otros propósitos descritos en nuestra política de privacidad. He leído y estoy de acuerdo con los<a type="button" className="ms-1" data-bs-toggle="modal" data-bs-target="#pagoModal" rel="noreferrer"> términos y condiciones </a> de la web.
               </p>
             </div>
           </div>
