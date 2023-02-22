@@ -6,6 +6,8 @@ import { imagenlogin, logologin } from '../../assets/img';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
+import '../../assets/css/screens/public/StyleForgotPassword.css';
+
 export const ForgotPassword = () => {
 
     const [formValues, handleInputChange] = useForm({
@@ -35,53 +37,64 @@ export const ForgotPassword = () => {
     }
 
     return (
-        <div className="Login-Screen Forgot-your-password">
-            <div className="login">
-                <div className="login__container animate__animated animate__bounce animate__delay-2s w-50 ">
-                    {/* <div className="xln-contentImage-login">
-              <Image src={imagenlogin} alt="imagen-login" />
-            </div> */}
-                    <div className="login__container-content">
-                        <div className="login__content-header">
-                            <div className="login__header-logo-title">
-                                <NavLink to='/'>
-                                    <Image
-                                        src={logologin}
-                                        className="login__logo"
-                                        alt="imagen-login"
-                                    />
-                                </NavLink>
-                                <p>
-                                    Ingresa tu email para recuperar tu contraseña
-                                </p>
-                            </div>
-                        </div>
-                        <div className="login__content-inputs  ">
-                            {/* <p className="login__content-title">Bienvenido a Xlearn</p> */}
-                            <form
-                                className="login__content-form "
-                                onSubmit={forgotPassword}
-                            >
-                                <h2 className='title_contrasena_olvido'>¿Olvidaste tu contraseña?</h2>
-                                <input
-                                    type="text"
-                                    name="email"
-                                    value={email}
-                                    placeholder="Email"
-                                    onChange={handleInputChange}
-                                    className="login__email w-50 mx-auto"
-                                />
 
-                                <button
-                                    className="login__button-entrar w-50 mx-auto"
-                                >
-                                    Enviar
-                                </button>
-                            </form>
+        <div className="Login-Screen_forgotPassword">
+            <div className='recuperar-contrasena'>
+                <div className='row' style={{ width: "100%" }}>
+                    <div className='col-md-7 mx-auto'>
+                        <div className="login__container-content">
+
+                            <div className="login__content-header">
+                                <div className="login__header-logo-title">
+                                    <NavLink to='/'>
+                                        <Image
+                                            src={logologin}
+                                            className="login__logo"
+                                            alt="imagen-login"
+                                        />
+                                    </NavLink>
+
+                                </div>
+                            </div>
+
+                            <div className="login__content-inputs  ">
+                                <div className='row'>
+                                    <div className='col-md-10 mx-auto'>
+                                        <form
+                                            className="login__content-form "
+                                            onSubmit={forgotPassword}
+                                        >
+                                            <h2 className='title_contrasena_olvido'>¿Olvidaste tu contraseña?</h2>
+                                            <p className='xln__text_Forgot_description'>
+                                                Ingresa tu email para recuperar tu contraseña
+                                            </p>
+                                            <br />
+                                            <input
+                                                type="text"
+                                                name="email"
+                                                value={email}
+                                                placeholder="Email"
+                                                onChange={handleInputChange}
+                                                className="login__email"
+                                            />
+
+                                            <button
+                                                className="login__button-entrar"
+                                            >
+                                                Enviar
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
+
     )
 }
