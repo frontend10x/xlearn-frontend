@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 //import { Image } from "react-bootstrap";
 import { HeaderRegister } from "../componentes/HeaderRegister";
+import { Image } from 'react-bootstrap'
 import { contactSupport, getCountrys } from "../services/services";
 import { Footer } from "../componentes/Footer";
 import {
-    bannerContact01
+    bannerContact01,
+    flechaIzquierdaCourseNegra
 } from "../assets/img";
 import { useNavigate } from "react-router-dom";
 import { useForm } from '../hooks/useForm';
@@ -12,6 +14,8 @@ import Swal from "sweetalert2";
 import { HeaderDashboard } from "../componentes/dashboards/HeaderDashboard";
 import { useSelector } from "react-redux";
 
+
+import "../assets/css/screens/public/StyleContactoScreen.css";
 
 export const ContactoScreen = () => {
 
@@ -48,12 +52,12 @@ export const ContactoScreen = () => {
     }, [])
 
     const redirect = (e) => {
-        if (e.target.value === "inicio" && type === "Empresa" ) {
+        if (e.target.value === "inicio" && type === "Empresa") {
             navigate('/dashboard/empresa');
-        } else if (e.target.value === "inicio" && type === "Lider" ) {
+        } else if (e.target.value === "inicio" && type === "Lider") {
             navigate('/dashboard/lider');
         }
-         else if (e.target.value === "inicio" && type === "Integrante" ) {
+        else if (e.target.value === "inicio" && type === "Integrante") {
             navigate('/dashboard/integrante');
         }
         else {
@@ -79,117 +83,110 @@ export const ContactoScreen = () => {
     return (
         <div className="xlrn-contacto__section" >
             <HeaderDashboard />
-            <div className="xlrn-contacto__section-container" >
-                <div className="xlrn-contacto__section-banner" >
-                    {/* <Image src={ bannerContact01 } alt="image__banner" /> */}
-                    <div className="xln__content__bannerContact" style={{ backgroundImage: `url(${bannerContact01})` }}>
-                        <div className="xln__title__bannerContact">
-                            <h1>¡Ponte en contacto con nosotros y entrena a tu equipo!</h1>
-                            <p>Es el momento de crear, proponer , generar ingresos y, sobre todo de innovar. Descubre y aprovecha el potencial de tu organización y desarrolla un plan de acción en torno al entrenamiento ¡Contáctanos!</p>
-                            {token ?
-                                <button onClick={redirect} className='w-25' value="inicio" >
-                                    Volver a inicio
-                                </button>
 
-                                : <button onClick={redirect} className='w-25' value="registro" >
-                                    Registrarme
-                                </button>
-                            }
+            <section className="contacto__register-banner" style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.675)), url("${bannerContact01}")` }}>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-8">
+                            <div className="contacto__register-content">
+                                <h1>Lleva tu empresa al siguiente nivel a través del entrenamiento de tu equipo de trabajo</h1>
+                                <p>
+                                    Contamos con una gran oferta de cursos que te ayudaran a aumentar la productividad de tu organización, acelerando el crecimiento y desarrollando nuevas competencias.
+                                </p>
+                                {token ?
+                                    <button onClick={redirect} className='contacto__banner-button' value="inicio" >
+                                        Volver a inicio
+                                    </button>
+
+                                    : <button onClick={redirect} className='contacto__banner-button' value="registro" >
+                                        Registrarme
+                                    </button>
+                                }
+                            </div>
                         </div>
                     </div>
-                    <div className="xlrn-contacto__section-banner__content" >
+                </div>
+            </section>
 
+            <section className="container" >
+         
+                    <div className="xlrn-contacto__section-container">
+                <div className="row" >
+                    
 
-                        <div className="xlrn__contacto-formulario-container">
+                        <div className="col-md-4">
                             <div className="xln__txt__formContact">
+                                <div className="InfoCourse__innovacion-redirection">
+                                    {/* <Image src={flechaIzquierdaCourseNegra} alt="image_description" style={{width: "10px",marginRight:"15px",}} /> */}
+                                    <a href="/" rel="noreferrer" style={{ color: "#000" }}>Home </a>
+                                    <a href="/contact" className='activarGreen' rel="noreferrer">| Contáctanos </a>
+
+                                </div>
                                 <h2>Contáctanos</h2>
                                 <div className="xln__separator__subtitle"></div>
                                 <p>Apuéstale al desarrollo de proyectos con Xlearn ¿Tienes dudas o inquietudes? Déjanos tus datos y pronto te contactaremos.</p>
                             </div>
                         </div>
-                        <div className="xlrn__contacto-formulario-container" >
+
+                        <div className="col-md-2"></div>
+
+                        <div className="col-md-6" >
                             <div className="xln__content__formContact">
                                 <form className="xlrn__contacto-formulario" onSubmit={contact} >
 
-                                    <div className="xlrn__contacto-formulario-group" >
-                                        <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
+                                    <div className="row" >
+                                        <div className="col-md-6 xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
                                             <label >Nombre y Apellido <span className="campo_requerido">*</span></label>
                                             <input type='text' name="name" onChange={handleInputChange} />
                                         </div>
-                                        <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
+                                        <div className="col-md-6 xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
                                             <label >Telefono <span className="campo_requerido">*</span></label>
                                             <input type='text' name="phone" onChange={handleInputChange} />
                                         </div>
                                     </div>
 
-                                    <div className="xlrn__contacto-formulario-group" >
-                                        <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
+                                    <div className="row" >
+                                        <div className="col-md-6 xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
                                             <label >Empresa <span className="campo_requerido">*</span></label>
                                             <input type='text' name="company" onChange={handleInputChange} />
                                         </div>
-                                        <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
+                                        <div className="col-md-6 xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
                                             <label >Correo electrónico <span className="campo_requerido">*</span></label>
                                             <input type='text' name="email" onChange={handleInputChange} />
                                         </div>
                                     </div>
 
-                                    {/* <div className="xlrn__contacto-formulario-group" >
-                                        <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
-                                            <label >Web site</label>
-                                            <input type='text' />
-                                        </div>
-                                        <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-2" >
-                                            <label >País</label>
-                                            <select>
-                                                <option value="" >select</option>
-                                                {countries &&
-                                                    countries.map((item, index) => (
-                                                        <option key={index} value={item.id}>
-                                                            {item.name}
-                                                        </option>
-                                                    ))}
-                                            </select>
-                                        </div>
-                                    </div> */}
-
-                                    {/* <div className="xlrn__contacto-formulario-group" >
-                                        <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-1" >
-                                            <label >Que plan de Xlearn te interesa <span className="campo_requerido">*</span></label>
-                                            <select>
-                                                <option value="" >select</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div className="xlrn__contacto-formulario-group" >
-                                        <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-1" >
-                                            <label >cuantos cupos estas buscando <span className="campo_requerido">*</span></label>
-                                            <select>
-                                                <option value="" >select</option>
-                                            </select>
-                                        </div>
-                                    </div> */}
-
-                                    <div className="xlrn__contacto-formulario-group" >
-                                        <div className="xlrn__contacto-formulario-inputs xln__input__GroupBlock-1" >
+                                    <div className="row" >
+                                        <div className="col-md-12 xln__input__GroupBlock-1" >
                                             <label >Cuéntanos tu requerimiento</label>
                                             <textarea name="observation" onChange={handleInputChange} />
                                         </div>
                                     </div>
-                                    <div className="xlrn__contacto-formulario-group" >
-                                        <button className="xln__formulario-button__contact">Enviar</button>
+                                    <br/>
+                                    <div className="row" >
+                                        <div></div>
+                                        <div className="col-md-6 mx-auto">
+                                            <button className="xln__formulario-button__contact">Enviar</button>
+                                        </div>
                                     </div>
-                                    <div className="xlrn__contacto-formulario-group" >
-                                        <p>Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta plataforma y otros propósitos descritos en nuestra política de privacidad.</p>
+                                    <br/>
+                                    <br/>
+                                    <div className="row" >
+                                        <div className="col-md-12">
+                                            
+                                            <p>Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta plataforma y otros propósitos descritos en nuestra política de privacidad.</p>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
 
 
-                    </div>
                 </div>
-            </div>
+                    </div>
+            </section>
+
+
             <div className="footer-section">
                 <Footer />
             </div>
