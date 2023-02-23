@@ -1,19 +1,251 @@
 :root {
-    --black: #19191c;
-    --blueAlternative: #270bc4;
-    --blueDark: #002333;
-    --green: #31fb84;
-    --neutroText: #8894ab;
-    --white: #ffffff;
-    --whiteOff: #f4f4f4;
-    --blueclaro: #F5F8FA;
-    --blueoscuro: #CBD6E2;
-  }
+  --black: #19191c;
+  --blueAlternative: #270bc4;
+  --blueDark: #002333;
+  --green: #31fb84;
+  --neutroText: #8894ab;
+  --white: #ffffff;
+  --whiteOff: #f4f4f4;
+  --blueclaro: #F5F8FA;
+  --blueoscuro: #CBD6E2;
+}
+
+
+.container_Cursos {
+  padding-top: 5%;
+}
 
 
 .description_button {
-    position: relative;
-    bottom: 35px;
-    left: 18px;
-    color: var(--blueDark);
+  position: relative;
+  bottom: 35px;
+  left: 18px;
+  color: var(--blueDark);
 }
+
+
+
+.cursos__filter-content {
+  width: 100%;
+}
+
+
+.cursos__banner {
+  margin: 0 auto;
+  position: relative;
+  height: 230px;
+  width: 100%;
+}
+
+.cursos__banner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: -webkit-fill-available;
+  height: 100%;
+  background: linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 68%) 49%, rgb(0 0 0 / 52%) 100%);
+  z-index: 1;
+  border-radius: 12px;
+}
+
+.cursos__banner img {
+  width: 100%;
+}
+
+img.cursos__banner-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  border-radius: 10px;
+}
+
+.cursos__banner-content {
+  color: var(--white);
+  position: relative;
+  bottom: 180px;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  z-index: 2;
+}
+
+.cursos__banner-content h3 {
+  font-weight: bold;
+}
+
+.cursos__banner-button {
+  background-color: var(--green);
+  border: none;
+  color: var(--blueDark);
+  font-size: 17px;
+  font-weight: 700;
+  border-radius: 5px;
+  width: 30%;
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+
+.cursos__section-recently {
+  font-weight: bold;
+  font-size: 33px;
+  width: 100%;
+  padding-bottom: 5%;
+}
+
+.map_content {
+  width: 100%;
+  position: relative;
+  padding-top: 5%;
+}
+
+.cursos__card-body {
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  padding-bottom: 10%;
+}
+
+.cursos__section-populars {
+  position: relative;
+  font-weight: bold;
+  font-size: 33px;
+  padding-bottom: 5%;
+}
+
+.cursos__filter-title {
+  background-color: var(--blueDark);
+  border-radius: 5px;
+  color: var(--white);
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 1px;
+}
+
+.cursos__filter-title h3 {
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.map_content2 {
+  width: 100%;
+  position: relative;
+  padding-top: 5%;
+  padding-bottom: 10%;
+}
+
+.cursos__card-content {
+  background-color: var(--white);
+  border-radius: 0px 0px 10px 10px;
+  padding-top: 12%;
+  padding-bottom: 12%;
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.cursos__card-content button {
+  background: var(--green);
+  border-radius: 4px;
+  color: var(--black);
+  border: none;
+  text-decoration: none;
+  width: 60%;
+  height: 40px;
+}
+
+.cursos__card-content h5 {
+  font-weight: bold;
+  color: var(--blueDark);
+  position: relative;
+  width: 100%;
+  font-size: 15px;
+  text-align: left;
+  height: 35px;
+}
+.cursos__filter-buttons input {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  position: relative;
+  left: -4px;
+}
+
+@media (max-width: 1367px) {}
+
+@media (max-width: 768px) {
+
+  .none {
+    display: none;
+  }
+
+  .row {
+    width: 100%;
+    margin: auto;
+  }
+
+  .cursos__banner-content {
+    color: var(--white);
+    position: relative;
+    bottom: 200px;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    z-index: 2;
+  }
+
+  .cursos__banner-button {
+    width: 100%;
+  }
+
+  .card__doble {
+    width: 50%;
+    padding: 3px;
+  }
+
+  .cursos__card-content {
+    background-color: var(--white);
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 12%;
+    padding-bottom: 6%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+
+  .cursos__card-content button {
+    width: 100%;
+    margin-bottom: 23px;
+  }
+
+  .cursos__card-content h5 {
+    font-weight: bold;
+    color: var(--blueDark);
+    position: relative;
+    width: 100%;
+    font-size: 15px;
+    height: 35px;
+    text-align: center;
+  }
+
+  .cursos__banner-content h3 {
+    text-align: center;
+  }
+
+  .cursos__banner-content p {
+    text-align: center;
+  }
+
+  .cursos__section-populars, .cursos__section-recently {
+    font-size: 35px;
+    text-align: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+
+
+}
+
+
+@media (max-width: 552px) {}

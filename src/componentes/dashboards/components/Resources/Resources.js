@@ -11,7 +11,7 @@ export const Resources = ({title, data, download,}) => {
         (title === item?.type ) && (
           <div key={index}>
           <Image src={fileZip} alt='zip' className="zipFile" style={{ width: '9%' }} />
-          <a className="mt-5 ms-3" type="button" onClick={download} id={index} >{item?.name}</a>
+          <a className="mt-5 ms-3" type="button" onClick={download} id={index} rel="noreferrer">{item?.name}</a>
         </div>
         )
       ))}

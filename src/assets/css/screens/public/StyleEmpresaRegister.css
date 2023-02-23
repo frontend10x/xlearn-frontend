@@ -1,0 +1,284 @@
+/* Register*/
+.planes-register .row {
+    width: 100%;
+}
+
+.planes__register-banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.register__banner-image {
+    height: 70vh;
+    width: 100%;
+}
+
+.planes__register-content {
+    color: var(--white);
+    /* left: 100px; */
+    position: relative;
+    /* top: 160px; */
+}
+
+.planes__register-content h1 {
+    font-weight: bold;
+}
+
+/* .planes__register-information {
+    height: 100vh;
+    padding-top: 10%;
+    padding-bottom: 10%;
+  } */
+
+/*  .planes__register-container_option {
+    height: 100vh;
+  }
+   */
+/* .planes__register-option {
+    height: 50vh;
+    position: relative;
+    left: 100px;
+    width: 40%;
+  } */
+
+/* .planes__register-option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } */
+.planes__register-option {
+    padding-top: 5%;
+}
+
+.planes__register-option h2 {
+    font-weight: bold;
+    font-size: 30px;
+    width: 100%;
+}
+
+
+
+/* .planes__option-group {
+    float: left !important;
+    display: block !important;
+    width: 50%;
+  } */
+
+.planes__option-group ul {
+    margin-bottom: 2rem !important;
+    padding-left: 1rem;
+}
+
+.planes__option-group li {
+    Word-wrap: break-Word;
+}
+
+.planes__option-group h4 {
+    font-size: 20px;
+   /*  height: 20px; */
+}
+
+.planes__container-about {
+    background-color: var(--white);
+    padding-top: 8%;
+    padding-bottom: 8%;
+    position: relative;
+    margin-top: -7%;
+}
+
+/* .planes__register-about {
+    left: 100px;
+    position: relative;
+    top: 42px;
+    width: 40%;
+  } */
+
+.planes__register-about h2 {
+    font-weight: bold;
+}
+
+
+.planes__form-container {
+    position: relative;
+    margin-top: -22%;
+    background-color: var(--blueAlternative);
+    border-radius: 5px;
+    color: var(--white);
+    padding: 5%;
+    padding-top: 2%;
+    padding-bottom: 6%;
+    font-size: 0.80em;
+    z-index: 1;
+}
+
+.planes__form-content {
+    position: relative;
+    top: 30px;
+}
+
+.planes__formulario-content {
+    display: flex;
+    flex-flow: wrap;
+    width: 100%;
+    position: relative;
+    left: 0px;
+}
+
+.form__group {
+    width: 50%;
+    padding: 8px;
+}
+
+.form__group p {
+    position: relative;
+    top: 10px;
+}
+
+.xln__note__text {
+    color: var(--green);
+    font-size: 11px;
+    padding-bottom: 10px;
+}
+
+.form__group input {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+}
+
+.form__group select {
+    border-radius: 5px;
+    padding: 7px;
+    width: 100%;
+    color: #adadad;
+}
+
+.form__container-country_content .form__group {
+    width: 100%;
+}
+
+.form__container-country_content {
+    width: 100%;
+}
+
+.form__container-country_content select {
+    width: 100%;
+}
+
+.form__group span {
+    color: red;
+}
+
+.form__group.form__group__xln {
+    width: 100%;
+}
+
+.form__group.form__group__xln textarea {
+    width: 100%;
+}
+
+textarea {
+    border-radius: 5px;
+    resize: none;
+}
+
+.planes__formulario-button {
+    background-color: var(--green);
+    border: none;
+    border-radius: 10px;
+    left: 100px;
+    position: relative;
+    padding: 10px;
+    top: 30px;
+    width: 50%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p.xln__register_text_TyC {
+    margin-top: 13%;
+}
+
+.planes__formulario h1 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.planes__option-group ul li::marker {
+    color: var(--green);
+}
+
+/* Register Fin */
+
+
+@media (max-width: 1367px) {
+
+}
+
+@media (max-width: 768px) {
+    .row {
+        width: 100%;
+        margin: auto;
+    }
+
+    .planes__register-banner {
+        padding-top: 20%;
+        padding-bottom: 20%;
+    }
+    .planes__register-content {
+        text-align: center;
+    
+    }
+    .planes__container-about {
+        background-color: var(--white);
+        padding-top: 10%;
+        padding-bottom: 10%;
+        position: relative;
+        margin-top:0%;
+    }
+    .planes__form-container {
+        margin-top: 7%;
+        padding-bottom: 20%;
+        padding-top: 10%;
+    }
+    .planes__register-option {
+        padding-top:20%;
+        text-align: center;
+    }
+    .xln__separator__subtitle {
+        width: 100px;
+        height: 8px;
+        background: #270bc4;
+        border-radius: 10px;
+        margin-bottom: 8%!important;
+        margin: 0 auto;
+    }
+    .planes__register-option .col-md-6 {
+        width: 50%;
+        text-align: left;
+    }
+    .planes__register-about {
+        text-align: center;
+    }
+    .planes__option-group h4 {
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        height: 83px;
+    }
+    .planes__option-group {
+        background: #dfdfdf;
+        height: 33vh;
+        margin-top: 16px;
+        padding: 17px;
+        border-radius: 6px;
+    }
+}
+
+
+@media (max-width: 552px) {}

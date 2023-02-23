@@ -34,6 +34,16 @@ body {
   font-family: "GTWalsheimPro-Regular";
 }
 
+
+/* Separador */
+.xln__separator__subtitle {
+  width: 100px;
+  height: 8px;
+  background: #270bc4;
+  border-radius: 10px;
+  margin-bottom: 3%;
+}
+
 /* Inicio Header */
 
 .burg-toggle {
@@ -1161,108 +1171,6 @@ video.xln-content-video_MS {
 
 /* Inicio Footer */
 
-.footer {
-  background-color: var(--blueDark);
-  height: 60vh;
-}
-
-.footer__container {
-  color: var(--white);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 65px;
-  width: 80%;
-  margin: auto;
-}
-
-.footer__content {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 2px solid var(--green);
-}
-
-.footer__group-container {
-  display: flex;
-  column-gap: 3rem;
-  font-size: 20px;
-  position: relative;
-  top: 10px;
-}
-
-.footer__group h5 {
-  position: relative;
-  bottom: 24px;
-  font-size: 20px;
-}
-
-.footer__group p {
-  font-size: 15px !important;
-}
-
-.position {
-    width: 25%;
-    position: relative;
-    bottom: 25px;
-}
-
-.margins p {
-  margin-bottom: 0px;
-}
-
-.footer__content-email_logo {
-  position: relative;
-  width: 100%;
-}
-
-.footer__image {
-  position: relative;
-  bottom: 25px;
-}
-
-.footer__media {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  top: 15px;
-}
-
-.footer__media-content {
-  display: flex;
-}
-
-.footer__option {
-  column-gap: 5rem;
-  display: flex;
-  position: relative;
-  left: 190px;
-}
-
-.footer__media-links {
-  display: flex;
-  column-gap: 2rem;
-}
-
-.footer__media-icon {
-  width: 20px;
-  height: 20px;
-  color: var(--white);
-}
-
-.footer__email {
-  margin-top: 25px;
-  border-radius: 5px;
-  padding: 5px;
-}
-
-.footer__image-email {
-  width: 200px;
-}
-
-.link-footer{
-  cursor: pointer;
-}
-
 /* Footer Fin */
 
 /* Cursos Screen */
@@ -1271,27 +1179,9 @@ video.xln-content-video_MS {
   width: 100%;
 }
 
-.cursos__filter-content {
-  position: relative;
-  left: 35px;
-  top: 76px;
-  height: 65vh;
-  width: 40%;
-}
 
-.cursos__filter-title {
-  background-color: var(--blueDark);
-  border-radius: 5px;
-  color: var(--white);
-  width: 70%;
-  padding-top: 10px;
-  padding-bottom: 1px;
-}
 
-.cursos__filter-title h3 {
-  margin-left: 20px;
-  font-size: 20px;
-}
+
 
 .cursos__filter-buttons h4 {
   border-bottom: 1px solid var(--black);
@@ -1308,76 +1198,9 @@ video.xln-content-video_MS {
     flex-direction: column;
 } */
 
-.cursos__filter-buttons input {
-  display: flex;
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  position: relative;
-  left: -4px;
-}
 
-.cursos__section-recently {
-  position: relative;
-  bottom: 125px;
-  font-weight: bold;
-  font-size: 33px;
-  width: 100%;
-  padding-left: 33%;
-}
-.map_content {
-  bottom: 320px;
-  width: 60%;
-  position: relative;
-  left: 33%;
-  gap: 2rem;
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 17%;
-}
 
-.cursos__section-populars {
-  position: relative;
-  bottom: 284px;
-  font-weight: bold;
-  font-size: 33px;
-  padding-left: 33%;
-}
-
-.map_content2 {
-  bottom: 261px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  width: 60%;
-  position: relative;
-  left: 33%;
-}
-
-.cursos__card-content button {
-  background: var(--green);
-  padding: 8px 20px;
-  margin-left: 15px;
-  border-radius: 4px;
-  color: var(--black);
-  border: none;
-  text-decoration: none;
-  margin-top: 79px;
-}
-
-.cursos__card-body {
-  width: 30%;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.cursos__card-content {
-  background-color: var(--white);
-  height:auto;
-  border-radius: 0px 0px 10px 10px;
-}
-
-.cursos__card-content h5 {
+/* .cursos__card-content h5 {
   font-weight: bold;
   color: var(--blueDark);
   position: relative;
@@ -1386,18 +1209,18 @@ video.xln-content-video_MS {
   padding-right: 16px;
   font-size: 15px;
   text-align: left;
-}
-
+} */
+/* 
 .cursos__card-titles {
   position: relative;
   top: 20px;
 }
-
-.cursos__card-information {
+ */
+/* .cursos__card-information {
   display: flex;
   justify-content: space-around;
   column-gap: 5rem;
-}
+} */
 
 .cursos__card-logo {
   position: relative;
@@ -1406,65 +1229,6 @@ video.xln-content-video_MS {
   width: 20% !important;
 }
 
-.cursos__banner {
-  margin: 0 auto;
-  position: relative;
-  left: 13%;
-  height: 30vh;
-  width: 60%;
-  position: absolute;
-  z-index: 9;
-  transform: translate(34%, -186%);
-}
-.cursos__banner::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: -webkit-fill-available;
-  height: 100%;
-  background: linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 68%) 49%, rgb(0 0 0 / 52%) 100%);
-  z-index: 1;
-  border-radius: 12px;
-}
-.cursos__banner img {
-  width: 100%;
-}
-
-img.cursos__banner-image {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  -webkit-mask-size: cover;
-  mask-size: cover;
-  border-radius: 10px;
-}
-
-.cursos__banner-content {
-  color: var(--white);
-  position: relative;
-  bottom: 180px;
-  width: 100%;
-  padding-left: 10%;
-  padding-right: 10%;
-  z-index: 2;
-}
-
-.cursos__banner-content h3 {
-  font-weight: bold;
-}
-
-.cursos__banner-button {
-  background-color: var(--green);
-  border: none;
-  color: var(--blueDark);
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 5px;
-  width: 52%;
-  padding-top: 11px;
-  padding-bottom: 11px;
-}
 
 .cursos__button-expand {
   border: none;
@@ -1672,257 +1436,7 @@ input[data-autocompleted] {
 /* Login Screen Fin */
 
 
-/* olvidaste tu contraseña*/
-.Forgot-your-password .login__email {
-  border: none;
-  text-decoration: none;
-  border-radius: 5px;
-  left: 0;
-  margin-bottom: 20px;
-  position: relative;
-  width: 80%;
-  padding: 10px;
-}
-.Forgot-your-password .login__button-entrar {
-  border-radius: 5px;
-  background-color: var(--green);
-  text-decoration: none;
-  border: none;
-  padding: 5px;
-  width: 80%;
-  position: relative;
-  left: 0;
-  color: var(--blueDark);
-  font-weight: bold;
-  text-align: center;
-  margin-top: 1%;
-  margin-bottom: 8%;
-}
-.Forgot-your-password .login__content-inputs {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--whiteOff);
-  height: auto;
-}
-.Forgot-your-password .login__container {
-  position: absolute;
-  top: 23%;
-  left: 27%;
-  margin: -25px 0 0 -25px;
-}
-.Forgot-your-password .title_contrasena_olvido {
-  width: 80%;
-  margin: auto;
-  text-align: center;
-  font-size: 18px;
-  padding-top: 8%;
-  padding-bottom: 3%;
-  font-weight: bold;
-}
-/* Register*/
-.planes__register-banner {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  height: 500px;
-}
 
-.register__banner-image {
-  height: 70vh;
-  width: 100%;
-}
-
-.planes__register-content {
-  color: var(--white);
-  left: 100px;
-  position: relative;
-  width: 41%;
-  top: 160px;
-}
-
-.planes__register-content h1 {
-  font-weight: bold;
-}
-
-.planes__register-information {
-  height: 100vh;
-  padding-top: 10%;
-  padding-bottom: 10%;
-}
-
-.planes__register-container_option {
-  height: 100vh;
-}
-
-.planes__register-option {
-  height: 50vh;
-  position: relative;
-  left: 100px;
-  width: 40%;
-}
-
-.planes__register-option h2 {
-  font-weight: bold;
-  font-size: 30px;
-  width: 100%;
-}
-
-.xln__separator__subtitle {
-  width: 100px;
-  height: 8px;
-  background: #270bc4;
-  border-radius: 10px;
-  margin-bottom: 10%;
-}
-
-.planes__option-group {
-  float: left !important;
-  display: block !important;
-  width: 50%;
-}
-
-.planes__option-group ul {
-  margin-bottom: 2rem !important;
-  padding-left: 1rem;
-}
-
-.planes__option-group h4 {
-  font-size: 20px;
-  height: 60px;
-}
-
-.planes__container-about {
-  background-color: var(--white);
-  height: 50vh;
-}
-
-.planes__register-about {
-  left: 100px;
-  position: relative;
-  top: 42px;
-  width: 40%;
-}
-
-.planes__register-about h2 {
-  font-weight: bold;
-}
-
-.planes__form-container {
-  background-color: var(--blueAlternative);
-  border-radius: 5px;
-  color: var(--white);
-  position: absolute;
-  left: 56%;
-  top: 400px;
-  height: auto;
-  width: 41%;
-  padding: 5%;
-  padding-top: 2%;
-  padding-bottom: 6%;
-  font-size: 0.80em;
-}
-
-.planes__form-content {
-  position: relative;
-  top: 30px;
-}
-
-.planes__formulario-content {
-  display: flex;
-  flex-flow: wrap;
-  width: 100%;
-  position: relative;
-  left: 0px;
-}
-
-.form__group {
-  width: 50%;
-  padding: 8px;
-}
-
-.form__group p {
-  position: relative;
-  top: 10px;
-}
-
-.xln__note__text {
-  color: var(--green);
-  font-size: 11px;
-  padding-bottom: 10px;
-}
-
-.form__group input {
-  border: none;
-  border-radius: 5px;
-  padding: 5px;
-  width: 100%;
-}
-
-.form__group select {
-  border-radius: 5px;
-  padding: 7px;
-  width: 100%;
-  color: #adadad;
-}
-
-.form__container-country_content .form__group {
-  width: 100%;
-}
-
-.form__container-country_content {
-  width: 100%;
-}
-
-.form__container-country_content select {
-  width: 100%;
-}
-
-.form__group span {
-  color: red;
-}
-
-.form__group.form__group__xln {
-  width: 100%;
-}
-
-.form__group.form__group__xln textarea {
-  width: 100%;
-}
-
-textarea {
-  border-radius: 5px;
-  resize: none;
-}
-
-.planes__formulario-button {
-  background-color: var(--green);
-  border: none;
-  border-radius: 10px;
-  left: 100px;
-  position: relative;
-  padding: 10px;
-  top: 30px;
-  width: 50%;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-p.xln__register_text_TyC {
-  margin-top: 13%;
-}
-
-.planes__formulario h1 {
-  font-weight: bold;
-  font-size: 30px;
-}
-
-.planes__option-group ul li::marker {
-  color: var(--green);
-}
-
-/* Register Fin */
 
 /*-------------Vista empresa---------------*/
 .dashboard__section-empresa .header__container.background {
@@ -2263,18 +1777,6 @@ p.xln__register_text_TyC {
 
 /*====Fin Bloque contenido====*/
 
-/*====Bloque Footer====*/
-.xln-contentSection-block-empresa .footer {
-  height: 80vh;
-}
-
-.xln-contentSection-block-empresa .footer__group-container {
-  display: flex;
-  column-gap: 4rem;
-  font-size: 20px;
-  position: relative;
-  top: 8px;
-}
 
 /*====Fin Bloque Footer====*/
 
@@ -2335,7 +1837,7 @@ p.xln__register_text_TyC {
   color: var(--white);
 }
 
-.empresas__banner-button {
+/* .empresas__banner-button {
   border: none;
   background-color: var(--green);
   border-radius: 5px;
@@ -2344,21 +1846,14 @@ p.xln__register_text_TyC {
   font-size: 17px;
   width: 38%;
   height: 40px;
-}
+} */
 
-.empresas__innovacion-container {
+/* .empresas__innovacion-container {
   height: auto;
-}
+} */
 
 .empresas__innovacion-information_container {
   display: flex;
-}
-
-.empresas__innovacion-redirection {
-  position: relative;
-  left: 50px;
-  top: 95px;
-  width: 50%;
 }
 
 .empresas__innovacion-title {
@@ -2405,17 +1900,13 @@ p.xln__register_text_TyC {
   margin-bottom: 32px;
 }
 
-.empresas__banner-image_content {
+/* .empresas__banner-image_content {
   height: auto;
   width: 100%;
   margin-top: 15%;
   margin-bottom: 8%;
 }
-
-.empresas__banner-image_section {
-  position: relative;
-  width: 100%;
-}
+ */
 
 .empresas__section-information_content {
   position: relative;
@@ -2438,28 +1929,24 @@ p.xln__register_text_TyC {
   border-bottom: 6px solid var(--blueAlternative);
 }
 
-.empresas__platform-container {
+/* .empresas__platform-container {
   display: flex;
   height: 100vh;
-}
+} */
 
-.empresas__platform-container_image {
+/* .empresas__platform-container_image {
   width: 50%;
-}
+} */
 
-.empresas__platform-image {
-  width: 100%;
-}
 
-.empresas__platform-container_options {
+/* .empresas__platform-container_options {
   background-color: #f4f4f4;
   width: 50%;
-  /* height: 100vh; */
   position: relative;
   bottom: 18%;
   display: flex;
   flex-direction: column;
-}
+} */
 
 .empresas__platform-video {
   display: flex;
@@ -2475,27 +1962,6 @@ p.xln__register_text_TyC {
   top: 20px;
 }
 
-.empresas__platform-options_content {
-  width: 67%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.empresas__banner-contacto img {
-  width: 100%;
-}
-
-.empresas__platform-options_content h1 {
-  font-size: 30px;
-  font-weight: bold;
-  color: var(--blueDark);
-}
-
-.empresas__platform-options_content h4 {
-  font-weight: bold;
-  color: var(--blueDark);
-}
 
 .empresas__colaboration-container {
   display: flex;
@@ -2548,15 +2014,7 @@ p.xln__register_text_TyC {
   font-size: 45px;
   font-weight: bold;
 }
-
-.empresas__banner-button_container {
-  display: flex;
-  column-gap: 50px;
-  position: relative;
-  top: 35px;
-}
-
-.empresas__banner-contacto_button {
+/* .empresas__banner-contacto_button {
   border: none;
   background-color: var(--green);
   border-radius: 5px;
@@ -2565,8 +2023,8 @@ p.xln__register_text_TyC {
   color: var(--blueDark);
   width: 20%;
 }
-
-.empresas__banner-proyecto_button {
+ */
+/* .empresas__banner-proyecto_button {
   border: 1px solid var(--green);
   background-color: transparent;
   border-radius: 5px;
@@ -2575,7 +2033,7 @@ p.xln__register_text_TyC {
   width: 20%;
   color: var(--green);
   height: 50px;
-}
+} */
 
 /* Empresas section Fin */
 
@@ -3228,176 +2686,6 @@ input.preguntas__diagnostico-checkbox-selected {
 /* Preguntas Diagnostico Fin */
 
 
-/* Información cursos */
-.xln__info_courses .col-lg-4 img {
-  width: 100%!important;
-}
-.xln__info_courses .hero {
-  background: var(--blueDark);
-  padding-bottom: 5%;
-  padding-top: 3%;
-}
-.xln__info_courses .title {
-  color: #fff;
-  padding-left: 7%;
-}
-.xln__info_courses .btn__cursos__descripcion {
-  background-color: var(--green);
-  border: none;
-  color: var(--blueDark);
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 5px;
-  width: 30%!important;
-  padding-top: 11px;
-  padding-bottom: 11px;
-}
-.xln__info_courses .objetivos_de_curso {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  background: var(--blueAlternative);
-  padding-top: 5%;
-  padding-bottom: 5%;
-}
-
-.objetivos_de_curso .title_objetivos_de_curso {
-  text-align: left;
-  padding-bottom: 40px;
-  color: var(--blueclaro);
-}
-
-.objetivos_de_curso p {
-  color: var(--blueclaro);
-  text-align: left;
-  }
-
-  .objetivos_de_curso .separador {
-    width: 40px;
-    height: 2px;
-    background:var(--green);
-    margin-bottom: 36px;
-    border-radius: 10px;
-}
-.objetivos_de_curso .row {
-  width: 90%;
-  margin: auto;
-}
-.hero .row {
-  --bs-gutter-x: -0.5rem;
-
-}
-
-.button__info-course {
-  position: relative;
-  bottom: 210px;
-  left: 250px;
-  background-color: transparent;
-  border: none;
-}
-
-.separador-left {
-  height: 125px;
-  width: 14px;
-  background: var(--green);
-  border-radius: 10px;
-  position: absolute;
-  margin-left: -39px;
-  margin-top: -15px;
-}
-.section_cta_de_curso {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  background: #ffffff;
-}
-.section_cta_de_curso .row {
-  width: 80%;
-  margin: auto;
-}
-.section_cta_de_curso h2 {
-  text-align: left;
-  font-size: 45px;
-  font-weight: bold;
-}
-.section_introCursos-button {
-  background-color: #31fb8400;
-  border: none;
-  border-radius: 5px;
-  position: relative;
-  padding: 10px;
-  width: 50%;
-  font-size: 17px;
-  font-weight: bold;
-  border: solid 2px var(--bluedark);
-  color: var(--blueDark);
-  top: 32px;
-}
-.section_cta_de_curso .col-sm {
-  text-align: left;
-}
-.section_cta_de_curso .col-sm img {
-  width: 100%;
-  position: relative;
-  top: -50px;
-}
-
-.xln__info_courses .modal.show .modal-dialog {
-  transform: none;
-  max-width: 80%;
-}
-.xln__info_courses .modal-dialog iframe {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-.section_descripction_course {
-  padding-bottom: 15%;
-}
-.section_descripction_course button {
-  background: var(--blueDark);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  width: 90%;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.section_descripction_course button::before {
-  content: '▶';
-  position: relative;
-  border-radius: 21px;
-  padding-left: 9px;
-  padding-top: 7px;
-  padding-right: 8px;
-  padding-bottom: 7px;
-  left: -23%;
-  border: 2px solid #fff;
-  font-size: 10px;
-}
-.section_descripction_course .col-md-10 div {
-  padding-top: 11px;
-}
-.section_descripction_course .col-md-10 div::before {
-  content: '🔒︎';
-  position: relative;
-  left: 0;
-  border-radius: 21px;
-  padding-left: 8px;
-  padding-top: 7px;
-  padding-right: 7px;
-  padding-bottom: 7px;
-  font-size: 10px;
-}
-
-.xln__info_courses .dashboard__lider-container_courses-card-content p {
-  text-align: left;
-  padding-left: 27px;
-  padding-right: 27px;
-  position: static;
-  top: 69px;
-}
 
 
 
@@ -3801,14 +3089,7 @@ input.preguntas__diagnostico-checkbox-selected {
   position: relative;
   top: 0px;
 }
-.cursos__entrenamiento-section .cursos__filter-content {
-  position: relative;
-  left: 35px;
-  top: 76px;
-  height: 56vh;
-  width: 40%;
-  float: left;
-}
+
 .cursos__entrenamiento-container {
   width: 100%;
   position: relative;
@@ -4008,11 +3289,7 @@ input.preguntas__diagnostico-checkbox-selected {
 /* Confirmar Ruta Fin*/
 
 /* Gestion de cupos (Usuarios) */
-.xlrn__crear-suarios__section.lxn__manejo__equipos .footer {
-  width: 100%;
-  padding-left: 20%;
-  height: 80vh;
-}
+
 .gestion__usuario-section .header__container.background {
   position: fixed !important;
   z-index: 9;
@@ -4110,19 +3387,6 @@ input.preguntas__diagnostico-checkbox-selected {
   width: 30%;
 }
 
-.gestion__usuario-section .footer {
-  width: 80%;
-  margin-left: 20%;
-  height: 80vh;
-}
-
-.gestion__usuario-section .footer__group-container {
-  display: flex;
-  column-gap: 2rem;
-  font-size: 20px;
-  position: relative;
-  top: 10px;
-}
 
 /* Gestion de cupos (Usuarios) Fin */
 
@@ -4234,19 +3498,6 @@ input.preguntas__diagnostico-checkbox-selected {
   padding-left: 5%;
 }
 
-.compra-usuarios__section .footer {
-  width: 80%;
-  margin-left: 20%;
-  height: 80vh;
-}
-
-.compra-usuarios__section .footer__group-container {
-  display: flex;
-  column-gap: 2rem;
-  font-size: 20px;
-  position: relative;
-  top: 10px;
-}
 
 .compra-usuarios__form {
   width: 40%;
@@ -4830,19 +4081,6 @@ p.xln_price_GDC span {
   border-radius: 5px;
 }
 
-.crear__equipos-section .footer {
-  width: 80%;
-  margin-left: 20%;
-  height: 80vh;
-}
-
-.crear__equipos-section .footer__group-container {
-  display: flex;
-  column-gap: 2rem;
-  font-size: 20px;
-  position: relative;
-  top: 10px;
-}
 
 /* .xlrn__crear-usuarios__massive-charge__input {
     
@@ -5059,22 +4297,6 @@ p.xln_price_GDC span {
   margin-top: 8%;
 }
 
-.xlrn__crear-suarios__section .footer {
-  width: 100%;
-  margin-left: 0;
-  height: 80vh;
-}
-
-.xln__creacion-nuevo-equipo button {
-  background-color: var(--green);
-  border: none;
-  color: var(--blueDark);
-  height: 41px;
-  width: 188px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 5px;
-}
 
 /* .xln__creacion-nuevo-equipo-content {
 
@@ -5320,184 +4542,7 @@ h3.xlnIcon__couser__ruta_initiated {
 
 /* Contact section */
 
-.xlrn-contacto__section-banner__content {
-  height: 100vh;
-  margin-bottom: 15%;
-  margin-top: 5%;
-}
 
-.xln__content__bannerContact {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  height: 60vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.xln__content__bannerContact::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, rgb(0 0 0 / 77%) 0%, rgb(0 0 0 / 68%) 49%, rgb(0 0 0 / 52%) 100%);
-  z-index: 1;
-}
-
-.xln__content__bannerContact h1 {
-  color: #fff;
-  z-index: 2;
-  font-weight: bold;
-}
-
-.xln__content__bannerContact p {
-  color: #fff;
-  z-index: 2;
-}
-
-.xln__content__bannerContact button {
-  background-color: var(--green);
-  border: none;
-  border-radius: 5px;
-  height: 40px;
-  width: 47%;
-  font-weight: bold;
-  font-size: 16px;
-  z-index: 2;
-}
-
-.xln__title__bannerContact {
-  left: 30%;
-  position: absolute;
-  top: 45%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  z-index: 2;
-}
-
-.xlrn__contacto-formulario-container {
-  width: 50%;
-  float: left;
-}
-
-.xlrn__contacto-formulario-container .xln__txt__formContact {
-  width: 80%;
-  margin: auto;
-
-}
-
-.xlrn__contacto-formulario-container .xln__txt__formContact h2 {
-  font-size: 48px;
-  font-weight: bold;
-  color: var(--blueDark);
-
-}
-
-.xlrn__contacto-formulario-container .xln__txt__formContact p {
-  font-size: 16px;
-  color: var(--blueDark);
-
-}
-
-.xln__content__formContact {
-  width: 80%;
-  margin: auto;
-  background: white;
-  padding: 8%;
-  padding-bottom: 3%;
-}
-
-.xlrn__contacto-formulario-group p {
-  padding-top: 23px;
-}
-
-.xlrn__contacto-formulario-group {
-  width: 100%;
-}
-
-
-
-.xln__input__GroupBlock-1 {
-  width: 100%;
-  padding: 10px;
-}
-
-.xln__input__GroupBlock-1 label {
-  width: 100%;
-
-}
-
-.xln__input__GroupBlock-1 input {
-  width: 100%;
-
-
-}
-
-.xln__input__GroupBlock-1 select {
-  width: 100%;
-  height: 40px;
-  background: var(--blueclaro);
-  border: 1px solid var(--blueoscuro);
-}
-
-.xln__input__GroupBlock-1 textarea {
-  width: 100%;
-  height: 20vh;
-  background: var(--blueclaro);
-  border: 1px solid var(--blueoscuro);
-}
-
-
-.xln__input__GroupBlock-2 {
-  width: 50%;
-  float: left;
-  padding: 10px;
-
-}
-
-.xln__input__GroupBlock-2 label {
-  width: 100%;
-
-}
-
-.xln__input__GroupBlock-2 input {
-  width: 100%;
-  height: 40px;
-  background: var(--blueclaro);
-  border: 1px solid var(--blueoscuro);
-}
-
-.xln__input__GroupBlock-2 select {
-  width: 100%;
-  height: 40px;
-  background: var(--blueclaro);
-  border: 1px solid var(--blueoscuro);
-}
-
-span.campo_requerido {
-  color: red;
-}
-
-.xlrn__contacto-formulario-group label {
-  color: var(--blueDark);
-  font-size: 15px;
-}
-
-.xln__formulario-button__contact {
-  background-color: var(--green);
-  border: none;
-  border-radius: 10px;
-  position: relative;
-  padding: 10px;
-  width: 50%;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 auto;
-  left: 30%;
-}
 
 /* Responsive */
 
@@ -6030,9 +5075,9 @@ span.campo_requerido {
 
   /* Preguntas Fin */
   /* Footer Inicio */
-  .footer {
+  /* .footer {
     height: 45vh;
-  }
+  } */
 
   .footer__option {
     left: 115px;
@@ -6234,7 +5279,7 @@ span.campo_requerido {
   /* Footer Fin*/
 
   /*Estilos ventana registro*/
-  .navegacion {
+  /* .navegacion {
     display: inline-flex;
     column-gap: normal;
     left: 32%;
@@ -6264,20 +5309,20 @@ span.campo_requerido {
     width: 100%;
     padding-left: 10%;
     padding-right: 10%;
-  }
+  } */
 
-  .planes__register-container_option {
+  /* .planes__register-container_option {
     height: 190vh;
-  }
+  } */
 
-  .planes__container-about {
+  /* .planes__container-about {
     background-color: var(--white);
     height: 30vh;
   }
 
   .planes__formulario-button {
     left: 25%;
-  }
+  } */
 
   /*Fin Estilos ventana registro*/
 }
@@ -6498,32 +5543,32 @@ span.campo_requerido {
   }
 
   /* Preguntas Frecuentes Final */
-  .footer {
+  /* .footer {
     height: 55vh;
-  }
+  } */
 
   .footer__container {
     left: 25px;
   }
 
-  .footer__content {
+ /*  .footer__content {
     flex-direction: column;
-  }
+  } */
 
-  .footer__logo-info_title {
+  /* .footer__logo-info_title {
     font-size: 12px;
     position: relative;
     left: 60px;
     width: 80%;
     top: -14px;
   }
-
-  .footer__image-email {
+ */
+  /* .footer__image-email {
     left: 260px;
     width: 20%;
     position: relative;
     bottom: 255px;
-  }
+  } */
 
   .footer__media-content {
     flex-flow: wrap;
@@ -6601,12 +5646,12 @@ span.campo_requerido {
   }
 
   /*Estilos ventana registro*/
-  .planes__register-about {
+  /* .planes__register-about {
     left: 10%;
     position: relative;
     top: 42px;
     width: 80%;
-  }
+  } */
 
   .planes__form-container {
     padding-bottom: 17%;
@@ -6630,3 +5675,7 @@ span.campo_requerido {
   padding-top: 10%;
   padding-bottom: 10%;
 }
+
+
+
+

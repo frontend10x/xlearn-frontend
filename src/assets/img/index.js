@@ -106,5 +106,9 @@ export {default as eyePassword} from '../img/eye-password.png'
 /* Imagen de 404 */
 export {default as error404 } from '../img/error_404.webp'
 
+
+export {default as flechaIzquierdaCourse } from '../img/flecha-izquierda.png'
+export {default as flechaIzquierdaCourseNegra } from '../img/flecha-izquierda-negra.png'
+
 /* Icono de carrito */
 export {default as cartIcon } from './shopping-cart.png'
