@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Header } from "../componentes/Header";
 import { Banner } from "../componentes/Banner";
 import { homeCarousel01, homeCarousel02, homeCarousel03, homeCarousel04 } from "../assets/img";
@@ -8,6 +8,7 @@ import { Mockups } from "../componentes/Mockups";
 import { Footer } from "../componentes/Footer";
 import { PreguntasFrecuentes } from "../componentes/PreguntasFrecuentes";
 import { getCourse } from "../services/services";
+import { Container } from "react-bootstrap";
 
 export const InicioScreen = () => {
 
@@ -15,27 +16,27 @@ export const InicioScreen = () => {
 
   useEffect(() => {
     // 👇️ scroll to top on page load
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
-  
+
   useEffect(() => {
     async function getCarrouselCourses() {
       const data = await getCourse()
       console.log(data.response._embedded.courses)
       setData(data.response._embedded.courses)
-    } 
+    }
     getCarrouselCourses()
   }, [])
-  
+
 
   return (
     <div className="inicioScreen">
       <div className="Inicio banner&header ">
         <Header />
         <Banner />
-      </div> 
+      </div>
 
-      <div className="carousel-section">
+      {/* <div className="carousel-section">
         <div className="carousel__section-content">
           <h1>Elige los cursos de tu interés</h1>
 
@@ -46,31 +47,32 @@ export const InicioScreen = () => {
             <button>Transformación</button> |
             <button>Diseño de productos</button> |
             <button>Sostenibilidad</button>
-          </ul> */}
+          </ul> 
 
           <div className="d-flex carousel__container">
-            {data.map((item, index) => (
-              <CarouselCourses key={index} item={item} />
-            ))}
+            <Container>
+              <CarouselCourses item={data} />
+            </Container>
           </div>
         </div>
-      </div>
-      
+      </div> */}
+
       <div className="enterprise-section">
         <CarouselEnterprises />
-      </div> 
+      </div>
 
-      <div className="mockups-section">
+      {/* <div className="mockups-section">
         <Mockups />
       </div>
-      
+
       <div className="preguntas-section">
         <PreguntasFrecuentes />
       </div>
 
       <div className="footer-section">
         <Footer />
-      </div>
+      </div> */}
+
     </div>
   );
 };
