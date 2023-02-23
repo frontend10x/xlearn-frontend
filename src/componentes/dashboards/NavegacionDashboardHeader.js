@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/loginactions";
 import { Nav, Image } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
-import { imagenUser } from "../../assets/img";
+import { cartIcon, imagenUser } from "../../assets/img";
 import "../../assets/css/componentes/StyleNavegacionDashboardHeader.css";
 
 export const NavegacionDashboardHeader = () => {
@@ -30,6 +30,7 @@ export const NavegacionDashboardHeader = () => {
             </NavLink> */}
             <NavLink className="nav-link " to="/compra/cupos">
               Comprar
+              <img src={cartIcon} className='w-25' />
             </NavLink>
             {/* <NavLink className="nav-link " to="/gestion/equipo">
               Gestión de equipos

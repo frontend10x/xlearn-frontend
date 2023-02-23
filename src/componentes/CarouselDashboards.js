@@ -28,7 +28,7 @@ const responsive = {
 export const CarouselDashboards = ({ item }) => {
 
     const course = item;
-
+    
     return (
         <Carousel responsive={responsive}>
             {course &&
