@@ -108,3 +108,4 @@ export {default as error404 } from '../img/error_404.webp'
 
 
 export {default as flechaIzquierdaCourse } from '../img/flecha-izquierda.png'
+export {default as flechaIzquierdaCourseNegra } from '../img/flecha-izquierda-negra.png'

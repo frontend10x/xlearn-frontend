@@ -66,7 +66,7 @@ export const RecuperarPassword = () => {
 
                             <div className="login__content-inputs  ">
                                 <div className='row'>
-                                    <div className='col-md-12 mx-auto'>
+                                    <div className='col-md-8 mx-auto'>
                                         <form
                                             className="login__content-form "
                                             onSubmit={forgotPassword}

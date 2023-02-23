@@ -1,0 +1,338 @@
+.hr__EmpresaScreen {
+    color: #d9d9d9;
+}
+
+.contacto__register-banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    padding-top: 8%;
+    padding-bottom: 8%;
+}
+
+.contacto__register-content {
+    color: var(--white);
+    position: relative;
+}
+
+.contacto__banner-button {
+    border: none;
+    background-color: var(--green);
+    border-radius: 5px;
+    color: var(--blueDark);
+    font-weight: bold;
+    font-size: 17px;
+    width: 38%;
+    height: 40px;
+}
+
+section.contacto__innovacion-container {
+    padding-top: 6%;
+    padding-bottom: 6%;
+}
+
+h2.xln__description_EmpresasRigth {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.contacto__banner-image_section {
+    position: relative;
+    width: 100%;
+}
+
+.contacto__platform-options_content {
+    width: 60%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contacto__banner-contacto img {
+    width: 100%;
+}
+
+.contacto__platform-options_content h1 {
+    color: var(--blueDark);
+    font-weight: bold;
+    font-size: 21px;
+    text-align: left;
+}
+
+.contacto__platform-options_content h4 {
+    font-weight: bold;
+    color: var(--blueDark);
+}
+
+.contacto__platform-container .left {
+    padding: 0;
+    margin: 0;
+}
+
+.contacto__platform-container .rigth {
+    background: #F4F4F4;
+}
+
+.contacto__platform-container .contacto__platform-image {
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.contacto__banner-button_container {
+    /* display: flex;
+column-gap: 50px;
+position: relative;
+top: 35px; */
+    width: 100%;
+}
+
+.contacto__banner-contacto_button {
+    border: none;
+    background-color: var(--green);
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--blueDark);
+    width: 100%;
+    height: 50px;
+}
+
+.contacto__banner-proyecto_button {
+    border: 1px solid var(--green);
+    background-color: transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 100%;
+    color: var(--green);
+    height: 50px;
+}
+
+.xln__CTA_contacto h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+
+
+/* .xlrn-contacto__section-banner__content {
+height: 100vh;
+margin-bottom: 15%;
+margin-top: 5%;
+} */
+
+
+
+.xln__title__bannerContact {
+    left: 30%;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    z-index: 2;
+}
+
+
+.xln__content__formContact {
+    margin: auto;
+    background: white;
+    padding: 8%;
+    padding-bottom: 3%;
+}
+
+.xlrn__contacto-formulario-group p {
+    padding-top: 23px;
+}
+
+.xlrn__contacto-formulario-group {
+    width: 100%;
+}
+
+
+
+.xln__input__GroupBlock-1 {
+    padding: 10px;
+}
+
+.xln__input__GroupBlock-1 label {
+    width: 100%;
+
+}
+
+.xln__input__GroupBlock-1 input {
+    width: 100%;
+
+
+}
+
+.xln__input__GroupBlock-1 select {
+    width: 100%;
+    height: 40px;
+    background: var(--blueclaro);
+    border: 1px solid var(--blueoscuro);
+}
+
+.xln__input__GroupBlock-1 textarea {
+    width: 100%;
+    height: 20vh;
+    background: var(--blueclaro);
+    border: 1px solid var(--blueoscuro);
+}
+
+
+
+
+.xln__input__GroupBlock-2 label {
+    width: 100%;
+
+}
+
+.xln__input__GroupBlock-2 input {
+    width: 100%;
+    height: 40px;
+    background: var(--blueclaro);
+    border: 1px solid var(--blueoscuro);
+}
+
+.xln__input__GroupBlock-2 select {
+    width: 100%;
+    height: 40px;
+    background: var(--blueclaro);
+    border: 1px solid var(--blueoscuro);
+}
+
+span.campo_requerido {
+    color: red;
+}
+
+.xlrn__contacto-formulario-group label {
+    color: var(--blueDark);
+    font-size: 15px;
+}
+
+.xln__formulario-button__contact {
+    background-color: var(--green);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    margin: auto;
+}
+
+.xlrn-contacto__section-container{
+    padding-top: 5% !important;
+    padding-bottom: 10% !important;
+}
+
+.xlrn-contacto__section .InfoCourse__innovacion-redirection {
+    padding-bottom: 7%;
+}
+.xln__txt__formContact h2 {
+    font-weight: bold;
+}
+@media (max-width: 1367px) {}
+
+@media (max-width: 768px) {
+    .row {
+        width: 90%;
+    }
+
+    .xlrn-contacto__section-container {
+        padding-top: 15% !important;
+        padding-bottom: 15% !important;
+    }
+
+    .row .item_row {
+        width: 100% !important;
+        padding: 0;
+        margin: auto;
+    }
+
+    h2.xln__description_EmpresasRigth {
+        font-weight: bold;
+        font-size: 21px;
+        text-align: center;
+    }
+
+    .sub_center_aling {
+        text-align: center;
+    }
+
+    .contacto__register-banner {
+        padding-top: 20%;
+        padding-bottom: 20%;
+    }
+
+    .contacto__register-content {
+        text-align: center;
+
+    }
+
+    .contacto__container-about {
+        background-color: var(--white);
+        padding-top: 10%;
+        padding-bottom: 10%;
+        position: relative;
+        margin-top: 0%;
+    }
+
+    .contacto__banner-button {
+        border: none;
+        background-color: var(--green);
+        border-radius: 5px;
+        color: var(--blueDark);
+        font-weight: bold;
+        font-size: 17px;
+        width: 90%;
+        height: 40px;
+    }
+
+    .contacto__platform-container .contacto__platform-image {
+        padding-top: 0%;
+        padding-bottom: 0%;
+    }
+
+    .contacto__platform-options_content {
+        width: 90%;
+        margin: auto;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+
+    .contacto__banner-contacto_button {
+        margin-bottom: 3%;
+    }
+
+    .xln__content__formContact {
+        margin: auto;
+        background: white;
+        padding-bottom: 10%!important;
+        padding-top: 10%!important;
+        padding-left: 5%!important;
+        padding-right: 5%!important;
+        padding: 0;
+    }
+    .xln__txt__formContact h2 {
+        font-weight: bold;
+        text-align: center;
+        font-size: 40px;
+    }
+    .xlrn-contacto__section .InfoCourse__innovacion-redirection {
+        text-align: center;
+    }
+    .xln__txt__formContact p {
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 552px) {}
