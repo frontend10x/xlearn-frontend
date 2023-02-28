@@ -83,7 +83,8 @@ export const CompraUsuarios = () => {
       const data = await validateRut(token,subcompanie_id,file); //se envia la peticion para cargar el rut
       setPayment(false); // condicional para evitar ir a pagar si el rut no esta cargado
     } catch (error) {
-      console.log(error,'error');      
+      console.log(error,'error');
+      setPayment(true);      
     }
     
   }
