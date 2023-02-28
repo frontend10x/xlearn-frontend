@@ -85,6 +85,12 @@ export const CompraUsuarios = () => {
     } catch (error) {
       console.log(error,'error');
       setPayment(true);      
+      Swal.fire({
+        icon: 'error',
+        title: 'Hubo un error cargando el rut',
+        text: `Si la falla persiste comunicate con soporte`,
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
     }
     
   }
