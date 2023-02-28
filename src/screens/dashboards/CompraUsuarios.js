@@ -8,6 +8,7 @@ import { Footer } from "../../componentes/Footer";
 import WebCheckout from "../../componentes/Commons/Wompi/WebCheckout";
 import { Col, Row } from "react-bootstrap";
 // import {WidgetCheckout} from "../../Wompi/wompi";
+import Swal from "sweetalert2";
 
 export const CompraUsuarios = () => {
   const { token, name, email, subcompanie_id } = useSelector(state => state.auth)
@@ -85,6 +86,12 @@ export const CompraUsuarios = () => {
     } catch (error) {
       console.log(error,'error');
       setPayment(true);      
+      Swal.fire({
+        icon: 'error',
+        title: 'Hubo un error cargando el rut',
+        text: `Si la falla persiste comunicate con soporte`,
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
     }
     
   }
