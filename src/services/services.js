@@ -408,3 +408,18 @@ export const desactivateUser = async (token,id) => {
   const response = axios.delete(baseURL + `/api/v1/user/delete/${id}`, config);
   return response.data;
 }
+
+export const validateRut = async (token,subcompanieid,doc) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data"
+    }
+  };
+  const body = new FormData();
+  body.append('file', doc)
+  body.append('sub_companieId',subcompanieid)
+
+  const response = axios.post(baseURL + `/api/v1/subempresa/rut`,body,config)
+  return response.data
+}
