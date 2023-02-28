@@ -136,3 +136,43 @@
   border-radius: 0px 0px 10px 10px;
   box-shadow: 6px 6px 10px 1px rgb(0 0 0 / 30%);
 }
+
+
+
+/*-----Carousel home --------*/
+.carousel-interna-home .dashboard__lider-container_courses-card-content {
+  background-color: var(--white);
+  width: 100%;
+  position: relative;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 6px 6px 10px 1px rgb(0 0 0 / 30%);
+}
+
+.carousel-interna-home .dashboard__lider-container_courses-card-content-body {
+  position: relative;
+  top: 36px;
+  text-align: center;
+  height: 100%;
+}
+
+.carousel-interna-home .dashboard__lider-container_courses-card-content h3 {
+  text-align: center;
+  font-size: 13px;
+}
+.carousel-interna-home .dashboard__lider-container_courses-card-content_button {
+  background-color: #fff!important;
+  border: solid 2px;
+  color: var(--blueDark);
+  font-weight: bold;
+  font-size: 16px;
+  width:80%;
+  height: 41px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  left: 0%;
+  margin: 0 auto!important;
+  position: relative;
+  top: 20px;
+}
