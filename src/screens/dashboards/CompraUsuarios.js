@@ -79,10 +79,13 @@ export const CompraUsuarios = () => {
   let { amount_user, amount_time, coupon } = formValues
 
   const uploadRut = async () => {
-    console.log(file,'valores');
-    // setPayment(false); // condicional para evitar ir a pagar si el rut no esta cargado
-    // const data = await validateRut(token,subcompanie_id,file); //se envia la peticion para cargar el rut
-    // console.log(data,'datos');
+    try {
+      const data = await validateRut(token,subcompanie_id,file); //se envia la peticion para cargar el rut
+      setPayment(false); // condicional para evitar ir a pagar si el rut no esta cargado
+    } catch (error) {
+      console.log(error,'error');      
+    }
+    
   }
 
   const calculatePrice = async (e) => {
@@ -167,8 +170,7 @@ export const CompraUsuarios = () => {
                     <div className="" >
                       <p className="mt-2">Compartenos tu rut</p>
                       <input type="file" 
-                        value={file}
-                        onChange={e => setDoc(e.target.files.file[0])}
+                        onChange={e => setDoc(e.target.files[0])}
                       />
                     </div>
                   </div>
