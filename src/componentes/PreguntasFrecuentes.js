@@ -1,7 +1,7 @@
 import React from "react";
 import { Image } from "react-bootstrap";
 import { homeCarouselPF01, homeCarouselPF02 } from "../assets/img";
-
+import "../assets/css/componentes/StyleFQAS.css";
 export const PreguntasFrecuentes = () => {
   return (
     <div className="preguntas__frecuentes">
@@ -44,26 +44,49 @@ export const PreguntasFrecuentes = () => {
         {/* <!-- The slideshow/carousel --> */}
         <div className="carousel-inner preguntas__carousel-slides">
           
-          <div className="carousel-item active">
-            <div className="xln_carousel_PositionLeft">
-              <Image
-                src={homeCarouselPF02}
-                alt="preguntas frecuentes 1"
-                className="preguntas__carousel-image"
-              />
-            </div>
-            <div className="preguntas__slides-content xln_carousel_PositionRigth">
-              <div className="preguntas__content-box">
-              <h4>
-                  ¿Sabes cómo generar los reportes, hacer seguimiento y monitorear los resultados de tu organización en los procesos de formación y desarrollo de proyectos?
-              </h4>
-              <div className="preguntas__slides-content_info ">
-                <p className="preguntas__comillas">“</p>
-                <p>
-                  En este video te enseñamos todos los tips para monitorear los reportes de tu equipo de trabajo y los avances que se han generado alrededor del proyecto en desarrollo.
-                </p>
-              </div>
-              <button className="preguntas__button" >Conocer más acerca de este tema →</button>
+
+          <div className="row carousel-item active">
+
+            <div className="col-md-12">
+
+              <div className="row align-items-center">
+                <div className="xln_carousel_PositionLeft col-md-6">
+                  <Image
+                    src={homeCarouselPF02}
+                    alt="preguntas frecuentes 1"
+                    className="preguntas__carousel-image"
+                  />
+                </div>
+                <div className="preguntas__slides-content xln_carousel_PositionRigth col-md-6">
+                  <div className="preguntas__content-box row">
+
+                      <h4>
+                          ¿Sabes cómo generar los reportes, hacer seguimiento y monitorear los resultados de tu organización en los procesos de formación y desarrollo de proyectos?
+                      </h4>
+                 
+
+
+                    <div className="row">
+
+                      <div className="col-md-2">
+                        <p className="preguntas__comillas">“</p>
+                      </div>
+
+                      <div className="col-md-10">
+                        <p>
+                          En este video te enseñamos todos los tips para monitorear los reportes de tu equipo de trabajo y los avances que se han generado alrededor del proyecto en desarrollo.
+                        </p>
+                      </div>
+
+                      <div className="col-md-12">
+                        <button className="preguntas__button" >Conocer más acerca de este tema →</button>
+                      </div>
+                    </div>
+                  
+                  </div>
+
+                </div>
+
               </div>
 
             </div>

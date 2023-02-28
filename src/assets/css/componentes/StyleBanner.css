@@ -1,0 +1,365 @@
+/*Modal Banner*/
+.banner .modal-dialog {
+    max-width: 75%;
+  }
+  
+  .banner .modal-content {
+    height: auto !important;
+  }
+  
+  .banner .modal-body {
+    padding: 0;
+  }
+  
+  .banner .btn-close {
+    position: absolute;
+    z-index: 9;
+    right: 13px;
+    top: 11px;
+    background-size: 25px;
+  }
+  
+  .banner .bg-dark {
+    background-color: #000000 !important;
+  }
+  
+  .modal-backdrop.show {
+    opacity: 0.8 !important;
+    z-index: 1000 !important;
+  }
+  
+  .banner {
+    height: auto;
+  }
+  
+  .banner .carousel-indicators {
+    left: 36%;
+    top: 35%;
+  }
+  
+  .banner .carousel-item img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+  }
+  
+  
+  .carousel-indicators {
+    color: var(--white);
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 60%;
+    text-align: center;
+    height: 50px;
+  }
+  
+  .carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100vh !important;
+  }
+  
+.xln-btn-banners {
+    width: 14%;
+    position: absolute;
+    right: 6%;
+    transform: translate(-50%, -50%);
+    bottom: 0%;
+        z-index: 10;
+}
+button.carousel-control-next:hover {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    opacity: .9;
+}
+button.carousel-control-prev:hover {
+  color: #fff;
+  text-decoration: none;
+  outline: 0;
+  opacity: .9;
+}
+.Inicio .carousel-control-next, .Inicio .carousel-control-prev {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: .5;
+    transition: opacity .15s ease;
+    float: left;
+        width: 50%!important;
+}
+  
+  .banner .carousel-indicators [data-bs-target] {
+    width: 20%;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+    z-index: 2 !important;
+  }
+  
+  .banner__carousel-prev {
+    /* position: absolute; */
+    top: 86%;
+    transition: background-color 0.3s ease;
+    left: 1380%;
+  }
+  
+  .banner__carousel-next {
+   /*  position: absolute; */
+    top: 86%;
+    right: 10px;
+}
+  .banner__carousel-prev:hover {
+    background-image: url("../../Breakpoints/1920/Icon_Back_Hover.jpg");
+  }
+  
+  .banner__carousel-next:hover {
+    color: var(--green);
+  }
+  
+  .slides {
+    color: var(--white);
+    display: flex;
+    width: 43%;
+    position: absolute;
+    top: 69%;
+    left: 50%;
+    z-index: 9;
+  }
+  
+  .slides__content {
+    width: 31%;
+  }
+  
+  .slides h3 {
+    font-size: 2rem;
+  }
+  
+  .slides p {
+    font-size: 20px;
+  }
+  
+  
+  
+  /* .content__banner {
+  color: white;
+  position: absolute;
+  top: 0%;
+  display: flex;
+  left: 170px;
+  width: 100%;
+  } */
+  .content__banner {
+    color: white;
+    position: absolute;
+    top: 0%;
+    display: flex;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .content__banner .content__banner-button.d-flex {
+    position: absolute;
+    top: 26%;
+    left: 14%;
+  }
+  
+  .content__banner-info p {
+    font-size: 25px;
+  }
+  
+  /* .content__banner-block {
+  background-color: var(--blueDark);
+  width: 565px;
+  text-align: left;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  display: flex;
+  column-gap: 0rem;
+  flex-direction: column;
+  margin-top: 30%;
+  position: relative;
+  left: -133px;
+  } */
+  .content__banner-block {
+    background-color: var(--blueDark);
+    width: 42%;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    padding-top: 4%;
+    padding-bottom: 2%;
+  }
+  
+  .content__banner-block h3 {
+    font-size: 16px;
+    padding-left: 6%;
+    padding-right: 6%;
+    font-weight: bold;
+  }
+  
+  .content__banner-block p {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+  
+  .content__banner-info {
+    color: var(--white);
+    border-top: 2px solid var(--white);
+    position: absolute;
+    height: 430px;
+    width: 33%;
+    right: 18%;
+    top: 18%;
+  }
+  
+  .content__banner-info h1 {
+    font-size: 35px;
+  }
+  
+  .content__banner-info span {
+    font-weight: bold;
+  }
+  
+  .content__banner-info p {
+    margin-top: 20px;
+  }
+  
+  /* .content__banner-info_block {
+  background-color: var(--whiteOff);
+  color: var(--blueDark);
+  height: 110px;
+  left: 1250px;
+  opacity: 0.8;
+  position: absolute;
+  top: 80px;
+  width: 230px;
+  }
+  */
+  .content__banner-info_block {
+    background-color: var(--whiteOff);
+    color: var(--blueDark);
+    height: 110px;
+    opacity: 0.8;
+    position: absolute;
+    top: 20%;
+    width: 230px;
+    right: 4%;
+  }
+  
+  .h-75 {
+    width: 0%;
+  }
+  
+  .content__banner-info_block h3 {
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-left: 40px;
+    font-weight: bold;
+  }
+  
+  .content__banner-button {
+    background-color: transparent;
+    color: var(--white);
+    border: none;
+  }
+
+
+  @media (max-width: 1367px) {}
+
+  @media (max-width: 768px) {
+
+    .Inicio .content__banner-block {
+      display: none;
+  }
+  .Inicio .carousel-indicators {
+    display: none;
+}
+    .xln-btn-banners {
+      width: 100%;
+      position: absolute;
+      right: 0%;
+      transform: translate(0%, 0%);
+      bottom: 0%;
+      z-index: 10;
+  }
+  .Inicio .carousel-control-next, .Inicio .carousel-control-prev {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: .5;
+    transition: opacity .15s ease;
+    float: left;
+    width: 47%!important;
+    background: #fff;
+    margin-left: 2%;
+}
+
+.Inicio .slides {
+  display: none;
+}
+.content__banner-info {
+  color: var(--white);
+  border-top: 2px solid var(--white);
+  position: absolute;
+  height: auto;
+  width: 90%;
+  right: 4%;
+  top: 30%;
+  margin: 0 auto;
+}
+.Inicio .content__banner-info_block {
+  background-color: var(--whiteOff);
+  color: var(--blueDark);
+  opacity: 0.8;
+  top: 20%;
+  width: 95%;
+  position: absolute;
+  right: 0%;
+  transform: translate(-3%, 290%);
+  bottom: 0%;
+  z-index: 10;
+  height: 105px;
+}
+.Inicio .content__banner .content__banner-button.d-flex {
+  position: absolute;
+  top: 18%;
+  left: 4%;
+  width:80%;
+  text-align: center;
+}
+
+.Inicio .content__banner-button p {
+  position: relative;
+  bottom: 8px;
+  left: -10px;
+}
+
+  }

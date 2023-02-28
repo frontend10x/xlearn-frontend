@@ -9,6 +9,8 @@ import {
   buttonnext,
 } from "../assets/img";
 
+import "../assets/css/componentes/StyleBanner.css";
+
 export const Banner = () => {
 
   const videoRef = useRef(null);
@@ -38,27 +40,34 @@ export const Banner = () => {
     <div className="banner">
 
       <div className="controladores carousel slide enterprise__carosuel-indicators" id="carouselExampleIndicators" data-bs-ride="carousel">
-        <div className="carousel-indicators  ">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            className="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
+        
+        <div className="row">
+          <div className="col-md-12">
+
+            <div className="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="0"
+                className="active"
+                aria-current="true"
+                aria-label="Slide 1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="1"
+                aria-label="Slide 2"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide-to="2"
+                aria-label="Slide 3"
+              ></button>
+            </div>
+
+          </div>
         </div>
 
         <div className="carousel-inner">
@@ -160,7 +169,7 @@ export const Banner = () => {
           <div className="content__banner-block">
             <h3>PROPUESTA DE VALOR</h3>
             <p>
-            Somos una plataforma educativa para empresas especializada en innovación; podrás encontrar contenido de alto valor para tu  compañía, realizar tus entrenamientos y proyectos a partir del desarrollo de temáticas como: innovación, sostenibilidad, transformación digital, emprendimiento corporativo, excelencia operacional y mucho más...
+              Somos una plataforma educativa para empresas especializada en innovación; podrás encontrar contenido de alto valor para tu  compañía, realizar tus entrenamientos y proyectos a partir del desarrollo de temáticas como: innovación, sostenibilidad, transformación digital, emprendimiento corporativo, excelencia operacional y mucho más...
             </p>
           </div>
         </Col>

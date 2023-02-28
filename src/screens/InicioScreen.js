@@ -31,37 +31,38 @@ export const InicioScreen = () => {
 
   return (
     <div className="inicioScreen">
-      <div className="Inicio banner&header ">
+
+      <div className="Inicio banner&header">
         <Header />
         <Banner />
       </div>
 
-      {/* <div className="carousel-section">
+       <div className="carousel-section">
         <div className="carousel__section-content">
           <h1>Elige los cursos de tu interés</h1>
 
-          {/* <ul className=" carousel__lista ">
+           {/* <ul className=" carousel__lista ">
             <button>Todas las áreas</button> |
             <button>Innovación</button> |
             <button>Corporativo</button> |
             <button>Transformación</button> |
             <button>Diseño de productos</button> |
             <button>Sostenibilidad</button>
-          </ul> 
+          </ul> */} 
 
-          <div className="d-flex carousel__container">
+          <div className="d-flex carousel__container carousel-home" style={{padding:"0",    margin: "0"}}>
             <Container>
               <CarouselCourses item={data} />
             </Container>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div className="enterprise-section">
         <CarouselEnterprises />
       </div>
 
-      {/* <div className="mockups-section">
+      <div className="mockups-section">
         <Mockups />
       </div>
 
@@ -71,7 +72,7 @@ export const InicioScreen = () => {
 
       <div className="footer-section">
         <Footer />
-      </div> */}
+      </div>
 
     </div>
   );

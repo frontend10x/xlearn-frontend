@@ -1,0 +1,189 @@
+/* Mockups Inicio */
+.mockups-section .row{
+    --bs-gutter-x: 0!important;
+}
+.mockups {
+    position: relative;
+}
+
+.mockups-section {
+    padding-top: 7%;
+}
+
+.mockups__shadow {
+    box-shadow: 6px 6px 10px 1px rgb(0 0 0 / 30%);
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+video.xln-content-video_MS {
+    border-radius: 0px 10px 10px 0px;
+}
+
+.mockups__container {
+    display: flex;
+    width: 100%;
+}
+
+.mockups__platform {
+    border-radius: 0 10px 10px 0;
+    height: 100%;
+    text-align: center;
+    background: #a9a9a9e0;
+}
+
+.mockups__platform h1 {
+    color: var(--neutroText);
+    position: relative;
+    top: 115px;
+    opacity: 0.2;
+}
+
+.xln_iconLine_title {
+    width: 150px;
+    height: 8px;
+    border-radius: 10px;
+    background: var(--green);
+    margin-bottom: 13px;
+}
+
+.mockups__content {
+    position: relative;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.mockups__content-title {
+    color: var(--blueDark);
+    font-weight: 700;
+}
+
+.mockups__content-title h2 {
+    color: var(--blueDark);
+    font-weight: bold;
+    font-size: 55px;
+}
+
+.mockups__sec-content {
+    position: relative;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.mockups__sec-title {
+    color: var(--blueDark);
+    font-weight: bold;
+    font-size: 55px;
+}
+
+.mockups__button {
+    background-color: transparent;
+    border-radius: 5px;
+    height: 56px;
+    width: 40%;
+}
+
+.mockups__button:hover {
+    background-color: var(--green);
+    color: var(--blueDark);
+    border: none;
+}
+
+.mockups_sec {
+    padding-top: 3%;
+    padding-bottom: 25%;
+}
+
+.mockups__sec-container {
+    width: 60%;
+    height: 100vh;
+}
+
+.mockups__sec-favicon {
+
+    position: relative;
+    top: 70px;
+}
+
+.tablet {
+    width: 100%;
+}
+
+.telf {
+    top: 28%;
+    position: absolute;
+    left: -13%;
+    width: 52%;
+}
+
+.tel-resposive{
+    display: none;
+}
+
+
+
+@media (max-width: 1367px) {}
+
+@media (max-width: 768px) {
+    .mockups__content {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 15%;
+    }
+    .mockups__content-title h2 {
+        color: var(--blueDark);
+        font-weight: bold;
+        font-size: 25px;
+        padding-top: 27%;
+        text-align: center;
+    }
+    .mockups__content p {
+        text-align: center;
+    }
+    .mockups__content .xln_iconLine_title {
+        margin: auto;
+    }
+    .mockups__sec-content {
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-bottom: 15%;
+    }
+    .mockups__sec-title {
+        color: var(--blueDark);
+        font-weight: bold;
+        font-size: 25px;
+    }
+    .mockups__button {
+        width: 100%;
+    }
+
+    .tablet {
+        display: none;
+    }
+    
+    .telf {
+        display: none;
+    }
+    .tel-resposive {
+        display: block;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: relative;
+    }
+    .mockups_sec .xln-two-columnas {
+        width: 50%!important;
+    }
+    .mockups__sec-favicon {
+        position: relative;
+        top: 0;
+    }
+    .mockups-section {
+        padding-top: 7%;
+        padding-bottom: 15%;
+    }
+}
+
+
+@media (max-width: 552px) {}
