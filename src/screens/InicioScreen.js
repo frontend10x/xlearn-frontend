@@ -37,7 +37,7 @@ export const InicioScreen = () => {
         <Banner />
       </div>
 
-       <div className="carousel-section">
+      <div className="carousel-section carousel-home">
         <div className="carousel__section-content">
           <h1>Elige los cursos de tu interés</h1>
 
@@ -50,7 +50,7 @@ export const InicioScreen = () => {
             <button>Sostenibilidad</button>
           </ul> */} 
 
-          <div className="d-flex carousel__container carousel-home" style={{padding:"0",    margin: "0"}}>
+          <div className="d-flex carousel__container carousel-interna-home" style={{padding:"0",    margin: "0"}}>
             <Container>
               <CarouselCourses item={data} />
             </Container>
