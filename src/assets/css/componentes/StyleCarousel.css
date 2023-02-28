@@ -176,3 +176,17 @@
   position: relative;
   top: 20px;
 }
+
+.carousel-interna-home .carousel-section.carousel-home h1 {
+  margin-bottom: 5%;
+  font-size: 55px;
+}
+
+@media (max-width: 1367px) {}
+
+@media (max-width: 768px) {
+  .carousel-interna-home .carousel-section.carousel-home h1 {
+    margin-bottom: 5%;
+    font-size: 25px;
+  }
+}

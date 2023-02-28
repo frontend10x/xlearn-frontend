@@ -25,7 +25,9 @@
     text-align: center;
     height: 50px;
 }
-
+.enterprise__carousel-content_title {
+    font-weight: bold;
+}
 /* .enterprise-section {
     height: 70vh;
 } */
