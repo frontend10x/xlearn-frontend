@@ -8,6 +8,7 @@ import { Footer } from "../../componentes/Footer";
 import WebCheckout from "../../componentes/Commons/Wompi/WebCheckout";
 import { Col, Row } from "react-bootstrap";
 // import {WidgetCheckout} from "../../Wompi/wompi";
+import Swal from "sweetalert2";
 
 export const CompraUsuarios = () => {
   const { token, name, email, subcompanie_id } = useSelector(state => state.auth)
