@@ -325,12 +325,12 @@ width: 230px;
   }
 
   .xln-btn-banners {
-    width: 100%;
-    position: absolute;
-    right: 0%;
-    transform: translate(0%, 0%);
-    bottom: 0%;
-    z-index: 10;
+    width: 100%!important;
+    position: absolute!important;
+    right: 0%!important;
+    transform: translate(0%, 0%)!important;
+    bottom: 0%!important;
+    z-index: 10!important;
   }
 
   .Inicio .carousel-control-next,
@@ -351,9 +351,9 @@ width: 230px;
     opacity: .5;
     transition: opacity .15s ease;
     float: left;
-    width: 47% !important;
+    width: 49.3% !important;
     background: #fff;
-    margin-left: 2%;
+    margin-left: 0.5%;
   }
 
   .Inicio .slides {

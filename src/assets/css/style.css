@@ -671,31 +671,6 @@ transform: translate(-100%, -50%);
   margin-top: 5%;
 }
 
-/*====Bloque Nav left====*/
-.xln-contentNavLeft-block {
-  width: 20%;
-  height: 100vh;
-  float: left;
-  position: fixed;
-  z-index: 1;
-}
-
-.xln-contentNavLeft-block .dashboard__navegacion-container {
-  width: 100%;
-}
-
-.xln-contentNavLeft-block .dashboard__nav {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--white);
-  width: 100%;
-  height: 90vh;
-  position: relative;
-  padding-top: 25%;
-  padding-left: 5%;
-}
-
-/*====Fin Bloque Nav left====*/
 
 /*====Bloque contenido====*/
 .xln-contentSection-block-empresa {
@@ -1284,7 +1259,7 @@ height: 50px;
   width: 20px;
 }
 
-.dashboard__nav-link {
+/* .dashboard__nav-link {
   position: relative;
   left: 5px;
   top: 25px;
@@ -1296,7 +1271,7 @@ height: 50px;
 
 .dashboard__nav-link:focus {
   color: var(--green);
-}
+} */
 
 .dashboard__banner {
   width: 100%;

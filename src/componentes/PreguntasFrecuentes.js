@@ -45,7 +45,7 @@ export const PreguntasFrecuentes = () => {
         <div className="carousel-inner preguntas__carousel-slides">
           
 
-          <div className="row carousel-item active">
+          <div className="carousel-item active">
 
             <div className="col-md-12">
 
@@ -66,14 +66,14 @@ export const PreguntasFrecuentes = () => {
                  
 
 
-                    <div className="row">
+                    <div className="row align-items-center xln-mensaje-left-FQAS">
 
-                      <div className="col-md-2">
+                      <div className="col-md-1">
                         <p className="preguntas__comillas">“</p>
                       </div>
 
-                      <div className="col-md-10">
-                        <p>
+                      <div className="col-md-11">
+                        <p className="xln-text-description-FQAS">
                           En este video te enseñamos todos los tips para monitorear los reportes de tu equipo de trabajo y los avances que se han generado alrededor del proyecto en desarrollo.
                         </p>
                       </div>
