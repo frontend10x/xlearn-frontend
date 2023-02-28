@@ -1,0 +1,138 @@
+.enterprise-section .row{
+  --bs-gutter-x: 0!important;
+}
+.carousel__section-content {
+  width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding-top: 5%;
+}
+
+.carousel__lista {
+  column-gap: 0rem;
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  list-style: none;
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel__lista button {
+  border: none;
+  background-color: var(--whiteOff);
+  font-weight: bold;
+}
+
+.carousel__lista button:hover {
+  color: var(--blueAlternative);
+  border-bottom: 2px solid var(--blueAlternative);
+}
+
+.carousel__section-content h1 {
+  margin-top: 0;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+}
+
+.carousel__container {
+  position: relative;
+
+  overflow-x: scroll;
+  width: 100%;
+  margin: auto;
+}
+
+.carousel__image {
+  transition: 0.3s ease;
+  width: 100%;
+}
+
+.carousel__image:hover {
+  transform: scale(1.01);
+}
+
+.carousel__logo {
+  position: relative;
+  left: 10px;
+  top: 25px;
+}
+
+.carousel__content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--white);
+  height: 20vh;
+  text-align: center;
+}
+
+.carousel__card {
+  width: 373px;
+}
+
+.carousel__title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--blueDark);
+  margin-top: 32px;
+}
+
+.carousel__button {
+  background-color: transparent;
+  border: 1px solid var(--black);
+  border-radius: 5px;
+  color: var(--blueDark);
+  font-weight: bold;
+  position: relative;
+  width: 50%;
+  margin: auto;
+  height: 35%;
+}
+
+.carousel__button:hover {
+  border: 1px solid var(--blueAlternative);
+  color: var(--blueAlternative);
+}
+
+.carousel__container::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.carousel__container::-webkit-scrollbar:vertical {
+  width: 10px;
+}
+
+.carousel__container::-webkit-scrollbar-button:increment,
+.carousel__container::-webkit-scrollbar-button {
+  display: none;
+}
+
+.carousel__container::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+.carousel__container::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+.carousel__container::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+.dashboard__lider-container_courses-card-content {
+  background-color: var(--white);
+  width: 100%;
+  height: 148px;
+  position: relative;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 6px 6px 10px 1px rgb(0 0 0 / 30%);
+}

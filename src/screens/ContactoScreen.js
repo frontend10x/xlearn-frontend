@@ -89,9 +89,9 @@ export const ContactoScreen = () => {
                     <div className="row">
                         <div className="col-md-8">
                             <div className="contacto__register-content">
-                                <h1>Lleva tu empresa al siguiente nivel a través del entrenamiento de tu equipo de trabajo</h1>
+                                <h1>¡Ponte en contacto con nosotros y entrena a tu equipo!</h1>
                                 <p>
-                                    Contamos con una gran oferta de cursos que te ayudaran a aumentar la productividad de tu organización, acelerando el crecimiento y desarrollando nuevas competencias.
+                                Es el momento de crear, proponer , generar ingresos y, sobre todo ,de innovar. Descubre y aprovecha el potencial de tu organización y desarrolla un plan de acción en torno al entrenamiento ¡Contáctanos!
                                 </p>
                                 {token ?
                                     <button onClick={redirect} className='contacto__banner-button' value="inicio" >
@@ -109,15 +109,15 @@ export const ContactoScreen = () => {
             </section>
 
             <section className="container" >
-         
-                    <div className="xlrn-contacto__section-container">
-                <div className="row" >
-                    
+
+                <div className="xlrn-contacto__section-container">
+                    <div className="row" >
+
 
                         <div className="col-md-4">
                             <div className="xln__txt__formContact">
                                 <div className="InfoCourse__innovacion-redirection">
-                                    {/* <Image src={flechaIzquierdaCourseNegra} alt="image_description" style={{width: "10px",marginRight:"15px",}} /> */}
+                                    <Image src={flechaIzquierdaCourseNegra} alt="image_description" style={{ width: "10px", marginRight: "15px", }} />
                                     <a href="/" rel="noreferrer" style={{ color: "#000" }}>Home </a>
                                     <a href="/contact" className='activarGreen' rel="noreferrer">| Contáctanos </a>
 
@@ -162,18 +162,18 @@ export const ContactoScreen = () => {
                                             <textarea name="observation" onChange={handleInputChange} />
                                         </div>
                                     </div>
-                                    <br/>
+                                    <br />
                                     <div className="row" >
                                         <div></div>
                                         <div className="col-md-6 mx-auto">
                                             <button className="xln__formulario-button__contact">Enviar</button>
                                         </div>
                                     </div>
-                                    <br/>
-                                    <br/>
+                                    <br />
+                                    <br />
                                     <div className="row" >
                                         <div className="col-md-12">
-                                            
+
                                             <p>Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta plataforma y otros propósitos descritos en nuestra política de privacidad.</p>
                                         </div>
                                     </div>
@@ -182,8 +182,8 @@ export const ContactoScreen = () => {
                         </div>
 
 
-                </div>
                     </div>
+                </div>
             </section>
 
 

@@ -293,10 +293,10 @@ section.section_carousel_curso {
         width: 90%;
     }
 
-    .col-md-12 p {
+    .xln__info_courses .col-md-12 p {
         text-align: center;
     }
-    .col-md-12 h3 {
+    .xln__info_courses .col-md-12 h3 {
         text-align: center;
     }
     .section_cta_de_curso {

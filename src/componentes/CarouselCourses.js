@@ -5,6 +5,8 @@ import { XlearnLogo } from "../assets/img";
 import Carousel from 'react-multi-carousel';
 
 
+import "../assets/css/componentes/StyleCarousel.css";
+
 export const CarouselCourses = ({ item }) => {
 
   const navigate = useNavigate();
@@ -29,8 +31,8 @@ export const CarouselCourses = ({ item }) => {
       items: 1
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1
+      breakpoint: { max: 600, min: 0 },
+      items: 1.5
     }
   };
 

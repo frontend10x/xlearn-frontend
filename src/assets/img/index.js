@@ -11,6 +11,7 @@ export {default as Image_03} from './Image_03.jpg';
 export {default as Image_04} from './Image_04.jpg';
 export {default as empresa} from './Banner_Empresa.jpg'
 export {default as telefono } from './Cell_Mockup.png';
+export {default as telefonoResponsive } from './Cell_Mockup-responsive.png';
 export {default as telefonoDos } from './Cell_Mockup-cursos.png';
 export {default as tablet } from './Tablet_Mockup.png';
 export {default as tabletAndtelf} from './tablet_and_movil_Mockup.png';
