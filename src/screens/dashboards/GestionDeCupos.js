@@ -13,6 +13,9 @@ import { useSelector } from 'react-redux'
 import { getEnterpriseQuotas, getEnterpriseGroups } from '../../services/services'
 import { useNavigate } from "react-router-dom";
 
+import "../../assets/css/screens/dashboards/StyleGestionDeCupos.css";
+
+
 export const GestionDeCupos = () => {
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -46,84 +49,139 @@ export const GestionDeCupos = () => {
     }
 
     return (
-        <div className="dashboard__section-empresa gestion__cupos___xln">
-            <div className="dashboard__container" >
+
+
+
+
+        <div className="dashboard__section-empresa">
+            <div className="dashboard__container">
+
                 <HeaderDashboard />
 
-                <div className="xln-content-dash">
-                    <div className="xln__content__nav">
-                        <NavegacionDashboard />
-                    </div>
-
-                    <div className="xln-contentSection-block-empresa">
-
-                        <div className="dashboard__container-nav_banner">
-
-                            <div className="dashboard__banner">
-                                <div className="dashboard__banner-content">
-                                    <div className="dashboard__banner-title">
-                                        <h1>Administra tus cupos</h1>
-                                        <p>
-                                            Es el momento de gestionar y desarrollar tus proyectos con Xlearn
-                                        </p>
-                                    </div>
-                                    <Image
-                                        src={vistaEmpresa}
-                                        alt="banner"
-                                        className="dashboard__banner-image"
-                                    />
-                                    <Image src={gradient} alt="gradiente" className="gradient" />
-                                </div>
+                <div className="container xln-content-dash">
 
 
-                            </div>
+                    <div className="row">
 
+                        <div className="col-md-2 xln-container-navDashboard" style={{ padding: "0"}}>
+                            <NavegacionDashboard />
                         </div>
 
 
-                    </div>
+                        <div className="col-md-10">
 
-                    <div className='xlrn__gestion-cupos_blocks' >
-                        <Container fluid >
-                            <Row>
-                                <Col md={6}>
-                                    <div className="xlrn__gestion-cupos_content">
-                                        <div className="xlrn__gestion-cupos-title">
-                                            <Image src={cuposIcon} />
-                                            <button className="xlrn__gestion-cupos-button-agregar-cupos" onClick={redirect} value="cupos">
-                                                Agregar cupos
-                                            </button>
-                                        </div>
-                                        <div className="xlrn__gestion-cupos-subtitle">
-                                            <h3>{quotas} Cupos disponibles</h3>
-                                            <p>Administra tus Cupos</p>
+                            <div className="row dashboard__container-nav_banner">
+
+                                <div className="col-md-12">
+                                    <div className="dashboard__banner-content" style={{ backgroundImage: `linear-gradient(45deg, rgb(0 35 51), rgb(0 0 0 / 0%)), url("${vistaEmpresa}")` }}>
+                                        <div className="dashboard__banner-title">
+                                            <h1>Administra tus cupos</h1>
+                                            <p>
+                                                Es el momento de gestionar y desarrollar tus proyectos con Xlearn
+                                            </p>
                                         </div>
                                     </div>
-                                </Col>
-                                <Col md={6}>
-                                    <div className="xlrn__gestion-cupos_content">
-                                        <div className="xlrn__gestion-cupos-title">
-                                            <Image src={equiposIcon} />
-                                            <button className="xlrn__gestion-cupos-button" onClick={redirect} value="asignar" >
-                                                Asignar usuarios
-                                            </button>
+
+
+                                </div>
+                                <hr className="xln_sp_DB" />
+
+                            </div>
+
+                            <div className="xln_section_adminCupos">
+                                <div className="dashboard__management">
+                                    <h2>Agrega o crea usuarios</h2>
+
+                                    <div className="dashboard__block-container">
+                                        <div className="col-md-12">
+                                            <div className="row">
+
+                                                <div className="col-md-6 xln-taget-info">
+                                                    <div className="dashboard__block">
+                                                        <div className="row dashboard__block-content">
+                                                            <div className="row dashboard__block-content">
+
+                                                                <div className="col-md-4">
+                                                                    <Image src={cuposIcon} />
+                                                                </div>
+
+                                                                <div className="col-md-8">
+                                                                    <button className="xlrn__gestion-cupos-button-agregar-cupos" onClick={redirect} value="cupos">
+                                                                        Agregar cupos
+                                                                    </button>
+                                                                </div>
+                                                                <div className="col-md-12">
+                                                                    <div className="xlrn__gestion-cupos-subtitle">
+                                                                        <h3>{quotas} Cupos disponibles</h3>
+                                                                        <p>Administra tus Cupos</p>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                                <div className="col-md-6 xln-taget-info">
+                                                    <div className="dashboard__block">
+                                                        <div className="row dashboard__block-content">
+
+                                                            <div className="row xlrn__gestion-cupos-title">
+
+                                                                <div className="col-md-4">
+                                                                    <Image src={equiposIcon} />
+                                                                </div>
+                                                                <div className="col-md-8">
+                                                                    <button className="xlrn__gestion-cupos-button" onClick={redirect} value="asignar" >
+                                                                        Asignar usuarios
+                                                                    </button>
+                                                                </div>
+                                                                <div className="col-md-12">
+                                                                    <div className="xlrn__gestion-cupos-subtitle">
+                                                                        <h3>{createdTeams} En uso</h3>
+                                                                        <p>{quotas} cupos sin usuarios asignados </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
                                         </div>
-                                        <div className="xlrn__gestion-cupos-subtitle">
-                                            <h3>{createdTeams} En uso</h3>
-                                            <p>{quotas} cupos sin usuarios asignados </p>
-                                        </div>
+
                                     </div>
-                                </Col>
-                            </Row>
-                        </Container>
+                                </div>
+                            </div>
+
+
+
+                            <div className="row">
+                                <Footer />
+
+                            </div>
+
+
+                        </div>
+
                     </div>
+
+
+
                 </div>
 
-                <div className="xln-contentSection-block-empresa">
-                    <Footer />
-                </div>
 
             </div>
         </div>
+
+
+
+
+
+
+
     )
 }

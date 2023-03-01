@@ -1,0 +1,216 @@
+
+/* Compra de cupos Inicio*/
+.compra-usuarios__section .dashboard__nav {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding-top: 50%;
+    padding-left: 5%;
+  }
+  
+  
+ /*  .compra-usuarios__form {
+    width: 40%;
+    float: left;
+    position: relative;
+    left: 30%;
+    top: 45%;
+  } */
+  
+  .compra-usuarios__section .header__container.background {
+    position: fixed !important;
+    z-index: 9;
+    width: 100%;
+  }
+  
+  .compra-usuarios__container {
+    height: 100vh;
+    width: 80%;
+    margin-bottom: 8%;
+  }
+  
+  .compra-usuarios__container-price__content h2 {
+    width: 50%;
+    text-align: left;
+    float: left;
+    font-size: 23px;
+    padding-left: 10%;
+  }
+  
+  p.xln_price_GDC {
+    font-size: 22px;
+    width: 50%;
+    float: left;
+    text-align: right;
+    padding-right: 10%;
+  }
+  
+  p.xln_price_GDC span {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .compra-usuarios__container-nav {
+    width: 10%;
+  }
+  
+/*   .compra-usuarios__title {
+    width: 30%;
+    float: left;
+    position: absolute;
+    left: 24%;
+    top: 26%;
+  } */
+  
+  /* .compra-usuarios__title {
+  position: relative;
+  left: 250px;
+  width: 50%;
+  height: 0px;
+  bottom: 790px;
+  } */
+  
+  /* .compra-usuarios__form {
+  position: relative;
+  top: 155px;
+  } */
+  
+  /* .compra-usuarios__form-inputs {
+  position: relative;
+  left: 250px;
+  width: 50%;
+  bottom: 800px;
+  height: 0px;
+  display: flex;
+  flex-direction: column;
+  } */
+  .compra-usuarios__container-price__content {
+    text-align: center;
+    padding-top: 13px;
+  }
+  
+ /*  .compra-usuarios__form-inputs__container {
+    display: flex;
+    column-gap: 2rem;
+  } */
+  
+  .compra-usuarios__form-inputs__container select {
+    text-align: center;
+    font-size: 20px;
+    width:100%;
+    margin-bottom: 15px;
+    height: 45px;
+  }
+  
+  .compra-usuarios__form-inputs__container button {
+    width: 128px;
+    height: 41px;
+    position: relative;
+    top: 3px;
+    border-radius: 5px;
+    color: var(--blueDark);
+    border: none;
+    background-color: var(--green);
+    font-size: 16px;
+  }
+  
+  /* .compra-usuarios__form-inputs__data {
+    position: relative;
+    top: 20px;
+    display: flex;
+    column-gap: 2rem;
+    width: 100%;
+  } */
+  
+  .compra-usuarios__form-inputs__data-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .compra-usuarios__form-inputs__data-container input {
+    height: 50px;
+    width: 100%;
+  }
+  
+
+  
+  .compra-usarios__container-price {
+    background-color: var(--blueDark);
+    width: 100%;
+    color: var(--white);
+    border-radius: 5px;
+  }
+  
+  .compra-usuarios__container-price__content-total {
+    width: 100%;
+    margin: auto;
+    padding-bottom: 33%;
+}
+  
+  .compra-usuarios__container-price__content-total__button {
+    top: 36px;
+    border: none;
+    background-color: var(--green);
+    color: var(--blueDark);
+    height: 53px;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .compra-usuarios__container-price__content-total {
+    width: 100%;
+    margin: auto;
+  }
+  
+  .container__price-total__terms {
+    font-size: 14px;
+    width: 80%;
+    position: relative;
+    top: 50px;
+    margin: auto;
+  }
+  
+  .compra-usuario__calculate-price-button {
+    position: relative;
+    width: 100%;
+    border: none;
+    background-color: var(--green);
+    color: var(--blueDark);
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 6px;
+  }
+.conten-01-GC {
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 10%;
+}
+
+.col-md-6.conten-02-GC {
+    padding-top: 5%;
+    padding-right: 10%;
+}
+
+@media (max-width: 1367px) {}
+
+@media (max-width: 768px) {
+
+    .col-md-6.conten-02-GC {
+        padding-top: 5%;
+        padding-right: 5%;
+        padding-bottom: 16%;
+    }
+}

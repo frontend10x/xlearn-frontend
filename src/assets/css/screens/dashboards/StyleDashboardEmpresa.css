@@ -1,0 +1,749 @@
+/*-------------Vista empresa---------------*/
+
+.container.xln-content-dash {
+    width: 100%;
+    max-width: 100%;
+}
+
+.dashboard__section-empresa .header__container.background {
+    position: fixed !important;
+    z-index: 9;
+    width: 100%;
+}
+
+.dashboard__section-empresa .navbar a,
+.navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 10px 30px;
+    font-family: "GTWalsheimPro-Regular";
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.xln-content-dash {
+    width: 100%;
+    /* margin-top: 6%; */
+}
+
+
+/*====Bloque contenido====*/
+/*  .xln-content-dash {
+width: 100%;
+float: left;
+padding-top: 3%;
+padding-left: 20%;
+} */
+
+.xln-content-dash .dashboard__banner {
+    width: 100%;
+}
+
+.xln-content-dash .dashboard__banner-image {
+    height: auto;
+    position: relative;
+    width: 100%;
+    bottom: 50%;
+}
+
+.xln-content-dash .dashboard__banner-content {
+    width: 98%;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.xln-content-dash .gradient {
+    position: absolute;
+    width: 100%;
+    height: 27vh;
+    border-radius: 10px 0px 0px 10px;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+
+/*---------- Gestiona los cupos y contendios------------------ */
+
+/* .xln-content-dash .dashboard__management {
+bottom: 0;
+position: relative;
+left: 0;
+width: 95%;
+top: 76px;
+margin: auto;
+} */
+
+.xln_section_adminCupos .dashboard__management {
+    width: 98%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.xln_section_adminCupos .dashboard__management h2 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.xln_section_adminCupos .dashboard__management h2 {
+    font-weight: bold;
+    font-size: 28px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.xln_section_adminCupos .dashboard__management .dashboard__block {
+    background: white;
+    border: solid 1px #002333;
+    border-radius: 10px;
+    padding: 9%;
+}
+
+.xln_section_adminCupos .dashboard__management .dashboard__title p {
+    margin: 0;
+}
+
+.xln_section_adminCupos .dashboard__management .dashboard__title h3 {
+    font-weight: bold;
+}
+
+/* .xln-content-dash .dashboard__management .dashboard__block-container {
+display: flex;
+column-gap: 2rem;
+position: relative;
+top: 20px;
+left: 0;
+} */
+
+/* .xln-content-dash .dashboard__management .dashboard__block {
+background-color: var(--white);
+border: 1px solid var(--blueDark);
+border-radius: 5px;
+} */
+
+/* .xln-content-dash .dashboard__management .dashboard__block-content {
+display: flex;
+justify-content: flex-start;
+position: relative;
+top: 45px;
+right: 0;
+left: 0%;
+padding-bottom: 31px;
+width: 90%;
+margin: auto;
+} */
+/* 
+.xln-content-dash .dashboard__management .dashboard__block-content img {
+width: 15%;
+}
+
+.xln-content-dash .dashboard__management .dashboard__block-content .dashboard__block-button {
+width: 50%;
+height: 40px;
+font-weight: bold;
+top: 0px;
+font-size: 15px;
+}
+
+.xln-content-dash .dashboard__title {
+position: relative;
+top: 60px;
+left: 0px;
+padding-left: 8%;
+padding-right: 8%;
+}
+
+.xln-content-dash .dashboard__title h3 {
+font-size: 32px;
+font-weight: bold;
+}
+
+.xln-content-dash .dashboard__title p {
+font-size: 15px;
+}
+
+.xln-content-dash .dashboard__card-info {
+bottom: 0;
+position: relative;
+left: 0;
+width: 95%;
+margin: auto;
+text-align: center;
+margin-top: 17%;
+}
+
+.xln-content-dash .dashboard__card-info h2 {
+position: relative;
+left: 0;
+width: 70%;
+font-size: 48px;
+font-weight: bold;
+color: var(--blueDark);
+margin-top: 14%;
+margin: auto;
+text-align: center;
+}
+
+.xln-content-dash .dashboard__info-container {
+display: flex;
+height: auto;
+width: 100%;
+} */
+
+/* .xln-content-dash .dashboard__card-content {
+position: relative;
+top: 50px;
+left: 0;
+width: 100%;
+} */
+
+/* .xln-content-dash .dashboard__card-body {
+width: 95%;
+height: 50vh;
+background-color: var(--white);
+border-radius: 10px;
+} */
+
+/* .xln-content-dash .dashboard__novedades-section {
+height: 100vh;
+margin-top: 20%;
+width: 99%;
+} */
+
+/* .xln-content-dash .dashboard__novedades-container {
+display: flex;
+width: 100%;
+background-color: var(--blueDark);
+height: 70vh;
+position: relative;
+bottom: 0;
+} */
+
+.xln-content-dash .dashboard__novedades-content {
+    color: var(--white);
+    font-weight: bold;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: table;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+}
+
+.xln-content-dash .xln-empresa-novedades-content {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.xln-content-dash .dashboard__novedades-content h2 {
+    font-size: 48px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.xln-content-dash .dashboard__novedades-content p {
+    font-size: 15px;
+    font-weight: 500;
+    width: 100%;
+}
+
+/* .xln-content-dash .dashboard__novedades-image {
+    height: 360px;
+    width: 100% !important;
+    object-fit: cover !important;
+    -webkit-mask-size: cover !important;
+    mask-size: cover !important;
+} */
+
+.xln-content-dash .dashboard__novedades-container_image {
+    /* display: flex;
+column-gap: 1rem;
+justify-content: center;
+align-items: center; */
+    /*  height: 100%; */
+    width: 100%;
+    margin: auto;
+    padding-right: 5%;
+    /* top: 0px;
+bottom: 0px; */
+    padding-top: 15%;
+}
+
+.xln-content-dash .dashboard__novedades-card_image {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.xln-content-dash .dashboard__novedades-titles {
+    color: var(--white);
+    position: relative;
+    bottom: 60px;
+    font-weight: bold;
+    left: 30px;
+    width: 100%;
+}
+
+.xln-content-dash .dashboard__novedades-titles h5 {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.xln-content-dash .dashboard__novedades-titles p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.xln-content-dash .xln-separator-title {
+    width: 30%;
+    height: 4px;
+    background: var(--green);
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+
+.dashboard__novedades-container .dashboard__novedades-image {
+    height: 360px;
+    width: 100% !important;
+    object-fit: cover !important;
+    -webkit-mask-size: cover !important;
+    mask-size: cover !important;
+}
+.col-md-6.dashboard__novedades-card_image img::after {
+    content: "";
+    background:linear-gradient(red, blue);
+}
+
+/* Vista Empresa */
+
+.dashboard__container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* .dashboard__navegacion-container {
+width: 11%;
+}
+
+.dashboard__nav-section {
+max-width: 100%;
+}
+
+.dashboard__nav {
+display: flex;
+flex-direction: column;
+background-color: var(--white);
+width: 100%;
+height: 90vh;
+position: relative;
+}
+
+.dashboard__nav.nav img {
+width: 20px;
+} */
+
+/* .dashboard__nav-link {
+position: relative;
+left: 5px;
+top: 25px;
+padding: 10px;
+width: 100%;
+text-decoration: none;
+color: var(--neutroText);
+}
+
+.dashboard__nav-link:focus {
+color: var(--green);
+} */
+
+.dashboard__banner {
+    width: 100%;
+}
+
+.dashboard__banner-content {
+    width: 98%;
+    position: relative;
+    border-radius: 10px;
+    padding-top: 6%;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 6%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+}
+
+.dashboard__banner-title h1 {
+    color: #fff;
+    font-weight: bold;
+}
+
+.dashboard__banner-title p {
+    color: #fff;
+}
+
+.dashboard__banner-title img {
+    width: 31px;
+    margin-left: 12px;
+}
+
+hr.xln_sp_DB {
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #e7e7e7;
+    height: 1px;
+}
+
+.dashboard__banner-image {
+    height: 70vh;
+    position: relative;
+    width: 100%;
+    bottom: 180px;
+}
+
+/* .dashboard__banner-title {
+position: relative;
+z-index: 1;
+color: var(--white);
+bottom: 140px;
+left: 50px;
+font-weight: bold;
+width: 30%;
+} */
+
+.gradient {
+    position: relative;
+    width: 30%;
+    height: 27vh;
+    border-radius: 10px 0px 0px 10px;
+    bottom: 317px;
+    left: 30px;
+}
+
+.dashboard__container-nav_banner {
+    padding-top: 10%;
+}
+
+/* .dashboard__management {
+bottom: 490px;
+position: relative;
+left: 220px;
+width: 80%;
+} */
+
+/* .dashboard__block-container {
+display: flex;
+column-gap: 2rem;
+position: relative;
+top: 20px;
+} */
+
+/* .dashboard__block {
+background-color: var(--white);
+border: 1px solid var(--blueDark);
+border-radius: 5px;
+padding-bottom: 20%;
+} */
+
+/* .dashboard__block-content {
+
+position: relative;
+top: 45px;
+right: 90px;
+} */
+
+/* .dashboard__title {
+position: relative;
+top: 150px;
+left: 40px;
+} */
+
+.dashboard__block-button {
+    background-color: var(--green);
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* .dashboard__card-info {
+position: relative;
+bottom: 420px;
+text-align: center;
+} */
+
+.dashboard__card-info h1 {
+    position: relative;
+    left: 570px;
+    width: 43%;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--blueDark);
+}
+
+/* .dashboard__info-container {
+display: flex;
+height: 50vh;
+width: 80%;
+} */
+
+/* .dashboard__card-content {
+position: relative;
+top: 50px;
+left: 280px;
+width: 100%;
+} */
+
+
+/*------------- Seccion cursos ---------*/
+.xln_section_course.dashboard__card-info {
+    width: 98%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+.xln_section_course .dashboard__card-body {
+    width: 100%;
+    /* height: 42vh; */
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.xln_section_course h2 {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    width: 60%;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 5%;
+}
+
+.xln_section_course .dashboard__card-image {
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+}
+
+.xln_section_course .dashboard__card-title {
+    text-align: center;
+    position: relative;
+    /* top: 20px; */
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--blueDark);
+    padding-top: 8%;
+    padding-bottom: 8%;
+}
+
+.xln_section_course .dashboard__card-button {
+    border: 1px solid var(--blueDark);
+    background-color: transparent;
+    width: 30%;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.xln_section_course .dashboard__card-button:hover {
+    border: 1.5px solid var(--blueAlternative);
+    color: var(--blueAlternative);
+    width: 35%;
+}
+
+/* .dashboard__novedades-section {
+height: 50vh;
+} */
+
+
+/*----Novedade------*/
+.dashboard__novedades-container {
+    /* display: flex; */
+    width: 100%;
+    background-color: var(--blueDark);
+    /* height: 70vh; */
+    position: relative;
+    /* bottom: 320px; */
+}
+
+.dashboard__novedades-content {
+    color: var(--white);
+    font-weight: bold;
+    position: relative;
+    /* top: 200px;
+left: 200px; */
+}
+
+.dashboard__novedades-content h1 {
+    font-size: 48px;
+    width: 40%;
+}
+
+.dashboard__novedades-content p {
+    font-size: 20px;
+    width: 50%;
+}
+
+.dashboard__novedades-container_image {
+    /* display: flex;
+column-gap: 2rem;
+position: relative;
+justify-content: center;
+align-items: center;
+top: 140px; */
+}
+
+.dashboard__novedades-image {
+    height: 40vh;
+    width: 80%;
+    position: relative;
+}
+
+.dashboard__novedades-titles {
+    color: var(--white);
+    position: relative;
+    bottom: 80px;
+    font-weight: bold;
+    left: 30px;
+    width: 50%;
+}
+
+.dashboard__novedades-titles h5 {
+    font-weight: bold;
+}
+
+.dashboard__support-container {
+    text-align: center;
+    /* eight: 50vh; */
+}
+
+/* .dashboard__support-content {
+position: relative;
+top: 160px;
+font-weight: bold;
+} */
+
+.dashboard__support-content h1 {
+    font-weight: bold;
+    font-size: 48px;
+    position: relative;
+    /* bottom: 80px; */
+}
+
+.dashboard__support-content p {
+    width: 35%;
+    position: relative;
+    /* left: 600px;
+bottom: 50px; */
+}
+
+.dashboard__support-button {
+    background-color: var(--green);
+    border-radius: 5px;
+    color: var(--blueDark);
+    border: none;
+    padding: 5px;
+    height: 40px;
+    width: 10%;
+    font-weight: bold;
+    font-size: 20px;
+}
+.dashboard__support-section {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.xln-content-dash .dashboard__support-content {
+    position: relative;
+    top: 0;
+    font-weight: bold;
+}
+
+.xln-content-dash .dashboard__support-content p {
+    width: 70%;
+    position: relative;
+    margin: auto;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-weight: 100;
+}
+
+.xln-content-dash .dashboard__support-button {
+    background-color: var(--green);
+    border-radius: 5px;
+    color: var(--blueDark);
+    border: none;
+    padding: 5px;
+    height: 40px;
+    width: 30%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* Vista Empresa Fin*/
+
+
+
+@media (max-width: 1367px) {}
+
+@media (max-width: 768px) {
+    .container.xln-content-dash {
+        margin-top: 31%;
+    }
+    .xln-container-navDashboard {
+        background: var(--white);
+        display: none;
+    }
+    .dashboard__section-empresa .col-md-10 {
+        padding: 0;
+    }
+
+    .xln_section_adminCupos .dashboard__management h2 {
+        font-weight: bold;
+        font-size: 28px;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        text-align: center;
+    }
+
+    .xln_section_adminCupos .dashboard__block-content{
+        text-align: center;
+    }
+    .dashboard__block-content img {
+        margin-bottom: 5%;
+    }
+    .dashboard__block-content button {
+        margin-bottom: 5%;
+    }
+    .xln_section_adminCupos .dashboard__management .dashboard__block {
+        margin-bottom: 9%;
+    }
+    .xln_section_course h2 {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        width: 90%;
+        margin: auto;
+        margin-top: 1%;
+        margin-bottom: 5%;
+    }
+    .xln_section_course .dashboard__card-body {
+        margin-bottom: 10%;
+    }
+    .xln-content-dash .dashboard__novedades-content {
+        width: 90%;
+        padding-top: 15%;
+    }
+}
+

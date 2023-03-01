@@ -1,0 +1,149 @@
+/* Creacion de usuario Inicio */
+
+.xlrn__crear-suarios__section #header {
+    position: fixed !important;
+}
+
+.xlrn__crear-usuarios__container {
+    display: flex;
+}
+
+.xlrn__crear-usuarios__nav {
+    width: 10%;
+}
+
+.xlrn__crear-usuarios__content-titles {
+    position: relative;
+    padding-left: 10%;
+    top: 50px;
+}
+
+.xlrn__crear-usuarios__content-titles h1 {
+    font-weight: bold;
+}
+
+.xlrn__crear-usuarios__content-titles p {
+    font-weight: bold;
+}
+
+.xlrn__crear-usuarios__container-form {
+    background-color: var(--white);
+    width: 80%;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid var(--blueDark);
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.xlrn__crear-usuarios__container-form-content {
+    text-align: center;
+    position: relative;
+    /* top: 25px; */
+    font-weight: bold;
+    color: var(--blueDark);
+}
+
+.xlrn__crear-usuarios__container-form-content h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.xlrn__crear-usuarios__container-form-content p {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.xlrn__crear-usuarios__form {
+    display: flex;
+    position: relative;
+    gap: 5rem;
+    width: 80%;
+    margin: auto;
+}
+
+.xlrn__crear-usuarios__form-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.xlrn__crear-usuarios__form-content input {
+    margin-bottom: 20px;
+    height: 40px;
+}
+
+.input__phone,
+.input__rol {
+    height: 40px;
+    width: 234px;
+}
+
+.xlrn__crear-usuarios__form button {
+    height: 40px;
+    width: 100%;
+    border: none;
+    background-color: var(--blueAlternative);
+    color: var(--white);
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+/* .xlrn__crear-usuarios__massive-charge__input {
+
+} */
+
+.xlrn__crear-usuario__input-password {
+    display: flex;
+    column-gap: 10px;
+}
+
+.xlrn__crear-usuario__input-password input {
+    width: 236px;
+}
+
+
+@media (max-width: 1367px) {}
+
+@media (max-width: 768px) {
+
+    .xlrn__crear-usuarios__container-form {
+        background-color: var(--white);
+        width: 90%;
+        position: relative;
+        border-radius: 5px;
+        border: 1px solid var(--blueDark);
+        margin: auto;
+        margin-top: 29%;
+        margin-bottom: 10%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+       padding-left: 2%;
+       padding-right: 2%;
+    }
+    .xlrn__crear-usuarios__form {
+        display: block;
+    }
+    .d-flex {
+        display: block;
+    }
+
+    .xlrn__crear-usuario__input-password {
+        display: block;
+        column-gap: 10px;
+        margin-top: 20px;
+    }
+    .input__phone, .input__rol {
+        height: 40px;
+        width: 100%;
+    }
+    .xlrn__crear-usuario__input-password input {
+        width: 100%;
+    }
+    
+}

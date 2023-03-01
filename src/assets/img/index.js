@@ -113,3 +113,6 @@ export {default as flechaIzquierdaCourseNegra } from '../img/flecha-izquierda-ne
 
 /* Icono de carrito */
 export {default as cartIcon } from './shopping-cart.png'
+
+
+export {default as hand } from '../img/hand.png'
