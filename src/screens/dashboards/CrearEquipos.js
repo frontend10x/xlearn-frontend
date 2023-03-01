@@ -11,6 +11,8 @@ import Swal from "sweetalert2";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+import "../../assets/css/screens/dashboards/StyleCrearEquipo.css";
+
 
 const users = []
 export const CrearEquipos = () => {
@@ -97,66 +99,77 @@ export const CrearEquipos = () => {
   }
 
   return (
-    <div className="crear__equipos-section">
-      <HeaderDashboard />
-      <div className="xlrn__crear-usuarios__container" >
+    <div className="dashboard__section-empresa">
+      <div className="dashboard__container">
+        <HeaderDashboard />
+        <div className="container xln-content-dash">
 
-        <div className="xln-content-dash">
+          <div className="row">
+            
 
-          <div className="xln__content__nav">
-            <NavegacionDashboard />
-          </div>
-
-          <div className="xln-contentSection-block-empresa">
-            <div className="xlrn__crear-equipos__content-title" >
-              <h1>Gestion de equipos</h1>
-              <p>Crea tus equipos</p>
+            <div className="col-md-2 xln-container-navDashboard" style={{ padding: "0"}}>
+              <NavegacionDashboard />
             </div>
 
-            <div className="xlrn__crear-equipos__container-form" >
-              <div className="xlrn__crear-equipos__container-form-content" >
-                <Image src={equiposIcon} />
-                <h1>Crea tu grupo</h1>
-                <p>Crea a tu grupo y capacitalos con la ruta que asigne el lider</p>
-              </div>
+            <div className="col-md-10">
+              <div className="row dashboard__container-nav_banner">
+                <div className="col-md-12 xlrn__crear-equipos__content-title" >
+                  <h1>Gestion de equipos</h1>
+                  <p>Crea tus equipos</p>
+                </div>
 
-              <div className="xlrn__crear-equipos__form" id="form" >
-                <input onChange={handleInputChange} name="name" type="text" placeholder="Nombre del equipo" />
-                
-                {usersWithoutGroup ?
-                  usersWithoutGroup.map((item, index) => (
-                    <div className="xln__conten__gestionEquipo" key={index}>
-                      <input className="xln__gestionEquipo__radio" type="checkbox" value={item.name} id={item.id} onClick={addUsersToGroup} />
-                      <img src={imagenUser} />
-                      <h2>{item.name}</h2>
-                      <p>{item.email}</p>
-                    </div>
-                  ))
-                  : <p style={{color:"#8894ab"}}  className="fw-bold" >Crea tus usuarios en asginar usuario de gestion de equipos</p>
-                }
-                <select placeholder="Agregar rol de lider" className="xlrn__asignar-rol" id="leader">
-                  {lider?.map((item, index) => (
-                    <option key={index} value={item.id} >
-                      {item.value}
-                    </option>
-                  )
-                  )
-                  }
-                  <option value={false} >Asignar rol de lider</option>
-                </select>
-                {teamManagement ?
-                  <button className="xlrn__crear-equipos__form-button" onClick={redirect} value={teamManagement} >Gestion de equipos</button>
-                  : <button className="xlrn__crear-equipos__form-button" onClick={createTeams} >Crear equipo</button>
-                }
-              </div>
+                <div className="col-md-12 xlrn__crear-equipos__container-form" >
+                  <div className="xlrn__crear-equipos__container-form-content" >
+                    <Image src={equiposIcon} />
+                    <h1>Crea tu grupo</h1>
+                    <p>Crea a tu grupo y capacitalos con la ruta que asigne el lider</p>
+                  </div>
 
+                  <div className="xlrn__crear-equipos__form" id="form" >
+                    <input onChange={handleInputChange} name="name" type="text" placeholder="Nombre del equipo" />
+                    
+                    {usersWithoutGroup ?
+                      usersWithoutGroup.map((item, index) => (
+                        <div className="xln__conten__gestionEquipo" key={index}>
+                          <input className="xln__gestionEquipo__radio" type="checkbox" value={item.name} id={item.id} onClick={addUsersToGroup} />
+                          <img src={imagenUser} />
+                          <h2>{item.name}</h2>
+                          <p>{item.email}</p>
+                        </div>
+                      ))
+                      : <p style={{color:"#8894ab"}}  className="fw-bold" >Crea tus usuarios en asginar usuario de gestion de equipos</p>
+                    }
+                    <select placeholder="Agregar rol de lider" className="xlrn__asignar-rol" id="leader">
+                      {lider?.map((item, index) => (
+                        <option key={index} value={item.id} >
+                          {item.value}
+                        </option>
+                      )
+                      )
+                      }
+                      <option value={false} >Asignar rol de lider</option>
+                    </select>
+                    {teamManagement ?
+                      <button className="xlrn__crear-equipos__form-button" onClick={redirect} value={teamManagement} >Gestion de equipos</button>
+                      : <button className="xlrn__crear-equipos__form-button" onClick={createTeams} >Crear equipo</button>
+                    }
+                  </div>
+
+                </div>
+
+                <div className="col-md-12" style={{padding:"0"}}>
+                  <Footer />
+                </div>
+
+              </div>
             </div>
           </div>
+
         </div>
 
-      </div>
+      
 
-      <Footer />
+      </div>
     </div>
   );
 };

@@ -6,3 +6,154 @@
 .image_trash {
     cursor: pointer;
 }
+
+
+/* Uso De Cupos Inicio */
+.xlrn__uso-cupos__nav {
+    width: 10%;
+  }
+  
+  .xlrn__uso-cupos__titles-content {
+    position: relative;
+    /* left: 50px;
+    top: 50px; */
+  }
+  
+  .xlrn__uso-cupos__titles-content h1 {
+    font-weight: bold;
+  }
+  
+  .xlrn__uso-cupos__container-blocks {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 270px;
+    top: 250px;
+    height: 0px;
+    background-color: var(--black);
+    column-gap: 4rem;
+  }
+  
+  .xlrn__uso-cupos__block {
+    background-color: var(--white);
+    height: 320px;
+    width: 577px;
+    border-radius: 5px;
+    border: 1px solid var(--blueDark);
+  }
+  
+  .xlrn__uso-cupos__block-function {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 50px;
+  }
+  
+  .xlrn__uso-cupos__block-button {
+    background-color: var(--green);
+    text-align: center;
+    color: var(--blueDark);
+    font-size: 18px;
+    height: 41px;
+    width: 128px;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .xlrn__uso-cupos__content-users {
+    position: relative;
+    left: 110px;
+    top: 110px;
+  }
+  
+  .xlrn__uso-cupos__content-users h3 {
+    font-weight: bold;
+    font-size: 32px;
+  }
+  
+  .xlrn__uso-cupos__content-users p {
+    font-size: 20px;
+  }
+  
+  .xlrn__uso-cupos-registered__container {
+    position: relative;
+    width: 0%;
+    background-color: var(--white);
+    /* top: 30px; */
+  }
+  
+  /* .xlrn__uso-cupos-registered {
+  height: 70vh;
+  } */
+  
+  .xlrn__uso-cupos-registered h1 {
+    font-size: 25px;
+    color: var(--blueDark);
+  }
+  
+  .xlrn__uso-cupos-registered__card {
+    background-color: var(--white);
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  .xlrn__uso-cupos-registered__card-content {
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 25px;
+    color: var(--blueDark);
+    margin-top: 20px;
+  }
+  
+  .xlrn__uso-cupos-registered__card-content h1 {
+    font-size: 20px;
+  }
+  
+  .xlrn__uso-cupos-registered__card-content p {
+    font-size: 14px;
+  }
+  
+  
+  .xlrn__uso-cupos__section .header__container {
+    position: fixed !important;
+    z-index: 9;
+    width: 100%;
+  }
+  
+  .xlrn__uso-cupos__section .xlrn__uso-cupos-registered__container {
+    position: relative;
+    width: 0%;
+    /* top: 30px; */
+    width: 90%;
+    margin: auto;
+    margin-bottom: 8%;
+  }
+  
+  .xlrn__uso-cupos__section .xlrn__uso-cupos__container-titles {
+    width: 90%;
+    margin: auto;
+    padding-top: 3%;
+    padding-bottom: 4%;
+}
+  
+  .xlrn__uso-cupos-registered__card:nth-child(even) {
+    background: #fff;
+  }
+  
+  .xlrn__uso-cupos-registered__card:nth-child(odd) {
+    background: #F4F4F4;
+  }
+  
+  .xlrn__uso-cupos__section .xlrn__uso-cupos-registered__card {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .xlrn__uso-cupos__section .xlrn__uso-cupos-registered__card img {
+    width: 40px;
+    height: 40px;
+    margin-top: 25px;
+    margin-left: 17px;
+  }
+  
+  /* Uso De Cupos Fin */

@@ -1,0 +1,63 @@
+.xlrn__informacion-equipos-title {
+    /* position: relative; */
+    /* top: 130px; */
+    /* left: 240px; */
+    width: 90%;
+    margin: auto;
+}
+
+
+.xln__content__progress_gestionDeCupos {
+    width: 98%;
+    position: relative;
+
+    padding-bottom: 6%;
+    margin: auto;
+  }
+
+  .xln__creacion-nuevo-equipo {
+    background-color: var(--white);
+    width: 92%;
+    position: relative;
+    border: 1px solid var(--blueDark);
+    border-radius: 5px;
+    margin: auto;
+    margin-bottom: 8%;
+}
+
+.xln__creacion-nuevo-equipo-content {
+    text-align: center;
+}
+
+.xln__creacion-nuevo-equipo-content {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.xln__creacion-nuevo-equipo button {
+    background-color: var(--green);
+    border: none;
+    color: var(--blueDark);
+    height: 41px;
+    width: 30%;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+@media (max-width: 1367px) {}
+
+@media (max-width: 768px) {
+
+    .xlrn__informacion-equipos {
+        background-color: var(--white);
+        height: 610px;
+        width: 100%;
+        float: none;
+    }
+}
