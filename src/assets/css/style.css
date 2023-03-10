@@ -189,8 +189,8 @@ width: 100%;
 }
 
 .background {
-  background-color: var(--blueDark);
-  position: relative !important;
+  /* background-color: var(--blueDark); */
+  /* position: relative !important; */
 }
 
 /* Fin de Menu */
@@ -2957,17 +2957,17 @@ left: 25%;
     padding: 15px 0px;
   }
 
-  .navbar {
+  /* .navbar {
     display: none;
-  }
+  } */
 
-  .navegacion__button {
+  /* .navegacion__button {
     padding: 4px 12px;
     top: 15px;
     right: 90px;
     padding: 0px 8px;
     font-size: 15px;
-  }
+  } */
 
   /* Navegacion Final */
   /* Banner */

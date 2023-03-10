@@ -4,11 +4,10 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { XlearnLogo } from "../../assets/img";
 import { NavegacionDashboardHeader } from "../dashboards/NavegacionDashboardHeader";
-import StyleHeaderDashboard from "../../assets/css/componentes/StyleHeaderDashboard.css"
+import "../../assets/css/componentes/StyleHeaderDashboard.css"
 
-export const HeaderDashboard = () => {
+export const HeaderDashboard = ({home}) => {
   const { type, token } = useSelector(state => state.auth);
-
   const navigate = useNavigate();
 
   const redirect = () => {
@@ -25,8 +24,8 @@ export const HeaderDashboard = () => {
   }
 
   return (
-    <div className="header__container background ">
-      <header id="header" className="header fixed_top background">
+    <div className="header__container"  >
+      <header id="header" className="header fixed_top " style={home ? {backgroundColor:"transparent"} : {backgroundColor:"#002333"}}>
         {/* <!-- Button trigger modal --> */}
         {token ?
           <></>
