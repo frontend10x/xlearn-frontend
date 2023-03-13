@@ -190,7 +190,7 @@ width: 100%;
 
 .background {
   /* background-color: var(--blueDark); */
-  /* position: relative !important; */
+   position: relative !important;
 }
 
 /* Fin de Menu */
@@ -214,7 +214,7 @@ width: 40%;
   background-color: transparent;
 }
 
-.background .navegacion {
+.navegacion {
   column-gap: 2rem;
   display: flex;
   position: relative;
@@ -2699,15 +2699,16 @@ height: 45vh;
   }
 
   /* Header Fin */
+
   /* Navegacion */
-  .navegacion {
+  /* .navegacion {
     column-gap: 10px;
   }
 
   .navbar a {
     font-size: 12px;
     padding: 10px 0px 10px 19px;
-  }
+  } */
 
   /* Navegacion Fin */
   /* Banner */

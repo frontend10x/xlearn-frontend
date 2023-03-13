@@ -1,22 +1,184 @@
 :root {
-    --black: #19191c;
-    --blueAlternative: #270bc4;
-    --blueDark: #002333;
-    --green: #31fb84;
-    --neutroText: #8894ab;
-    --white: #ffffff;
-    --whiteOff: #f4f4f4;
-    --blueclaro: #F5F8FA;
-    --blueoscuro: #CBD6E2;
-    --pearl: #F2F2F2;
-  }
+  --black: #19191c;
+  --blueAlternative: #270bc4;
+  --blueDark: #002333;
+  --green: #31fb84;
+  --neutroText: #8894ab;
+  --white: #ffffff;
+  --whiteOff: #f4f4f4;
+  --blueclaro: #F5F8FA;
+  --blueoscuro: #CBD6E2;
+  --pearl: #F2F2F2;
+}
 
 .user_name {
-    font-size: 14px;
-    font-weight: bold;
-    padding: 17px 0 0px 0px;
-    font-family: "GTWalsheimPro-Regular";
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--white);
+  font-size: 14px;
+  font-weight: bold;
+  padding: 17px 0 0px 0px;
+  font-family: "GTWalsheimPro-Regular";
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+@media (min-width: 380px) {
+  #navbar {
+    display: none;
+  }
+
+  .header__logo {
+    left: 40px;
+    width: 30%;
+  }
+
+  .burg-toggle {
+    border: none;
+    background-color: transparent;
+    position: relative;
+    top: 5px;
+    left: 30px;
+  }
+
+  .navegacion__button {
+    padding: 4px 12px;
+    top: -5px;
+    left: 40px;
+    padding: 0px 8px;
+    font-size: 22px;
+  }
+
+  .header__menu {
+    position: relative;
+    left: 0px;
+    top: 80px;
+    width: 90%;
+  }
+
+  .header__menu-item {
+    display: flex;
+    font-size: 30px;
+    padding: 5px 0px;
+  }
+
+  .header__menu-button {
+    left: 30px;
+  }
+
+  .link {
+    font-size: 25px;
+  }
+
+  .ingresar {
+    position: relative;
+    left: -150px;
+    top: 40px;
+    height: 150px;
+  }
+
+  .planes {
+    position: relative;
+    left: -117px;
+    height: 300px;
+    top: 40px;
+
+  }
+
+  .categoria {
+    position: relative;
+    left: -180px;
+    height: 57vh;
+    bottom: 0px;
+    top: 35px;
+  }
+
+  .acerca {
+    position: relative;
+    left: -124px;
+    height: 30vh;
+    top: 30px;
+    bottom: 0px;
+  }
+
+}
+
+@media (min-width: 767px) {
+
+  #navbar {
+    display: contents;
+  }
+
+  .navegacion {
+    column-gap: 10px;
+    display: flex;
+    position: relative;
+    top: -32px;
+    width: 40%;
+    transform: translate(-50%, 50%);
+    left: 48%;
+  }
+
+  .navbar a {
+    font-size: 16px;
+    padding: 10px 0px 10px 19px;
+  }
+
+  .navegacion__button {
+    padding: 4px 12px;
+    top: 5px;
+    left: 410px;
+    padding: 0px 8px;
+    font-size: 20px;
+  }
+
+  .burg-toggle {
+    top: 20px;
+  }
+
+  .header__logo {
+    top: 35px;
+    left: 75px;
+    width: 13%;
+  }
+
+}
+
+@media (min-width: 1023px) {
+  .navegacion {
+    left: 65%;
+  }
+
+  .header__logo {
+    top: 35px;
+    left: 85px;
+    width: 10%;
+  }
+
+  .burg-toggle {
+    left: 40px;
+    top: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navegacion {
+    left: 72%;
+  }
+
+}
+
+@media (min-width: 1400px) {
+  .navegacion {
+    left: 77%;
+  }
+
+  .header__logo {
+    left: 150px;
+    width: 5%;
+  }
+
+  .burg-toggle {
+    left: 100px;
+    top: 20px;
+  }
+
 }
