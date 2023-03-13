@@ -23,9 +23,12 @@ export const HeaderDashboard = ({home}) => {
     }
   }
 
+  let currentClass =  home ? "header__container" : "header__container background"
+  let secondClass = home ? "header fixed_top" : "header fixed_top background"
+
   return (
-    <div className="header__container"  >
-      <header id="header" className="header fixed_top " style={home ? {backgroundColor:"transparent"} : {backgroundColor:"#002333"}}>
+    <div className={currentClass}  >
+      <header id="header" className={secondClass} style={home ? {backgroundColor:"transparent"} : {backgroundColor:"#002333"}}>
         {/* <!-- Button trigger modal --> */}
         {token ?
           <></>
