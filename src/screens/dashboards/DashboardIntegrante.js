@@ -16,6 +16,9 @@ import { getUserCourseById } from "../../services/services";
 import { getCourse } from "../../services/services";
 import { CarouselDashboards } from "../../componentes/CarouselDashboards";
 
+import "../../assets/css/screens/dashboards/StyleDashboardIntegrante.css";
+
+
 export const DashboardIntegrante = () => {
 
   const { name, token, id } = useSelector(state => state.auth)

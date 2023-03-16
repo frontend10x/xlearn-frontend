@@ -1,0 +1,13 @@
+.navbar a,
+.navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0 20px 0px;
+    font-family: "GTWalsheimPro-Regular";
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
