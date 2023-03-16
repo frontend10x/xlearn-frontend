@@ -76,12 +76,12 @@ z-index: 9;
 width: 100%;
 } */
 
-.header {
+/* .header {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
   position: absolute;
-}
+} */
 
 .header__logo {
   position: absolute;

@@ -31,7 +31,14 @@ export const HeaderDashboard = ({home}) => {
       <header id="header" className={secondClass} style={home ? {backgroundColor:"transparent"} : {backgroundColor:"#002333"}}>
         {/* <!-- Button trigger modal --> */}
         {token ?
-          <></>
+          <button
+          type="button"
+          className="burg-toggle"
+          data-bs-toggle="modal"
+          data-bs-target="#modalInside"
+        >
+          <i className="fa-solid fa-bars fa-2xl"></i>
+        </button>
           : <button
             type="button"
             className="burg-toggle"
