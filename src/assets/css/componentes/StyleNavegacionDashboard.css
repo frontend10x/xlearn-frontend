@@ -52,23 +52,23 @@
 }
 
 /*====Bloque Nav left====*/
-.xln-contentNavLeft-block {
+/* .xln-contentNavLeft-block {
   height: 100vh;
   position: fixed;
   z-index: 1;
   background-color: var(--white);
   padding-top: 9%;
   width: 16%;
-}
+} */
 
-.xln-contentNavLeft-block-resize {
+/* .xln-contentNavLeft-block-resize {
   height: 100vh;
   position: fixed;
   z-index: 1;
   background-color: var(--white);
   padding-top: 9%;
   width: 5%;
-}
+} */
 
 .xln-contentNavLeft-block .nav {
   display: block;

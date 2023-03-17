@@ -40,13 +40,13 @@ export const NavegacionDashboard = () => {
     const resize = (e) => {
         if (e.target.value == false) {
             setSize(true);
-        }else {
+        } else {
             setSize(false);
         }
     }
 
     return (
-        <div className={styleClass}>
+        <div className=".xln-contentNavLeft-block">
             <div className="dashboard__navegacion-container">
                 <div className="dashboard__nav-section" >
                     <Nav className="dashboard__nav" >
@@ -56,10 +56,10 @@ export const NavegacionDashboard = () => {
                         <NavLink href='/gestion/usuarios' className='dashboard__nav-link' ><img src={NavIconLeft_05} /> Gestión de usuarios</NavLink>
                         {/* <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_03}/> Chat</NavLink>
                         <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_06}/> Reporte</NavLink> */}
-                        <button onClick={resize} >boton</button>
                     </Nav>
                 </div>
             </div>
+            {/* <button onClick={resize} >boton</button> */}
         </div>
     )
 }
