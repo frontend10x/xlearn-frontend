@@ -16,6 +16,8 @@ import { getUserCourseById } from "../../services/services";
 import { getCourse } from "../../services/services";
 import { CarouselDashboards } from "../../componentes/CarouselDashboards";
 
+import "../../assets/css/screens/dashboards/StyleDashboardLider.css";
+
 export const DashboardLider = () => {
 
   const { name, token, id } = useSelector(state => state.auth)
