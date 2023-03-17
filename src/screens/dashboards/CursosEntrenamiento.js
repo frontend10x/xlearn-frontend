@@ -7,6 +7,8 @@ import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import { getCoursesById, registerDiagnostic } from "../../services/services";
 import { confirmedRoute } from "../../actions/confirmRoute";
 
+import "../../assets/css/screens/dashboards/StyleDiagnosticoLiderGeneral.css";
+
 export const CursosEntrenamiento = () => {
   const { token, id, subcompanie_id, groups } = useSelector((state) => state.auth);
   const { filter_id } = useSelector(state => state.questions);
@@ -24,10 +26,10 @@ export const CursosEntrenamiento = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const {target,user_id,_rel,group_id,answer} = schema;
+  const { target, user_id, _rel, group_id, answer } = schema;
 
 
-  console.log(group_id,'structura');
+  console.log(group_id, 'structura');
 
   useEffect(() => {
     async function getCoursesByArea() {
@@ -37,8 +39,8 @@ export const CursosEntrenamiento = () => {
     getCoursesByArea();
   }, []);
 
-  useEffect(()=>{
-    if(courses){
+  useEffect(() => {
+    if (courses) {
       setCheckedState(new Array(courses.length).fill(false))
     }
   }, [courses])
@@ -49,17 +51,17 @@ export const CursosEntrenamiento = () => {
     );
 
     setCheckedState(updatedCheckedState);
-    
+
     let answer = {};
-    
-    if(!isChecked){
+
+    if (!isChecked) {
       answer = {
         "course": courseId,
       }
 
       setSchema({ ...schema, answer: [...schema.answer, answer] });
-      
-    }else{
+
+    } else {
       answer = schema?.answer.filter(item => item?.course !== courseId)
       setSchema({ ...schema, answer: answer });
     }
@@ -67,7 +69,7 @@ export const CursosEntrenamiento = () => {
   };
 
   console.log("schema22", schema)
-  
+
 
   const previousPage = () => {
     navigate('/project/diagnostic/training/areas')
@@ -75,8 +77,8 @@ export const CursosEntrenamiento = () => {
 
   const nextPage = async () => {
     try {
-      const data = await registerDiagnostic(target,user_id,_rel,answer,group_id,token);
-      dispatch(diagnosticTraining(answer,data?.diagnostic_id, _rel))
+      const data = await registerDiagnostic(target, user_id, _rel, answer, group_id, token);
+      dispatch(diagnosticTraining(answer, data?.diagnostic_id, _rel))
       dispatch(confirmedRoute(data.course_route))
       navigate("/project/diagnostic/confirm_route");
     } catch (error) {
@@ -91,143 +93,173 @@ export const CursosEntrenamiento = () => {
   return (
     <div className="cursos__entrenamiento-section">
       <HeaderDashboard />
+
+
       <div className="cursos__entrenamiento-container">
-        <p>STEP 3 OF 4</p>
-        <div className="cursos__entrenamiento-content">
-          <h1>Selecciona tus cursos</h1>
-        </div>
-
-        <div className="cursos__filter-content">
-            <ul className="cursos__filter-buttons">
-              <div>
-                <h3>Áreas</h3>
-              </div>
-
-              <h4>Corporativo</h4>
-              <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Sostenibilidad"
-              />
-              <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Economía Circular"
-              />
-              
-              <h4>Corporativo</h4>
-              <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Sistemas de Innovación"
-              />
-              <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Diseño de nuevos negocios"
-              />
-               <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Innovación Abierta"
-              />
-              <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Oportunidades, Retos y Priorización"
-              />
-
-              <h4>Corporativo</h4>
-              <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="IOT"
-              />
-              <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Analítica y Big Data"
-              />
-              <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Inteligencia Artificial"
-              />
-               <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Marketing Digital"
-              />
-              <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Ciberseguridad"
-              />
-              <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Blockchain"
-              />
-              <input
-                className="text-start"
-                type="button"
-                onClick={filterCourses}
-                value="Robótica"
-              />
 
 
-              
-            </ul>
+        <div className="row select_course_container">
+          <div className="col-md-12">
+            <p>STEP 3 OF 4</p>
+            <div className="cursos__entrenamiento-content">
+              <h1>Selecciona tus cursos</h1>
+            </div>
           </div>
 
-        <div className="cursos__entrenamiento-selection_container" >
-          {courses &&
-            courses.map(({id, name, file_path}, index) => (
-              <div className="cursos__entrenamiento-selection_card" key={index} >
-                <div className="cursos__entrenamiento-selection_card-image" >
-                  <input 
-                    type="checkbox" 
-                    checked={checkedState[index]}
-                    id={`course-${index}-${id}`} 
-                    onChange={() => handleOnChange(id, index, checkedState[index])}
-                  />
-                  <Image src={file_path} alt={file_path} />
-                  <h2>{name}</h2>
+          <div className="col-md-4">
+            <div className="cursos__filter-content">
+              <ul className="cursos__filter-buttons">
+                <div>
+                  <h3>Áreas</h3>
                 </div>
-              </div>
-            ))
-          }
-          
+
+                <h4>Corporativo</h4>
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Sostenibilidad"
+                />
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Economía Circular"
+                />
+
+                <h4>Corporativo</h4>
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Sistemas de Innovación"
+                />
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Diseño de nuevos negocios"
+                />
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Innovación Abierta"
+                />
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Oportunidades, Retos y Priorización"
+                />
+
+                <h4>Corporativo</h4>
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="IOT"
+                />
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Analítica y Big Data"
+                />
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Inteligencia Artificial"
+                />
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Marketing Digital"
+                />
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Ciberseguridad"
+                />
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Blockchain"
+                />
+                <input
+                  className="text-start"
+                  type="button"
+                  onClick={filterCourses}
+                  value="Robótica"
+                />
+
+
+
+              </ul>
+            </div>
+          </div>
+
+          <div className="col-md-8">
+            <div className="row cursos__entrenamiento-selection_container" >
+              {courses &&
+                courses.map(({ id, name, file_path }, index) => (
+                  <div className="col-md-4 cursos__entrenamiento-selection_card" key={index} >
+                    <div className="cursos__entrenamiento-selection_card-image" >
+                      <input
+                        type="checkbox"
+                        checked={checkedState[index]}
+                        id={`course-${index}-${id}`}
+                        onChange={() => handleOnChange(id, index, checkedState[index])}
+                      />
+                      <Image src={file_path} alt={file_path} />
+                      <h2>{name}</h2>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
         </div>
-      
-      
-      
       </div>
-      <div>
+
+
+      <div className="selection__process-footer">
+
+        <div className="row content-center-SelectBtn" >
+          <div className="col-md-2">
+            <button
+              className="preguntas__footer-button_prev"
+              onClick={previousPage}
+            >
+              Volver
+            </button>
+          </div>
+
+          <div className="col-md-8"></div>
+
+          <div className="col-md-2">
+            <button className="preguntas__footer-button_next" onClick={nextPage}>
+              Siguiente
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+
+      {/* <div>
         <div className="preguntas__footer">
-          <button
-            className="preguntas__footer-button_prev"
-            onClick={previousPage}
-          >
-            Volver
-          </button>
+          
           <button className="preguntas__footer-button_next" onClick={nextPage}>
             Siguiente
           </button>
         </div>
-      </div>
+      </div> */}
+
     </div>
   );
 };

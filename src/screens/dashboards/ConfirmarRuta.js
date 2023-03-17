@@ -12,7 +12,7 @@ export const ConfirmarRuta = () => {
 
   useEffect(() => {
     // 👇️ scroll to top on page load
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
   const { id, _rel } = useSelector((state) => state.questions);
@@ -49,44 +49,79 @@ export const ConfirmarRuta = () => {
       <HeaderDashboard />
       <div className="confirm_route-container">
         <div className="confirm_route-title">
-          <p>Step 4 of 4</p>
-          <h1>Confirmar la Ruta a tomar</h1>
-        </div>
-        <div className="confirm_route-add_course" >
-          <h3>Mis cursos</h3>
-          {/* <button>Agregar curso a la lista</button> */}
-        </div>
-        <div className="confirm_route-container_route" >
-          {
-            courses.map((item, index) => (
-              <div key={index} >
-                <div className="confirm_route-card">
-                  <Image src={item.file_path} className="confirm_route-image" />
-                  <div className="confirm_route-card_content">
-                    <h3>{item.name}</h3>
-                    <p>Este curso esta en tu ruta</p>
-                    {/* <div className="d-flex gap-5">
-                      <p>{item.time}H</p>
-                      <p>{item.lessons} Clases</p>
-                    </div> */}
+
+
+        <div className="row select_course_container">
+          <div className="col-md-12">
+            <p>Step 4 of 4</p>
+            <h1>Confirmar la Ruta a tomar</h1>
+          </div>
+
+          <div className="col-md-12">
+
+            <div className="confirm_route-add_course" >
+              <h3>Mis cursos</h3>
+              {/* <button>Agregar curso a la lista</button> */}
+            </div>
+          </div>
+          <div className="col-md-12">
+            <div className="confirm_route-container_route" >
+              {
+                courses.map((item, index) => (
+                  <div key={index} >
+                    <div className="confirm_route-card">
+                      <Image src={item.file_path} className="confirm_route-image" />
+                      <div className="confirm_route-card_content">
+                        <h3>{item.name}</h3>
+                        <p>Este curso esta en tu ruta</p>
+                        {/* <div className="d-flex gap-5">
+    <p>{item.time}H</p>
+    <p>{item.lessons} Clases</p>
+    </div> */}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))
-          }
+                ))
+              }
+            </div>
+          </div>
+
+        </div>
         </div>
       </div>
-      <div className="xlrn__confirm-route__footer" >
-        <button
-          className="preguntas__footer-button_prev"
-          onClick={goBack}
-        >
-          Volver
-        </button>
-        <button className="preguntas__footer-button_next" onClick={confirmedRoute}>
-          Confirmar
-        </button>
+
+
+      <div className="selection__process-footer">
+
+        <div className="row content-center-SelectBtn" >
+          <div className="col-md-2">
+              <button
+              className="preguntas__footer-button_prev"
+              onClick={goBack}
+            >
+              Volver
+            </button>
+          </div>
+
+          <div className="col-md-8"></div>
+
+          <div className="col-md-2">
+          <button className="preguntas__footer-button_next" onClick={confirmedRoute}>
+            Confirmar
+          </button>
+          </div>
+
+        </div>
       </div>
+
+
+      {/* <div className="xlrn__confirm-route__footer" >
+        
+
+      </div> */}
+
+
+
     </div>
   );
 };
