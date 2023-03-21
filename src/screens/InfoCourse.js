@@ -62,11 +62,11 @@ export const InfoCourse = () => {
         getLessonsCourse();
     }, []) /* LOGICA DE CURSOS PUBLICOS */
 
-    console.log(course, 'curso');
+    const show = true;
 
     return (
         <div className='xln__info_courses' >
-            <HeaderDashboard />
+            <HeaderDashboard show={show} />
 
             <section className="hero">
                 <div className="row align-items-center">

@@ -130,7 +130,7 @@ export const DashboardEmpresa = () => {
             </div>
 
 
-            {/* <div className="col-md-10">
+            <div className="col-md-10">
 
               <div className="row dashboard__container-nav_banner">
 
@@ -313,7 +313,7 @@ export const DashboardEmpresa = () => {
               </div>
 
 
-            </div> */}
+            </div>
 
           </div>
 

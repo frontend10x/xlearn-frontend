@@ -80,34 +80,22 @@ export const NavegacionDashboardHeader = () => {
       }
       {type === "Integrante" &&
         <div className="navegacion">
+
           <Nav id="navbar" className="navbar mt-1 ms-auto ">
-            <NavLink className="nav-link " to="/dashboard/empresa">
-              Inicio
-            </NavLink>
-            {/* <NavLink className="nav-link " to="/gestion/cupos/disponibles">
-            Ruta
-          </NavLink>
-          <NavLink className="nav-link " to="/gestion/equipo">
-            Gestión de equipos
-          </NavLink>
-          <NavLink className="nav-link " to="/asignacion/cupos">
-            Gestión de usuarios
-          </NavLink> */}
-            <NavLink className="nav-link " to="/contact">
-              Soporte
-            </NavLink>
-            {/* <NavLink className="nav-link " to="/soporte">
-            Soporte
-          </NavLink>
-          <i className="bi bi-list mobile-nav-toggle"></i> */}
-            <div className="d-flex ms-5" >
+            <div className="d-flex ms-auto" >
+
+              <NavLink className="nav-link " to="/dashboard/empresa">
+                Inicio
+              </NavLink>
+              <NavLink className="nav-link " to="/contact">
+                Soporte
+              </NavLink>
               <p className="user_name" >{name}</p>
               <div className="dropdown d-flex">
                 <button className="ms-3 dropdown w-50 button__navegacion-user " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
                   <Image src={imagenUser} alt='user' className="w-50" />
                 </button>
                 <ul className="dropdown-menu">
-                  {/* <li><button className="dropdown-item" href="#">Ajustes</button></li> */}
                   <li><button onClick={redirect} className="dropdown-item" href="#">Perfil</button></li>
                   <li><button onClick={handleLogout} className="dropdown-item" href="#">Cerrar sesión</button></li>
                 </ul>

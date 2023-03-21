@@ -28,9 +28,11 @@ export const EmpresaScreen = () => {
     navigate('/plans/register')
   }
 
+  const show = true;
+
   return (
     <div className="empresas__section">
-      <HeaderDashboard />
+      <HeaderDashboard show={show} />
 
 
       <section className="Enterprises__register-banner" style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.675)), url("${banner_empresa01}")` }}>

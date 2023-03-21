@@ -13,9 +13,11 @@ export const EmpresasRegister = () => {
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   }, []);
 
+  const show = true;
+
   return (
     <div className="planes-register">
-      <HeaderDashboard />
+      <HeaderDashboard show={show}  />
 
       
       <section className="planes__register-banner"  style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.675)), url("${registerbanner}")` }}>

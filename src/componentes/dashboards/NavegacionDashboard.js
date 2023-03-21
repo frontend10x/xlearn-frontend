@@ -35,12 +35,14 @@ export const NavegacionDashboard = () => {
 
     const [size, setSize] = useState(false);
 
-    const styleClass = size ? ".xln-contentNavLeft-block" : ".xln-contentNavLeft-block-resize"
+    const styleClass = size ? "xln-contentNavLeft-block-resize" : "xln-contentNavLeft-block"
+    // let currentClass =  progress ? "xlnIcon__couser__ruta_initiated mt-2" : "xlnIcon__couser__ruta mt-2 "
+
 
     const resize = (e) => {
-        if (e.target.value == false) {
-            setSize(true);
-        }else {
+        if (size === false) {
+            setSize(true)
+        } else if (size === true) {
             setSize(false);
         }
     }
@@ -50,16 +52,17 @@ export const NavegacionDashboard = () => {
             <div className="dashboard__navegacion-container">
                 <div className="dashboard__nav-section" >
                     <Nav className="dashboard__nav" >
-                        <NavLink type="button" href='/dashboard/empresa' className='dashboard__nav-link' ><img src={NavIconLeft_01} /> Inicio</NavLink>
-                        <NavLink className='dashboard__nav-link' type="button" onClick={redirect}  ><img src={NavIconLeft_02} /> Gestión de cupos </NavLink>
-                        <NavLink type="button" onClick={change} className='dashboard__nav-link' ><img src={NavIconLeft_04} /> Gestión de equipos</NavLink>
-                        <NavLink href='/gestion/usuarios' className='dashboard__nav-link' ><img src={NavIconLeft_05} /> Gestión de usuarios</NavLink>
+                        <NavLink type="button" href='/dashboard/empresa' className='dashboard__nav-link' ><img src={NavIconLeft_01} /> <span>Inicio</span>  </NavLink>
+                        <NavLink className='dashboard__nav-link' type="button" onClick={redirect}  ><img src={NavIconLeft_02} /> <span>Gestión de cupos</span>  </NavLink>
+                        <NavLink type="button" onClick={change} className='dashboard__nav-link' ><img src={NavIconLeft_04} /> <span>Gestión de equipos</span> </NavLink>
+                        <NavLink href='/gestion/usuarios' className='dashboard__nav-link' ><img src={NavIconLeft_05} /> <span>Gestión de usuarios</span> </NavLink>
                         {/* <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_03}/> Chat</NavLink>
                         <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_06}/> Reporte</NavLink> */}
-                        <button onClick={resize} >boton</button>
+                        <NavLink type="button" className="position-absolute top-100 dashboard__nav-link" onClick={resize} value="Ocultar" ><img src={NavIconLeft_05} /> <span>Ocultar</span> </NavLink>
                     </Nav>
                 </div>
             </div>
+            {/* <button onClick={resize} >boton</button> */}
         </div>
     )
 }

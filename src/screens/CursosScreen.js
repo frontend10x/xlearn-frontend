@@ -44,12 +44,13 @@ export const CursosScreen = () => {
     navigate('/plans/register')
   }
 
-
+  const home = true;
+  const show = true;
 
 
   return (
     <div className="cursos__section">
-      <HeaderDashboard />
+      <HeaderDashboard show={show}/>
 
       <section className="container_Cursos">
         <div className="container">
@@ -62,7 +63,7 @@ export const CursosScreen = () => {
                   <div className="cursos__filter-title" >
                     <h3>Todas Las áreas</h3>
                   </div>
-                  
+
                   <h4 className="">Innovación</h4>
 
                   {/* <input
@@ -76,7 +77,7 @@ export const CursosScreen = () => {
                   // onClick={filterCourses}
                   // value="Sistemas de innovación"
                   >Sistemas de innovación</p>
-               
+
                   <p
                     className="text-start"
                   // onClick={filterCourses}

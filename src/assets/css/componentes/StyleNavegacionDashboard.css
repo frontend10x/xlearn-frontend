@@ -12,9 +12,9 @@
 }
 
 
-.xln-container-navDashboard {
+/* .xln-container-navDashboard {
   background: var(--white);
-}
+} */
 
 .dashboard__nav-link {
   position: relative;
@@ -43,7 +43,7 @@
     flex-direction: column; */
 
   width: 100%;
-  height: 90vh;
+  height: 75vh;
   position: relative;
 }
 
@@ -68,6 +68,17 @@
   background-color: var(--white);
   padding-top: 9%;
   width: 5%;
+}
+
+.xln-contentNavLeft-block-resize span {
+  display: none;
+}
+
+.xln-contentNavLeft-block-resize .dashboard__nav img {
+  width: 30px;
+  display: flex;
+  position: relative;
+  left: 15px;
 }
 
 .xln-contentNavLeft-block .nav {
