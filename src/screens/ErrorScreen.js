@@ -6,9 +6,12 @@ import { Image } from 'react-bootstrap'
 import { error404, XlearnLogo } from '../assets/img'
 
 export const ErrorScreen = () => {
+  
+  const show = true;
+
   return (
     <div className='error_section' >
-      <HeaderDashboard />
+      <HeaderDashboard show={show} />
       <Container className='text-center d-flex flex-column align-items-center' >
         <h1 className='fw-bold' >Ups parece que la ruta que intentas buscar no existe</h1>
         <Image src={error404} alt="icon" className='w-25 rounded-circle ' />

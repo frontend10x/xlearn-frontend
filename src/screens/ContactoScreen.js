@@ -80,9 +80,12 @@ export const ContactoScreen = () => {
         }
     }
 
+  const show = true;
+    
+
     return (
         <div className="xlrn-contacto__section" >
-            <HeaderDashboard />
+            <HeaderDashboard show={show} />
 
             <section className="contacto__register-banner" style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.675)), url("${bannerContact01}")` }}>
                 <div className="container">

@@ -6,7 +6,7 @@ import { XlearnLogo } from "../../assets/img";
 import { NavegacionDashboardHeader } from "../dashboards/NavegacionDashboardHeader";
 import "../../assets/css/componentes/StyleHeaderDashboard.css"
 
-export const HeaderDashboard = ({home}) => {
+export const HeaderDashboard = ({ home, show }) => {
   const { type, token } = useSelector(state => state.auth);
   const navigate = useNavigate();
 
@@ -19,29 +19,28 @@ export const HeaderDashboard = ({home}) => {
       navigate('/dashboard/integrante')
     } else {
       navigate('/')
-
     }
   }
 
-  let currentClass =  home ? "header__container" : "header__container background"
+  let currentClass = home ? "header__container" : "header__container background"
   let secondClass = home ? "header fixed_top" : "header fixed_top background"
-
+  let hide = type === "Empresa" || home || show ? "burg-toggle" : "hide_toogle"
   return (
     <div className={currentClass}  >
-      <header id="header" className={secondClass} style={home ? {backgroundColor:"transparent"} : {backgroundColor:"#002333"}}>
+      <header id="header" className={secondClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }}>
         {/* <!-- Button trigger modal --> */}
-        {token ?
+        {token && type === "Empresa" ?
           <button
-          type="button"
-          className="burg-toggle"
-          data-bs-toggle="modal"
-          data-bs-target="#modalInside"
-        >
-          <i className="fa-solid fa-bars fa-2xl"></i>
-        </button>
+            type="button"
+            className={hide}
+            data-bs-toggle="modal"
+            data-bs-target="#modalDashboard"
+          >
+            <i className="fa-solid fa-bars fa-2xl"></i>
+          </button>
           : <button
             type="button"
-            className="burg-toggle"
+            className={hide}
             data-bs-toggle="modal"
             data-bs-target="#exampleModal"
           >
@@ -54,8 +53,75 @@ export const HeaderDashboard = ({home}) => {
         <NavegacionDashboardHeader type={type} />
       </header>
       {token ?
-        <div>
-
+        <div className="modal__container">
+          <div className="modal-dialog modal-fullscreen-sm-down">
+            <div
+              className="modal"
+              id="modalDashboard"
+              tabIndex="-1"
+              aria-labelledby="modalDashboard"
+              aria-hidden="true"
+            >
+              <div className="modal-dialog modal-fullscreen">
+                <div className="modal-content">
+                  <button className="header__menu-button" data-bs-dismiss="modal">
+                    <span>
+                      <i className="fa-solid fa-x"></i>
+                    </span>
+                  </button>
+                  <div className="header_burgtoggle">
+                    <ul className="header__menu">
+                      <li className="header__menu-item">
+                        <NavLink
+                          data-bs-toggle="tooltip"
+                          href="/dashboard/empresa"
+                          className="link"
+                        >
+                          Inicio
+                        </NavLink>
+                      </li>
+                      <li className="header__menu-item">
+                        <NavLink
+                          data-bs-toggle="tooltip"
+                          href="/gestion/cupos/disponibles"
+                          className="link"
+                        >
+                          Gestión de cupos
+                        </NavLink>
+                      </li>
+                      <li className="header__menu-item">
+                      <NavLink
+                          data-bs-toggle="tooltip"
+                          href="/manejo/equipos"
+                          className="link"
+                        >
+                          Gestión de equipos
+                        </NavLink>
+                      </li>
+                      <li className="header__menu-item">
+                      <NavLink
+                          data-bs-toggle="tooltip"
+                          href="/gestion/usuarios"
+                          className="link"
+                        >
+                          Gestión de usuarios
+                        </NavLink>
+                      </li>
+                      <li className="header__menu-item">
+                      <NavLink
+                          data-bs-toggle="tooltip"
+                          href="/login"
+                          className="link"
+                        >
+                          Soporte
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         :
         <div className="modal__container">

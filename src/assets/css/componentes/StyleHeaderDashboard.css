@@ -7,9 +7,10 @@
     z-index: 997;
     padding: 10px 0;
     position: absolute;
-  }
+}
 
-  .dashboard__section-empresa .navbar a, .navbar a:focus {
+.dashboard__section-empresa .navbar a,
+.navbar a:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -22,7 +23,8 @@
     transition: 0.3s ease;
 }
 
-.xlrn__uso-cupos__section .navbar a, .navbar a:focus {
+.xlrn__uso-cupos__section .navbar a,
+.navbar a:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -35,7 +37,8 @@
     transition: 0.3s ease;
 }
 
-.dashboard__lider .navbar a, .navbar a:focus {
+.dashboard__lider .navbar a,
+.navbar a:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,4 +49,8 @@
     color: var(--white);
     white-space: nowrap;
     transition: 0.3s ease;
+}
+
+.hide_toogle {
+    display: none;
 }
