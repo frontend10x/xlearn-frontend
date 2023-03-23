@@ -31,4 +31,4 @@ export const store = createStore(
         applyMiddleware(thunk)
     )
 );
-export const persistor = persistStore(store)
+export const persistor = persistStore(store);
