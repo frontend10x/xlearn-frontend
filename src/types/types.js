@@ -12,5 +12,9 @@ export const types = {
     clearRoute: '[ROUTE] CLEAR',
 
     /* Evaluacion */
-    evaluation: '[EVALUATION] EVALUATION'
+    evaluation: '[EVALUATION] EVALUATION',
+
+    /* Sizes de Navegacion */
+    resize: '[SIZE] SIZE'
+
 }

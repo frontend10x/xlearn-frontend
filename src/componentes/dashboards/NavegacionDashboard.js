@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Nav } from 'react-bootstrap';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { NavIconLeft_01, NavIconLeft_02, NavIconLeft_03, NavIconLeft_04, NavIconLeft_05, hide, show } from "../../assets/img";
 import { getEnterpriseGroups, getEnterpriseQuotas } from "../../services/services";
 import "../../assets/css/componentes/StyleNavegacionDashboard.css";
 import { NavLink } from "react-bootstrap";
+import { holdState } from "../../actions/SizeNavegacion";
 
 export const NavegacionDashboard = () => {
 
     const { token, subcompanie_id } = useSelector(state => state.auth)
+    const { event} = useSelector(state => state.size)
     const navigate = useNavigate();
-
+    const dispatch = useDispatch();
     const redirect = () => {
         getEnterpriseQuotas(token, subcompanie_id)
             .then(event => {
@@ -25,7 +27,7 @@ export const NavegacionDashboard = () => {
 
     const change = () => {
         getEnterpriseGroups(token, subcompanie_id)
-            .then(event => {
+            .then(evnt => {
                 navigate('/manejo/equipos')
             })
             .catch(error => {
@@ -35,20 +37,21 @@ export const NavegacionDashboard = () => {
 
     const [size, setSize] = useState(false);
 
-    const styleClass = size ? "xln-contentNavLeft-block-resize" : "xln-contentNavLeft-block"
-    // let currentClass =  progress ? "xlnIcon__couser__ruta_initiated mt-2" : "xlnIcon__couser__ruta mt-2 "
+    const styleClass = event ? "xln-contentNavLeft-block-resize" : "xln-contentNavLeft-block"
 
 
-    const resize = (e) => {
+    const resize = () => {
         if (size === false) {
             setSize(true)
+            dispatch(holdState(size))    
         } else if (size === true) {
             setSize(false);
+            dispatch(holdState(size))  
         }
     }
 
-    const order = size ? "order" : "dashboard__nav"
-    const position = size ? "position-absolute top-50" : "position-absolute top-100 dashboard__nav-link";
+    const order = event ? "order" : "dashboard__nav"
+    const position = event ? "position-absolute top-50" : "position-absolute top-100 dashboard__nav-link";
 
     return (
         <div className={styleClass}>
