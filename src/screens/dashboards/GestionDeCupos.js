@@ -21,6 +21,7 @@ export const GestionDeCupos = () => {
         window.scrollTo(0, 0)
     }, [])
     const { token, subcompanie_id } = useSelector(state => state.auth);
+    const { event} = useSelector(state => state.size);
     const [quotas, setQuotas] = useState();
     const [createdTeams, setCreatedTeams] = useState();
     const navigate = useNavigate();
@@ -47,6 +48,7 @@ export const GestionDeCupos = () => {
             navigate('/creacion/usuarios');
         }
     }
+    const adjustClass = event ? "xln_add_menuLateral" : "col-md-10";
 
     return (
 
@@ -68,7 +70,8 @@ export const GestionDeCupos = () => {
                         </div>
 
 
-                        <div className="col-md-10">
+                        <div className={adjustClass}>
+                        {/* <div className="col-md-10"> */}
 
                             <div className="row dashboard__container-nav_banner">
 
