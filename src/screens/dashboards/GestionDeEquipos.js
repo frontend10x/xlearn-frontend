@@ -14,7 +14,8 @@ import "../../assets/css/screens/dashboards/StyleGestionDeEquipos.css";
 
 export const GestionDeEquipos = () => {
 
-    const { token, roles, subcompanie_id } = useSelector(state => state.auth)
+    const { token, roles, subcompanie_id } = useSelector(state => state.auth);
+    const { event } = useSelector(state => state.size);
     const [groups, setGroups] = useState([]);
     const [users, setUsers] = useState([]);
     const [ids, setIds] = useState([]);
@@ -38,6 +39,7 @@ export const GestionDeEquipos = () => {
     const redirect = () => {
         navigate('/gestion/equipo');
     }
+    const adjustClass = event ? "xln_add_menuLateral" : "col-md-10";
 
     return (
         <div className="dashboard__section-empresa">
@@ -52,7 +54,8 @@ export const GestionDeEquipos = () => {
                         <NavegacionDashboard />
                     </div>
 
-                    <div className="col-md-10">
+                    <div className={adjustClass}>
+                    {/* <div className="col-md-10"> */}
                         <div className="row dashboard__container-nav_banner">
 
                             <div className="col-md-12 xlrn__informacion-equipos-title" >

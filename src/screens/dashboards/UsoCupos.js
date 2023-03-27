@@ -12,6 +12,7 @@ import '../../assets/css/screens/dashboards/StyleUsoCupos.css';
 export const UsoCupos = () => {
     const [users, setUsers] = useState();
     const { token, subcompanie_id } = useSelector(state => state.auth);
+    const { event } = useSelector(state => state.size);
     const navigate = useNavigate();
     useEffect(() => {
         const getAllUsers = async () => {
@@ -39,6 +40,9 @@ export const UsoCupos = () => {
         navigate(`/contact`)
     }
 
+    const adjustClass = event ? "xln_add_menuLateral" : "col-md-10 xln-contentSection-block-empresa";
+
+
     return (
         <div className="xlrn__uso-cupos__section" >
             <div className="dashboard__container">
@@ -52,7 +56,8 @@ export const UsoCupos = () => {
                             <NavegacionDashboard />
                         </div>
 
-                        <div className="col-md-10 xln-contentSection-block-empresa" >
+                        <div className={adjustClass} >
+                        {/* <div className="col-md-10 xln-contentSection-block-empresa" > */}
                             <div className="row dashboard__container-nav_banner">
                                 <div className="col-md-12 xlrn__uso-cupos__container-titles" >
                                     <div className="xlrn__uso-cupos__titles-content" >

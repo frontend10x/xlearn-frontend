@@ -35,7 +35,7 @@ export const NavegacionDashboard = () => {
             })
     }
 
-    const [size, setSize] = useState(false);
+    const [size, setSize] = useState(true);
 
     const styleClass = event ? "xln-contentNavLeft-block-resize" : "xln-contentNavLeft-block"
 
@@ -65,7 +65,7 @@ export const NavegacionDashboard = () => {
                         {/* <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_03}/> Chat</NavLink>
                         <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_06}/> Reporte</NavLink> */}
 
-                    <NavLink type="button" className={position} onClick={resize} value="Ocultar" ><img src={size ? hide : show} /> <span className="position-absolute top-25 ms-2" >Ocultar</span> </NavLink>
+                    <NavLink type="button" className={position} onClick={resize} value="Ocultar" ><img src={event ? show : hide} /> <span className="position-absolute top-25 ms-2" >Ocultar</span> </NavLink>
                     </Nav>
                 </div>
             </div>
