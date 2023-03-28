@@ -15,10 +15,19 @@
 /* .xln-container-navDashboard {
   background: var(--white);
 } */
+.top-principal {
+  top: 94%;
+  left: 18px;
+}
+.top-cerrar{
+  top: 91%;
+  left: 6px;
+  width: 95px;
+}
 
 .dashboard__nav-link {
   position: relative;
-  left: 5px;
+  left: 13px;
   top: 25px;
   padding: 10px;
   width: 100%;

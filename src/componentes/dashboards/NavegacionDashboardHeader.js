@@ -31,8 +31,8 @@ export const NavegacionDashboardHeader = () => {
             <div className="d-flex ms-auto" >
 
               <NavLink className="nav-link " to="/compra/cupos">
-                Comprar
-                <img src={cartIcon} className='w-25 me-3' />
+                
+                <img src={cartIcon} className='carrito_icon_empresa' />
               </NavLink>
               <p className="user_name" >{name}</p>
               <div className="dropdown d-flex">
