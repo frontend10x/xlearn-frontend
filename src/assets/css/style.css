@@ -83,11 +83,7 @@ width: 100%;
   position: absolute;
 } */
 
-.header__logo {
-  position: absolute;
-  left: 130px;
-  top: 25px;
-}
+
 
 .header .logo img {
   max-height: 40px;
@@ -1973,9 +1969,9 @@ top: 17px;
 }
 
 @media (max-width: 1024px) {
-  .header__logo {
+  /* .header__logo {
     left: 70px;
-  }
+  } */
 
   /* .navegacion {
 right: 160px;
@@ -2140,9 +2136,9 @@ height: 45vh;
   }
 
   /* Header */
-  .header__logo {
+  /* .header__logo {
     top: 20px;
-  }
+  } */
 
   /* Header Fin */
 
@@ -2391,12 +2387,12 @@ left: 25%;
     padding: 5px;
   }
 
-  .header__logo {
+  /* .header__logo {
     position: relative;
     top: 0px;
     left: 12px;
     width: 15%;
-  }
+  } */
 
   /* Header Fin */
   /* Navegacion */

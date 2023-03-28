@@ -17,7 +17,8 @@ export const CompraUsuarios = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  const { token, name, email, subcompanie_id } = useSelector(state => state.auth)
+  const { token, name, email, subcompanie_id } = useSelector(state => state.auth);
+  const { event } = useSelector((state) => state.size);
   const [places, setPlaces] = useState([
     // { label: 1, value: 1 },
     // { label: 2, value: 2 },
@@ -113,9 +114,11 @@ export const CompraUsuarios = () => {
     }, 3000);
   }
 
-  const [buyConfirm, setBuyConfirm] = useState(false)
+  const [buyConfirm, setBuyConfirm] = useState(false);
 
-  const toPay = () => setBuyConfirm(true)
+  const toPay = () => setBuyConfirm(true);
+
+  const adjustClass = event ? "xln_add_menuLateral" : "col-md-10";
 
   return (
     <>
@@ -133,7 +136,9 @@ export const CompraUsuarios = () => {
               <div className="col-md-2 xln-container-navDashboard" style={{ padding: "0"}}>
                 <NavegacionDashboard />
               </div>
-              <div className="col-md-10">
+
+              <div className={adjustClass}>
+              {/* <div className="col-md-10"> */}
 
                 <div className="row dashboard__container-nav_banner">
                   <div className="col-md-6 conten-01-GC">

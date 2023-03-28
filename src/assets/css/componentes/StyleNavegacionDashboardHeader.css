@@ -30,6 +30,11 @@
   color: var(--green);
 }
 
+.header__logo {
+  position: absolute;
+  left: 130px;
+}
+
 @media (min-width: 380px) {
   #navbar {
     display: none;
@@ -181,12 +186,16 @@
   .header__logo {
     left: 150px;
     width: 5%;
-    top: 25px;
+    top: 40px;
   }
 
   .burg-toggle {
     left: 100px;
-    top: 20px;
+    top: 30px;
   }
+
+  div#modalDashboard .nav-link {
+    color: #fff;
+}
 
 }
