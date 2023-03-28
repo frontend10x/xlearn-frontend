@@ -19,6 +19,7 @@
   font-size: 16px;
   font-weight: 700;
   color: var(--white);
+  margin-top: 10px;
 }
 
 .button__navegacion-user {
@@ -48,10 +49,9 @@
   }
 
   .navegacion__button {
-    padding: 4px 12px;
-    top: -5px;
+    /* padding: 4px 12px; */
+    /* top: -5px; */
     left: 40px;
-    padding: 0px 8px;
     font-size: 22px;
     font-weight: bold;
   }
@@ -132,10 +132,8 @@
   }
 
   .navegacion__button {
-    padding: 4px 12px;
-    top: 5px;
+    /* top: 5px; */
     left: 410px;
-    padding: 0px 8px;
     font-size: 20px;
   }
 

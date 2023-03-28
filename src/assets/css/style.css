@@ -254,7 +254,7 @@ width: 40%;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-family: "GTWalsheimPro-Regular";
-  font-size: 14px;
+  /* font-size: 14px; */
   font-weight: 700;
   color: var(--white);
   white-space: nowrap;
