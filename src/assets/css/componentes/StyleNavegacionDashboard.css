@@ -16,8 +16,8 @@
   background: var(--white);
 } */
 .top-principal {
-  top: 94%;
-  left: 18px;
+  top: 94%!important;
+  left: 18px!important;
 }
 .top-cerrar{
   top: 91%;
