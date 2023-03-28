@@ -27,12 +27,13 @@ import "../../assets/css/screens/dashboards/StyleDashboardEmpresa.css";
 
 
 export const DashboardEmpresa = () => {
+ 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
-
-  const { name, subcompanie_id, token, email } = useSelector((state) => state.auth);
+  const { name, subcompanie_id, token } = useSelector((state) => state.auth);
+  const { event } = useSelector((state) => state.size);
   // const dispatch = useDispatch();
   const navigate = useNavigate();
   const [course, setCourse] = useState([
@@ -89,13 +90,9 @@ export const DashboardEmpresa = () => {
     }
   }
 
-
   const ComprarRedirect = () => {
     navigate('/compra/cupos')
   }
-
-
-
 
   const change = () => {
     getEnterpriseGroups(token, subcompanie_id)
@@ -113,6 +110,7 @@ export const DashboardEmpresa = () => {
     navigate('/contact')
   }
 
+  const adjustClass = event ? "xln_add_menuLateral" : "col-md-10";
 
   return (
     <div className="dashboard__section-empresa">
@@ -130,7 +128,8 @@ export const DashboardEmpresa = () => {
             </div>
 
 
-            <div className="col-md-10">
+            <div className={adjustClass}>
+            {/* <div className="col-md-10"> */}
 
               <div className="row dashboard__container-nav_banner">
 

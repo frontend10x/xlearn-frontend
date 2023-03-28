@@ -747,3 +747,7 @@ bottom: 50px; */
     }
 }
 
+.xln_add_menuLateral {
+    width: 100% !important;
+    padding-left: 6% !important;
+}
