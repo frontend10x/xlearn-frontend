@@ -12,7 +12,6 @@
 }
 
 .user_name {
-  font-size: 14px;
   font-weight: bold;
   padding: 7px 0px 0px 0px;
   font-family: "GTWalsheimPro-Regular";
@@ -20,13 +19,17 @@
   font-weight: 700;
   color: var(--white);
   margin-top: 10px;
+  text-transform: lowercase;
 }
 
 .button__navegacion-user {
   padding: 0px 0px 12px 0px;
 }
 
-.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover>a {
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
   color: var(--green);
 }
 
@@ -196,6 +199,6 @@
 
   div#modalDashboard .nav-link {
     color: #fff;
-}
+  }
 
 }
