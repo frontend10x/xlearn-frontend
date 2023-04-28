@@ -13,6 +13,7 @@ import { getCourse } from "../services/services";
 import { useNavigate } from "react-router-dom";
 import { HeaderDashboard } from "../componentes/dashboards/HeaderDashboard";
 import '../assets/css/screens/public/StyleCursosScreen.css';
+import { Header } from "../componentes/Header";
 
 export const CursosScreen = () => {
   const [courses, setCourses] = useState([]);
@@ -50,8 +51,8 @@ export const CursosScreen = () => {
 
   return (
     <div className="cursos__section">
-      <HeaderDashboard show={show}/>
-
+      {/* <HeaderDashboard show={show}/> */}
+      <Header show={show} />
       <section className="container_Cursos">
         <div className="container">
           <div className="row">

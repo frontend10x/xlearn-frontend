@@ -5,6 +5,7 @@ import { Image } from "react-bootstrap";
 import { banner_empresa01, empresas_contacto, empresas_image, Image_01, platformImage, playButton, empresa_img, } from "../assets/img";
 import { HeaderDashboard } from "../componentes/dashboards/HeaderDashboard";
 import "../assets/css/screens/public/StyleEmpresaScreen.css";
+import { Header } from "../componentes/Header";
 
 
 export const EmpresaScreen = () => {
@@ -32,7 +33,8 @@ export const EmpresaScreen = () => {
 
   return (
     <div className="empresas__section">
-      <HeaderDashboard show={show} />
+      {/* <HeaderDashboard show={show} /> */}
+      <Header show={show} />
 
 
       <section className="Enterprises__register-banner" style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.675)), url("${banner_empresa01}")` }}>
