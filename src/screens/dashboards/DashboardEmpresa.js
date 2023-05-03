@@ -24,6 +24,7 @@ import { getEnterpriseGroups, getEnterpriseQuotas } from "../../services/service
 import { useNavigate } from "react-router-dom";
 
 import "../../assets/css/screens/dashboards/StyleDashboardEmpresa.css";
+import { Header } from "../../componentes/Header";
 
 
 export const DashboardEmpresa = () => {
@@ -116,7 +117,8 @@ export const DashboardEmpresa = () => {
     <div className="dashboard__section-empresa">
       <div className="dashboard__container">
 
-        <HeaderDashboard />
+        {/* <HeaderDashboard /> */}
+        <Header />
 
         <div className="container xln-content-dash">
 

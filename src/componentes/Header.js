@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
-import { Container, Navbar, Nav, Image, Row, Col, NavDropdown, Button, NavLink, Modal } from 'react-bootstrap'
+import { Container, Navbar, Nav, Image, Row, Col, NavDropdown, Button, NavLink, Modal, Dropdown, NavItem } from 'react-bootstrap'
 import "../assets/css/componentes/HeaderStyle.css"
-import { XlearnLogo } from "../assets/img";
-import { useSelector } from 'react-redux';
+import { XlearnLogo, cartIcon, imagenUser } from "../assets/img";
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { logout } from '../actions/loginactions';
 
 
-export const Header = ({ home,show }) => {
+export const Header = ({ home, show }) => {
 
   const [showModal, setShowModal] = useState(false);
   const { type } = useSelector(state => state.auth);
@@ -14,6 +15,7 @@ export const Header = ({ home,show }) => {
   const values = [true, 'sm-down', 'md-down', 'lg-down', 'xl-down', 'xxl-down'];
   const [fullscreen, setFullscreen] = useState(true);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   function handleShow(breakpoint) {
     setFullscreen(breakpoint);
@@ -24,33 +26,125 @@ export const Header = ({ home,show }) => {
     navigate("/login")
   }
 
+  const getHome = () => {
+    if (type === "Empresa") {
+      navigate('/dashboard/empresa')
+    }
+    if (type === "Lider") {
+      navigate('/dashboard/lider')
+    }
+    if (type === "Integrante") {
+        navigate('/dashboard/integrante')
+    }
+  } 
+  
+
   let currentClass = home ? "header__container" : "header__container background"
   let secondClass = home ? "header fixed_top" : "header fixed_top background"
   let hide = type === "Empresa" || home || show ? "burg-toggle" : "hide_toogle"
 
+  const logOut = () => {
+    dispatch(logout());
+  }
+
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" className={secondClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }} variant='dark'>
-        <Button className="ms-3 mb-2" onClick={() => handleShow(values)}>
-          X
-        </Button>
-        <Navbar.Brand className='ms-3' >
+      {type === "Empresa" &&
+
+        <Navbar collapseOnSelect expand="lg" className={secondClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }} variant='dark'>
+          <Navbar.Brand className='ms-3' onClick={getHome} >
+            <Image src={XlearnLogo} alt="logo" />
+          </Navbar.Brand>
+          <Navbar.Collapse id="responsive-navbar-nav" className='me-5' >
+            <Nav className='ms-auto' >
+              <Nav.Link id='link' href="/" className='' >
+                <Image src={cartIcon} alt="cart" id='cart-icon' />
+              </Nav.Link>
+            </Nav>
+            <Dropdown as={NavItem} className='me-5' >
+              <Dropdown.Toggle as={NavLink} className='me-3' ><Image src={imagenUser} id='user-icon' /></Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item style={{ color: "#000" }} >Configuracion</Dropdown.Item>
+                <Dropdown.Item style={{ color: "#000" }} onClick={logOut}>Cerrar sesión</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Navbar.Collapse>
+        </Navbar>
+      }
+
+      {type === "Lider" &&
+        < Navbar collapseOnSelect expand="lg" className={secondClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }} variant='dark'>
+          <Navbar.Brand className='ms-3' onClick={getHome} >
+            <Image src={XlearnLogo} alt="logo" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" className='me-5' />
+          <Navbar.Collapse id="responsive-navbar-nav" className='me-5' >
+            <Nav className='ms-auto' >
+              <Nav.Link id='link' href="/dashboard/lider" className='' >
+                Inicio
+              </Nav.Link>
+              <Nav.Link id='link' href="/contact" className='' >
+                Soporte
+              </Nav.Link>
+            </Nav>
+            <Dropdown as={NavItem} className='me-5' >
+              <Dropdown.Toggle as={NavLink} className='me-2' ><Image src={imagenUser} id='user-icon' /></Dropdown.Toggle>
+              <Dropdown.Menu className='me-3' >
+                <Dropdown.Item style={{ color: "#000" }} >Configuracion</Dropdown.Item>
+                <Dropdown.Item style={{ color: "#000" }} onClick={logOut}>Cerrar sesión</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Navbar.Collapse>
+        </Navbar >
+      }
+
+      { type === "Integrante" &&
+        < Navbar collapseOnSelect expand="lg" className={secondClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }} variant='dark'>
+        <Navbar.Brand className='ms-3' onClick={getHome} >
           <Image src={XlearnLogo} alt="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className='me-5' >
           <Nav className='ms-auto' >
-            <Nav.Link id='link' href="/">Inicio</Nav.Link>
-            <Nav.Link id='link' href="/courses">Cursos</Nav.Link>
-            <Nav.Link id='link' href="/plans/register">Planes</Nav.Link>
-            <Nav.Link id='link' href="/enterprises">Empresa</Nav.Link>
-            <Nav.Link id='link' href="/contact">Contactanos</Nav.Link>
-            <Button id='button' onClick={redirect} >Login</Button>
+            <Nav.Link id='link' href="/dashboard/integrante" className='' >
+              Inicio
+            </Nav.Link>
+            <Nav.Link id='link' href="/contact" className='' >
+              Soporte
+            </Nav.Link>
           </Nav>
+          <Dropdown as={NavItem} className='me-5' >
+            <Dropdown.Toggle as={NavLink} className='me-2' ><Image src={imagenUser} id='user-icon' /></Dropdown.Toggle>
+            <Dropdown.Menu className='me-3 text-center' >
+              <Dropdown.Item style={{ color: "#000" }} >Configuracion</Dropdown.Item>
+              <Dropdown.Item style={{ color: "#000" }} onClick={logOut}>Cerrar sesión</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </Navbar.Collapse>
-      </Navbar>
+      </Navbar >
+      }
 
-
+      {
+        type === undefined &&
+        <Navbar collapseOnSelect expand="lg" className={secondClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }} variant='dark'>
+          <Navbar.Brand className='ms-3' >
+            <Button className="ms-2 mb-2 me-3" onClick={() => handleShow(values)}>
+              X
+            </Button>
+            <Image src={XlearnLogo} alt="logo" />
+          </Navbar.Brand>
+          <Navbar.Collapse id="responsive-navbar-nav" className='me-5' >
+            <Nav className='ms-auto' >
+              <Nav.Link id='link' href="/">Inicio</Nav.Link>
+              <Nav.Link id='link' href="/courses">Cursos</Nav.Link>
+              <Nav.Link id='link' href="/plans/register">Planes</Nav.Link>
+              <Nav.Link id='link' href="/enterprises">Empresa</Nav.Link>
+              <Nav.Link id='link' href="/contact">Contactanos</Nav.Link>
+              <Button id='button' onClick={redirect} >Login</Button>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      }
 
       <Modal show={showModal} fullscreen={fullscreen} onHide={() => setShowModal(false)}>
         <Modal.Body id="background" >
@@ -213,8 +307,6 @@ export const Header = ({ home,show }) => {
           </div>
         </Modal.Body >
       </Modal >
-
-
     </>
   )
 }

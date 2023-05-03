@@ -33,3 +33,13 @@
 #link:focus {
     color: var(--green);
 }
+
+#cart-icon {
+    width: 30px;
+    height: 30px;
+}
+
+#user-icon {
+    width: 30px;
+    height: 30px;
+}
