@@ -1,0 +1,45 @@
+:root {
+    --black: #19191c;
+    --blueAlternative: #270bc4;
+    --blueDark: #002333;
+    --green: #31fb84;
+    --neutroText: #8894ab;
+    --white: #ffffff;
+    --whiteOff: #f4f4f4;
+    --blueclaro: #F5F8FA;
+    --blueoscuro: #CBD6E2;
+    --pearl: #F2F2F2;
+  }
+
+/* #background {
+    background-color: var(--blueDark);
+} */
+
+#button {
+    background-color: var(--green);
+    width: 120px;
+    border: none;
+}
+
+#link {
+    color: var(--white);
+    font-size: 16px;
+}
+
+#link:hover {
+    color: var(--green);
+}
+
+#link:focus {
+    color: var(--green);
+}
+
+#cart-icon {
+    width: 30px;
+    height: 30px;
+}
+
+#user-icon {
+    width: 30px;
+    height: 30px;
+}

@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 
 
 import "../assets/css/screens/public/StyleContactoScreen.css";
+import { Header } from "../componentes/Header";
 
 export const ContactoScreen = () => {
 
@@ -85,8 +86,8 @@ export const ContactoScreen = () => {
 
     return (
         <div className="xlrn-contacto__section" >
-            <HeaderDashboard show={show} />
-
+            {/* <HeaderDashboard show={show} /> */}
+            <Header show={show} />
             <section className="contacto__register-banner" style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.675)), url("${bannerContact01}")` }}>
                 <div className="container">
                     <div className="row">

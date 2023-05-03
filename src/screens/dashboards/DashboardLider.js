@@ -17,6 +17,7 @@ import { getCourse } from "../../services/services";
 import { CarouselDashboards } from "../../componentes/CarouselDashboards";
 
 import "../../assets/css/screens/dashboards/StyleDashboardLider.css";
+import { Header } from "../../componentes/Header";
 
 export const DashboardLider = () => {
 
@@ -61,7 +62,8 @@ export const DashboardLider = () => {
 
   return (
     <div className="dashboard__lider" >
-      <HeaderDashboard />
+      {/* <HeaderDashboard /> */}
+      <Header />
       <div className="dashboard__lider-banner" style={{ backgroundImage: `url(${banner_cursos})` }}>
         {/* <Image src={banner_cursos} alt="banner" className="dashboard__lider-banner_image" /> */}
         <div className="dashboard__lider-banner_content" >

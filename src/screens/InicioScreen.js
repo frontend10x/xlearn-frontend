@@ -35,7 +35,8 @@ export const InicioScreen = () => {
 
       <div className="Inicio banner&header">
         {/* <Header /> */}
-        <HeaderDashboard home={home} />
+        {/* <HeaderDashboard home={home} /> */}
+        <Header home={home} />
         <Banner />
       </div>
 

@@ -4,6 +4,7 @@ import { Footer } from "../../componentes/Footer";
 import { EmpresaFormulario } from "../../componentes/EmpresaFormulario";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
 import "../../assets/css/screens/public/StyleEmpresaRegister.css"
+import { Header } from "../../componentes/Header";
 
 
 export const EmpresasRegister = () => {
@@ -17,8 +18,8 @@ export const EmpresasRegister = () => {
 
   return (
     <div className="planes-register">
-      <HeaderDashboard show={show}  />
-
+      {/* <HeaderDashboard show={show}  /> */}
+      <Header show={show} />
       
       <section className="planes__register-banner"  style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.675)), url("${registerbanner}")` }}>
         <div className="container">
