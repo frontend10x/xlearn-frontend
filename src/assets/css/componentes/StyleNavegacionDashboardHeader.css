@@ -12,21 +12,30 @@
 }
 
 .user_name {
-  font-size: 14px;
   font-weight: bold;
   padding: 7px 0px 0px 0px;
   font-family: "GTWalsheimPro-Regular";
   font-size: 16px;
   font-weight: 700;
   color: var(--white);
+  margin-top: 10px;
+  text-transform: lowercase;
 }
 
 .button__navegacion-user {
   padding: 0px 0px 12px 0px;
 }
 
-.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover>a {
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
   color: var(--green);
+}
+
+.header__logo {
+  position: absolute;
+  left: 130px;
 }
 
 @media (min-width: 380px) {
@@ -48,10 +57,9 @@
   }
 
   .navegacion__button {
-    padding: 4px 12px;
-    top: -5px;
+    /* padding: 4px 12px; */
+    /* top: -5px; */
     left: 40px;
-    padding: 0px 8px;
     font-size: 22px;
     font-weight: bold;
   }
@@ -132,10 +140,8 @@
   }
 
   .navegacion__button {
-    padding: 4px 12px;
-    top: 5px;
+    /* top: 5px; */
     left: 410px;
-    padding: 0px 8px;
     font-size: 20px;
   }
 
@@ -183,12 +189,16 @@
   .header__logo {
     left: 150px;
     width: 5%;
-    top: 25px;
+    top: 40px;
   }
 
   .burg-toggle {
     left: 100px;
-    top: 20px;
+    top: 30px;
+  }
+
+  div#modalDashboard .nav-link {
+    color: #fff;
   }
 
 }

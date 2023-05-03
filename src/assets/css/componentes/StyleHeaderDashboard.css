@@ -14,9 +14,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* padding: 0px 0 20px 0px; */
     font-family: "GTWalsheimPro-Regular";
-    font-size: 14px;
+    /* font-size: 14px; */
     font-weight: 700;
     color: var(--white);
     white-space: nowrap;
@@ -30,7 +29,7 @@
     justify-content: space-between;
     /* padding: 0px 0 20px 0px; */
     font-family: "GTWalsheimPro-Regular";
-    font-size: 14px;
+    /* font-size: 14px; */
     font-weight: 700;
     color: var(--white);
     white-space: nowrap;
@@ -44,13 +43,48 @@
     justify-content: space-between;
     /* padding: 0px 0 20px 0px; */
     font-family: "GTWalsheimPro-Regular";
-    font-size: 14px;
+    /* font-size: 14px; */
     font-weight: 700;
     color: var(--white);
     white-space: nowrap;
     transition: 0.3s ease;
 }
 
+img.carrito_icon_empresa {
+    width: 25px;
+}
+
 .hide_toogle {
     display: none;
+}
+
+
+@media (max-width: 767px) {
+    /* .header {
+        line-height: 0;
+    } */
+    #header .navegacion {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        right: 0;
+    }
+    #header .navegacion .dropdown.d-flex img {
+        width: 70%!important;
+    }
+    #header .navegacion a.nav-link {
+        display: none!important;
+    }
+    #header .header__logo {
+        left: 20%!important;
+        width: 20%!important;
+        top: 37%!important;
+    }
+    #header .user_name {
+        font-size: 10px;
+        width: 50%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    
 }

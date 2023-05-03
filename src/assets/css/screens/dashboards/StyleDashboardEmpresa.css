@@ -18,7 +18,7 @@
     justify-content: space-between;
     /* padding: 0px 0 20px 0px; */
     font-family: "GTWalsheimPro-Regular";
-    font-size: 14px;
+    /* font-size: 14px; */
     font-weight: 700;
     color: var(--white);
     white-space: nowrap;
@@ -383,8 +383,14 @@ color: var(--green);
 .dashboard__banner-title h1 {
     color: #fff;
     font-weight: bold;
+    text-transform: lowercase!important;
+}
+    
+.style-name {
+    text-transform: capitalize!important;
 }
 
+    
 .dashboard__banner-title p {
     color: #fff;
 }

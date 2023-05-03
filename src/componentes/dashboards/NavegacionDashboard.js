@@ -51,7 +51,7 @@ export const NavegacionDashboard = () => {
     }
 
     const order = event ? "order" : "dashboard__nav"
-    const position = event ? "position-absolute top-50" : "position-absolute top-100 dashboard__nav-link";
+    const position = event ? "position-absolute top-cerrar" : "position-absolute top-principal dashboard__nav-link";
 
     return (
         <div className={styleClass}>
@@ -65,7 +65,7 @@ export const NavegacionDashboard = () => {
                         {/* <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_03}/> Chat</NavLink>
                         <NavLink to='/' className='dashboard__nav-link' ><img src={NavIconLeft_06}/> Reporte</NavLink> */}
 
-                    <NavLink type="button" className={position} onClick={resize} value="Ocultar" ><img src={event ? show : hide} /> <span className="position-absolute top-25 ms-2" >Ocultar</span> </NavLink>
+                    <NavLink type="button" className={position} onClick={resize} value="Ocultar" ><img src={event ? show : hide} /> <span className="position-absolute top-25 ms-2 ocultar-style" >Ocultar</span> </NavLink>
                     </Nav>
                 </div>
             </div>

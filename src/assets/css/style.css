@@ -83,11 +83,7 @@ width: 100%;
   position: absolute;
 } */
 
-.header__logo {
-  position: absolute;
-  left: 130px;
-  top: 25px;
-}
+
 
 .header .logo img {
   max-height: 40px;
@@ -214,25 +210,7 @@ width: 40%;
   background-color: transparent;
 }
 
-.navegacion {
-  column-gap: 2rem;
-  display: flex;
-  position: relative;
-  top: -46px;
-  width: 40%;
-  transform: translate(-50%, 70%);
-  left: 70%;
-}
 
-.navegacion {
-  column-gap: 2rem;
-  display: flex;
-  position: relative;
-  top: -30px;
-  width: 40%;
-  transform: translate(-50%, 50%);
-  left: 70%;
-}
 
 .navbar {
   display: flex;
@@ -254,7 +232,7 @@ width: 40%;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-family: "GTWalsheimPro-Regular";
-  font-size: 14px;
+  /* font-size: 14px; */
   font-weight: 700;
   color: var(--white);
   white-space: nowrap;
@@ -706,6 +684,7 @@ transform: translate(-100%, -50%);
 
 .dashboard__lider-banner_content h1 {
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .dashboard__lider-banner_content p {
@@ -1973,9 +1952,9 @@ top: 17px;
 }
 
 @media (max-width: 1024px) {
-  .header__logo {
+  /* .header__logo {
     left: 70px;
-  }
+  } */
 
   /* .navegacion {
 right: 160px;
@@ -2140,9 +2119,9 @@ height: 45vh;
   }
 
   /* Header */
-  .header__logo {
+  /* .header__logo {
     top: 20px;
-  }
+  } */
 
   /* Header Fin */
 
@@ -2391,12 +2370,12 @@ left: 25%;
     padding: 5px;
   }
 
-  .header__logo {
+  /* .header__logo {
     position: relative;
     top: 0px;
     left: 12px;
     width: 15%;
-  }
+  } */
 
   /* Header Fin */
   /* Navegacion */

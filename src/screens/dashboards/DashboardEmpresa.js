@@ -138,7 +138,7 @@ export const DashboardEmpresa = () => {
                 <div className="col-md-12">
                   <div className="dashboard__banner-content" style={{ backgroundImage: `linear-gradient(45deg, rgb(0 35 51), rgb(0 0 0 / 0%)), url("${vistaEmpresa}")` }}>
                     <div className="dashboard__banner-title">
-                      <h1>¡Hola {name}! <Image src={hand} alt="gradiente" /></h1>
+                      <h1>¡<span className="style-name">Hola</span> {name}! <Image src={hand} alt="gradiente" /></h1>
                       <p>
                         Es el momento de gestionar y desarrollar tus proyectos con Xlearn
                       </p>

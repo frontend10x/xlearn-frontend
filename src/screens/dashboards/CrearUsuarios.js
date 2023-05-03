@@ -13,7 +13,8 @@ import "../../assets/css/screens/dashboards/StyleCrearUsuarios.css";
 
 export const CrearUsuarios = () => {
     
-    const {token, roles,subcompanie_id} = useSelector(state => state.auth)
+    const {token, roles,subcompanie_id} = useSelector(state => state.auth);
+    const { event } = useSelector((state) => state.size);
     const [formValues, handleInputChange] = useForm({
         name: '',
         email: '',
@@ -84,6 +85,8 @@ export const CrearUsuarios = () => {
         }
     }
 
+    const adjustClass = event ? "xln_add_menuLateral" : "col-md-10";
+
     return (
         <div className="dashboard__section-empresa">
             <div className="dashboard__container">
@@ -97,8 +100,8 @@ export const CrearUsuarios = () => {
                             <NavegacionDashboard />
                         </div>
 
-
-                        <div className="col-md-10">
+                        <div className={adjustClass}>
+                        {/* <div className="col-md-10"> */}
 
                             <div className="row dashboard__container-nav_banner">
                                 <div className="col-md-12">
