@@ -120,3 +120,6 @@ export {default as hand } from '../img/hand.png'
 /* Icono de Navegacion Dashboard */
 export {default as hide} from './hide.png';
 export {default as show} from './show.png';
+
+/* Icono de Certificado */
+export {default as certificadoIcon} from './cursos-internos/certificado.png';

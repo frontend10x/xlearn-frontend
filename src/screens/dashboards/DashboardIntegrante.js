@@ -18,7 +18,7 @@ import { CarouselDashboards } from "../../componentes/CarouselDashboards";
 
 import "../../assets/css/screens/dashboards/StyleDashboardIntegrante.css";
 import { Header } from "../../componentes/Header";
-
+import { ButtonDownloadCertificate } from "../../componentes/Commons/Certificate/ButtonDownloadcertificate";
 
 export const DashboardIntegrante = () => {
 
@@ -100,6 +100,8 @@ export const DashboardIntegrante = () => {
                       // <button onClick={evaluation} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Presentar</button> : 
                     } */}
                   </div>
+                  
+                  <ButtonDownloadCertificate courseId={item.id}/>
                 </div>
               ))
               : <p style={{color: "#8894ab"}} className="fw-bold" >Aun no tienes una ruta asignada</p>

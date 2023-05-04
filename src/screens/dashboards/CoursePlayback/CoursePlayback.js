@@ -34,14 +34,17 @@ const CorusePlayback = () => {
     }, [token, course_id])
 
     useEffect(() => {
+        
         if (progress && lessons) {
             const currentLesson = progress?.progress?.find(prg => prg.current)
 
             const currentIndex = progress?.progress?.findIndex(prg => prg.current)
 
-            const activeLesson = currentLesson?.percentage_completion === 100
+            let activeLesson = currentLesson?.percentage_completion === 100
                 ? lessons.at(currentIndex + 1)
                 : lessons.at(currentIndex === -1 ? 0 : currentIndex)
+
+            if(!activeLesson) activeLesson = lessons.at(currentIndex)
 
             const progressCurrent = progress?.progress?.find(prg => prg?.lesson_id === activeLesson?.id)
 
