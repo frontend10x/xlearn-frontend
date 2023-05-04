@@ -5,7 +5,7 @@ import { generateCertificate } from "../../../services/services";
 import { certificadoIcon } from "../../../assets/img";
 import { baseURL } from "../../../utils/route";
 
-export const ButtonDownloadCertificate = ({courseId}) => {
+export const CertificateDownloadButton = ({courseId}) => {
     const [show, setShow] = useState(false);
     const { token, id } = useSelector(state => state.auth)
 
@@ -22,9 +22,9 @@ export const ButtonDownloadCertificate = ({courseId}) => {
   
     return(
         <>
-            {show?.status && (<a href={baseURL + show?.paths?.show} target="_blank" style={{ backgroundColor: "#D4AF37", padding: "3px", borderRadius: "3px", height: "fit-content"}}>
-             <Image src={certificadoIcon} alt="certificate" id='cart-icon' />
-            </a>)}
+          {show?.status && (<a href={baseURL + show?.paths?.show} target="_blank" style={{ backgroundColor: "#D4AF37", padding: "3px", borderRadius: "3px", height: "fit-content"}}>
+            <Image src={certificadoIcon} alt="certificate" id='cart-icon' />
+          </a>)}
         </>
       
     )
