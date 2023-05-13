@@ -34,10 +34,10 @@ export const Header = ({ home, show }) => {
       navigate('/dashboard/lider')
     }
     if (type === "Integrante") {
-        navigate('/dashboard/integrante')
+      navigate('/dashboard/integrante')
     }
-  } 
-  
+  }
+
 
   let currentClass = home ? "header__container" : "header__container background"
   let secondClass = home ? "header fixed_top" : "header fixed_top background"
@@ -50,24 +50,34 @@ export const Header = ({ home, show }) => {
   return (
     <>
       {type === "Empresa" &&
-
-        <Navbar collapseOnSelect expand="lg" className={secondClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }} variant='dark'>
+        <Navbar collapseOnSelect expand="lg" className={currentClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }} variant='dark'>
           <Navbar.Brand className='ms-3' onClick={getHome} >
             <Image src={XlearnLogo} alt="logo" />
           </Navbar.Brand>
-          <Navbar.Collapse id="responsive-navbar-nav" className='me-5' >
+          <Navbar.Collapse id="responsive-navbar-nav" className='' >
             <Nav className='ms-auto' >
-              <Nav.Link id='link' href="/" className='' >
+              <Nav.Link id='link' href="/" className='me-3' >
                 <Image src={cartIcon} alt="cart" id='cart-icon' />
               </Nav.Link>
             </Nav>
-            <Dropdown as={NavItem} className='me-5' >
+            <Dropdown as={NavItem} className='me-5 pe-5' >
               <Dropdown.Toggle as={NavLink} className='me-3' ><Image src={imagenUser} id='user-icon' /></Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item style={{ color: "#000" }} >Configuracion</Dropdown.Item>
+                <Dropdown.Item style={{ color: "#000" }} >Perfil</Dropdown.Item>
                 <Dropdown.Item style={{ color: "#000" }} onClick={logOut}>Cerrar sesión</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
+            {/* <Dropdown as={NavItem} className='pe-5 me-5'>
+              <Dropdown.Toggle as={NavLink} id="dropdown-basic">
+                <Image src={imagenUser} id='user-icon' />
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown> */}
           </Navbar.Collapse>
         </Navbar>
       }
@@ -90,7 +100,7 @@ export const Header = ({ home, show }) => {
             <Dropdown as={NavItem} className='me-5' >
               <Dropdown.Toggle as={NavLink} className='me-2' ><Image src={imagenUser} id='user-icon' /></Dropdown.Toggle>
               <Dropdown.Menu className='me-3' >
-                <Dropdown.Item style={{ color: "#000" }} >Configuracion</Dropdown.Item>
+                <Dropdown.Item style={{ color: "#000" }} >Perfil</Dropdown.Item>
                 <Dropdown.Item style={{ color: "#000" }} onClick={logOut}>Cerrar sesión</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
@@ -98,38 +108,38 @@ export const Header = ({ home, show }) => {
         </Navbar >
       }
 
-      { type === "Integrante" &&
+      {type === "Integrante" &&
         < Navbar collapseOnSelect expand="lg" className={secondClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }} variant='dark'>
-        <Navbar.Brand className='ms-3' onClick={getHome} >
-          <Image src={XlearnLogo} alt="logo" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav" className='me-5' >
-          <Nav className='ms-auto' >
-            <Nav.Link id='link' href="/dashboard/integrante" className='' >
-              Inicio
-            </Nav.Link>
-            <Nav.Link id='link' href="/contact" className='' >
-              Soporte
-            </Nav.Link>
-          </Nav>
-          <Dropdown as={NavItem} className='me-5' >
-            <Dropdown.Toggle as={NavLink} className='me-2' ><Image src={imagenUser} id='user-icon' /></Dropdown.Toggle>
-            <Dropdown.Menu className='me-3 text-center' >
-              <Dropdown.Item style={{ color: "#000" }} >Configuracion</Dropdown.Item>
-              <Dropdown.Item style={{ color: "#000" }} onClick={logOut}>Cerrar sesión</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Navbar.Collapse>
-      </Navbar >
+          <Navbar.Brand className='ms-3' onClick={getHome} >
+            <Image src={XlearnLogo} alt="logo" />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav" className='me-5' >
+            <Nav className='ms-auto' >
+              <Nav.Link id='link' href="/dashboard/integrante" className='' >
+                Inicio
+              </Nav.Link>
+              <Nav.Link id='link' href="/contact" className='' >
+                Soporte
+              </Nav.Link>
+            </Nav>
+            <Dropdown as={NavItem} className='me-5' >
+              <Dropdown.Toggle as={NavLink} className='me-2' ><Image src={imagenUser} id='user-icon' /></Dropdown.Toggle>
+              <Dropdown.Menu className='me-3 text-center' >
+                <Dropdown.Item style={{ color: "#000" }} >Perfil</Dropdown.Item>
+                <Dropdown.Item style={{ color: "#000" }} onClick={logOut}>Cerrar sesión</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Navbar.Collapse>
+        </Navbar >
       }
 
       {
         type === undefined &&
         <Navbar collapseOnSelect expand="lg" className={secondClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }} variant='dark'>
           <Navbar.Brand className='ms-3' >
-            <Button className="ms-2 mb-2 me-3" onClick={() => handleShow(values)}>
-              X
+            <Button className="ms-2 mb-2 me-3" variant="outline-light" id='burg-toogle' onClick={() => handleShow(values)}>
+              |||
             </Button>
             <Image src={XlearnLogo} alt="logo" />
           </Navbar.Brand>
