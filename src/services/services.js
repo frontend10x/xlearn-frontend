@@ -423,3 +423,17 @@ export const validateRut = async (token,subcompanieid,doc) => {
   const response = axios.post(baseURL + `/api/v1/subempresa/rut`,body,config)
   return response.data
 }
+
+export const reportEnterprise = (token, id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  console.log(id,'id de la compañia');
+
+  const response = axios.get(baseURL + `/api/v1/reports/states/${id}`,config);
+  return response;  
+
+}

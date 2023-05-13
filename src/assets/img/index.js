@@ -123,3 +123,12 @@ export {default as show} from './show.png';
 
 /* Icono de Certificado */
 export {default as certificadoIcon} from './cursos-internos/certificado.png';
+
+/* Iconos de reporteria */
+export {default as test} from './examen.png';
+export {default as team} from './support.png';
+export {default as resume} from './resume.png';
+export {default as learn} from './aprender-en-linea.png';
+export {default as time} from './time.png';
+export {default as whiteElipse} from './Elipse141.png';
+export {default as greenElipse} from './Elipse142.png';

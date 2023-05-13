@@ -43,3 +43,7 @@
     width: 30px;
     height: 30px;
 }
+
+#burg-toogle {
+    rotate: 90deg;
+}
