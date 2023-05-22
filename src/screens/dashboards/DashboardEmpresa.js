@@ -28,7 +28,7 @@ import { Header } from "../../componentes/Header";
 
 
 export const DashboardEmpresa = () => {
- 
+
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -116,8 +116,6 @@ export const DashboardEmpresa = () => {
   return (
     <div className="dashboard__section-empresa">
       <div className="dashboard__container">
-
-        {/* <HeaderDashboard /> */}
         <Header />
 
         <div className="container xln-content-dash">
@@ -131,7 +129,7 @@ export const DashboardEmpresa = () => {
 
 
             <div className={adjustClass}>
-            {/* <div className="col-md-10"> */}
+              {/* <div className="col-md-10"> */}
 
               <div className="row dashboard__container-nav_banner">
 

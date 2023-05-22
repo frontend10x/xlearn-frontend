@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../../assets/css/screens/dashboards/StyleCrearEquipo.css";
+import { Header } from "../../componentes/Header";
 
 
 const users = []
@@ -101,7 +102,8 @@ export const CrearEquipos = () => {
   return (
     <div className="dashboard__section-empresa">
       <div className="dashboard__container">
-        <HeaderDashboard />
+        {/* <HeaderDashboard /> */}
+        <Header />
         <div className="container xln-content-dash">
 
           <div className="row">

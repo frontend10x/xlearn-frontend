@@ -132,3 +132,4 @@ export {default as learn} from './aprender-en-linea.png';
 export {default as time} from './time.png';
 export {default as whiteElipse} from './Elipse141.png';
 export {default as greenElipse} from './Elipse142.png';
+export {default as calendario } from './calendario.png';
