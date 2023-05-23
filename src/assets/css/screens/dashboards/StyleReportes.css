@@ -23,12 +23,18 @@
 #percentage-container {
     background-color: var(--whiteOff);
     height: 412px;
-    width: 1115px;
+    /* width: 1115px; */
     margin-top: 20px;
+    border-radius: 10px;
+}
+
+#main-container {
+    height: 110vh;
 }
 
 #info-states {
-    
+    background-color: var(--white);
+    height: 100vh;
 }
 
 #circle-progress {
@@ -58,4 +64,14 @@
 
 #container-teams {
     height: 80vh;
+}
+
+#dots {
+    width: 15px;
+    height: 15px;
+}
+
+#calendar {
+    height: 59px;
+    width: 59px;
 }

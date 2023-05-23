@@ -56,7 +56,7 @@ export const Header = ({ home, show }) => {
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav" className='' >
             <Nav className='ms-auto' >
-              <Nav.Link id='link' href="/" className='me-3' >
+              <Nav.Link id='link' href="/compra/cupos" className='me-3' >
                 <Image src={cartIcon} alt="cart" id='cart-icon' />
               </Nav.Link>
             </Nav>

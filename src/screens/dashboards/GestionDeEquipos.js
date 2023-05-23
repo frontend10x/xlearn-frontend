@@ -11,6 +11,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 import "../../assets/css/screens/dashboards/StyleGestionDeEquipos.css";
+import { Header } from "../../componentes/Header";
 
 export const GestionDeEquipos = () => {
 
@@ -45,7 +46,8 @@ export const GestionDeEquipos = () => {
         <div className="dashboard__section-empresa">
 
             <div className="dashboard__container">
-                <HeaderDashboard />
+                {/* <HeaderDashboard /> */}
+                <Header />
                 <div className="container xln-content-dash">
 
                 <div className="row">

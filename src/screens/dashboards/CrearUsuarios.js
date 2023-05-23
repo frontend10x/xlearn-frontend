@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import Swal from "sweetalert2";
 
 import "../../assets/css/screens/dashboards/StyleCrearUsuarios.css";
+import { Header } from "../../componentes/Header";
 
 export const CrearUsuarios = () => {
     
@@ -90,7 +91,8 @@ export const CrearUsuarios = () => {
     return (
         <div className="dashboard__section-empresa">
             <div className="dashboard__container">
-                <HeaderDashboard />
+                {/* <HeaderDashboard /> */}
+                <Header />
                 <div className="container xln-content-dash">
 
 

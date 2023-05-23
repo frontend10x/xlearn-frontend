@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { desactivateUser, getRegisteredUsers, getUserByEnterprise } from "../../services/services";
 import { useNavigate } from "react-router-dom";
 import '../../assets/css/screens/dashboards/StyleUsoCupos.css';
+import { Header } from "../../componentes/Header";
 
 export const UsoCupos = () => {
     const [users, setUsers] = useState();
@@ -46,8 +47,8 @@ export const UsoCupos = () => {
     return (
         <div className="xlrn__uso-cupos__section" >
             <div className="dashboard__container">
-                <HeaderDashboard />
-
+                {/* <HeaderDashboard /> */}
+                <Header />
                 <div className="container xln-content-dash" >
 
                     <div className="row">
