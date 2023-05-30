@@ -23,7 +23,7 @@ export const Reportes = () => {
 
     useEffect(() => {
         function getInfoEnterprise() {
-            reportEnterprise(token, 83)
+            reportEnterprise(token, id)
                 .then(evnt => {
                     setData(evnt.data)
                 })
@@ -101,7 +101,7 @@ export const Reportes = () => {
                                         <div className='d-flex align-items-center flex-column' >
                                             <div className='d-flex gap-2' >
                                                 <Image src={learn} id='icons' className='mt-2' />
-                                                <h3 id='title' >{data?.time?.total}H</h3>
+                                                <h3 id='title' >{data?.time?.total}</h3>
                                             </div>
                                             <h5 id='subtitle' >Tiempo de Formación</h5>
                                         </div>

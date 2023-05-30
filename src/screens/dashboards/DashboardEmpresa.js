@@ -58,7 +58,7 @@ export const DashboardEmpresa = () => {
   ]);
 
   const [allCourses, setAllCourses] = useState();
-  const [subscripcion, setSubscripcion] = useState();
+  const [subscripcion, setSubscripcion] = useState(false);
 
   useEffect(() => {
     async function getQuotas() {
@@ -88,7 +88,7 @@ export const DashboardEmpresa = () => {
     async function validateSubscription() {
       const data = await validateMembership(token,subcompanie_id);
       // console.log(data.data.activeSubscription,'validacion');
-      setSubscripcion(data.data.activeSubscription);
+      // setSubscripcion(data.data.activeSubscription);
     }
 
     getQuotas();
@@ -238,7 +238,7 @@ export const DashboardEmpresa = () => {
                   </div>
                 </div>
               </div>
-              <div className="xlrn__dashborad__lider-container-block">
+              {/* <div className="xlrn__dashborad__lider-container-block">
                 <div className="xlrn__dashboard__lider-block d-flex " >
 
                   {allCourses && subscripcion ?
@@ -261,7 +261,7 @@ export const DashboardEmpresa = () => {
                     : <p style={{ color: "#8894ab" }} className="fw-bold" >Aun no tienes una subscripción activa para ver los cursos</p>
                   }
                 </div>
-              </div>
+              </div> */}
 
               <div className="xln_section_course dashboard__card-info">
                 <h2>Identifica las brechas de aprendizaje y sugiere contenido</h2>
