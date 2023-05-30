@@ -18,6 +18,7 @@ import { CarouselDashboards } from "../../componentes/CarouselDashboards";
 
 import "../../assets/css/screens/dashboards/StyleDashboardLider.css";
 import { Header } from "../../componentes/Header";
+import { CertificateDownloadButton } from "../../componentes/Commons/Certificate/CertificateDownloadButton";
 
 export const DashboardLider = () => {
 
@@ -97,7 +98,10 @@ export const DashboardLider = () => {
                       : <button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
                     }
                   </div>
+
+                    <CertificateDownloadButton courseId={item.id} />
                 </div>
+
               ))
               : <p style={{ color: "#8894ab" }} className="fw-bold" >Aun no tienes una ruta asignada</p>
             }
