@@ -45,6 +45,7 @@ import { Cookies } from "../screens/Cookies";
 import { ErrorScreen } from "../screens/ErrorScreen";
 import { CommonRoutes } from "./CommonRoutes";
 import { Reportes } from "../screens/dashboards/Reportes";
+import { NonviewRoutes } from "./NonviewRoutes";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -53,21 +54,23 @@ export const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<InicioScreen />} />
-        <Route exact path="/courses" element={<CursosScreen />} />
-        <Route exact path="/plans" element={<PlanesScreen />} />
-        <Route exact path="/plans/register" element={<EmpresasRegister />} />
-        <Route exact path="/enterprises" element={<EmpresaScreen />} />
-        <Route exact path="/login" element={<LoginScreen />} />
-        <Route exact path="/contact" element={<ContactoScreen />} />
-        <Route exact path="/course/info/:id" element={<InfoCourse />} />
-        <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
-        <Route exact path="/informacion/ayuda" element={<Ayuda />} />
-        <Route exact path="/recuperacion/contrasena" element={<ForgotPassword />} />
-        <Route exact path="/recuperacion/:id" element={<RecuperarPassword />} />
-        <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
-        <Route exact path="/cookies/usuario" element={<Cookies />} />
-        
+        <Route element={<NonviewRoutes token={token} type={type} />}  >
+          <Route exact path="/" element={<InicioScreen />} />
+          <Route exact path="/courses" element={<CursosScreen />} />
+          <Route exact path="/plans" element={<PlanesScreen />} />
+          <Route exact path="/plans/register" element={<EmpresasRegister />} />
+          <Route exact path="/enterprises" element={<EmpresaScreen />} />
+          <Route exact path="/login" element={<LoginScreen />} />
+          <Route exact path="/contact" element={<ContactoScreen />} />
+          <Route exact path="/course/info/:id" element={<InfoCourse />} />
+          <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
+          <Route exact path="/informacion/ayuda" element={<Ayuda />} />
+          <Route exact path="/recuperacion/contrasena" element={<ForgotPassword />} />
+          <Route exact path="/recuperacion/:id" element={<RecuperarPassword />} />
+          <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
+          <Route exact path="/cookies/usuario" element={<Cookies />} />
+        </Route>
+
 
 
         {/* RUTA DE EMPRESA */}
