@@ -431,8 +431,6 @@ export const reportEnterprise = (token, id) => {
     }
   };
 
-  console.log(id,'id de la compañia');
-
   const response = axios.get(baseURL + `/api/v1/reports/states/${id}`,config);
   return response;  
 
