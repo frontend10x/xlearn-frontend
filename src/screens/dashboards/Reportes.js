@@ -10,7 +10,7 @@ import { Footer } from '../../componentes/Footer'
 import { getEnterpriseGroups } from '../../services/services'
 import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren } from "react-circular-progressbar";
 import { test, team, resume, learn, time, greenElipse, whiteElipse, calendario } from '../../assets/img'
-
+import { ProgressBar,Step } from 'react-step-progress-bar'
 
 export const Reportes = () => {
 
@@ -23,7 +23,7 @@ export const Reportes = () => {
 
     useEffect(() => {
         function getInfoEnterprise() {
-            reportEnterprise(token, id)
+            reportEnterprise(token, 83)
                 .then(evnt => {
                     setData(evnt.data)
                 })
@@ -44,7 +44,7 @@ export const Reportes = () => {
         getEnterprisesGroup();
     }, []);
 
-    console.log(data,'estructura');
+    console.log(data, 'estructura');
 
     return (
 
@@ -62,12 +62,12 @@ export const Reportes = () => {
                         </div>
 
                         <div className={adjustClass}>
-                            
+
                             <div className="row dashboard__container-nav_banner">
-                            <div className='mb-5'>
-                                <h1 style={{ color: "#002333", fontSize: "28px" }} className='fw-bold' >Reportes</h1>
-                                <h2 style={{ color: "#002333", fontSize: "20px" }} >Monitorea el rendimiento de tus equipos en el proyecto</h2>
-                            </div>
+                                <div className='mb-5'>
+                                    <h1 style={{ color: "#002333", fontSize: "28px" }} className='fw-bold' >Reportes</h1>
+                                    <h2 style={{ color: "#002333", fontSize: "20px" }} >Monitorea el rendimiento de tus equipos en el proyecto</h2>
+                                </div>
 
                                 <div id='info-states' className='container-fluid ' >
                                     <h3>Todos los estados</h3>
@@ -156,7 +156,7 @@ export const Reportes = () => {
                                                         })} circleRatio={0.5} value={data?.courses?.pending?.percentage}
                                                             strokeWidth={7}
                                                             className='mt-2'
-                                                             >
+                                                        >
                                                             <div className='w-25 h-25' >
                                                                 <img className='img-fluid' id='icons' src={time} alt="doge" />
                                                             </div>
@@ -186,7 +186,36 @@ export const Reportes = () => {
                                                 <div className='d-flex gap-1 '>
                                                     <div className='mt-4 pe-5 ps-5' >
                                                         <h3 className='fw-bold' >Tiempo transcurrido</h3>
-                                                        <input type="range" className="range mt-5" value={data?.time?.total} min={0} max={data?.time?.elapsed}  readOnly />
+                                                        {/* <input type="range" className="range mt-5" value={data?.time?.total} min={0} max={data?.time?.elapsed}  readOnly /> */}
+                                                        <ProgressBar percent={75}>
+                                                            <Step>
+                                                                {({ accomplished, index }) => (
+                                                                    <div
+                                                                        className={`indexedStep ${accomplished ? "accomplished" : null}`}
+                                                                    >
+                                                                        {index + 1}
+                                                                    </div>
+                                                                )}
+                                                            </Step>
+                                                            <Step>
+                                                                {({ accomplished, index }) => (
+                                                                    <div
+                                                                        className={`indexedStep ${accomplished ? "accomplished" : null}`}
+                                                                    >
+                                                                        {index + 1}
+                                                                    </div>
+                                                                )}
+                                                            </Step>
+                                                            <Step>
+                                                                {({ accomplished, index }) => (
+                                                                    <div
+                                                                        className={`indexedStep ${accomplished ? "accomplished" : null}`}
+                                                                    >
+                                                                        {index + 1}
+                                                                    </div>
+                                                                )}
+                                                            </Step>
+                                                        </ProgressBar>
                                                     </div>
                                                     <div id='calendar' className='text-center ms-5 w-50 mt-3' >
                                                         <img src={calendario} className='img-fluid w-25' />
