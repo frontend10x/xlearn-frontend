@@ -3,3 +3,93 @@
     bottom: 40px;
     width: 10px;
 }
+
+.row.content_curso_interno {
+    width: 100%;
+}
+.nav_ruta {
+    display: block;
+    height: 100vh;
+    overflow: overlay;
+    position: fixed;
+    background: #061d2f;
+    width: 80px;
+}
+
+.nav_ruta::-webkit-scrollbar {
+    width: 7px; /* Ancho de la barra de desplazamiento */
+}
+
+.nav_ruta::-webkit-scrollbar-track {
+    background: #061d2f; /* Color de fondo de la barra de desplazamiento */
+}
+
+.nav_ruta::-webkit-scrollbar-thumb:hover {
+    background-color: #31fb84; /* Color del pulgar de la barra de desplazamiento al pasar el cursor sobre él */
+    height: 10px; /* Altura del pulgar */
+}
+
+/* .nav_ruta::-webkit-scrollbar {
+    -webkit-appearance: none;
+} */
+/* .nav_ruta::-webkit-scrollbar-thumb {
+    background-color: #31fb84;
+    border-radius: 0.8rem;
+    border: 6px solid #002333;
+} */
+
+.header {
+    position: fixed!important;
+}
+
+.xln__content__rutaClick {
+    margin-top: 15px;
+    position: relative;
+    top: 10px;
+}
+
+.xlnMenu__icon__player {
+    padding-top: 112px;
+}
+
+.xlnMenu__icon__player img {
+    width: 47px;
+    position: relative;
+    left: 0px;
+}
+
+.xln-btn-couseExamen img {
+    width: 47px;
+    position: relative;
+    left: -7px;
+}
+
+.vide_ruta {
+    padding:3%;
+}
+.xln_player_course {
+    width: 100%;
+    float: left;
+    height: auto;
+    border-top: 13px solid #00161f;
+}
+
+
+@media (max-width: 900px) {
+    .nav_ruta {
+        display: none;
+    }
+    .vide_ruta {
+        padding: 0;
+        width: 100%;
+    }
+    .vide_ruta .ms-5.mt-5 {
+        margin: 0!important;
+        margin-top: 20%!important;
+    }
+    #my-video iframe {
+        width: 100%!important;
+        height: 40vh!important;
+    }
+}
+

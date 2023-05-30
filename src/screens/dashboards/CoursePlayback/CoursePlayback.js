@@ -132,12 +132,9 @@ const CorusePlayback = () => {
                     <h2 style={{ color: 'white' }}>{name}</h2>
                     <button>Comunidad</button>
                 </div> */}
-                <div className="d-flex">
+                <div className="content_curso_interno">
                     <div className="video__reproduccion-container-player" >
-                        <Col md={12} className="w-100" >
-                            <VideoPlayer videoCurrent={videoCurrent} destroy={destroy} handlingProgress={handlingProgress} />
-                        </Col>
-                        <Col md={1} className="mt-5 h-75" >
+                        <div className="nav_ruta" >
                             <div className="xlnMenu__icon__player">
                                 <p className="ms-3" >Ruta</p>
                                 <img src={IconRutaPlayer} className="ms-3" />
@@ -154,7 +151,11 @@ const CorusePlayback = () => {
                             {evaluation &&
                                 <button className="xln-btn-couseExamen mt-3 ms-3" onClick={redirect} ><img src={IconRutaExamen} /></button>
                             }
-                        </Col>
+                        </div>
+                        <div className="vide_ruta" >
+                            <VideoPlayer videoCurrent={videoCurrent} destroy={destroy} handlingProgress={handlingProgress} />
+                        </div>
+                    
                     </div>
                 </div>
             </div>
