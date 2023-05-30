@@ -232,6 +232,22 @@ section.section_carousel_curso {
     padding-bottom:9%!important;
 }
 
+.xln__info_courses .modal-body {
+    padding: 0;
+}
+.xln__info_courses .modal-header button {
+    filter: invert(100%) brightness(1000%)!important;
+  }
+
+  /* .xln__info_courses .modal-header {
+    display: contents;
+} */
+.xln__info_courses .modal-header button.btn-close {
+    position: relative;
+    /* top: 30px; */
+    right: 20px;
+    z-index: 9;
+}
 @media (max-width: 1367px) {}
 
 @media (max-width: 768px) {
