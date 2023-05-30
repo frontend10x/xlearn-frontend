@@ -239,6 +239,10 @@ export const Reportes = () => {
                                     </div>
                                 </div>
                             </div>
+                            
+                            <div className='row' >
+                                <h3>Reporte de equipos</h3>
+                            </div>
 
                             <div className="row">
                                 <Footer />
