@@ -23,7 +23,9 @@
 
 #link {
     color: var(--white);
-    font-size: 16px;
+    font-size: 14px;
+    padding-left: 18px;
+    padding-right: 18px;
 }
 
 #link:hover {
@@ -46,4 +48,12 @@
 
 #burg-toogle {
     rotate: 90deg;
+    border: 0px solid #002333;
+    top: 5px;
+    position: relative;
+}
+#burg-toogle:hover {
+    color: #31fb84;
+    background-color: #002333!important;
+    border-color: #002333!important;
 }

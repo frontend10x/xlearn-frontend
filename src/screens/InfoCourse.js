@@ -195,11 +195,11 @@ export const InfoCourse = () => {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <iframe width="993" height="562" src={course?.video_path} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen={true}></iframe>
+                            <iframe width="100%" height="100%" src={course?.video_path} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" webkitallowfullscreen="true" mozallowfullscreen="true" allowFullScreen={true}></iframe>
                         </div>
-                        <div className="modal-footer">
+                        {/* <div className="modal-footer">
                             <button type="button" className="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
