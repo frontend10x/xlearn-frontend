@@ -23,7 +23,7 @@ export const Reportes = () => {
 
     useEffect(() => {
         function getInfoEnterprise() {
-            reportEnterprise(token, id)
+            reportEnterprise(token, subcompanie_id)
                 .then(evnt => {
                     setData(evnt.data)
                 })
@@ -47,7 +47,6 @@ export const Reportes = () => {
     console.log(data, 'estructura');
 
     return (
-
 
         <div className="dashboard__section-empresa">
             <div className="dashboard__container">
@@ -101,7 +100,7 @@ export const Reportes = () => {
                                         <div className='d-flex align-items-center flex-column' >
                                             <div className='d-flex gap-2' >
                                                 <Image src={learn} id='icons' className='mt-2' />
-                                                <h3 id='title' >{data?.time?.total}</h3>
+                                                <h3 id='title' >{data?.trainingTime?.total}</h3>
                                             </div>
                                             <h5 id='subtitle' >Tiempo de Formación</h5>
                                         </div>
@@ -119,7 +118,7 @@ export const Reportes = () => {
                                                         })} circleRatio={0.5} value={data?.courses?.completed?.percentage}
                                                             strokeWidth={7}
                                                             className='mt-1' >
-                                                            <h3 style={{ marginTop: -60 }} >{data?.courses?.completed?.percentage} %</h3>
+                                                            <h3 style={{ marginTop: -60 }} >{Math.floor(data?.courses?.completed?.percentage)} %</h3>
                                                         </CircularProgressbarWithChildren>
                                                     </div>
                                                     <div className='mt-5'>
@@ -137,7 +136,7 @@ export const Reportes = () => {
                                                         })} circleRatio={0.5} value={data?.courses?.pending?.percentage}
                                                             strokeWidth={7}
                                                             className='mt-1' >
-                                                            <h3 style={{ marginTop: -60 }} >{data?.courses?.pending?.percentage} %</h3>
+                                                            <h3 style={{ marginTop: -60 }} >{Math.floor(data?.courses?.pending?.percentage)} %</h3>
                                                         </CircularProgressbarWithChildren>
                                                     </div>
                                                     <div className='mt-5'>
@@ -167,7 +166,7 @@ export const Reportes = () => {
                                                         <div className='d-flex gap-1' >
                                                             <div className='d-flex gap-1'>
                                                                 <img src={whiteElipse} id='dots' className='img-fluid' />
-                                                                <p>{data?.dedicatedHours?.workingHours}</p>
+                                                                <p>{data?.dedicatedHours?.nonWorkingHours}</p>
                                                                 <p style={{ fontSize: "11px" }}>No laborales</p>
                                                             </div>
                                                             <div className='d-flex gap-1'>
@@ -186,40 +185,11 @@ export const Reportes = () => {
                                                 <div className='d-flex gap-1 '>
                                                     <div className='mt-4 pe-5 ps-5' >
                                                         <h3 className='fw-bold' >Tiempo transcurrido</h3>
-                                                        {/* <input type="range" className="range mt-5" value={data?.time?.total} min={0} max={data?.time?.elapsed}  readOnly /> */}
-                                                        <ProgressBar percent={75}>
-                                                            <Step>
-                                                                {({ accomplished, index }) => (
-                                                                    <div
-                                                                        className={`indexedStep ${accomplished ? "accomplished" : null}`}
-                                                                    >
-                                                                        {index + 1}
-                                                                    </div>
-                                                                )}
-                                                            </Step>
-                                                            <Step>
-                                                                {({ accomplished, index }) => (
-                                                                    <div
-                                                                        className={`indexedStep ${accomplished ? "accomplished" : null}`}
-                                                                    >
-                                                                        {index + 1}
-                                                                    </div>
-                                                                )}
-                                                            </Step>
-                                                            <Step>
-                                                                {({ accomplished, index }) => (
-                                                                    <div
-                                                                        className={`indexedStep ${accomplished ? "accomplished" : null}`}
-                                                                    >
-                                                                        {index + 1}
-                                                                    </div>
-                                                                )}
-                                                            </Step>
-                                                        </ProgressBar>
+                                                        <input type="range" className="range mt-5" value={data?.time?.elapsed} min={0} max={data?.time?.total}  readOnly />
                                                     </div>
                                                     <div id='calendar' className='text-center ms-5 w-50 mt-3' >
                                                         <img src={calendario} className='img-fluid w-25' />
-                                                        <h5>{data?.time?.elapsed} días </h5>
+                                                        <h5>{data?.time?.total} días </h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -240,9 +210,9 @@ export const Reportes = () => {
                                 </div>
                             </div>
                             
-                            <div className='row' >
+                            {/* <div className='row' >
                                 <h3>Reporte de equipos</h3>
-                            </div>
+                            </div> */}
 
                             <div className="row">
                                 <Footer />
