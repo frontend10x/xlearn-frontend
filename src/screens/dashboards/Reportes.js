@@ -10,7 +10,7 @@ import { Footer } from '../../componentes/Footer'
 import { getEnterpriseGroups } from '../../services/services'
 import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren } from "react-circular-progressbar";
 import { test, team, resume, learn, time, greenElipse, whiteElipse, calendario } from '../../assets/img'
-
+import { ProgressBar,Step } from 'react-step-progress-bar'
 
 export const Reportes = () => {
 
@@ -23,7 +23,7 @@ export const Reportes = () => {
 
     useEffect(() => {
         function getInfoEnterprise() {
-            reportEnterprise(token, 83)
+            reportEnterprise(token, id)
                 .then(evnt => {
                     setData(evnt.data)
                 })
@@ -39,12 +39,12 @@ export const Reportes = () => {
         async function getEnterprisesGroup() {
             const data = await getEnterpriseGroups(token, subcompanie_id);
             setGroups(data.groups._embedded.groups)
-            console.log(data.groups)
-            console.log(data, 'structura')
         }
 
         getEnterprisesGroup();
     }, []);
+
+    console.log(data, 'estructura');
 
     return (
 
@@ -62,17 +62,16 @@ export const Reportes = () => {
                         </div>
 
                         <div className={adjustClass}>
-                            
+
                             <div className="row dashboard__container-nav_banner">
-                            <div className='mt-5 mb-5'>
-                                <h1 style={{ color: "#002333", fontSize: "28px" }} className='fw-bold' >Reportes</h1>
-                                <h2 style={{ color: "#002333", fontSize: "20px" }} >Monitorea el rendimiento de tus equipos en el proyecto</h2>
-                            </div>
+                                <div className='mb-5'>
+                                    <h1 style={{ color: "#002333", fontSize: "28px" }} className='fw-bold' >Reportes</h1>
+                                    <h2 style={{ color: "#002333", fontSize: "20px" }} >Monitorea el rendimiento de tus equipos en el proyecto</h2>
+                                </div>
 
-                                <div id='info-states' className='container ' >
+                                <div id='info-states' className='container-fluid ' >
                                     <h3>Todos los estados</h3>
-                                    <div className='d-flex gap-3 mt-3 justify-content-center' >
-
+                                    <div className='d-flex gap-3 mt-3 justify-content-between' >
                                         <div className='me-5' >
                                             <div className='d-flex ms-4' >
                                                 <h3 id='title'>{data?.users?.active} / <span id='complement-title'>{data?.users?.total}</span> </h3>
@@ -99,12 +98,6 @@ export const Reportes = () => {
                                             </div>
                                             <h5 id='subtitle' >Certificados otorgados</h5>
                                         </div>
-                                        {/* <div>
-                                        <div className='d-flex' >
-                                            <h3 id='title' >{data?.certificates?.total}</h3>
-                                        </div>
-                                        <h5 id='subtitle' >Certificados otorgados</h5>
-                                    </div> */}
                                         <div className='d-flex align-items-center flex-column' >
                                             <div className='d-flex gap-2' >
                                                 <Image src={learn} id='icons' className='mt-2' />
@@ -115,7 +108,7 @@ export const Reportes = () => {
                                     </div>
 
 
-                                    <div className='container' id='percentage-container'>
+                                    <div className='container-fluid' id='percentage-container'>
                                         <div className='row border-bottom'>
                                             <div className="col-md-4" >
                                                 <div className='d-flex gap-3'>
@@ -125,7 +118,7 @@ export const Reportes = () => {
                                                             trailColor: "#fff", pathColor: "#31fb84", textSize: "25px"
                                                         })} circleRatio={0.5} value={data?.courses?.completed?.percentage}
                                                             strokeWidth={7}
-                                                            className='mt-1'>
+                                                            className='mt-1' >
                                                             <h3 style={{ marginTop: -60 }} >{data?.courses?.completed?.percentage} %</h3>
                                                         </CircularProgressbarWithChildren>
                                                     </div>
@@ -143,13 +136,13 @@ export const Reportes = () => {
                                                             trailColor: "#fff", pathColor: "#31fb84", textSize: "25px"
                                                         })} circleRatio={0.5} value={data?.courses?.pending?.percentage}
                                                             strokeWidth={7}
-                                                            className='mt-1'>
+                                                            className='mt-1' >
                                                             <h3 style={{ marginTop: -60 }} >{data?.courses?.pending?.percentage} %</h3>
                                                         </CircularProgressbarWithChildren>
                                                     </div>
                                                     <div className='mt-5'>
                                                         <h3>{data?.courses?.pending?.total}</h3>
-                                                        <h5 id='subtitle'>Cursos completados</h5>
+                                                        <h5 id='subtitle'>Cursos pendientes</h5>
                                                     </div>
                                                 </div>
 
@@ -162,7 +155,8 @@ export const Reportes = () => {
                                                             trailColor: "#fff", pathColor: "#31fb84", textSize: "25px"
                                                         })} circleRatio={0.5} value={data?.courses?.pending?.percentage}
                                                             strokeWidth={7}
-                                                            className='mt-2'>
+                                                            className='mt-2'
+                                                        >
                                                             <div className='w-25 h-25' >
                                                                 <img className='img-fluid' id='icons' src={time} alt="doge" />
                                                             </div>
@@ -189,25 +183,55 @@ export const Reportes = () => {
                                         </div>
                                         <div className="row">
                                             <div className="col-md-6">
-                                                <div className='d-flex gap-5 '>
-                                                    <div className='mt-3 pe-5 ps-5' >
+                                                <div className='d-flex gap-1 '>
+                                                    <div className='mt-4 pe-5 ps-5' >
                                                         <h3 className='fw-bold' >Tiempo transcurrido</h3>
-                                                        <input type="range" className="range mt-5" value={50} />
+                                                        {/* <input type="range" className="range mt-5" value={data?.time?.total} min={0} max={data?.time?.elapsed}  readOnly /> */}
+                                                        <ProgressBar percent={75}>
+                                                            <Step>
+                                                                {({ accomplished, index }) => (
+                                                                    <div
+                                                                        className={`indexedStep ${accomplished ? "accomplished" : null}`}
+                                                                    >
+                                                                        {index + 1}
+                                                                    </div>
+                                                                )}
+                                                            </Step>
+                                                            <Step>
+                                                                {({ accomplished, index }) => (
+                                                                    <div
+                                                                        className={`indexedStep ${accomplished ? "accomplished" : null}`}
+                                                                    >
+                                                                        {index + 1}
+                                                                    </div>
+                                                                )}
+                                                            </Step>
+                                                            <Step>
+                                                                {({ accomplished, index }) => (
+                                                                    <div
+                                                                        className={`indexedStep ${accomplished ? "accomplished" : null}`}
+                                                                    >
+                                                                        {index + 1}
+                                                                    </div>
+                                                                )}
+                                                            </Step>
+                                                        </ProgressBar>
                                                     </div>
-                                                    <div id='calendar' className='ms-5 mt-3' >
-                                                        <img src={calendario} className='img-fluid' />
+                                                    <div id='calendar' className='text-center ms-5 w-50 mt-3' >
+                                                        <img src={calendario} className='img-fluid w-25' />
+                                                        <h5>{data?.time?.elapsed} días </h5>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="col-md-6">
-                                                <div className='d-flex gap-5 '>
-                                                    <div className='mt-3 pe-5 ps-5' >
+                                                <div className='d-flex gap-1'>
+                                                    <div className='mt-4 pe-5 ps-5' >
                                                         <h3 className='fw-bold' >Cursos completados</h3>
                                                         <h5>Cursos por fuera de la ruta</h5>
-                                                        <h3>14</h3>
+                                                        <h3>0</h3>
                                                     </div>
-                                                    <div id='calendar' className='ms-5 mt-3' >
-                                                        <img src={test} className='img-fluid' />
+                                                    <div id='calendar' className='ms-5 w-50 mt-3' >
+                                                        <img src={test} className='img-fluid w-25' />
                                                     </div>
                                                 </div>
                                             </div>

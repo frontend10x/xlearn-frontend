@@ -431,9 +431,18 @@ export const reportEnterprise = (token, id) => {
     }
   };
 
-  console.log(id,'id de la compañia');
-
   const response = axios.get(baseURL + `/api/v1/reports/states/${id}`,config);
   return response;  
 
+}
+
+export const validateMembership = (token, subcompanie_id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const response = axios.get(baseURL + `/api/v1/subempresa/validateSubscription/${subcompanie_id}`,config);
+  return response;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Navbar, Nav, Image, Row, Col, NavDropdown, Button, NavLink, Modal, Dropdown, NavItem } from 'react-bootstrap'
 import "../assets/css/componentes/HeaderStyle.css"
 import { XlearnLogo, cartIcon, imagenUser } from "../assets/img";
@@ -37,6 +37,20 @@ export const Header = ({ home, show }) => {
       navigate('/dashboard/integrante')
     }
   }
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'hidden') {
+      // el usuario no está en tu sitio web, enviar una notificación push
+      var notification = new Notification('Hola,vuelve', {
+        body: 'Contenido de la notificación'
+      });
+      }
+
+    });
+
+  useEffect(() => {
+    
+  })
 
 
   let currentClass = home ? "header__container" : "header__container background"
