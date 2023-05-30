@@ -84,7 +84,7 @@ export const quizDiagnostic = async (token) => {
 };
 
 export const getCourse = async (token) => {
-  const response = await axios.get(baseURL + "/api/v1/course/list", {
+  const response = await axios.get(baseURL + "/api/v1/course/list?offset=1&limit=12", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
