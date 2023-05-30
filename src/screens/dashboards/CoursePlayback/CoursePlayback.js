@@ -13,6 +13,7 @@ import { Col } from "react-bootstrap";
 import { evaluationCourse } from "../../../services/services";
 
 import "../../../assets/css/screens/dashboards/StyleCoursePlayback.css";
+import { Header } from "../../../componentes/Header";
 
 const CorusePlayback = () => {
     const { course_id, name } = useParams()
@@ -126,7 +127,7 @@ const CorusePlayback = () => {
 
     return (
         <div className="video__reproduccion-section" >
-            <HeaderDashboard />
+            <Header/>
             <div className="video__reproduccion-container" >
                 {/* <div className="video__reproduccion-content" >
                     <h2 style={{ color: 'white' }}>{name}</h2>
