@@ -22,8 +22,8 @@ export const CertificateDownloadButton = ({courseId}) => {
   
     return(
         <>
-          {show?.status && (<a href={baseURL + show?.paths?.show} target="_blank" style={{ backgroundColor: "#D4AF37", padding: "3px", borderRadius: "3px", height: "fit-content"}}>
-            <Image src={certificadoIcon} alt="certificate" id='cart-icon' />
+          {show?.status && (<a href={baseURL + show?.paths?.show} target="_blank" className="link-certificado">
+            <Image src={certificadoIcon} alt="certificate" id='cart-icon' className="icon-certificado-courses" />
           </a>)}
         </>
       

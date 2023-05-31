@@ -632,8 +632,14 @@ transform: translate(-100%, -50%);
 
 
 
-
-
+.icon-certificado-courses {
+  background-color: #002333;
+  padding: 3px;
+  border-radius: 5px;
+  height: -moz-fit-content!important;
+  height: fit-content!important;
+  width: 40px!important;
+}
 
 
 
@@ -649,7 +655,6 @@ transform: translate(-100%, -50%);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 17px;
-  margin-top: 9%;
   background-position: center;
 }
 

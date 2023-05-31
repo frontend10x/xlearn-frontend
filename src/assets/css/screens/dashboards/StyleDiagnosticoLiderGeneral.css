@@ -436,6 +436,7 @@ padding: 1%;
     position: relative;
     top: 50px;
     width: 100%;
+    padding-top: 8%;
 }
 
 .preguntas__diagnostico-content h3 {

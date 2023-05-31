@@ -1,3 +1,7 @@
+.dashboard__lider {
+    padding-top: 10%;
+}
+
 .dashboard__lider .navbar a, .navbar a:focus {
     display: flex;
     align-items: center;
