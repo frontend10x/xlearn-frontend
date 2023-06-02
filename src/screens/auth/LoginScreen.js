@@ -34,7 +34,7 @@ export const LoginScreen = () => {
     } else if (type === "Integrante") {
       navigate('/dashboard/integrante');
     }
-    if (type) navigate(0)
+
   }, [navigate, type, diagnostic])
 
   const handleLogin = async (e) => {
@@ -67,6 +67,8 @@ export const LoginScreen = () => {
         data?.datosUsuario?.groups['0']?.group_id,
         data?.datosUsuario?.roles?.name,
         data?.datosUsuario?.diagnostic.status));
+
+        navigate(0)
 
     } catch (error) {
       Swal.fire({
