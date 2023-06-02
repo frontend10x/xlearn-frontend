@@ -61,15 +61,15 @@ export const AppRouter = () => {
           <Route exact path="/plans/register" element={<EmpresasRegister />} />
           <Route exact path="/enterprises" element={<EmpresaScreen />} />
           <Route exact path="/login" element={<LoginScreen />} />
+          <Route exact path="/contact" element={<ContactoScreen />} />
           <Route exact path="/course/info/:id" element={<InfoCourse />} />
+          <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
+          <Route exact path="/informacion/ayuda" element={<Ayuda />} />
           <Route exact path="/recuperacion/contrasena" element={<ForgotPassword />} />
           <Route exact path="/recuperacion/:id" element={<RecuperarPassword />} />
+          <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
+          <Route exact path="/cookies/usuario" element={<Cookies />} />
         </Route>
-        <Route exact path="/contact" element={<ContactoScreen />} />
-        <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
-        <Route exact path="/informacion/ayuda" element={<Ayuda />} />
-        <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
-        <Route exact path="/cookies/usuario" element={<Cookies />} />
 
 
 
