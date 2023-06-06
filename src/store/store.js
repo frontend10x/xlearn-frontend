@@ -8,6 +8,7 @@ import storage from "redux-persist/lib/storage";
 import { confirmedRouteReducer } from "../reducers/confirmRouteReducer";
 import { evaluationReducer } from "../reducers/evaluationReducer";
 import { sizeReducer } from "../reducers/sizeReducer";
+import { unlockCourseReducer } from "../reducers/unlockCourseReducer";
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
@@ -22,7 +23,8 @@ const reducers = combineReducers({
     questions: questionsReducer,
     ruta: confirmedRouteReducer,
     evaluation: evaluationReducer,
-    size: sizeReducer
+    size: sizeReducer,
+    membership: unlockCourseReducer
 });
 const persistedReducer = persistReducer(persistConfig, reducers)
 

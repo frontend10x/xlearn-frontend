@@ -26,6 +26,8 @@ import { useNavigate } from "react-router-dom";
 import "../../assets/css/screens/dashboards/StyleDashboardEmpresa.css";
 import { Header } from "../../componentes/Header";
 
+import { Snackbar, Alert } from "@mui/material";
+
 
 export const DashboardEmpresa = () => {
 
@@ -34,6 +36,7 @@ export const DashboardEmpresa = () => {
   }, [])
 
   const { name, subcompanie_id, token } = useSelector((state) => state.auth);
+  const { validation } = useSelector((state) => state.membership);
   const { event } = useSelector((state) => state.size);
   // const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -58,7 +61,7 @@ export const DashboardEmpresa = () => {
   ]);
 
   const [allCourses, setAllCourses] = useState();
-  const [subscripcion, setSubscripcion] = useState(false);
+  const [show, setShow] = useState(validation);
 
   useEffect(() => {
     async function getQuotas() {
@@ -83,18 +86,12 @@ export const DashboardEmpresa = () => {
     async function getAllCoursesForEnterprises() {
       const data = await getCourse();
       setAllCourses(data.response._embedded.courses)
-    }
-
-    async function validateSubscription() {
-      const data = await validateMembership(token,subcompanie_id);
-      // console.log(data.data.activeSubscription,'validacion');
-      // setSubscripcion(data.data.activeSubscription);
+      console.log(data,'datos');
     }
 
     getQuotas();
     getGroups();
     getAllCoursesForEnterprises();
-    validateSubscription();
   }, [token, subcompanie_id])
 
   const redirect = (e) => {
@@ -124,6 +121,10 @@ export const DashboardEmpresa = () => {
   const soporte = () => {
     navigate('/contact')
   }
+
+  const redirectTo = (e) => (
+    navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`)
+  )
 
   const adjustClass = event ? "xln_add_menuLateral" : "col-md-10";
 
@@ -238,30 +239,30 @@ export const DashboardEmpresa = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="xlrn__dashborad__lider-container-block">
+              <div className="xlrn__dashborad__lider-container-block">
                 <div className="xlrn__dashboard__lider-block d-flex " >
 
-                  {allCourses && subscripcion ?
-                    allCourses.map((item, index) => (
+                  {validation ?
+                    allCourses?.map((item, index) => (
                       <div className="xlrn__dashboard__lider-block-content d-flex" key={index} >
-
                         <Image src={item.file_path} className="xlrn__dashboard__lider-block-image" />
                         <div className="xlrn__dashboard__lider-block-content-titles" >
                           <p>Curso </p>
                           <h3>{item.name}</h3>
                           <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
-                            <h4>Progreso: <span>{item['progress:porcentage']}%</span></h4> | <h4> Lecciones: {item["lessons:amount"]} </h4>
+                            {/* <h4>Progreso: <span>{item['progress:porcentage']}%</span></h4> | <h4> Lecciones: {item["lessons:amount"]} </h4> */}
                           </div>
 
-                          <button onClick={redirect} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
+                          <button onClick={redirectTo} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
 
                         </div>
                       </div>
                     ))
-                    : <p style={{ color: "#8894ab" }} className="fw-bold" >Aun no tienes una subscripción activa para ver los cursos</p>
+                    :
+                    <p style={{ color: "#8894ab" }} className="fw-bold ms-5" >Valida si ya puedes ver tus cursos</p>
                   }
                 </div>
-              </div> */}
+              </div>
 
               <div className="xln_section_course dashboard__card-info">
                 <h2>Identifica las brechas de aprendizaje y sugiere contenido</h2>

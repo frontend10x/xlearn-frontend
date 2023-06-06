@@ -64,12 +64,12 @@ export const AppRouter = () => {
           <Route exact path="/course/info/:id" element={<InfoCourse />} />
           <Route exact path="/recuperacion/:id" element={<RecuperarPassword />} />
         </Route>
-          <Route exact path="/contact" element={<ContactoScreen />} />
-          <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
-          <Route exact path="/informacion/ayuda" element={<Ayuda />} />
-          <Route exact path="/recuperacion/contrasena" element={<ForgotPassword />} />
-          <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
-          <Route exact path="/cookies/usuario" element={<Cookies />} />
+        <Route exact path="/contact" element={<ContactoScreen />} />
+        <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
+        <Route exact path="/informacion/ayuda" element={<Ayuda />} />
+        <Route exact path="/recuperacion/contrasena" element={<ForgotPassword />} />
+        <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
+        <Route exact path="/cookies/usuario" element={<Cookies />} />
 
 
 
@@ -124,24 +124,24 @@ export const AppRouter = () => {
             path="/project/diagnostic/confirm_route"
             element={<ConfirmarRuta />}
           />
+          <Route exact path="/dashboard/lider" element={<DashboardLider />} />
         </Route>
         {/* RUTA DEL LIDER */}
 
         {/* RUTA DEL INTEGRANTE */}
         <Route element={<IntegranteRoute token={token} type={type} />}>
-          <Route exact path="/dashboard/lider" element={<DashboardLider />} />
           <Route exact path="/dashboard/integrante" element={<DashboardIntegrante />} />
+        </Route>
+
+        <Route element={<CommonRoutes token={token} />} >
           <Route exact path="/course/videoplayer/:name/:course_id" element={<CoursePlayback />} />
           <Route exact path="/presentacion/evaluacion/:name/:course_id" element={<DescripcionEvaluacion />} />
           <Route exact path="/evaluacion/:name/:course_id" element={<Evaluacion />} />
           <Route exact path="/puntaje/:name/:id/:course_id" element={<Score />} />
           <Route exact path="/certificado/:course_id" element={<GenerarCertificado />} />
           <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
-          <Route exact path="/soporte" element={<Soporte />} />
-        </Route>
-
-        <Route element={<CommonRoutes token={token} />} >
           <Route exact path="/profile/:name" element={<Perfil />} />
+          <Route exact path="/soporte" element={<Soporte />} />
         </Route>
 
         <Route path="*" element={<ErrorScreen />} />
