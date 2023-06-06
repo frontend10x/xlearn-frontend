@@ -15,6 +15,8 @@ export const types = {
     evaluation: '[EVALUATION] EVALUATION',
 
     /* Sizes de Navegacion */
-    resize: '[SIZE] SIZE'
+    resize: '[SIZE] SIZE',
 
+    /* Unlock Courses */
+    unlock: '[UNLOCK] UNLOCKED'
 }

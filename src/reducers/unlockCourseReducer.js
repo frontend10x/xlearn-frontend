@@ -2,11 +2,11 @@ import { types } from "../types/types";
 
 const initialState = {}
 
-export const sizeReducer = (state = initialState, action) => {
+export const unlockCourseReducer = (state = initialState, action) => {
     switch (action.type) {
-        case types.resize:
+        case types.unlock:
             return {
-                event: action.payload.event
+                validation: action.payload.validation
             }
 
         default:
