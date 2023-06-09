@@ -20,7 +20,7 @@ export const Resources = ({title, data, download,}) => {
               <></>
             }
           <Image src={fileZip} alt='zip' className="zipFile" style={{ width: '9%' }} />
-          <button className="mt-5 ms-3" type="button" disabled={!item?.file_path} onClick={download} id={index} rel="noreferrer" dangerouslySetInnerHTML={{ __html: item?.name}} ></button>
+          <button className="mt-3 ms-5 btn" style={!item?.file_path ? {backgroundColor:"E1E1E1", color:"#fff"} : {backgroundColor:"#002333", color:"#fff"}} type="button" disabled={!item?.file_path} onClick={download} id={index} rel="noreferrer" dangerouslySetInnerHTML={{ __html: item?.name}} ></button>
         </div>
         )
       ))}
