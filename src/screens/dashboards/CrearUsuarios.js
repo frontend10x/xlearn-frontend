@@ -115,7 +115,7 @@ export const CrearUsuarios = () => {
                                     <div className="xlrn__crear-usuarios__container-form" >
                                         <div className="xlrn__crear-usuarios__container-form-content" >
                                             <Image src={equiposIcon} />
-                                            <h1>Crear usuarios</h1>
+                                            <h1>usuarios</h1>
                                             <p>Crea los usuarios, entrena tus equipos y desarrolla tu proyecto</p>
                                         </div>
                                         <div className="xlrn__crear-usuarios__form" >
