@@ -3,6 +3,7 @@ import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 import { Image } from 'react-bootstrap';
 import { equiposIcon } from '../assets/img';
+import { useNavigate } from 'react-router-dom';
 
 const responsive = {
     superLargeDesktop: {
@@ -25,10 +26,16 @@ const responsive = {
 };
 
 
+
+
 export const CarouselDashboards = ({ item }) => {
 
+    const navigate = useNavigate();
     const course = item;
-    
+    const redirect = (e) => (
+        navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`)
+    )
+
     return (
         <Carousel responsive={responsive}>
             {course &&
@@ -45,7 +52,7 @@ export const CarouselDashboards = ({ item }) => {
                                     <p>{item.user} de usuarios</p>
                                 </div> */}
                                 <h3>{item.name}</h3>
-                                <button className="dashboard__lider-container_courses-card-content_button" value={item.name} id={item.id} /* onClick={redirect} */ >Ingresar</button>
+                                <button className="dashboard__lider-container_courses-card-content_button" value={item.name} id={item.id} onClick={redirect} >Ingresar</button>
                             </div>
                         </div>
                     </div>

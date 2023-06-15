@@ -141,7 +141,7 @@ export const InfoVideoPlayer = () => {
                                         ))
                                     } */}
                                     <Container >
-                                        <CarouselDashboards item={courses} />
+                                        <CarouselDashboards item={courses} action={redirect} />
                                     </Container>
                                 </div>
                             </div>
