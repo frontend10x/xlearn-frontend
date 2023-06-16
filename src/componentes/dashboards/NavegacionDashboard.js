@@ -89,7 +89,6 @@ export const NavegacionDashboard = () => {
                         <NavLink href='/gestion/usuarios' className='dashboard__nav-link' ><img src={NavIconLeft_05} /> <span>Gestión de usuarios</span> </NavLink>
                         <NavLink href='/reportes' className='dashboard__nav-link' ><img src={NavIconLeft_06} /> <span>reportes</span></NavLink>
                         <NavLink onClick={courses} className='dashboard__nav-link' ><img src={NavIconLeft_03} /> <span>Ver cursos</span></NavLink>
-
                         <NavLink type="button" className={position} onClick={resize} value="Ocultar" ><img src={event ? show : hide} /> <span className="position-absolute top-25 ms-2 ocultar-style" >Ocultar</span> </NavLink>
                     </Nav>
                 </div>

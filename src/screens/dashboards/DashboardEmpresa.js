@@ -64,6 +64,12 @@ export const DashboardEmpresa = () => {
   const [show, setShow] = useState(validation);
 
   useEffect(() => {
+    if (validation) {
+      window.scrollTo(-1, -1)
+    }
+  }, [])
+
+  useEffect(() => {
     async function getQuotas() {
       try {
         const data = await getEnterpriseQuotas(token, subcompanie_id)

@@ -10,7 +10,7 @@ import { logout } from '../actions/loginactions';
 export const Header = ({ home, show }) => {
 
   const [showModal, setShowModal] = useState(false);
-  const { type } = useSelector(state => state.auth);
+  const { type, name } = useSelector(state => state.auth);
   const handleClose = () => setShowModal(false);
   const values = [true, 'sm-down', 'md-down', 'lg-down', 'xl-down', 'xxl-down'];
   const [fullscreen, setFullscreen] = useState(true);
@@ -26,6 +26,10 @@ export const Header = ({ home, show }) => {
     navigate("/login")
   }
 
+  const goToProfile = () => {
+    navigate(`/profile/${name}`)
+  }
+
   const getHome = () => {
     if (type === "Empresa") {
       navigate('/dashboard/empresa')
@@ -38,20 +42,15 @@ export const Header = ({ home, show }) => {
     }
   }
 
-  document.addEventListener('visibilitychange', function() {
+  document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === 'hidden') {
       // el usuario no está en tu sitio web, enviar una notificación push
       var notification = new Notification('Hola,vuelve', {
         body: 'Contenido de la notificación'
       });
-      }
+    }
 
-    });
-
-  useEffect(() => {
-    
-  })
-
+  });
 
   let currentClass = home ? "header__container" : "header__container background"
   let secondClass = home ? "header fixed_top" : "header fixed_top background"
@@ -74,24 +73,17 @@ export const Header = ({ home, show }) => {
                 <Image src={cartIcon} alt="cart" id='cart-icon' />
               </Nav.Link>
             </Nav>
-            <Dropdown as={NavItem} className='me-5 pe-5' >
-              <Dropdown.Toggle as={NavLink} className='me-3' ><Image src={imagenUser} id='user-icon' /></Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item style={{ color: "#000" }} >Perfil</Dropdown.Item>
-                <Dropdown.Item style={{ color: "#000" }} onClick={logOut}>Cerrar sesión</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            {/* <Dropdown as={NavItem} className='pe-5 me-5'>
-              <Dropdown.Toggle as={NavLink} id="dropdown-basic">
-                <Image src={imagenUser} id='user-icon' />
-              </Dropdown.Toggle>
+            <div className="dropdown d-flex align-items-center me-5 pe-3">
+              <button className="ms-3 dropdown w-50 button__navegacion-user " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <Image src={imagenUser} alt='user' className="w-50" />
+              </button>
+              <ul className="dropdown-menu">
+                {/* <li><button className="dropdown-item" href="#">Ajustes</button></li> */}
+                <li><button onClick={goToProfile} className="dropdown-item" href="#">Perfil</button></li>
+                <li><button onClick={logOut} className="dropdown-item" href="#">Cerrar sesión</button></li>
+              </ul>
+            </div>
 
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown> */}
           </Navbar.Collapse>
         </Navbar>
       }
@@ -137,13 +129,16 @@ export const Header = ({ home, show }) => {
                 Soporte
               </Nav.Link>
             </Nav>
-            <Dropdown as={NavItem} className='me-5' >
-              <Dropdown.Toggle as={NavLink} className='me-2' ><Image src={imagenUser} id='user-icon' /></Dropdown.Toggle>
-              <Dropdown.Menu className='me-3 text-center' >
-                <Dropdown.Item style={{ color: "#000" }} >Perfil</Dropdown.Item>
-                <Dropdown.Item style={{ color: "#000" }} onClick={logOut}>Cerrar sesión</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+            <div className="dropdown d-flex align-items-center">
+              <button className="ms-3 dropdown w-50 button__navegacion-user " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <Image src={imagenUser} alt='user' className="w-50" />
+              </button>
+              <ul className="dropdown-menu">
+                {/* <li><button className="dropdown-item" href="#">Ajustes</button></li> */}
+                <li><button onClick={goToProfile} className="dropdown-item" href="#">Perfil</button></li>
+                <li><button onClick={logOut} className="dropdown-item" href="#">Cerrar sesión</button></li>
+              </ul>
+            </div>
           </Navbar.Collapse>
         </Navbar >
       }

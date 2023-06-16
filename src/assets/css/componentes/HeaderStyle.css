@@ -57,3 +57,9 @@
     background-color: #002333!important;
     border-color: #002333!important;
 }
+
+.video_reproduccion-section nav.header_container.background.navbar.navbar-expand-lg.navbar-dark{
+    position: fixed!important;
+    width: 100% !important;
+    z-index: 9 !important;
+  }
