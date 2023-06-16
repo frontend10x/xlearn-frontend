@@ -9,13 +9,15 @@ import { Footer } from '../../componentes/Footer'
 import { Header } from '../../componentes/Header'
 import { LinearProgress } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import { generateCertificate } from '../../services/services'
+import { baseURL } from '../../utils/route'
+import { CertificateDonwloadButtonProfile } from '../../componentes/Commons/Certificate/CertificateDonwloadButtonProfile'
 
 export const Perfil = () => {
 
   const { name, token, id } = useSelector(state => state.auth);
   const [routeCourses, setRouteCourses] = useState([]);
   const navigate = useNavigate();
-
 
   useEffect(() => {
     async function getCourseRoute() {
@@ -26,9 +28,12 @@ export const Perfil = () => {
     getCourseRoute();
   }, []);
 
-  const redirect = () => {
-    console.log('hola');
+  const redirect = (name, course_id) => {
+    navigate(`/course/videoplayer/${name}/${course_id}`)
   }
+ 
+  
+  const buttons = "btn p-0 border-0 text-secondary"
 
   return (
     <div className='profile__section' >
@@ -44,30 +49,30 @@ export const Perfil = () => {
               <h2 className='fw-bold' >Mi Perfil</h2>
               <h6>Hola, soy {name}</h6>
             </div>
+            
             <div>
               <h2 className='fw-bold'>Cursos en ruta</h2>
               <div className='d-flex flex-wrap gap-2' >
+            
                 {routeCourses &&
                   routeCourses.map((item, index) => (
-                    <div class="card" style={{ width: "18rem" }} key={index} >
-                      <img src={item.file_path} class="card-img-top" alt="..." />
+                    <div className="card mb-5" style={{ width: "18rem" }} key={index} >
+                      <img src={item.file_path} className="card-img-top" alt="..." />
+                      <div className="card-body h-25">
+                        <h5 className="card-title fw-bold ">{item.name}</h5>
+                      </div>
                       <div class="card-body">
-                        <h5 class="card-title fw-bold ">{item.name}</h5>
-                        <p class="card-text fs-6" style={{ color: "#8894ab" }} >Progress: {item["progress:porcentage"]}</p>
-                        <LinearProgress variant="determinate" className='mb-2' value={item["progress:porcentage"]} />
+                        <p className="card-text fs-6" style={{ color: "#8894ab" }} >Progress: {item["progress:porcentage"]}%</p>
 
-                        {item["progress:porcentage"] > 91 &&
-                          <a onClick={redirect} class="btn btn-primary">1</a>
-                        }
-                        {item["progress:porcentage"] > 90 &&
-                          <a onClick={redirect} class="btn btn-primary">2</a>
-                        }
-                        {item["progress:porcentage"] < 90 &&
-                          <a onClick={redirect} class="btn btn-primary">3</a>
-                        }
+                        <LinearProgress variant="determinate" className='mb-2' value={item["progress:porcentage"]} />
+                          {item["progress:porcentage"] === 100 ?
+                            <CertificateDonwloadButtonProfile courseId={item.id} />
+                            : <button onClick={() => redirect(item.name, item.id)} className={buttons}><p>Continuar</p></button>
+                          }
                       </div>
                     </div>))
-                  }
+                }
+            
               </div>
             </div>
           </div>

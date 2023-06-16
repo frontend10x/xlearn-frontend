@@ -40,17 +40,10 @@ export const CarouselDashboards = ({ item }) => {
         <Carousel responsive={responsive}>
             {course &&
                 course.map((item, index) => (
-                    // <div key={index}>
-                    //     <Image src={item.file_path} className="w-50" />
-                    // </div>
                     <div key={index} className="dashboard__lider-container_courses-card" >
                         <Image src={item.file_path} className="img-recomendation-xln" />
                         <div className="dashboard__lider-container_courses-card-content" >
                             <div className="dashboard__lider-container_courses-card-content-body" >
-                                {/* <div className="d-flex justify-content-around" >
-                                    <p>{item.time} de contenido</p>
-                                    <p>{item.user} de usuarios</p>
-                                </div> */}
                                 <h3>{item.name}</h3>
                                 <button className="dashboard__lider-container_courses-card-content_button" value={item.name} id={item.id} onClick={redirect} >Ingresar</button>
                             </div>

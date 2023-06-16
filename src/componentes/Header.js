@@ -10,7 +10,7 @@ import { logout } from '../actions/loginactions';
 export const Header = ({ home, show }) => {
 
   const [showModal, setShowModal] = useState(false);
-  const { type } = useSelector(state => state.auth);
+  const { type, name } = useSelector(state => state.auth);
   const handleClose = () => setShowModal(false);
   const values = [true, 'sm-down', 'md-down', 'lg-down', 'xl-down', 'xxl-down'];
   const [fullscreen, setFullscreen] = useState(true);
@@ -24,6 +24,10 @@ export const Header = ({ home, show }) => {
 
   const redirect = () => {
     navigate("/login")
+  }
+
+  const goToProfile = () => {
+    navigate(`/profile/${name}`)
   }
 
   const getHome = () => {
@@ -47,11 +51,6 @@ export const Header = ({ home, show }) => {
     }
 
   });
-
-  useEffect(() => {
-
-  })
-
 
   let currentClass = home ? "header__container" : "header__container background"
   let secondClass = home ? "header fixed_top" : "header fixed_top background"
@@ -143,7 +142,7 @@ export const Header = ({ home, show }) => {
             </button>
             <ul className="dropdown-menu">
               {/* <li><button className="dropdown-item" href="#">Ajustes</button></li> */}
-              <li><button onClick={redirect} className="dropdown-item" href="#">Perfil</button></li>
+              <li><button onClick={goToProfile} className="dropdown-item" href="#">Perfil</button></li>
               <li><button onClick={logOut} className="dropdown-item" href="#">Cerrar sesión</button></li>
             </ul>
           </div>
