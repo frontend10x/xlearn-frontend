@@ -73,24 +73,17 @@ export const Header = ({ home, show }) => {
                 <Image src={cartIcon} alt="cart" id='cart-icon' />
               </Nav.Link>
             </Nav>
-            <Dropdown as={NavItem} className='me-5 pe-5' >
-              <Dropdown.Toggle as={NavLink} className='me-3' ><Image src={imagenUser} id='user-icon' /></Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item style={{ color: "#000" }} >Perfil</Dropdown.Item>
-                <Dropdown.Item style={{ color: "#000" }} onClick={logOut}>Cerrar sesión</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-            {/* <Dropdown as={NavItem} className='pe-5 me-5'>
-              <Dropdown.Toggle as={NavLink} id="dropdown-basic">
-                <Image src={imagenUser} id='user-icon' />
-              </Dropdown.Toggle>
+            <div className="dropdown d-flex align-items-center me-5 pe-3">
+              <button className="ms-3 dropdown w-50 button__navegacion-user " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <Image src={imagenUser} alt='user' className="w-50" />
+              </button>
+              <ul className="dropdown-menu">
+                {/* <li><button className="dropdown-item" href="#">Ajustes</button></li> */}
+                <li><button onClick={goToProfile} className="dropdown-item" href="#">Perfil</button></li>
+                <li><button onClick={logOut} className="dropdown-item" href="#">Cerrar sesión</button></li>
+              </ul>
+            </div>
 
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown> */}
           </Navbar.Collapse>
         </Navbar>
       }
@@ -137,202 +130,202 @@ export const Header = ({ home, show }) => {
               </Nav.Link>
             </Nav>
             <div className="dropdown d-flex align-items-center">
-            <button className="ms-3 dropdown w-50 button__navegacion-user " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
-              <Image src={imagenUser} alt='user' className="w-50" />
-            </button>
-            <ul className="dropdown-menu">
-              {/* <li><button className="dropdown-item" href="#">Ajustes</button></li> */}
-              <li><button onClick={goToProfile} className="dropdown-item" href="#">Perfil</button></li>
-              <li><button onClick={logOut} className="dropdown-item" href="#">Cerrar sesión</button></li>
-            </ul>
-          </div>
-        </Navbar.Collapse>
+              <button className="ms-3 dropdown w-50 button__navegacion-user " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <Image src={imagenUser} alt='user' className="w-50" />
+              </button>
+              <ul className="dropdown-menu">
+                {/* <li><button className="dropdown-item" href="#">Ajustes</button></li> */}
+                <li><button onClick={goToProfile} className="dropdown-item" href="#">Perfil</button></li>
+                <li><button onClick={logOut} className="dropdown-item" href="#">Cerrar sesión</button></li>
+              </ul>
+            </div>
+          </Navbar.Collapse>
         </Navbar >
       }
 
-{
-  type === undefined &&
-    <Navbar collapseOnSelect expand="lg" className={secondClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }} variant='dark'>
-      <Navbar.Brand className='ms-3' >
-        <Button className="ms-2 mb-2 me-3" variant="outline-light" id='burg-toogle' onClick={() => handleShow(values)}>
-          |||
-        </Button>
-        <Image src={XlearnLogo} alt="logo" />
-      </Navbar.Brand>
-      <Navbar.Collapse id="responsive-navbar-nav" className='me-5' >
-        <Nav className='ms-auto' >
-          <Nav.Link id='link' href="/">Inicio</Nav.Link>
-          <Nav.Link id='link' href="/courses">Cursos</Nav.Link>
-          <Nav.Link id='link' href="/plans/register">Planes</Nav.Link>
-          <Nav.Link id='link' href="/enterprises">Empresa</Nav.Link>
-          <Nav.Link id='link' href="/contact">Contactanos</Nav.Link>
-          <Button id='button' onClick={redirect} >Login</Button>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-}
+      {
+        type === undefined &&
+        <Navbar collapseOnSelect expand="lg" className={secondClass} style={home ? { backgroundColor: "transparent" } : { backgroundColor: "#002333" }} variant='dark'>
+          <Navbar.Brand className='ms-3' >
+            <Button className="ms-2 mb-2 me-3" variant="outline-light" id='burg-toogle' onClick={() => handleShow(values)}>
+              |||
+            </Button>
+            <Image src={XlearnLogo} alt="logo" />
+          </Navbar.Brand>
+          <Navbar.Collapse id="responsive-navbar-nav" className='me-5' >
+            <Nav className='ms-auto' >
+              <Nav.Link id='link' href="/">Inicio</Nav.Link>
+              <Nav.Link id='link' href="/courses">Cursos</Nav.Link>
+              <Nav.Link id='link' href="/plans/register">Planes</Nav.Link>
+              <Nav.Link id='link' href="/enterprises">Empresa</Nav.Link>
+              <Nav.Link id='link' href="/contact">Contactanos</Nav.Link>
+              <Button id='button' onClick={redirect} >Login</Button>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      }
 
-<Modal show={showModal} fullscreen={fullscreen} onHide={() => setShowModal(false)}>
-  <Modal.Body id="background" >
-    <button className="header__menu-button"
-      onClick={handleClose} >
-      <span>
-        <i className="fa-solid fa-x"></i>
-      </span>
-    </button>
-    <div className="header_burgtoggle">
-      <ul className="header__menu">
-        <li className="header__menu-item">
-          Ingresar
-          <ul className="header__menu-lista ingresar">
-            <NavLink
-              data-bs-toggle="tooltip"
-              href="/login"
-              className="link"
-            >
-              Iniciar Sesion
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Registrarse
-            </NavLink>
-          </ul>
-        </li>
-        <li className="header__menu-item">
-          Planes
-          <ul className="header__menu-lista planes">
-            <NavLink
-              data-bs-toggle="tooltip"
-              href="/login"
-              className="link"
-            >
-              Elite
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Corporativo
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Multi-Empresarial
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Basico
-            </NavLink>
-          </ul>
-        </li>
-        <li className="header__menu-item">
-          Categorias
-          <ul className="header__menu-lista categoria">
-            <NavLink
-              data-bs-toggle="tooltip"
-              href="/login"
-              className="link"
-            >
-              Innovacion
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Transformacion
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Sostenibilidad
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Gestion de Proyectos
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Inteligencia
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Cultura
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Gestion Estrategica
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Habilidades
-            </NavLink>
-          </ul>
-        </li>
-        <li className="header__menu-item">
-          Acerca
-          <ul className="header__menu-lista acerca">
-            <NavLink
-              data-bs-toggle="tooltip"
-              href="/login"
-              className="link"
-            >
-              Nosotros
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Contacto
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Politicas
-            </NavLink>
-            <NavLink
-              ldata-bs-toggle="tooltip"
-              href="/plans/register"
-              className="link"
-            >
-              Tratamiento de datos
-            </NavLink>
-          </ul>
-        </li>
-        <li className="header__menu-item">soporte</li>
-      </ul>
-    </div>
-  </Modal.Body >
-</Modal >
+      <Modal show={showModal} fullscreen={fullscreen} onHide={() => setShowModal(false)}>
+        <Modal.Body id="background" >
+          <button className="header__menu-button"
+            onClick={handleClose} >
+            <span>
+              <i className="fa-solid fa-x"></i>
+            </span>
+          </button>
+          <div className="header_burgtoggle">
+            <ul className="header__menu">
+              <li className="header__menu-item">
+                Ingresar
+                <ul className="header__menu-lista ingresar">
+                  <NavLink
+                    data-bs-toggle="tooltip"
+                    href="/login"
+                    className="link"
+                  >
+                    Iniciar Sesion
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Registrarse
+                  </NavLink>
+                </ul>
+              </li>
+              <li className="header__menu-item">
+                Planes
+                <ul className="header__menu-lista planes">
+                  <NavLink
+                    data-bs-toggle="tooltip"
+                    href="/login"
+                    className="link"
+                  >
+                    Elite
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Corporativo
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Multi-Empresarial
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Basico
+                  </NavLink>
+                </ul>
+              </li>
+              <li className="header__menu-item">
+                Categorias
+                <ul className="header__menu-lista categoria">
+                  <NavLink
+                    data-bs-toggle="tooltip"
+                    href="/login"
+                    className="link"
+                  >
+                    Innovacion
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Transformacion
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Sostenibilidad
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Gestion de Proyectos
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Inteligencia
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Cultura
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Gestion Estrategica
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Habilidades
+                  </NavLink>
+                </ul>
+              </li>
+              <li className="header__menu-item">
+                Acerca
+                <ul className="header__menu-lista acerca">
+                  <NavLink
+                    data-bs-toggle="tooltip"
+                    href="/login"
+                    className="link"
+                  >
+                    Nosotros
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Contacto
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Politicas
+                  </NavLink>
+                  <NavLink
+                    ldata-bs-toggle="tooltip"
+                    href="/plans/register"
+                    className="link"
+                  >
+                    Tratamiento de datos
+                  </NavLink>
+                </ul>
+              </li>
+              <li className="header__menu-item">soporte</li>
+            </ul>
+          </div>
+        </Modal.Body >
+      </Modal >
     </>
   )
 }

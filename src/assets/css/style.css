@@ -1048,6 +1048,7 @@ width: 80%;
   z-index: 9;
   width: 100%;
   padding: 20px 0px;
+  
 }
 
 .gestion__usuario-section .dashboard__nav {
@@ -1382,6 +1383,8 @@ height: 100vh;
   padding-top: 4%;
   padding-bottom: 30%;
 }
+
+
 
 /*Fin Reproductor cursos recomendados seccion*/
 
