@@ -27,8 +27,8 @@ export const Score = () => {
 
     const redirect = async ()  => {
         if (response?.status) {
-            await window.open(baseURL + response.paths.download, '_blank');
-            await window.open(baseURL + response.paths.show, '_blank');
+            await window.open(baseURL + response?.paths?.download, '_blank');
+            await window.open(baseURL + response?.paths?.show, '_blank');
             navigate(`/dashboard/${type.toLowerCase()}`);
         } else {
             navigate(`/course/videoplayer/${name}/${course_id}`);
@@ -48,7 +48,7 @@ export const Score = () => {
                                 <h2 className='fw-bold' >Resultado</h2>
                                 <h1 className='title' >¡Felicidades!</h1>
                                 <h4 className='fw-bold' >
-                                    {response?.results?.correct_answers.length} Aciertos
+                                    {response?.results?.correct_answers?.length} Aciertos
                                 </h4>
                                 <h2 className='percentage__evaluation' >
                                     {response?.results?.percentage}%
@@ -70,7 +70,7 @@ export const Score = () => {
                         <div className='certifate__section-container text-center mt-5' >
                             <div className='certificate__section-content border-bottom' >
                                 <h2 className='fw-bold' >Resultado</h2>
-                                <h1 className='title_fail' >¡{response.message}!</h1>
+                                <h1 className='title_fail' >¡{response?.message}!</h1>
                                 <h4 className='fw-bold' >
                                     {response?.results?.correct_answers} Aciertos
                                 </h4>
