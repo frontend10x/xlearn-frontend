@@ -10,7 +10,6 @@ import { Footer } from '../../componentes/Footer'
 import { getEnterpriseGroups } from '../../services/services'
 import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren } from "react-circular-progressbar";
 import { test, team, resume, learn, time, greenElipse, whiteElipse, calendario } from '../../assets/img'
-import { ProgressBar,Step } from 'react-step-progress-bar'
 
 export const Reportes = () => {
 
@@ -43,8 +42,6 @@ export const Reportes = () => {
 
         getEnterprisesGroup();
     }, []);
-
-    console.log(data, 'estructura');
 
     return (
 
