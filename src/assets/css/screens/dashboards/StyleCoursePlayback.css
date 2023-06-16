@@ -28,7 +28,11 @@
     background-color: #31fb84; /* Color del pulgar de la barra de desplazamiento al pasar el cursor sobre él */
     height: 10px; /* Altura del pulgar */
 }
-
+.video__reproduccion-section .header__container{
+    position: fixed!important;
+    width: 100%;
+    z-index: 9;
+}
 /* .nav_ruta::-webkit-scrollbar {
     -webkit-appearance: none;
 } */
