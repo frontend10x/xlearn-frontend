@@ -6,6 +6,7 @@ import { HeaderDashboard } from '../../componentes/dashboards/HeaderDashboard';
 import { generateCertificate } from '../../services/services';
 import '../../assets/css/screens/dashboards/StyleScore.css';
 import { baseURL } from '../../utils/route';
+import { Header } from '../../componentes/Header';
 
 export const Score = () => {
 
@@ -21,6 +22,7 @@ export const Score = () => {
         async function scores() {
             const response = await generateCertificate(token, id, course_id);
             setResponse(response)
+            console.log(response);
         }
         scores()
     }, [])
@@ -39,7 +41,7 @@ export const Score = () => {
 
     return (
         <div className='certificate__section' >
-            <HeaderDashboard />
+            <Header />
             <Container className='container-fluid' >
                 {response?.status === true &&
                     <>

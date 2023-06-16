@@ -103,13 +103,16 @@ export const Header = ({ home, show }) => {
                 Soporte
               </Nav.Link>
             </Nav>
-            <Dropdown as={NavItem} className='me-5' >
-              <Dropdown.Toggle as={NavLink} className='me-2' ><Image src={imagenUser} id='user-icon' /></Dropdown.Toggle>
-              <Dropdown.Menu className='me-3' >
-                <Dropdown.Item style={{ color: "#000" }} >Perfil</Dropdown.Item>
-                <Dropdown.Item style={{ color: "#000" }} onClick={logOut}>Cerrar sesión</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+            <div className="dropdown d-flex align-items-center me-5 pe-3">
+              <button className="ms-3 dropdown w-50 button__navegacion-user " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" >
+                <Image src={imagenUser} alt='user' className="w-50" />
+              </button>
+              <ul className="dropdown-menu">
+                {/* <li><button className="dropdown-item" href="#">Ajustes</button></li> */}
+                <li><button onClick={goToProfile} className="dropdown-item" href="#">Perfil</button></li>
+                <li><button onClick={logOut} className="dropdown-item" href="#">Cerrar sesión</button></li>
+              </ul>
+            </div>
           </Navbar.Collapse>
         </Navbar >
       }
