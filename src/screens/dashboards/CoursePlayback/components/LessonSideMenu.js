@@ -1,10 +1,12 @@
 import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 
 const LessonSideMenu = ({progress, index, video, changeVideo}) => {
-    
+
+    const { duration } = video
+
     let currentClass =  progress ? "xlnIcon__couser__ruta_initiated mt-2" : "xlnIcon__couser__ruta mt-2 "
 
-    if(progress == 100) currentClass = "xlnIcon__couser__ruta_completed"
+    if(progress?.percentage_completion === 100 && duration <= progress?.advanced_current_time) currentClass = "xlnIcon__couser__ruta_completed"
     
     const tooltip = (
         <Tooltip id="tooltip">

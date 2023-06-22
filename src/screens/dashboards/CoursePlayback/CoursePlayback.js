@@ -143,7 +143,7 @@ const CorusePlayback = () => {
                             {lessons?.map((video, key) => {
                                 let obj = progress?.progress?.find(prg => prg.lesson_id === video?.id);
                                 return <LessonSideMenu
-                                    progress={obj?.percentage_completion}
+                                    progress={obj}
                                     key={key} index={key}
                                     video={video}
                                     changeVideo={changeVideo}

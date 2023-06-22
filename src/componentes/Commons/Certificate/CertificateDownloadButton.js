@@ -4,6 +4,7 @@ import { Image } from "react-bootstrap";
 import { generateCertificate } from "../../../services/services";
 import { certificadoIcon } from "../../../assets/img";
 import { baseURL } from "../../../utils/route";
+import { ShareCertificateProfile } from "../SocialMedia/LinkendIn/ShareCertificateProfile";
 
 export const CertificateDownloadButton = ({courseId}) => {
     const [show, setShow] = useState(false);
@@ -22,9 +23,13 @@ export const CertificateDownloadButton = ({courseId}) => {
   
     return(
         <>
-          {show?.status && (<a href={baseURL + show?.paths?.show} target="_blank" className="link-certificado">
-            <Image src={certificadoIcon} alt="certificate" id='cart-icon' className="icon-certificado-courses" />
-          </a>)}
+          {show?.status && 
+            (<div>
+              <a href={baseURL + show?.paths?.show} target="_blank" className="link-certificado" rel="noreferrer">
+                <Image src={certificadoIcon} alt="certificate" id='cart-icon' className="icon-certificado-courses" />
+              </a>
+              <ShareCertificateProfile certificate={show}/>
+            </div>)}
         </>
       
     )
