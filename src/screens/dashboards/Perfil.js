@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Col, Container, Image } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { HeaderDashboard } from '../../componentes/dashboards/HeaderDashboard'
-import { getUserCourseById } from '../../services/services'
+import { getUserCourseById, updateProfile } from '../../services/services'
 import '../../assets/css/screens/dashboards/StylePerfil.css';
 import { imagenUser } from '../../assets/img'
 import { Footer } from '../../componentes/Footer'
@@ -13,18 +13,34 @@ import { generateCertificate } from '../../services/services'
 import { baseURL } from '../../utils/route'
 import { CertificateDonwloadButtonProfile } from '../../componentes/Commons/Certificate/CertificateDonwloadButtonProfile'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar'
+import { useForm } from '../../hooks/useForm'
+
 
 export const Perfil = () => {
 
-  const { name, token, id } = useSelector(state => state.auth);
+  const { name, token, id, email, roles, subcompanie_id } = useSelector(state => state.auth);
   const [routeCourses, setRouteCourses] = useState([]);
   const navigate = useNavigate();
   const [editProfile, setEditProfile] = useState(true);
+  
+  const [formValues, handleInputChange] = useForm({
+      nameUser: '',
+      emailUser: email,
+      password: '',
+      password_confirmation: '',
+      rol_id: roles,
+      subcompanies_id: subcompanie_id,
+      email_confirmation: email ,
+      phone: ''
+  })
+
+  const {nameUser, emailUser, password, password_confirmation, rol_id,subcompanies_id,email_confirmation,phone} = formValues;
+
 
   useEffect(() => {
     async function getCourseRoute() {
       const data = await getUserCourseById(token, id);
-      console.log(data, 'valores');
+      // console.log(data, 'valores');
       setRouteCourses(data.response._embedded.courses)
     }
     getCourseRoute();
@@ -40,6 +56,12 @@ export const Perfil = () => {
     } else {
       setEditProfile(true)
     }
+  }
+
+
+  const handleUpdateProfile = () => {
+    const data = updateProfile(token,id,nameUser,emailUser,password,password_confirmation,roles,subcompanie_id,phone);
+    console.log(data);
   }
 
   const buttons = "btn p-0 border-0 text-secondary"
@@ -71,9 +93,10 @@ export const Perfil = () => {
               :
               <div>
                 <div class="form-floating mt-5 mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder={name} />
+                  <input type="text" class="form-control" name='nameUser' onChange={handleInputChange} id="floatingInput" placeholder={name} />
                   <label for="floatingInput">{name}</label>
                 </div>
+                <button className='border border-0 btn' style={{backgroundColor:"#002333" , color:"#fff"}} onClick={handleUpdateProfile} > Actualizar perfil </button>
               </div>
             }
           </div>

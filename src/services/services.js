@@ -446,3 +446,25 @@ export const validateMembership = (token, subcompanie_id) => {
   const response = axios.get(baseURL + `/api/v1/subempresa/validateSubscription/${subcompanie_id}`,config);
   return response;
 }
+
+export const updateProfile = (token,id, name,email,password,password_confirmation, rol_id, subcompanies_id,phone) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  };
+
+  const body = {
+    name,
+    email,
+    password,
+    password_confirmation,
+    rol_id,
+    subcompanies_id,
+    phone
+  }
+
+  const response = axios.put(baseURL + `/api/v1/user/edit/${id}`,config, body);
+  return response.data;
+
+}
