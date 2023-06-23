@@ -19,6 +19,7 @@ export const Perfil = () => {
   const { name, token, id } = useSelector(state => state.auth);
   const [routeCourses, setRouteCourses] = useState([]);
   const navigate = useNavigate();
+  const [editProfile, setEditProfile] = useState(true);
 
   useEffect(() => {
     async function getCourseRoute() {
@@ -33,6 +34,13 @@ export const Perfil = () => {
     navigate(`/course/videoplayer/${name}/${course_id}`)
   }
 
+  const profileEdit = () => {
+    if (editProfile) {
+      setEditProfile(false);
+    } else {
+      setEditProfile(true)
+    }
+  }
 
   const buttons = "btn p-0 border-0 text-secondary"
 
@@ -41,29 +49,45 @@ export const Perfil = () => {
       <Header />
       <div className='container mt-5' >
         <div className='row' >
+
           <div className='col-md-3' >
             <Image src={imagenUser} className="mt-5" />
-            <h3 className='mt-5' >{name}</h3>
-            <div className=''>
-                <div className='w-50 mt-3'>
-                  <CircularProgressbarWithChildren styles={buildStyles({
-                    rotation: 1 / 2 + 1 / 4, strokeLinecap: "butt",
-                    trailColor: "#fff", pathColor: "#31fb84", textSize: "25px"
-                  })} circleRatio={1} value={90}
-                    strokeWidth={12}
-                    className='mt-1' >
-                    <h3 style={{ marginTop: 0 }} >{Math.floor(90)} %</h3>
-                  </CircularProgressbarWithChildren>
+            {editProfile ?
+              <>
+                <h3 className='mt-5' >{name}</h3>
+                <div className=''>
+                  <div className='w-50 mt-3'>
+                    <CircularProgressbarWithChildren styles={buildStyles({
+                      rotation: 1 / 2 + 1 / 4, strokeLinecap: "butt",
+                      trailColor: "#fff", pathColor: "#31fb84", textSize: "25px"
+                    })} circleRatio={1} value={90}
+                      strokeWidth={12}
+                      className='mt-1' >
+                      <h3 style={{ marginTop: 0 }} >{Math.floor(90)} %</h3>
+                    </CircularProgressbarWithChildren>
+                  </div>
+                </div>
+              </>
+              :
+              <div>
+                <div class="form-floating mt-5 mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder={name} />
+                  <label for="floatingInput">{name}</label>
                 </div>
               </div>
+            }
           </div>
 
-          <div className='col-md-9' >
+          <div className='col-md-9 mt-5' >
+            <div className='position-relative' >
+              <button className='position-absolute top-0 end-0 btn btn-outline-dark' onClick={profileEdit} > Editar mi perfil </button>
+            </div>
             <div className='d-flex flex-column mt-5 mb-5 ' >
               <h2 className='fw-bold' >Mi Perfil</h2>
               <h6>Hola, soy {name}</h6>
-              
+
             </div>
+
 
             <div>
               <h2 className='fw-bold'>Cursos en ruta</h2>

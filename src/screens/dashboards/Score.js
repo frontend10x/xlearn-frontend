@@ -22,7 +22,7 @@ export const Score = () => {
         async function scores() {
             const response = await generateCertificate(token, id, course_id);
             setResponse(response)
-            console.log(response);
+            console.log(response,'valores');
         }
         scores()
     }, [])
@@ -50,10 +50,10 @@ export const Score = () => {
                                 <h2 className='fw-bold' >Resultado</h2>
                                 <h1 className='title' >¡Felicidades!</h1>
                                 <h4 className='fw-bold' >
-                                    {response?.results?.correct_answers?.length} Aciertos
+                                    {response?.results?.length} Aciertos
                                 </h4>
                                 <h2 className='percentage__evaluation' >
-                                    {response?.results?.percentage}%
+                                    {response?.percentage}%
                                 </h2>
                             </div>
                         </div>
