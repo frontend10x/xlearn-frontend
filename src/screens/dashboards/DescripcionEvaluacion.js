@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { Container, Image } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { HeaderDashboard } from '../../componentes/dashboards/HeaderDashboard'
+/* import { HeaderDashboard } from '../../componentes/dashboards/HeaderDashboard' */
+
+import { Header } from "../../componentes/Header";
 import { Footer } from '../../componentes/Footer'
 import { evaluationCourse } from '../../services/services';
 import { psychology, hourglass, checklist, flag, cuposIcon } from '../../assets/img';
+
+
 import StyleDescripcionEvaluacion from '../../assets/css/screens/dashboards/StyleDescripcionEvaluacion.css';
 
 export const DescripcionEvaluacion = () => {
@@ -34,7 +38,8 @@ export const DescripcionEvaluacion = () => {
 
     return (
         <div className='description__evaluation-section' >
-            <HeaderDashboard />
+            {/* <HeaderDashboard /> */}
+            <Header/>
 
             <Container className='contenedor' >
                 <div className='description__evaluation-container text-center mt-5 d-flex flex-column justify-content-center align-items-center pt-5 pb-5 ' >

@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useRef, createRef } from "react";
 import { evaluationCourse, generateCertificate, quizDiagnostic, registerAnswers, registerDiagnostic } from "../../services/services";
 import { useSelector } from "react-redux/es/exports";
-import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
+/* import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard"; */
+
+import { Header } from "../../componentes/Header";
+
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+
+import "../../assets/css/screens/dashboards/StyleEvaluacion.css";
 
 export const Evaluacion = () => {
   const { token, groups,id } = useSelector((state) => state.auth);
@@ -129,8 +134,9 @@ export const Evaluacion = () => {
   }
 
   return (
-    <div className="preguntas__diagnostico">
-      <HeaderDashboard />
+    <div className="preguntas__diagnostico evaluacion-xln-container">
+      {/* <HeaderDashboard /> */}
+      <Header/>
       <div className="preguntas__diagnostico-container">
         {question.length > 0 &&
           (
@@ -158,15 +164,15 @@ export const Evaluacion = () => {
           )
         }
       </div>
-      <div>
-        <div className="preguntas__footer">
+
+        <div className="preguntas__footer content-btn-evaluacion">
+          <h2 className="text-center fw-bold" style={{color:'#000'}} >{page + 1} / {question.length} </h2>
           <button
             className="preguntas__footer-button_prev"
             onClick={previousPage}
           >
             Volver
           </button>
-          <h2 className="text-center pt-5 fw-bold" style={{color:'#8894ab'}} >{page + 1} / {question.length} </h2>
           <button
             className="preguntas__footer-button_next"
             onClick={() => nextPage((question.length - 1) == page)}
@@ -175,7 +181,7 @@ export const Evaluacion = () => {
             {(question.length - 1) == page ? "Enviar respuestas" : "Siguiente"}
           </button>
         </div>
-      </div>
+     
     </div>
   );
 };

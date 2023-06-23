@@ -1,0 +1,48 @@
+.evaluacion-xln-container .content-btn-evaluacion {
+    width: 100%;
+    z-index: 9;
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    height: auto;
+    background: none;
+}
+
+.evaluacion-xln-container .preguntas__diagnostico.evaluacion-xln-container button {
+    width: 50%;
+}
+
+
+.evaluacion-xln-container .preguntas__diagnostico-content {
+    position: relative;
+    top: 50px;
+    width: 100%;
+    padding-top: 8%;
+    height: 100vh;
+}
+
+.evaluacion-xln-container .preguntas__diagnostico-container {
+    height: 100vh;
+}
+
+.content-btn-evaluacion .preguntas__footer-button_prev {
+    background: white;
+}
+
+.content-btn-evaluacion .preguntas__diagnostico-content h3 {
+    width: 80%;
+    padding-bottom: 2%;
+}
+
+.evaluacion-xln-container  .preguntas__footer.content-btn-evaluacion button {
+    width: 50%;
+}
+
+.evaluacion-xln-container .preguntas__diagnostico-content h3 {
+    width: 80%;
+}
+
+.certificate__section {
+    height: 100vh;
+    padding-top: 13%;
+}
