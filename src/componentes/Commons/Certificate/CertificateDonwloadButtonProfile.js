@@ -6,7 +6,7 @@ import { baseURL } from '../../../utils/route';
 export const CertificateDonwloadButtonProfile = ({courseId}) => {
     const { token, id } = useSelector(state => state.auth)
     const [show, setShow] = useState(false);
-  
+
     const consultCertificate = async () => {
         try {
           const response = await generateCertificate(token, id, courseId);
