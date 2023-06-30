@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Col, Container, Image } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
-import { HeaderDashboard } from '../../componentes/dashboards/HeaderDashboard'
 import { getUserCourseById, updateProfile } from '../../services/services'
 import '../../assets/css/screens/dashboards/StylePerfil.css';
 import { imagenUser } from '../../assets/img'
@@ -9,12 +8,10 @@ import { Footer } from '../../componentes/Footer'
 import { Header } from '../../componentes/Header'
 import { LinearProgress } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
-import { generateCertificate } from '../../services/services'
-import { baseURL } from '../../utils/route'
 import { CertificateDonwloadButtonProfile } from '../../componentes/Commons/Certificate/CertificateDonwloadButtonProfile'
 import { CircularProgressbarWithChildren, buildStyles } from 'react-circular-progressbar'
 import { useForm } from '../../hooks/useForm'
-
+import Swal from 'sweetalert2';
 
 export const Perfil = () => {
 
@@ -22,25 +19,21 @@ export const Perfil = () => {
   const [routeCourses, setRouteCourses] = useState([]);
   const navigate = useNavigate();
   const [editProfile, setEditProfile] = useState(true);
-  
+
   const [formValues, handleInputChange] = useForm({
-      nameUser: '',
-      emailUser: email,
-      password: '',
-      password_confirmation: '',
-      rol_id: roles,
-      subcompanies_id: subcompanie_id,
-      email_confirmation: email ,
-      phone: ''
+    nameUser: '',
+    rol_id: roles,
+    subcompanies_id: subcompanie_id,
+    phone: ''
   })
 
-  const {nameUser, emailUser, password, password_confirmation, rol_id,subcompanies_id,email_confirmation,phone} = formValues;
+  const { nameUser, phone } = formValues;
+
 
 
   useEffect(() => {
     async function getCourseRoute() {
       const data = await getUserCourseById(token, id);
-      // console.log(data, 'valores');
       setRouteCourses(data.response._embedded.courses)
     }
     getCourseRoute();
@@ -58,10 +51,31 @@ export const Perfil = () => {
     }
   }
 
-
   const handleUpdateProfile = () => {
-    const data = updateProfile(token,id,nameUser,emailUser,password,password_confirmation,roles,subcompanie_id,phone);
-    console.log(data);
+    try {
+      const data = updateProfile(token, id, nameUser, email, roles, subcompanie_id, email, phone);
+      console.log(data,'respuesta del update');
+      Swal.fire({
+        icon: 'success',
+        title: 'Usuario actualizado con exito',
+        // text: `${data.message}`,
+        text: `Los cambios se veran reflejados al iniciar sesion nuevamente`,
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
+
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Opps',
+        // text: `${data.message}`,
+        text: `Valida que estes enviando los datos correctamente`,
+        // footer: '<a href="">Why do I have this issue?</a>'
+      })
+    }
+  }
+
+  const seeCertificate = (idCourse) => {
+    navigate(`/ver/certificado/${idCourse}`)
   }
 
   const buttons = "btn p-0 border-0 text-secondary"
@@ -94,9 +108,17 @@ export const Perfil = () => {
               <div>
                 <div class="form-floating mt-5 mb-3">
                   <input type="text" class="form-control" name='nameUser' onChange={handleInputChange} id="floatingInput" placeholder={name} />
-                  <label for="floatingInput">{name}</label>
+                  <label htmlFor="floatingInput">Nombre: {name}</label>
                 </div>
-                <button className='border border-0 btn' style={{backgroundColor:"#002333" , color:"#fff"}} onClick={handleUpdateProfile} > Actualizar perfil </button>
+                <div class="form-floating mt-5 mb-3">
+                  <input type="text" class="form-control" name='email' onChange={handleInputChange} id="floatingInput" placeholder={email} />
+                  <label htmlFor="floatingInput">Correo: {email}</label>
+                </div>
+                <div class="form-floating mt-5 mb-3">
+                  <input type="text" class="form-control" name='phone' onChange={handleInputChange} id="floatingInput" placeholder={phone} />
+                  <label htmlFor="floatingInput">Contacto: {phone}</label>
+                </div>
+                <button className='border border-0 btn' style={{ backgroundColor: "#002333", color: "#fff" }} onClick={handleUpdateProfile} > Actualizar perfil </button>
               </div>
             }
           </div>
@@ -119,7 +141,7 @@ export const Perfil = () => {
                 {routeCourses &&
                   routeCourses.map((item, index) => (
                     <div className="card mb-5" style={{ width: "18rem" }} key={index} >
-                      <img src={item.file_path} className="card-img-top" alt="..." />
+                      <img src={item.file_path} onClick={() => seeCertificate(item.id)} style={{ cursor: 'pointer' }} className="card-img-top" alt="..." />
                       <div className="card-body h-25">
                         <h5 className="card-title fw-bold ">{item.name}</h5>
                       </div>

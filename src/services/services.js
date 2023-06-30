@@ -447,7 +447,7 @@ export const validateMembership = (token, subcompanie_id) => {
   return response;
 }
 
-export const updateProfile = (token,id, name,email,password,password_confirmation, rol_id, subcompanies_id,phone) => {
+export const updateProfile = (token,id, name,email,rol_id, subcompanies_id,email_confirmation,phone) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -457,14 +457,13 @@ export const updateProfile = (token,id, name,email,password,password_confirmatio
   const body = {
     name,
     email,
-    password,
-    password_confirmation,
     rol_id,
     subcompanies_id,
+    email_confirmation,
     phone
   }
 
-  const response = axios.put(baseURL + `/api/v1/user/edit/${id}`,config, body);
+  const response = axios.put(baseURL + `/api/v1/user/edit/${id}`,body,config );
   return response.data;
 
 }

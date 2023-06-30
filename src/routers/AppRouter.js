@@ -46,6 +46,7 @@ import { ErrorScreen } from "../screens/ErrorScreen";
 import { CommonRoutes } from "./CommonRoutes";
 import { Reportes } from "../screens/dashboards/Reportes";
 import { NonviewRoutes } from "./NonviewRoutes";
+import { VerCertificado } from "../screens/dashboards/VerCertificado";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -142,6 +143,7 @@ export const AppRouter = () => {
           <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
           <Route exact path="/profile/:name" element={<Perfil />} />
           <Route exact path="/soporte" element={<Soporte />} />
+          <Route exact path="/ver/certificado/:idCourse" element={<VerCertificado/>}/>
         </Route>
 
         <Route path="*" element={<ErrorScreen />} />
