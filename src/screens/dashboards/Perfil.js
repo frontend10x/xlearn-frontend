@@ -59,7 +59,7 @@ export const Perfil = () => {
         icon: 'success',
         title: 'Usuario actualizado con exito',
         // text: `${data.message}`,
-        text: `Los cambios se veran reflejados al iniciar sesion nuevamente`,
+        text: `Los cambios se veran reflejados al cerrar e iniciar sesión nuevamente`,
         // footer: '<a href="">Why do I have this issue?</a>'
       })
 
