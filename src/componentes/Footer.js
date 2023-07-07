@@ -41,6 +41,10 @@ export const Footer = () => {
     navigate('/cookies/usuario');
   }
 
+  const preguntasFrecuentes = () => {
+    navigate('/preguntas/frecuentes')
+  }
+
   return (
     <footer className="footer">
       
@@ -79,7 +83,7 @@ export const Footer = () => {
                 <div className="xln__altoTitle__footer">
                   <h5>Contáctanos</h5>
                 </div>
-                {/* <p className="link-footer">FAQ</p> */}
+                <p className="link-footer" onClick={preguntasFrecuentes} >Preguntas frecuentes</p>
                 <p className="link-footer" onClick={soporte}>Soporte</p>
               </div>
             </div>
