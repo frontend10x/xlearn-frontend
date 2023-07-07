@@ -47,6 +47,8 @@ import { CommonRoutes } from "./CommonRoutes";
 import { Reportes } from "../screens/dashboards/Reportes";
 import { NonviewRoutes } from "./NonviewRoutes";
 import { VerCertificado } from "../screens/dashboards/VerCertificado";
+import { Faqs } from "../screens/Faqs";
+import { DetailFaqs } from "../screens/DetailFaqs";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -71,6 +73,9 @@ export const AppRouter = () => {
         <Route exact path="/recuperacion/contrasena" element={<ForgotPassword />} />
         <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
         <Route exact path="/cookies/usuario" element={<Cookies />} />
+        <Route exact path="/preguntas/frecuentes" element={<Faqs/>} />
+        <Route exact path="/preguntas/frecuentes/:name" element={<DetailFaqs/>} />
+        
 
 
 

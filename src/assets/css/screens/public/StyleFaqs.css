@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "GTWalsheimPro-Bold";
+    src: url("../../../GTWalsheimPro/GTWalsheimPro-Bold.eot");
+}
+
+.walsheimProBold {
+    font-family: "GTWalsheimPro-Bold";
+}
+
+.faqs-title {
+    font-family: "GTWalsheimPro-Bold";
+    font-size: 36px;
+}
+
+.faqs-banner {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.faqs_banner-content {
+    color: var(--white);
+    /* left: 100px; */
+    position: relative;
+    /* top: 160px; */
+}
