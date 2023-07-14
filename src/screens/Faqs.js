@@ -23,6 +23,8 @@ export const Faqs = () => {
     navigate(`/preguntas/frecuentes/${faqsId}/${faqsName}`);
   };
 
+  console.log(quest,'quest');
+
   return (
     <div>
       <Header />
@@ -48,11 +50,11 @@ export const Faqs = () => {
       <div className="container" style={{ height: "105vh" }}>
         <h2 className="faqs-title fw-bold mb-5">Iniciemos con la ayuda</h2>
 
-        <div className="mb-5 d-flex gap-2 flex-wrap">
+        <div className="mb-5 d-flex gap-2 flex-wrap ">
           {quest &&
             quest.map((item) => (
               <div
-                className="card border-0 rounded"
+                className="card border-0 rounded d-flex justify-content-center align-items-center"
                 key={item.id}
                 style={{
                   width: "300px",
@@ -60,10 +62,10 @@ export const Faqs = () => {
                   backgroundColor: "#F2F2F2",
                 }}
               >
-                <div className="card-body">
+                <div className="card-body mt-5 pt-5 ms-5 text-center">
                   <h5
                     className="card-title walsheimProBold"
-                    style={{ fontSize: "20px", color: "#270BC4" }}
+                    style={{ fontSize: "20px", color: "#270BC4",height:"40px" }}
                   >
                     {item?.question}
                   </h5>
@@ -72,7 +74,7 @@ export const Faqs = () => {
                   </p> */}
                   <a
                     onClick={() => detailedFaqs(item?.id, item?.question)}
-                    className="card-link walsheimProBold position-absolute bottom-0 end-0 me-3 mb-2"
+                    className="card-link walsheimProBold "
                     style={{ fontSize: "14px", color: "#270BC4" }}
                   >
                     Ver más
