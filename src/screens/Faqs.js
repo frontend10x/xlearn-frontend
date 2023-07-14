@@ -43,7 +43,7 @@ export const Faqs = () => {
                 </section>
             </div>
 
-            <div className='container' style={{ height: "90vh" }} >
+            <div className='container' >
                 <h2 className='faqs-title fw-bold' >Iniciemos con la ayuda</h2>
                 <div className='mb-5' >
                     {quest &&
