@@ -74,7 +74,7 @@ export const AppRouter = () => {
         <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
         <Route exact path="/cookies/usuario" element={<Cookies />} />
         <Route exact path="/preguntas/frecuentes" element={<Faqs/>} />
-        <Route exact path="/preguntas/frecuentes/:name" element={<DetailFaqs/>} />
+        <Route exact path="/preguntas/frecuentes/:id/:name" element={<DetailFaqs/>} />
         
 
 
