@@ -44,8 +44,6 @@ export const Evaluacion = () => {
     quiz();
   }, []);
 
-  
-
   useEffect(() => {
     const res = validateAnswers(page);
     setDisabled(!res);
@@ -68,8 +66,9 @@ export const Evaluacion = () => {
     page > 0 && setPage(page - 1);
   };
 
+  const questionLength = question?.length;
+
   const nextPage = async (status) => {
-    const questionLength = question.length;
     if (validateAnswers(page)) {
       page < (questionLength - 1) && setPage(page + 1);
       if (status) {
@@ -86,8 +85,6 @@ export const Evaluacion = () => {
       }
     }
   };
-
-  console.log(results,'results');
 
   const validateAnswers = (numPages) => {
     const getIdQuestion = question[numPages];
@@ -133,6 +130,23 @@ export const Evaluacion = () => {
     });
   }
 
+  const skipQuestion = () => {
+    page < (questionLength - 1) && setPage(page);
+    question?.find((quest, index) => {
+      if(index === page){
+        setQuestion(currentQuestion => {
+          currentQuestion.splice(index, 1);
+          currentQuestion.push(quest)
+          return currentQuestion
+        })
+        return quest;
+      }
+    });
+  }
+
+  console.log("question", question);
+
+
   return (
     <div className="preguntas__diagnostico evaluacion-xln-container">
       {/* <HeaderDashboard /> */}
@@ -165,7 +179,36 @@ export const Evaluacion = () => {
         }
       </div>
 
-        <div className="preguntas__footer content-btn-evaluacion">
+      <div className="row content-btn-evaluacion">
+        <h2 className="text-center fw-bold" style={{color:'#000'}} >{page + 1} / {question.length} </h2>
+        <div className="col-md-4">
+          <button
+            className="bg-secondary preguntas__footer-button_prev"
+            onClick={previousPage}
+          >
+            Volver
+          </button>
+        </div>
+        <div className="col-md-4">
+          <button
+            className="bg-warning preguntas__footer-button_prev"
+            onClick={skipQuestion}
+          >
+            Saltar
+          </button>
+        </div>
+        <div className="col-md-4">
+          <button
+            className="preguntas__footer-button_next"
+            onClick={() => nextPage((question.length - 1) === page)}
+            disabled={isDisabled}
+          >
+            {(question.length - 1) === page ? "Enviar respuestas" : "Siguiente"}
+          </button>
+        </div>
+      </div>
+
+        {/* <div className="preguntas__footer content-btn-evaluacion">
           <h2 className="text-center fw-bold" style={{color:'#000'}} >{page + 1} / {question.length} </h2>
           <button
             className="preguntas__footer-button_prev"
@@ -180,7 +223,7 @@ export const Evaluacion = () => {
           >
             {(question.length - 1) == page ? "Enviar respuestas" : "Siguiente"}
           </button>
-        </div>
+        </div> */}
      
     </div>
   );
