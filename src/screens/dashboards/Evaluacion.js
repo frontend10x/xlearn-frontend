@@ -13,6 +13,7 @@ import "../../assets/css/screens/dashboards/StyleEvaluacion.css";
 export const Evaluacion = () => {
   const { token, groups,id } = useSelector((state) => state.auth);
   const [question, setQuestion] = useState([]);
+  const [skipQuest, setSkipQues] = useState([]);
   const { course_id,name } = useParams();
   const [page, setPage] = useState(0);
   const [perPage, setPerpage] = useState(1);
@@ -48,7 +49,7 @@ export const Evaluacion = () => {
     const res = validateAnswers(page);
     setDisabled(!res);
     getStyleInput();
-  }, [page]);
+  }, [page, skipQuest]);
 
   const respuesta = (event, idQues, response) => {
     saveResponseStyle(idQues, response.id, event)
@@ -131,21 +132,20 @@ export const Evaluacion = () => {
   }
 
   const skipQuestion = () => {
-    page < (questionLength - 1) && setPage(page);
+    setPage(page);
     question?.find((quest, index) => {
       if(index === page){
         setQuestion(currentQuestion => {
           currentQuestion.splice(index, 1);
           currentQuestion.push(quest)
+          setSkipQues(quest)
           return currentQuestion
         })
         return quest;
       }
+      return null;
     });
   }
-
-  console.log("question", question);
-
 
   return (
     <div className="preguntas__diagnostico evaluacion-xln-container">
@@ -193,6 +193,7 @@ export const Evaluacion = () => {
           <button
             className="bg-warning preguntas__footer-button_prev"
             onClick={skipQuestion}
+            disabled={page === questionLength - 1}
           >
             Saltar
           </button>
