@@ -13,6 +13,7 @@ import "../../assets/css/screens/dashboards/StyleEvaluacion.css";
 export const Evaluacion = () => {
   const { token, groups,id } = useSelector((state) => state.auth);
   const [question, setQuestion] = useState([]);
+  const [skipQuest, setSkipQues] = useState([]);
   const { course_id,name } = useParams();
   const [page, setPage] = useState(0);
   const [perPage, setPerpage] = useState(1);
@@ -44,13 +45,11 @@ export const Evaluacion = () => {
     quiz();
   }, []);
 
-  
-
   useEffect(() => {
     const res = validateAnswers(page);
     setDisabled(!res);
     getStyleInput();
-  }, [page]);
+  }, [page, skipQuest]);
 
   const respuesta = (event, idQues, response) => {
     saveResponseStyle(idQues, response.id, event)
@@ -68,8 +67,9 @@ export const Evaluacion = () => {
     page > 0 && setPage(page - 1);
   };
 
+  const questionLength = question?.length;
+
   const nextPage = async (status) => {
-    const questionLength = question.length;
     if (validateAnswers(page)) {
       page < (questionLength - 1) && setPage(page + 1);
       if (status) {
@@ -86,8 +86,6 @@ export const Evaluacion = () => {
       }
     }
   };
-
-  console.log(results,'results');
 
   const validateAnswers = (numPages) => {
     const getIdQuestion = question[numPages];
@@ -133,6 +131,22 @@ export const Evaluacion = () => {
     });
   }
 
+  const skipQuestion = () => {
+    setPage(page);
+    question?.find((quest, index) => {
+      if(index === page){
+        setQuestion(currentQuestion => {
+          currentQuestion.splice(index, 1);
+          currentQuestion.push(quest)
+          setSkipQues(quest)
+          return currentQuestion
+        })
+        return quest;
+      }
+      return null;
+    });
+  }
+
   return (
     <div className="preguntas__diagnostico evaluacion-xln-container">
       {/* <HeaderDashboard /> */}
@@ -165,7 +179,37 @@ export const Evaluacion = () => {
         }
       </div>
 
-        <div className="preguntas__footer content-btn-evaluacion">
+      <div className="row content-btn-evaluacion">
+        <h2 className="text-center fw-bold" style={{color:'#000'}} >{page + 1} / {question.length} </h2>
+        <div className="col-md-4">
+          <button
+            className="bg-secondary preguntas__footer-button_prev"
+            onClick={previousPage}
+          >
+            Volver
+          </button>
+        </div>
+        <div className="col-md-4">
+          <button
+            className="bg-warning preguntas__footer-button_prev"
+            onClick={skipQuestion}
+            disabled={page === questionLength - 1}
+          >
+            Saltar
+          </button>
+        </div>
+        <div className="col-md-4">
+          <button
+            className="preguntas__footer-button_next"
+            onClick={() => nextPage((question.length - 1) === page)}
+            disabled={isDisabled}
+          >
+            {(question.length - 1) === page ? "Enviar respuestas" : "Siguiente"}
+          </button>
+        </div>
+      </div>
+
+        {/* <div className="preguntas__footer content-btn-evaluacion">
           <h2 className="text-center fw-bold" style={{color:'#000'}} >{page + 1} / {question.length} </h2>
           <button
             className="preguntas__footer-button_prev"
@@ -180,7 +224,7 @@ export const Evaluacion = () => {
           >
             {(question.length - 1) == page ? "Enviar respuestas" : "Siguiente"}
           </button>
-        </div>
+        </div> */}
      
     </div>
   );
