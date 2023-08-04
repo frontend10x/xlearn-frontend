@@ -25,7 +25,7 @@ export const CertificateDownloadButton = ({courseId}) => {
         <>
           {certificate?.status && 
             (<div>
-              <a href={baseURL + certificate?.paths?.certificate} target="_blank" className="link-certificado" rel="noreferrer">
+              <a href={baseURL + certificate?.paths?.show} target="_blank" className="link-certificado" rel="noreferrer">
                 <Image src={certificadoIcon} alt="certificate" id='cart-icon' className="icon-certificado-courses" />
               </a>
               <ShareCertificateProfile certificate={certificate}/>
