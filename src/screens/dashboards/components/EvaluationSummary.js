@@ -2,7 +2,7 @@ import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 
 let border = 'border-danger';
 let textButton = 'Incorrecto'
-let color = 'error'
+let buttonColor = 'error'
 
 export const EvaluationSummary = ({question, answers, number}) => {
     const { user, correct } = answers;
@@ -10,9 +10,8 @@ export const EvaluationSummary = ({question, answers, number}) => {
     if(user?.id === correct?.id){
         border = 'border-success';
         textButton = 'Correcto'
-        color = 'success'
+        buttonColor = 'success'
     }
-    console.log(number)
 
     return(
         <Card variant="outlined" className={`mt-4 d-flex ${border} border-2`}>
@@ -27,7 +26,7 @@ export const EvaluationSummary = ({question, answers, number}) => {
                 </CardContent>
             </Box>
             <Box className="d-flex flex-grow-1 justify-content-end align-items-center p-3">
-                <Button variant="outlined" color={color}>
+                <Button variant="outlined" color={buttonColor}>
                     <strong>{textButton}</strong>
                 </Button>
             </Box>

@@ -82,7 +82,6 @@ export const Score = () => {
                         </div>
 
                         {response?.results.map(({question, answers}, index) =>{
-                            console.log("index", index)
                             return (
                                 <EvaluationSummary question={question?.question} answers={answers} key={index} number={index} />
                             )
