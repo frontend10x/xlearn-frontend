@@ -9,8 +9,6 @@ import { baseURL } from '../../utils/route';
 import { Header } from '../../componentes/Header';
 import { EvaluationSummary } from './components/EvaluationSummary';
 
-let redirectText = 'Repasar';
-
 export const Score = () => {
 
     const [response, setResponse] = useState();
@@ -19,6 +17,8 @@ export const Score = () => {
     const { id, course_id, name } = useParams();
 
     const navigate = useNavigate();
+
+    let redirectText = 'Repasar';
 
     useEffect(() => {
 
@@ -49,7 +49,7 @@ export const Score = () => {
             <Container className='container-fluid' >
                 {response?.status === true &&
                     <>
-                        <div className='certifate__section-container text-center mt-5' >
+                        <div className='certifate__section-container text-center' >
                             <div className='certificate__section-content border-bottom' >
                                 <h2 className='fw-bold' >Resultado</h2>
                                 <h1 className='title' >¡Felicidades!</h1>
@@ -88,11 +88,11 @@ export const Score = () => {
                     )
                 })}
 
-                 <div className='text-center mt-5' >
+                {response && (<div className='text-center mt-5 pb-5' >
                     <button className='button__certificate' onClick={redirect} >
                         {redirectText}
                     </button>
-                </div>
+                </div>)}
 
             </Container>
         </div>

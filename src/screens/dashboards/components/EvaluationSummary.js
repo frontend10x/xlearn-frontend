@@ -1,11 +1,11 @@
 import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 
-let border = 'border-danger';
-let textButton = 'Incorrecto'
-let buttonColor = 'error'
-
 export const EvaluationSummary = ({question, answers, number}) => {
     const { user, correct } = answers;
+
+    let border = 'border-danger';
+    let textButton = 'Incorrecto'
+    let buttonColor = 'error'
     
     if(user?.id === correct?.id){
         border = 'border-success';
