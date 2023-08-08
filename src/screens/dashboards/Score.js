@@ -9,6 +9,8 @@ import { baseURL } from '../../utils/route';
 import { Header } from '../../componentes/Header';
 import { EvaluationSummary } from './components/EvaluationSummary';
 
+let redirectText = 'Repasar';
+
 export const Score = () => {
 
     const [response, setResponse] = useState();
@@ -22,6 +24,7 @@ export const Score = () => {
 
         async function scores() {
             const response = await generateCertificate(token, id, course_id);
+            redirectText = response?.status && 'Finalizar';
             setResponse(response)
             console.log(response,'valores');
         }
@@ -58,12 +61,6 @@ export const Score = () => {
                                 </h2>
                             </div>
                         </div>
-
-                        <div className='text-center mt-5' >
-                            <button className='button__certificate' onClick={redirect} >
-                                Finalizar
-                            </button>
-                        </div>
                     </>
                 }
                 {response?.status === false &&
@@ -81,20 +78,21 @@ export const Score = () => {
                             </div>
                         </div>
 
-                        {response?.results.map(({question, answers}, index) =>{
-                            return (
-                                <EvaluationSummary question={question?.question} answers={answers} key={index} number={index} />
-                            )
-                        })}
-
-                        <div className='text-center mt-5' >
-                            <button className='button__certificate' onClick={redirect} >
-                                Repasar
-                            </button>
-                        </div>
                     </>
 
                 }
+
+                {response?.results.map(({question, answers}, index) =>{
+                    return (
+                        <EvaluationSummary question={question?.question} answers={answers} key={index} number={index} />
+                    )
+                })}
+
+                 <div className='text-center mt-5' >
+                    <button className='button__certificate' onClick={redirect} >
+                        {redirectText}
+                    </button>
+                </div>
 
             </Container>
         </div>
