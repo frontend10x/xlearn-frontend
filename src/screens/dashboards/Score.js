@@ -7,6 +7,7 @@ import { generateCertificate } from '../../services/services';
 import '../../assets/css/screens/dashboards/StyleScore.css';
 import { baseURL } from '../../utils/route';
 import { Header } from '../../componentes/Header';
+import { EvaluationSummary } from './components/EvaluationSummary';
 
 export const Score = () => {
 
@@ -79,6 +80,13 @@ export const Score = () => {
                                 <h2 className='percentage__evaluation' >{response?.percentage}% </h2>
                             </div>
                         </div>
+
+                        {response?.results.map(({question, answers}, index) =>{
+                            console.log("index", index)
+                            return (
+                                <EvaluationSummary question={question?.question} answers={answers} key={index} number={index} />
+                            )
+                        })}
 
                         <div className='text-center mt-5' >
                             <button className='button__certificate' onClick={redirect} >

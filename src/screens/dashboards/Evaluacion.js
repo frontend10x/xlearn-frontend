@@ -92,9 +92,9 @@ export const Evaluacion = () => {
     const savedAnswer = [...schema.answers];
     try {
       const isExists = savedAnswer.filter(
-        (e) => e.question_id == getIdQuestion.id
+        (e) => e.question_id === getIdQuestion.id
       );
-      if (isExists.length == 0) {
+      if (isExists.length === 0) {
         return false
       }
       return true;
@@ -104,7 +104,7 @@ export const Evaluacion = () => {
   };
 
   const saveResponseStyle = (idQues, idAns, event) => {
-    const savedKeyCss = new Object();
+    const savedKeyCss = {};
     removeClass();
     event.target.classList.add(classSelected);
     savedKeyCss[idQues] = idAns;
