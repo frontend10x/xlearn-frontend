@@ -49,6 +49,7 @@ import { NonviewRoutes } from "./NonviewRoutes";
 import { VerCertificado } from "../screens/dashboards/VerCertificado";
 import { Faqs } from "../screens/Faqs";
 import { DetailFaqs } from "../screens/DetailFaqs";
+import { PerfilEmpresa } from "../screens/dashboards/PerfilEmpresa";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -147,6 +148,7 @@ export const AppRouter = () => {
           <Route exact path="/certificado/:course_id" element={<GenerarCertificado />} />
           <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
           <Route exact path="/profile/:name" element={<Perfil />} />
+          <Route exact path="/profile/enterprise/:name" element={<PerfilEmpresa />} />
           <Route exact path="/soporte" element={<Soporte />} />
           <Route exact path="/ver/certificado/:idCourse" element={<VerCertificado/>}/>
         </Route>

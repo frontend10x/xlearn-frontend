@@ -9,11 +9,15 @@ import { useNavigate } from "react-router-dom";
 
 export const Faqs = () => {
   const [quest, setQuest] = useState([]);
+  const [selectedSubCategory, setSelectedSubcategory] = useState("");
+  const [originalFaqs, setOriginalFaqs] = useState([]);
+
   const navigate = useNavigate();
 
   useEffect(() => {
     async function getFaqs() {
       const data = await faqs();
+      setOriginalFaqs(data.data.response._embedded.faqs);
       setQuest(data.data.response._embedded.faqs);
     }
     getFaqs();
@@ -23,7 +27,22 @@ export const Faqs = () => {
     navigate(`/preguntas/frecuentes/${faqsId}/${faqsName}`);
   };
 
-  console.log(quest,'quest');
+  const filter = (subCategory) => {
+    if (!subCategory) {
+      setQuest(originalFaqs); // Restablece el array original si no se selecciona ninguna subcategoría
+    } else {
+      const filteredFaqs = originalFaqs.filter((item) => item.sub_category === subCategory);
+      setQuest(filteredFaqs);
+    }
+  };
+
+  const handleFilterClick = (e) => {
+    const selectedSubcategory = e.currentTarget.dataset.subcategory;
+    setSelectedSubcategory(selectedSubcategory);
+    filter(selectedSubcategory);
+  };
+
+  console.log(quest);
 
   return (
     <div>
@@ -47,9 +66,44 @@ export const Faqs = () => {
         </section>
       </div>
 
-      <div className="container" style={{ height: "105vh" }}>
+      <div className="container" style={{ height: "120vh" }}>
+        <div className="d-flex justify-content-center gap-5 mb-3">
+          <div
+            className={`card text-center ${
+              selectedSubCategory === "xlearn" ? "selected" : ""
+            }`}
+            style={{
+              width: "215px",
+              height: "102px",
+              backgroundColor: "#01202C",
+              color: "white",
+            }}
+            onClick={handleFilterClick}
+            data-subcategory="xlearn"
+          >
+            <div class="card-body">
+              <h5 class="card-title mt-2 fw-bold fs-1">Xlearn</h5>
+            </div>
+          </div>
+          <div
+            className={`card text-center ${
+              selectedSubCategory === "cursos" ? "selected" : ""
+            }`}
+            style={{
+              width: "215px",
+              height: "102px",
+              backgroundColor: "#01202C",
+              color: "white",
+            }}
+            onClick={handleFilterClick}
+            data-subcategory="cursos"
+          >
+            <div class="card-body">
+              <h5 class="card-title mt-2 fw-bold fs-1 ">Cursos</h5>
+            </div>
+          </div>
+        </div>
         <h2 className="faqs-title fw-bold mb-5">Iniciemos con la ayuda</h2>
-
         <div className="mb-5 d-flex gap-2 flex-wrap ">
           {quest &&
             quest.map((item) => (
@@ -65,17 +119,19 @@ export const Faqs = () => {
                 <div className="card-body mt-5 pt-5 ms-5 text-center">
                   <h5
                     className="card-title walsheimProBold"
-                    style={{ fontSize: "20px", color: "#270BC4",height:"40px" }}
+                    style={{
+                      fontSize: "20px",
+                      color: "#270BC4",
+                      height: "40px",
+                    }}
                   >
                     {item?.question}
                   </h5>
-                  {/* <p className="card-text">
-                    
-                  </p> */}
                   <a
                     onClick={() => detailedFaqs(item?.id, item?.question)}
                     className="card-link walsheimProBold "
                     style={{ fontSize: "14px", color: "#270BC4" }}
+                    type="button"
                   >
                     Ver más
                   </a>
