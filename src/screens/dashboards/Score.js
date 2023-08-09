@@ -18,13 +18,10 @@ export const Score = () => {
 
     const navigate = useNavigate();
 
-    let redirectText = 'Repasar';
-
     useEffect(() => {
 
         async function scores() {
             const response = await generateCertificate(token, id, course_id);
-            redirectText = response?.status && 'Finalizar';
             setResponse(response)
             console.log(response,'valores');
         }
@@ -90,7 +87,7 @@ export const Score = () => {
 
                 {response && (<div className='text-center mt-5 pb-5' >
                     <button className='button__certificate' onClick={redirect} >
-                        {redirectText}
+                        {response?.status ? 'Finalizar' : 'Repasar'}
                     </button>
                 </div>)}
 
