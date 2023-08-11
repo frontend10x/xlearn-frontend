@@ -70,30 +70,33 @@ export const Perfil = () => {
   };
 
   const handleUpdateProfile = async () => {
-    try {
-      const data = await updateProfile(
-        token,
-        id,
-        nameUser,
-        emailUser,
-        roles,
-        subcompanie_id,
-        emailConfirm,
-        newPhone,
-        about_me
-      );
-      Swal.fire({
-        icon: "success",
-        title: `${data?.message}`,
-        text: `Los cambios se veran reflejados al cerrar e iniciar sesión nuevamente`
-      });
-    } catch (error) {
-      Swal.fire({
-        icon: "error",
-        title: "Opps",
-        text: `${error?.response?.data?.message}`
-      });
-    }
+    // try {
+    //   const data = await updateProfile(
+    //     token,
+    //     id,
+    //     nameUser,
+    //     emailUser,
+    //     roles,
+    //     subcompanie_id,
+    //     emailConfirm,
+    //     newPhone,
+    //     about_me
+    //   );
+    //   Swal.fire({
+    //     icon: "success",
+    //     title: `${data?.message}`,
+    //     text: `Los cambios se veran reflejados al cerrar e iniciar sesión nuevamente`
+    //   });
+    // } catch (error) {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Opps",
+    //     text: `${error?.response?.data?.message}`
+    //   });
+    // }
+
+    console.log(formValues,'valores');
+
   };
 
   const seeCertificate = (idCourse) => {

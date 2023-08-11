@@ -14,6 +14,7 @@ import { CertificateDonwloadButtonProfile } from "../../componentes/Commons/Cert
 import { Footer } from "../../componentes/Footer";
 import Swal from "sweetalert2";
 import {
+  getEnterpriseInformation,
   getUserCourseById,
   getUserInformation,
   updateEnterprise,
@@ -45,13 +46,13 @@ export const PerfilEmpresa = () => {
       setRouteCourses(data.response._embedded.courses);
     }
 
-    async function getUserInfo() {
-      const data = await getUserInformation(token, id);
+    async function getEnterpriseInfo() {
+      const data = await getEnterpriseInformation(token, subcompanie_id);
       setInfoUser(data?.data?.user);
     }
 
     getCourseRoute();
-    getUserInfo();
+    getEnterpriseInfo();
   }, [token]);
 
   const profileEdit = () => {
