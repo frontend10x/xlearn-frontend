@@ -7,13 +7,13 @@ import { baseURL } from "../../../utils/route";
 import { ShareCertificateProfile } from "../SocialMedia/LinkendIn/ShareCertificateProfile";
 
 export const CertificateDownloadButton = ({courseId}) => {
-    const [show, setShow] = useState(false);
+    const [certificate, setCertificate] = useState(false);
     const { token, id } = useSelector(state => state.auth)
 
     const consultCertificate = async () => {
       try {
         const response = await generateCertificate(token, id, courseId);
-        setShow(response)
+        setCertificate(response)
       } catch (error){}
     }
 
@@ -23,12 +23,12 @@ export const CertificateDownloadButton = ({courseId}) => {
   
     return(
         <>
-          {show?.status && 
+          {certificate?.status && 
             (<div>
-              <a href={baseURL + show?.paths?.show} target="_blank" className="link-certificado" rel="noreferrer">
+              <a href={baseURL + certificate?.paths?.show} target="_blank" className="link-certificado" rel="noreferrer">
                 <Image src={certificadoIcon} alt="certificate" id='cart-icon' className="icon-certificado-courses" />
               </a>
-              <ShareCertificateProfile certificate={show}/>
+              <ShareCertificateProfile certificate={certificate}/>
             </div>)}
         </>
       

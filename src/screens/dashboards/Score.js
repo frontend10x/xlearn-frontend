@@ -7,6 +7,7 @@ import { generateCertificate } from '../../services/services';
 import '../../assets/css/screens/dashboards/StyleScore.css';
 import { baseURL } from '../../utils/route';
 import { Header } from '../../componentes/Header';
+import { EvaluationSummary } from './components/EvaluationSummary';
 
 export const Score = () => {
 
@@ -45,7 +46,7 @@ export const Score = () => {
             <Container className='container-fluid' >
                 {response?.status === true &&
                     <>
-                        <div className='certifate__section-container text-center mt-5' >
+                        <div className='certifate__section-container text-center' >
                             <div className='certificate__section-content border-bottom' >
                                 <h2 className='fw-bold' >Resultado</h2>
                                 <h1 className='title' >¡Felicidades!</h1>
@@ -56,12 +57,6 @@ export const Score = () => {
                                     {response?.percentage}%
                                 </h2>
                             </div>
-                        </div>
-
-                        <div className='text-center mt-5' >
-                            <button className='button__certificate' onClick={redirect} >
-                                Finalizar
-                            </button>
                         </div>
                     </>
                 }
@@ -80,14 +75,21 @@ export const Score = () => {
                             </div>
                         </div>
 
-                        <div className='text-center mt-5' >
-                            <button className='button__certificate' onClick={redirect} >
-                                Repasar
-                            </button>
-                        </div>
                     </>
 
                 }
+
+                {response?.results.map(({question, answers}, index) =>{
+                    return (
+                        <EvaluationSummary question={question?.question} answers={answers} key={index} number={index} />
+                    )
+                })}
+
+                {response && (<div className='text-center mt-5 pb-5' >
+                    <button className='button__certificate' onClick={redirect} >
+                        {response?.status ? 'Finalizar' : 'Repasar'}
+                    </button>
+                </div>)}
 
             </Container>
         </div>
