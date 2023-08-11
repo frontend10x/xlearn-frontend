@@ -604,7 +604,9 @@ export const getEnterpriseInformation = async (token,id,subcompanies_id) => {
     },
   };
 
-  const response = await axios.get(`${baseURL}/api/v1/subempresa/${subcompanies_id}/${id}`, config);
+  console.log(subcompanies_id,'sub');
+
+  const response = await axios.get(`${baseURL}/api/v1/subempresa/datacompanyxid/${id}`, config);
   return response?.data
 }
 
