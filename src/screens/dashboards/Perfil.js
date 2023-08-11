@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Col, Container, Image } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { getUserCourseById, updateProfile } from "../../services/services";
+import { getUserCourseById, getUserInformation, updateProfile } from "../../services/services";
 import "../../assets/css/screens/dashboards/StylePerfil.css";
 import { imagenUser } from "../../assets/img";
 import { Footer } from "../../componentes/Footer";
@@ -23,6 +23,7 @@ export const Perfil = () => {
   const [routeCourses, setRouteCourses] = useState([]);
   const navigate = useNavigate();
   const [editProfile, setEditProfile] = useState(true);
+  const [userInfo, setUserInfo] = useState();
 
   const [formValues, handleInputChange] = useForm({
     nameUser: "",
@@ -31,7 +32,7 @@ export const Perfil = () => {
     newPhone: "",
     emailUser: "",
     emailConfirm: "",
-    about_me:""
+    about_me: "",
   });
 
   const { nameUser, newPhone, emailUser, emailConfirm, about_me } = formValues;
@@ -42,7 +43,19 @@ export const Perfil = () => {
       setRouteCourses(data.response._embedded.courses);
     }
     getCourseRoute();
-  }, []);
+
+    async function getInfoUser() {
+      const data = await getUserInformation(token, id);
+      setUserInfo(data?.user);
+    }
+
+    getInfoUser();
+
+  }, [formValues]);
+
+
+  console.log(userInfo,'informacion de usuario');
+
 
   const redirect = (name, course_id) => {
     navigate(`/course/videoplayer/${name}/${course_id}`);
@@ -66,19 +79,19 @@ export const Perfil = () => {
         roles,
         subcompanie_id,
         emailConfirm,
-        newPhone
+        newPhone,
+        about_me
       );
-      console.log(data, "datos");
       Swal.fire({
         icon: "success",
         title: `${data?.message}`,
-        text: `Los cambios se veran reflejados al cerrar e iniciar sesión nuevamente`,
+        text: `Los cambios se veran reflejados al cerrar e iniciar sesión nuevamente`
       });
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Opps",
-        text: `${error?.response?.data?.message}`,
+        text: `${error?.response?.data?.message}`
       });
     }
   };
@@ -121,7 +134,7 @@ export const Perfil = () => {
               </>
             ) : (
               <div>
-                <div class="form-floating mt-5 mb-1">
+                <div className="form-floating mt-5 mb-1">
                   <input
                     type="text"
                     class="form-control"
@@ -132,21 +145,21 @@ export const Perfil = () => {
                   />
                   <label htmlFor="floatingInput">{name}</label>
                 </div>
-                <div class="form-floating mt-5 mb-1">
+                <div className="form-floating mt-5 mb-1">
                   <input
                     type="text"
                     class="form-control"
-                    name="emailUser"
+                    nameName="emailUser"
                     onChange={handleInputChange}
                     id="floatingInput"
                     placeholder={email}
                   />
                   <label htmlFor="floatingInput">{email}</label>
                 </div>
-                <div class="form-floating mt-5 mb-1">
+                <div className="form-floating mt-5 mb-1">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     name="emailConfirm"
                     onChange={handleInputChange}
                     id="floatingInput"
@@ -154,10 +167,10 @@ export const Perfil = () => {
                   />
                   <label htmlFor="floatingInput">{email}</label>
                 </div>
-                <div class="form-floating mt-5 mb-1">
+                <div className="form-floating mt-5 mb-1">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     name="newPhone"
                     onChange={handleInputChange}
                     id="floatingInput"
@@ -195,8 +208,23 @@ export const Perfil = () => {
             </div>
 
             <div>
-              <div className="mt-3 mb-5" >
-                {editProfile ? <h2 className="walsheimProBold" >Acerca de mi</h2> : <h2 className="walsheimProBold" >Acerca de mi</h2>}
+              <div className="mt-3 mb-5">
+                {editProfile ? (
+                  <>
+                    <h2 className="walsheimProBold">Acerca de mi</h2>
+                    <p>{}</p>
+                  </>
+                ) : (
+                  <>
+                    <h2 className="walsheimProBold">Acerca de mi</h2>
+                    <textarea
+                      name="about_me"
+                      cols={100}
+                      rows={5}
+                      onChange={handleInputChange}
+                    ></textarea>
+                  </>
+                )}
               </div>
               <h2 className="fw-bold">Cursos en ruta</h2>
               <div className="d-flex flex-wrap gap-2">
@@ -217,7 +245,7 @@ export const Perfil = () => {
                       <div className="card-body h-25">
                         <h5 className="card-title fw-bold ">{item.name}</h5>
                       </div>
-                      <div class="card-body">
+                      <div className="card-body">
                         <p
                           className="card-text fs-6"
                           style={{ color: "#8894ab" }}

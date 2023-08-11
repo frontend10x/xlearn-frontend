@@ -38,6 +38,7 @@ export const Score = () => {
         }
     }
 
+    console.log(response,'respuesta');
 
 
     return (

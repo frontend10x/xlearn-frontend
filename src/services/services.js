@@ -557,7 +557,8 @@ export const updateProfile = async (
   rol_id,
   subcompanies_id,
   email_confirmation,
-  phone
+  phone,
+  about_me
 ) => {
   const config = {
     headers: {
@@ -572,7 +573,10 @@ export const updateProfile = async (
     subcompanies_id,
     email_confirmation,
     phone,
+    about_me
   };
+
+  console.log(body,'datos del endpoint');
 
   const response = await axios.put(
     baseURL + `/api/v1/user/edit/${id}`,
@@ -589,7 +593,8 @@ export const getUserInformation = async (token, id) => {
     },
   };
 
-  return await axios.get(`${baseURL}/api/v1/user/datauser/${id}`, config);
+  const response = await axios.get(`${baseURL}/api/v1/user/datauser/${id}`, config);
+  return response?.data
 };
 
 export const getEnterpriseInformation = async (token,id,subcompanies_id) => {
@@ -599,7 +604,8 @@ export const getEnterpriseInformation = async (token,id,subcompanies_id) => {
     },
   };
 
-  return await axios.get(`${baseURL}/api/v1/subempresa/${subcompanies_id}/${id}`, config);
+  const response = await axios.get(`${baseURL}/api/v1/subempresa/${subcompanies_id}/${id}`, config);
+  return response?.data
 }
 
 export const updateEnterprise = async (
