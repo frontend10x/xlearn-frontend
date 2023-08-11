@@ -10,8 +10,10 @@ export const CertificateDonwloadButtonProfile = ({courseId}) => {
     const consultCertificate = async () => {
         try {
           const response = await generateCertificate(token, id, courseId);
-          setShow(response);
-        } catch (error){}
+          setShow(response?.paths?.download);
+        } catch (error){
+          console.error(error,'error');
+        }
       }
 
       useEffect(()=>{
@@ -20,7 +22,7 @@ export const CertificateDonwloadButtonProfile = ({courseId}) => {
 
     return (
     <div>
-        <a href={baseURL + show?.paths?.download} className="btn p-0 border-0 text-secondary" target="_blank" ><p>Descargar Certificado</p></a>
+        <a href={baseURL + `/ ${show}`} className="btn p-0 border-0 text-secondary" target="_blank" ><p>Descargar Certificado</p></a>
     </div>
   )
 }

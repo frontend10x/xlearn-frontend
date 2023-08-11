@@ -1,30 +1,32 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container, Image } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { getUserCourseById, getUserInformation, updateProfile } from "../../services/services";
-import "../../assets/css/screens/dashboards/StylePerfil.css";
-import { imagenUser } from "../../assets/img";
-import { Footer } from "../../componentes/Footer";
 import { Header } from "../../componentes/Header";
-import { LinearProgress } from "@mui/material";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { CertificateDonwloadButtonProfile } from "../../componentes/Commons/Certificate/CertificateDonwloadButtonProfile";
+import { Image } from "react-bootstrap";
+import { imagenUser } from "../../assets/img";
 import {
   CircularProgressbarWithChildren,
   buildStyles,
 } from "react-circular-progressbar";
 import { useForm } from "../../hooks/useForm";
+import { LinearProgress } from "@mui/material";
+import { CertificateDonwloadButtonProfile } from "../../componentes/Commons/Certificate/CertificateDonwloadButtonProfile";
+import { Footer } from "../../componentes/Footer";
 import Swal from "sweetalert2";
+import {
+  getUserCourseById,
+  getUserInformation,
+  updateEnterprise,
+} from "../../services/services";
 
-export const Perfil = () => {
+export const PerfilEmpresa = () => {
   const { name, token, id, email, roles, subcompanie_id, phone } = useSelector(
     (state) => state.auth
   );
   const [routeCourses, setRouteCourses] = useState([]);
+  const [infoUser, setInfoUser] = useState([]);
   const navigate = useNavigate();
   const [editProfile, setEditProfile] = useState(true);
-  const [userInfo, setUserInfo] = useState();
-
   const [formValues, handleInputChange] = useForm({
     nameUser: "",
     rol_id: roles,
@@ -32,34 +34,25 @@ export const Perfil = () => {
     newPhone: "",
     emailUser: "",
     emailConfirm: "",
-    about_me: "",
+    information: "",
   });
 
-  const { nameUser, newPhone, emailUser, emailConfirm, about_me } = formValues;
+  const { nameUser, newPhone, emailUser, emailConfirm, information } = formValues;
 
   useEffect(() => {
     async function getCourseRoute() {
       const data = await getUserCourseById(token, id);
       setRouteCourses(data.response._embedded.courses);
     }
-    getCourseRoute();
 
-    async function getInfoUser() {
+    async function getUserInfo() {
       const data = await getUserInformation(token, id);
-      setUserInfo(data?.user);
+      setInfoUser(data?.data?.user);
     }
 
-    getInfoUser();
-
-  }, [formValues]);
-
-
-  console.log(userInfo,'informacion de usuario');
-
-
-  const redirect = (name, course_id) => {
-    navigate(`/course/videoplayer/${name}/${course_id}`);
-  };
+    getCourseRoute();
+    getUserInfo();
+  }, [token]);
 
   const profileEdit = () => {
     if (editProfile) {
@@ -69,9 +62,17 @@ export const Perfil = () => {
     }
   };
 
+  const seeCertificate = (idCourse) => {
+    navigate(`/ver/certificado/${idCourse}`);
+  };
+
+  const redirect = (name, course_id) => {
+    navigate(`/course/videoplayer/${name}/${course_id}`);
+  };
+
   const handleUpdateProfile = async () => {
     try {
-      const data = await updateProfile(
+      const data = await updateEnterprise(
         token,
         id,
         nameUser,
@@ -80,30 +81,28 @@ export const Perfil = () => {
         subcompanie_id,
         emailConfirm,
         newPhone,
-        about_me
+        information
       );
       Swal.fire({
         icon: "success",
         title: `${data?.message}`,
-        text: `Los cambios se veran reflejados al cerrar e iniciar sesión nuevamente`
+        text: `Los cambios se veran reflejados al cerrar e iniciar sesión nuevamente`,
       });
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Opps",
-        text: `${error?.response?.data?.message}`
+        text: `${error?.response?.data?.message}`,
       });
     }
-  };
 
-  const seeCertificate = (idCourse) => {
-    navigate(`/ver/certificado/${idCourse}`);
+    console.log(formValues,'valores');
+
   };
 
   const buttons = "btn p-0 border-0 text-secondary";
-
   return (
-    <div className="profile__section">
+    <div>
       <Header />
       <div className="container mt-5">
         <div className="row">
@@ -111,7 +110,7 @@ export const Perfil = () => {
             <Image src={imagenUser} className="mt-5" />
             {editProfile ? (
               <>
-                <h3 className="mt-5">{name}</h3>
+                <h3 className="mt-5">{infoUser?.name}</h3>
                 <div className="">
                   <div className="w-50 mt-3">
                     <CircularProgressbarWithChildren
@@ -134,7 +133,7 @@ export const Perfil = () => {
               </>
             ) : (
               <div>
-                <div className="form-floating mt-5 mb-1">
+                <div class="form-floating mt-5 mb-1">
                   <input
                     type="text"
                     class="form-control"
@@ -143,42 +142,40 @@ export const Perfil = () => {
                     id="floatingInput"
                     placeholder={email}
                   />
-                  <label htmlFor="floatingInput">{name}</label>
+                  <label htmlFor="floatingInput">Nombre</label>
                 </div>
-                <div className="form-floating mt-5 mb-1">
+                <div class="form-floating mt-5 mb-1">
                   <input
                     type="text"
                     class="form-control"
-                    nameName="emailUser"
+                    name="emailUser"
                     onChange={handleInputChange}
                     id="floatingInput"
                     placeholder={email}
                   />
-                  <label htmlFor="floatingInput">{email}</label>
+                  <label htmlFor="floatingInput">Email</label>
                 </div>
-                <div className="form-floating mt-5 mb-1">
+                <div class="form-floating mt-5 mb-1">
                   <input
                     type="text"
-                    className="form-control"
+                    class="form-control"
                     name="emailConfirm"
                     onChange={handleInputChange}
                     id="floatingInput"
                     placeholder={email}
                   />
-                  <label htmlFor="floatingInput">{email}</label>
+                  <label htmlFor="floatingInput">Confirmación de email</label>
                 </div>
-                <div className="form-floating mt-5 mb-1">
+                <div class="form-floating mt-5 mb-1">
                   <input
                     type="text"
-                    className="form-control"
+                    class="form-control"
                     name="newPhone"
                     onChange={handleInputChange}
                     id="floatingInput"
                     placeholder={phone}
                   />
-                  <label htmlFor="floatingInput">
-                    {phone === "" ? <p>Ingresa tu número</p> : phone}
-                  </label>
+                  <label htmlFor="floatingInput">Contacto</label>
                 </div>
                 <button
                   className="border border-0 btn mt-2"
@@ -198,8 +195,7 @@ export const Perfil = () => {
                 className="position-absolute top-0 end-0 btn btn-outline-dark"
                 onClick={profileEdit}
               >
-                {" "}
-                Editar mi perfil{" "}
+                Editar mi perfil
               </button>
             </div>
             <div className="d-flex flex-column mt-5 mb-5 ">
@@ -211,18 +207,36 @@ export const Perfil = () => {
               <div className="mt-3 mb-5">
                 {editProfile ? (
                   <>
-                    <h2 className="walsheimProBold">Acerca de mi</h2>
-                    <p>{}</p>
+                    <div>
+                      <h2
+                        className="walsheimProBold"
+                        style={{ fontSize: "28px" }}
+                      >
+                        Acerca de mi
+                      </h2>
+                      <h3>{infoUser?.about_me}</h3>
+                    </div>
+                    <div>
+                      <h2
+                        className="walsheimProBold"
+                        style={{ fontSize: "28px" }}
+                      >
+                        Contacto
+                      </h2>
+                      <h3 style={{ fontSize: "16px" }}>{infoUser?.email}</h3>
+                      <h3 style={{ fontSize: "16px" }}>{infoUser?.phone}</h3>
+                    </div>
                   </>
                 ) : (
                   <>
                     <h2 className="walsheimProBold">Acerca de mi</h2>
                     <textarea
-                      name="about_me"
                       cols={100}
                       rows={5}
+                      name="information"
+                      placeholder="Ingresa una descripción breve"
                       onChange={handleInputChange}
-                    ></textarea>
+                    />
                   </>
                 )}
               </div>
@@ -245,7 +259,7 @@ export const Perfil = () => {
                       <div className="card-body h-25">
                         <h5 className="card-title fw-bold ">{item.name}</h5>
                       </div>
-                      <div className="card-body">
+                      <div class="card-body">
                         <p
                           className="card-text fs-6"
                           style={{ color: "#8894ab" }}
