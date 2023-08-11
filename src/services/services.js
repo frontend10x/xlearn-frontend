@@ -589,6 +589,45 @@ export const getUserInformation = async (token, id) => {
     },
   };
 
-  return await axios.get(`${baseURL}/api/v1/user/datauser/${id}`, config )
+  return await axios.get(`${baseURL}/api/v1/user/datauser/${id}`, config);
+};
 
+export const getEnterpriseInformation = async (token,id,subcompanies_id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  return await axios.get(`${baseURL}/api/v1/subempresa/${subcompanies_id}/${id}`, config);
+}
+
+export const updateEnterprise = async (
+  token,
+  id,
+  name,
+  email,
+  rol_id,
+  subcompanies_id,
+  email_confirmation,
+  phone,
+  information
+) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const body = {
+    name,
+    email,
+    rol_id,
+    subcompanies_id,
+    email_confirmation,
+    phone,
+    information
+  };
+
+  return await axios.put(`${baseURL}/api/v1/subempresa/edit/${id}`,body,config);
 };

@@ -16,7 +16,7 @@ import Swal from "sweetalert2";
 import {
   getUserCourseById,
   getUserInformation,
-  updateProfile,
+  updateEnterprise,
 } from "../../services/services";
 
 export const PerfilEmpresa = () => {
@@ -34,10 +34,10 @@ export const PerfilEmpresa = () => {
     newPhone: "",
     emailUser: "",
     emailConfirm: "",
-    information:""
+    information: "",
   });
 
-  const { nameUser, newPhone, emailUser, emailConfirm } = formValues;
+  const { nameUser, newPhone, emailUser, emailConfirm, information } = formValues;
 
   useEffect(() => {
     async function getCourseRoute() {
@@ -52,7 +52,7 @@ export const PerfilEmpresa = () => {
 
     getCourseRoute();
     getUserInfo();
-  }, []);
+  }, [token]);
 
   const profileEdit = () => {
     if (editProfile) {
@@ -72,7 +72,7 @@ export const PerfilEmpresa = () => {
 
   const handleUpdateProfile = async () => {
     try {
-      const data = await updateProfile(
+      const data = await updateEnterprise(
         token,
         id,
         nameUser,
@@ -80,9 +80,9 @@ export const PerfilEmpresa = () => {
         roles,
         subcompanie_id,
         emailConfirm,
-        newPhone
+        newPhone,
+        information
       );
-      console.log(data, "datos");
       Swal.fire({
         icon: "success",
         title: `${data?.message}`,
@@ -95,6 +95,9 @@ export const PerfilEmpresa = () => {
         text: `${error?.response?.data?.message}`,
       });
     }
+
+    console.log(formValues,'valores');
+
   };
 
   const buttons = "btn p-0 border-0 text-secondary";
@@ -139,7 +142,7 @@ export const PerfilEmpresa = () => {
                     id="floatingInput"
                     placeholder={email}
                   />
-                  <label htmlFor="floatingInput">{name}</label>
+                  <label htmlFor="floatingInput">Nombre</label>
                 </div>
                 <div class="form-floating mt-5 mb-1">
                   <input
@@ -150,7 +153,7 @@ export const PerfilEmpresa = () => {
                     id="floatingInput"
                     placeholder={email}
                   />
-                  <label htmlFor="floatingInput">{email}</label>
+                  <label htmlFor="floatingInput">Email</label>
                 </div>
                 <div class="form-floating mt-5 mb-1">
                   <input
@@ -161,7 +164,7 @@ export const PerfilEmpresa = () => {
                     id="floatingInput"
                     placeholder={email}
                   />
-                  <label htmlFor="floatingInput">{email}</label>
+                  <label htmlFor="floatingInput">Confirmación de email</label>
                 </div>
                 <div class="form-floating mt-5 mb-1">
                   <input
@@ -172,9 +175,7 @@ export const PerfilEmpresa = () => {
                     id="floatingInput"
                     placeholder={phone}
                   />
-                  <label htmlFor="floatingInput">
-                    {phone === "" ? <p>Ingresa tu número</p> : phone}
-                  </label>
+                  <label htmlFor="floatingInput">Contacto</label>
                 </div>
                 <button
                   className="border border-0 btn mt-2"
@@ -194,8 +195,7 @@ export const PerfilEmpresa = () => {
                 className="position-absolute top-0 end-0 btn btn-outline-dark"
                 onClick={profileEdit}
               >
-                {" "}
-                Editar mi perfil{" "}
+                Editar mi perfil
               </button>
             </div>
             <div className="d-flex flex-column mt-5 mb-5 ">
@@ -224,11 +224,20 @@ export const PerfilEmpresa = () => {
                         Contacto
                       </h2>
                       <h3 style={{ fontSize: "16px" }}>{infoUser?.email}</h3>
-                      <h3 style={{fontSize: "16px"}} >{infoUser?.phone}</h3>
+                      <h3 style={{ fontSize: "16px" }}>{infoUser?.phone}</h3>
                     </div>
                   </>
                 ) : (
-                  <h2 className="walsheimProBold">Acerca de mi</h2>
+                  <>
+                    <h2 className="walsheimProBold">Acerca de mi</h2>
+                    <textarea
+                      cols={100}
+                      rows={5}
+                      name="information"
+                      placeholder="Ingresa una descripción breve"
+                      onChange={handleInputChange}
+                    />
+                  </>
                 )}
               </div>
               <h2 className="fw-bold">Cursos en ruta</h2>
