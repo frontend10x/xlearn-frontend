@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Header } from "../../componentes/Header";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Image } from "react-bootstrap";
+import { Image,Form } from "react-bootstrap";
 import { imagenUser } from "../../assets/img";
 import {
   CircularProgressbarWithChildren,
@@ -20,25 +20,30 @@ import {
   updateEnterprise,
 } from "../../services/services";
 
+
 export const PerfilEmpresa = () => {
-  const { name, token, id, email, roles, subcompanie_id, phone } = useSelector(
+  const { token, id, roles, subcompanie_id} = useSelector(
     (state) => state.auth
   );
   const [routeCourses, setRouteCourses] = useState([]);
   const [infoUser, setInfoUser] = useState([]);
   const navigate = useNavigate();
   const [editProfile, setEditProfile] = useState(true);
+  const [selectedOption, setSelectedOption] = useState("todos");
+  const itemsPerPage = 6;
+  const [itemsToShow, setItemsToShow] = useState(itemsPerPage);
+  const [showMore, setShowMore] = useState(false);
   const [formValues, handleInputChange] = useForm({
-    nameUser: "",
+    name: "",
     rol_id: roles,
     subcompanies_id: subcompanie_id,
-    newPhone: "",
-    emailUser: "",
+    phone: "",
+    email: "",
     emailConfirm: "",
     information: "",
   });
 
-  const { nameUser, newPhone, emailUser, emailConfirm, information } = formValues;
+  const { name, phone, email, emailConfirm, information } = formValues;
 
   useEffect(() => {
     async function getCourseRoute() {
@@ -48,12 +53,12 @@ export const PerfilEmpresa = () => {
 
     async function getEnterpriseInfo() {
       const data = await getEnterpriseInformation(token, subcompanie_id);
-      setInfoUser(data?.data?.user);
+      setInfoUser(data?.sub_company);
     }
 
     getCourseRoute();
     getEnterpriseInfo();
-  }, [token]);
+  }, [token,infoUser]);
 
   const profileEdit = () => {
     if (editProfile) {
@@ -76,12 +81,12 @@ export const PerfilEmpresa = () => {
       const data = await updateEnterprise(
         token,
         id,
-        nameUser,
-        emailUser,
+        name,
+        email,
         roles,
         subcompanie_id,
         emailConfirm,
-        newPhone,
+        phone,
         information
       );
       Swal.fire({
@@ -97,9 +102,9 @@ export const PerfilEmpresa = () => {
       });
     }
 
-    console.log(formValues,'valores');
-
   };
+
+  console.log(infoUser,'info de usuarios');
 
   const buttons = "btn p-0 border-0 text-secondary";
   return (
@@ -138,7 +143,7 @@ export const PerfilEmpresa = () => {
                   <input
                     type="text"
                     class="form-control"
-                    name="nameUser"
+                    name="name"
                     onChange={handleInputChange}
                     id="floatingInput"
                     placeholder={email}
@@ -149,7 +154,7 @@ export const PerfilEmpresa = () => {
                   <input
                     type="text"
                     class="form-control"
-                    name="emailUser"
+                    name="email"
                     onChange={handleInputChange}
                     id="floatingInput"
                     placeholder={email}
@@ -171,7 +176,7 @@ export const PerfilEmpresa = () => {
                   <input
                     type="text"
                     class="form-control"
-                    name="newPhone"
+                    name="phone"
                     onChange={handleInputChange}
                     id="floatingInput"
                     placeholder={phone}
@@ -201,7 +206,7 @@ export const PerfilEmpresa = () => {
             </div>
             <div className="d-flex flex-column mt-5 mb-5 ">
               <h2 className="fw-bold">Mi Perfil</h2>
-              <h6>Hola, soy {name}</h6>
+              <h6>Hola, soy {infoUser?.name}</h6>
             </div>
 
             <div>
@@ -215,7 +220,7 @@ export const PerfilEmpresa = () => {
                       >
                         Acerca de mi
                       </h2>
-                      <h3>{infoUser?.about_me}</h3>
+                      <h3>{infoUser?.information}</h3>
                     </div>
                     <div>
                       <h2
@@ -241,53 +246,86 @@ export const PerfilEmpresa = () => {
                   </>
                 )}
               </div>
-              <h2 className="fw-bold">Cursos en ruta</h2>
+              <div className="d-flex justify-content-between">
+                <h2 className="fw-bold me-5">Cursos en ruta</h2>
+                <Form.Select
+                  id="input-filter"
+                  value={selectedOption}
+                  onChange={(e) => setSelectedOption(e.target.value)}
+                  style={{
+                    borderRadius: "10px",
+                    height: "40px",
+                    position: "relative",
+                    right: "40px",
+                  }}
+                  className="w-25 me-5"
+                >
+                  <option value="todos">Todos</option>
+                  <option value="certificados">Certificados</option>
+                </Form.Select>
+              </div>
               <div className="d-flex flex-wrap gap-2">
-                {routeCourses &&
-                  routeCourses.map((item, index) => (
-                    <div
-                      className="card mb-5"
-                      style={{ width: "18rem" }}
-                      key={index}
-                    >
-                      <img
-                        src={item.file_path}
-                        onClick={() => seeCertificate(item.id)}
-                        style={{ cursor: "pointer" }}
-                        className="card-img-top"
-                        alt="..."
-                      />
-                      <div className="card-body h-25">
-                        <h5 className="card-title fw-bold ">{item.name}</h5>
-                      </div>
-                      <div class="card-body">
-                        <p
-                          className="card-text fs-6"
-                          style={{ color: "#8894ab" }}
-                        >
-                          Progress: {item["progress:porcentage"]}%
-                        </p>
+              {routeCourses &&
+                  routeCourses
+                    .filter((item) => {
+                      const lowerSelectedOption = selectedOption.toLowerCase();
 
-                        <LinearProgress
-                          variant="determinate"
-                          className="mb-2"
-                          value={item["progress:porcentage"]}
+                      if (lowerSelectedOption === "certificados") {
+                        // Aplica el filtro para "Certificados"
+                        return item["progress:porcentage"] === 100;
+                      } else if (lowerSelectedOption === "todos") {
+                        // Mostrar todos los elementos
+                        return true;
+                      }
+
+                      // Si ninguna opción coincide, no se filtra ningún elemento
+                      return false;
+                    })
+                    .slice(0, showMore ? routeCourses.length : itemsToShow)
+                    .map((item, index) => (
+                      <div
+                        className="card mb-5"
+                        style={{ width: "18rem" }}
+                        key={index}
+                      >
+                        <img
+                          src={item.file_path}
+                          onClick={() => seeCertificate(item.id)}
+                          style={{ cursor: "pointer" }}
+                          className="card-img-top"
+                          alt="..."
                         />
-                        {item["progress:porcentage"] === 100 ? (
-                          <CertificateDonwloadButtonProfile
-                            courseId={item.id}
-                          />
-                        ) : (
-                          <button
-                            onClick={() => redirect(item.name, item.id)}
-                            className={buttons}
+                        <div className="card-body h-25">
+                          <h5 className="card-title fw-bold ">{item.name}</h5>
+                        </div>
+                        <div className="card-body">
+                          <p
+                            className="card-text fs-6"
+                            style={{ color: "#8894ab" }}
                           >
-                            <p>Continuar</p>
-                          </button>
-                        )}
+                            Progress: {item["progress:porcentage"]}%
+                          </p>
+
+                          <LinearProgress
+                            variant="determinate"
+                            className="mb-2"
+                            value={item["progress:porcentage"]}
+                          />
+                          {item["progress:porcentage"] === 100 ? (
+                            <CertificateDonwloadButtonProfile
+                              courseId={item.id}
+                            />
+                          ) : (
+                            <button
+                              onClick={() => redirect(item.name, item.id)}
+                              className={buttons}
+                            >
+                              <p>Continuar</p>
+                            </button>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
               </div>
             </div>
           </div>

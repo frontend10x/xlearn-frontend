@@ -50,6 +50,7 @@ import { VerCertificado } from "../screens/dashboards/VerCertificado";
 import { Faqs } from "../screens/Faqs";
 import { DetailFaqs } from "../screens/DetailFaqs";
 import { PerfilEmpresa } from "../screens/dashboards/PerfilEmpresa";
+import { GroupsDescription } from "../componentes/dashboards/GroupsDescription";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -58,6 +59,9 @@ export const AppRouter = () => {
   return (
     <Router>
       <Routes>
+
+        <Route exact path="/reportes/cards" element={<GroupsDescription/>} />
+
         <Route element={<NonviewRoutes token={token} type={type} />}  >
           <Route exact path="/" element={<InicioScreen />} />
           <Route exact path="/courses" element={<CursosScreen />} />
