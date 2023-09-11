@@ -10,6 +10,7 @@ import { Footer } from '../../componentes/Footer'
 import { getEnterpriseGroups } from '../../services/services'
 import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren } from "react-circular-progressbar";
 import { test, team, resume, learn, time, greenElipse, whiteElipse, calendario } from '../../assets/img'
+import { GroupsDescription } from '../../componentes/dashboards/GroupsDescription'
 
 export const Reportes = () => {
 
@@ -207,9 +208,9 @@ export const Reportes = () => {
                                 </div>
                             </div>
                             
-                            {/* <div className='row' >
-                                <h3>Reporte de equipos</h3>
-                            </div> */}
+                            <div className='row d-flex justify-content-center' >
+                                    <GroupsDescription />
+                            </div>
 
                             <div className="row">
                                 <Footer />

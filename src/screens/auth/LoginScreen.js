@@ -41,12 +41,11 @@ export const LoginScreen = () => {
     e.preventDefault();
     try {
       const data = await loginPost(email, password);
-      console.log(data,'data');
-      Swal.fire({
-        icon: 'success',
-        title: 'Bienvenido',
-        text: `${data.message}`,
-      })
+      // Swal.fire({
+      //   icon: 'success',
+      //   title: 'Bienvenido',
+      //   text: `${data.message}`,
+      // })
 
       localStorage.setItem('user_is_login', JSON.stringify({
         login: true,
@@ -68,8 +67,6 @@ export const LoginScreen = () => {
         data?.datosUsuario?.diagnostic.status,
         data?.datosUsuario?.phone
         ));
-
-        // navigate(0)
 
     } catch (error) {
       Swal.fire({

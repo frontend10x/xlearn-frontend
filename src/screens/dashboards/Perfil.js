@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container, Image } from "react-bootstrap";
+import { Image, Form } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import { getUserCourseById, getUserInformation, updateProfile } from "../../services/services";
+import {
+  getUserCourseById,
+  getUserInformation,
+  updateProfile,
+} from "../../services/services";
 import "../../assets/css/screens/dashboards/StylePerfil.css";
 import { imagenUser } from "../../assets/img";
 import { Footer } from "../../componentes/Footer";
@@ -17,25 +21,28 @@ import { useForm } from "../../hooks/useForm";
 import Swal from "sweetalert2";
 
 export const Perfil = () => {
-  const { name, token, id, email, roles, subcompanie_id, phone } = useSelector(
-    (state) => state.auth
-  );
+  const { token, id, roles, subcompanie_id /* phone */ } =
+    useSelector((state) => state.auth);
   const [routeCourses, setRouteCourses] = useState([]);
   const navigate = useNavigate();
   const [editProfile, setEditProfile] = useState(true);
   const [userInfo, setUserInfo] = useState();
+  const [selectedOption, setSelectedOption] = useState("todos");
+  const itemsPerPage = 6;
+  const [itemsToShow, setItemsToShow] = useState(itemsPerPage);
+  const [showMore, setShowMore] = useState(false);
 
   const [formValues, handleInputChange] = useForm({
-    nameUser: "",
+    name: userInfo?.name,
     rol_id: roles,
     subcompanies_id: subcompanie_id,
-    newPhone: "",
-    emailUser: "",
+    phone: userInfo?.phone,
+    email: userInfo?.email,
     emailConfirm: "",
-    about_me: "",
+    about_me: userInfo?.about_me,
   });
 
-  const { nameUser, newPhone, emailUser, emailConfirm, about_me } = formValues;
+  const { name, phone, email, emailConfirm, about_me } = formValues;
 
   useEffect(() => {
     async function getCourseRoute() {
@@ -50,12 +57,9 @@ export const Perfil = () => {
     }
 
     getInfoUser();
+  }, []);
 
-  }, [formValues]);
-
-
-  console.log(userInfo,'informacion de usuario');
-
+  console.log(routeCourses, "ruta de cursos");
 
   const redirect = (name, course_id) => {
     navigate(`/course/videoplayer/${name}/${course_id}`);
@@ -70,33 +74,31 @@ export const Perfil = () => {
   };
 
   const handleUpdateProfile = async () => {
-    // try {
-    //   const data = await updateProfile(
-    //     token,
-    //     id,
-    //     nameUser,
-    //     emailUser,
-    //     roles,
-    //     subcompanie_id,
-    //     emailConfirm,
-    //     newPhone,
-    //     about_me
-    //   );
-    //   Swal.fire({
-    //     icon: "success",
-    //     title: `${data?.message}`,
-    //     text: `Los cambios se veran reflejados al cerrar e iniciar sesión nuevamente`
-    //   });
-    // } catch (error) {
-    //   Swal.fire({
-    //     icon: "error",
-    //     title: "Opps",
-    //     text: `${error?.response?.data?.message}`
-    //   });
-    // }
+    try {
+      const data = await updateProfile(
+        token,
+        id,
+        name,
+        email,
+        roles,
+        subcompanie_id,
+        emailConfirm,
+        phone,
+        about_me
+      );
+      Swal.fire({
+        icon: "success",
+        title: `${data?.message}`,
+        text: `Los cambios se veran reflejados al cerrar e iniciar sesión nuevamente`,
+      });
 
-    console.log(formValues,'valores');
-
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Opps",
+        text: `${error?.response?.data?.message}`,
+      });
+    }
   };
 
   const seeCertificate = (idCourse) => {
@@ -104,6 +106,8 @@ export const Perfil = () => {
   };
 
   const buttons = "btn p-0 border-0 text-secondary";
+
+  console.log(userInfo, "info de usuarios");
 
   return (
     <div className="profile__section">
@@ -141,23 +145,23 @@ export const Perfil = () => {
                   <input
                     type="text"
                     class="form-control"
-                    name="nameUser"
+                    name="name"
                     onChange={handleInputChange}
                     id="floatingInput"
-                    placeholder={email}
+                    // value={  ? "" : userInfo.name}
                   />
-                  <label htmlFor="floatingInput">{name}</label>
+                  <label htmlFor="floatingInput"></label>
                 </div>
                 <div className="form-floating mt-5 mb-1">
                   <input
                     type="text"
                     class="form-control"
-                    nameName="emailUser"
                     onChange={handleInputChange}
                     id="floatingInput"
-                    placeholder={email}
+                    placeholder="ingresa tu email"
+                    name="email"
                   />
-                  <label htmlFor="floatingInput">{email}</label>
+                  <label htmlFor="floatingInput">Ingresa tu email</label>
                 </div>
                 <div className="form-floating mt-5 mb-1">
                   <input
@@ -166,21 +170,19 @@ export const Perfil = () => {
                     name="emailConfirm"
                     onChange={handleInputChange}
                     id="floatingInput"
-                    placeholder={email}
                   />
-                  <label htmlFor="floatingInput">{email}</label>
+                  <label htmlFor="floatingInput">Confirma tu email</label>
                 </div>
                 <div className="form-floating mt-5 mb-1">
                   <input
                     type="text"
                     className="form-control"
-                    name="newPhone"
+                    name="phone"
                     onChange={handleInputChange}
                     id="floatingInput"
-                    placeholder={phone}
                   />
                   <label htmlFor="floatingInput">
-                    {phone === "" ? <p>Ingresa tu número</p> : phone}
+                    <p>Ingresa tu número</p>
                   </label>
                 </div>
                 <button
@@ -207,7 +209,7 @@ export const Perfil = () => {
             </div>
             <div className="d-flex flex-column mt-5 mb-5 ">
               <h2 className="fw-bold">Mi Perfil</h2>
-              <h6>Hola, soy {name}</h6>
+              <h6>Hola, soy {userInfo?.name}</h6>
             </div>
 
             <div>
@@ -215,7 +217,7 @@ export const Perfil = () => {
                 {editProfile ? (
                   <>
                     <h2 className="walsheimProBold">Acerca de mi</h2>
-                    <p>{}</p>
+                    <p>{userInfo?.about_me}</p>
                   </>
                 ) : (
                   <>
@@ -229,54 +231,108 @@ export const Perfil = () => {
                   </>
                 )}
               </div>
-              <h2 className="fw-bold">Cursos en ruta</h2>
+              <div className="d-flex justify-content-between">
+                <h2 className="fw-bold me-5">Cursos en ruta</h2>
+                <Form.Select
+                  id="input-filter"
+                  value={selectedOption}
+                  onChange={(e) => setSelectedOption(e.target.value)}
+                  style={{
+                    borderRadius: "10px",
+                    height: "40px",
+                    position: "relative",
+                    right: "40px",
+                  }}
+                  className="w-25 me-5"
+                >
+                  <option value="todos">Todos</option>
+                  <option value="certificados">Certificados</option>
+                </Form.Select>
+              </div>
               <div className="d-flex flex-wrap gap-2">
                 {routeCourses &&
-                  routeCourses.map((item, index) => (
-                    <div
-                      className="card mb-5"
-                      style={{ width: "18rem" }}
-                      key={index}
-                    >
-                      <img
-                        src={item.file_path}
-                        onClick={() => seeCertificate(item.id)}
-                        style={{ cursor: "pointer" }}
-                        className="card-img-top"
-                        alt="..."
-                      />
-                      <div className="card-body h-25">
-                        <h5 className="card-title fw-bold ">{item.name}</h5>
-                      </div>
-                      <div className="card-body">
-                        <p
-                          className="card-text fs-6"
-                          style={{ color: "#8894ab" }}
-                        >
-                          Progress: {item["progress:porcentage"]}%
-                        </p>
+                  routeCourses
+                    .filter((item) => {
+                      const lowerSelectedOption = selectedOption.toLowerCase();
 
-                        <LinearProgress
-                          variant="determinate"
-                          className="mb-2"
-                          value={item["progress:porcentage"]}
+                      if (lowerSelectedOption === "certificados") {
+                        // Aplica el filtro para "Certificados"
+                        return item["progress:porcentage"] === 100;
+                      } else if (lowerSelectedOption === "todos") {
+                        // Mostrar todos los elementos
+                        return true;
+                      }
+
+                      // Si ninguna opción coincide, no se filtra ningún elemento
+                      return false;
+                    })
+                    .slice(0, showMore ? routeCourses.length : itemsToShow)
+                    .map((item, index) => (
+                      <div
+                        className="card mb-5"
+                        style={{ width: "18rem" }}
+                        key={index}
+                      >
+                        <img
+                          src={item.file_path}
+                          onClick={() => seeCertificate(item.id)}
+                          style={{ cursor: "pointer" }}
+                          className="card-img-top"
+                          alt="..."
                         />
-                        {item["progress:porcentage"] === 100 ? (
-                          <CertificateDonwloadButtonProfile
-                            courseId={item.id}
-                          />
-                        ) : (
-                          <button
-                            onClick={() => redirect(item.name, item.id)}
-                            className={buttons}
+                        <div className="card-body h-25">
+                          <h5 className="card-title fw-bold ">{item.name}</h5>
+                        </div>
+                        <div className="card-body">
+                          <p
+                            className="card-text fs-6"
+                            style={{ color: "#8894ab" }}
                           >
-                            <p>Continuar</p>
-                          </button>
-                        )}
+                            Progress: {item["progress:porcentage"]}%
+                          </p>
+
+                          <LinearProgress
+                            variant="determinate"
+                            className="mb-2"
+                            value={item["progress:porcentage"]}
+                          />
+                          {item["progress:porcentage"] === 100 ? (
+                            <CertificateDonwloadButtonProfile
+                              courseId={item.id}
+                            />
+                          ) : (
+                            <button
+                              onClick={() => redirect(item.name, item.id)}
+                              className={buttons}
+                            >
+                              <p>Continuar</p>
+                            </button>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
               </div>
+              {routeCourses.length > itemsToShow && (
+                <div
+                  className="d-flex justify-content-center align-items-center"
+                  style={{ height: "10vh" }}
+                >
+                  <button
+                    className="btn"
+                    onClick={() => setShowMore(!showMore)}
+                    style={{
+                      color: "002333",
+                      backgroundColor: "#31fb84",
+                      width: "160px",
+                      height: "60px",
+                      fontSize: "20px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {showMore ? "Ver Menos" : "Ver Más"}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -1,0 +1,90 @@
+/* .custom-range {
+    width: 100%;
+    background-color: #F2F2F2;
+    position: relative;
+    margin-bottom: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .custom-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: #31fb84;
+    cursor: pointer;
+  }
+  
+  .custom-range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: #31fb84;
+    cursor: pointer;
+  }
+
+  .custom-range {
+  width: 100%;
+  position: relative;
+  margin-bottom: 15px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.custom-range::-webkit-slider-runnable-track {
+  background-color: #31fb84;
+  height: 3px;
+}
+
+.custom-range::-moz-range-track {
+  background-color: #31fb84;
+  height: 3px;
+} */
+
+.custom-range {
+    width: 100%;
+    background-color: #F2F2F2;
+    position: relative;
+    margin-bottom: 15px;
+    -webkit-appearance: none;
+    appearance: none;
+    vertical-align: middle; /* Alinea verticalmente el input y el selector */
+  }
+  
+  /* Estilos para el thumb (manija) del input tipo range */
+  .custom-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: #31fb84;
+    cursor: pointer;
+    position: relative;
+    bottom: 6px;
+  }
+  
+  .custom-range::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border: none;
+    border-radius: 50%;
+    background-color: #31fb84;
+    cursor: pointer;
+  }
+  
+  /* Estilos para la barra de progreso (track) */
+  .custom-range::-webkit-slider-runnable-track {
+    background-color: #31fb84;
+    height: 3px;
+  }
+  
+  .custom-range::-moz-range-track {
+    background-color: #31fb84;
+    height: 3px;
+  }

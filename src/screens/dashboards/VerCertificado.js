@@ -91,7 +91,7 @@ export const VerCertificado = () => {
                         <div className='d-flex justify-content-between ' >
                             {path ?
                                 <>
-                                    <h2 className='fw-bold' >¡Feliciades!</h2>
+                                    <h2 className='fw-bold' >¡Felicidades!</h2>
                                     {/* <button className='border-0' style={{ borderColor: "#270bc4", color: "#270bc4" }} >Descargar certificado</button> */}
                                     <CertificateDonwloadButtonProfile courseId={idCourse} />
                                     <ShareCertificateProfile certificate={path} />

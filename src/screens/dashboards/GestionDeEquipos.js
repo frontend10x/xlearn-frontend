@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 
 import "../../assets/css/screens/dashboards/StyleGestionDeEquipos.css";
 import { Header } from "../../componentes/Header";
+import { GroupsDescription } from "../../componentes/dashboards/GroupsDescription";
 
 export const GestionDeEquipos = () => {
 
@@ -64,8 +65,9 @@ export const GestionDeEquipos = () => {
                                 <h1>Gestion de Equipos</h1>
                                 <p>Gestiona y administra tus cupos</p>
                             </div>
-                            <div className="col-md-12 xln__content__progress_gestionDeCupos">
-                                {groups &&
+                            {/* <div className="col-md-12 xln__content__progress_gestionDeCupos"> */}
+                            <div className="col-md-12 xln__content__progress_gestionDeCupos d-flex justify-content-center">
+                                {/* {groups &&
                                     groups.map((item, index) =>
                                     (
                                         <div className="xlrn__informacion-equipos xlrn__informacion-equipos_interno" key={index} >
@@ -85,9 +87,9 @@ export const GestionDeEquipos = () => {
                                                                     <p className=" w-25 ms-5 fw-bold  " >
                                                                         Progreso
                                                                     </p>
-                                                                    {/* <p className=" text-end w-25 fw-bold ">
+                                                                    <p className=" text-end w-25 fw-bold ">
                                                                         Ultimo Ingreso
-                                                                    </p> */}
+                                                                    </p>
                                                                 </div>
                                                                 {
                                                                     item.users.map((items, index) => (
@@ -98,9 +100,9 @@ export const GestionDeEquipos = () => {
                                                                                     <input type="range" className="range" value={items['progress:porcentage']} />
                                                                                 </div>
                                                                             </div>
-                                                                            {/* <div className="me-5" >
+                                                                            <div className="me-5" >
                                                                                 time
-                                                                            </div> */}
+                                                                            </div>
                                                                         </div>
                                                                     ))
                                                                 }
@@ -112,7 +114,10 @@ export const GestionDeEquipos = () => {
                                         </div>
                                     )
                                     )
-                                }
+                                } */}
+
+                                <GroupsDescription />
+
                             </div>
 
                             <div className="col-md-12 xln__creacion-nuevo-equipo" >
