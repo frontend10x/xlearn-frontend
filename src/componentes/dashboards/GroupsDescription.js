@@ -8,6 +8,8 @@ export const GroupsDescription = ({items}) => {
   const { token, subcompanie_id } = useSelector((state) => state.auth);
   const [groups, setGroups] = useState();
 
+  console.log(items,'items');
+
   useEffect(() => {
     async function getUserGroups() {
       const data = await getEnterpriseGroups(token, subcompanie_id);
@@ -16,42 +18,6 @@ export const GroupsDescription = ({items}) => {
     }
     getUserGroups();
   }, []);
-
-  const users = [
-    {
-      area: null,
-      email: "cpromultimedia@gmail.com",
-      id: 223,
-      name: "Carlos Narvaez",
-      phone: "3192175637",
-      "progress:porcentage": 50,
-      rol_id: 4,
-      state: 1,
-      subcompanies_id: 46,
-    },
-    {
-      area: null,
-      email: "cpromultimedia@gmail.com",
-      id: 223,
-      name: "Carlos Narvaez",
-      phone: "3192175637",
-      "progress:porcentage": 100,
-      rol_id: 4,
-      state: 1,
-      subcompanies_id: 46,
-    },
-    {
-      area: null,
-      email: "cpromultimedia@gmail.com",
-      id: 223,
-      name: "Carlos Narvaez",
-      phone: "3192175637",
-      "progress:porcentage": 80,
-      rol_id: 4,
-      state: 1,
-      subcompanies_id: 46,
-    },
-  ];
 
   return (
     <div className="mt-3 d-flex flex-wrap w-75" style={{gap:"50px"}} >
@@ -93,8 +59,7 @@ export const GroupsDescription = ({items}) => {
               )}
 
               <div style={{ position: "relative", marginTop: "50px" }}>
-                {/* {item.users.map((items, index) => ( */}
-                {users.map((items, index) => (
+                {item.users.map((items, index) => (
                   <div
                     key={index}
                     className={`row d-flex ${

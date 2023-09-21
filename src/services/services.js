@@ -639,3 +639,18 @@ export const updateEnterprise = async (
 
   return await axios.put(`${baseURL}/api/v1/subempresa/edit/${id}`,body,config);
 };
+
+export const validateUserState = async (token,id,state) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const body = {
+    id,
+    state
+  };
+
+  return await axios.put(`${baseURL}/api/v1/session/changeStateUser`,body,config);
+};
