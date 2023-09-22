@@ -21,8 +21,9 @@ import { useForm } from "../../hooks/useForm";
 import Swal from "sweetalert2";
 
 export const Perfil = () => {
-  const { token, id, roles, subcompanie_id /* phone */ } =
-    useSelector((state) => state.auth);
+  const { token, id, roles, subcompanie_id /* phone */ } = useSelector(
+    (state) => state.auth
+  );
   const [routeCourses, setRouteCourses] = useState([]);
   const navigate = useNavigate();
   const [editProfile, setEditProfile] = useState(true);
@@ -91,7 +92,6 @@ export const Perfil = () => {
         title: `${data?.message}`,
         text: `Los cambios se veran reflejados al cerrar e iniciar sesión nuevamente`,
       });
-
     } catch (error) {
       Swal.fire({
         icon: "error",
@@ -106,8 +106,6 @@ export const Perfil = () => {
   };
 
   const buttons = "btn p-0 border-0 text-secondary";
-
-  console.log(userInfo, "info de usuarios");
 
   return (
     <div className="profile__section">
@@ -296,10 +294,15 @@ export const Perfil = () => {
                             className="mb-2"
                             value={item["progress:porcentage"]}
                           />
-                          {item["progress:porcentage"] === 100 ? (
-                            <CertificateDonwloadButtonProfile
-                              courseId={item.id}
-                            />
+                          {item?.certificate?.length ? (
+                            <>
+                              <button
+                                onClick={() => seeCertificate(item.id)}
+                                className={buttons}
+                              >
+                                <p>Ver certificado</p>
+                              </button>
+                            </>
                           ) : (
                             <button
                               onClick={() => redirect(item.name, item.id)}

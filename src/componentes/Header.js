@@ -18,15 +18,17 @@ import { XlearnLogo, cartIcon, imagenUser } from "../assets/img";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../actions/loginactions";
+import { validateUserState } from "../services/services";
 
 export const Header = ({ home, show }) => {
   const [showModal, setShowModal] = useState(false);
-  const { type, name } = useSelector((state) => state.auth);
+  const { token, type, name, id } = useSelector((state) => state.auth);
   const handleClose = () => setShowModal(false);
   const values = [true, "sm-down", "md-down", "lg-down", "xl-down", "xxl-down"];
   const [fullscreen, setFullscreen] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [active, setActive] = useState();
 
   function handleShow(breakpoint) {
     setFullscreen(breakpoint);
@@ -45,6 +47,15 @@ export const Header = ({ home, show }) => {
     }
   };
 
+  // useEffect(() => {
+  //   async function userState() {
+  //     const data = await validateUserState(token, id, active);
+  //     console.log(data, "states");
+  //   }
+
+  //   userState();
+  // },[]);
+
   const getHome = () => {
     if (type === "Empresa") {
       navigate("/dashboard/empresa");
@@ -57,12 +68,20 @@ export const Header = ({ home, show }) => {
     }
   };
 
+  let timeoutId;
+
+  const letsKillTheSessionAndBlameTheUserForBeingDistracted = () => {
+    console.log("pa' donde te fuiste Jose Joaquín");
+  };
+
   document.addEventListener("visibilitychange", function () {
     if (document.visibilityState === "hidden") {
-      // el usuario no está en tu sitio web, enviar una notificación push
-      var notification = new Notification("Hola,vuelve", {
-        body: "Contenido de la notificación",
-      });
+      clearTimeout(timeoutId); // Cancelar el temporizador si existe
+      timeoutId = setTimeout(() => {
+        letsKillTheSessionAndBlameTheUserForBeingDistracted();
+      }, 2000);
+    } else {
+      clearTimeout(timeoutId); // Cancelar e
     }
   });
 
