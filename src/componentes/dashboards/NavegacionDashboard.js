@@ -87,7 +87,7 @@ export const NavegacionDashboard = () => {
                         <NavLink className='dashboard__nav-link' type="button" onClick={redirect}  ><img src={NavIconLeft_02} className="" /> <span>Gestión de cupos</span>  </NavLink>
                         <NavLink type="button" onClick={change} className='dashboard__nav-link' ><img src={NavIconLeft_04} className="" /> <span>Gestión de equipos</span> </NavLink>
                         <NavLink href='/gestion/usuarios' className='dashboard__nav-link' ><img src={NavIconLeft_05} /> <span>Gestión de usuarios</span> </NavLink>
-                        <NavLink href='/reportes' className='dashboard__nav-link' ><img src={NavIconLeft_06} /> <span>reportes</span></NavLink>
+                        <NavLink href='/reportes' className='dashboard__nav-link' ><img src={NavIconLeft_06} /> <span>Reportes</span></NavLink>
                         <NavLink onClick={courses} className='dashboard__nav-link' ><img src={NavIconLeft_03} /> <span>Ver cursos</span></NavLink>
                         <NavLink type="button" className={position} onClick={resize} value="Ocultar" ><img src={event ? show : hide} /> <span className="position-absolute top-25 ms-2 ocultar-style" >Ocultar</span> </NavLink>
                     </Nav>

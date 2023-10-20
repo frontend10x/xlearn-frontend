@@ -19,6 +19,8 @@ export const GroupsDescription = ({items}) => {
     getUserGroups();
   }, []);
 
+
+  
   return (
     <div className="mt-3 d-flex flex-wrap w-75" style={{gap:"50px"}} >
       {groups &&
@@ -38,7 +40,7 @@ export const GroupsDescription = ({items}) => {
             <div class="card-body">
               <h3>
                 <span className="fw-bold">Curso:</span>
-                <span style={{ fontSize: "28px", color: "#002333" }}>
+                <span className="ms-1" style={{ fontSize: "28px", color: "#002333", textTransform:"lowercase" }}>
                   {item?.name}
                 </span>
               </h3>
@@ -47,14 +49,14 @@ export const GroupsDescription = ({items}) => {
                   class="card-title"
                   style={{ color: "#394649", fontSize: "20px" }}
                 >
-                  Lider:{item?.leader}
+                  Líder:{item?.leader}
                 </h5>
               ) : (
                 <h5
                   class="card-title"
                   style={{ color: "#394649", fontSize: "20px" }}
                 >
-                  Lider:Falto por asignar lider{" "}
+                  Líder: falta por asignar líder{" "}
                 </h5>
               )}
 
@@ -126,7 +128,7 @@ export const GroupsDescription = ({items}) => {
                         className="fw-bold"
                         style={{ fontSize: "14px", color: "#394649" }}
                       >
-                        Ultimo ingreso
+                        Último ingreso
                       </p>
                       <h6 className="fw-bold" style={{ color: "#002333" }}>
                         30/07/2023

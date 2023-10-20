@@ -1,0 +1,8 @@
+ul {
+    list-style: none;
+}
+
+.btn-plans_buy:hover {
+    background-color: #1A25B6;
+    color: white !important;
+}

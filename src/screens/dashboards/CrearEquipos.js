@@ -116,7 +116,7 @@ export const CrearEquipos = () => {
             <div className="col-md-10">
               <div className="row dashboard__container-nav_banner">
                 <div className="col-md-12 xlrn__crear-equipos__content-title" >
-                  <h1>Gestion de equipos</h1>
+                  <h1>Gestión de equipos</h1>
                   <p>Crea tus equipos</p>
                 </div>
 
@@ -152,7 +152,7 @@ export const CrearEquipos = () => {
                       <option value={false} >Asignar rol de lider</option>
                     </select>
                     {teamManagement ?
-                      <button className="xlrn__crear-equipos__form-button" onClick={redirect} value={teamManagement} >Gestion de equipos</button>
+                      <button className="xlrn__crear-equipos__form-button" onClick={redirect} value={teamManagement} >Gestión de equipos</button>
                       : <button className="xlrn__crear-equipos__form-button" onClick={createTeams} >Crear equipo</button>
                     }
                   </div>

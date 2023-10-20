@@ -3,6 +3,7 @@ import { Col, Container, Image } from "react-bootstrap";
 import {
   arrowFront,
   fileZip,
+  imagenUser,
   ImageProyectos,
   manageSearch,
   robot,
@@ -13,6 +14,13 @@ import "../../assets/css/componentes/StyleInfoVideoPlayer.css";
 import { CarouselDashboards } from "../CarouselDashboards";
 import { baseURL } from "../../utils/route";
 import Resources from "./components/Resources";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faComment,
+  faComments,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
+import Skeleton from "react-loading-skeleton";
 
 export const InfoVideoPlayer = () => {
   const navigate = useNavigate();
@@ -20,6 +28,36 @@ export const InfoVideoPlayer = () => {
   const [courses, setCourses] = useState([]);
   const [course, setCourse] = useState([]);
   const [resources, setResources] = useState();
+  const [questions, setQuestions] = useState([
+    {
+      title: "Correcion",
+      description:
+        "Quiero saber como poder hacer las correcciones necesarias a un titulo",
+      answers: "6",
+    },
+    {
+      title: "Actualizacion",
+      description: "El video numero 4 tiene buen contenido",
+      answers: "6",
+    },
+    {
+      title: "Recursos",
+      description:
+        "En que parte puedo encontrar los recursos para descargarlos",
+      answers: "6",
+    },
+    {
+      title: "Profesor",
+      description: "Que clase de proyecto vamos a estar desarrollando",
+      answers: "6",
+    },
+    {
+      title: "Examen",
+      description:
+        "Quiero poder presentar el examen sin tener que ver todos los videos",
+      answers: "6",
+    },
+  ]);
 
   const redirect = (e) =>
     navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`);
@@ -36,8 +74,10 @@ export const InfoVideoPlayer = () => {
       setPages("Proyecto");
     } else if (e.target.value === "Recursos") {
       setPages("Recursos");
-    } else {
+    } else if (e.target.value === "Glosario") {
       setPages("Glosario");
+    } else if (e.target.value === "Preguntas y respuestas") {
+      setPages("Preguntas");
     }
   };
 
@@ -85,11 +125,15 @@ export const InfoVideoPlayer = () => {
                 onClick={pageSelected}
               />
             )}
-            {/* <input type="button" className="xlrn__infovideo-nav__button" value="Glosario" onClick={pageSelected} /> */}
+
+            <input
+              type="button"
+              className="xlrn__infovideo-nav__button"
+              value="Preguntas y respuestas"
+              onClick={pageSelected}
+              style={{ width: "170px" }}
+            />
           </div>
-          {/* <div className="xlrn__infovideo-nav-buttons-makereport mt-5 "  >
-                        <input type="button" className="xlrn__infovideo-nav__button" value="Hacer un reporte" />
-                    </div> */}
         </div>
         {pages === "Proyecto" && (
           <div className="xlrn__infovideoplayer-container-content">
@@ -172,24 +216,6 @@ export const InfoVideoPlayer = () => {
                   Cursos recomendados
                 </h2>
                 <div className="dashboard__lider-container_courses">
-                  {/* {courses &&
-                                        courses.map((item, index) => (
-                                            <div key={index} className="dashboard__lider-container_courses-card" >
-                                                <div className="dashboard__lider-container_courses-card-content" >
-                                                    <Image src={item.file_path} className="img-recomendation-xln" />
-                                                    <div className="dashboard__lider-container_courses-card-content-body" >
-                                                        <div className="d-flex justify-content-around" >
-                                                            <p>{item.time} de contenido</p>
-                                                            <p>{item.user} de usuarios</p>
-                                                        </div>
-                                                        <h3>{item.name}</h3>
-                                                        <p>{item.subtitle}</p>
-                                                        <button className="dashboard__lider-container_courses-card-content_button" onClick={redirect} >Ingresar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))
-                                    } */}
                   <Container>
                     <CarouselDashboards item={courses} action={redirect} />
                   </Container>
@@ -245,7 +271,153 @@ export const InfoVideoPlayer = () => {
                </div>
 
                 } */}
-      </div>{" "}
+
+        {pages === "Preguntas" && (
+          <div className="xlrn__infovideoplayer-container-content">
+            <div className="xlrn__infovideoplayer-content">
+              <div className="xlnPlayer__content__proyectos">
+                <div className="d-flex justify-content-center align-items-center">
+                  <input
+                    type="search"
+                    id="busqueda"
+                    name="busqueda"
+                    placeholder="Buscar todas las preguntas del curso"
+                    className="w-75"
+                    style={{
+                      height: "40px",
+                      outline: "none",
+                      border: "1px solid #2d2f31",
+                    }}
+                  />
+                  <div
+                    style={{
+                      color: "ffffff",
+                      backgroundColor: "#000",
+                      height: "40px",
+                      width: "40px",
+                    }}
+                    className="d-flex justify-content-center align-items-center "
+                  >
+                    <FontAwesomeIcon
+                      icon={faSearch}
+                      style={{ color: "white" }}
+                      size="lg"
+                    />
+                  </div>
+                </div>
+                <div
+                  className="d-flex justify-content-center align-item-center flex-column"
+                  style={{ position: "relative", left: "150px" }}
+                >
+                  <div class="row mt-5">
+                    <div class="col-4">
+                      <div className="d-flex flex-column">
+                        <label
+                          className="fw-bold"
+                          style={{ fontSize: "1.4rem" }}
+                        >
+                          Filtros:
+                        </label>
+                        <select
+                          id="clases"
+                          name="clases"
+                          style={{
+                            outline: "none",
+                            height: "60px",
+                            fontSize: "20px",
+                          }}
+                          className="w-75"
+                        >
+                          <option value="todas">Todas las clases</option>
+                          <option value="actual">Clase actual</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div className="d-flex flex-column ">
+                        <label
+                          className="fw-bold"
+                          style={{ fontSize: "1.4rem" }}
+                        >
+                          Ordenar por:
+                        </label>
+                        <select
+                          id="clases"
+                          name="clases"
+                          style={{
+                            outline: "none",
+                            height: "60px",
+                            fontSize: "20px",
+                          }}
+                          className="w-75"
+                        >
+                          <option value="todas">
+                            Ordenar por más reciente
+                          </option>
+                          <option value="actual">
+                            Ordenar por más votados
+                          </option>
+                          <option value="actual">
+                            Ordenar por recomendados
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{ marginTop: "70px" }}>
+                    <h3 className="fw-bold">
+                      Todas las preguntas en este curso ({questions?.length})
+                    </h3>
+                    <div className="container mt-5 ">
+                      {questions &&
+                        questions?.map((item, index) => (
+                          <div key={index}>
+                            <div className="card mb-3 d-flex flex-row ">
+                              <div className="col-1 d-flex justify-content-center align-items-center ">
+                                <img
+                                  className="img-fluid"
+                                  src={imagenUser}
+                                  style={{ width: "50px" }}
+                                />
+                              </div>
+                              <div className="col-11 d-flex">
+                                <div className="card-body">
+                                  <h5 className="card-title">
+                                    {item?.title || <Skeleton />}
+                                  </h5>
+                                  <h6 className="card-subtitle mb-2 text-body-secondary">
+                                    {item?.description}
+                                  </h6>
+                                </div>
+                                <div className="me-5 mt-2 d-flex justify-content-center align-items-center ">
+                                  <div className="d-flex justify-content-center align-items-center gap-1">
+                                    <p
+                                      className="mt-3"
+                                      style={{ fontSize: "25px" }}
+                                    >
+                                      {item?.answers}
+                                    </p>
+                                    <a href="comments" >
+                                      <FontAwesomeIcon
+                                        icon={faComments}
+                                        style={{ color: "#5D5E5F" }}
+                                        size="lg"
+                                      />
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
       {/* Contenedor fin */}
     </div>
   );

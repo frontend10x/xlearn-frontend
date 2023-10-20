@@ -63,7 +63,7 @@ export const Footer = () => {
             <div className="col-md-2">
               <div className="footer__group margins ">
                 <div className="xln__altoTitle__footer">
-                  <h5>Compañia</h5>
+                  <h5>Compañía</h5>
                 </div>
                 <p className="link-footer" onClick={nosotros}>Nosotros</p>
                 {/* <p className="link-footer" onClick={empresa} >Empresas</p> */}
