@@ -81,7 +81,7 @@ export const Header = ({ home, show }) => {
         letsKillTheSessionAndBlameTheUserForBeingDistracted();
       }, 2000);
     } else {
-      clearTimeout(timeoutId); // Cancelar e
+      clearTimeout(timeoutId); // Cancelar el temporizador si el usuario regresó antes
     }
   });
 
