@@ -21,6 +21,7 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import Skeleton from "react-loading-skeleton";
+import { RichText } from "../Commons/NoteEditor/RichText";
 
 export const InfoVideoPlayer = () => {
   const navigate = useNavigate();
@@ -76,7 +77,7 @@ export const InfoVideoPlayer = () => {
       setPages("Recursos");
     } else if (e.target.value === "Glosario") {
       setPages("Glosario");
-    } else if (e.target.value === "Preguntas y respuestas") {
+    } else if (e.target.value === "Notas") {
       setPages("Preguntas");
     }
   };
@@ -129,9 +130,8 @@ export const InfoVideoPlayer = () => {
             <input
               type="button"
               className="xlrn__infovideo-nav__button"
-              value="Preguntas y respuestas"
+              value="Notas"
               onClick={pageSelected}
-              style={{ width: "170px" }}
             />
           </div>
         </div>
@@ -276,143 +276,7 @@ export const InfoVideoPlayer = () => {
           <div className="xlrn__infovideoplayer-container-content">
             <div className="xlrn__infovideoplayer-content">
               <div className="xlnPlayer__content__proyectos">
-                <div className="d-flex justify-content-center align-items-center">
-                  <input
-                    type="search"
-                    id="busqueda"
-                    name="busqueda"
-                    placeholder="Buscar todas las preguntas del curso"
-                    className="w-75"
-                    style={{
-                      height: "40px",
-                      outline: "none",
-                      border: "1px solid #2d2f31",
-                    }}
-                  />
-                  <div
-                    style={{
-                      color: "ffffff",
-                      backgroundColor: "#000",
-                      height: "40px",
-                      width: "40px",
-                    }}
-                    className="d-flex justify-content-center align-items-center "
-                  >
-                    <FontAwesomeIcon
-                      icon={faSearch}
-                      style={{ color: "white" }}
-                      size="lg"
-                    />
-                  </div>
-                </div>
-                <div
-                  className="d-flex justify-content-center align-item-center flex-column"
-                  style={{ position: "relative", left: "150px" }}
-                >
-                  <div class="row mt-5">
-                    <div class="col-4">
-                      <div className="d-flex flex-column">
-                        <label
-                          className="fw-bold"
-                          style={{ fontSize: "1.4rem" }}
-                        >
-                          Filtros:
-                        </label>
-                        <select
-                          id="clases"
-                          name="clases"
-                          style={{
-                            outline: "none",
-                            height: "60px",
-                            fontSize: "20px",
-                          }}
-                          className="w-75"
-                        >
-                          <option value="todas">Todas las clases</option>
-                          <option value="actual">Clase actual</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-4">
-                      <div className="d-flex flex-column ">
-                        <label
-                          className="fw-bold"
-                          style={{ fontSize: "1.4rem" }}
-                        >
-                          Ordenar por:
-                        </label>
-                        <select
-                          id="clases"
-                          name="clases"
-                          style={{
-                            outline: "none",
-                            height: "60px",
-                            fontSize: "20px",
-                          }}
-                          className="w-75"
-                        >
-                          <option value="todas">
-                            Ordenar por más reciente
-                          </option>
-                          <option value="actual">
-                            Ordenar por más votados
-                          </option>
-                          <option value="actual">
-                            Ordenar por recomendados
-                          </option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <div style={{ marginTop: "70px" }}>
-                    <h3 className="fw-bold">
-                      Todas las preguntas en este curso ({questions?.length})
-                    </h3>
-                    <div className="container mt-5 ">
-                      {questions &&
-                        questions?.map((item, index) => (
-                          <div key={index}>
-                            <div className="card mb-3 d-flex flex-row ">
-                              <div className="col-1 d-flex justify-content-center align-items-center ">
-                                <img
-                                  className="img-fluid"
-                                  src={imagenUser}
-                                  style={{ width: "50px" }}
-                                />
-                              </div>
-                              <div className="col-11 d-flex">
-                                <div className="card-body">
-                                  <h5 className="card-title">
-                                    {item?.title || <Skeleton />}
-                                  </h5>
-                                  <h6 className="card-subtitle mb-2 text-body-secondary">
-                                    {item?.description}
-                                  </h6>
-                                </div>
-                                <div className="me-5 mt-2 d-flex justify-content-center align-items-center ">
-                                  <div className="d-flex justify-content-center align-items-center gap-1">
-                                    <p
-                                      className="mt-3"
-                                      style={{ fontSize: "25px" }}
-                                    >
-                                      {item?.answers}
-                                    </p>
-                                    <a href="comments" >
-                                      <FontAwesomeIcon
-                                        icon={faComments}
-                                        style={{ color: "#5D5E5F" }}
-                                        size="lg"
-                                      />
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-                    </div>
-                  </div>
-                </div>
+                <RichText />
               </div>
             </div>
           </div>
