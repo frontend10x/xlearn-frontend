@@ -3,6 +3,7 @@ import { Col, Container, Image } from "react-bootstrap";
 import {
   arrowFront,
   fileZip,
+  imagenUser,
   ImageProyectos,
   manageSearch,
   robot,
@@ -13,6 +14,14 @@ import "../../assets/css/componentes/StyleInfoVideoPlayer.css";
 import { CarouselDashboards } from "../CarouselDashboards";
 import { baseURL } from "../../utils/route";
 import Resources from "./components/Resources";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faComment,
+  faComments,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
+import Skeleton from "react-loading-skeleton";
+import { RichText } from "../Commons/NoteEditor/RichText";
 
 export const InfoVideoPlayer = () => {
   const navigate = useNavigate();
@@ -20,6 +29,36 @@ export const InfoVideoPlayer = () => {
   const [courses, setCourses] = useState([]);
   const [course, setCourse] = useState([]);
   const [resources, setResources] = useState();
+  const [questions, setQuestions] = useState([
+    {
+      title: "Correcion",
+      description:
+        "Quiero saber como poder hacer las correcciones necesarias a un titulo",
+      answers: "6",
+    },
+    {
+      title: "Actualizacion",
+      description: "El video numero 4 tiene buen contenido",
+      answers: "6",
+    },
+    {
+      title: "Recursos",
+      description:
+        "En que parte puedo encontrar los recursos para descargarlos",
+      answers: "6",
+    },
+    {
+      title: "Profesor",
+      description: "Que clase de proyecto vamos a estar desarrollando",
+      answers: "6",
+    },
+    {
+      title: "Examen",
+      description:
+        "Quiero poder presentar el examen sin tener que ver todos los videos",
+      answers: "6",
+    },
+  ]);
 
   const redirect = (e) =>
     navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`);
@@ -36,8 +75,10 @@ export const InfoVideoPlayer = () => {
       setPages("Proyecto");
     } else if (e.target.value === "Recursos") {
       setPages("Recursos");
-    } else {
+    } else if (e.target.value === "Glosario") {
       setPages("Glosario");
+    } else if (e.target.value === "Notas") {
+      setPages("Preguntas");
     }
   };
 
@@ -85,11 +126,14 @@ export const InfoVideoPlayer = () => {
                 onClick={pageSelected}
               />
             )}
-            {/* <input type="button" className="xlrn__infovideo-nav__button" value="Glosario" onClick={pageSelected} /> */}
+
+            <input
+              type="button"
+              className="xlrn__infovideo-nav__button"
+              value="Notas"
+              onClick={pageSelected}
+            />
           </div>
-          {/* <div className="xlrn__infovideo-nav-buttons-makereport mt-5 "  >
-                        <input type="button" className="xlrn__infovideo-nav__button" value="Hacer un reporte" />
-                    </div> */}
         </div>
         {pages === "Proyecto" && (
           <div className="xlrn__infovideoplayer-container-content">
@@ -172,24 +216,6 @@ export const InfoVideoPlayer = () => {
                   Cursos recomendados
                 </h2>
                 <div className="dashboard__lider-container_courses">
-                  {/* {courses &&
-                                        courses.map((item, index) => (
-                                            <div key={index} className="dashboard__lider-container_courses-card" >
-                                                <div className="dashboard__lider-container_courses-card-content" >
-                                                    <Image src={item.file_path} className="img-recomendation-xln" />
-                                                    <div className="dashboard__lider-container_courses-card-content-body" >
-                                                        <div className="d-flex justify-content-around" >
-                                                            <p>{item.time} de contenido</p>
-                                                            <p>{item.user} de usuarios</p>
-                                                        </div>
-                                                        <h3>{item.name}</h3>
-                                                        <p>{item.subtitle}</p>
-                                                        <button className="dashboard__lider-container_courses-card-content_button" onClick={redirect} >Ingresar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))
-                                    } */}
                   <Container>
                     <CarouselDashboards item={courses} action={redirect} />
                   </Container>
@@ -245,7 +271,17 @@ export const InfoVideoPlayer = () => {
                </div>
 
                 } */}
-      </div>{" "}
+
+        {pages === "Preguntas" && (
+          <div className="xlrn__infovideoplayer-container-content">
+            <div className="xlrn__infovideoplayer-content">
+              <div className="xlnPlayer__content__proyectos">
+                <RichText />
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
       {/* Contenedor fin */}
     </div>
   );

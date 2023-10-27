@@ -62,7 +62,7 @@ export const GestionDeEquipos = () => {
                         <div className="row dashboard__container-nav_banner">
 
                             <div className="col-md-12 xlrn__informacion-equipos-title" >
-                                <h1>Gestion de Equipos</h1>
+                                <h2 className="fw-bold" style={{fontSize:"28px"}} >Gestión de equipos</h2>
                                 <p>Gestiona y administra tus cupos</p>
                             </div>
                             {/* <div className="col-md-12 xln__content__progress_gestionDeCupos"> */}

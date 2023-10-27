@@ -74,7 +74,7 @@ export const UsoCupos = () => {
               <div className="row dashboard__container-nav_banner">
                 <div className="col-md-12 xlrn__uso-cupos__container-titles">
                   <div className="xlrn__uso-cupos__titles-content">
-                    <h1>Gestion de usuarios</h1>
+                    <h1>Gestión de usuarios</h1>
                     <p className="fw-bold">Gestiona y administra usuarios</p>
                   </div>
                 </div>

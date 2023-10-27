@@ -157,7 +157,7 @@ export const DashboardEmpresa = () => {
                 <div className="col-md-12">
                   <div className="dashboard__banner-content" style={{ backgroundImage: `linear-gradient(45deg, rgb(0 35 51), rgb(0 0 0 / 0%)), url("${vistaEmpresa}")` }}>
                     <div className="dashboard__banner-title">
-                      <h1>¡<span className="style-name">Hola</span> {name}! <Image src={hand} alt="gradiente" /></h1>
+                      <h1 style={{color:"white"}} >¡<span className="style-name">Hola</span> {name}! <Image src={hand} alt="gradiente" /></h1>
                       <p>
                         Es el momento de gestionar y desarrollar tus proyectos con Xlearn
                       </p>
@@ -265,7 +265,7 @@ export const DashboardEmpresa = () => {
                       </div>
                     ))
                     :
-                    <p style={{ color: "#8894ab" }} className="fw-bold ms-5" >Valida si ya puedes ver tus cursos</p>
+                    <p style={{ color: "#8894ab", fontSize:"20px" }} className="fw-bold ms-5" >Ve a la sección de cursos y valida el contenido disponible</p>
                   }
                 </div>
               </div>

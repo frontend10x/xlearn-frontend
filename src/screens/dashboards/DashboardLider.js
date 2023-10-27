@@ -156,7 +156,7 @@ export const DashboardLider = () => {
         <div className="dashboard__lider-container-info">
 
           <div className="dashboard__lider-container-help-content" >
-            <h1>¿Necesitas Asesoría?</h1>
+            <h1>¿Necesitas asesoría?</h1>
             <p>¿Tienes dudas? Dejanos tus preguntas, comentarios o sugerencias y pronto nos pondremos en contacto contigo</p>
             <button onClick={support} >Ingresar</button>
           </div>
