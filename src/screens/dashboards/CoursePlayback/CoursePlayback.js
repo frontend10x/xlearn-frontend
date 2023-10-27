@@ -14,6 +14,7 @@ import { evaluationCourse } from "../../../services/services";
 
 import "../../../assets/css/screens/dashboards/StyleCoursePlayback.css";
 import { Header } from "../../../componentes/Header";
+import { CommunityChat } from "../../../componentes/CommunityChat/CommunityChat";
 
 const CorusePlayback = () => {
     const { course_id, name } = useParams()
@@ -155,6 +156,9 @@ const CorusePlayback = () => {
                         </div>
                         <div className="vide_ruta" >
                             <VideoPlayer videoCurrent={videoCurrent} destroy={destroy} handlingProgress={handlingProgress} />
+                        </div>
+                        <div style={{ marginLeft: '-3rem', color: '#ffff' }}>
+                            <CommunityChat videoCurrent={videoCurrent}/>
                         </div>
                     
                     </div>
