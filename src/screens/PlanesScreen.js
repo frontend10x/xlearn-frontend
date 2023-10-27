@@ -4,12 +4,56 @@ import { Footer } from "../componentes/Footer";
 import { useState } from "react";
 import { Image } from "react-bootstrap";
 import { dashboard1 } from "../assets/img";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import "../assets/css/screens/public/StylePlansScreen.css";
 
 export const PlanesScreen = () => {
   const [plans, setPlans] = useState([
-    { name: "Aprendizaje y desarrollo", type: "Equipos", price: "159USD", quantity:"Por usuarios y equipos de 4" },
-    { name: "Aprendizaje y desarrollo", type: "Empresarial", price: "99USD", quantity:"Por Grupos de 20" },
-    { name: "Beneficios para empleados", type: "Negocio", price: "129USD", quantity:"Por equipos o grupos de 20+" },
+    {
+      name: "Aprendizaje y desarrollo",
+      type: "Equipos",
+      price: "159USD",
+      quantity: "Por usuarios y equipos de 4",
+      benefits: [
+        "Más de 100 cursos y 6 áreas",
+        "Certificado digital de los cursos y las rutas",
+        "Eventos y conversatorios exclusivos",
+      ],
+    },
+    {
+      name: "Aprendizaje y desarrollo",
+      type: "Empresarial",
+      price: "99USD",
+      quantity: "Por Grupos de 20",
+      benefits: [
+        "Más de 100 cursos y 6 áreas",
+        "Certificado digital de los cursos y las rutas",
+        "Eventos y conversatorios exclusivos",
+      ],
+    },
+    {
+      name: "Beneficios para empleados",
+      type: "Negocio",
+      price: "129USD",
+      quantity: "Por equipos o grupos de 20+",
+      benefits: [
+        "Más de 100 cursos y 6 áreas",
+        "Certificado digital de los cursos y las rutas",
+        "Eventos y conversatorios exclusivos",
+      ],
+    },
+  ]);
+
+  const [data] = useState([
+    { id: 1, title:"Más de 100 cursos y 6 áreas" , name: 'Ejemplo 1', description: 'Descripción 1' },
+    { id: 2, title:"Certificado digital de los cursos y las rutas" , name: 'Ejemplo 2', description: 'Descripción 2' },
+    { id: 3, title:"Eventos y conversatorios exclusivos" , name: 'Ejemplo 3', description: 'Descripción 3' },
+    { id: 4, title:"1 asesoría o realimentación virtual con un consultor" , name: 'Ejemplo 3', description: 'Descripción 3' },
+    { id: 5, title:"Análisis general de los equipos" , name: 'Ejemplo 3', description: 'Descripción 3' },
+    { id: 6, title:"Agrega un cupo" , name: 'Ejemplo 3', description: 'Descripción 3' },
+    { id: 7, title:"3 asesorías o realimentación virtual con un consultor" , name: 'Ejemplo 3', description: 'Descripción 3' },
+    { id: 8, title:"Agrega 3 cupos" , name: 'Ejemplo 3', description: 'Descripción 3' },
   ]);
 
   return (
@@ -45,7 +89,7 @@ export const PlanesScreen = () => {
                 borderRadius: "10px",
               }}
             >
-              Obtén curso de prueba gratis
+              Registrate ahora
             </button>
           </div>
         </div>
@@ -53,21 +97,82 @@ export const PlanesScreen = () => {
 
       <div className="mt-5" style={{ height: "75vh" }}>
         <div className="d-flex flex-column text-center justify-content-center">
-          <h3>Nuestros Planes y Precios</h3>
-          <p>Accede a todos los beneficios que tenemos para tu empresa</p>
+          <h3 className="fw-bold" style={{ fontSize: "48px" }}>
+            Nuestros Planes y Precios
+          </h3>
+          <p style={{ fontSize: "16px" }}>
+            Accede a todos los beneficios que tenemos para tu empresa
+          </p>
         </div>
         <div className="d-flex justify-content-center gap-5 ">
           {plans?.map((item, index) => (
-            <div class="card" style={{ width: "408px", height:"400px"}} key={index} >
+            <div
+              class="card"
+              style={{ width: "408px", height: "400px" }}
+              key={index}
+            >
               <div class="card-body ms-4">
-                <p class="card-text" style={{fontSize:"16px"}} >{item.name}</p>
-                <h5 class="card-title fw-bold " style={{color:"#270bc4"}} >{item.type}</h5>
-                <h5 class="card-title fw-bold " >{item.price}</h5>
-                {/* <a href="#" class="btn btn-primary"></a> */}
+                <p class="card-text" style={{ fontSize: "16px" }}>
+                  {item.name}
+                </p>
+                <p style={{ fontSize: "16px" }}>{item.quantity}</p>
+                <h5 class="card-title fw-bold " style={{ color: "#270bc4" }}>
+                  {item.type}
+                </h5>
+                <div className="d-flex">
+                  <h5 class="card-title fw-bold ">{item.price}</h5>{" "}
+                  <p className="ms-2">por usuario/año</p>
+                </div>
+                <button
+                  class="btn w-100 btn-plans_buy"
+                  style={{
+                    borderColor: "#1A25B6",
+                    color: "#1A25B6",
+                    transition: "background-color 0.3s, color 0.3s ease",
+                  }}
+                >
+                  Comprar ahora
+                </button>
+                <ul className="mt-3">
+                  {item.benefits.map((benefit, benefitIndex) => (
+                    <div className="d-flex justify-content-start mt-2">
+                      <FontAwesomeIcon icon={faCheckCircle} className="me-3" />
+                      <li
+                        key={benefitIndex}
+                        className=""
+                        style={{ fontSize: "14px" }}
+                      >
+                        {benefit}
+                      </li>
+                    </div>
+                  ))}
+                </ul>
               </div>
             </div>
           ))}
         </div>
+      </div>
+
+      <div>
+        <h1>Ejemplo de Tabla</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Vision General</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.id}>
+                <td>{item.title}</td>
+                <td>{item.name}</td>
+                <td>{item.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
 
       <Footer />
