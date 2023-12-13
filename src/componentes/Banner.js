@@ -142,7 +142,7 @@ export const Banner = () => {
       <div className="slides">
         <div className="slides__content">
           <h3>01</h3>
-          <p>Innova</p>
+          <p>Crea</p>
         </div>
         <div className="slides__content">
           <h3>02</h3>
@@ -150,7 +150,7 @@ export const Banner = () => {
         </div>
         <div className="slides__content">
           <h3>03</h3>
-          <p>Crea</p>
+          <p>Innova</p>
         </div>
       </div>
 
@@ -167,9 +167,12 @@ export const Banner = () => {
           </button>
 
           <div className="content__banner-block">
-            <h3>PROPUESTA DE VALOR</h3>
-            <p>
+            {/* <h3>PROPUESTA DE VALOR</h3> */}
+            {/* <p>
               Somos una plataforma educativa para empresas especializada en innovación; podrás encontrar contenido de alto valor para tu  compañía, realizar tus entrenamientos y proyectos a partir del desarrollo de temáticas como: innovación, sostenibilidad, transformación digital, emprendimiento corporativo, excelencia operacional y mucho más...
+            </p> */}
+            <p>
+            Somos una plataforma de entrenamiento especializada en gestión de la innovación; acá encontrarás contenido de alto valor para las organizaciones y todos, realizar entrenamientos personalizados y proyectos a partir del desarrollo de temáticas como: productos y servicios, nuevos negocios, procesos, sostenibilidad, transformación digital y mucho más…
             </p>
           </div>
         </Col>

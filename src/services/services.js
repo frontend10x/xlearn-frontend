@@ -652,5 +652,30 @@ export const validateUserState = async (token,id,state) => {
     state
   };
 
-  return await axios.put(`${baseURL}/api/v1/session/changeStateUser`,body,config);
+  return await axios.get(`${baseURL}/api/v1/session/changeStateUser`,body,config);
 };
+
+export const listedNotes = async (token,id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  return await axios.get(`${baseURL}/api/v1/lesson/listNoteUser/${id}`,config);
+}
+
+export const createNote = async (token,note,time,id) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const body = {
+    note,
+    time
+  };
+
+  return await axios.post(`${baseURL}/api/v1/lesson/addNoteUser/${id}`,body,config);
+}
