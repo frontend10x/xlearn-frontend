@@ -47,15 +47,6 @@ export const Header = ({ home, show }) => {
     }
   };
 
-  // useEffect(() => {
-  //   async function userState() {
-  //     const data = await validateUserState(token, id, active);
-  //     console.log(data, "states");
-  //   }
-
-  //   userState();
-  // },[]);
-
   const getHome = () => {
     if (type === "Empresa") {
       navigate("/dashboard/empresa");

@@ -53,7 +53,7 @@ export const Footer = () => {
             <div className="col-md-4">
               <div className="footer__group">
                 <div className="xln__altoTitle__footer logoFooter">
-                  <Image src={XlearnLogo} alt="logo" className="footer__image" />
+                  <Image src={XlearnLogo} alt="logo" className="img-fluid" />
                 </div>
                 <p className="footer__logo-info_title" >
                   Somos una plataforma educativa para empresas especializada en innovación; podrás encontrar contenido de alto valor para tu  compañía, realizar tus entrenamientos y proyectos a partir del desarrollo de temáticas como: innovación, sostenibilidad, transformación digital, emprendimiento corporativo, excelencia operacional y mucho más...
@@ -90,7 +90,7 @@ export const Footer = () => {
             <div className="col-md-2 none">
               <div className="footer__group">
                 <div className="xln__altoTitle__footer logoFooter">
-                  <Image src={logo10X} alt="logo" className="footer__image-email" />
+                  <Image src={logo10X} alt="logo" className="img-fluid" />
                   {/* <input type="email" placeholder="Enter Your Email" className="footer__email" /> */}
                 </div>
 

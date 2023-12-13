@@ -23,7 +23,7 @@ import {
 import Skeleton from "react-loading-skeleton";
 import { RichText } from "../Commons/NoteEditor/RichText";
 
-export const InfoVideoPlayer = () => {
+export const InfoVideoPlayer = ({videoCurrent}) => {
   const navigate = useNavigate();
   const { course_id } = useParams();
   const [courses, setCourses] = useState([]);
@@ -276,7 +276,7 @@ export const InfoVideoPlayer = () => {
           <div className="xlrn__infovideoplayer-container-content">
             <div className="xlrn__infovideoplayer-content">
               <div className="xlnPlayer__content__proyectos">
-                <RichText />
+                <RichText videoCurrent={videoCurrent} />
               </div>
             </div>
           </div>

@@ -1,0 +1,21 @@
+.chat_container-infovideocurso {
+    margin-left: -3rem;
+    color: rgb(255, 255, 255);
+    height: 584px!important;
+    overflow: auto;
+    margin-top: 82px;
+}
+
+.replyIcon {
+    position: relative;
+}
+
+.replyBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.replyBtn span {
+    margin: 0 !important;
+}
