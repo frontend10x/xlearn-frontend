@@ -39,7 +39,7 @@ export const CommunityChat = ({videoCurrent}) => {
             'https://ui-avatars.com/api/name=Riya&background=random',
           currentUserProfile:
             'https://www.linkedin.com/in/riya-negi-8879631a9/',
-          currentUserFullName: 'Jair Zea'
+          currentUserFullName: 'Jair Zea' // Reemplazar data
         }}
         hrStyle={{ border: '0.5px solid #ff0072' }}
         commentData={comments}
