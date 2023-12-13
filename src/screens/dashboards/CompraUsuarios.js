@@ -195,12 +195,12 @@ export const CompraUsuarios = () => {
                                   name="coupon"
                                   onChange={handleInputChange}
                                 />
-                                <div className="" >
+                                {/* <div className="" >
                                   <p className="mt-2">Compartenos tu rut</p>
                                   <input type="file" 
                                     onChange={e => setDoc(e.target.files[0])}
                                   />
-                                </div>
+                                </div> */}
                               </div>
                             </div>
                             <button className="compra-usuario__calculate-price-button" disabled={disabled} style={disabled ? { backgroundColor: '#31fb8550' } : { backgroundColor: '#31fb84' }} onClick={calculatePrice} >
