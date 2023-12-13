@@ -2,7 +2,16 @@ import React from "react";
 import { Image } from "react-bootstrap";
 import { homeCarouselPF01, homeCarouselPF02 } from "../assets/img";
 import "../assets/css/componentes/StyleFQAS.css";
+import { useNavigate } from "react-router-dom";
+
 export const PreguntasFrecuentes = () => {
+
+  const navigate = useNavigate();
+
+  const goToFaqs = () => {
+    navigate('/preguntas/frecuentes')
+  }
+
   return (
     <div className="preguntas__frecuentes">
       <div className="preguntas__frecuentes-content">
@@ -79,7 +88,7 @@ export const PreguntasFrecuentes = () => {
                       </div>
 
                       <div className="col-md-12">
-                        <button className="preguntas__button" >Conocer más acerca de este tema →</button>
+                        <button className="preguntas__button" onClick={goToFaqs} >Conocer más acerca de este tema →</button>
                       </div>
                     </div>
                   
