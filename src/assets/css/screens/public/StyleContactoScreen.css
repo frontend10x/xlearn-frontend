@@ -2,6 +2,9 @@ html, body {
     background-color: #F4F4F4 !important;
 }
 
+.borders {
+    border: 1px solid gray;
+}
 
 .hr__EmpresaScreen {
     color: #d9d9d9;
