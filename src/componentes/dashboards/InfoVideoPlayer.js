@@ -151,7 +151,7 @@ export const InfoVideoPlayer = ({videoCurrent}) => {
                 </div>
               </div>
               <div className="xlrn__infovideoplayer-content-users flex-column ">
-                <h2 className="fw-bold ms-5 ">Acerca del tutor</h2>
+                {/* <h2 className="fw-bold ms-5 ">Acerca del tutor</h2>
                 <div className="description__infovideoplayer-content">
                   <div className="d-flex mt-5">
                     <Col md={6} className="">
@@ -208,10 +208,11 @@ export const InfoVideoPlayer = ({videoCurrent}) => {
                       />
                     </Col>
                   </div>
-                </div>
-              </div>
+                </div> */}
+              </div> 
 
-              <div className="xln__internos__CursosRecomendadosPlayer">
+              {/* <div className="xln__internos__CursosRecomendadosPlayer"> */}
+              <div className="container" >
                 <h2 className="dashboard__lider-container-title">
                   Cursos recomendados
                 </h2>

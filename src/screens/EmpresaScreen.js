@@ -92,7 +92,7 @@ export const EmpresaScreen = () => {
                 </div>
 
                 <div className="col-md-6" >
-                  <h2>¿Que es innovación?</h2>
+                  <h2>¿Qué es innovación?</h2>
                   <hr className="hr__EmpresaScreen" />
                   <p>
                     Ingresa al mundo de la innovación conociendo su definición, tipos, dimensiones y el proceso para implementarla en tu emprendimiento

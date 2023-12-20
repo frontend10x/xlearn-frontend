@@ -25,9 +25,6 @@ const responsive = {
     }
 };
 
-
-
-
 export const CarouselDashboards = ({ item }) => {
 
     const navigate = useNavigate();
@@ -43,9 +40,10 @@ export const CarouselDashboards = ({ item }) => {
                     <div key={index} className="dashboard__lider-container_courses-card" >
                         <Image src={item.file_path} className="img-recomendation-xln" />
                         <div className="dashboard__lider-container_courses-card-content" >
-                            <div className="dashboard__lider-container_courses-card-content-body" >
+                            <div className="dashboard__lider-container_courses-card-content-body d-flex justify-content-start flex-column " >
                                 <h3>{item.name}</h3>
-                                <button className="dashboard__lider-container_courses-card-content_button" value={item.name} id={item.id} onClick={redirect} >Ingresar</button>
+                                {/* <button className="dashboard__lider-container_courses-card-content_button" value={item.name} id={item.id} onClick={redirect} >Ingresar</button> */}
+                                <button className="btn fw-bold w-50 ms-4 mt-2" style={{backgroundColor:"#31fb84",fontSize:"18px"}} value={item.name} id={item.id} onClick={redirect} >Ingresar</button>
                             </div>
                         </div>
                     </div>
