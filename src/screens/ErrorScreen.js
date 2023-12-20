@@ -31,7 +31,7 @@ export const ErrorScreen = () => {
   };
   
   return (
-    <div className="" >
+    <div className="container_page_errorScreen" >
       <Header/>      
       <div className="container d-flex justify-content-center align-items-center " style={{height:"70vh"}} >
         <div className="row d-flex justify-content-center align-items-center">
