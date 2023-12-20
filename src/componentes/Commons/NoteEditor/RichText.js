@@ -39,7 +39,7 @@ export const RichText = ({ videoCurrent }) => {
   };
 
   return (
-    <div>
+    <div className="w-100" style={{backgroundColor:"white"}} >
       <ReactQuill theme="snow" value={value} onChange={setValue} />
       <div className="mt-5 d-flex justify-content-end">
         <div className="">

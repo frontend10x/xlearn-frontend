@@ -17,3 +17,7 @@ body pre {
 .replySection .replyBtn{
     display: none;
 }
+
+.comment-title {
+    display: none;
+}

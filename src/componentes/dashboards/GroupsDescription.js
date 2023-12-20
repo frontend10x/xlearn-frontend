@@ -3,12 +3,13 @@ import { getEnterpriseGroups } from "../../services/services";
 import { useSelector } from "react-redux";
 import { colors } from "@mui/material";
 import "../../assets/css/componentes/GroupsDescription.css";
+import { ProgressBar } from "../../componentes/dashboards/ProgressBar";
 
-export const GroupsDescription = ({items}) => {
+export const GroupsDescription = ({ items }) => {
   const { token, subcompanie_id } = useSelector((state) => state.auth);
   const [groups, setGroups] = useState();
 
-  console.log(items,'items');
+  console.log(items, "items");
 
   useEffect(() => {
     async function getUserGroups() {
@@ -19,10 +20,8 @@ export const GroupsDescription = ({items}) => {
     getUserGroups();
   }, []);
 
-
-  
   return (
-    <div className="mt-3 d-flex flex-wrap w-75" style={{gap:"50px"}} >
+    <div className="mt-3 d-flex flex-wrap w-75" style={{ gap: "50px" }}>
       {groups &&
         groups.map((item, index) => (
           <div
@@ -40,7 +39,14 @@ export const GroupsDescription = ({items}) => {
             <div class="card-body">
               <h3>
                 <span className="fw-bold">Curso:</span>
-                <span className="ms-1" style={{ fontSize: "28px", color: "#002333", textTransform:"lowercase" }}>
+                <span
+                  className="ms-1"
+                  style={{
+                    fontSize: "28px",
+                    color: "#002333",
+                    textTransform: "lowercase",
+                  }}
+                >
                   {item?.name}
                 </span>
               </h3>
@@ -121,6 +127,7 @@ export const GroupsDescription = ({items}) => {
                           value={items["progress:porcentage"]}
                           id="range-input"
                         />
+
                       </div>
                     </div>
                     <div className="col">
