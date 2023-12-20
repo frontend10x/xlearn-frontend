@@ -213,7 +213,7 @@ const CorusePlayback = () => {
               </div>
               {visibility ? (
                 <div className="mt-2">
-                  <RichText />
+                  <RichText videoCurrent={videoCurrent} />
                 </div>
               ) : (
                 <div>

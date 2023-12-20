@@ -127,12 +127,12 @@ export const InfoVideoPlayer = ({videoCurrent}) => {
               />
             )}
 
-            <input
+            {/* <input
               type="button"
               className="xlrn__infovideo-nav__button"
               value="Notas"
               onClick={pageSelected}
-            />
+            /> */}
           </div>
         </div>
         {pages === "Proyecto" && (
@@ -273,7 +273,7 @@ export const InfoVideoPlayer = ({videoCurrent}) => {
 
                 } */}
 
-        {pages === "Preguntas" && (
+        {/* {pages === "Preguntas" && (
           <div className="xlrn__infovideoplayer-container-content">
             <div className="xlrn__infovideoplayer-content">
               <div className="xlnPlayer__content__proyectos">
@@ -281,7 +281,7 @@ export const InfoVideoPlayer = ({videoCurrent}) => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
       </div>
       {/* Contenedor fin */}
     </div>
