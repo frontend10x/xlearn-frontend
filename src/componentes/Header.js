@@ -57,7 +57,6 @@ export const Header = ({ home, show }) => {
     }else {
       navigate("/");
     }
-    console.log('se disparo la accion');
   };
 
   let timeoutId;
