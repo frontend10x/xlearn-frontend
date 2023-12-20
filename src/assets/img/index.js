@@ -134,3 +134,7 @@ export {default as time} from './time.png';
 export {default as whiteElipse} from './Elipse141.png';
 export {default as greenElipse} from './Elipse142.png';
 export {default as calendario } from './calendario.png';
+
+
+
+export {default as iconLinkedinDashboard } from './icon-linkedin.png';

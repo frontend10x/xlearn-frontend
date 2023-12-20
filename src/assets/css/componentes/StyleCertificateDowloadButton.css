@@ -1,0 +1,24 @@
+
+.icon-certificado-courses {
+    background-color: #002333;
+    padding: 3px;
+    border-radius: 5px;
+
+  }
+  
+
+
+  .Container_CertificateDowloadButton {
+    width: 40%!important;
+    float: left!important;
+}
+
+.Container_CertificateDowloadButton img {
+    width: 30px;
+    margin-right: 20px;
+}
+
+
+.Container_CertificateDowloadButton .icon-certificado-courses {
+    width: 30px!important;
+}
