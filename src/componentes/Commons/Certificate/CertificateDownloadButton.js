@@ -6,6 +6,9 @@ import { certificadoIcon } from "../../../assets/img";
 import { baseURL } from "../../../utils/route";
 import { ShareCertificateProfile } from "../SocialMedia/LinkendIn/ShareCertificateProfile";
 
+import "../../../assets/css/componentes/StyleCertificateDowloadButton.css";
+
+
 export const CertificateDownloadButton = ({courseId}) => {
     const [certificate, setCertificate] = useState(false);
     const { token, id } = useSelector(state => state.auth)
@@ -24,11 +27,17 @@ export const CertificateDownloadButton = ({courseId}) => {
     return(
         <>
           {certificate?.status && 
-            (<div>
-              <a href={baseURL + certificate?.paths?.show} target="_blank" className="link-certificado" rel="noreferrer">
-                <Image src={certificadoIcon} alt="certificate" id='cart-icon' className="icon-certificado-courses" />
-              </a>
-              <ShareCertificateProfile certificate={certificate}/>
+            (<div className="Principal_CertificateDowloadButton">
+
+              <div className="Container_CertificateDowloadButton">
+                <a href={baseURL + certificate?.paths?.show} target="_blank" className="link-certificado" rel="noreferrer">
+                  <Image src={certificadoIcon} alt="certificate" id='cart-icon' className="icon-certificado-courses" />
+                </a>
+              </div>
+
+              <div className="Container_CertificateDowloadButton">
+                <ShareCertificateProfile certificate={certificate}/>
+              </div>
             </div>)}
         </>
       
