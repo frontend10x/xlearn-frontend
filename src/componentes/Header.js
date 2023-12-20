@@ -50,13 +50,14 @@ export const Header = ({ home, show }) => {
   const getHome = () => {
     if (type === "Empresa") {
       navigate("/dashboard/empresa");
-    }
-    if (type === "Lider") {
+    } else if (type === "Lider") {
       navigate("/dashboard/lider");
-    }
-    if (type === "Integrante") {
+    }else if (type === "Integrante") {
       navigate("/dashboard/integrante");
+    }else {
+      navigate("/");
     }
+    console.log('se disparo la accion');
   };
 
   let timeoutId;
@@ -100,8 +101,8 @@ export const Header = ({ home, show }) => {
           }
           variant="dark"
         >
-          <Navbar.Brand className="ms-3" onClick={getHome}>
-            <Image src={XlearnLogo} alt="logo" />
+          <Navbar.Brand className="ms-3" >
+            <Image src={XlearnLogo} alt="logo" onClick={getHome} />
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav" className="">
             <Nav className="ms-auto">
@@ -279,7 +280,7 @@ export const Header = ({ home, show }) => {
             >
               |||
             </Button>
-            <Image src={XlearnLogo} alt="logo" />
+            <Image src={XlearnLogo} alt="logo" onClick={getHome} />
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav" className="me-5">
             <Nav className="ms-auto">
@@ -296,7 +297,7 @@ export const Header = ({ home, show }) => {
                 Empresa
               </Nav.Link>
               <Nav.Link id="link" href="/contact">
-                Contactanos
+                Contáctanos
               </Nav.Link>
               <Button id="button" onClick={redirect}>
                 Login

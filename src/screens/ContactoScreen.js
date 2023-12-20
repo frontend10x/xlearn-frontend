@@ -18,9 +18,12 @@ export const ContactoScreen = () => {
   const [formValues, handleInputChange] = useForm({
     name: "",
     lastname: "",
-    phone: "",
     company: "",
     email: "",
+    website: "",
+    country: "",
+    plan: "",
+    quantity: "",
     observation: "",
   });
 
@@ -121,7 +124,6 @@ export const ContactoScreen = () => {
           </div>
         </div>
       </section>
-
       <section className="container">
         <div className="xlrn-contacto__section-container">
           <div className="row">
@@ -151,135 +153,160 @@ export const ContactoScreen = () => {
 
             <div className="col-md-7">
               <div className="xln__content__formContact">
-                <form
-                  className="xlrn__contacto-formulario d-flex flex-column justify-content-center align-items-center gap-3"
-                  onSubmit={contact}
-                >
+                <form className="xlrn__contacto-formulario" onSubmit={contact}>
                   <div class="row w-100">
-                    <div class="col">
-                      <div className="form-floating mb-3 w-100">
-                        <input
-                          type="name"
-                          className="form-control"
-                          id="floatingInput"
-                          placeholder="name@example.com"
-                        />
-                        <label for="floatingInput">Nombres</label>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div className="form-floating mb-3">
-                        <input
-                          type="lastname"
-                          className="form-control"
-                          id="floatingInput"
-                          placeholder="name@example.com"
-                        />
-                        <label for="floatingInput">Apellidos</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row w-100">
-                    <div class="col">
-                      <div className="form-floating mb-3">
-                        <input
-                          type="name"
-                          className="form-control"
-                          id="floatingInput"
-                          placeholder="name@example.com"
-                        />
-                        <label for="floatingInput">Empresa</label>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div className="form-floating mb-3">
-                        <input
-                          type="lastname"
-                          className="form-control"
-                          id="floatingInput"
-                          placeholder="name@example.com"
-                        />
-                        <label for="floatingInput">Correo eletrónico</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row w-100">
-                    <div class="col">
-                      <div className="form-floating mb-3">
-                        <input
-                          type="name"
-                          className="form-control"
-                          id="floatingInput"
-                          placeholder="name@example.com"
-                        />
-                        <label for="floatingInput">Web site</label>
-                      </div>
-                    </div>
-                    <div class="col">
-                      <div class="form-floating">
-                        <select
-                          class="form-select"
-                          id="floatingSelect"
-                          aria-label="Floating label select example"
+                    <div className="d-flex justify-content-center gap-5">
+                      <div class="mb-3 w-100">
+                        <label
+                          for="exampleFormControlInput1"
+                          class="form-label"
                         >
-                          <option selected>...</option>
-                          <option value="1">Colombia</option>
-                          <option value="2">Chile</option>
-                          <option value="3">Venezuela</option>
-                        </select>
-                        <label for="floatingSelect">País</label>
+                          Nombres
+                        </label>
+                        <input
+                          type="text"
+                          class="form-control borders"
+                          id="exampleFormControlInput1"
+                          placeholder="name@example.com"
+                          name="name"
+                        />
+                      </div>
+                      <div class="mb-3 w-100">
+                        <label
+                          for="exampleFormControlInput1"
+                          class="form-label"
+                        >
+                          Apellidos
+                        </label>
+                        <input
+                          name="lastname"
+                          type="text"
+                          class="form-control"
+                          id="exampleFormControlInput1"
+                          placeholder="name@example.com"
+                        />
                       </div>
                     </div>
                   </div>
-                  <div class="row w-100 gap-4">
-                    <div class="form-floating">
-                      <select
-                        class="form-select"
-                        id="floatingSelect"
-                        aria-label="Floating label select example"
-                      >
-                        <option selected>...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                      <label for="floatingSelect" className="ms-2" >
-                        ¿Qué plan de Xlearn te interesa?
-                      </label>
-                    </div>
-                    <div class="form-floating">
-                      <select
-                        class="form-select"
-                        id="floatingSelect"
-                        aria-label="Floating label select example"
-                      >
-                        <option selected>...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
-                      <label for="floatingSelect" className="ms-2" >
-                        ¿Cuántos cupos estás buscando?
-                      </label>
-                    </div>
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="Leave a comment here"
-                        id="floatingTextarea2"
-                        style={{height:"100px"}}
-                      ></textarea>
-                      <label for="floatingTextarea2" className="ms-2" >¡Déjanos saber un poco más de ti!</label>
+                  <div class="row w-100">
+                    <div className="d-flex justify-content-center gap-5">
+                      <div class="mb-3 w-100 ">
+                        <label
+                          for="exampleFormControlInput1"
+                          class="form-label"
+                        >
+                          Empresa
+                        </label>
+                        <input
+                          name="company"
+                          type="text"
+                          class="form-control"
+                          id="exampleFormControlInput1"
+                          placeholder="name@example.com"
+                        />
+                      </div>
+                      <div class="mb-3 w-100">
+                        <label
+                          for="exampleFormControlInput1"
+                          class="form-label"
+                        >
+                          Correo electrónico
+                        </label>
+                        <input
+                          name="email"
+                          type="text"
+                          class="form-control"
+                          id="exampleFormControlInput1"
+                          placeholder="name@example.com"
+                        />
+                      </div>
                     </div>
                   </div>
-                  <button className="btn fw-bold" style={{backgroundColor:"#31fb84", color:"#002333", width:"158px", height:"43px"}} >Enviar</button>
+                  <div class="row w-100">
+                    <div className="d-flex justify-content-center align-items-center gap-5">
+                      <div class="mb-3 w-100 ">
+                        <label
+                          for="exampleFormControlInput1"
+                          class="form-label"
+                        >
+                          Web site
+                        </label>
+                        <input
+                          name="website"
+                          type="text"
+                          class="form-control"
+                          id="exampleFormControlInput1"
+                          placeholder="name@example.com"
+                        />
+                      </div>
+                      <div class="mb-3 w-100">
+                        <label for="inputState" class="form-label">
+                          País
+                        </label>
+                        <select
+                          id="inputState"
+                          class="form-select"
+                          name="country"
+                        >
+                          <option>...</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row w-100">
+                    <div className="d-flex flex-column justify-content-center align-items-center">
+                      <div class="mb-3 w-100">
+                        <label for="inputState" class="form-label">
+                          ¿Qué plan de Xlearn te interesa?*
+                        </label>
+                        <select id="inputState" class="form-select" name="plan">
+                          <option>...</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                      </div>
+                      <div class="mb-3 w-100">
+                        <label for="inputState" class="form-label">
+                          ¿Cuántos cupos estás buscando?*
+                        </label>
+                        <select
+                          id="inputState"
+                          class="form-select"
+                          name="quantity"
+                        >
+                          <option>...</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                      </div>
+                      <div class="mb-3 w-100">
+                        <label
+                          for="exampleFormControlTextarea1"
+                          class="form-label"
+                        >
+                          ¡Déjanos saber un poco más de ti!
+                        </label>
+                        <textarea
+                          class="form-control"
+                          id="exampleFormControlTextarea1"
+                          rows="3"
+                          name="observation"
+                        ></textarea>
+                      </div>
+                      <button className="btn w-25 fw-bold" style={{backgroundColor:"#31fb84",color:"#002333",fontSize:"18px"}} >Enviar</button>
+                    </div>
+                  </div>
                 </form>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       <div className="footer-section">
         <Footer />
       </div>

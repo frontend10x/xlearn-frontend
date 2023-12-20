@@ -1,7 +1,7 @@
 import React from "react";
 import { Image } from "react-bootstrap";
 // import { Link } from "react-router-dom";
-import { XlearnLogo, facebook, twitter, linkedin, youtube, logo10X } from "../assets/img";
+import { XlearnLogo,XlearnLogo1920 ,facebook, twitter, linkedin, youtube, logo10X } from "../assets/img";
 import { useNavigate } from "react-router-dom";
 import "../assets/css/componentes/StyleFooter.css"
 
@@ -53,7 +53,8 @@ export const Footer = () => {
             <div className="col-md-4">
               <div className="footer__group">
                 <div className="xln__altoTitle__footer logoFooter">
-                  <Image src={XlearnLogo} alt="logo" className="img-fluid" />
+                  {/* <Image src={XlearnLogo} alt="logo" className="img-fluid" /> */}
+                  <Image src={XlearnLogo1920} alt="logo" className="img-fluid" />
                 </div>
                 <p className="footer__logo-info_title" >
                   Somos una plataforma educativa para empresas especializada en innovación; podrás encontrar contenido de alto valor para tu  compañía, realizar tus entrenamientos y proyectos a partir del desarrollo de temáticas como: innovación, sostenibilidad, transformación digital, emprendimiento corporativo, excelencia operacional y mucho más...
