@@ -1,0 +1,23 @@
+.progress {
+  position: relative;
+}
+
+.checkpoints {
+  display: flex;
+  justify-content: space-between;
+  position: absolute; 
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.checkpoint {
+  width: 10px; 
+  height: 10px;
+  background: gray;
+  border-radius: 50%;
+}
+
+.checkpoint.active {
+   background: green;
+}
