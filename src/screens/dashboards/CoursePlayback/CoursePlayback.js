@@ -157,11 +157,14 @@ const CorusePlayback = () => {
                 </div> */}
         <div className="content_curso_interno">
           <div className="video__reproduccion-container-player">
+
             <div className="nav_ruta">
+
               <div className="xlnMenu__icon__player">
                 <p className="ms-3">Ruta</p>
                 <img src={IconRutaPlayer} className="ms-3" />
               </div>
+
               {lessons?.map((video, key) => {
                 let obj = progress?.progress?.find(
                   (prg) => prg.lesson_id === video?.id
@@ -185,6 +188,7 @@ const CorusePlayback = () => {
                 </button>
               )}
             </div>
+
             <div className="vide_ruta">
               <VideoPlayer
                 videoCurrent={videoCurrent}
@@ -192,35 +196,41 @@ const CorusePlayback = () => {
                 handlingProgress={handlingProgress}
               />
             </div>
-            <div className="d-flex flex-column mt-5 pt-2 w-100 me-3">
-              <div className="d-flex justify-content-center gap-5">
-                <button
-                  className="btn w-25 mt-5 fw-bold "
-                  style={{ backgroundColor: "#31fb84", color: "#002333" }}
-                  value={true}
-                  onClick={show}
-                >
-                  Comunidad
-                </button>
-                <button
-                  className="btn w-25 mt-5 fw-bold "
-                  style={{ backgroundColor: "#31fb84", color: "#002333" }}
-                  value={false}
-                  onClick={show}
-                >
-                  Notas
-                </button>
-              </div>
-              {visibility ? (
-                <div className="mt-2">
-                  <RichText videoCurrent={videoCurrent} />
+
+            <div className="content_comunnityAndNotes">
+                <div className="completo">
+
+                    <div className="content_mainMenu">
+                      <button
+                        className="btn xln-btn-community"
+                        value={true}
+                        onClick={show}
+                      >
+                        Comunidad
+                      </button>
+                      <button
+                        className="btn xln-btn-community"
+                        value={false}
+                        onClick={show}
+                      >
+                        Notas
+                      </button>
+                    </div>
+                    {visibility ? (
+                      <div className="mt-2">
+                        <RichText videoCurrent={videoCurrent} />
+                      </div>
+                    ) : (
+                      <div className="content-Chat-comunnity">
+                        <CommunityChat videoCurrent={videoCurrent} />
+                      </div>
+                    )}
+                    
                 </div>
-              ) : (
-                <div>
-                  <CommunityChat videoCurrent={videoCurrent} />
-                </div>
-              )}
+
+
             </div>
+
           </div>
         </div>
       </div>

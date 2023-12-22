@@ -109,6 +109,11 @@ export const InfoVideoPlayer = ({videoCurrent}) => {
 
   return (
     <div className="xlrn__infovideoplayer-section">
+
+<div className="container">
+  <div className="row">
+  <div className="col-md-10">
+
       <div className="xlrn__infovideoplayer-container">
         <div className="xlrn__infovideo-nav d-flex justify-content-around">
           <div className="xlrn__infovideo-nav-container-buttons mt-5 d-flex gap-3 h-25">
@@ -141,7 +146,7 @@ export const InfoVideoPlayer = ({videoCurrent}) => {
               <div className="xlnPlayer__content__proyectos">
                 <div className="proyectos__text">
                   <div
-                    className="w-75"
+                    className="w-100"
                     dangerouslySetInnerHTML={{ __html: course.description }}
                   />
                 </div>
@@ -212,7 +217,7 @@ export const InfoVideoPlayer = ({videoCurrent}) => {
               </div> 
 
               {/* <div className="xln__internos__CursosRecomendadosPlayer"> */}
-              <div className="container" >
+              {/* <div className="container hola" >
                 <h2 className="dashboard__lider-container-title">
                   Cursos recomendados
                 </h2>
@@ -221,7 +226,7 @@ export const InfoVideoPlayer = ({videoCurrent}) => {
                     <CarouselDashboards item={courses} action={redirect} />
                   </Container>
                 </div>
-              </div>
+              </div> */}
 
               {/* <div className="" > 
                                 <h2>Tener Presente</h2>
@@ -230,7 +235,7 @@ export const InfoVideoPlayer = ({videoCurrent}) => {
           </div>
         )}
         {pages === "Recursos" && (
-          <div className="xlrn__infovideoplayer-container-content">
+          <div className="xlrn__infovideoplayer-container-content xln_tabPANDR_Recursos">
             <div className="xlrn__infovideoplayer-content">
               <div className="xlnPlayer__content__proyectos">
                 <div className="proyectos__text">
@@ -283,7 +288,11 @@ export const InfoVideoPlayer = ({videoCurrent}) => {
           </div>
         )} */}
       </div>
-      {/* Contenedor fin */}
+   
+
+  </div>
+  </div>
+</div>
     </div>
   );
 };
