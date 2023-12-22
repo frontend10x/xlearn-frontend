@@ -12,6 +12,16 @@
 }
 
 
+.xlrn__infovideoplayer-section .xlrn__infovideoplayer-content {
+    height: auto!important;
+    padding-bottom: 0!important;
+}
+
+.video__reproduccion-section {
+    background-color: var(--blueDark);
+    height: 100%!important;
+}
+
 .consultor__button {
     border: none;
     background-color: transparent;
@@ -60,4 +70,31 @@
 
 html{
     background-color: var(--white);
+}
+
+.xlnPlayer__content__proyectos img {
+    width: 100%;
+}
+
+.xlrn__infovideoplayer-section .container {
+
+    padding: 0;
+    margin: 0;
+}
+
+.xlrn__infovideoplayer-section .proyectos__img{
+    width: 50%;
+}
+
+.xlrn__infovideoplayer-section .proyectos__text{
+    width: 50%;
+}
+
+.xlrn__infovideoplayer-section .xlrn__infovideoplayer-container-content {
+    background-color: var(--white);
+    height: 100vh;
+}
+
+.xln_tabPANDR_Recursos .proyectos__text {
+    width: 100%!important;
 }

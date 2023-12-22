@@ -44,6 +44,8 @@
 
 .header {
     position: fixed!important;
+    border-bottom: 1px solid #213b50;
+    background-color: #00161f;
 }
 
 .xln__content__rutaClick {
@@ -69,7 +71,9 @@
 }
 
 .vide_ruta {
-    padding:3%;
+    padding-top: 3%;
+    padding-left: 3%;
+    width: 70%;
 }
 .xln_player_course {
     width: 100%;
@@ -78,6 +82,103 @@
     border-top: 13px solid #00161f;
 }
 
+.content_comunnityAndNotes {
+    padding-top: 0%;
+    padding-left: 1%;
+    padding-right: 1%;
+    position: relative;
+    z-index: 2;
+    width: 30%;
+    /* height: 100vh!important; */
+}
+.content_comunnityAndNotes .xln-btn-community {
+    color: #fff;
+}
+.content_comunnityAndNotes .content_mainMenu {
+    text-align: right;
+    position: relative;
+    top: 14px;
+    background: #00161f;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 16px;
+    z-index: 9;
+}
+.content_comunnityAndNotes hr.hr-style {
+    display: none;
+}
+
+
+.content-Chat-comunnity {
+    overflow: auto;
+    height: 80vh;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    color: #fff;
+}
+  
+  .content-Chat-comunnity::-webkit-scrollbar {
+    display: none;
+  }
+
+  .completo {
+    position: fixed;
+    background-color: #00161f;
+    padding: 1%;
+    border-radius: 10px;
+    height: 90vh;
+    top: 10%;
+}
+
+.content-Chat-comunnity .advanced-form .rdw-editor-toolbar{
+    background: #002333;
+}
+
+.content-Chat-comunnity .userImg {
+    display: none!important;
+}
+.content-Chat-comunnity form.form.advanced-form {
+    background: #002333!important;
+}
+.content-Chat-comunnity button.advanced-post.postBtn {
+    background: #03ff84!important;
+}
+.content-Chat-comunnity .advanced-form .public-DraftStyleDefault-block {
+    color: white;
+}
+.content-Chat-comunnity .advanced-form .rdw-option-wrapper {
+    border: 1px solid #002333;
+    padding: 5px;
+    min-width: 25px;
+    height: 20px;
+    border-radius: 2px;
+    margin: 0 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #002333;
+    text-transform: capitalize;
+}
+.content-Chat-comunnity .advanced-form .rdw-dropdown-wrapper {
+    height: 30px;
+    background: #002333;
+    cursor: pointer;
+    border: 1px solid #061d2f;
+    border-radius: 2px;
+    margin: 0 3px;
+    text-transform: capitalize;
+    background: #061d2f;
+}
+.content-Chat-comunnity .rdw-option-wrapper img {
+    filter: invert(0.9)!important;
+}
+
+.content-Chat-comunnity .rdw-editor-main {
+    max-height: 200px;
+    max-width: 300px;
+    overflow: auto;
+}
 
 @media (max-width: 900px) {
     .nav_ruta {

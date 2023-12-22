@@ -42,7 +42,7 @@ export const CommunityChat = ({ videoCurrent }) => {
               "https://www.linkedin.com/in/riya-negi-8879631a9/",
             currentUserFullName: "Jair Zea", // Reemplazar data
           }}
-          hrStyle={{ border: "0.5px solid #ff0072" }}
+          /* hrStyle={{ border: "0px solid #ff0072" }} */
           commentData={comments}
           currentData={(data) => {
             // console.log("curent data", data);
@@ -60,7 +60,7 @@ export const CommunityChat = ({ videoCurrent }) => {
             padding: "7px 15px",
           }}
           cancelBtnStyle={{
-            border: "1px solid gray",
+            border: "0px solid gray",
             backgroundColor: "gray",
             color: "white",
             padding: "7px 15px",
