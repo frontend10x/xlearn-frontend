@@ -679,3 +679,7 @@ export const createNote = async (token,note,time,id) => {
 
   return await axios.post(`${baseURL}/api/v1/lesson/addNoteUser/${id}`,body,config);
 }
+
+export const getDetailedPlans = async () => {  
+    return await axios.get(`${baseURL}/api/v1/plan/generality`);
+}

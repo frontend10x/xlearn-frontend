@@ -138,3 +138,7 @@ export {default as calendario } from './calendario.png';
 
 
 export {default as iconLinkedinDashboard } from './icon-linkedin.png';
+
+/* Icono de tabla de planes */
+
+export {default as iconCheck} from './xlearn-plans-check.png'

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDashboard";
 import { useForm } from "../../hooks/useForm";
-import { makePayment, validateRut } from "../../services/services";
+import { getPlans, makePayment, validateRut } from "../../services/services";
 import { Footer } from "../../componentes/Footer";
 import WebCheckout from "../../componentes/Commons/Wompi/WebCheckout";
 import { Col, Row } from "react-bootstrap";
@@ -21,53 +21,16 @@ export const CompraUsuarios = () => {
   );
   const { event } = useSelector((state) => state.size);
   const [places, setPlaces] = useState([
-    // { label: 1, value: 1 },
-    // { label: 2, value: 2 },
-    // { label: 3, value: 3 },
+    { label: 2, value: 2 },
     { label: 4, value: 4 },
-    // { label: 5, value: 5 },
-    // { label: 6, value: 6 },
-    // { label: 7, value: 7 },
-    // { label: 8, value: 8 },
-    // { label: 9, value: 9 },
-    // { label: 10, value: 10 },
-    // { label: 11, value: 11 },
-    // { label: 12, value: 12 },
-    // { label: 13, value: 13 },
-    // { label: 14, value: 14 },
-    // { label: 15, value: 15 },
-    // { label: 16, value: 16 },
-    // { label: 17, value: 17 },
-    // { label: 18, value: 18 },
-    // { label: 19, value: 19 },
-    // { label: 20, value: 20 },
+    { label: 16, value: 16 },
   ]);
 
   const [time, setTime] = useState([
-    // { label: "1 Mes", value: 1 },
-    // { label: "2 Meses", value: 2 },
-    { label: "3 Meses", value: 3 },
-    // { label: "4 Meses", value: 4 },
-    // { label: "5 Meses", value: 5 },
-    // { label: "6 Meses", value: 6 },
-    // { label: "7 Meses", value: 7 },
-    // { label: "8 Meses", value: 8 },
-    // { label: "9 Meses", value: 9 },
-    // { label: "10 Meses", value: 10 },
-    // { label: "11 Meses", value: 11 },
-    // { label: "12 Meses", value: 12 },
-    // { label: "13 Meses", value: 13 },
-    // { label: "14 Meses", value: 14 },
-    // { label: "15 Meses", value: 15 },
-    // { label: "16 Meses", value: 16 },
-    // { label: "17 Meses", value: 17 },
-    // { label: "18 Meses", value: 18 },
-    // { label: "19 Meses", value: 19 },
-    // { label: "20 Meses", value: 20 },
-    // { label: "21 Meses", value: 21 },
-    // { label: "22 Meses", value: 22 },
-    // { label: "23 Meses", value: 23 },
-    // { label: "24 Meses", value: 24 },
+    { label: "2 Meses", value: 2 },
+    { label: "4 Meses", value: 4 },
+    { label: "6 Meses", value: 6 },
+    { label: "12 Meses", value: 12 },
   ]);
 
   const [price, setPrice] = useState();
@@ -87,21 +50,21 @@ export const CompraUsuarios = () => {
 
   let { amount_user, amount_time, coupon } = formValues;
 
-  const uploadRut = async () => {
-    try {
-      const data = await validateRut(token, subcompanie_id, file); //se envia la peticion para cargar el rut
-      setPayment(false); // condicional para evitar ir a pagar si el rut no esta cargado
-    } catch (error) {
-      console.log(error, "error");
-      setPayment(true);
-      Swal.fire({
-        icon: "error",
-        title: "Hubo un error cargando el rut",
-        text: `Si la falla persiste comunicate con soporte`,
-        // footer: '<a href="">Why do I have this issue?</a>'
-      });
-    }
-  };
+  // const uploadRut = async () => {
+  //   try {
+  //     const data = await validateRut(token, subcompanie_id, file); //se envia la peticion para cargar el rut
+  //     setPayment(false); // condicional para evitar ir a pagar si el rut no esta cargado
+  //   } catch (error) {
+  //     console.log(error, "error");
+  //     setPayment(true);
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "Hubo un error cargando el rut",
+  //       text: `Si la falla persiste comunicate con soporte`,
+  //       // footer: '<a href="">Why do I have this issue?</a>'
+  //     });
+  //   }
+  // };
 
   const calculatePrice = async (e) => {
     setDisabled(true);
@@ -116,11 +79,23 @@ export const CompraUsuarios = () => {
       subcompanie_id
     );
     setPrice(data.payment_details);
-    uploadRut();
+    // uploadRut();
     setTimeout(() => {
       setDisabled(false);
     }, 3000);
   };
+
+  useEffect(() => {
+    getPlans()
+      .then((evnt) => {
+        console.log(evnt, "planes");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    getPlans();
+  });
 
   const [buyConfirm, setBuyConfirm] = useState(false);
 
@@ -165,6 +140,7 @@ export const CompraUsuarios = () => {
                               style={{ height: "70px" }}
                             >
                               <option value="...">Selecciona</option>
+                              <option selected value="1">1</option>
                               {places &&
                                 places.map((item, index) => (
                                   <option key={index} value={item.value}>
@@ -184,6 +160,7 @@ export const CompraUsuarios = () => {
                               style={{ height: "70px" }}
                             >
                               <option value="...">Selecciona</option>
+                              <option selected value="1">1 Mes</option>
                               {time &&
                                 time.map((item, index) => (
                                   <option key={index} value={item.value}>
