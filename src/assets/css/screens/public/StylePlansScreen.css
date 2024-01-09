@@ -6,3 +6,21 @@ ul {
     background-color: #1A25B6;
     color: white !important;
 }
+
+.table>:not(caption)>*>* {
+    box-shadow: none !important;
+}
+
+.buying-button {
+    background-color: #38D26E ;
+    border: "none" ;
+    border-radius: 5px ;
+}
+
+.sub-title {
+    width: 100px;
+    height: 8px;
+    background: #270bc4;
+    border-radius: 10px;
+    margin-bottom: 3%;
+}

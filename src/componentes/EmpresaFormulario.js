@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { register } from "../actions/loginactions";
 import { useForm } from "../hooks/useForm";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import {
   getContent,
   getCountrys,
+  getDetailedPlans,
   getPlans,
   getSize,
   registerPost,
 } from "../services/services";
 import Swal from "sweetalert2";
 
-
 export const EmpresaFormulario = () => {
   const [countries, setCountries] = useState();
-  const [plans, setPlans] = useState();
+  const [plans, setPlans] = useState([]);
   const [courses, setCourses] = useState();
   const [sizes, setSizes] = useState();
   const [places, setPlaces] = useState([
@@ -44,15 +44,12 @@ export const EmpresaFormulario = () => {
       }
     }
 
-    async function plans() {
-      try {
-        const data = await getPlans();
-        console.log(data)
-        setPlans(data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
+    getDetailedPlans()
+      .then((evnt) => {
+        setPlans(evnt?.data?.plans[1]);
+        console.log(plans?.id, "plan bussines");
+      })
+      .catch((err) => console.error(err, "error"));
 
     async function content() {
       try {
@@ -67,7 +64,7 @@ export const EmpresaFormulario = () => {
     async function size() {
       try {
         const data = await getSize();
-        console.log(data,'structure')
+        console.log(data, "structure");
         setSizes(data);
       } catch (error) {
         console.error(error);
@@ -75,7 +72,7 @@ export const EmpresaFormulario = () => {
     }
 
     countries();
-    plans();
+    getDetailedPlans();
     content();
     size();
   }, []);
@@ -85,18 +82,18 @@ export const EmpresaFormulario = () => {
     lastname: "",
     company: "",
     email: "",
-    email_confirmation:"",
-    phone:"",
+    email_confirmation: "",
+    phone: "",
     website: "",
     size: "",
     country: "",
     content: "",
     plan_id: "",
     quotas: "",
-    password:"",
-    password_confirmation:"",
+    password: "",
+    password_confirmation: "",
     observation: "",
-    nit: ""
+    nit: "",
   });
 
   const {
@@ -115,12 +112,12 @@ export const EmpresaFormulario = () => {
     password,
     password_confirmation,
     observation,
-    nit
+    nit,
   } = formValues;
 
   const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    console.log('se disparo')
+    console.log("se disparo");
     try {
       const data = await registerPost(
         name,
@@ -141,8 +138,8 @@ export const EmpresaFormulario = () => {
         nit
       );
       Swal.fire({
-        icon: 'success',
-        title: 'Registro hecho',
+        icon: "success",
+        title: "Registro hecho",
         text: `${data.message}`,
         // footer: 'Revisa tu correo para confirmar la cuenta'
       });
@@ -166,20 +163,19 @@ export const EmpresaFormulario = () => {
           nit
         )
       );
-      
     } catch (error) {
       Swal.fire({
-        icon: 'error',
-        title: 'Oops Algo salio mal',
+        icon: "error",
+        title: "Oops Algo salio mal",
         text: `${error.response.data.message}`,
         // footer: '<a href="">Why do I have this issue?</a>'
-      })
+      });
     }
   };
 
   const privacidad = () => {
-    navigate('/politicas/privacidad')
-  }
+    navigate("/politicas/privacidad");
+  };
 
   return (
     <div className="planes__form-content">
@@ -211,7 +207,7 @@ export const EmpresaFormulario = () => {
           <div className="form__group">
             <p>
               NIT <span>*</span> (Sin digito de verificacion)
-                </p>
+            </p>
             <input
               name="nit"
               value={nit}
@@ -264,9 +260,7 @@ export const EmpresaFormulario = () => {
             />
           </div>
           <div className="form__group">
-            <p>
-              Website empresa 
-            </p>
+            <p>Website empresa</p>
             <input
               name="website"
               value={website}
@@ -316,7 +310,10 @@ export const EmpresaFormulario = () => {
             <div className="form__group">
               <p>
                 ¿Qué tipo de contenido estás buscando?<span>*</span>
-                <p className="xln__note__text">Tenga en cuenta: Todos los planes de Xlearn por equipos brindan acceso ilimitado a toda nuestra biblioteca de cursos.</p>
+                <p className="xln__note__text">
+                  Tenga en cuenta: Todos los planes de Xlearn por equipos
+                  brindan acceso ilimitado a toda nuestra biblioteca de cursos.
+                </p>
               </p>
               <select
                 name="content"
@@ -345,12 +342,14 @@ export const EmpresaFormulario = () => {
               placeholder="Planes"
             >
               <option value="...">Selecciona opción</option>
-              {plans &&
-                plans.map((item, index) => (
-                  <option key={index} value={item.id}>
-                    {item.name}
-                  </option>
-                ))}
+              {plans && (
+                // plans?.map((item, index) => (
+                //   <option key={index} value={item.id}>
+                //     {item.name}
+                //   </option>
+                // ))
+                <option value={plans?.id}>{plans?.name}</option>
+              )}
             </select>
           </div>
           <div className="form__group">
@@ -398,7 +397,7 @@ export const EmpresaFormulario = () => {
           </div>
           <div className="form__group form__group__xln">
             <p className="form__group__text">
-              Cuéntanos más sobre tus necesidades 
+              Cuéntanos más sobre tus necesidades
             </p>
             <textarea
               name="observation"
@@ -411,7 +410,14 @@ export const EmpresaFormulario = () => {
             />
           </div>
           <button className="planes__formulario-button">Registrarme</button>
-          <p className="xln__register_text_TyC">Tus datos personales se utilizarán para procesar tu pedido, mejorar tu experiencia en esta plataforma y otros propósitos descritos en nuestra <a href="#" onClick={privacidad}>Política de privacidad.</a></p>
+          <p className="xln__register_text_TyC">
+            Tus datos personales se utilizarán para procesar tu pedido, mejorar
+            tu experiencia en esta plataforma y otros propósitos descritos en
+            nuestra{" "}
+            <a href="#" onClick={privacidad}>
+              Política de privacidad.
+            </a>
+          </p>
         </div>
       </form>
     </div>
