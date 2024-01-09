@@ -8,13 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import "../assets/css/screens/public/StylePlansScreen.css";
 import { getDetailedPlans } from "../services/services";
-import {
-  MDBContainer,
-  MDBIcon,
-  MDBTable,
-  MDBTableBody,
-  MDBTableHead,
-} from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
 
 export const PlanesScreen = () => {
