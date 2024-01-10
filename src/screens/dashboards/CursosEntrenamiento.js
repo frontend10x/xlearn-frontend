@@ -8,6 +8,7 @@ import { getCoursesById, registerDiagnostic } from "../../services/services";
 import { confirmedRoute } from "../../actions/confirmRoute";
 
 import "../../assets/css/screens/dashboards/StyleDiagnosticoLiderGeneral.css";
+import { Header } from "../../componentes/Header";
 
 export const CursosEntrenamiento = () => {
   const { token, id, subcompanie_id, groups } = useSelector((state) => state.auth);
@@ -92,7 +93,8 @@ export const CursosEntrenamiento = () => {
 
   return (
     <div className="cursos__entrenamiento-section">
-      <HeaderDashboard />
+      {/* <HeaderDashboard /> */}
+      <Header />
 
 
       <div className="cursos__entrenamiento-container">

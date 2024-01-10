@@ -201,7 +201,7 @@ export const PlanesScreen = () => {
                   <p className="text-center" style={{ color: "#270BC4" }}>
                     {plans?.name}
                   </p>
-                  <p className="text-center">{plans?.price}</p>
+                  <p className="text-center">{plans?.price?.toLocaleString("es-ES")} COP </p>
                 </th>
               </tr>
             </thead>

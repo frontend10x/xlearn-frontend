@@ -6,6 +6,7 @@ import { HeaderDashboard } from "./HeaderDashboard";
 import { Image } from 'react-bootstrap';
 
 import "../../assets/css/screens/dashboards/StyleDiagnosticoLiderGeneral.css";
+import { Header } from "../Header";
 
 export const SeleccionProceso = () => {
   const navigate = useNavigate();
@@ -30,7 +31,8 @@ export const SeleccionProceso = () => {
 
   return (
     <div className="selecction__section">
-      <HeaderDashboard />
+      {/* <HeaderDashboard /> */}
+      <Header/>
       <div className="selection__process-container">
 
         <div className="container">
