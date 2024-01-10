@@ -61,43 +61,46 @@ export const Faqs = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="faqs_banner-content">
-                  <h2 className="faqs-title">Centro de ayuda</h2>
+                  <h2 className="faqs-title">Centro de ayuda <b>| FAQ's</b></h2>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="container">
+      <div className="container  container_xln_Faqs01">
         <div className="row">
-          <div className="d-flex justify-content-center align-items-center gap-5 mb-3 mt-5">
+
+          <div className="d-flex justify-content-center align-items-center gap-5 mb-3 mt-5 content_xln_tab-Faqs">
+
             <div
-              className={`card text-center ${
+              className={`card text-center xln_btn_tabFaqs ${
                 selectedSubCategory === "xlearn" ? "selected" : ""
               }`}
-              style={{
+              /* style={{
                 width: "215px",
                 height: "102px",
                 backgroundColor: "#01202C",
                 color: "white",
-              }}
+              }} */
               onClick={handleFilterClick}
               data-subcategory="xlearn"
             >
               <div class="card-body">
                 <h5 class="card-title mt-2 fw-bold fs-1">Xlearn</h5>
               </div>
+              
             </div>
             <div
-              className={`card text-center ${
+              className={`card text-center xln_btn_tabFaqs ${
                 selectedSubCategory === "cursos" ? "selected" : ""
               }`}
-              style={{
+              /* style={{
                 width: "215px",
                 height: "102px",
                 backgroundColor: "#01202C",
                 color: "white",
-              }}
+              }} */
               onClick={handleFilterClick}
               data-subcategory="cursos"
             >
@@ -106,112 +109,120 @@ export const Faqs = () => {
               </div>
             </div>
           </div>
-          <h2 className="faqs-title fw-bold mb-5">Iniciemos con la ayuda</h2>
-          <div className="mb-5 d-flex d-flex justify-content-center gap-2 flex-wrap ">
-            {quest &&
-              quest.map((item) => (
-                <div
-                  className="card border-0 rounded d-flex justify-content-center align-items-center"
-                  key={item.id}
-                  style={{
-                    width: "300px",
-                    height: "281px",
-                    backgroundColor: "#F2F2F2",
-                  }}
-                >
-                  <div className="card-body mt-5 pt-5 text-center">
-                    <h5
-                      className="card-title walsheimProBold"
-                      style={{
-                        fontSize: "20px",
-                        color: "#270BC4",
-                        height: "40px",
-                      }}
-                    >
-                      {item?.question}
+
+          {/* <h2 className="faqs-title fw-bold mb-5">Iniciemos con la ayuda</h2> */}
+
+          <div className="mb-5 mt-5 d-flex d-flex justify-content-center gap-2 flex-wrap">
+
+            <div className="container d-flex flex-wrap">
+
+              {quest &&
+                quest.map((item) => (
+                  <div
+                    className="card border-0 rounded d-flex justify-content-center align-items-left xln-container-card"
+                    key={item.id}
+                    style={{
+                      /* width: "30%",
+                      height: "281px", */
+                      backgroundColor: "#f2f2f2",
+                    }}
+                  >
+                    <div className="card-body me-2 ms-2 mt-5 mb-5 pt-5 pb-5 text-left">
+                      <h5
+                        className="card-title walsheimProBold"
+                        style={{
+                          fontSize: "20px",
+                          color: "#270BC4",
+                          height: "40px",
+                        }}
+                      >
+                        {item?.question}
+                      </h5>
+                      <a
+                        onClick={() => detailedFaqs(item?.id, item?.question)}
+                        className="card-link walsheimProBold "
+                        style={{ fontSize: "14px", color: "#270BC4" }}
+                        type="button"
+                      >
+                        Ver más
+                      </a>
+                    </div>
+                  </div>
+                ))}
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+        <div className="container container_xln_Faqs02">
+          <div className="row">
+            <div className="col-md-4">
+              <div
+                className="card w-100"
+                style={{
+                  borderColor: "#002333",
+                }}
+              >
+                <div className="card-body">
+                  <img src={cuposIcon} className="img-fluid mt-3" />
+                  <div className="mt-5">
+                    <h5 className="walsheimProBold" style={{ color: "#002333" }}>
+                      Consultar profesor
                     </h5>
-                    <a
-                      onClick={() => detailedFaqs(item?.id, item?.question)}
-                      className="card-link walsheimProBold "
-                      style={{ fontSize: "14px", color: "#270BC4" }}
-                      type="button"
-                    >
-                      Ver más
-                    </a>
+                    <p className="card-text">
+                      Some quick example text to build on the card title and make
+                      up the bulk of the card's content.
+                    </p>
                   </div>
                 </div>
-              ))}
-          </div>
-        </div>
-        <div className="row mb-3 d'flex justify-content-center align-items-center">
-          <div className="col-md-4 mb-2">
-            <div
-              className="card w-100"
-              style={{
-                height: "320px",
-                borderColor: "#002333",
-              }}
-            >
-              <div className="card-body">
-                <img src={cuposIcon} className="img-fluid mt-3" />
-                <div className="mt-5">
-                  <h5 className="walsheimProBold" style={{ color: "#002333" }}>
-                    Consultar profesor
-                  </h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div
+                className="card w-100"
+                style={{
+                  borderColor: "#002333",
+                }}
+              >
+                <div className="card-body">
+                  <img src={cuposIcon} className="img-fluid mt-3" />
+                  <div className="mt-5">
+                    <h5 className="walsheimProBold" style={{ color: "#002333" }}>
+                      Consultar profesor
+                    </h5>
+                    <p className="card-text">
+                      Some quick example text to build on the card title and make
+                      up the bulk of the card's content.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="col-md-4 mb-2">
-            <div
-              className="card w-100"
-              style={{
-                height: "320px",
-                borderColor: "#002333",
-              }}
-            >
-              <div className="card-body">
-                <img src={cuposIcon} className="img-fluid mt-3" />
-                <div className="mt-5">
-                  <h5 className="walsheimProBold" style={{ color: "#002333" }}>
-                    Consultar profesor
-                  </h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4 mb-2">
-            <div
-              className="card w-100"
-              style={{
-                height: "320px",
-                borderColor: "#002333",
-              }}
-            >
-              <div className="card-body">
-                <img src={cuposIcon} className="img-fluid mt-3" />
-                <div className="mt-5">
-                  <h5 className="walsheimProBold" style={{ color: "#002333" }}>
-                    Consultar profesor
-                  </h5>
-                  <p className="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
+            <div className="col-md-4">
+              <div
+                className="card w-100"
+                style={{
+                  borderColor: "#002333",
+                }}
+              >
+                <div className="card-body">
+                  <img src={cuposIcon} className="img-fluid mt-3" />
+                  <div className="mt-5">
+                    <h5 className="walsheimProBold" style={{ color: "#002333" }}>
+                      Consultar profesor
+                    </h5>
+                    <p className="card-text">
+                      Some quick example text to build on the card title and make
+                      up the bulk of the card's content.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
       <Footer />
     </div>

@@ -1,23 +1,27 @@
-ul {
+.xln_icon_checkPlans {
+    width: 30px;
+}
+
+.xln-section-plans ul {
     /* list-style: none; */
 }
 
-.btn-plans_buy:hover {
+.xln-section-plans .btn-plans_buy:hover {
     background-color: #1A25B6;
     color: white !important;
 }
 
-.table>:not(caption)>*>* {
+.xln-section-plans .table>:not(caption)>*>* {
     box-shadow: none !important;
 }
 
-.buying-button {
+.xln-section-plans .buying-button {
     background-color: #38D26E ;
     border: "none" ;
     border-radius: 5px ;
 }
 
-.sub-title {
+.xln-section-plans .sub-title {
     width: 100px;
     height: 8px;
     background: #270bc4;
