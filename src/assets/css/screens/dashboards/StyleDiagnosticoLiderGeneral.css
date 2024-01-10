@@ -1,6 +1,12 @@
 /* Diagnostico Lider */
 .diagnostico__lider {
     /* height: 100vh; */
+    /* width: 100%; */
+}
+
+.dashboard__section-empresa .header__container.background {
+    position: fixed !important;
+    z-index: 9;
     width: 100%;
 }
 

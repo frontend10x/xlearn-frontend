@@ -109,7 +109,7 @@ export const Header = ({ home, show }) => {
                 <Image src={cartIcon} alt="cart" id="cart-icon" />
               </Nav.Link>
             </Nav>
-            <div className="dropdown d-flex align-items-center me-5 pe-3">
+            <div className="dropdown d-flex align-items-center me-5 pe-5">
               <button
                 className="ms-3 dropdown w-50 button__navegacion-user "
                 href="#"
@@ -160,7 +160,7 @@ export const Header = ({ home, show }) => {
             aria-controls="responsive-navbar-nav"
             className="me-5"
           />
-          <Navbar.Collapse id="responsive-navbar-nav" className="me-5">
+          <Navbar.Collapse id="responsive-navbar-nav" className="me-5 pe-3">
             <Nav className="ms-auto">
               <Nav.Link id="link" href="/dashboard/lider" className="">
                 Inicio
@@ -217,7 +217,7 @@ export const Header = ({ home, show }) => {
             <Image src={XlearnLogo} alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav" className="me-5">
+          <Navbar.Collapse id="responsive-navbar-nav" className="me-5 pe-3">
             <Nav className="ms-auto">
               <Nav.Link id="link" href="/dashboard/integrante" className="">
                 Inicio

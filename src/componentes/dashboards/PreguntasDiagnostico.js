@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { cleanQuestions, diagnosticQuestions } from "../../actions/diagnostico";
 import { confirmedRoute } from "../../actions/confirmRoute";
+import { Header } from "../Header";
 
 export const PreguntasDiagnostico = () => {
   const { token, id, groups } = useSelector((state) => state.auth);
@@ -77,7 +78,7 @@ export const PreguntasDiagnostico = () => {
 
   return (
     <div className="preguntas__diagnostico">
-      <HeaderDashboard />
+      <Header />
       <div className="preguntas__diagnostico-container">
         {question &&
           question

@@ -7,6 +7,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { coursesByArea } from "../../actions/diagnostico";
 
 import "../../assets/css/screens/dashboards/StyleDiagnosticoLiderGeneral.css";
+import { Header } from "../../componentes/Header";
 
 export const SeleccionDeAreas = () => {
   const [areas, setAreas] = useState();
@@ -39,8 +40,9 @@ export const SeleccionDeAreas = () => {
 
   return (
     <div className="section__selection-areas">
-      <HeaderDashboard />
+      {/* <HeaderDashboard /> */}
 
+      <Header />
 
       <div className="container">
         <div className="row justify-content-md-center content-center-SelectDiagnostic">

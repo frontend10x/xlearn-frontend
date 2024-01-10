@@ -33,20 +33,12 @@
     width: 100%;
     z-index: 9;
 }
-/* .nav_ruta::-webkit-scrollbar {
-    -webkit-appearance: none;
-} */
-/* .nav_ruta::-webkit-scrollbar-thumb {
-    background-color: #31fb84;
-    border-radius: 0.8rem;
-    border: 6px solid #002333;
-} */
 
-.header {
+/* .header {
     position: fixed!important;
     border-bottom: 1px solid #213b50;
     background-color: #00161f;
-}
+} */
 
 .xln__content__rutaClick {
     margin-top: 15px;

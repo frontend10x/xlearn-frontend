@@ -104,7 +104,6 @@ export const AppRouter = () => {
         {/* RUTA DE EMPRESA */}
 
         {/* RUTA DEL LIDER */}
-        <Route element={<LiderRoute token={token} type={type} />}>
           <Route
             exact
             path="/inicia/diagnostico"
@@ -136,6 +135,7 @@ export const AppRouter = () => {
             element={<ConfirmarRuta />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
+        <Route element={<LiderRoute token={token} type={type} />}>
         </Route>
         {/* RUTA DEL LIDER */}
 

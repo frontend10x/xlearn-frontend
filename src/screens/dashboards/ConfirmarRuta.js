@@ -7,6 +7,7 @@ import { Footer } from "../../componentes/Footer";
 import { useNavigate } from "react-router-dom";
 import { confirmRoute } from "../../services/services";
 import { cleanQuestions, cleanTraining } from "../../actions/diagnostico";
+import { Header } from "../../componentes/Header";
 
 export const ConfirmarRuta = () => {
 
@@ -46,7 +47,8 @@ export const ConfirmarRuta = () => {
 
   return (
     <div className="confirm_route-section">
-      <HeaderDashboard />
+      {/* <HeaderDashboard /> */}
+      <Header />
       <div className="confirm_route-container">
         <div className="confirm_route-title">
 
@@ -70,7 +72,7 @@ export const ConfirmarRuta = () => {
                 courses.map((item, index) => (
                   <div key={index} >
                     <div className="confirm_route-card">
-                      <Image src={item.file_path} className="confirm_route-image" />
+                      <Image src={item.file_path} className="confirm_route-image img-fluid" />
                       <div className="confirm_route-card_content">
                         <h3>{item.name}</h3>
                         <p>Este curso esta en tu ruta</p>
