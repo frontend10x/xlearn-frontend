@@ -6,13 +6,42 @@ html,body {
     font-family: "GTWalsheimPro-Bold";
     src: url("../../../GTWalsheimPro/GTWalsheimPro-Bold.eot");
 }
+.faqs_section {
+    background: #fff;
+}
+
+.container_xln_Faqs01{
+    
+    background:#fff;
+    width: 100%!important;
+    max-width: 100%;
+}
+
+.container_xln_Faqs02{
+    background: #f4f4f4;
+    width: 100%!important;
+    max-width: 100%;
+    padding-top: 100px!important;
+    padding-bottom: 100px!important;
+}
+.container_xln_Faqs01 .row {
+    width: 80%!important;
+    margin: auto;
+}
+
+
+.container_xln_Faqs02 .row {
+    width: 80%!important;
+    margin: auto;
+}
+
+
 
 .walsheimProBold {
-    font-family: "GTWalsheimPro-Bold";
+    /* font-family: "GTWalsheimPro-Bold"; */
 }
 
 .faqs-title {
-    font-family: "GTWalsheimPro-Bold";
     font-size: 36px;
 }
 
@@ -30,4 +59,57 @@ html,body {
     /* left: 100px; */
     position: relative;
     /* top: 160px; */
+}
+
+
+.faqs_section .card.text-center.xln_btn_tabFaqs {
+    background: #ffffff;
+    color: #002333;
+    width: 17%;
+    border: 1px solid #efefef;
+    border-radius: 9px;
+    box-shadow: 4px 4px 14px #1414141a;
+}
+
+.faqs_section .card.text-center.xln_btn_tabFaqs.selected {
+    background: #002333;
+    color: #fff;
+}
+
+.faqs_section .card.text-center.xln_btn_tabFaqs h5 {
+    font-size: 29px!important;
+}
+
+
+.container.container_xln_Faqs02 .card {
+    padding:20px;
+    border-radius: 10px;
+}
+
+.xln-container-card {
+    width: 30%;
+    margin: 1%;
+}
+
+@media (max-width: 700px) {
+    .faqs-banner {
+        margin-top: 17%;
+    }
+    .faqs-title {
+        font-size: 20px;
+        text-align: center;
+    }
+    .xln-container-card {
+        width: 100%;
+        margin: 1%;
+    }
+
+    .content_xln_tab-Faqs {
+        display: block!important;
+    }
+    .faqs_section .card.text-center.xln_btn_tabFaqs {
+        width: 100%;
+        margin-top: 10px;
+    }
+
 }

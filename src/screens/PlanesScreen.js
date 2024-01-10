@@ -31,7 +31,7 @@ export const PlanesScreen = () => {
   console.log(plans, "planes");
 
   return (
-    <div className="" style={{ height: "100vh" }}>
+    <div className="xln-section-plans">
       <Header />
       <div className="" style={{ height: "60vh", backgroundColor: "#002333" }}>
         <div
@@ -172,7 +172,7 @@ export const PlanesScreen = () => {
                           className="d-flex gap-3 justify-content-start align-items-center mt-1 "
                           style={{ height: "18px", fontSize: "14px" }}
                         >
-                          <i className="fa fa-check"></i>
+                          <img className="xln_icon_checkPlans" src={iconCheck} />
                           {item}
                         </ul>
                       </div>
@@ -214,7 +214,7 @@ export const PlanesScreen = () => {
                   className="text-center"
                   style={{ border: "1px solid #DDDDDD" }}
                 >
-                  <img className="" src={iconCheck} />
+                  <img className="xln_icon_checkPlans" src={iconCheck} />
                 </td>
               </tr>
               <tr className="w-100">
@@ -225,7 +225,7 @@ export const PlanesScreen = () => {
                   className="text-center"
                   style={{ border: "1px solid #DDDDDD" }}
                 >
-                  <img className="" src={iconCheck} />
+                  <img className="xln_icon_checkPlans" src={iconCheck} />
                 </td>
               </tr>
               <tr className="w-100">
@@ -237,7 +237,7 @@ export const PlanesScreen = () => {
                   className="text-center"
                   style={{ border: "1px solid #DDDDDD" }}
                 >
-                  <img className="" src={iconCheck} />
+                  <img className="xln_icon_checkPlans" src={iconCheck} />
                 </td>
               </tr>
               <tr>
@@ -249,7 +249,7 @@ export const PlanesScreen = () => {
                   className="text-center"
                   style={{ border: "1px solid #DDDDDD" }}
                 >
-                  <img className="" src={iconCheck} />
+                  <img className="xln_icon_checkPlans" src={iconCheck} />
                 </td>
               </tr>
               <tr>
@@ -261,7 +261,7 @@ export const PlanesScreen = () => {
                   className="text-center"
                   style={{ border: "1px solid #DDDDDD" }}
                 >
-                  <img className="" src={iconCheck} />
+                  <img className="xln_icon_checkPlans" src={iconCheck} />
                 </td>
               </tr>
               <tr>
@@ -273,7 +273,7 @@ export const PlanesScreen = () => {
                   className="text-center"
                   style={{ border: "1px solid #DDDDDD" }}
                 >
-                  <img src={iconCheck} />
+                  <img className="xln_icon_checkPlans" src={iconCheck} />
                 </td>
               </tr>
               <tr>
@@ -285,7 +285,7 @@ export const PlanesScreen = () => {
                   className="text-center"
                   style={{ border: "1px solid #DDDDDD" }}
                 >
-                  <img src={iconCheck} />
+                  <img className="xln_icon_checkPlans" src={iconCheck} />
                 </td>
               </tr>
               <tr className="">
@@ -295,7 +295,7 @@ export const PlanesScreen = () => {
                   className="text-center"
                   style={{ border: "1px solid #DDDDDD" }}
                 >
-                  <img src={iconCheck} />
+                  <img className="xln_icon_checkPlans" src={iconCheck} />
                 </td>
               </tr>
               <tr>

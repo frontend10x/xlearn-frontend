@@ -186,6 +186,10 @@ img.cursos__banner-image {
     margin: auto;
   }
 
+
+  .cursos__banner {
+    margin-top: 68px;
+}
   .cursos__banner-content {
     color: var(--white);
     position: relative;
