@@ -1,5 +1,5 @@
 .xln_icon_checkPlans {
-    width: 30px;
+    width: 20px;
 }
 
 .xln-section-plans ul {
@@ -27,4 +27,14 @@
     background: #270bc4;
     border-radius: 10px;
     margin-bottom: 3%;
+}
+
+.align-middle {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+@media (max-width: 700px) {
+
 }
