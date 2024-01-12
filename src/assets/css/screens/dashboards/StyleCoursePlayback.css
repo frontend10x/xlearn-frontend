@@ -184,6 +184,8 @@
 }
 
 @media (max-width: 900px) {
+
+    
     .video__reproduccion-container .ms-5 {
         margin: 0!important;
         margin-top: 20%!important;
