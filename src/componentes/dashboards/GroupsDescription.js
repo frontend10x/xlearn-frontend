@@ -21,17 +21,14 @@ export const GroupsDescription = ({ items }) => {
   }, []);
 
   return (
-    <div className="mt-3 d-flex flex-wrap w-75" style={{ gap: "50px" }}>
+    <div className="mt-5 mb-5 d-flex flex-wrap" style={{ 
+      gap: "1%",
+      padding: "0",
+       }}>
       {groups &&
         groups.map((item, index) => (
           <div
-            class="card mb-3"
-            style={{
-              width: "547px",
-              backgroundColor: "#F2F2F2",
-              height: "694px",
-            }}
-          >
+            class="card mb-3 card-section-complete" >
             <p
               className="fw-bold mt-3 ms-3"
               style={{ color: "#2BDB71", fontSize: "20px" }}
@@ -74,7 +71,7 @@ export const GroupsDescription = ({ items }) => {
                       index % 2 === 0 ? "bg-white" : "bg-F2F2F2"
                     }`}
                     style={{
-                      width: "510px",
+                      width: "100%",
                       position: "relative",
                       left: "10px",
                     }}

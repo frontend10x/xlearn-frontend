@@ -32,7 +32,7 @@ export const Reportes = () => {
   const { token, id, subcompanie_id } = useSelector((state) => state.auth);
   const [groups, setGroups] = useState([]);
 
-  const adjustClass = event ? "xln_add_menuLateral" : "col-md-10";
+  const adjustClass = event ? "xln_add_menuLateral" : "col-md-10 repo-content";
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -138,8 +138,11 @@ export const Reportes = () => {
                     </div>
                   </div>
 
+
+
                   <div className="container-fluid" id="percentage-container">
                     <div className="row border-bottom">
+
                       <div className="col-md-4">
                         <div className="d-flex gap-3">
                           <div className="w-50 mt-3">
@@ -168,12 +171,15 @@ export const Reportes = () => {
                               <Skeleton />
                             )}
                           </div>
+
                           <div className="mt-5">
-                            <h3>{data?.courses?.completed?.total}</h3>
+                            <h3 className="text-center">{data?.courses?.completed?.total}</h3>
                             <h5 id="subtitle">Cursos completados</h5>
                           </div>
+
                         </div>
                       </div>
+
                       <div className="col-md-4">
                         <div className="d-flex gap-3">
                           <div className="w-50 mt-3">
@@ -203,72 +209,106 @@ export const Reportes = () => {
                             )}
                           </div>
                           <div className="mt-5">
-                            <h3>{data?.courses?.pending?.total}</h3>
-                            <h5 id="subtitle">Cursos pendientes</h5>
+                            <h3 className="text-center">{data?.courses?.pending?.total}</h3>
+                            <h5 id="subtitle" >Cursos pendientes</h5>
                           </div>
                         </div>
                       </div>
+
                       <div className="col-md-4">
-                        <div className="d-flex gap-1">
-                          <div className="mt-3" style={{width:"300px"}} >
-                            {data?.courses?.pending?.percentage ? (
-                              <CircularProgressbarWithChildren
-                                styles={buildStyles({
-                                  rotation: 1 / 2 + 1 / 4,
-                                  strokeLinecap: "butt",
-                                  trailColor: "#fff",
-                                  pathColor: "#31fb84",
-                                  textSize: "25px",
-                                })}
-                                circleRatio={0.5}
-                                value={data?.courses?.pending?.percentage}
-                                strokeWidth={7}
-                                className="mt-2 text-center"
-                              >
-                                <div className="w-50 h-25">
-                                  {/* <img className='img-fluid' id='icons' src={time} alt="doge" /> */}
-                                  <p style={{ fontSize: "20px" }}>
-                                    {data?.dedicatedHours?.nonWorkingHours}
-                                  </p>
-                                </div>
-                              </CircularProgressbarWithChildren>
-                            ) : (
-                              <Skeleton />
-                            )}
+                        <div className="row">
+                          <div className="col-md-6">
+
+                            <div className="mt-3" style={{width:"100%"}} >
+                              {data?.courses?.pending?.percentage ? (
+                                <CircularProgressbarWithChildren
+                                  styles={buildStyles({
+                                    rotation: 1 / 2 + 1 / 4,
+                                    strokeLinecap: "butt",
+                                    trailColor: "#fff",
+                                    pathColor: "#31fb84",
+                                    textSize: "25px",
+                                  })}
+                                  circleRatio={0.5}
+                                  value={data?.courses?.pending?.percentage}
+                                  strokeWidth={7}
+                                  className="mt-2 text-center"
+                                >
+                                  <div className="w-50 h-25">
+                                    {/* <img className='img-fluid' id='icons' src={time} alt="doge" /> */}
+                                    <p style={{ fontSize: "19px" }}>
+                                      {data?.dedicatedHours?.nonWorkingHours}
+                                    </p>
+                                  </div>
+                                </CircularProgressbarWithChildren>
+                              ) : (
+                                <Skeleton />
+                              )}
+                            </div>
+
                           </div>
-                          <div className="mt-5">
-                            <div className="d-flex gap-1">
-                              <div className="d-flex gap-1">
-                                <img
-                                  src={whiteElipse}
-                                  id="dots"
-                                  className="img-fluid"
-                                />
-                                <p>{data?.dedicatedHours?.nonWorkingHours}</p>
-                                <p style={{ fontSize: "11px" }}>No laborales</p>
+
+                          <div className="col-md-6">
+
+                            <div className="row mt-3">
+
+
+                              <div className="col-md-12">
+                                <div className="row"  >
+                                  <div className="col-md-2">
+
+                                    <img
+                                      src={whiteElipse}
+                                      id="dots"
+                                      className="img-fluid img-repo-puntos"
+                                    />
+                                  </div>
+                                  <div className="col-md-10 text-item-report">
+                                    <p>{data?.dedicatedHours?.nonWorkingHours}</p>
+                                    <p style={{ fontSize: "11px" }}>No laborales</p>
+                                  </div>
+                                </div>
                               </div>
-                              <div className="d-flex gap-1">
-                                <img
-                                  src={greenElipse}
-                                  id="dots"
-                                  className="img-fluid"
-                                />
-                                <p>{data?.dedicatedHours?.workingHours}</p>
-                                <p style={{ fontSize: "11px" }}>Laborales</p>
+
+                              <div className="col-md-12">
+
+                                <div className="row" >
+                                    <div className="col-md-2">
+                                      <img
+                                        src={greenElipse}
+                                        id="dots"
+                                        className="img-fluid img-repo-puntos"
+                                      />
+                                    </div>
+                                    <div className="col-md-10 text-item-report">
+                                      <p>{data?.dedicatedHours?.workingHours}</p>
+                                      <p style={{ fontSize: "11px" }}>Laborales</p>
+                                    </div>
+                                </div>
+
+                              </div>
+
+                              <div className="col-md-12">
+                                <h5 className="" id="subtitle">
+                                  Horas totales dedicadas
+                                </h5>
                               </div>
                             </div>
-                            <h5 className="ms-5" id="subtitle">
-                              Horas totales dedicadas
-                            </h5>
+
                           </div>
+                          
+
+                         
                         </div>
                       </div>
+
                     </div>
-                    <div className="row">
-                      <div className="col-md-6">
-                        <div className="d-flex gap-1 ">
-                          <div className="mt-4 pe-5 ps-5">
-                            <h3 className="fw-bold">Tiempo transcurrido</h3>
+                    <div className="row mt-5">
+                
+                     
+
+                          <div className="col-md-3 ">
+                            <h6 className="fw-bold">Tiempo transcurrido</h6>
                             <input
                               type="range"
                               className="range mt-5"
@@ -278,29 +318,28 @@ export const Reportes = () => {
                               readOnly
                             />
                           </div>
-                          <div
-                            id="calendar"
-                            className="text-center ms-5 w-50 mt-3"
+
+                          <div className="col-md-3 calendar"
                           >
-                            <img src={calendario} className="img-fluid w-25" />
+                            <img src={calendario} className="img-fluid" />
                             <h5>{data?.time?.total} días </h5>
                           </div>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="d-flex gap-1">
-                          <div className="mt-4 pe-5 ps-5">
-                            <h3 className="fw-bold">Cursos completados</h3>
-                            <h5>
+
+                          <div className="col-md-3 ">
+                            <h6 className="fw-bold">Cursos completados</h6>
+                            <h6>
                               Cursos por fuera <br /> de la ruta
-                            </h5>
+                            </h6>
                             <h3>0</h3>
                           </div>
-                          <div id="calendar" className="ms-5 w-50 mt-3">
-                            <img src={test} className="img-fluid w-25" />
+
+                          <div id="calendar" className="col-md-3 calendar">
+                            <img src={test} className="img-fluid" />
                           </div>
-                        </div>
-                      </div>
+
+                     
+                    
+                      
                     </div>
                   </div>
                 </div>

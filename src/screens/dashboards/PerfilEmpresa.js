@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Image,Form } from "react-bootstrap";
 import { imagenUser } from "../../assets/img";
+import "../../assets/css/screens/dashboards/StylePerfilEmpresa.css";
 import {
   CircularProgressbarWithChildren,
   buildStyles,
