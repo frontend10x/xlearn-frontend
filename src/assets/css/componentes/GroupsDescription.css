@@ -41,3 +41,20 @@
     background-color: #31fb84;
     height: 3px;
   }
+
+  .card-section-complete{
+    width: 49%;
+    background-color: #fff;
+    padding: 3%;
+    border-radius: 10px;
+  }
+
+  /* Responsive */
+
+@media (max-width: 700px) {
+  .card-section-complete{
+    width:100%;
+    background-color: #fff;
+    padding:"3%";
+  }
+}

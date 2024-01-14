@@ -13,8 +13,8 @@ const VideoPlayer = ({videoCurrent, destroy, handlingProgress, pause = false}) =
     useEffect(()=>{
 
         const options = {
-            width : 993,
-            height : 562,
+            /* width : 993, */
+            /* height : 562, */
             //autoplay : true,
             //muted : true
         }
@@ -61,7 +61,7 @@ const VideoPlayer = ({videoCurrent, destroy, handlingProgress, pause = false}) =
     }
 
     return (
-        <div className='ms-5 mt-5' >
+        <div className='ms-5' >
             <div className="xln_player_course" data-vimeo-id={videoCurrent?.vimeoId} data-vimeo-defer id='my-video'></div>
             <h3 className='ms-1' style={{color:'white'}}>{videoCurrent?.name}</h3>
         </div>

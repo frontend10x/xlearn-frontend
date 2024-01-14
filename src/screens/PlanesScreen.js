@@ -33,19 +33,20 @@ export const PlanesScreen = () => {
   return (
     <div className="xln-section-plans">
       <Header />
-      <div className="" style={{ height: "60vh", backgroundColor: "#002333" }}>
-        <div
-          className="ms-5 d-flex gap-5"
-          style={{
-            position: "relative",
-            top: "100px",
-            left: "120px",
-            width: "80%",
-          }}
-        >
-          <Image src={dashboard1} style={{ width: "379px", height: "216px" }} />
 
-          <div>
+      <div className="" style={{ backgroundColor: "#002333" }}>
+
+
+<div className="container">
+
+  <div className="row pb-5">
+
+    <div className="col-md-4 mt-5">
+        <Image src={dashboard1} style={{ width: "100%" }} />
+    </div>
+
+    <div className="col-md-6 mt-5 d-flex flex-column justify-content-center">
+      
             <h2 style={{ color: "white" }}>
               ¡Haz de la formación la fuente de innovación de tu compañía!
             </h2>
@@ -65,20 +66,27 @@ export const PlanesScreen = () => {
             >
               Registrate ahora
             </button>
-          </div>
-        </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
       </div>
 
-      <div className="mt-5" style={{ height: "75vh" }}>
-        <div className="d-flex flex-column text-center justify-content-center">
-          <h3 className="fw-bold" style={{ fontSize: "48px" }}>
+      <div className="mt-5 mb-5" style={{ height: "75vh" }}>
+        <div className="mt-5 d-flex flex-column text-center justify-content-center">
+          <h3 className="mt-5 fw-bold" style={{ fontSize: "48px" }}>
             Nuestros Planes y Precios
           </h3>
           <p style={{ fontSize: "16px" }}>
             Accede a todos los beneficios que tenemos para tu empresa
           </p>
         </div>
-        <div className="d-flex justify-content-center gap-5 ">
+
+        <div className="d-flex justify-content-center gap-5 mb-5">
           {/* {plans &&
             plans?.map((item, index) => (
               <div
@@ -137,6 +145,7 @@ export const PlanesScreen = () => {
                 </div>
               </div>
             ))} */}
+
           <div className="container">
             <div className="row d-flex justify-content-center ">
               {plans && (
@@ -186,8 +195,8 @@ export const PlanesScreen = () => {
       </div>
 
       <div className="container d-flex justify-content-center mb-5">
-        <div className="w-75">
-          <div className="w-100 d-flex flex-column justify-content-center align-items-center ">
+        <div className="w-75 mt-5">
+          <div className="w-100 d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
             <h3 className="fw-bold" style={{fontSize:"38px"}} >Adquiere nuestro plan</h3>
             <div className="sub-title" ></div>
           </div>

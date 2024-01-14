@@ -15,6 +15,10 @@
     height: 100vh;
 }
 
+.repo-content {
+    padding: 3%;
+}
+
 #info-container {
     background-color: var(--white);
     height: 80vh;
@@ -22,10 +26,11 @@
 
 #percentage-container {
     background-color: var(--whiteOff);
-    height: 512px;
+    /* height: 512px; */
     /* width: 1115px; */
     margin-top: 20px;
     border-radius: 10px;
+    padding: 4%;
 }
 
 #main-container {
@@ -34,7 +39,7 @@
 
 #info-states {
     background-color: var(--white);
-    height: 80vh;
+    padding: 4%;
 }
 
 #circle-progress {
@@ -50,7 +55,7 @@
 }
 
 #subtitle {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 #complement-title {
@@ -67,11 +72,66 @@
 }
 
 #dots {
-    width: 15px;
-    height: 15px;
+    /* width: 15px;
+    height: 15px; */
 }
 
 #calendar {
-    height: 59px;
-    width: 59px;
+    /* height: 59px;
+    width: 59px; */
 }
+.calendar {
+    margin: 0 auto;
+    text-align: center;
+}
+.calendar img {
+    width: 62px;
+    margin: auto;
+    text-align: center;
+}
+.text-item-report p {
+    margin-bottom: 0;
+}
+
+.text-center{
+    text-align: center!important;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .repo-content .d-flex.gap-3.mt-3.justify-content-between {
+        display: block!important;
+        width: 100%;
+    }
+    .repo-content .d-flex {
+        text-align: center;
+        display: block!important;
+        margin: 0 auto;
+    }
+    .repo-content .d-flex .w-50 {
+        width: 100%!important;
+        height: 156px;
+    }
+    
+    .repo-content #percentage-container .mt-3 {
+        margin-top: 0;
+    }
+    .repo-content .me-5 {
+        margin-right: 0rem!important;
+    }
+    .repo-content .col-md-12 {
+        text-align: center;
+    }
+    .repo-content h6{
+        text-align: center;
+    }
+    .repo-content h3{
+        text-align: center;
+    }
+    .repo-content h2{
+        text-align: center;
+    }
+    #percentage-container {
+        padding: 8%;
+    }
+  }

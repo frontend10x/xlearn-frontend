@@ -63,16 +63,27 @@
 }
 
 .vide_ruta {
-    padding-top: 3%;
+    padding-top: 5%;
     padding-left: 3%;
     width: 70%;
 }
-.xln_player_course {
-    width: 100%;
-    float: left;
-    height: auto;
-    border-top: 13px solid #00161f;
+.video__reproduccion-section nav.header.fixed_top.background.navbar.navbar-expand-lg.navbar-dark {
+    position: fixed!important;
 }
+.xln_player_course {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+  }
+  
+  .xln_player_course iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
 
 .content_comunnityAndNotes {
     padding-top: 0%;
@@ -173,6 +184,15 @@
 }
 
 @media (max-width: 900px) {
+
+    
+    .video__reproduccion-container .ms-5 {
+        margin: 0!important;
+        margin-top: 20%!important;
+    }
+    .content_comunnityAndNotes{
+        display: none;
+    }
     .nav_ruta {
         display: none;
     }
