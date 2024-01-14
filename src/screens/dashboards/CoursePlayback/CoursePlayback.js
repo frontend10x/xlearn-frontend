@@ -29,7 +29,7 @@ const CorusePlayback = () => {
   const [progress, setProgress] = useState();
   const [destroy, setDestroy] = useState(false);
   const [evaluation, setEvaluation] = useState();
-  const [visibility, setVisibility] = useState(false);
+  const [visibility, setVisibility] = useState("Comunidad");
 
   const navigate = useNavigate();
 
@@ -76,10 +76,10 @@ const CorusePlayback = () => {
   }, [progress, lessons]);
 
   const show = (e) => {
-    if (e.target.value === "true") {
-      setVisibility(false);
-    } else {
-      setVisibility(true);
+    if (e?.target?.value === "Comunidad") {
+      setVisibility("Comunidad");
+    } else if (e?.target?.value === "Notas") {
+      setVisibility("Notas");
     }
     console.log(e.target.value);
   };
@@ -157,9 +157,7 @@ const CorusePlayback = () => {
                 </div> */}
         <div className="content_curso_interno">
           <div className="video__reproduccion-container-player">
-
             <div className="nav_ruta">
-
               <div className="xlnMenu__icon__player">
                 <p className="ms-3">Ruta</p>
                 <img src={IconRutaPlayer} className="ms-3" />
@@ -198,39 +196,44 @@ const CorusePlayback = () => {
             </div>
 
             <div className="content_comunnityAndNotes">
-                <div className="completo">
+              <div className="completo">
+                <button
+                  className="btn xln-btn-community fw-bold"
+                  value="Comunidad"
+                  onClick={show}
+                  style={
+                    visibility === "Comunidad"
+                      ? { backgroundColor: "#03ff84", color: "#002333" }
+                      : { backgroundColor: "transparent" }
+                  }
+                >
+                  Comunidad
+                </button>
+                <button
+                  className="btn xln-btn-community fw-bold "
+                  value="Notas"
+                  onClick={show}
+                  style={
+                    visibility === "Notas"
+                      ? { backgroundColor: "#03ff84", color: "#002333" }
+                      : { backgroundColor: "transparent" }
+                  }
+                >
+                  Notas
+                </button>
 
-                    <div className="content_mainMenu">
-                      <button
-                        className="btn xln-btn-community"
-                        value={true}
-                        onClick={show}
-                      >
-                        Comunidad
-                      </button>
-                      <button
-                        className="btn xln-btn-community"
-                        value={false}
-                        onClick={show}
-                      >
-                        Notas
-                      </button>
-                    </div>
-                    {visibility ? (
-                      <div className="mt-2">
-                        <RichText videoCurrent={videoCurrent} />
-                      </div>
-                    ) : (
-                      <div className="content-Chat-comunnity">
-                        <CommunityChat videoCurrent={videoCurrent} />
-                      </div>
-                    )}
-                    
-                </div>
-
-
+                {visibility === "Notas" && (
+                  <div className="mt-2">
+                    <RichText videoCurrent={videoCurrent} />
+                  </div>
+                )}
+                {visibility === "Comunidad" && (
+                  <div className="content-Chat-comunnity">
+                    <CommunityChat videoCurrent={videoCurrent} />
+                  </div>
+                )}
+              </div>
             </div>
-
           </div>
         </div>
       </div>
