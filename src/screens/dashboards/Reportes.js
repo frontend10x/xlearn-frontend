@@ -67,7 +67,7 @@ export const Reportes = () => {
 
   return (
     <div className="dashboard__section-empresa">
-      <div className="dashboard__container">
+      <div className="dashboard__container" >
         <Header />
 
         <div className="container xln-content-dash">
@@ -346,7 +346,7 @@ export const Reportes = () => {
               </div>
 
               <div className="row d-flex justify-content-center">
-                <GroupsDescription />
+                {/* <GroupsDescription /> */}
               </div>
 
               <div className="row">
