@@ -26,6 +26,7 @@ const CorusePlayback = () => {
   const { token, id } = useSelector((state) => state.auth);
   const [lessons, setLessons] = useState();
   const [videoCurrent, setVideoCurrent] = useState();
+  const [videoStatus, setVideoStatus] = useState();
   const [progress, setProgress] = useState();
   const [destroy, setDestroy] = useState(false);
   const [evaluation, setEvaluation] = useState();
@@ -95,9 +96,9 @@ const CorusePlayback = () => {
       });
   }
 
-  quiz();
-
-  console.log(evaluation, "boolean");
+  useEffect(()=>{
+    quiz();
+  },[])
 
   const getVideos = async () => {
     const data = await getLessons(token, course_id);
@@ -147,6 +148,8 @@ const CorusePlayback = () => {
     navigate(`/presentacion/evaluacion/${name}/${course_id}`);
   };
 
+  const getCurrentVideoTime = (currentVideoTime) => setVideoStatus(currentVideoTime);
+
   return (
     <div className="video__reproduccion-section">
       <Header />
@@ -192,6 +195,8 @@ const CorusePlayback = () => {
                 videoCurrent={videoCurrent}
                 destroy={destroy}
                 handlingProgress={handlingProgress}
+                getVideoStatus={getCurrentVideoTime} 
+                
               />
             </div>
 
@@ -224,7 +229,10 @@ const CorusePlayback = () => {
 
                 {visibility === "Notas" && (
                   <div className="mt-2">
-                    <RichText videoCurrent={videoCurrent} />
+                    <RichText
+                      videoCurrent={videoCurrent}
+                      videoStatus={videoStatus}
+                    />
                   </div>
                 )}
                 {visibility === "Comunidad" && (

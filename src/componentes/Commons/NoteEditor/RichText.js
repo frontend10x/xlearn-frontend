@@ -2,42 +2,44 @@ import React from "react";
 import { useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import "../../../assets/css/screens/dashboards/StyleCourseRichText.css";
 import { Badge } from "react-bootstrap";
 import { secondsToTimeFormat } from "../../../utils/video.utils";
 import { changeStateNote, createNote, listedNotes } from "../../../services/apis/lessons.services";
+import { CircularProgress } from "@mui/material";
 
-export const RichText = ({ videoCurrent }) => {
-  const { token } = useSelector((state) => state.auth);
+export const RichText = ({ videoCurrent, videoStatus }) => {
   const [value, setValue] = useState("");
   const [notes, setNotes] = useState([]);
+  const [idDeleted, setIdDeleted] = useState();
 
   const [disabledNote, setdisabledNote] = useState(false);
+  const [loadingNote, setLoadingNote] = useState(false);
 
-  const timeSecond = videoCurrent?.currentTime;
+  const timeSecond =
+    Math.round(videoStatus?.seconds) ?? videoCurrent?.currentTime;
   const lessonId = videoCurrent?.lessonId;
-  
+
   function notesList() {
-    try {
-      listedNotes(lessonId)
-      .then(evnt => {
-        setNotes(evnt?.data?.notes)
+    listedNotes(lessonId)
+      .then((evnt) => {
+        setNotes(evnt?.data?.notes);
       })
-    } catch (error) {
-      console.error(error);
-    }
+      .catch((error) => console.log(error));
   }
 
   const removeNote = async (noteId) => {
     try {
-      const resp = await changeStateNote(noteId, 0);
-      console.log("resp", resp);
+      setIdDeleted(noteId);
+      setLoadingNote(true);
+      await changeStateNote(noteId, 0);
       notesList();
     } catch (error) {
       console.error(error, "error");
+    } finally {
+      setLoadingNote(false);
     }
   };
 
@@ -45,44 +47,45 @@ export const RichText = ({ videoCurrent }) => {
     notesList();
   }, []);
 
-
   const pushNote = async () => {
     const note = value.replace(/<[^>]*>/g, "");
-    
     try {
       setdisabledNote(true);
-      const data = await createNote(note, timeSecond, lessonId);
-      console.log(data);
+      await createNote(note, timeSecond, lessonId);
+      setValue("");
       notesList();
     } catch (error) {
       console.error(error, "error");
-    } finally{
+    } finally {
       setdisabledNote(false);
-    };
+    }
   };
-  
-  
+
   return (
-    <div className="w-100 content_RichText" style={{backgroundColor:"#01202d"}} >
-      <ReactQuill theme="snow" value={value} onChange={setValue} />
-      <div className="mt-5 d-flex justify-content-end">
-        <div className="">
-          <button
-            className="btn bg-dark text-light fw-bold btn-notas-course"
-            style={{ fontSize: "20px" }}
-            onClick={pushNote}
-            disabled={disabledNote} 
-          >
-            {" "}
-            Crear nota{" "}
-          </button>
+    <div
+      className="w-100 content_RichText"
+    >
+      <div style={{ backgroundColor: "#01202d", padding: 5 }}>
+        <ReactQuill theme="snow" value={value} onChange={setValue} />
+        <div className="mt-2 d-flex justify-content-end">
+          <div className="">
+            <button
+              className="btn bg-dark text-light fw-bold btn-notas-course"
+              style={{ fontSize: "20px" }}
+              onClick={pushNote}
+              disabled={disabledNote}
+            >
+              Crear nota
+            </button>
+          </div>
         </div>
       </div>
+
       <main className="mt-5">
-      <h2 className="title-card_richText">Resumen de tus notas</h2>
+        <h2 className="title-card_richText">Resumen de tus notas</h2>
         <div className="container">
           {notes &&
-            notes.map((item,index) => {
+            notes.map((item, index) => {
               return (
                 <div className="mt-2" key={index}>
                   <div className="card" style={{ width: "100%" }}>
@@ -104,7 +107,11 @@ export const RichText = ({ videoCurrent }) => {
                         style={{ cursor: "pointer" }}
                         onClick={() => removeNote(item.id)}
                       >
-                        x
+                        {loadingNote && idDeleted === item.id ? (
+                          <CircularProgress style={{ width: 10, height: 10 }} />
+                        ) : (
+                          "x"
+                        )}
                       </Badge>
                     </div>
                   </div>

@@ -1,0 +1,17 @@
+.overlay {
+  padding: 0;
+}
+.advanced-border,
+.form {
+  border-radius: 1px;
+}
+
+.advanced-btns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form .postBtn {
+  color: black;
+  font-family: "GTWalsheimPro-Regular";
+}
