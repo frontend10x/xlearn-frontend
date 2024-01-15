@@ -1,14 +1,14 @@
 export const secondsToTimeFormat = (segundos) => {
-  const horas = Math.floor(segundos / 3600);
-  const minutos = Math.floor((segundos % 3600) / 60);
-  const segundosRestantes = segundos % 60;
+  const hours = Math.floor(segundos / 3600);
+  const minutes = Math.floor((segundos % 3600) / 60);
+  const secondsRemaining = segundos % 60;
 
-  if (horas > 0) {
-    return `${addZeros(horas)}:${addZeros(minutos)}:${addZeros(
-      segundosRestantes
+  if (hours > 0) {
+    return `${addZeros(hours)}:${addZeros(minutes)}:${addZeros(
+      secondsRemaining
     )}`;
   } else {
-    return `${minutos}:${addZeros(segundosRestantes)}`;
+    return `${minutes}:${addZeros(secondsRemaining)}`;
   }
 }
 
