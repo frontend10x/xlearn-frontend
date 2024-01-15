@@ -83,8 +83,8 @@ export const UsoCupos = () => {
                   <div className="d-flex justify-content-between">
                     <h3 className="ms-2 p-3 fw-bold ">Usuarios</h3>
                     <div className="d-flex">
-                      <h3 className="ms-2 p-3 fw-bold ">Eliminar</h3>
                       <h3 className="ms-2 p-3 fw-bold ">Equipo</h3>
+                      <h3 className="ms-2 p-3 fw-bold ">Eliminar</h3>
                     </div>
                   </div>
                   <div className="xlrn__uso-cupos-registered">
@@ -102,12 +102,15 @@ export const UsoCupos = () => {
                               <p>{item.email}</p>
                             </div>
                             <div className="my-auto d-flex gap-5 me-3">
+                              {item?.group.map(items => (
+                                <h3 className="me-3">{items?.name}</h3>
+                              ))}
+                              {/* <h3 className="me-3">{item.group_id}</h3> */}
                               <Image
-                                className="me-5 my-auto image_trash"
+                                className=" my-auto image_trash"
                                 onClick={desactivate}
                                 src={trashIcon}
                               />
-                              <h3>{item.group_id}</h3>
                             </div>
                           </div>
                         </div>

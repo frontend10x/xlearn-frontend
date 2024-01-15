@@ -55,14 +55,12 @@ import { GroupsDescription } from "../componentes/dashboards/GroupsDescription";
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
 
-
   return (
     <Router>
       <Routes>
+        <Route exact path="/reportes/cards" element={<GroupsDescription />} />
 
-        <Route exact path="/reportes/cards" element={<GroupsDescription/>} />
-
-        <Route element={<NonviewRoutes token={token} type={type} />}  >
+        <Route element={<NonviewRoutes token={token} type={type} />}>
           <Route exact path="/" element={<InicioScreen />} />
           <Route exact path="/courses" element={<CursosScreen />} />
           <Route exact path="/plans" element={<PlanesScreen />} />
@@ -70,19 +68,36 @@ export const AppRouter = () => {
           <Route exact path="/enterprises" element={<EmpresaScreen />} />
           <Route exact path="/login" element={<LoginScreen />} />
           <Route exact path="/course/info/:id" element={<InfoCourse />} />
-          <Route exact path="/recuperacion/:id" element={<RecuperarPassword />} />
+          <Route
+            exact
+            path="/recuperacion/:id"
+            element={<RecuperarPassword />}
+          />
         </Route>
         <Route exact path="/contact" element={<ContactoScreen />} />
-        <Route exact path="/terminos/condiciones" element={<TerminosCondiciones />} />
+        <Route
+          exact
+          path="/terminos/condiciones"
+          element={<TerminosCondiciones />}
+        />
         <Route exact path="/informacion/ayuda" element={<Ayuda />} />
-        <Route exact path="/recuperacion/contrasena" element={<ForgotPassword />} />
-        <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
+        <Route
+          exact
+          path="/recuperacion/contrasena"
+          element={<ForgotPassword />}
+        />
+        <Route
+          exact
+          path="/politicas/privacidad"
+          element={<PoliticasPrivacidad />}
+        />
         <Route exact path="/cookies/usuario" element={<Cookies />} />
-        <Route exact path="/preguntas/frecuentes" element={<Faqs/>} />
-        <Route exact path="/preguntas/frecuentes/:id/:name" element={<DetailFaqs/>} />
-        
-
-
+        <Route exact path="/preguntas/frecuentes" element={<Faqs />} />
+        <Route
+          exact
+          path="/preguntas/frecuentes/:id/:name"
+          element={<DetailFaqs />}
+        />
 
         {/* RUTA DE EMPRESA */}
         <Route element={<EmpresasRoute token={token} type={type} />}>
@@ -97,13 +112,18 @@ export const AppRouter = () => {
           <Route exact path="/creacion/usuarios" element={<CrearUsuarios />} />
           <Route exact path="/gestion/equipo" element={<CrearEquipos />} />
           <Route exact path="/manejo/equipos" element={<GestionDeEquipos />} />
-          <Route exact path="/gestion/cupos/disponibles" element={<GestionDeCupos />} />
+          <Route
+            exact
+            path="/gestion/cupos/disponibles"
+            element={<GestionDeCupos />}
+          />
           <Route exact path="/reportes" element={<Reportes />} />
           <Route exact path="/soporte" element={<Soporte />} />
         </Route>
         {/* RUTA DE EMPRESA */}
 
         {/* RUTA DEL LIDER */}
+        <Route element={<LiderRoute token={token} type={type} />}>
           <Route
             exact
             path="/inicia/diagnostico"
@@ -135,31 +155,65 @@ export const AppRouter = () => {
             element={<ConfirmarRuta />}
           />
           <Route exact path="/dashboard/lider" element={<DashboardLider />} />
-        <Route element={<LiderRoute token={token} type={type} />}>
         </Route>
         {/* RUTA DEL LIDER */}
 
         {/* RUTA DEL INTEGRANTE */}
         <Route element={<IntegranteRoute token={token} type={type} />}>
-          <Route exact path="/dashboard/integrante" element={<DashboardIntegrante />} />
+          <Route
+            exact
+            path="/dashboard/integrante"
+            element={<DashboardIntegrante />}
+          />
         </Route>
 
-        <Route element={<CommonRoutes token={token} />} >
-          <Route exact path="/course/videoplayer/:name/:course_id" element={<CoursePlayback />} />
-          <Route exact path="/presentacion/evaluacion/:name/:course_id" element={<DescripcionEvaluacion />} />
-          <Route exact path="/evaluacion/:name/:course_id" element={<Evaluacion />} />
-          <Route exact path="/puntaje/:name/:id/:course_id" element={<Score />} />
-          <Route exact path="/certificado/:course_id" element={<GenerarCertificado />} />
-          <Route exact path="/politicas/privacidad" element={<PoliticasPrivacidad />} />
+        <Route element={<CommonRoutes token={token} />}>
+          <Route
+            exact
+            path="/course/videoplayer/:name/:course_id"
+            element={<CoursePlayback />}
+          />
+          <Route
+            exact
+            path="/presentacion/evaluacion/:name/:course_id"
+            element={<DescripcionEvaluacion />}
+          />
+          <Route
+            exact
+            path="/evaluacion/:name/:course_id"
+            element={<Evaluacion />}
+          />
+          <Route
+            exact
+            path="/puntaje/:name/:id/:course_id"
+            element={<Score />}
+          />
+          <Route
+            exact
+            path="/certificado/:course_id"
+            element={<GenerarCertificado />}
+          />
+          <Route
+            exact
+            path="/politicas/privacidad"
+            element={<PoliticasPrivacidad />}
+          />
           <Route exact path="/soporte" element={<Soporte />} />
-          <Route exact path="/ver/certificado/:idCourse" element={<VerCertificado/>}/>
+          <Route
+            exact
+            path="/ver/certificado/:idCourse"
+            element={<VerCertificado />}
+          />
+        <Route exact path="/profile/:name" element={<Perfil />} />
+        <Route
+          exact
+          path="/profile/enterprise/:name"
+          element={<PerfilEmpresa />}
+        />
         </Route>
-          
-          <Route exact path="/profile/:name" element={<Perfil />} />
-          <Route exact path="/profile/enterprise/:name" element={<PerfilEmpresa />} />
+
 
         <Route path="*" element={<ErrorScreen />} />
-
       </Routes>
     </Router>
   );
