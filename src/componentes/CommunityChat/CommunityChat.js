@@ -6,10 +6,12 @@ import {
   storeLessonComments,
 } from "../../services/apis/lessons.services";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export const CommunityChat = ({ videoCurrent }) => {
   const [comments, setComments] = useState([]);
   const lessonId = videoCurrent?.lessonId;
+  const {name} = useSelector(state => state?.auth);
 
   const getLessonsComments = async () => {
     const list = await listLessonComments(lessonId);
@@ -40,7 +42,7 @@ export const CommunityChat = ({ videoCurrent }) => {
               "https://ui-avatars.com/api/name=Riya&background=random",
             currentUserProfile:
               "https://www.linkedin.com/in/riya-negi-8879631a9/",
-            currentUserFullName: "Jair Zea", // Reemplazar data
+            currentUserFullName: `${name}`, // Reemplazar data
           }}
           /* hrStyle={{ border: "0px solid #ff0072" }} */
           commentData={comments}
