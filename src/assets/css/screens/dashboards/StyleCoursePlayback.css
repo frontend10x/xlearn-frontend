@@ -131,6 +131,7 @@
     border-radius: 10px;
     height: 90vh;
     top: 10%;
+    width: -webkit-fill-available;
 }
 
 .content-Chat-comunnity .advanced-form .rdw-editor-toolbar{
