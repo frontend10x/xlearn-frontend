@@ -1,0 +1,57 @@
+.content_RichText {
+    height: 80vh!important;
+    overflow: auto;
+    position: relative;
+}
+
+.content_RichText .card-title{
+    font-size: 15px;
+}
+
+.w-100.content_RichText .card {
+    background: #003046;
+    color: #fff!important;
+}
+h2.title-card_richText {
+    color: #fff;
+    font-weight: bold;
+    padding: 11px;
+    font-size: 21px;
+}
+
+.content_RichText::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+  
+  .content_RichText::-webkit-scrollbar-thumb {
+    background-color: #a3a3a3;
+    border-radius: 20px;
+    border: 3px solid #002333;
+}
+.content_RichText::-webkit-scrollbar-track {
+    background: #002333;
+}
+
+.btn-notas-course {
+    margin-right: 25px;
+    margin-bottom: 25px;
+    color: #00161f!important;
+    background: #03ff84!important;
+    font-size: 15px!important;
+}
+
+.content_RichText .quill {
+    color: #fff!important;
+}
+
+.content_RichText p {
+    color: #fff!important;
+}
+
+.content_RichText span {
+    color: #fff!important;
+}
+
+.content_RichText svg {
+    color: #fff!important;
+}

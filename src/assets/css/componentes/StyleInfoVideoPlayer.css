@@ -15,6 +15,7 @@
 .xlrn__infovideoplayer-section .xlrn__infovideoplayer-content {
     height: auto!important;
     padding-bottom: 0!important;
+    padding: 0;
 }
 
 .video__reproduccion-section {
