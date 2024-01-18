@@ -6,3 +6,7 @@ export const STORE_LESSON_COMMENTS = (lessonId) => `/api/v1/lesson/addcomment_us
 
 export const LIST_LESSON_COMMENTS = (lessonId) => `/api/v1/lesson/listComment/${lessonId}`
 
+export const NOTE_STATUS_CHANGE = (noteId) =>
+  `/api/v1/lesson/changeStateNote/${noteId}`;
+
+
