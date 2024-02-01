@@ -277,9 +277,9 @@ export const Header = ({ home, show }) => {
               id="burg-toogle"
               onClick={() => handleShow(values)}
             >
-              |||
+              |<span className="Xln_icon-menuAncho">|</span>
             </Button>
-            <Image src={XlearnLogo} alt="logo" onClick={getHome} />
+            <Image className="Xln_logo-header" src={XlearnLogo} alt="logo" onClick={getHome} />
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav" className="me-5">
             <Nav className="ms-auto">
@@ -298,8 +298,8 @@ export const Header = ({ home, show }) => {
               <Nav.Link id="link" href="/contact">
                 Contáctanos
               </Nav.Link>
-              <Button id="button" onClick={redirect}>
-                Login
+              <Button className="xln_btnLoginHeader" id="button" onClick={redirect}>
+                Ingresar
               </Button>
             </Nav>
           </Navbar.Collapse>

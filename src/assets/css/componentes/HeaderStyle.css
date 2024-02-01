@@ -46,20 +46,51 @@
     height: 30px;
 }
 
-#burg-toogle {
-    rotate: 90deg;
-    border: 0px solid #002333;
-    top: 5px;
-    position: relative;
-}
-#burg-toogle:hover {
-    color: #31fb84;
-    background-color: #002333!important;
-    border-color: #002333!important;
-}
 
 .video_reproduccion-section nav.header_container.background.navbar.navbar-expand-lg.navbar-dark{
     position: fixed!important;
     width: 100% !important;
     z-index: 9 !important;
   }
+
+
+  /*-------Estilos de icono de menu header---------*/
+
+#burg-toogle .Xln_icon-menuAncho {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+#burg-toogle {
+    rotate: 90deg;
+    border: 2px solid #00233300;
+    top: 5px;
+    position: relative;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    padding: 3px;
+    border-radius: 100%;
+}
+
+#burg-toogle:hover {
+    color: #31fb84;
+    border: 2px solid #31fb84;
+    background-color: #00233300!important;
+}
+
+.Xln_logo-header {
+    left: 10px;
+    position: relative;
+    width: 83px;
+}
+
+.xln_btnLoginHeader {
+    height: -moz-fit-content;
+    height: fit-content;
+    color: #002333;
+    font-weight: bold;
+    margin-left: 40px;
+}
