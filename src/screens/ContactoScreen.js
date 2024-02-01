@@ -161,7 +161,7 @@ export const ContactoScreen = () => {
                           for="exampleFormControlInput1"
                           class="form-label"
                         >
-                          Nombres
+                          Nombres <span className="icon-requerido">*</span>
                         </label>
                         <input
                           type="text"
@@ -169,6 +169,7 @@ export const ContactoScreen = () => {
                           id="exampleFormControlInput1"
                           placeholder="name@example.com"
                           name="name"
+                          required
                         />
                       </div>
                       <div class="mb-3 w-100">
@@ -176,7 +177,7 @@ export const ContactoScreen = () => {
                           for="exampleFormControlInput1"
                           class="form-label"
                         >
-                          Apellidos
+                          Apellidos <span className="icon-requerido">*</span>
                         </label>
                         <input
                           name="lastname"
@@ -184,6 +185,7 @@ export const ContactoScreen = () => {
                           class="form-control"
                           id="exampleFormControlInput1"
                           placeholder="name@example.com"
+                          required
                         />
                       </div>
                     </div>
@@ -195,7 +197,7 @@ export const ContactoScreen = () => {
                           for="exampleFormControlInput1"
                           class="form-label"
                         >
-                          Empresa
+                          Empresa <span className="icon-requerido">*</span>
                         </label>
                         <input
                           name="company"
@@ -203,6 +205,7 @@ export const ContactoScreen = () => {
                           class="form-control"
                           id="exampleFormControlInput1"
                           placeholder="name@example.com"
+                          required
                         />
                       </div>
                       <div class="mb-3 w-100">
@@ -210,7 +213,7 @@ export const ContactoScreen = () => {
                           for="exampleFormControlInput1"
                           class="form-label"
                         >
-                          Correo electrónico
+                          Correo electrónico <span className="icon-requerido">*</span>
                         </label>
                         <input
                           name="email"
@@ -218,6 +221,7 @@ export const ContactoScreen = () => {
                           class="form-control"
                           id="exampleFormControlInput1"
                           placeholder="name@example.com"
+                          required
                         />
                       </div>
                     </div>
@@ -229,7 +233,7 @@ export const ContactoScreen = () => {
                           for="exampleFormControlInput1"
                           class="form-label"
                         >
-                          Web site
+                          Website <span className="icon-requerido">*</span>
                         </label>
                         <input
                           name="website"
@@ -237,18 +241,20 @@ export const ContactoScreen = () => {
                           class="form-control"
                           id="exampleFormControlInput1"
                           placeholder="name@example.com"
+                          required
                         />
                       </div>
                       <div class="mb-3 w-100">
                         <label for="inputState" class="form-label">
-                          País
+                          País <span className="icon-requerido">*</span>
                         </label>
                         <select
                           id="inputState"
                           class="form-select"
                           name="country"
+                          required
                         >
-                          <option>...</option>
+                          <option value="" disabled selected>Selecciona</option>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
@@ -260,10 +266,10 @@ export const ContactoScreen = () => {
                     <div className="d-flex flex-column justify-content-center align-items-center">
                       <div class="mb-3 w-100">
                         <label for="inputState" class="form-label">
-                          ¿Qué plan de Xlearn te interesa?*
+                          ¿Qué plan de Xlearn te interesa? <span className="icon-requerido">*</span>
                         </label>
-                        <select id="inputState" class="form-select" name="plan">
-                          <option>...</option>
+                        <select id="inputState" class="form-select" name="plan" required>
+                          <option value="" disabled selected>Selecciona</option>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>
@@ -271,14 +277,15 @@ export const ContactoScreen = () => {
                       </div>
                       <div class="mb-3 w-100">
                         <label for="inputState" class="form-label">
-                          ¿Cuántos cupos estás buscando?*
+                          ¿Cuántos cupos estás buscando? <span className="icon-requerido">*</span>
                         </label>
                         <select
                           id="inputState"
                           class="form-select"
                           name="quantity"
+                          required
                         >
-                          <option>...</option>
+                          <option value="" disabled selected>Selecciona</option>
                           <option>1</option>
                           <option>2</option>
                           <option>3</option>

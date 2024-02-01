@@ -61,6 +61,7 @@ export const CarouselCourses = ({ item }) => {
         {course &&
           course.map((item, index) => (
             <div key={index} className="dashboard__lider-container_courses-card" >
+              <Image className="xln-logo-icon" src={XlearnLogo} alt="logo" />
               <Image src={item.file_path} className="img-recomendation-xln" />
               <div className="dashboard__lider-container_courses-card-content" >
                 <div className="dashboard__lider-container_courses-card-content-body" >

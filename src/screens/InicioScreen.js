@@ -44,14 +44,14 @@ export const InicioScreen = () => {
         <div className="carousel__section-content">
           <h1>Elige los cursos de tu interés</h1>
 
-           {/* <ul className=" carousel__lista ">
+           <ul className="carousel__lista">
             <button>Todas las áreas</button> |
             <button>Innovación</button> |
             <button>Corporativo</button> |
             <button>Transformación</button> |
             <button>Diseño de productos</button> |
             <button>Sostenibilidad</button>
-          </ul>  */}
+          </ul> 
 
           <div className="d-flex carousel__container carousel-interna-home" style={{padding:"0",    margin: "0"}}>
             <Container>

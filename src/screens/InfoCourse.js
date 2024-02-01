@@ -75,49 +75,53 @@ export const InfoCourse = () => {
       {/* <HeaderDashboard show={show} /> */}
       <Header />
       <section className="hero">
-        <div className="row align-items-center">
-          <div className="col-md-4" style={{ position: "relative" }}>
-            <Image
-              src={course.file_path}
-              alt="image_description"
-              style={{ width: "100%" }}
-            />
-            <button
-              className="button__info-course"
-              data-bs-toggle="modal"
-              data-bs-target="#videoTrailer"
-            >
-              <Image src={playButton} />
-            </button>
-          </div>
-          <div className="col-md-1"></div>
-          <div className="col-md-7 title">
-            <div className="InfoCourse__innovacion-redirection">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-4" style={{ position: "relative" }}>
               <Image
-                src={flechaIzquierdaCourse}
+                className="xln_imgHeaderDescription"
+                src={course.file_path}
                 alt="image_description"
-                style={{ width: "10px", marginRight: "15px" }}
+                style={{ width: "100%" }}
               />
-              <a href="/" rel="noreferrer">
-                Home{" "}
-              </a>
-              <a href="/courses" rel="noreferrer">
-                | Cursos |{" "}
-              </a>
-              <a className="activarGreen" rel="noreferrer">
-                {course.name}
-              </a>
-            </div>
-            <h2 className="xln__name_course">{course.name}</h2>
-            <div className="">
-              <a
-                href="/login"
-                className="btn btn-primary btn-lg px-4 me-md-2 btn__cursos__descripcion"
-                rel="noreferrer"
+              <button
+                className="button__info-course"
+                data-bs-toggle="modal"
+                data-bs-target="#videoTrailer"
               >
-                {" "}
-                Iniciar curso
-              </a>
+                <Image src={playButton} />
+              </button>
+            </div>
+            <div className="col-md-1"></div>
+            <div className="col-md-7 title">
+              <div className="InfoCourse__innovacion-redirection">
+                <Image
+                  src={flechaIzquierdaCourse}
+                  alt="image_description"
+                  style={{ width: "10px", marginRight: "15px" }}
+                />
+                <a href="/" rel="noreferrer">
+                  Home{" "}
+                </a>
+                <a href="/courses" rel="noreferrer">
+                  | Cursos |{" "}
+                </a>
+                <a className="activarGreen" rel="noreferrer">
+                  {course.name}
+                </a>
+              </div>
+              <h2 className="xln__name_course">{course.name}</h2>
+              <div className="">
+                <br></br>
+                <a
+                  href="/login"
+                  className="btn btn-primary btn-lg px-4 me-md-2 btn__cursos__descripcion"
+                  rel="noreferrer"
+                >
+                  {" "}
+                  Iniciar curso
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -188,7 +192,7 @@ export const InfoCourse = () => {
           <div className="col-sm">
             <h2>Regístrate a nuestra plataforma</h2>
           </div>
-          <div className="col-sm">
+          <div className="col-sm col-md-5">
             <div className="separador-left"></div>
             <p>
               Podrás conectarte desde cualquier lugar con nuestra versión
