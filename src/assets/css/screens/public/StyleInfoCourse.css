@@ -124,17 +124,18 @@
 }
 
 .section_introCursos-button {
-    background-color: #31fb8400;
+    background-color: #31fb8500;
     border: none;
     border-radius: 5px;
     position: relative;
     padding: 10px;
-    width: 50%;
+    width: 180px;
     font-size: 17px;
     font-weight: bold;
     border: solid 2px var(--bluedark);
     color: var(--blueDark);
     top: 32px;
+    border: 2px solid;
 }
 
 .section_cta_de_curso .col-sm {
@@ -248,6 +249,17 @@ section.section_carousel_curso {
     right: 20px;
     z-index: 9;
 }
+
+
+
+/*---------------Esrilos css personalizados--------------*/
+img.xln_imgHeaderDescription {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+
+
 @media (max-width: 1367px) {}
 
 @media (max-width: 768px) {

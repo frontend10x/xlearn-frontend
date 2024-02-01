@@ -35,6 +35,20 @@
     transform: translateY(-50%);
   }
 
+
+/*---------------Estilos css personalizados--------------------*/
+
+
+img.xln_imgHeaderDescription {
+    width: 100%;
+    object-fit: cover;
+    height: 200px;
+}
+.xlm_titleHomePlanes_banner {
+    font-size: 45px;
+    font-weight: bold;
+    text-transform: lowercase;
+}
 @media (max-width: 700px) {
 
 }

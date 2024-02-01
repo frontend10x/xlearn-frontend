@@ -132,7 +132,7 @@ export const EmpresaScreen = () => {
         </div> */}
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-6">
               <h4 className="sub_center_aling">Innovación</h4>
               <h2 className="xln__description_EmpresasRigth">
                 Ingresa al mundo de la innovacion entrenando a tus <span> equipos</span> de trabajo.
@@ -173,14 +173,14 @@ export const EmpresaScreen = () => {
         </div> */}
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-5">
               <h4 className="sub_center_aling">Acerca de</h4>
               <h2 className="xln__description_EmpresasRigth">
                 Empresas que hemos acompañado
               </h2>
               <div className="xln__separator__subtitle"></div>
             </div>
-            <div className="col-md-2">
+            <div className="col-md-1">
             </div>
             <div className="col-md-6">
               <p>Hemos contribuido con el entrenamiento y acompañamiento de empresas medianas y grandes que le han apostado a la innovación.</p>

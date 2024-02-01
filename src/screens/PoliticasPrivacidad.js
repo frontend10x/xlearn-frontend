@@ -17,7 +17,10 @@ export const PoliticasPrivacidad = () => {
     <div className="politicas__prvacidad-section">
       <Header />
       <div className="container">
-        <div className="row">
+        <div className="row d-flex align-items-center justify-content-center mt-5 pt-5 mb-5" >
+
+        <div className="col-md-10">
+
           <h3 className="fw-bold">Aviso de privacidad para los usuarios</h3>
           10X THINKING S.A.S., en Adelante 10X THINKING, le comunica que sus
           datos personales se tratan en esta plataforma por la entrega que de
@@ -102,6 +105,9 @@ export const PoliticasPrivacidad = () => {
           xlearnby10x@gmail.com de igual manera puede consultar nuestra política
           xlearnby10x@gmailcontainerigual manera puede consultar nuestra
           política de privacidad en el siguiente link dashboard.xlearn.com.co
+
+        </div>
+
         </div>
       </div>
       <Footer />

@@ -94,3 +94,11 @@
     font-weight: bold;
     margin-left: 40px;
 }
+
+
+.xln_btnLoginHeader.fixed {
+  position: fixed;
+  top: 20px; /* ajusta según tus necesidades */
+  right:40px; /* ajusta según tus necesidades */
+  /* Agrega otros estilos que desees para el botón fijo */
+}

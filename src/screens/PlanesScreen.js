@@ -42,16 +42,16 @@ export const PlanesScreen = () => {
   <div className="row pb-5">
 
     <div className="col-md-4 mt-5">
-        <Image src={dashboard1} style={{ width: "100%" }} />
+        <Image className="xln_imgHeaderDescription" src={dashboard1} style={{ width: "100%" }} />
     </div>
 
-    <div className="col-md-6 mt-5 d-flex flex-column justify-content-center">
+    <div className="col-md-8 mt-5 d-flex flex-column justify-content-center">
       
-            <h2 style={{ color: "white" }}>
+            <h2 className="xlm_titleHomePlanes_banner" style={{ color: "white" }}>
               ¡Haz de la formación la fuente de innovación de tu compañía!
             </h2>
             <div style={{ color: "white" }} className="d-flex">
-              <p>Innovacion</p>|<p>Emprendimiento corporativo</p>
+              <p>Innovacion </p> | <p> Emprendimiento corporativo</p>
             </div>
             <button
               className="fw-bold"
@@ -79,7 +79,7 @@ export const PlanesScreen = () => {
       <div className="mt-5 mb-5" style={{ height: "75vh" }}>
         <div className="mt-5 d-flex flex-column text-center justify-content-center">
           <h3 className="mt-5 fw-bold" style={{ fontSize: "48px" }}>
-            Nuestros Planes y Precios
+            Nuestros planes y precios
           </h3>
           <p style={{ fontSize: "16px" }}>
             Accede a todos los beneficios que tenemos para tu empresa
