@@ -22,7 +22,7 @@ export const GroupsDescription = ({ items }) => {
 
   return (
     <div className="mt-5 mb-5 d-flex flex-wrap" style={{ 
-      gap: "1%",
+      gap: "2%",
       padding: "0",
        }}>
       {groups &&

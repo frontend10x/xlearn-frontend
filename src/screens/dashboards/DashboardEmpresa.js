@@ -178,20 +178,20 @@ export const DashboardEmpresa = () => {
                     <div className="col-md-12">
                       <div className="row">
 
-                        <div className="col-md-6 xln-taget-info">
+                        <div className="col-md-6 xln-taget-info border-puntos">
                           <div className="dashboard__block">
                             <div className="row dashboard__block-content">
                               <div className="col-md-4">
                                 <Image src={cuposIcon} />
                               </div>
-                              <div className="col-md-8">
+                              <div className="col-md-8 text-end">
                                 <button className="dashboard__block-button" onClick={redirect} value="users">
                                   Administrar cupos
                                 </button>
 
                               </div>
 
-                              <div className="col-md-12">
+                              <div className="col-md-12 pt-5">
                                 {quotas ?
                                   <div className="dashboard__title"  >
                                     <h3>{quotas} Cupos disponibles</h3>
@@ -216,13 +216,13 @@ export const DashboardEmpresa = () => {
                                 <Image src={equiposIcon} />
                               </div>
 
-                              <div className="col-md-8">
+                              <div className="col-md-8 text-end">
                                 <button className="dashboard__block-button" onClick={change}>
                                   Administrar tus equipos
                                 </button>
                               </div>
 
-                              <div className="col-md-12">
+                              <div className="col-md-12 pt-5">
                                 {createdTeams ?
                                   <div className="dashboard__title">
                                     <h3>{createdTeams} Equipos creados</h3>
@@ -245,7 +245,8 @@ export const DashboardEmpresa = () => {
                   </div>
                 </div>
               </div>
-              <div className="xlrn__dashborad__lider-container-block">
+
+              <div className="xlrn__dashborad__lider-container-block mb-5">
                 <div className="xlrn__dashboard__lider-block d-flex " >
 
                   {validation ?
@@ -270,10 +271,8 @@ export const DashboardEmpresa = () => {
                 </div>
               </div>
 
-              <div className="xln_section_course dashboard__card-info">
+              <div className="xln_section_course dashboard__card-info pt-5 mt-5 pb-5">
                 <h2>Identifica las brechas de aprendizaje y sugiere contenido</h2>
-
-
                 <div className="dashboard__info-container">
                   <div className="row">
 
