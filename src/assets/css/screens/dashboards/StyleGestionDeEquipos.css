@@ -8,21 +8,22 @@
 
 
 .xln__content__progress_gestionDeCupos {
-    width: 98%;
+    width: 95%;
     position: relative;
 
-    padding-bottom: 6%;
+    /* padding-bottom: 6%; */
     margin: auto;
+    padding: 0;
   }
 
   .xln__creacion-nuevo-equipo {
     background-color: var(--white);
-    width: 92%;
+    width: 95%;
     position: relative;
-    border: 1px solid var(--blueDark);
+    border: 2px solid var(--blueDark);
     border-radius: 5px;
     margin: auto;
-    margin-bottom: 8%;
+    /* margin-bottom: 8%; */
 }
 
 .xln__creacion-nuevo-equipo-content {
@@ -41,7 +42,7 @@
     border: none;
     color: var(--blueDark);
     height: 41px;
-    width: 30%;
+    width: 200px;
     font-size: 18px;
     font-weight: bold;
     border-radius: 5px;

@@ -102,7 +102,7 @@ export const GestionDeCupos = () => {
                                         <div className="col-md-12">
                                             <div className="row">
 
-                                                <div className="col-md-6 xln-taget-info">
+                                                <div className="col-md-6 xln-taget-info border-puntos">
                                                     <div className="dashboard__block">
                                                         <div className="row dashboard__block-content">
                                                             <div className="row dashboard__block-content">
@@ -111,12 +111,12 @@ export const GestionDeCupos = () => {
                                                                     <Image src={cuposIcon} />
                                                                 </div>
 
-                                                                <div className="col-md-8">
+                                                                <div className="col-md-8 text-end">
                                                                     <button className="xlrn__gestion-cupos-button-agregar-cupos" onClick={redirect} value="cupos">
                                                                         Agregar cupos
                                                                     </button>
                                                                 </div>
-                                                                <div className="col-md-12">
+                                                                <div className="col-md-12 pt-5">
                                                                     <div className="xlrn__gestion-cupos-subtitle">
                                                                         <h3>{quotas} Cupos disponibles</h3>
                                                                         <p>Administra tus Cupos</p>
@@ -139,12 +139,12 @@ export const GestionDeCupos = () => {
                                                                 <div className="col-md-4">
                                                                     <Image src={equiposIcon} />
                                                                 </div>
-                                                                <div className="col-md-8">
+                                                                <div className="col-md-8 text-end">
                                                                     <button className="xlrn__gestion-cupos-button" onClick={redirect} value="asignar" >
                                                                         Asignar usuarios
                                                                     </button>
                                                                 </div>
-                                                                <div className="col-md-12">
+                                                                <div className="col-md-12 pt-5">
                                                                     <div className="xlrn__gestion-cupos-subtitle">
                                                                         <h3>{createdTeams} En uso</h3>
                                                                         <p>{quotas} cupos sin usuarios asignados </p>

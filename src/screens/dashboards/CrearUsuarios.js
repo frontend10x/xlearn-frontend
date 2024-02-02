@@ -89,7 +89,7 @@ export const CrearUsuarios = () => {
     const adjustClass = event ? "xln_add_menuLateral" : "col-md-10";
 
     return (
-        <div className="dashboard__section-empresa">
+        <div className="dashboard__section-empresa creacionUsuarios">
             <div className="dashboard__container">
                 {/* <HeaderDashboard /> */}
                 <Header />
@@ -112,20 +112,20 @@ export const CrearUsuarios = () => {
                                         <p>Gestiona y administra tus cupos</p>
                                     </div>
 
-                                    <div className="xlrn__crear-usuarios__container-form" >
+                                    <div className="xlrn__crear-usuarios__container-form border-puntos" >
                                         <div className="xlrn__crear-usuarios__container-form-content" >
                                             <Image src={equiposIcon} />
-                                            <h1>usuarios</h1>
+                                            <h1 className="pt-3">Crear usuarios</h1>
                                             <p>Crea los usuarios, entrena tus equipos y desarrolla tu proyecto</p>
                                         </div>
-                                        <div className="xlrn__crear-usuarios__form" >
+                                        <div className="xlrn__crear-usuarios__form pt-5" >
                                             <div className="xlrn__crear-usuarios__form-content">
                                                 <input onChange={handleInputChange} name="name" placeholder="Nombre y Apellido" />
                                                 <input onChange={handleInputChange} name="email" placeholder="Correo (Usuario)" />
                                                 <input onChange={handleInputChange} name="email_confirmation" placeholder="Confirmar correo" />
                                                 <div className="d-flex gap-2" >
                                                     <input onChange={handleInputChange} name="phone" placeholder="Telefono" className="input__phone" />
-                                                    <select onChange={handleInputChange} name="area" className="input__rol" >
+                                                    <select onChange={handleInputChange} name="area" className="input__rol inputArea" >
                                                         <option value="..." >Seleccionar área</option>
                                                         {areaTelf&&
                                                             areaTelf.map((item, index) => (
