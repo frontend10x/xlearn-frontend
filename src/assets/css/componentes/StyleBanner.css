@@ -236,7 +236,8 @@ left: -133px;
 }
 
 .content__banner-info h1 {
-  font-size: 35px;
+  font-size: 3em;
+  font-weight: bold;
 }
 
 .content__banner-info span {
@@ -284,6 +285,74 @@ width: 230px;
   background-color: transparent;
   color: var(--white);
   border: none;
+}
+
+
+/*-----------scroll to top-----------------------*/
+@keyframes animarBorde {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.left-conten_scroll{
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  rotate: -90deg;
+  color: #fff;
+}
+
+.left-conten_scroll .text_scrollAnimate {
+  float: left!important;
+  position: relative;
+  font-size: 19px;
+}
+.left-conten_scroll .xln_borderAnimateitem {
+  color: #fff;
+  left: 0;
+  width: 100px;
+  height: 20px;
+  z-index: 9;
+  top: 50%;
+  rotate: 360deg;
+  border-bottom: 4px solid #31fb84;
+  position: absolute;
+}
+.left-conten_scroll .xln_borderAnimateitem:before {
+  position: absolute;
+  bottom: -4px;
+  content: "";
+  display: block;
+  width: 0;
+  height: 5px;
+  background-color: #fff;
+  transition: all 0.3s;
+  animation: animarBorde 4s infinite;
+}
+
+.left-conten_scroll .xln_borderAnimateitemdos:before {
+  right: 0;
+  float: !important;
+}
+
+
+/*--------------------------------------------*/
+.rigth-conten_scroll{
+  position: absolute;
+  z-index: 9;
+  top: 50%;
+  rotate: -90deg;
+  color: #fff;
+  right: -3%;
+}
+
+.rigth-conten_scroll .text_scrollAnimate {
+  position: relative;
+  font-size: 15px;
 }
 
 
@@ -400,3 +469,6 @@ width: 230px;
   }
 
 }
+
+
+

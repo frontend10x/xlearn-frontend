@@ -83,13 +83,13 @@ export const NavegacionDashboard = () => {
             <div className="dashboard__navegacion-container">
                 <div className="dashboard__nav-section" >
                     <Nav className={order} >
-                        <NavLink type="button" href='/dashboard/empresa' className='dashboard__nav-link' ><img src={NavIconLeft_01} className="" /> <span>Inicio</span>  </NavLink>
-                        <NavLink className='dashboard__nav-link' type="button" onClick={redirect}  ><img src={NavIconLeft_02} className="" /> <span>Gestión de cupos</span>  </NavLink>
-                        <NavLink type="button" onClick={change} className='dashboard__nav-link' ><img src={NavIconLeft_04} className="" /> <span>Gestión de equipos</span> </NavLink>
-                        <NavLink href='/gestion/usuarios' className='dashboard__nav-link' ><img src={NavIconLeft_05} /> <span>Gestión de usuarios</span> </NavLink>
-                        <NavLink href='/reportes' className='dashboard__nav-link' ><img src={NavIconLeft_06} /> <span>Reportes</span></NavLink>
-                        <NavLink onClick={courses} className='dashboard__nav-link' ><img src={NavIconLeft_03} /> <span>Ver cursos</span></NavLink>
-                        <NavLink type="button" className={position} onClick={resize} value="Ocultar" ><img src={event ? show : hide} /> <span className="position-absolute top-25 ms-2 ocultar-style" >Ocultar</span> </NavLink>
+                        <NavLink type="button" href='/dashboard/empresa' className='dashboard__nav-link' title='Inicio'><img src={NavIconLeft_01} className="" title="Inicio"/> <span>Inicio</span>  </NavLink>
+                        <NavLink className='dashboard__nav-link' type="button" onClick={redirect}  title='Gestión de cupos'><img src={NavIconLeft_02} className="" /> <span>Gestión de cupos</span>  </NavLink>
+                        <NavLink type="button" onClick={change} className='dashboard__nav-link' title='Gestión de equipos'><img src={NavIconLeft_04} className="" /> <span>Gestión de equipos</span> </NavLink>
+                        <NavLink href='/gestion/usuarios' className='dashboard__nav-link' title='Gestión de usuarios'><img src={NavIconLeft_05} /> <span>Gestión de usuarios</span> </NavLink>
+                        <NavLink href='/reportes' className='dashboard__nav-link' title='Reportes'><img src={NavIconLeft_06} /> <span>Reportes</span></NavLink>
+                        <NavLink onClick={courses} className='dashboard__nav-link' title='Ver cursos'><img src={NavIconLeft_03} /> <span>Ver cursos</span></NavLink>
+                        <NavLink type="button" className={position} onClick={resize} value="Ocultar" title='Inicio' ><img src={event ? show : hide} /> <span className="position-absolute top-25 ms-2 ocultar-style" >Ocultar</span> </NavLink>
                     </Nav>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { baseURL } from "../utils/route";
+import http from "./https";
 
 export const loginPost = async (email, password) => {
   const response = await axios.post(baseURL + "/api/v1/login", {
@@ -654,31 +655,6 @@ export const validateUserState = async (token,id,state) => {
 
   return await axios.get(`${baseURL}/api/v1/session/changeStateUser`,body,config);
 };
-
-export const listedNotes = async (token,id) => {
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
-  return await axios.get(`${baseURL}/api/v1/lesson/listNoteUser/${id}`,config);
-}
-
-export const createNote = async (token,note,time,id) => {
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-
-  const body = {
-    note,
-    time
-  };
-
-  return await axios.post(`${baseURL}/api/v1/lesson/addNoteUser/${id}`,body,config);
-}
 
 export const getDetailedPlans = async () => {  
     return await axios.get(`${baseURL}/api/v1/plan/generality`);

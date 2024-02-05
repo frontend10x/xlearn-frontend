@@ -38,6 +38,8 @@
 
 .footer__group p {
     font-size: 15px !important;
+    color: #DCDEE1;
+    font-family: "GTWalsheimPro-Regular";
 }
 
 .position {
@@ -200,7 +202,7 @@ hr{
 }
 
 .logoFooter img{
-    width: 170px;
+    width: 100px;
 }
 
 

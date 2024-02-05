@@ -16,7 +16,11 @@ export const TerminosCondiciones = () => {
     <div className="politicas__prvacidad-section">
       <Header />
       <div className="container">
-        <div className="row mt-5 pt-5 mb-5" >
+        <div className="row d-flex align-items-center justify-content-center mt-5 pt-5 mb-5" >
+
+          <div className="col-md-10">
+
+         
           <h1>
             Términos y condiciones de privacidad y protección de datos
             personales.
@@ -30,7 +34,7 @@ export const TerminosCondiciones = () => {
             servicios contratados.{" "}
           </p>
 
-          <ol className="">
+          <p className="">
             En cumplimiento del marco legal vigente en materia de Protección de
             Datos Personales y de su política de privacidad, 10X THINKING le
             comunica los siguientes términos y condiciones de privacidad y
@@ -125,7 +129,9 @@ export const TerminosCondiciones = () => {
             El análisis de la información y el valor agregado que se genere a
             ésta se hará con estricto respeto a los derechos de las personas y
             creación de valor para nuestros grupos de interés.
-          </ol>
+          </p>
+        
+          </div>
         </div>
       </div>
 

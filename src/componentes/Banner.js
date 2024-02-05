@@ -39,11 +39,22 @@ export const Banner = () => {
   return (
     <div className="banner">
 
+
+
       <div className="controladores carousel slide enterprise__carosuel-indicators" id="carouselExampleIndicators" data-bs-ride="carousel">
         
         <div className="row">
           <div className="col-md-12">
+            
+          <div className="left-conten_scroll"> 
+            <p className="text_scrollAnimate">Scroll to top<span className="xln_borderAnimateitem xln_borderAnimateitemdos"></span></p> 
+          </div>
 
+
+          <div className="rigth-conten_scroll"> 
+            <p className="text_scrollAnimate">Síguenos - Yt / Fb. / Tw.</p> 
+          </div>
+        
             <div className="carousel-indicators">
               <button
                 type="button"
@@ -69,7 +80,7 @@ export const Banner = () => {
 
           </div>
         </div>
-
+        
         <div className="carousel-inner">
           <div className="carousel-item active">
             <Image src={Slider_01} className="d-block w-100" alt="..." />
@@ -179,7 +190,7 @@ export const Banner = () => {
         <Col className="h-75" md={6}>
           <div className="content__banner-info_block  ms-3">
             <h3>
-              2023 <br /> Innovación <br /> Sostenibilidad <br /> Transformación
+              2024 <br /> Innovación <br /> Sostenibilidad <br /> Transformación
             </h3>
           </div>
         </Col>

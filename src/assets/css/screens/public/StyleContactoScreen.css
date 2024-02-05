@@ -242,6 +242,22 @@ span.campo_requerido {
 .xln__txt__formContact h2 {
     font-weight: bold;
 }
+
+/*-----------------Estilos css personalizados--------------------------*/
+.form-control::placeholder {
+    color: #DCDEE1;
+}
+#inputState {
+    color: #DCDEE1!important;
+}
+#inputState option:not(:first-child) {
+    color: #000; /* Reemplaza 'otro_color' con el color que desees para las opciones no seleccionadas */
+}
+
+.icon-requerido{
+    color: red;
+}
+
 @media (max-width: 1367px) {}
 
 @media (max-width: 768px) {

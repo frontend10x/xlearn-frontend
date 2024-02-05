@@ -7,6 +7,7 @@ import {
 } from "../../services/apis/lessons.services";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import "./styles.css"
 
 export const CommunityChat = ({ videoCurrent }) => {
   const [comments, setComments] = useState([]);

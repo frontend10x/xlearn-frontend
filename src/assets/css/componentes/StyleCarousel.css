@@ -20,12 +20,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .carousel__lista button {
   border: none;
   background-color: var(--whiteOff);
   font-weight: bold;
+  border-bottom: 2px solid #fff0!important;
+}
+img.xln-logo-icon {
+  position: absolute;
+  width: 60px;
+  top: 10px;
+  left: 30px;
 }
 
 .carousel__lista button:hover {
@@ -145,7 +154,7 @@
   width: 100%;
   position: relative;
   border-radius: 0px 0px 10px 10px;
-  box-shadow: 6px 6px 10px 1px rgb(0 0 0 / 30%);
+  box-shadow: 6px 6px 10px 1px rgb(0 0 0 / 15%);
 }
 
 .carousel-interna-home .dashboard__lider-container_courses-card-content-body {
@@ -165,7 +174,7 @@
   color: var(--blueDark);
   font-weight: bold;
   font-size: 16px;
-  width:80%;
+  width:60%;
   height: 41px;
   border-radius: 5px;
   position: absolute;

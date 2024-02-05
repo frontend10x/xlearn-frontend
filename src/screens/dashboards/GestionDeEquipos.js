@@ -70,14 +70,21 @@ export const GestionDeEquipos = () => {
                                 <GroupsDescription items={users} />
                             </div>
 
-                            <div className="col-md-12 xln__creacion-nuevo-equipo" >
-                                <div className="xln__creacion-nuevo-equipo-content" >
-                                    <Image src={equiposIcon} className="ms-5" />
-                                    <h2>Nuevo equipo</h2>
-                                    <button onClick={redirect} >Crear equipo</button>
+                            <div className="col-md-12 xln__creacion-nuevo-equipo mb-5">
+                                <div className="xln__creacion-nuevo-equipo-content">
+                                    <div className="row w-50 mx-auto">
+                                        <div className="col-md-6">
+                                            <Image src={equiposIcon} className="ms-5" />
+                                            <h2>Nuevo equipo</h2>
+                                        </div>
+                                        <div className="col-md-6 d-flex align-items-end justify-content-center">
+                                            <button onClick={redirect}>Crear equipo</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="col-md-12" style={{padding:"0"}}>
+
+                            <div className="col-md-12 mt-5" style={{padding:"0"}}>
                                 <Footer />
                             </div>
                         </div>

@@ -111,7 +111,7 @@ export const Footer = () => {
                 
               <div className="row footer__option" style={{padding:"0px"}}>
                 <div className="col-md-4">
-                  <p>Xlearn by 10XThinking. 2023</p>
+                  <p>© Xlearn by 10XThinking. 2024</p>
                 </div>
                 {/* <p className="link-footer" onClick={ayuda}>Ayuda</p> */}
 

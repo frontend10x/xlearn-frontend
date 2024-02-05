@@ -20,8 +20,14 @@ import { useNavigate } from "react-router-dom";
 import { logout } from "../actions/loginactions";
 import { validateUserState } from "../services/services";
 
+
+
+
 export const Header = ({ home, show }) => {
   const [showModal, setShowModal] = useState(false);
+  
+  const [isButtonFixed, setIsButtonFixed] = useState(false);
+
   const { token, type, name, id } = useSelector((state) => state.auth);
   const handleClose = () => setShowModal(false);
   const values = [true, "sm-down", "md-down", "lg-down", "xl-down", "xxl-down"];
@@ -86,6 +92,20 @@ export const Header = ({ home, show }) => {
     dispatch(logout());
   };
 
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsButtonFixed(window.scrollY > 600);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  
   return (
     <>
       {type === "Empresa" && (
@@ -277,9 +297,9 @@ export const Header = ({ home, show }) => {
               id="burg-toogle"
               onClick={() => handleShow(values)}
             >
-              |||
+              |<span className="Xln_icon-menuAncho">|</span>
             </Button>
-            <Image src={XlearnLogo} alt="logo" onClick={getHome} />
+            <Image className="Xln_logo-header" src={XlearnLogo} alt="logo" onClick={getHome} />
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav" className="me-5">
             <Nav className="ms-auto">
@@ -298,8 +318,12 @@ export const Header = ({ home, show }) => {
               <Nav.Link id="link" href="/contact">
                 Contáctanos
               </Nav.Link>
-              <Button id="button" onClick={redirect}>
-                Login
+              <Button
+                className={`xln_btnLoginHeader ${isButtonFixed ? 'fixed' : ''}`}
+                id="button"
+                onClick={redirect}
+              >
+                Ingresar
               </Button>
             </Nav>
           </Navbar.Collapse>
