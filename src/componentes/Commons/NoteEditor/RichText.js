@@ -30,9 +30,7 @@ export const RichText = ({ videoCurrent }) => {
   }
 
   useEffect(() => {
-    
     notesList();
-    
   }, []);
 
 

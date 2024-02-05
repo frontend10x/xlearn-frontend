@@ -9,10 +9,13 @@ import { confirmedRoute } from "../../actions/confirmRoute";
 
 import "../../assets/css/screens/dashboards/StyleDiagnosticoLiderGeneral.css";
 import { Header } from "../../componentes/Header";
+import { XlearnLogo } from "../../assets/img";
 
 export const CursosEntrenamiento = () => {
-  const { token, id, subcompanie_id, groups } = useSelector((state) => state.auth);
-  const { filter_id } = useSelector(state => state.questions);
+  const { token, id, subcompanie_id, groups } = useSelector(
+    (state) => state.auth
+  );
+  const { filter_id } = useSelector((state) => state.questions);
   const [courses, setCourses] = useState();
   const [checked, setChecked] = useState(false);
   const [checkedState, setCheckedState] = useState(false);
@@ -20,17 +23,16 @@ export const CursosEntrenamiento = () => {
   const [schema, setSchema] = useState({
     target: "Entrenamiento",
     user_id: id,
-    _rel: 'areas',
+    _rel: "areas",
     group_id: groups,
-    answer: []
+    answer: [],
   });
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const { target, user_id, _rel, group_id, answer } = schema;
 
-
-  console.log(group_id, 'structura');
+  console.log(group_id, "structura");
 
   useEffect(() => {
     async function getCoursesByArea() {
@@ -42,9 +44,9 @@ export const CursosEntrenamiento = () => {
 
   useEffect(() => {
     if (courses) {
-      setCheckedState(new Array(courses.length).fill(false))
+      setCheckedState(new Array(courses.length).fill(false));
     }
-  }, [courses])
+  }, [courses]);
 
   const handleOnChange = (courseId, position, isChecked) => {
     const updatedCheckedState = checkedState.map((item, index) =>
@@ -57,30 +59,34 @@ export const CursosEntrenamiento = () => {
 
     if (!isChecked) {
       answer = {
-        "course": courseId,
-      }
+        course: courseId,
+      };
 
       setSchema({ ...schema, answer: [...schema.answer, answer] });
-
     } else {
-      answer = schema?.answer.filter(item => item?.course !== courseId)
+      answer = schema?.answer.filter((item) => item?.course !== courseId);
       setSchema({ ...schema, answer: answer });
     }
-
   };
 
-  console.log("schema22", schema)
-
+  console.log("schema22", schema);
 
   const previousPage = () => {
-    navigate('/project/diagnostic/training/areas')
+    navigate("/project/diagnostic/training/areas");
   };
 
   const nextPage = async () => {
     try {
-      const data = await registerDiagnostic(target, user_id, _rel, answer, group_id, token);
-      dispatch(diagnosticTraining(answer, data?.diagnostic_id, _rel))
-      dispatch(confirmedRoute(data.course_route))
+      const data = await registerDiagnostic(
+        target,
+        user_id,
+        _rel,
+        answer,
+        group_id,
+        token
+      );
+      dispatch(diagnosticTraining(answer, data?.diagnostic_id, _rel));
+      dispatch(confirmedRoute(data.course_route));
       navigate("/project/diagnostic/confirm_route");
     } catch (error) {
       console.error(error);
@@ -96,10 +102,7 @@ export const CursosEntrenamiento = () => {
       {/* <HeaderDashboard /> */}
       <Header />
 
-
       <div className="cursos__entrenamiento-container">
-
-
         <div className="row select_course_container">
           <div className="col-md-12">
             <p>STEP 3 OF 4</p>
@@ -198,40 +201,61 @@ export const CursosEntrenamiento = () => {
                   onClick={filterCourses}
                   value="Robótica"
                 />
-
-
-
               </ul>
             </div>
           </div>
 
           <div className="col-md-8">
-            <div className="row cursos__entrenamiento-selection_container" >
+            <div className="row cursos__entrenamiento-selection_container">
               {courses &&
                 courses.map(({ id, name, file_path }, index) => (
-                  <div className="col-md-4 cursos__entrenamiento-selection_card" key={index} >
-                    <div className="cursos__entrenamiento-selection_card-image" >
+                  <div
+                    className="col-md-4 cursos__entrenamiento-selection_card"
+                    key={index}
+                  >
+                    <div className="cursos__entrenamiento-selection_card-image">
+                      {/* <div class="card-body "> */}
                       <input
                         type="checkbox"
                         checked={checkedState[index]}
                         id={`course-${index}-${id}`}
-                        onChange={() => handleOnChange(id, index, checkedState[index])}
+                        onChange={() =>
+                          handleOnChange(id, index, checkedState[index])
+                        }
                       />
                       <Image src={file_path} alt={file_path} />
+                      {/* <h2 className="card-title" >{name}</h2> */}
                       <h2>{name}</h2>
+                      <img className="w-25 img-fluid" src={XlearnLogo} />
                     </div>
                   </div>
-                ))
-              }
+                  // <div
+                  //   className="card"
+                  //   style={{ width: "302px", height: "324px" }}
+                  // >
+                  //   <input
+                  //     type="checkbox"
+                  //     checked={checkedState[index]}
+                  //     id={`course-${index}-${id}`}
+                  //     onChange={() =>
+                  //       handleOnChange(id, index, checkedState[index])
+                  //     }
+                  //   />
+                  //   <img className="w-100" src={file_path} alt={file_path} />
+
+                  //   <div className="card-body">
+                  //     <h5 className="card-title fw-bold">{name}</h5>
+                  //     <img className="w-25 img-fluid" src={XlearnLogo} />
+                  //   </div>
+                  // </div>
+                ))}
             </div>
           </div>
         </div>
       </div>
 
-
       <div className="selection__process-footer">
-
-        <div className="row content-center-SelectBtn" >
+        <div className="row content-center-SelectBtn">
           <div className="col-md-2">
             <button
               className="preguntas__footer-button_prev"
@@ -244,14 +268,15 @@ export const CursosEntrenamiento = () => {
           <div className="col-md-8"></div>
 
           <div className="col-md-2">
-            <button className="preguntas__footer-button_next" onClick={nextPage}>
+            <button
+              className="preguntas__footer-button_next"
+              onClick={nextPage}
+            >
               Siguiente
             </button>
           </div>
-
         </div>
       </div>
-
 
       {/* <div>
         <div className="preguntas__footer">
@@ -261,7 +286,6 @@ export const CursosEntrenamiento = () => {
           </button>
         </div>
       </div> */}
-
     </div>
   );
 };
