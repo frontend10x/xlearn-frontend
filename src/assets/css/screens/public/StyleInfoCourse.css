@@ -11,9 +11,30 @@
 
 .xln__info_courses .title {
     color: #fff;
-    /* padding-left: 7%; */
 }
 
+.category_button:hover {
+    background-color: #002333 !important;
+    color: white !important;
+}
+
+.btn_coursevideo {
+    height: 40px !important;
+    width: 40px !important;
+    border-radius: 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    filter: none !important ;
+    color: white;
+    border: 1px solid white ;
+}
+
+.btn_coursevideo:hover {
+    background-color: #31fb84;
+}
 
 .InfoCourse__innovacion-redirection a {
     color: #fff;
@@ -236,9 +257,9 @@ section.section_carousel_curso {
 .xln__info_courses .modal-body {
     padding: 0;
 }
-.xln__info_courses .modal-header button {
+/* .xln__info_courses .modal-header button {
     filter: invert(100%) brightness(1000%)!important;
-  }
+  } */
 
   /* .xln__info_courses .modal-header {
     display: contents;

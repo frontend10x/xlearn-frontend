@@ -5,25 +5,15 @@ import {
   getCourseDescription,
   getLessons,
 } from "../services/services";
-import { Image } from "react-bootstrap";
-import {
-  telefonoDos,
-  recomendation_01,
-  recomendation_02,
-  recomendation_03,
-  recomendation_04,
-  playButton,
-  flechaIzquierdaCourse,
-} from "../assets/img";
+import { Button, Image, Row } from "react-bootstrap";
+import { telefonoDos, playButton, flechaIzquierdaCourse } from "../assets/img";
 import { Footer } from "../componentes/Footer";
-
 import { useNavigate } from "react-router-dom";
-import { HeaderDashboard } from "../componentes/dashboards/HeaderDashboard";
 import { CarouselDashboards } from "../componentes/CarouselDashboards";
 import { Container } from "react-bootstrap";
-
 import "../assets/css/screens/public/StyleInfoCourse.css";
 import { Header } from "../componentes/Header";
+import Col from "react-bootstrap/Col";
 
 export const InfoCourse = () => {
   const { id } = useParams();
@@ -39,6 +29,16 @@ export const InfoCourse = () => {
       navigate("/plans/register");
     }
   };
+
+  const [categorias, setCategorias] = useState([
+    { title: "Gestion y Liderazgo" },
+    { title: "Vigilancia" },
+    { title: "Ciberseguridad" },
+    { title: "Innovacion Abierta" },
+    { title: "Excelencia Operacional" },
+    { title: "Sostenibilidad" },
+    { title: "IOT" },
+  ]);
 
   useEffect(() => {
     // 👇️ scroll to top on page load
@@ -67,12 +67,11 @@ export const InfoCourse = () => {
     getLessonsCourse();
   }, []); /* LOGICA DE CURSOS PUBLICOS */
 
-  console.log(course);
+  console.log(lessons, "lecciones");
 
   const show = true;
   return (
     <div className="xln__info_courses">
-      {/* <HeaderDashboard show={show} /> */}
       <Header />
       <section className="hero">
         <div className="container">
@@ -130,9 +129,9 @@ export const InfoCourse = () => {
       <section className="section_descripction_course container">
         <div className="row">
           <div className="col-md-6">
-            <h2 className="xln__description__tutor">
-              Descripción general del curso
-            </h2>
+            <p className="title_card" style={{ fontSize: "22px" }}>
+              Acerca de este curso
+            </p>
             <div className="col-md-12">
               <p dangerouslySetInnerHTML={{ __html: course?.description }} />
             </div>
@@ -145,17 +144,59 @@ export const InfoCourse = () => {
               data-bs-toggle="modal"
               data-bs-target="#videoTrailer"
             >
-              {course.name}
+              {course?.name}
+              
             </button>
             {lessons &&
-              lessons.map((item, index) => (
-                <div className="xln_item_courses" key={index}>
-                  {item.name}
-                </div>
-              ))}
+              lessons?.map((item, index) => {
+                const minutes = Math.floor(item.duration / 60); // Extraer los minutos
+                const seconds = item.duration % 60; // Extraer los segundos
+                const formattedTime = `${minutes}:${
+                  seconds < 10 ? "0" : ""
+                }${seconds}`; // Formatear los segundos con un cero a la izquierda si es necesario
+                return (
+                  <div className="d-flex justify-content-between" key={index}>
+                    <p>{item.name}</p>
+                    <p>
+                      {minutes > 0 ? formattedTime + " Min" : seconds + " Seg"}
+                    </p>
+                  </div>
+                );
+              })}
           </div>
         </div>
       </section>
+
+      <Container style={{ height: "25vh" }}>
+        <Row>
+          <Col>
+            <div>
+              <p style={{ fontSize: "22px" }} className="title_card text-start">
+                Categorías relacionadas
+              </p>
+              <div className="d-flex flex-wrap mt-5 gap-2 ">
+                {categorias &&
+                  categorias?.map((item, index) => (
+                    <Button
+                      key={index}
+                      className="title_card btn  category_button"
+                      style={{
+                        background: "transparent",
+                        color: "#002333",
+                        borderColor: "#D7D9DC",
+                        fontSize: "14px",
+                        minWidth: "100px", // Ancho mínimo para asegurar que los botones no sean demasiado estrechos
+                      }}
+                    >
+                      {item?.title}
+                    </Button>
+                  ))}
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+
       <section className="objetivos_de_curso">
         <div className="row align-items-center">
           <div className="row">
@@ -186,7 +227,7 @@ export const InfoCourse = () => {
           </div>
         </div>
       </section>
-      
+
       <section className="section_cta_de_curso">
         <div className="row align-items-center">
           <div className="col-sm">
@@ -212,11 +253,9 @@ export const InfoCourse = () => {
         </div>
       </section>
 
-      <section className="section_carousel_curso container">
+      {/* <section className="section_carousel_curso container"> */}
+      <section className="d-flex justify-content-center">
         <div className="row">
-          <div className="col-md-12">
-            <h2 className="xln__description__tutor">Cursos recomendados</h2>
-          </div>
           <div className="col-md-12">
             <Container>
               <CarouselDashboards item={courses} />
@@ -239,12 +278,12 @@ export const InfoCourse = () => {
             <div className="modal-header border border-0 d-flex justify-content-end">
               <button
                 type="button"
-                className="btn text-secondary"
+                className="btn rounded btn_coursevideo"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-                style={{ fontSize: "25px", width: "50px", height: "25px" }}
               >
-                X
+                <i className="fa-solid fa-xmark"></i>
+
               </button>
             </div>
             <div className="modal-body">

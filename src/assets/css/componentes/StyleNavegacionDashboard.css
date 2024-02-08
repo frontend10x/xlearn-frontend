@@ -47,6 +47,12 @@
   padding-bottom: 10px;
 }
 
+.active {
+  background-color: #002333; /* Color de fondo */
+  color: #fff !important; /* Color del texto */
+  font-weight: bold; /* Peso de la fuente */
+  /* Otros estilos que desees aplicar */
+}
 
 .dashboard__nav-link::after {
   content: "";

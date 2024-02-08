@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'GTWalsheimProBold';
+  src: url('../../../GTWalsheimPro/GTWalsheimPro-Black.ttf') format('truetype');
+}
+
 :root {
   --black: #19191c;
   --blueAlternative: #270bc4;
@@ -10,6 +15,9 @@
   --blueoscuro: #CBD6E2;
 }
 
+.title_card {
+  font-family: GTWalsheimProBold;
+}
 
 .container_Cursos {
   padding-top: 10%;
