@@ -51,6 +51,7 @@ import { Faqs } from "../screens/Faqs";
 import { DetailFaqs } from "../screens/DetailFaqs";
 import { PerfilEmpresa } from "../screens/dashboards/PerfilEmpresa";
 import { GroupsDescription } from "../componentes/dashboards/GroupsDescription";
+import { VerCursos } from "../screens/dashboards/VerCursos";
 
 export const AppRouter = () => {
   const { token, type } = useSelector((state) => state.auth);
@@ -118,6 +119,7 @@ export const AppRouter = () => {
             element={<GestionDeCupos />}
           />
           <Route exact path="/reportes" element={<Reportes />} />
+          <Route exact path="/ver/cursos" element={<VerCursos />} />
           <Route exact path="/soporte" element={<Soporte />} />
         </Route>
         {/* RUTA DE EMPRESA */}

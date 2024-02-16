@@ -192,7 +192,7 @@
     border-radius: 4px;
     width: 100%;
     padding-top: 10px;
-    padding-bottom: 10px;
+    /* padding-bottom: 10px; */
     position: relative;
     margin-bottom: 29px;
 }

@@ -7,13 +7,13 @@ import { useNavigate } from "react-router-dom";
 import "../assets/css/screens/public/StyleCursosScreen.css";
 import { Header } from "../componentes/Header";
 import Card from "react-bootstrap/Card";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faBookmark } from "@fortawesome/free-regular-svg-icons";
 
 export const CursosScreen = () => {
   const [courses, setCourses] = useState([]);
   const navigate = useNavigate();
-
+  const [pageSize] = useState(6);
+  const [showMoreAdds, setShowMoreAdds] = useState(false);
+  const [showMorePopulars, setShowMorePopulars] = useState(false);
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
@@ -39,6 +39,17 @@ export const CursosScreen = () => {
   const startRegister = () => {
     navigate("/plans/register");
   };
+
+  const handleClickShowMoreAdds = () => {
+    setShowMoreAdds(!showMoreAdds);
+  };
+
+  const handleClickShowMorePopulars = () => {
+    setShowMorePopulars(!showMorePopulars);
+  };
+
+  const visibleAddsCourses = showMoreAdds ? courses : courses.slice(0, pageSize);
+  const visiblePopularsCourses = showMorePopulars ? courses : courses.slice(0, pageSize);
 
   const show = true;
 
@@ -191,13 +202,19 @@ value="Vigilancia"
                 <h4 className="cursos__section-recently">
                   Agregados recientemente
                 </h4>
+
                 <div className="row">
-                  {courses?.map((item, index) => (
+                  {visibleAddsCourses.map((item, index) => (
                     <div key={index} className="col-lg-4 col-md-6 col-sm-12">
-                      <div className="d-flex flex-wrap" key={item?.id} >
+                      <div className="d-flex flex-wrap" key={item?.id}>
+                        {/* Aquí va tu código para renderizar cada curso */}
                         <Card
                           className="mb-4 rounded"
-                          style={{ width: "100%", minHeight: "300px",cursor:"pointer"}}
+                          style={{
+                            width: "100%",
+                            minHeight: "300px",
+                            cursor: "pointer",
+                          }}
                           onClick={() => redirect(item?.id)}
                         >
                           <Card.Img variant="top" src={item?.file_path} />
@@ -216,7 +233,11 @@ value="Vigilancia"
                             </div>
                             <Card.Title
                               className="title_card"
-                              style={{ fontSize: "16px", color: "#002333" }}
+                              style={{
+                                fontSize: "16px",
+                                color: "#002333",
+                                height: "40px",
+                              }}
                             >
                               {item?.name}
                             </Card.Title>
@@ -234,38 +255,81 @@ value="Vigilancia"
                     </div>
                   ))}
                 </div>
+                {!showMoreAdds ? (
+                  <div className="d-flex justify-content-center">
+                    <button onClick={handleClickShowMoreAdds} className="w-25 fw-bold" style={{border:"none",color:"#002333",backgroundColor:"#31fb84", height:"40px", borderRadius:"10px"}} >Ver más</button>
+                  </div>
+                ) : (
+                  <div className="d-flex justify-content-center">
+                    <button onClick={handleClickShowMoreAdds} className="w-25 fw-bold" style={{border:"none",color:"#002333",backgroundColor:"#31fb84", height:"40px", borderRadius:"10px"}} >Ver menos</button>
+                  </div>
+                )}
               </div>
 
               <div className="map_content2">
                 <h4 className="cursos__section-populars">Cursos Populares</h4>
-
                 <div className="row">
-                  {courses.map((item, index) => (
-                    <div className="col-md-4 card__doble">
-                      <div className="cursos__card-body" key={index}>
-                        <Image src={item.file_path} alt={item.file_path} />
-                        <div className="cursos__card-content">
-                          <div className="cursos__card-titles">
-                            <div className="cursos__card-information">
-                              {/* <h6>{item.users} usuarios</h6> */}
-                              {/* <h6>{item.time}</h6> */}
+                  {visiblePopularsCourses.map((item, index) => (
+                    <div key={index} className="col-lg-4 col-md-6 col-sm-12">
+                      <div className="d-flex flex-wrap" key={item?.id}>
+                        {/* Aquí va tu código para renderizar cada curso */}
+                        <Card
+                          className="mb-4 rounded"
+                          style={{
+                            width: "100%",
+                            minHeight: "300px",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => redirect(item?.id)}
+                        >
+                          <Card.Img variant="top" src={item?.file_path} />
+                          <Card.Body>
+                            <div className="d-flex justify-content-between">
+                              <Card.Text
+                                style={{ fontSize: "14px", color: "#394649" }}
+                              >
+                                366 Usuarios
+                              </Card.Text>
+                              <Card.Text
+                                style={{ fontSize: "14px", color: "#394649" }}
+                              >
+                                250m
+                              </Card.Text>
                             </div>
-                            <h5>{item.name}</h5>
-                          </div>
-                          {/* <Image
-    src={item.logo}
-    alt="logo"
-    className="cursos__card-logo"
-    /> */}
-                        </div>
+                            <Card.Title
+                              className="title_card"
+                              style={{
+                                fontSize: "16px",
+                                color: "#002333",
+                                height: "40px",
+                              }}
+                            >
+                              {item?.name}
+                            </Card.Title>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <Card.Img
+                                variant="bottom"
+                                className="w-25"
+                                src={logologin}
+                              />
+                              <i className="fa fa-bookmark mt-2 "></i>
+                            </div>
+                          </Card.Body>
+                        </Card>
                       </div>
                     </div>
                   ))}
                 </div>
+                {!showMorePopulars ? (
+                  <div className="d-flex justify-content-center">
+                    <button onClick={handleClickShowMorePopulars} className="w-25 fw-bold" style={{border:"none",color:"#002333",backgroundColor:"#31fb84", height:"40px", borderRadius:"10px"}} >Ver más</button>
+                  </div>
+                ) : (
+                  <div className="d-flex justify-content-center">
+                    <button onClick={handleClickShowMorePopulars} className="w-25 fw-bold" style={{border:"none",color:"#002333",backgroundColor:"#31fb84", height:"40px", borderRadius:"10px"}} >Ver menos</button>
+                  </div>
+                )}
               </div>
-              {/* <button className="cursos__button-expand me-3" >
-ver todos
-</button> */}
             </div>
           </div>
         </div>

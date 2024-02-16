@@ -20,7 +20,7 @@ export const InfoCourse = () => {
   const [courses, setCourses] = useState([]);
   const navigate = useNavigate();
   const [course, setCourse] = useState([]);
-  const [tutor, setTutor] = useState([]);
+  // const [tutor, setTutor] = useState([]);
   const [lessons, setLessons] = useState([]);
   const redirect = (e) => {
     if (e.target.value === "login") {
@@ -49,7 +49,7 @@ export const InfoCourse = () => {
     async function getCourses() {
       const data = await getCourseDescription(id);
       setCourse(data?.response?._embedded?.course);
-      setTutor(JSON.parse(data?.response?._embedded?.course?.about_author));
+      // setTutor(JSON.parse(data?.response?._embedded?.course?.about_author));
     }
 
     async function getAllCourses() {
@@ -67,7 +67,29 @@ export const InfoCourse = () => {
     getLessonsCourse();
   }, []); /* LOGICA DE CURSOS PUBLICOS */
 
-  console.log(lessons, "lecciones");
+  // Filtrar el array de cursos
+  const filteredCourses = courses?.filter(
+    (item) => parseInt(item?.id) !== parseInt(id)
+  );
+
+  const totalMinutes = Math.floor(
+    lessons?.reduce((total, item) => total + item?.duration / 60, 0)
+  );
+
+  const secs = lessons?.[0]?.duration; // Obtener el valor en segundos
+
+  // Calcular minutos y segundos
+  const minutes = Math.floor(secs / 60);
+  const restSeconds = secs % 60;
+
+  // Formatear el resultado
+  const trailerMinutes = `${minutes}:${
+    restSeconds < 10 ? "0" : ""
+  }${restSeconds}`;
+
+  const trailerTime = trailerMinutes.split(":");
+  const mins = parseInt(trailerTime[0]);
+  const seconds = parseInt(trailerTime[1]);
 
   const show = true;
   return (
@@ -138,14 +160,23 @@ export const InfoCourse = () => {
           </div>
 
           <div className="col-md-6">
-            <h2 className="xln__description__tutor">Lecciones del curso</h2>
+            <div className="d-flex justify-content-between align-items-center">
+              {/* <h2 className="xln__description__tutor">Lecciones del curso</h2> */}
+              <h2 className="fw-bold" style={{ color:"#002333"}}>Lecciones del curso</h2>
+              <p style={{ fontSize: "20px", color:"#002333" }} className="fw-bold">
+                {lessons?.length} lecciones ({totalMinutes}m)
+              </p>
+            </div>
             <button
-              className=""
+              className="d-flex justify-content-end"
               data-bs-toggle="modal"
               data-bs-target="#videoTrailer"
             >
-              {course?.name}
-              
+              <p className="me-5 pe-5" >{course?.name}</p>
+              {/* <p>{trailerMinutes}min</p> */}
+              <p className="ps-5 ms-5">
+                {mins === 0 ? `${seconds}seg` : `${trailerMinutes}min`}
+              </p>
             </button>
             {lessons &&
               lessons?.map((item, index) => {
@@ -258,7 +289,7 @@ export const InfoCourse = () => {
         <div className="row">
           <div className="col-md-12">
             <Container>
-              <CarouselDashboards item={courses} />
+              <CarouselDashboards item={filteredCourses} />
             </Container>
           </div>
         </div>
@@ -283,7 +314,6 @@ export const InfoCourse = () => {
                 aria-label="Close"
               >
                 <i className="fa-solid fa-xmark"></i>
-
               </button>
             </div>
             <div className="modal-body">

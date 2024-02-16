@@ -11,7 +11,7 @@ import {
   EmpresaInnovacion,
   EmpresaTransformacion,
   EmpresaExelencia,
-  hand
+  hand,
 } from "../../assets/img";
 import { NavegacionDashboard } from "../../componentes/dashboards/NavegacionDashboard";
 import { Image } from "react-bootstrap";
@@ -20,7 +20,12 @@ import { Col } from "react-bootstrap";
 import { Footer } from "../../componentes/Footer";
 import { logout } from "../../actions/loginactions";
 import { HeaderDashboard } from "../../componentes/dashboards/HeaderDashboard";
-import { getCourse, getEnterpriseGroups, getEnterpriseQuotas, validateMembership } from "../../services/services";
+import {
+  getCourse,
+  getEnterpriseGroups,
+  getEnterpriseQuotas,
+  validateMembership,
+} from "../../services/services";
 import { useNavigate } from "react-router-dom";
 
 import "../../assets/css/screens/dashboards/StyleDashboardEmpresa.css";
@@ -28,12 +33,10 @@ import { Header } from "../../componentes/Header";
 
 import { Snackbar, Alert } from "@mui/material";
 
-
 export const DashboardEmpresa = () => {
-
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   const { name, subcompanie_id, token } = useSelector((state) => state.auth);
   const { validation } = useSelector((state) => state.membership);
@@ -65,72 +68,69 @@ export const DashboardEmpresa = () => {
 
   useEffect(() => {
     if (validation) {
-      window.scrollTo(-1, -1)
+      window.scrollTo(-1, -1);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     async function getQuotas() {
       try {
-        const data = await getEnterpriseQuotas(token, subcompanie_id)
+        const data = await getEnterpriseQuotas(token, subcompanie_id);
         setQuotas(data.quotas);
       } catch (error) {
         setQuotas(0);
       }
-
     }
 
     async function getGroups() {
       try {
-        const data = await getEnterpriseGroups(token, subcompanie_id)
+        const data = await getEnterpriseGroups(token, subcompanie_id);
         setCreatedTeams(data.groups["hc:length"]);
       } catch (error) {
-        console.error(error, 'error 2')
+        console.error(error, "error 2");
       }
     }
 
     async function getAllCoursesForEnterprises() {
       const data = await getCourse();
-      setAllCourses(data.response._embedded.courses)
-      console.log(data,'datos');
+      setAllCourses(data.response._embedded.courses);
+      console.log(data, "datos");
     }
 
     getQuotas();
     getGroups();
     getAllCoursesForEnterprises();
-  }, [token, subcompanie_id])
+  }, [token, subcompanie_id]);
 
   const redirect = (e) => {
     if (e.target.value === "users" && quotas > 0) {
-      navigate('/gestion/cupos/disponibles')
+      navigate("/gestion/cupos/disponibles");
     } else if (e.target.value === "users" && quotas === 0) {
-      navigate('/compra/cupos');
+      navigate("/compra/cupos");
     }
-  }
+  };
 
   const ComprarRedirect = () => {
-    navigate('/compra/cupos')
-  }
+    navigate("/compra/cupos");
+  };
 
   const change = () => {
     getEnterpriseGroups(token, subcompanie_id)
-      .then(event => {
-        navigate('/manejo/equipos');
+      .then((event) => {
+        navigate("/manejo/equipos");
       })
-      .catch(error => {
-        console.error(error, 'error 2')
-        navigate('/gestion/equipo');
-      }
-      )
-  }
+      .catch((error) => {
+        console.error(error, "error 2");
+        navigate("/gestion/equipo");
+      });
+  };
 
   const soporte = () => {
-    navigate('/contact')
-  }
+    navigate("/contact");
+  };
 
-  const redirectTo = (e) => (
-    navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`)
-  )
+  const redirectTo = (e) =>
+    navigate(`/course/videoplayer/${e.target.value}/${e.target.id}`);
 
   const adjustClass = event ? "xln_add_menuLateral" : "col-md-10";
 
@@ -140,34 +140,36 @@ export const DashboardEmpresa = () => {
         <Header />
 
         <div className="container xln-content-dash">
-
-
           <div className="row">
-
-            <div className="col-md-2 xln-container-navDashboard" style={{ padding: "0" }}>
+            <div
+              className="col-md-2 xln-container-navDashboard"
+              style={{ padding: "0" }}
+            >
               <NavegacionDashboard />
             </div>
 
-
             <div className={adjustClass}>
-              {/* <div className="col-md-10"> */}
-
               <div className="row dashboard__container-nav_banner">
-
                 <div className="col-md-12">
-                  <div className="dashboard__banner-content" style={{ backgroundImage: `linear-gradient(45deg, rgb(0 35 51), rgb(0 0 0 / 0%)), url("${vistaEmpresa}")` }}>
+                  <div
+                    className="dashboard__banner-content"
+                    style={{
+                      backgroundImage: `linear-gradient(45deg, rgb(0 35 51), rgb(0 0 0 / 0%)), url("${vistaEmpresa}")`,
+                    }}
+                  >
                     <div className="dashboard__banner-title">
-                      <h1 style={{color:"white"}} >¡<span className="style-name">Hola</span> {name}! <Image src={hand} alt="gradiente" /></h1>
+                      <h1 style={{ color: "white" }}>
+                        ¡<span className="style-name">Hola</span> {name}!{" "}
+                        <Image src={hand} alt="gradiente" />
+                      </h1>
                       <p>
-                        Es el momento de gestionar y desarrollar tus proyectos con Xlearn
+                        Es el momento de gestionar y desarrollar tus proyectos
+                        con Xlearn
                       </p>
                     </div>
                   </div>
-
-
                 </div>
                 <hr className="xln_sp_DB" />
-
               </div>
 
               <div className="xln_section_adminCupos">
@@ -177,7 +179,6 @@ export const DashboardEmpresa = () => {
                   <div className="dashboard__block-container">
                     <div className="col-md-12">
                       <div className="row">
-
                         <div className="col-md-6 xln-taget-info border-puntos">
                           <div className="dashboard__block">
                             <div className="row dashboard__block-content">
@@ -185,99 +186,122 @@ export const DashboardEmpresa = () => {
                                 <Image src={cuposIcon} />
                               </div>
                               <div className="col-md-8 text-end">
-                                <button className="dashboard__block-button" onClick={redirect} value="users">
+                                <button
+                                  className="dashboard__block-button"
+                                  onClick={redirect}
+                                  value="users"
+                                >
                                   Administrar cupos
                                 </button>
-
                               </div>
 
                               <div className="col-md-12 pt-5">
-                                {quotas ?
-                                  <div className="dashboard__title"  >
+                                {quotas ? (
+                                  <div className="dashboard__title">
                                     <h3>{quotas} Cupos disponibles</h3>
                                     <p>Administra tus Cupos</p>
                                   </div>
-                                  : <div className="dashboard__title">
+                                ) : (
+                                  <div className="dashboard__title">
                                     <h3>0 Cupos disponibles</h3>
                                     <p>Administra tus Cupos</p>
                                   </div>
-                                }
+                                )}
                               </div>
                             </div>
-
                           </div>
                         </div>
 
                         <div className="col-md-6 xln-taget-info">
                           <div className="dashboard__block">
                             <div className="row dashboard__block-content">
-
                               <div className="col-md-4">
                                 <Image src={equiposIcon} />
                               </div>
 
                               <div className="col-md-8 text-end">
-                                <button className="dashboard__block-button" onClick={change}>
+                                <button
+                                  className="dashboard__block-button"
+                                  onClick={change}
+                                >
                                   Administrar tus equipos
                                 </button>
                               </div>
 
                               <div className="col-md-12 pt-5">
-                                {createdTeams ?
+                                {createdTeams ? (
                                   <div className="dashboard__title">
                                     <h3>{createdTeams} Equipos creados</h3>
                                     <p>Crea y gestiona tus equipos</p>
                                   </div>
-                                  : <div className="dashboard__title">
+                                ) : (
+                                  <div className="dashboard__title">
                                     <h3> 0 Equipos creados</h3>
                                     <p>Crea y gestiona tus equipos</p>
                                   </div>
-                                }
+                                )}
                               </div>
                             </div>
                           </div>
                         </div>
-
                       </div>
-
                     </div>
-
                   </div>
                 </div>
               </div>
 
               <div className="xlrn__dashborad__lider-container-block mb-5">
-                <div className="xlrn__dashboard__lider-block d-flex " >
-
-                  {validation ?
+                <div className="xlrn__dashboard__lider-block d-flex ">
+                  {validation ? (
                     allCourses?.map((item, index) => (
-                      <div className="xlrn__dashboard__lider-block-content d-flex" key={index} >
-                        <Image src={item.file_path} className="xlrn__dashboard__lider-block-image" />
-                        <div className="xlrn__dashboard__lider-block-content-titles" >
+                      <div
+                        className="xlrn__dashboard__lider-block-content d-flex"
+                        key={index}
+                      >
+                        <Image
+                          src={item.file_path}
+                          className="xlrn__dashboard__lider-block-image"
+                        />
+                        <div className="xlrn__dashboard__lider-block-content-titles">
                           <p>Curso </p>
                           <h3>{item.name}</h3>
                           <div className=" xlrn__dashboard__lider-content-info d-flex gap-2">
                             {/* <h4>Progreso: <span>{item['progress:porcentage']}%</span></h4> | <h4> Lecciones: {item["lessons:amount"]} </h4> */}
                           </div>
 
-                          <button onClick={redirectTo} className="xlrn__dashboard__lider-block-button" value={item.name} id={item.id}>Iniciar</button>
-
+                          <button
+                            onClick={redirectTo}
+                            className="xlrn__dashboard__lider-block-button"
+                            value={item.name}
+                            id={item.id}
+                          >
+                            Iniciar
+                          </button>
                         </div>
                       </div>
                     ))
-                    :
-                    <p style={{ color: "#8894ab", fontSize:"20px" }} className="fw-bold ms-5" >Ve a la sección de cursos y valida el contenido disponible</p>
-                  }
+                  ) : (
+                    <p
+                      style={{ color: "#8894ab", fontSize: "20px" }}
+                      className="fw-bold ms-5"
+                    >
+                      Ve a la sección de cursos y valida el contenido disponible
+                    </p>
+                  )}
                 </div>
               </div>
 
               <div className="xln_section_course dashboard__card-info pt-5 mt-5 pb-5">
-                <h2>Identifica las brechas de aprendizaje y sugiere contenido</h2>
+                <h2>
+                  Identifica las brechas de aprendizaje y sugiere contenido
+                </h2>
                 <div className="dashboard__info-container">
                   <div className="row">
-
                     {course.map((item, index) => (
-                      <div key={index} className="col-md-4 dashboard__card-content">
+                      <div
+                        key={index}
+                        className="col-md-4 dashboard__card-content"
+                      >
                         <div className="dashboard__card-body">
                           <Image
                             src={item.image}
@@ -286,38 +310,42 @@ export const DashboardEmpresa = () => {
                           />
                           <div className="dashboard__card-title">
                             <p>{item.title}</p>
-                            <button className="dashboard__card-button" onClick={ComprarRedirect}>Adquirir</button>
+                            <button
+                              className="dashboard__card-button"
+                              onClick={ComprarRedirect}
+                            >
+                              Adquirir
+                            </button>
                           </div>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-
-
-
               </div>
 
               <div className="dashboard__novedades-section">
                 <div className="row dashboard__novedades-container">
-
                   <div className="col-md-6">
                     <div className="dashboard__novedades-content">
                       <div className="xln-empresa-novedades-content">
                         <h2>Conoce las novedades que tenemos para ti</h2>
                         <div className="xln-separator-title"></div>
                         <p>
-                          Conoce las ofertas y cursos que tenemos para tu compañia
+                          Conoce las ofertas y cursos que tenemos para tu
+                          compañia
                         </p>
                       </div>
                     </div>
                   </div>
 
                   <div className="col-md-6">
-
                     <div className="row dashboard__novedades-container_image">
                       {news.map((item, index) => (
-                        <div key={index} className="col-md-6 dashboard__novedades-card_image">
+                        <div
+                          key={index}
+                          className="col-md-6 dashboard__novedades-card_image"
+                        >
                           <Image
                             src={item.image}
                             alt="novedades"
@@ -330,10 +358,7 @@ export const DashboardEmpresa = () => {
                         </div>
                       ))}
                     </div>
-
-
                   </div>
-
                 </div>
               </div>
 
@@ -342,9 +367,13 @@ export const DashboardEmpresa = () => {
                   <div className="dashboard__support-content">
                     <h1>¿Necesitas ayuda?</h1>
                     <p>
-                      ¿Tienes dudas?  Déjanos tus preguntas, comentarios o sugerencias y pronto nos pondremos en contacto
+                      ¿Tienes dudas? Déjanos tus preguntas, comentarios o
+                      sugerencias y pronto nos pondremos en contacto
                     </p>
-                    <button onClick={soporte} className="dashboard__support-button">
+                    <button
+                      onClick={soporte}
+                      className="dashboard__support-button"
+                    >
                       Ir a soporte
                     </button>
                   </div>
@@ -354,18 +383,10 @@ export const DashboardEmpresa = () => {
               <div className="row">
                 <Footer />
               </div>
-
-
             </div>
-
           </div>
-
-
-
         </div>
-
-
       </div>
-    </div >
+    </div>
   );
 };

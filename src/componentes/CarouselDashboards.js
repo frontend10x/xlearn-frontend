@@ -31,7 +31,9 @@ export const CarouselDashboards = ({ item }) => {
   const navigate = useNavigate();
   const course = item;
   const redirect = (name, id) => {
-    navigate(`/course/videoplayer/${name}/${id}`);
+    // navigate(`/course/videoplayer/${name}/${id}`);
+    navigate(`/course/info/${id}`);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   return (

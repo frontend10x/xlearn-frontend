@@ -120,7 +120,7 @@ export const Header = ({ home, show }) => {
           }
           variant="dark"
         >
-          <Navbar.Brand className="ms-3" >
+          <Navbar.Brand className="ms-3" style={{cursor:"pointer"}} >
             <Image src={XlearnLogo} alt="logo" onClick={getHome} />
           </Navbar.Brand>
           <Navbar.Collapse id="responsive-navbar-nav" className="">
@@ -173,7 +173,7 @@ export const Header = ({ home, show }) => {
           }
           variant="dark"
         >
-          <Navbar.Brand className="ms-3" onClick={getHome}>
+          <Navbar.Brand className="ms-3" onClick={getHome} style={{cursor:"pointer"}}>
             <Image src={XlearnLogo} alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle
@@ -233,7 +233,7 @@ export const Header = ({ home, show }) => {
           }
           variant="dark"
         >
-          <Navbar.Brand className="ms-3" onClick={getHome}>
+          <Navbar.Brand className="ms-3" onClick={getHome} style={{cursor:"pointer"}} >
             <Image src={XlearnLogo} alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
